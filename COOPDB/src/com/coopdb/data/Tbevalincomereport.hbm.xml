@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbevalincomereport" table="TBEVALINCOMEREPORT" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="evalreportid" type="integer">
+            <column name="evalreportid"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="totalincome" type="big_decimal">
+            <column name="totalincome" precision="18"/>
+        </property>
+        <property name="totalexpense" type="big_decimal">
+            <column name="totalexpense" precision="18"/>
+        </property>
+        <property name="netpay1" type="big_decimal">
+            <column name="netpay1" precision="18"/>
+        </property>
+        <property name="monthlyamort" type="big_decimal">
+            <column name="monthlyamort" precision="18"/>
+        </property>
+        <property name="netpay2" type="big_decimal">
+            <column name="netpay2" precision="18"/>
+        </property>
+    </class>
+</hibernate-mapping>

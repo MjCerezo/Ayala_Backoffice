@@ -1,0 +1,90 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbcireportmain" table="TBCIREPORTMAIN" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="cireportid" type="string">
+            <column name="cireportid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="cirequestid" type="string">
+            <column name="cirequestid" length="20"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="customername" type="string">
+            <column name="customername" length="300"/>
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="100"/>
+        </property>
+        <property name="middlename" type="string">
+            <column name="middlename" length="100"/>
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="100"/>
+        </property>
+        <property name="suffix" type="string">
+            <column name="suffix" length="50"/>
+        </property>
+        <property name="dateofbirth" type="timestamp">
+            <column name="dateofbirth" length="23"/>
+        </property>
+        <property name="dateofincorporation" type="timestamp">
+            <column name="dateofincorporation" length="23"/>
+        </property>
+        <property name="reportedby" type="string">
+            <column name="reportedby" length="20"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="reviewedby" type="string">
+            <column name="reviewedby" length="20"/>
+        </property>
+        <property name="datereviewed" type="timestamp">
+            <column name="datereviewed" length="23"/>
+        </property>
+        <property name="dateapproved" type="timestamp">
+            <column name="dateapproved" length="23"/>
+        </property>
+        <property name="daterequested" type="timestamp">
+            <column name="daterequested" length="23"/>
+        </property>
+        <property name="requestedby" type="string">
+            <column name="requestedby" length="20"/>
+        </property>
+        <property name="datesubmitted" type="timestamp">
+            <column name="datesubmitted" length="23"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="2"/>
+        </property>
+        <property name="statusdatetime" type="timestamp">
+            <column name="statusdatetime" length="23"/>
+        </property>
+        <property name="reportdate" type="timestamp">
+            <column name="reportdate" length="23"/>
+        </property>
+        <property name="reasonforci" type="string">
+            <column name="reasonforci" length="300"/>
+        </property>
+        <property name="companycode" type="string">
+            <column name="companycode" length="5"/>
+        </property>
+        <property name="participationcode" type="string">
+            <column name="participationcode" length="300"/>
+        </property>
+        <property name="customertype" type="string">
+            <column name="customertype" length="2"/>
+        </property>
+        <property name="reasonforreturn" type="string">
+            <column name="reasonforreturn" length="300"/>
+        </property>
+    </class>
+</hibernate-mapping>

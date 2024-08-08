@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbfintxchecklist" table="TBFINTXCHECKLIST" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txrefmain" type="string">
+            <column name="txrefmain" length="20"/>
+        </property>
+        <property name="checkno" type="string">
+            <column name="checkno" length="30"/>
+        </property>
+        <property name="checkamt" type="big_decimal">
+            <column name="checkamt" precision="16"/>
+        </property>
+        <property name="clearingtype" type="string">
+            <column name="clearingtype" length="3"/>
+        </property>
+        <property name="draweebank" type="string">
+            <column name="draweebank"/>
+        </property>
+        <property name="brstnno" type="string">
+            <column name="brstnno" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

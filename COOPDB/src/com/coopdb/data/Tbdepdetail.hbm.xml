@@ -1,0 +1,195 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbdepdetail" table="TBDEPDETAIL" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="accountno" type="string">
+            <column name="accountno" length="20"/>
+        </property>
+        <property name="atmcardno" type="string">
+            <column name="atmcardno" length="20"/>
+        </property>
+        <property name="lineavailed" type="big_decimal">
+            <column name="lineavailed" precision="16"/>
+        </property>
+        <property name="craccountno" type="string">
+            <column name="craccountno" length="20"/>
+        </property>
+        <property name="linemat" type="big_decimal">
+            <column name="linemat" precision="16"/>
+        </property>
+        <property name="dateopened" type="timestamp">
+            <column name="dateopened" length="23"/>
+        </property>
+        <property name="indatm" type="boolean">
+            <column name="indatm"/>
+        </property>
+        <property name="indpassbk" type="boolean">
+            <column name="indpassbk"/>
+        </property>
+        <property name="indchkbk" type="boolean">
+            <column name="indchkbk"/>
+        </property>
+        <property name="intaccrfreq" type="string">
+            <column name="intaccrfreq" length="3"/>
+        </property>
+        <property name="intcompfreq" type="string">
+            <column name="intcompfreq" length="3"/>
+        </property>
+        <property name="intpostfreq" type="string">
+            <column name="intpostfreq" length="3"/>
+        </property>
+        <property name="intpayaccountno" type="string">
+            <column name="intpayaccountno" length="20"/>
+        </property>
+        <property name="intpayfreq" type="string">
+            <column name="intpayfreq" length="3"/>
+        </property>
+        <property name="intwtax" type="big_decimal">
+            <column name="intwtax" precision="16"/>
+        </property>
+        <property name="intbaltype" type="string">
+            <column name="intbaltype" length="3"/>
+        </property>
+        <property name="intbalbasis" type="string">
+            <column name="intbalbasis" length="3"/>
+        </property>
+        <property name="intbaseyear" type="integer">
+            <column name="intbaseyear"/>
+        </property>
+        <property name="intminbal" type="big_decimal">
+            <column name="intminbal" precision="16"/>
+        </property>
+        <property name="intrate" type="big_decimal">
+            <column name="intrate" precision="5"/>
+        </property>
+        <property name="intratetype" type="string">
+            <column name="intratetype" length="2"/>
+        </property>
+        <property name="isjoint" type="boolean">
+            <column name="isjoint"/>
+        </property>
+        <property name="lineexpdt" type="timestamp">
+            <column name="lineexpdt" length="23"/>
+        </property>
+        <property name="linestatus" type="integer">
+            <column name="linestatus"/>
+        </property>
+        <property name="mailtocode" type="string">
+            <column name="mailtocode" length="225"/>
+        </property>
+        <property name="minbalamt" type="big_decimal">
+            <column name="minbalamt" precision="16"/>
+        </property>
+        <property name="minbalctr" type="integer">
+            <column name="minbalctr"/>
+        </property>
+        <property name="minbaltype" type="integer">
+            <column name="minbaltype"/>
+        </property>
+        <property name="minbalbasis" type="integer">
+            <column name="minbalbasis"/>
+        </property>
+        <property name="mincompfreq" type="string">
+            <column name="mincompfreq" length="3"/>
+        </property>
+        <property name="minpenalty" type="big_decimal">
+            <column name="minpenalty" precision="16"/>
+        </property>
+        <property name="paymode" type="string">
+            <column name="paymode" length="225"/>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="80"/>
+        </property>
+        <property name="payment" type="string">
+            <column name="payment" length="225"/>
+        </property>
+        <property name="period" type="string">
+            <column name="period" length="225"/>
+        </property>
+        <property name="intplanno" type="integer">
+            <column name="intplanno"/>
+        </property>
+        <property name="posttx" type="string">
+            <column name="posttx" length="225"/>
+        </property>
+        <property name="prevstatus" type="string">
+            <column name="prevstatus" length="25"/>
+        </property>
+        <property name="laststatusdate" type="timestamp">
+            <column name="laststatusdate" length="23"/>
+        </property>
+        <property name="prodgroup" type="integer">
+            <column name="prodgroup"/>
+        </property>
+        <property name="relaccount" type="string">
+            <column name="relaccount" length="16"/>
+        </property>
+        <property name="lineloanno" type="string">
+            <column name="lineloanno" length="225"/>
+        </property>
+        <property name="secondname" type="string">
+            <column name="secondname" length="30"/>
+        </property>
+        <property name="shortname" type="string">
+            <column name="shortname" length="30"/>
+        </property>
+        <property name="solcitcode" type="integer">
+            <column name="solcitcode"/>
+        </property>
+        <property name="splinst" type="string">
+            <column name="splinst"/>
+        </property>
+        <property name="soacyclefreq" type="string">
+            <column name="soacyclefreq" length="3"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="25"/>
+        </property>
+        <property name="spo" type="boolean">
+            <column name="spo"/>
+        </property>
+        <property name="subprod" type="integer">
+            <column name="subprod"/>
+        </property>
+        <property name="taxrate" type="big_decimal">
+            <column name="taxrate" precision="5"/>
+        </property>
+        <property name="tdmatdate" type="timestamp">
+            <column name="tdmatdate" length="23"/>
+        </property>
+        <property name="tdplacement" type="big_decimal">
+            <column name="tdplacement" precision="16"/>
+        </property>
+        <property name="tdterm" type="integer">
+            <column name="tdterm"/>
+        </property>
+        <property name="thirdname" type="string">
+            <column name="thirdname" length="30"/>
+        </property>
+        <property name="updatedate" type="timestamp">
+            <column name="updatedate" length="23"/>
+        </property>
+        <property name="watchlist" type="string">
+            <column name="watchlist" length="2"/>
+        </property>
+        <property name="prodcode" type="string">
+            <column name="prodcode" length="2"/>
+        </property>
+        <property name="unitid" type="string">
+            <column name="unitid" length="10"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="10"/>
+        </property>
+        <property name="indctd" type="boolean">
+            <column name="indctd"/>
+        </property>
+        <property name="docstampind" type="boolean">
+            <column name="docstampind"/>
+        </property>
+    </class>
+</hibernate-mapping>

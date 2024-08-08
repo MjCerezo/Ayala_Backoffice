@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.CityOfBirth" table="`CITY OF BIRTH`" catalog="CIFSDBDXBANK_SAMULCO" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.CityOfBirthId">
+            <key-property name="originatingBranch" type="string">
+                <column name="`Originating Branch`" length="50"/>
+            </key-property>
+            <key-property name="cifNo" type="string">
+                <column name="`CIF No`" length="50"/>
+            </key-property>
+            <key-property name="presentAddressCountry" type="string">
+                <column name="`Present Address Country`" length="50"/>
+            </key-property>
+            <key-property name="presentAddressProvince" type="string">
+                <column name="`Present Address Province`" length="50"/>
+            </key-property>
+            <key-property name="presentAddressCity" type="string">
+                <column name="`Present Address City`" length="50"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

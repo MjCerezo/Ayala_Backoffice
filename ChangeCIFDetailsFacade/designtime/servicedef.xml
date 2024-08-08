@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="ChangeCIFDetailsFacade" class="com.etel.changecifdetails.ChangeCIFDetailsFacade" CRUDService="false" type="JavaService" springFile="ChangeCIFDetailsFacade.spring.xml">
+    <operation name="getCIFStatus">
+        <parameter name="workflowid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.changecifdetails.form.ChangeCIFDetailsForm" isList="true"/>
+    </operation>
+    <operation name="listOfCIFChangeHistory">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="losLink" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifLink" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.changecifdetails.form.ChangeCIFDetailsForm" isList="true"/>
+    </operation>
+    <operation name="listOfChangeDetailsHistory">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbchangecifdetailsrequest" isList="true"/>
+    </operation>
+    <operation name="sampleJavaOperation">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateChangeDetails">
+        <parameter name="ref" typeRef="com.cifsdb.data.Tbchangecifdetailsrequest" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateCIFFatca">
+        <parameter name="ref" typeRef="com.cifsdb.data.Tbfatca" isList="false"/>
+        <parameter name="changetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="remarks" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateCIFIndividual">
+        <parameter name="ref" typeRef="com.cifsdb.data.Tbcifindividual" isList="false"/>
+        <parameter name="refmain" typeRef="com.cifsdb.data.Tbcifmain" isList="false"/>
+        <parameter name="changetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="remarks" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.changecifdetails.form.ChangeCIFDetailsForm" name="ChangeCIFDetailsForm" supportsQuickData="false">
+            <element name="changefrom" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="changeto" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="changetype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="daterequested" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="processid" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="processname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="requestedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="requestid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

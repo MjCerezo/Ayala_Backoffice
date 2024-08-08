@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbpayslipadjustment" table="TBPAYSLIPADJUSTMENT" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.cifsdb.data.TbpayslipadjustmentId">
+            <key-property name="memberid" type="string">
+                <column name="memberid" length="50"/>
+            </key-property>
+            <key-property name="paysliperiod" type="timestamp">
+                <column name="paysliperiod" length="23"/>
+            </key-property>
+            <key-property name="adjustmentno" type="integer">
+                <column name="adjustmentno"/>
+            </key-property>
+        </composite-id>
+        <property name="particulars" type="string">
+            <column name="particulars" length="5"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

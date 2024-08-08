@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="AuditTrailReportFacade" class="com.etel.AuditTrailReport" CRUDService="false" type="JavaService" springFile="AuditTrailReportFacade.spring.xml">
+    <operation name="generateAuditTrail">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="dateFilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="businessDate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="startDate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="endDate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="moduleType" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getAuditTrail">
+        <parameter name="dateFilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="businessDate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="startDate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="endDate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="moduleType" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.audittrailreport.form.AuditTrailReportForm" isList="true"/>
+    </operation>
+    <operation name="sampleJavaOperation">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.audittrailreport.form.AuditTrailReportForm" name="AuditTrailReportForm" supportsQuickData="false">
+            <element name="eventdatetime" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="eventdescription" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="eventname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ipaddress" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="module" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

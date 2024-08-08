@@ -1,0 +1,57 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbproperties" table="TBPROPERTIES" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="smtpIsdisabled" type="boolean">
+            <column name="smtpIsdisabled"/>
+        </property>
+        <property name="smtpTimeinterval" type="integer">
+            <column name="smtpTimeinterval"/>
+        </property>
+        <property name="smtpEmailaddress" type="string">
+            <column name="smtpEmailaddress" length="50"/>
+        </property>
+        <property name="smtpPassword" type="string">
+            <column name="smtpPassword" length="100"/>
+        </property>
+        <property name="smtpEmailaddalias" type="string">
+            <column name="smtpEmailaddalias" length="100"/>
+        </property>
+        <property name="smtpHost" type="string">
+            <column name="smtpHost" length="50"/>
+        </property>
+        <property name="smtpPort" type="string">
+            <column name="smtpPort" length="50"/>
+        </property>
+        <property name="rptUrl" type="string">
+            <column name="rptUrl" length="100"/>
+        </property>
+        <property name="rptUsername" type="string">
+            <column name="rptUsername" length="50"/>
+        </property>
+        <property name="rptPassword" type="string">
+            <column name="rptPassword" length="100"/>
+        </property>
+        <property name="dmsUrl" type="string">
+            <column name="dmsUrl" length="100"/>
+        </property>
+        <property name="cifLink" type="string">
+            <column name="cifLink" length="100"/>
+        </property>
+        <property name="lmsLink" type="string">
+            <column name="lmsLink" length="100"/>
+        </property>
+        <property name="apiurl" type="string">
+            <column name="apiurl" length="100"/>
+        </property>
+        <property name="apitoken" type="string">
+            <column name="apitoken" length="100"/>
+        </property>
+        <property name="smtpSysadEmailAddress" type="string">
+            <column name="smtpSysadEmailAddress" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

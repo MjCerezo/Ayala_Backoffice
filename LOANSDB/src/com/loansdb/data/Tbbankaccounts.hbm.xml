@@ -1,0 +1,61 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbbankaccounts" table="TBBANKACCOUNTS" catalog="CIFSDBUAT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.TbbankaccountsId">
+            <key-property name="cifno" type="string">
+                <column name="cifno" length="50"/>
+            </key-property>
+            <key-property name="accountrefno" type="string">
+                <column name="accountrefno" length="50"/>
+            </key-property>
+        </composite-id>
+        <property name="transtype" type="string">
+            <column name="transtype" length="50"/>
+        </property>
+        <property name="accounttype" type="string">
+            <column name="accounttype" length="50"/>
+        </property>
+        <property name="bankname" type="string">
+            <column name="bankname" length="100"/>
+        </property>
+        <property name="branch" type="string">
+            <column name="branch" length="100"/>
+        </property>
+        <property name="accountname" type="string">
+            <column name="accountname" length="100"/>
+        </property>
+        <property name="dateopened" type="timestamp">
+            <column name="dateopened" length="23"/>
+        </property>
+        <property name="adb" type="big_decimal">
+            <column name="adb" precision="20"/>
+        </property>
+        <property name="outstandingbal" type="big_decimal">
+            <column name="outstandingbal" precision="20"/>
+        </property>
+        <property name="loantype" type="string">
+            <column name="loantype" length="50"/>
+        </property>
+        <property name="valuedate" type="timestamp">
+            <column name="valuedate" length="23"/>
+        </property>
+        <property name="maturitydate" type="timestamp">
+            <column name="maturitydate" length="23"/>
+        </property>
+        <property name="investmenttype" type="string">
+            <column name="investmenttype" length="50"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100"/>
+        </property>
+        <property name="createddate" type="timestamp">
+            <column name="createddate" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="100"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

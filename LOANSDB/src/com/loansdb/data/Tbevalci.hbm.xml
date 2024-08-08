@@ -1,0 +1,103 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbevalci" table="TBEVALCI" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.TbevalciId">
+            <key-property name="evalreportid" type="integer">
+                <column name="evalreportid"/>
+            </key-property>
+            <key-property name="cifno" type="string">
+                <column name="cifno" length="50"/>
+            </key-property>
+        </composite-id>
+        <property name="appno" type="string">
+            <column name="appno" length="50"/>
+        </property>
+        <property name="citype" type="string">
+            <column name="citype" length="10"/>
+        </property>
+        <property name="subjectname" type="string">
+            <column name="subjectname" length="500"/>
+        </property>
+        <property name="pdrncireportid" type="string">
+            <column name="pdrncireportid" length="50"/>
+        </property>
+        <property name="pdrn" type="string">
+            <column name="pdrn" length="50"/>
+        </property>
+        <property name="bvrcireportid" type="string">
+            <column name="bvrcireportid" length="100"/>
+        </property>
+        <property name="bvr" type="string">
+            <column name="bvr" length="50"/>
+        </property>
+        <property name="evrcireportid" type="string">
+            <column name="evrcireportid" length="100"/>
+        </property>
+        <property name="evr" type="string">
+            <column name="evr" length="50"/>
+        </property>
+        <property name="creditcheckcireportid" type="string">
+            <column name="creditcheckcireportid" length="100"/>
+        </property>
+        <property name="creditcheck" type="string">
+            <column name="creditcheck" length="50"/>
+        </property>
+        <property name="bankcheckcireportid" type="string">
+            <column name="bankcheckcireportid" length="100"/>
+        </property>
+        <property name="bankcheck" type="string">
+            <column name="bankcheck" length="50"/>
+        </property>
+        <property name="tradecheckcireportid" type="string">
+            <column name="tradecheckcireportid" length="100"/>
+        </property>
+        <property name="tradecheck" type="string">
+            <column name="tradecheck" length="50"/>
+        </property>
+        <property name="seccireportid" type="string">
+            <column name="seccireportid" length="100"/>
+        </property>
+        <property name="sec" type="string">
+            <column name="sec" length="50"/>
+        </property>
+        <property name="dticireportid" type="string">
+            <column name="dticireportid" length="100"/>
+        </property>
+        <property name="dti" type="string">
+            <column name="dti" length="50"/>
+        </property>
+        <property name="customertype" type="string">
+            <column name="customertype" length="10"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="pdrncireportdate" type="timestamp">
+            <column name="pdrncireportdate" length="23"/>
+        </property>
+        <property name="bvrcireportdate" type="timestamp">
+            <column name="bvrcireportdate" length="23"/>
+        </property>
+        <property name="evrcireportdate" type="timestamp">
+            <column name="evrcireportdate" length="23"/>
+        </property>
+        <property name="creditcheckcireportdate" type="timestamp">
+            <column name="creditcheckcireportdate" length="23"/>
+        </property>
+        <property name="bankcheckcireportdate" type="timestamp">
+            <column name="bankcheckcireportdate" length="23"/>
+        </property>
+        <property name="tradecheckcireportdate" type="timestamp">
+            <column name="tradecheckcireportdate" length="23"/>
+        </property>
+        <property name="seccireportdate" type="timestamp">
+            <column name="seccireportdate" length="23"/>
+        </property>
+        <property name="dticireportdate" type="timestamp">
+            <column name="dticireportdate" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

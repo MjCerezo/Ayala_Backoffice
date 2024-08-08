@@ -1,0 +1,111 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbapprovedcoobligor" table="TBAPPROVEDCOOBLIGOR" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cfrefno" type="string">
+            <column name="cfrefno" length="50"/>
+        </property>
+        <property name="cflevel" type="integer">
+            <column name="cflevel"/>
+        </property>
+        <property name="cfseqno" type="string">
+            <column name="cfseqno" length="20"/>
+        </property>
+        <property name="cfsubseqno" type="string">
+            <column name="cfsubseqno" length="20"/>
+        </property>
+        <property name="cfrefnoconcat" type="string">
+            <column name="cfrefnoconcat" length="50"/>
+        </property>
+        <property name="cfcifno" type="string">
+            <column name="cfcifno" length="50"/>
+        </property>
+        <property name="cfappno" type="string">
+            <column name="cfappno" length="50"/>
+        </property>
+        <property name="cfshareseq" type="integer">
+            <column name="cfshareseq"/>
+        </property>
+        <property name="cfcifname" type="string">
+            <column name="cfcifname" length="500"/>
+        </property>
+        <property name="cfamount" type="big_decimal">
+            <column name="cfamount" precision="20"/>
+        </property>
+        <property name="cfcifstatus" type="string">
+            <column name="cfcifstatus" length="50"/>
+        </property>
+        <property name="cfcreateddate" type="timestamp">
+            <column name="cfcreateddate" length="23"/>
+        </property>
+        <property name="cfupdated" type="timestamp">
+            <column name="cfupdated" length="23"/>
+        </property>
+        <property name="cfaddedby" type="string">
+            <column name="cfaddedby" length="50"/>
+        </property>
+        <property name="cfupdatedby" type="string">
+            <column name="cfupdatedby" length="50"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="500"/>
+        </property>
+        <property name="businesstype" type="string">
+            <column name="businesstype" length="50"/>
+        </property>
+        <property name="dateofincorporation" type="timestamp">
+            <column name="dateofincorporation" length="23"/>
+        </property>
+        <property name="cfproposedamt" type="big_decimal">
+            <column name="cfproposedamt" precision="20"/>
+        </property>
+        <property name="cfavailed" type="big_decimal">
+            <column name="cfavailed" precision="20"/>
+        </property>
+        <property name="cfearmarked" type="big_decimal">
+            <column name="cfearmarked" precision="20"/>
+        </property>
+        <property name="cfbalance" type="big_decimal">
+            <column name="cfbalance" precision="20"/>
+        </property>
+        <property name="cfstatus" type="string">
+            <column name="cfstatus" length="2"/>
+        </property>
+        <property name="cfapprovedamt" type="big_decimal">
+            <column name="cfapprovedamt" precision="20"/>
+        </property>
+        <property name="cfexpdt" type="timestamp">
+            <column name="cfexpdt" length="23"/>
+        </property>
+        <property name="cfrevolving" type="boolean">
+            <column name="cfrevolving"/>
+        </property>
+        <property name="cfterm" type="integer">
+            <column name="cfterm"/>
+        </property>
+        <property name="cftermperiod" type="string">
+            <column name="cftermperiod" length="5"/>
+        </property>
+        <property name="cfintrate" type="big_decimal">
+            <column name="cfintrate" precision="20"/>
+        </property>
+        <property name="cfintrateperiod" type="string">
+            <column name="cfintrateperiod" length="5"/>
+        </property>
+        <property name="cftype" type="string">
+            <column name="cftype" length="10"/>
+        </property>
+        <property name="cfcode" type="string">
+            <column name="cfcode" length="10"/>
+        </property>
+        <property name="cfcurrency" type="string">
+            <column name="cfcurrency" length="10"/>
+        </property>
+        <property name="cflpcrate" type="big_decimal">
+            <column name="cflpcrate" precision="16"/>
+        </property>
+    </class>
+</hibernate-mapping>

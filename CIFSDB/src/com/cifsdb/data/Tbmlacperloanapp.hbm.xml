@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbmlacperloanapp" table="TBMLACPERLOANAPP" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.cifsdb.data.TbmlacperloanappId">
+            <key-property name="appno" type="string">
+                <column name="appno" length="50"/>
+            </key-property>
+            <key-property name="conditioncode" type="string">
+                <column name="conditioncode" length="5"/>
+            </key-property>
+            <key-property name="particulars" type="string">
+                <column name="particulars" length="5"/>
+            </key-property>
+        </composite-id>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="20"/>
+        </property>
+        <property name="sequence" type="integer">
+            <column name="sequence"/>
+        </property>
+    </class>
+</hibernate-mapping>

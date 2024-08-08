@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbdefaultsignatories" table="TBDEFAULTSIGNATORIES" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="companycode" type="string">
+            <column name="companycode" length="50"/>
+        </property>
+        <property name="day" type="string">
+            <column name="day" length="10" not-null="true"/>
+        </property>
+        <property name="signatory1" type="string">
+            <column name="signatory1" length="100"/>
+        </property>
+        <property name="signatory1position" type="string">
+            <column name="signatory1position" length="100"/>
+        </property>
+        <property name="signatory2" type="string">
+            <column name="signatory2" length="100"/>
+        </property>
+        <property name="signatory2position" type="string">
+            <column name="signatory2position" length="100"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datelastupdated" type="timestamp">
+            <column name="datelastupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

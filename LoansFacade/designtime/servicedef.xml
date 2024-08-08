@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="LoansFacade" class="com.lms.loans.LoansFacade" CRUDService="false" type="JavaService" springFile="LoansFacade.spring.xml">
+    <operation name="findLoanByAccountno">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbloans" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

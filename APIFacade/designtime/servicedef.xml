@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="APIFacade" class="com.etel.api.APIFacade" CRUDService="false" type="JavaService" springFile="APIFacade.spring.xml">
+    <operation name="addJournal">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="journal" typeRef="com.etel.api.forms.AddJournalForm" isList="false"/>
+        <return typeRef="com.etel.forms.ReturnForm" isList="false"/>
+    </operation>
+    <operation name="addLoanDisbursement">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.ReturnForm" isList="false"/>
+    </operation>
+    <operation name="addReceipt">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="receipt" typeRef="com.etel.api.forms.AddReceiptForm" isList="false"/>
+        <return typeRef="com.etel.forms.ReturnForm" isList="false"/>
+    </operation>
+    <operation name="checkIfUrlIsReachable">
+        <parameter name="url" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Boolean" isList="false"/>
+    </operation>
+    <operation name="getLatestApiLogsByTypeAndAppNo">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="apitype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbapilogs" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.api.forms.AddJournalForm" name="AddJournalForm" supportsQuickData="false">
+            <element name="branchID" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="details" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="documentStatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="exchangeRate" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="refDate" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="refNbr" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transactionDetails" typeRef="com.etel.api.forms.TransactionDetailsJournal" isList="true" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.api.forms.AddReceiptForm" name="AddReceiptForm" supportsQuickData="false">
+            <element name="bankID" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="customerID" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="details" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="documentStatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="exchangeRate" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="gLEntries" typeRef="com.etel.api.forms.GLEntries" isList="true" allowNull="false"/>
+            <element name="netCollection" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="origCompanyID" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="paymentDetails" typeRef="com.etel.api.forms.PaymentDetails" isList="true" allowNull="false"/>
+            <element name="refDate" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="refNbr" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="refType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="taxableAmt" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="totalCollectionAmt" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transactionDetails" typeRef="com.etel.api.forms.TransactionDetailsReceipt" isList="true" allowNull="false"/>
+            <element name="vATAmt" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="vATID" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="vATWAmt" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="vATWHID" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="wTaxAmt" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="wTaxID" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

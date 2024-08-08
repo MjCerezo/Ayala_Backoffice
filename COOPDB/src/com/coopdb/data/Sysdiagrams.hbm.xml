@@ -1,0 +1,21 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Sysdiagrams" table="sysdiagrams" catalog="ACACIADBDXBANK_BUGEMCO" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="diagramId" type="integer">
+            <column name="diagram_id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="128" not-null="true"/>
+        </property>
+        <property name="principalId" type="integer">
+            <column name="principal_id" not-null="true"/>
+        </property>
+        <property name="version" type="integer">
+            <column name="version"/>
+        </property>
+        <property name="definition" type="blob">
+            <column name="definition"/>
+        </property>
+    </class>
+</hibernate-mapping>

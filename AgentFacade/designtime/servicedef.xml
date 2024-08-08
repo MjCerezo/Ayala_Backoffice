@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="AgentFacade" class="com.etel.agent.AgentFacade" CRUDService="false" type="JavaService" springFile="AgentFacade.spring.xml">
+    <operation name="deleteAgent">
+        <parameter name="agentcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companycode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="listAgent">
+        <parameter name="agentcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="name" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companycode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbagents" isList="true"/>
+    </operation>
+    <operation name="listAgents">
+        <parameter name="agentcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="name" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companycode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.agent.forms.AgentForm" isList="true"/>
+    </operation>
+    <operation name="saveAgent">
+        <parameter name="agent" typeRef="com.coopdb.data.Tbagents" isList="false"/>
+        <parameter name="beingUpdated" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.agent.forms.AgentForm" name="AgentForm" supportsQuickData="false">
+            <element name="agentcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bankacctno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="barangay" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="city" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="country" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="postalcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="region" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="stateprovince" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="streetnoname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subdivision" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="suffix" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

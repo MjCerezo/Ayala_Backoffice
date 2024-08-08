@@ -1,0 +1,54 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbcitradecheck" table="TBCITRADECHECK" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cireportid" type="string">
+            <column name="cireportid" length="20" not-null="true"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="tradetype" type="string">
+            <column name="tradetype" length="10"/>
+        </property>
+        <property name="companyname" type="string">
+            <column name="companyname" length="300"/>
+        </property>
+        <property name="companyaddress" type="string">
+            <column name="companyaddress" length="300"/>
+        </property>
+        <property name="areacodephone" type="string">
+            <column name="areacodephone" length="50"/>
+        </property>
+        <property name="countrycodephone" type="string">
+            <column name="countrycodephone" length="50"/>
+        </property>
+        <property name="companyphoneno" type="string">
+            <column name="companyphoneno" length="50"/>
+        </property>
+        <property name="naturebusiness" type="string">
+            <column name="naturebusiness" length="50"/>
+        </property>
+        <property name="averagetransaction" type="big_decimal">
+            <column name="averagetransaction" precision="20"/>
+        </property>
+        <property name="creditlimit" type="big_decimal">
+            <column name="creditlimit" precision="20"/>
+        </property>
+        <property name="lengthofdealing" type="string">
+            <column name="lengthofdealing" length="50"/>
+        </property>
+        <property name="productservicesoffered" type="string">
+            <column name="productservicesoffered" length="250"/>
+        </property>
+        <property name="tradecifno" type="string">
+            <column name="tradecifno" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

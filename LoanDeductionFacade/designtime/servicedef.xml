@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="LoanDeductionFacade" class="com.etel.loandeduction.LoanDeductionFacade" CRUDService="false" type="JavaService" springFile="LoanDeductionFacade.spring.xml">
+    <operation name="deleteDeduction">
+        <parameter name="loandeduction" typeRef="com.coopdb.data.Tbloandeduction" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="listDeductions">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbloandeduction" isList="true"/>
+    </operation>
+    <operation name="saveDeduction">
+        <parameter name="loandeduction" typeRef="com.coopdb.data.Tbloandeduction" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

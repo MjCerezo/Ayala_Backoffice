@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbapaotherincomeexpense" table="TBAPAOTHERINCOMEEXPENSE" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="evalreportid" type="integer">
+            <column name="evalreportid"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="fundtype" type="string">
+            <column name="fundtype" length="5"/>
+        </property>
+        <property name="incomename" type="string">
+            <column name="incomename" length="100"/>
+        </property>
+        <property name="incomeamount" type="big_decimal">
+            <column name="incomeamount" precision="20"/>
+        </property>
+        <property name="expensename" type="string">
+            <column name="expensename" length="100"/>
+        </property>
+        <property name="expenseamount" type="big_decimal">
+            <column name="expenseamount" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,468 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbappraisalrel" table="TBAPPRAISALREL" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="appraisalreportid" type="string">
+            <column name="appraisalreportid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="collateralid" type="integer">
+            <column name="collateralid"/>
+        </property>
+        <property name="requestingofficer" type="string">
+            <column name="requestingofficer" length="50"/>
+        </property>
+        <property name="department" type="string">
+            <column name="department" length="50"/>
+        </property>
+        <property name="appraisaldate" type="timestamp">
+            <column name="appraisaldate" length="23"/>
+        </property>
+        <property name="reportdate" type="timestamp">
+            <column name="reportdate" length="23"/>
+        </property>
+        <property name="appraiser" type="string">
+            <column name="appraiser" length="20"/>
+        </property>
+        <property name="reviewedby" type="string">
+            <column name="reviewedby" length="20"/>
+        </property>
+        <property name="revieweddate" type="timestamp">
+            <column name="revieweddate" length="23"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="2"/>
+        </property>
+        <property name="statusdate" type="timestamp">
+            <column name="statusdate" length="23"/>
+        </property>
+        <property name="typeappraisal" type="string">
+            <column name="typeappraisal" length="5"/>
+        </property>
+        <property name="propertytype" type="string">
+            <column name="propertytype" length="2"/>
+        </property>
+        <property name="fairmarketvalue" type="big_decimal">
+            <column name="fairmarketvalue" precision="20"/>
+        </property>
+        <property name="appraisedvalue" type="big_decimal">
+            <column name="appraisedvalue" precision="20"/>
+        </property>
+        <property name="loanablevalue" type="big_decimal">
+            <column name="loanablevalue" precision="20"/>
+        </property>
+        <property name="unitno" type="string">
+            <column name="unitno" length="50"/>
+        </property>
+        <property name="homeno" type="string">
+            <column name="homeno" length="50"/>
+        </property>
+        <property name="floorno" type="string">
+            <column name="floorno" length="50"/>
+        </property>
+        <property name="towerbldgno" type="string">
+            <column name="towerbldgno" length="50"/>
+        </property>
+        <property name="clusterno" type="string">
+            <column name="clusterno" length="50"/>
+        </property>
+        <property name="streetname" type="string">
+            <column name="streetname" length="100"/>
+        </property>
+        <property name="subdivision" type="string">
+            <column name="subdivision" length="100"/>
+        </property>
+        <property name="barangay" type="string">
+            <column name="barangay" length="50"/>
+        </property>
+        <property name="district" type="string">
+            <column name="district" length="50"/>
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="50"/>
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="50"/>
+        </property>
+        <property name="zipcode" type="string">
+            <column name="zipcode" length="50"/>
+        </property>
+        <property name="condominiumproject" type="string">
+            <column name="condominiumproject" length="50"/>
+        </property>
+        <property name="presentuseofproperty" type="string">
+            <column name="presentuseofproperty" length="2"/>
+        </property>
+        <property name="terrain" type="string">
+            <column name="terrain" length="50"/>
+        </property>
+        <property name="roadwidth" type="string">
+            <column name="roadwidth" length="50"/>
+        </property>
+        <property name="drainage" type="string">
+            <column name="drainage" length="100"/>
+        </property>
+        <property name="knownlandmark" type="string">
+            <column name="knownlandmark" length="300"/>
+        </property>
+        <property name="inspectiondate" type="timestamp">
+            <column name="inspectiondate" length="23"/>
+        </property>
+        <property name="electricity" type="string">
+            <column name="electricity" length="50"/>
+        </property>
+        <property name="watersupply" type="string">
+            <column name="watersupply" length="50"/>
+        </property>
+        <property name="telephone" type="string">
+            <column name="telephone" length="50"/>
+        </property>
+        <property name="publictranspo" type="string">
+            <column name="publictranspo" length="300"/>
+        </property>
+        <property name="publicmarket" type="string">
+            <column name="publicmarket" length="300"/>
+        </property>
+        <property name="hospital" type="string">
+            <column name="hospital" length="300"/>
+        </property>
+        <property name="school" type="string">
+            <column name="school" length="300"/>
+        </property>
+        <property name="church" type="string">
+            <column name="church" length="300"/>
+        </property>
+        <property name="otherestablishments" type="string">
+            <column name="otherestablishments" length="300"/>
+        </property>
+        <property name="landtitle" type="string">
+            <column name="landtitle" length="100"/>
+        </property>
+        <property name="landlotno" type="string">
+            <column name="landlotno" length="100"/>
+        </property>
+        <property name="landregowner" type="string">
+            <column name="landregowner" length="300"/>
+        </property>
+        <property name="landaddress" type="string">
+            <column name="landaddress" length="300"/>
+        </property>
+        <property name="landarea" type="big_decimal">
+            <column name="landarea" precision="20"/>
+        </property>
+        <property name="landremarks" type="string">
+            <column name="landremarks" length="1000"/>
+        </property>
+        <property name="techtitle" type="string">
+            <column name="techtitle" length="100"/>
+        </property>
+        <property name="techlotno" type="string">
+            <column name="techlotno" length="100"/>
+        </property>
+        <property name="techblkno" type="string">
+            <column name="techblkno" length="100"/>
+        </property>
+        <property name="techregowner" type="string">
+            <column name="techregowner" length="300"/>
+        </property>
+        <property name="techaddress" type="string">
+            <column name="techaddress" length="300"/>
+        </property>
+        <property name="techarea" type="big_decimal">
+            <column name="techarea" precision="20"/>
+        </property>
+        <property name="techverdate" type="timestamp">
+            <column name="techverdate" length="23"/>
+        </property>
+        <property name="boundaries" type="string">
+            <column name="boundaries" length="1000"/>
+        </property>
+        <property name="appraisalfee" type="big_decimal">
+            <column name="appraisalfee" precision="20"/>
+        </property>
+        <property name="doccertificatetitle" type="string">
+            <column name="doccertificatetitle" length="5"/>
+        </property>
+        <property name="doctaxdeclaration" type="string">
+            <column name="doctaxdeclaration" length="5"/>
+        </property>
+        <property name="doclocationplan" type="string">
+            <column name="doclocationplan" length="5"/>
+        </property>
+        <property name="docbldgplan" type="string">
+            <column name="docbldgplan" length="5"/>
+        </property>
+        <property name="docbillmaterials" type="string">
+            <column name="docbillmaterials" length="5"/>
+        </property>
+        <property name="docprojspecs" type="string">
+            <column name="docprojspecs" length="5"/>
+        </property>
+        <property name="doccontractsell" type="string">
+            <column name="doccontractsell" length="5"/>
+        </property>
+        <property name="docpaymentsummary" type="string">
+            <column name="docpaymentsummary" length="5"/>
+        </property>
+        <property name="desclocationproperty" type="string">
+            <column name="desclocationproperty" length="1000"/>
+        </property>
+        <property name="marketability" type="string">
+            <column name="marketability" length="5"/>
+        </property>
+        <property name="acceptability" type="string">
+            <column name="acceptability" length="5"/>
+        </property>
+        <property name="typeproperty" type="string">
+            <column name="typeproperty" length="5"/>
+        </property>
+        <property name="classification" type="string">
+            <column name="classification" length="5"/>
+        </property>
+        <property name="propertyoccupant" type="string">
+            <column name="propertyoccupant" length="5"/>
+        </property>
+        <property name="tenantname" type="string">
+            <column name="tenantname" length="300"/>
+        </property>
+        <property name="locationtype" type="string">
+            <column name="locationtype" length="5"/>
+        </property>
+        <property name="areadevelopment" type="string">
+            <column name="areadevelopment" length="5"/>
+        </property>
+        <property name="predominantuse" type="string">
+            <column name="predominantuse" length="5"/>
+        </property>
+        <property name="socenvironment" type="string">
+            <column name="socenvironment" length="5"/>
+        </property>
+        <property name="boundfront" type="string">
+            <column name="boundfront" length="5"/>
+        </property>
+        <property name="boundrear" type="string">
+            <column name="boundrear" length="5"/>
+        </property>
+        <property name="boundright" type="string">
+            <column name="boundright" length="5"/>
+        </property>
+        <property name="boundleft" type="string">
+            <column name="boundleft" length="5"/>
+        </property>
+        <property name="streetroad" type="string">
+            <column name="streetroad" length="5"/>
+        </property>
+        <property name="curbgutter" type="string">
+            <column name="curbgutter" length="5"/>
+        </property>
+        <property name="sidewalk" type="string">
+            <column name="sidewalk" length="5"/>
+        </property>
+        <property name="streetlights" type="string">
+            <column name="streetlights" length="5"/>
+        </property>
+        <property name="transportation" type="string">
+            <column name="transportation" length="5"/>
+        </property>
+        <property name="telecommunication" type="string">
+            <column name="telecommunication" length="5"/>
+        </property>
+        <property name="typeimprovement" type="string">
+            <column name="typeimprovement" length="5"/>
+        </property>
+        <property name="typebldg" type="string">
+            <column name="typebldg" length="5"/>
+        </property>
+        <property name="nostorey" type="string">
+            <column name="nostorey" length="3"/>
+        </property>
+        <property name="typeconstruction" type="string">
+            <column name="typeconstruction" length="5"/>
+        </property>
+        <property name="framing" type="string">
+            <column name="framing" length="5"/>
+        </property>
+        <property name="walls" type="string">
+            <column name="walls" length="300"/>
+        </property>
+        <property name="doors" type="string">
+            <column name="doors" length="300"/>
+        </property>
+        <property name="windows" type="string">
+            <column name="windows" length="300"/>
+        </property>
+        <property name="ceilings" type="string">
+            <column name="ceilings" length="300"/>
+        </property>
+        <property name="roofing" type="string">
+            <column name="roofing" length="300"/>
+        </property>
+        <property name="partitions" type="string">
+            <column name="partitions" length="300"/>
+        </property>
+        <property name="floors" type="string">
+            <column name="floors" length="300"/>
+        </property>
+        <property name="divlivingroom" type="string">
+            <column name="divlivingroom" length="2"/>
+        </property>
+        <property name="divdiningroom" type="string">
+            <column name="divdiningroom" length="2"/>
+        </property>
+        <property name="divbedroom" type="string">
+            <column name="divbedroom" length="2"/>
+        </property>
+        <property name="divkitchen" type="string">
+            <column name="divkitchen" length="2"/>
+        </property>
+        <property name="divfamroom" type="string">
+            <column name="divfamroom" length="2"/>
+        </property>
+        <property name="divroofdeck" type="string">
+            <column name="divroofdeck" length="2"/>
+        </property>
+        <property name="divcarport" type="string">
+            <column name="divcarport" length="2"/>
+        </property>
+        <property name="divterrace" type="string">
+            <column name="divterrace" length="2"/>
+        </property>
+        <property name="divpatio" type="string">
+            <column name="divpatio" length="2"/>
+        </property>
+        <property name="divothers" type="string">
+            <column name="divothers" length="2"/>
+        </property>
+        <property name="divporch" type="string">
+            <column name="divporch" length="2"/>
+        </property>
+        <property name="divlanai" type="string">
+            <column name="divlanai" length="2"/>
+        </property>
+        <property name="divservicearea" type="string">
+            <column name="divservicearea" length="2"/>
+        </property>
+        <property name="divmaidsroom" type="string">
+            <column name="divmaidsroom" length="2"/>
+        </property>
+        <property name="divbalcony" type="string">
+            <column name="divbalcony" length="2"/>
+        </property>
+        <property name="divparkingslot" type="string">
+            <column name="divparkingslot" length="2"/>
+        </property>
+        <property name="totalcontractprice" type="big_decimal">
+            <column name="totalcontractprice" precision="20"/>
+        </property>
+        <property name="totalappvaluelandimprovements" type="big_decimal">
+            <column name="totalappvaluelandimprovements" precision="20"/>
+        </property>
+        <property name="netappvaluelandimprovements" type="big_decimal">
+            <column name="netappvaluelandimprovements" precision="20"/>
+        </property>
+        <property name="tvrdate" type="timestamp">
+            <column name="tvrdate" length="23"/>
+        </property>
+        <property name="tvrcerttitleno" type="string">
+            <column name="tvrcerttitleno" length="50"/>
+        </property>
+        <property name="tvrregistrydeeds" type="string">
+            <column name="tvrregistrydeeds" length="50"/>
+        </property>
+        <property name="tvrregisteredowner" type="string">
+            <column name="tvrregisteredowner" length="300"/>
+        </property>
+        <property name="tvrdateregistration" type="timestamp">
+            <column name="tvrdateregistration" length="23"/>
+        </property>
+        <property name="restrictionlimitrecomm" type="string">
+            <column name="restrictionlimitrecomm" length="1000"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="1000"/>
+        </property>
+        <property name="toiletbath" type="string">
+            <column name="toiletbath" length="5"/>
+        </property>
+        <property name="tcpbldg" type="big_decimal">
+            <column name="tcpbldg" precision="20"/>
+        </property>
+        <property name="tcplot" type="big_decimal">
+            <column name="tcplot" precision="20"/>
+        </property>
+        <property name="marketresistance" type="big_decimal">
+            <column name="marketresistance" precision="20"/>
+        </property>
+        <property name="variance" type="big_decimal">
+            <column name="variance" precision="20"/>
+        </property>
+        <property name="tavland" type="big_decimal">
+            <column name="tavland" precision="20"/>
+        </property>
+        <property name="grossavbldg" type="big_decimal">
+            <column name="grossavbldg" precision="20"/>
+        </property>
+        <property name="valueofmarket" type="big_decimal">
+            <column name="valueofmarket" precision="20"/>
+        </property>
+        <property name="note" type="string">
+            <column name="note" length="300"/>
+        </property>
+        <property name="otherinfo" type="string">
+            <column name="otherinfo" length="300"/>
+        </property>
+        <property name="totalfairmarketvalue" type="big_decimal">
+            <column name="totalfairmarketvalue" precision="20"/>
+        </property>
+        <property name="tmvdate" type="timestamp">
+            <column name="tmvdate" length="23"/>
+        </property>
+        <property name="tmvassessoroffice" type="string">
+            <column name="tmvassessoroffice" length="50"/>
+        </property>
+        <property name="tmvtaxdeclaration" type="string">
+            <column name="tmvtaxdeclaration" length="50"/>
+        </property>
+        <property name="tmvpin" type="string">
+            <column name="tmvpin" length="50"/>
+        </property>
+        <property name="tmvregowner" type="string">
+            <column name="tmvregowner" length="300"/>
+        </property>
+        <property name="tcpcondo" type="big_decimal">
+            <column name="tcpcondo" precision="20"/>
+        </property>
+        <property name="tcpparkingslot" type="big_decimal">
+            <column name="tcpparkingslot" precision="20"/>
+        </property>
+        <property name="totalcontractpricecondo" type="big_decimal">
+            <column name="totalcontractpricecondo" precision="20"/>
+        </property>
+        <property name="avcondo" type="big_decimal">
+            <column name="avcondo" precision="20"/>
+        </property>
+        <property name="avparkingslot" type="big_decimal">
+            <column name="avparkingslot" precision="20"/>
+        </property>
+        <property name="tavcondo" type="big_decimal">
+            <column name="tavcondo" precision="20"/>
+        </property>
+        <property name="referenceno" type="string">
+            <column name="referenceno" length="50"/>
+        </property>
+        <property name="appvalpercent" type="big_decimal">
+            <column name="appvalpercent" precision="20"/>
+        </property>
+        <property name="marketvalue" type="big_decimal">
+            <column name="marketvalue" precision="20"/>
+        </property>
+        <property name="loanablepercent" type="big_decimal">
+            <column name="loanablepercent" precision="20"/>
+        </property>
+        <property name="marketpercent" type="big_decimal">
+            <column name="marketpercent" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

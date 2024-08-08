@@ -1,0 +1,45 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tboutreturn" table="TBOUTRETURN" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txbatch" type="string">
+            <column name="txbatch" length="3"/>
+        </property>
+        <property name="txdate" type="string">
+            <column name="txdate" length="10"/>
+        </property>
+        <property name="txrefno" type="string">
+            <column name="txrefno" length="20"/>
+        </property>
+        <property name="txcode" type="string">
+            <column name="txcode" length="6"/>
+        </property>
+        <property name="accountno" type="string">
+            <column name="accountno" length="20"/>
+        </property>
+        <property name="checkbrstn" type="string">
+            <column name="checkbrstn" length="20"/>
+        </property>
+        <property name="checkamount" type="big_decimal">
+            <column name="checkamount" precision="16"/>
+        </property>
+        <property name="checkdate" type="string">
+            <column name="checkdate" length="10"/>
+        </property>
+        <property name="checknumber" type="string">
+            <column name="checknumber" length="20"/>
+        </property>
+        <property name="checktype" type="integer">
+            <column name="checktype"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="2"/>
+        </property>
+        <property name="reason" type="string">
+            <column name="reason" length="2"/>
+        </property>
+    </class>
+</hibernate-mapping>

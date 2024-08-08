@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="EncryptionFacade" class="com.etel.encryption.EncryptionFacade" CRUDService="false" type="JavaService" springFile="EncryptionFacade.spring.xml">
+    <operation name="encryptMd5">
+        <parameter name="password" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="encryptSha1">
+        <parameter name="password" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

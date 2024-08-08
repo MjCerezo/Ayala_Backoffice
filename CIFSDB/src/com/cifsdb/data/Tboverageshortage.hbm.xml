@@ -1,0 +1,36 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tboverageshortage" table="TBOVERAGESHORTAGE" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="businessdate" type="timestamp">
+            <column name="businessdate" length="23"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="18"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="50"/>
+        </property>
+        <property name="reason" type="string">
+            <column name="reason" length="50"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="150"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="txrefno" type="string">
+            <column name="txrefno" length="50"/>
+        </property>
+        <property name="branchcode" type="string">
+            <column name="branchcode" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

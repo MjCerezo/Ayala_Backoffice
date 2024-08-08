@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tblamriskprofile" table="TBLAMRISKPROFILE" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="evalreportid" type="integer">
+            <column name="evalreportid"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="finriskappetite" type="string">
+            <column name="finriskappetite" length="10"/>
+        </property>
+        <property name="finriskremarks" type="string">
+            <column name="finriskremarks" length="8000"/>
+        </property>
+        <property name="mgmtriskappetite" type="string">
+            <column name="mgmtriskappetite" length="10"/>
+        </property>
+        <property name="mgmtriskremarks" type="string">
+            <column name="mgmtriskremarks" length="8000"/>
+        </property>
+        <property name="crdtriskappetite" type="string">
+            <column name="crdtriskappetite" length="10"/>
+        </property>
+        <property name="crdtriskremarks" type="string">
+            <column name="crdtriskremarks" length="8000"/>
+        </property>
+        <property name="mrktriskappetite" type="string">
+            <column name="mrktriskappetite" length="10"/>
+        </property>
+        <property name="mrktriskremarks" type="string">
+            <column name="mrktriskremarks" length="8000"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,144 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbcorporaterequest" table="TBCORPORATEREQUEST" catalog="AcaciaAyalaMembershipDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="requestid" type="string">
+            <column name="requestid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20" not-null="true"/>
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="50"/>
+        </property>
+        <property name="corporatename" type="string">
+            <column name="corporatename" length="120"/>
+        </property>
+        <property name="tradename" type="string">
+            <column name="tradename" length="120"/>
+        </property>
+        <property name="streetno1" type="string">
+            <column name="streetno1" length="100"/>
+        </property>
+        <property name="subdivision1" type="string">
+            <column name="subdivision1" length="100"/>
+        </property>
+        <property name="country1" type="string">
+            <column name="country1" length="50"/>
+        </property>
+        <property name="province1" type="string">
+            <column name="province1" length="50"/>
+        </property>
+        <property name="city1" type="string">
+            <column name="city1" length="50"/>
+        </property>
+        <property name="barangay1" type="string">
+            <column name="barangay1" length="50"/>
+        </property>
+        <property name="postalcode1" type="string">
+            <column name="postalcode1" length="50"/>
+        </property>
+        <property name="homeownership1" type="string">
+            <column name="homeownership1" length="50"/>
+        </property>
+        <property name="otherhomeownership1" type="string">
+            <column name="otherhomeownership1" length="50"/>
+        </property>
+        <property name="occupiedsince1" type="timestamp">
+            <column name="occupiedsince1" length="23"/>
+        </property>
+        <property name="issameaddress1" type="boolean">
+            <column name="issameaddress1"/>
+        </property>
+        <property name="mobilephone" type="string">
+            <column name="mobilephone" length="100"/>
+        </property>
+        <property name="mobilecountrycode" type="string">
+            <column name="mobilecountrycode" length="3"/>
+        </property>
+        <property name="mobileareacode" type="string">
+            <column name="mobileareacode" length="3"/>
+        </property>
+        <property name="mobilenumber" type="string">
+            <column name="mobilenumber" length="7"/>
+        </property>
+        <property name="officephone" type="string">
+            <column name="officephone" length="100"/>
+        </property>
+        <property name="officecountrycode" type="string">
+            <column name="officecountrycode" length="3"/>
+        </property>
+        <property name="officeareacode" type="string">
+            <column name="officeareacode" length="3"/>
+        </property>
+        <property name="officenumber" type="string">
+            <column name="officenumber" length="7"/>
+        </property>
+        <property name="faxphone" type="string">
+            <column name="faxphone" length="100"/>
+        </property>
+        <property name="faxcountrycode" type="string">
+            <column name="faxcountrycode" length="3"/>
+        </property>
+        <property name="faxareacode" type="string">
+            <column name="faxareacode" length="3"/>
+        </property>
+        <property name="faxnumber" type="string">
+            <column name="faxnumber" length="7"/>
+        </property>
+        <property name="emailaddress" type="string">
+            <column name="emailaddress" length="100"/>
+        </property>
+        <property name="website" type="string">
+            <column name="website" length="100"/>
+        </property>
+        <property name="maincontact1" type="string">
+            <column name="maincontact1" length="250"/>
+        </property>
+        <property name="fulladdress1" type="string">
+            <column name="fulladdress1" length="300"/>
+        </property>
+        <property name="fulladdress2" type="string">
+            <column name="fulladdress2" length="300"/>
+        </property>
+        <property name="country2" type="string">
+            <column name="country2" length="50"/>
+        </property>
+        <property name="province2" type="string">
+            <column name="province2" length="50"/>
+        </property>
+        <property name="city2" type="string">
+            <column name="city2" length="50"/>
+        </property>
+        <property name="streetno2" type="string">
+            <column name="streetno2" length="100"/>
+        </property>
+        <property name="homeownership2" type="string">
+            <column name="homeownership2" length="50"/>
+        </property>
+        <property name="subdivision2" type="string">
+            <column name="subdivision2" length="100"/>
+        </property>
+        <property name="barangay2" type="string">
+            <column name="barangay2" length="50"/>
+        </property>
+        <property name="postalcode2" type="string">
+            <column name="postalcode2" length="50"/>
+        </property>
+        <property name="otherhomeownership2" type="string">
+            <column name="otherhomeownership2" length="50"/>
+        </property>
+        <property name="occupiedsince2" type="timestamp">
+            <column name="occupiedsince2" length="23"/>
+        </property>
+        <property name="ismailingaddress" type="boolean">
+            <column name="ismailingaddress"/>
+        </property>
+        <property name="postalcodename1" type="string">
+            <column name="postalcodename1" length="100"/>
+        </property>
+        <property name="postalcodename2" type="string">
+            <column name="postalcodename2" length="100"/>
+        </property>
+    </class>
+</hibernate-mapping>

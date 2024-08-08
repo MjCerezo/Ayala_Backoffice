@@ -1,0 +1,49 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbfsmain" table="TBFSMAIN" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.TbfsmainId">
+            <key-property name="cifno" type="string">
+                <column name="cifno" length="20"/>
+            </key-property>
+            <key-property name="fstype" type="string">
+                <column name="fstype" length="10"/>
+            </key-property>
+            <key-property name="fsdate" type="timestamp">
+                <column name="fsdate" length="23"/>
+            </key-property>
+            <key-property name="industryflag" type="boolean">
+                <column name="industryflag"/>
+            </key-property>
+            <key-property name="industryname" type="string">
+                <column name="industryname" length="300"/>
+            </key-property>
+        </composite-id>
+        <property name="fsdesc" type="string">
+            <column name="fsdesc"/>
+        </property>
+        <property name="fsauditorsopinion" type="string">
+            <column name="fsauditorsopinion" length="10"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="5"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="lastupdated" type="timestamp">
+            <column name="lastupdated" length="23"/>
+        </property>
+        <property name="auditdate" type="timestamp">
+            <column name="auditdate" length="23"/>
+        </property>
+        <property name="auditor" type="string">
+            <column name="auditor" length="300"/>
+        </property>
+    </class>
+</hibernate-mapping>

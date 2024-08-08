@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbmembereventschecklist" table="TBMEMBEREVENTSCHECKLIST" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="membershipappid" type="string">
+            <column name="membershipappid" length="20"/>
+        </property>
+        <property name="membershipid" type="string">
+            <column name="membershipid" length="20"/>
+        </property>
+        <property name="governancetype" type="string">
+            <column name="governancetype" length="5"/>
+        </property>
+        <property name="eventcode" type="integer">
+            <column name="eventcode"/>
+        </property>
+        <property name="eventtype" type="string">
+            <column name="eventtype" length="5"/>
+        </property>
+        <property name="eventname" type="string">
+            <column name="eventname" length="100"/>
+        </property>
+        <property name="eventdate" type="timestamp">
+            <column name="eventdate" length="23"/>
+        </property>
+        <property name="isrequired" type="boolean">
+            <column name="isrequired"/>
+        </property>
+        <property name="hasattended" type="boolean">
+            <column name="hasattended"/>
+        </property>
+        <property name="hasvoted" type="boolean">
+            <column name="hasvoted"/>
+        </property>
+    </class>
+</hibernate-mapping>

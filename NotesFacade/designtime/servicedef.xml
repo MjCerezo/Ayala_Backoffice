@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="NotesFacade" class="com.etel.notes.NotesFacade" CRUDService="false" type="JavaService" springFile="NotesFacade.spring.xml">
+    <operation name="getListofUsers">
+        <return typeRef="com.coopdb.data.Tbuser" isList="true"/>
+    </operation>
+    <operation name="getNotesRecord">
+        <parameter name="noteid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbnotes" isList="false"/>
+    </operation>
+    <operation name="getUserFullName">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveNewNotes">
+        <parameter name="form" typeRef="com.etel.notes.forms.NotesSaveForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="searchNotes">
+        <parameter name="form" typeRef="com.etel.notes.forms.NotesSearchForm" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbnotes" isList="true"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.notes.forms.NotesSaveForm" name="NotesSaveForm" supportsQuickData="false">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datetimeofcall" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="isurgent" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="lastupdatedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lastupdatedname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="notedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="notedbyuser" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="noteddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="noteid" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="notes" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="notetype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="phoneno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="purposeofcall" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.notes.forms.NotesSearchForm" name="NotesSearchForm" supportsQuickData="false">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="notedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="noteddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="notetype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

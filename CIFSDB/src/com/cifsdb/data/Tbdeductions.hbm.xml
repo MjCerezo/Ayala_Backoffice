@@ -1,0 +1,36 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbdeductions" table="TBDEDUCTIONS" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="boscode" type="string">
+            <column name="boscode" length="10"/>
+        </property>
+        <property name="servicestatus" type="string">
+            <column name="servicestatus" length="10"/>
+        </property>
+        <property name="billmode" type="string">
+            <column name="billmode" length="10"/>
+        </property>
+        <property name="productcode" type="string">
+            <column name="productcode" length="10"/>
+        </property>
+        <property name="deductionmode" type="string">
+            <column name="deductionmode" length="10"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

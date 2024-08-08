@@ -1,0 +1,51 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbdepositproductinterestrate" table="TBDEPOSITPRODUCTINTERESTRATE" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="productcode" type="string">
+            <column name="productcode" length="50"/>
+        </property>
+        <property name="subprodcode" type="string">
+            <column name="subprodcode" length="50"/>
+        </property>
+        <property name="interest" type="big_decimal">
+            <column name="interest" precision="18"/>
+        </property>
+        <property name="minamount" type="big_decimal">
+            <column name="minamount" precision="18"/>
+        </property>
+        <property name="maxamount" type="big_decimal">
+            <column name="maxamount" precision="18"/>
+        </property>
+        <property name="mintermindays" type="integer">
+            <column name="mintermindays"/>
+        </property>
+        <property name="maxtermindays" type="integer">
+            <column name="maxtermindays"/>
+        </property>
+        <property name="role" type="string">
+            <column name="role" length="50"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="50"/>
+        </property>
+        <property name="username" type="string">
+            <column name="username" length="50"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

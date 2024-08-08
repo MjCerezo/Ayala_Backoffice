@@ -1,0 +1,204 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tblstappemployment" table="TBLSTAPPEMPLOYMENT" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="employmentid" type="integer">
+            <column name="employmentid"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="emprecordtype" type="string">
+            <column name="emprecordtype" length="50"/>
+        </property>
+        <property name="employername" type="string">
+            <column name="employername" length="100"/>
+        </property>
+        <property name="position" type="string">
+            <column name="position" length="50"/>
+        </property>
+        <property name="empstatus" type="string">
+            <column name="empstatus" length="50"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50"/>
+        </property>
+        <property name="employertin" type="string">
+            <column name="employertin" length="50"/>
+        </property>
+        <property name="employerphoneno" type="string">
+            <column name="employerphoneno" length="20"/>
+        </property>
+        <property name="psic" type="string">
+            <column name="psic" length="50"/>
+        </property>
+        <property name="psoc" type="string">
+            <column name="psoc" length="50"/>
+        </property>
+        <property name="seafarerid" type="string">
+            <column name="seafarerid" length="50"/>
+        </property>
+        <property name="seafarervessel" type="string">
+            <column name="seafarervessel" length="100"/>
+        </property>
+        <property name="seafarerduration" type="string">
+            <column name="seafarerduration" length="50"/>
+        </property>
+        <property name="seafarerembarkationdate" type="timestamp">
+            <column name="seafarerembarkationdate" length="23"/>
+        </property>
+        <property name="seafarerdisembarkationdate" type="timestamp">
+            <column name="seafarerdisembarkationdate" length="23"/>
+        </property>
+        <property name="seafarerpercentageofallotment" type="big_decimal">
+            <column name="seafarerpercentageofallotment" precision="20"/>
+        </property>
+        <property name="seafarerallottee1" type="string">
+            <column name="seafarerallottee1" length="100"/>
+        </property>
+        <property name="seafarerallottee2" type="string">
+            <column name="seafarerallottee2" length="100"/>
+        </property>
+        <property name="department" type="string">
+            <column name="department" length="100"/>
+        </property>
+        <property name="rank" type="string">
+            <column name="rank" length="50"/>
+        </property>
+        <property name="datehiredfrom" type="timestamp">
+            <column name="datehiredfrom" length="23"/>
+        </property>
+        <property name="datehiredto" type="timestamp">
+            <column name="datehiredto" length="23"/>
+        </property>
+        <property name="yearsofservice" type="integer">
+            <column name="yearsofservice"/>
+        </property>
+        <property name="immediatehead" type="string">
+            <column name="immediatehead" length="100"/>
+        </property>
+        <property name="grossincome" type="integer">
+            <column name="grossincome"/>
+        </property>
+        <property name="annualmonthind" type="string">
+            <column name="annualmonthind" length="50"/>
+        </property>
+        <property name="currency" type="string">
+            <column name="currency" length="50"/>
+        </property>
+        <property name="fulladdress1" type="string">
+            <column name="fulladdress1" length="300"/>
+        </property>
+        <property name="streetno1" type="string">
+            <column name="streetno1" length="100"/>
+        </property>
+        <property name="subdivision1" type="string">
+            <column name="subdivision1" length="100"/>
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="50"/>
+        </property>
+        <property name="province1" type="string">
+            <column name="province1" length="50"/>
+        </property>
+        <property name="city1" type="string">
+            <column name="city1" length="50"/>
+        </property>
+        <property name="barangay1" type="string">
+            <column name="barangay1" length="50"/>
+        </property>
+        <property name="postalcode1" type="string">
+            <column name="postalcode1" length="50"/>
+        </property>
+        <property name="postalcodename1" type="string">
+            <column name="postalcodename1" length="50"/>
+        </property>
+        <property name="divisioncode" type="string">
+            <column name="divisioncode" length="50"/>
+        </property>
+        <property name="stationcode" type="string">
+            <column name="stationcode" length="50"/>
+        </property>
+        <property name="employeeno" type="string">
+            <column name="employeeno" length="50"/>
+        </property>
+        <property name="regioncode" type="string">
+            <column name="regioncode" length="50"/>
+        </property>
+        <property name="countrycodephone" type="string">
+            <column name="countrycodephone" length="3"/>
+        </property>
+        <property name="areacodephone" type="string">
+            <column name="areacodephone" length="4"/>
+        </property>
+        <property name="empcifno" type="string">
+            <column name="empcifno" length="20"/>
+        </property>
+        <property name="otheremploymentstatus" type="string">
+            <column name="otheremploymentstatus" length="100"/>
+        </property>
+        <property name="psiccode" type="string">
+            <column name="psiccode" length="10"/>
+        </property>
+        <property name="psiclevel1" type="string">
+            <column name="psiclevel1" length="10"/>
+        </property>
+        <property name="psiclevel2" type="string">
+            <column name="psiclevel2" length="10"/>
+        </property>
+        <property name="psiclevel3" type="string">
+            <column name="psiclevel3" length="10"/>
+        </property>
+        <property name="psiclevel4" type="string">
+            <column name="psiclevel4" length="10"/>
+        </property>
+        <property name="psoccode" type="string">
+            <column name="psoccode" length="10"/>
+        </property>
+        <property name="psoclevel1" type="string">
+            <column name="psoclevel1" length="10"/>
+        </property>
+        <property name="psoclevel2" type="string">
+            <column name="psoclevel2" length="10"/>
+        </property>
+        <property name="psoclevel3" type="string">
+            <column name="psoclevel3" length="10"/>
+        </property>
+        <property name="psoclevel4" type="string">
+            <column name="psoclevel4" length="10"/>
+        </property>
+        <property name="isdepedemployee" type="boolean">
+            <column name="isdepedemployee"/>
+        </property>
+        <property name="monthsofservice" type="integer">
+            <column name="monthsofservice"/>
+        </property>
+        <property name="positioncategory" type="string">
+            <column name="positioncategory" length="50"/>
+        </property>
+        <property name="otherpositioncategory" type="string">
+            <column name="otherpositioncategory" length="100"/>
+        </property>
+        <property name="ispresent" type="boolean">
+            <column name="ispresent"/>
+        </property>
+        <property name="occupationstatus" type="string">
+            <column name="occupationstatus" length="20"/>
+        </property>
+        <property name="mngempid" type="string">
+            <column name="mngempid" length="10"/>
+        </property>
+        <property name="isautogenerated" type="boolean">
+            <column name="isautogenerated"/>
+        </property>
+        <property name="depedposition" type="string">
+            <column name="depedposition" length="50"/>
+        </property>
+        <property name="businesstype" type="string">
+            <column name="businesstype" length="10"/>
+        </property>
+        <property name="employeraddress" type="string">
+            <column name="employeraddress" length="300"/>
+        </property>
+    </class>
+</hibernate-mapping>

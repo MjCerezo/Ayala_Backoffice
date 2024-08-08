@@ -1,0 +1,189 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbloanfin" table="TBLOANFIN" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="txrefno" type="string">
+            <column name="txrefno" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="txbatch" type="string">
+            <column name="txbatch" length="20"/>
+        </property>
+        <property name="txdate" type="timestamp">
+            <column name="txdate" length="23"/>
+        </property>
+        <property name="txcode" type="string">
+            <column name="txcode" length="3"/>
+        </property>
+        <property name="txoper" type="integer">
+            <column name="txoper"/>
+        </property>
+        <property name="txmode" type="string">
+            <column name="txmode" length="2"/>
+        </property>
+        <property name="txvaldt" type="timestamp">
+            <column name="txvaldt" length="23"/>
+        </property>
+        <property name="slaidno" type="string">
+            <column name="slaidno" length="20"/>
+        </property>
+        <property name="employeeno" type="string">
+            <column name="employeeno" length="20"/>
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="100"/>
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="100"/>
+        </property>
+        <property name="middlename" type="string">
+            <column name="middlename" length="100"/>
+        </property>
+        <property name="accountno" type="string">
+            <column name="accountno" length="50"/>
+        </property>
+        <property name="txamount" type="big_decimal">
+            <column name="txamount" precision="18"/>
+        </property>
+        <property name="txmisc" type="big_decimal">
+            <column name="txmisc" precision="18"/>
+        </property>
+        <property name="txlpc" type="big_decimal">
+            <column name="txlpc" precision="18"/>
+        </property>
+        <property name="txint" type="big_decimal">
+            <column name="txint" precision="18"/>
+        </property>
+        <property name="txprin" type="big_decimal">
+            <column name="txprin" precision="18"/>
+        </property>
+        <property name="txamtbal" type="big_decimal">
+            <column name="txamtbal" precision="18"/>
+        </property>
+        <property name="txstatus" type="string">
+            <column name="txstatus" length="2"/>
+        </property>
+        <property name="txstatusdate" type="timestamp">
+            <column name="txstatusdate" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="creationdate" type="timestamp">
+            <column name="creationdate" length="23"/>
+        </property>
+        <property name="approvedby" type="string">
+            <column name="approvedby" length="50"/>
+        </property>
+        <property name="approvaldate" type="timestamp">
+            <column name="approvaldate" length="23"/>
+        </property>
+        <property name="particulars" type="string">
+            <column name="particulars"/>
+        </property>
+        <property name="reason" type="string">
+            <column name="reason" length="3"/>
+        </property>
+        <property name="flag" type="integer">
+            <column name="flag"/>
+        </property>
+        <property name="txor" type="string">
+            <column name="txor"/>
+        </property>
+        <property name="txchkno" type="string">
+            <column name="txchkno" length="50"/>
+        </property>
+        <property name="txbrstn" type="string">
+            <column name="txbrstn" length="50"/>
+        </property>
+        <property name="txchecktype" type="string">
+            <column name="txchecktype" length="50"/>
+        </property>
+        <property name="pnno" type="string">
+            <column name="pnno" length="50"/>
+        </property>
+        <property name="txordate" type="timestamp">
+            <column name="txordate" length="23"/>
+        </property>
+        <property name="txchkbankname" type="string">
+            <column name="txchkbankname" length="200"/>
+        </property>
+        <property name="txchkacctno" type="string">
+            <column name="txchkacctno" length="50"/>
+        </property>
+        <property name="txchkacctname" type="string">
+            <column name="txchkacctname" length="300"/>
+        </property>
+        <property name="txchkpayeename" type="string">
+            <column name="txchkpayeename" length="300"/>
+        </property>
+        <property name="txchkbankbr" type="string">
+            <column name="txchkbankbr" length="50"/>
+        </property>
+        <property name="txdebitacctno" type="string">
+            <column name="txdebitacctno" length="50"/>
+        </property>
+        <property name="txdebitaccttype" type="string">
+            <column name="txdebitaccttype" length="50"/>
+        </property>
+        <property name="txposteddate" type="timestamp">
+            <column name="txposteddate" length="23"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks"/>
+        </property>
+        <property name="clientname" type="string">
+            <column name="clientname" length="500"/>
+        </property>
+        <property name="txchkdate" type="timestamp">
+            <column name="txchkdate" length="23"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50"/>
+        </property>
+        <property name="txsrce" type="string">
+            <column name="txsrce" length="50"/>
+        </property>
+        <property name="legveh" type="string">
+            <column name="legveh" length="50"/>
+        </property>
+        <property name="grouprefno" type="string">
+            <column name="grouprefno" length="50"/>
+        </property>
+        <property name="txchkamount" type="big_decimal">
+            <column name="txchkamount" precision="20"/>
+        </property>
+        <property name="artype" type="string">
+            <column name="artype" length="50"/>
+        </property>
+        <property name="commrate" type="big_decimal">
+            <column name="commrate" precision="18"/>
+        </property>
+        <property name="commamt" type="big_decimal">
+            <column name="commamt" precision="18"/>
+        </property>
+        <property name="wtaxrate" type="big_decimal">
+            <column name="wtaxrate" precision="18"/>
+        </property>
+        <property name="wtaxamt" type="big_decimal">
+            <column name="wtaxamt" precision="18"/>
+        </property>
+        <property name="addtnlint" type="big_decimal">
+            <column name="addtnlint" precision="18"/>
+        </property>
+        <property name="txdepositorybank" type="string">
+            <column name="txdepositorybank" length="50"/>
+        </property>
+        <property name="branchcode" type="string">
+            <column name="branchcode" length="15"/>
+        </property>
+        <property name="newacctsts" type="string">
+            <column name="newacctsts" length="5"/>
+        </property>
+        <property name="oldacctsts" type="string">
+            <column name="oldacctsts" length="5"/>
+        </property>
+        <property name="addtnllpc" type="big_decimal">
+            <column name="addtnllpc" precision="18"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Savings" table="savings" catalog="ACACIADBDXBANK" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.SavingsId">
+            <key-property name="accountNo" type="string">
+                <column name="Account_No" length="50"/>
+            </key-property>
+            <key-property name="name" type="string">
+                <column name="Name" length="100"/>
+            </key-property>
+            <key-property name="asOfDate" type="string">
+                <column name="As_Of_Date" length="10"/>
+            </key-property>
+            <key-property name="asOfBalance" type="big_decimal">
+                <column name="As_Of_Balance" precision="18"/>
+            </key-property>
+            <key-property name="asOfStatus" type="string">
+                <column name="As_of_Status" length="50"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

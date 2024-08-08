@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbcollateralpergroup" table="TBCOLLATERALPERGROUP" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="groupid" type="string">
+            <column name="groupid" length="20" not-null="true"/>
+        </property>
+        <property name="groupname" type="string">
+            <column name="groupname" length="100"/>
+        </property>
+        <property name="collateralreferenceno" type="string">
+            <column name="collateralreferenceno" length="50"/>
+        </property>
+        <property name="collateraltype" type="string">
+            <column name="collateraltype" length="50"/>
+        </property>
+        <property name="groupdateadded" type="timestamp">
+            <column name="groupdateadded" length="23"/>
+        </property>
+        <property name="groupaddedby" type="string">
+            <column name="groupaddedby" length="50"/>
+        </property>
+        <property name="grouptype" type="string">
+            <column name="grouptype" length="50"/>
+        </property>
+        <property name="groupappraisalstatus" type="string">
+            <column name="groupappraisalstatus" length="50"/>
+        </property>
+        <property name="groupdateupdated" type="timestamp">
+            <column name="groupdateupdated" length="23"/>
+        </property>
+        <property name="groupupdatedby" type="string">
+            <column name="groupupdatedby" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

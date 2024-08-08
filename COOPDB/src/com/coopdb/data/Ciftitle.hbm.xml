@@ -1,0 +1,16 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Ciftitle" table="CIFTitle" catalog="CIFSDBDXBANK_SAMULCO" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.CiftitleId">
+            <key-property name="originatingBranch" type="string">
+                <column name="`Originating Branch`" length="50"/>
+            </key-property>
+            <key-property name="cifNo" type="string">
+                <column name="`CIF No`" length="50"/>
+            </key-property>
+            <key-property name="title" type="string">
+                <column name="Title" length="50"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

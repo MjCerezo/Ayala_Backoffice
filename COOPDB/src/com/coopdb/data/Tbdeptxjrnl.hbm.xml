@@ -1,0 +1,150 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbdeptxjrnl" table="TBDEPTXJRNL" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txBatch" type="string">
+            <column name="TxBatch" length="25"/>
+        </property>
+        <property name="txdate" type="timestamp">
+            <column name="Txdate" length="23"/>
+        </property>
+        <property name="txRefNo" type="string">
+            <column name="TxRefNo" length="20"/>
+        </property>
+        <property name="txbrrefno" type="string">
+            <column name="txbrrefno" length="20"/>
+        </property>
+        <property name="txcode" type="string">
+            <column name="Txcode" length="6"/>
+        </property>
+        <property name="txoper" type="integer">
+            <column name="Txoper"/>
+        </property>
+        <property name="txmode" type="string">
+            <column name="Txmode" length="1"/>
+        </property>
+        <property name="txvaldt" type="timestamp">
+            <column name="Txvaldt" length="23"/>
+        </property>
+        <property name="slaidNo" type="string">
+            <column name="SLAIdNo" length="12"/>
+        </property>
+        <property name="employeeNo" type="string">
+            <column name="EmployeeNo" length="25"/>
+        </property>
+        <property name="lastname" type="string">
+            <column name="Lastname" length="30"/>
+        </property>
+        <property name="firstname" type="string">
+            <column name="Firstname" length="30"/>
+        </property>
+        <property name="middlename" type="string">
+            <column name="Middlename" length="30"/>
+        </property>
+        <property name="accountno" type="string">
+            <column name="Accountno" length="16"/>
+        </property>
+        <property name="txAmount" type="big_decimal">
+            <column name="TxAmount" precision="11"/>
+        </property>
+        <property name="txStatus" type="string">
+            <column name="TxStatus" length="1"/>
+        </property>
+        <property name="txStatusDate" type="timestamp">
+            <column name="TxStatusDate" length="23"/>
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CreatedBy" length="50"/>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="CreationDate" length="23"/>
+        </property>
+        <property name="approvedBy" type="string">
+            <column name="ApprovedBy" length="50"/>
+        </property>
+        <property name="approvalDate" type="timestamp">
+            <column name="ApprovalDate" length="23"/>
+        </property>
+        <property name="companyCode" type="string">
+            <column name="CompanyCode" length="3"/>
+        </property>
+        <property name="satoCode" type="string">
+            <column name="SatoCode" length="3"/>
+        </property>
+        <property name="previousCompany" type="string">
+            <column name="PreviousCompany" length="3"/>
+        </property>
+        <property name="previousSato" type="string">
+            <column name="PreviousSato" length="3"/>
+        </property>
+        <property name="reason" type="string">
+            <column name="Reason" length="3"/>
+        </property>
+        <property name="outBal" type="big_decimal">
+            <column name="outBal" precision="16"/>
+        </property>
+        <property name="debit" type="big_decimal">
+            <column name="debit" precision="16"/>
+        </property>
+        <property name="credit" type="big_decimal">
+            <column name="credit" precision="16"/>
+        </property>
+        <property name="brstn" type="string">
+            <column name="brstn" length="20"/>
+        </property>
+        <property name="checkamount" type="big_decimal">
+            <column name="checkamount" precision="16"/>
+        </property>
+        <property name="checkdate" type="string">
+            <column name="checkdate" length="10"/>
+        </property>
+        <property name="checknumber" type="string">
+            <column name="checknumber" length="20"/>
+        </property>
+        <property name="checktype" type="integer">
+            <column name="checktype"/>
+        </property>
+        <property name="txjrnlno" type="integer">
+            <column name="txjrnlno"/>
+        </property>
+        <property name="txbranch" type="string">
+            <column name="txbranch" length="10"/>
+        </property>
+        <property name="overridestatus" type="string">
+            <column name="overridestatus" length="5"/>
+        </property>
+        <property name="overridestatusdate" type="timestamp">
+            <column name="overridestatusdate" length="23"/>
+        </property>
+        <property name="errorcorrectind" type="boolean">
+            <column name="errorcorrectind"/>
+        </property>
+        <property name="errorcorrecttxrefno" type="string">
+            <column name="errorcorrecttxrefno" length="20"/>
+        </property>
+        <property name="transfertxrefno" type="string">
+            <column name="transfertxrefno" length="20"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks"/>
+        </property>
+        <property name="overridetype" type="string">
+            <column name="overridetype" length="2"/>
+        </property>
+        <property name="islatecheck" type="boolean">
+            <column name="islatecheck"/>
+        </property>
+        <property name="acctsts" type="string">
+            <column name="acctsts" length="5"/>
+        </property>
+        <property name="oldacctsts" type="string">
+            <column name="oldacctsts" length="5"/>
+        </property>
+        <property name="tdcno" type="string">
+            <column name="tdcno" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

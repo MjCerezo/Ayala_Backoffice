@@ -1,0 +1,252 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tblstapp" table="TBLSTAPP" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="appno" type="string">
+            <column name="appno" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="cifname" type="string">
+            <column name="cifname" length="300"/>
+        </property>
+        <property name="customertype" type="string">
+            <column name="customertype" length="2"/>
+        </property>
+        <property name="applicationtype" type="integer">
+            <column name="applicationtype"/>
+        </property>
+        <property name="applicationdate" type="timestamp">
+            <column name="applicationdate" length="23"/>
+        </property>
+        <property name="applicationstatus" type="integer">
+            <column name="applicationstatus"/>
+        </property>
+        <property name="statusdatetime" type="timestamp">
+            <column name="statusdatetime" length="23"/>
+        </property>
+        <property name="lastapplicationstatus" type="integer">
+            <column name="lastapplicationstatus"/>
+        </property>
+        <property name="accountofficer" type="string">
+            <column name="accountofficer" length="50"/>
+        </property>
+        <property name="losoriginatingteam" type="string">
+            <column name="losoriginatingteam" length="50"/>
+        </property>
+        <property name="ciforiginatingteam" type="string">
+            <column name="ciforiginatingteam" length="50"/>
+        </property>
+        <property name="loanproduct" type="string">
+            <column name="loanproduct" length="5"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datelastupdated" type="timestamp">
+            <column name="datelastupdated" length="23"/>
+        </property>
+        <property name="lastupdatedby" type="string">
+            <column name="lastupdatedby" length="50"/>
+        </property>
+        <property name="companycode" type="string">
+            <column name="companycode" length="50"/>
+        </property>
+        <property name="regioncode" type="string">
+            <column name="regioncode" length="50"/>
+        </property>
+        <property name="branchcode" type="string">
+            <column name="branchcode" length="50"/>
+        </property>
+        <property name="pnno" type="string">
+            <column name="pnno" length="20"/>
+        </property>
+        <property name="accountno" type="string">
+            <column name="accountno" length="20"/>
+        </property>
+        <property name="existingpnno" type="string">
+            <column name="existingpnno" length="20"/>
+        </property>
+        <property name="existingaccountno" type="string">
+            <column name="existingaccountno" length="20"/>
+        </property>
+        <property name="existinglinerefno" type="string">
+            <column name="existinglinerefno" length="20"/>
+        </property>
+        <property name="mainlinerefno" type="string">
+            <column name="mainlinerefno" length="50"/>
+        </property>
+        <property name="ciftin" type="string">
+            <column name="ciftin" length="20"/>
+        </property>
+        <property name="typeofline" type="string">
+            <column name="typeofline" length="2"/>
+        </property>
+        <property name="isforreconsideration" type="boolean">
+            <column name="isforreconsideration"/>
+        </property>
+        <property name="isforamendment" type="boolean">
+            <column name="isforamendment"/>
+        </property>
+        <property name="isbicompleted" type="boolean">
+            <column name="isbicompleted"/>
+        </property>
+        <property name="iscicompleted" type="boolean">
+            <column name="iscicompleted"/>
+        </property>
+        <property name="isappraisalcompleted" type="boolean">
+            <column name="isappraisalcompleted"/>
+        </property>
+        <property name="createevalreportflag" type="integer">
+            <column name="createevalreportflag"/>
+        </property>
+        <property name="recommendedby" type="string">
+            <column name="recommendedby" length="50"/>
+        </property>
+        <property name="recommendationremarks" type="string">
+            <column name="recommendationremarks" length="300"/>
+        </property>
+        <property name="reasonforcancellation" type="string">
+            <column name="reasonforcancellation" length="300"/>
+        </property>
+        <property name="cancelledby" type="string">
+            <column name="cancelledby" length="50"/>
+        </property>
+        <property name="rejectedby" type="string">
+            <column name="rejectedby" length="50"/>
+        </property>
+        <property name="reasonforreject" type="string">
+            <column name="reasonforreject" length="300"/>
+        </property>
+        <property name="isdoneencoding" type="boolean">
+            <column name="isdoneencoding"/>
+        </property>
+        <property name="isrejected" type="boolean">
+            <column name="isrejected"/>
+        </property>
+        <property name="iscancelled" type="boolean">
+            <column name="iscancelled"/>
+        </property>
+        <property name="isbooked" type="boolean">
+            <column name="isbooked"/>
+        </property>
+        <property name="isbookdocpending" type="boolean">
+            <column name="isbookdocpending"/>
+        </property>
+        <property name="initialloanamount" type="big_decimal">
+            <column name="initialloanamount" precision="20"/>
+        </property>
+        <property name="approvedloanamount" type="big_decimal">
+            <column name="approvedloanamount" precision="20"/>
+        </property>
+        <property name="proposedlineamount" type="big_decimal">
+            <column name="proposedlineamount" precision="20"/>
+        </property>
+        <property name="approvedlineamount" type="big_decimal">
+            <column name="approvedlineamount" precision="20"/>
+        </property>
+        <property name="approvedinterestrate" type="big_decimal">
+            <column name="approvedinterestrate" precision="20"/>
+        </property>
+        <property name="approvedterm" type="integer">
+            <column name="approvedterm"/>
+        </property>
+        <property name="dtbook" type="timestamp">
+            <column name="dtbook" length="23"/>
+        </property>
+        <property name="fduedt" type="timestamp">
+            <column name="fduedt" length="23"/>
+        </property>
+        <property name="loanpurpose" type="string">
+            <column name="loanpurpose" length="100"/>
+        </property>
+        <property name="loanterm" type="integer">
+            <column name="loanterm"/>
+        </property>
+        <property name="paymentcycle" type="string">
+            <column name="paymentcycle" length="50"/>
+        </property>
+        <property name="repaymenttype" type="string">
+            <column name="repaymenttype" length="50"/>
+        </property>
+        <property name="interestperiod" type="string">
+            <column name="interestperiod" length="50"/>
+        </property>
+        <property name="termperiod" type="string">
+            <column name="termperiod" length="50"/>
+        </property>
+        <property name="ppynum" type="integer">
+            <column name="ppynum"/>
+        </property>
+        <property name="interestdue" type="big_decimal">
+            <column name="interestdue" precision="20"/>
+        </property>
+        <property name="eir" type="big_decimal">
+            <column name="eir" precision="20"/>
+        </property>
+        <property name="amortamt" type="big_decimal">
+            <column name="amortamt" precision="20"/>
+        </property>
+        <property name="eyrate" type="big_decimal">
+            <column name="eyrate" precision="20"/>
+        </property>
+        <property name="mir" type="big_decimal">
+            <column name="mir" precision="20"/>
+        </property>
+        <property name="typefacility" type="string">
+            <column name="typefacility" length="50"/>
+        </property>
+        <property name="cfrefno" type="string">
+            <column name="cfrefno" length="50"/>
+        </property>
+        <property name="assigneddochead" type="string">
+            <column name="assigneddochead" length="50"/>
+        </property>
+        <property name="assigneddocanalyst" type="string">
+            <column name="assigneddocanalyst" length="50"/>
+        </property>
+        <property name="docassigndate" type="timestamp">
+            <column name="docassigndate" length="23"/>
+        </property>
+        <property name="documentationstatusdate" type="timestamp">
+            <column name="documentationstatusdate" length="23"/>
+        </property>
+        <property name="documentationstatus" type="integer">
+            <column name="documentationstatus"/>
+        </property>
+        <property name="cfrefnoconcat" type="string">
+            <column name="cfrefnoconcat" length="50"/>
+        </property>
+        <property name="reasonreturn" type="string">
+            <column name="reasonreturn" length="300"/>
+        </property>
+        <property name="referraltype" type="string">
+            <column name="referraltype" length="10"/>
+        </property>
+        <property name="referrorname" type="string">
+            <column name="referrorname" length="50"/>
+        </property>
+        <property name="availedlineapp" type="string">
+            <column name="availedlineapp" length="50"/>
+        </property>
+        <property name="cfrefnoconcatmain" type="string">
+            <column name="cfrefnoconcatmain" length="50"/>
+        </property>
+        <property name="cfexpdt" type="timestamp">
+            <column name="cfexpdt" length="23"/>
+        </property>
+        <property name="createcireceivableflag" type="integer">
+            <column name="createcireceivableflag"/>
+        </property>
+        <property name="dmsid" type="string">
+            <column name="dmsid" length="10"/>
+        </property>
+        <property name="rollovertype" type="string">
+            <column name="rollovertype" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

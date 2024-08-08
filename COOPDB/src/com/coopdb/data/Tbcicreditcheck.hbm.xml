@@ -1,0 +1,51 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbcicreditcheck" table="TBCICREDITCHECK" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cireportid" type="string">
+            <column name="cireportid" length="20" not-null="true"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="loantype" type="string">
+            <column name="loantype" length="10"/>
+        </property>
+        <property name="bank" type="string">
+            <column name="bank" length="50"/>
+        </property>
+        <property name="branch" type="string">
+            <column name="branch" length="100"/>
+        </property>
+        <property name="pncnno" type="string">
+            <column name="pncnno" length="50"/>
+        </property>
+        <property name="accountname" type="string">
+            <column name="accountname" length="300"/>
+        </property>
+        <property name="valuedate" type="timestamp">
+            <column name="valuedate" length="23"/>
+        </property>
+        <property name="maturitydate" type="timestamp">
+            <column name="maturitydate" length="23"/>
+        </property>
+        <property name="outstandingbal" type="big_decimal">
+            <column name="outstandingbal" precision="20"/>
+        </property>
+        <property name="currency" type="string">
+            <column name="currency" length="50"/>
+        </property>
+        <property name="pnloanamount" type="big_decimal">
+            <column name="pnloanamount" precision="20"/>
+        </property>
+        <property name="experiencehandling" type="string">
+            <column name="experiencehandling" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

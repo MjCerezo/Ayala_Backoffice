@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbothercontactrequest" table="TBOTHERCONTACTREQUEST" catalog="AcaciaAyalaMembershipDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="requestid" type="string">
+            <column name="requestid" length="20"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="position" type="string">
+            <column name="position" length="100"/>
+        </property>
+        <property name="contactperson" type="string">
+            <column name="contactperson" length="250"/>
+        </property>
+        <property name="otherdetails" type="string">
+            <column name="otherdetails" length="100"/>
+        </property>
+        <property name="directnumber" type="string">
+            <column name="directnumber" length="20"/>
+        </property>
+        <property name="mobilenumber" type="string">
+            <column name="mobilenumber" length="20"/>
+        </property>
+        <property name="emailaddress" type="string">
+            <column name="emailaddress" length="100"/>
+        </property>
+    </class>
+</hibernate-mapping>

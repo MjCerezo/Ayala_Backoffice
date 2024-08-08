@@ -1,0 +1,52 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbevaldeposit" table="TBEVALDEPOSIT" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.cifsdb.data.TbevaldepositId">
+            <key-property name="evalreportid" type="integer">
+                <column name="evalreportid"/>
+            </key-property>
+            <key-property name="recordid" type="integer">
+                <column name="recordid"/>
+            </key-property>
+        </composite-id>
+        <property name="cireportid" type="string">
+            <column name="cireportid" length="20" not-null="true"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="bankaccttype" type="string">
+            <column name="bankaccttype" length="10"/>
+        </property>
+        <property name="bank" type="string">
+            <column name="bank" length="10"/>
+        </property>
+        <property name="branch" type="string">
+            <column name="branch" length="100"/>
+        </property>
+        <property name="accountname" type="string">
+            <column name="accountname" length="300"/>
+        </property>
+        <property name="accountnumber" type="string">
+            <column name="accountnumber" length="50"/>
+        </property>
+        <property name="dateopened" type="timestamp">
+            <column name="dateopened" length="23"/>
+        </property>
+        <property name="adb" type="big_decimal">
+            <column name="adb" precision="20"/>
+        </property>
+        <property name="amc" type="big_decimal">
+            <column name="amc" precision="20"/>
+        </property>
+        <property name="outstandingbal" type="big_decimal">
+            <column name="outstandingbal" precision="20"/>
+        </property>
+        <property name="accountstatus" type="string">
+            <column name="accountstatus" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

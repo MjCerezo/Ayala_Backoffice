@@ -1,0 +1,135 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbdocchecklist" table="TBDOCCHECKLIST" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="documentcode" type="string">
+            <column name="documentcode" length="10" not-null="true"/>
+        </property>
+        <property name="dmsid" type="string">
+            <column name="dmsid" length="50"/>
+        </property>
+        <property name="membershipappid" type="string">
+            <column name="membershipappid" length="20"/>
+        </property>
+        <property name="membershipid" type="string">
+            <column name="membershipid" length="20"/>
+        </property>
+        <property name="documentname" type="string">
+            <column name="documentname" length="100"/>
+        </property>
+        <property name="txcode" type="string">
+            <column name="txcode" length="10"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="docstatus" type="string">
+            <column name="docstatus" length="50"/>
+        </property>
+        <property name="dateuploaded" type="timestamp">
+            <column name="dateuploaded" length="23"/>
+        </property>
+        <property name="uploadedby" type="string">
+            <column name="uploadedby" length="50"/>
+        </property>
+        <property name="issubmitted" type="boolean">
+            <column name="issubmitted"/>
+        </property>
+        <property name="datesubmitted" type="timestamp">
+            <column name="datesubmitted" length="23"/>
+        </property>
+        <property name="isuploaded" type="boolean">
+            <column name="isuploaded"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="300"/>
+        </property>
+        <property name="isrequired" type="boolean">
+            <column name="isrequired"/>
+        </property>
+        <property name="isrequestwaiver" type="boolean">
+            <column name="isrequestwaiver"/>
+        </property>
+        <property name="dateapproved" type="timestamp">
+            <column name="dateapproved" length="23"/>
+        </property>
+        <property name="ispoa" type="boolean">
+            <column name="ispoa"/>
+        </property>
+        <property name="reqtype" type="string">
+            <column name="reqtype" length="20"/>
+        </property>
+        <property name="isreviewed" type="boolean">
+            <column name="isreviewed"/>
+        </property>
+        <property name="datereviewed" type="timestamp">
+            <column name="datereviewed" length="23"/>
+        </property>
+        <property name="txrefno" type="integer">
+            <column name="txrefno"/>
+        </property>
+        <property name="docbasecode" type="string">
+            <column name="docbasecode"/>
+        </property>
+        <property name="filename" type="string">
+            <column name="filename" length="100"/>
+        </property>
+        <property name="datereqsubmission" type="timestamp">
+            <column name="datereqsubmission" length="23"/>
+        </property>
+        <property name="doccategory" type="string">
+            <column name="doccategory" length="50"/>
+        </property>
+        <property name="dateexpiration" type="timestamp">
+            <column name="dateexpiration" length="23"/>
+        </property>
+        <property name="updatecycle" type="string">
+            <column name="updatecycle" length="5"/>
+        </property>
+        <property name="signatory" type="string">
+            <column name="signatory" length="300"/>
+        </property>
+        <property name="coveredyear" type="integer">
+            <column name="coveredyear"/>
+        </property>
+        <property name="idname" type="string">
+            <column name="idname" length="300"/>
+        </property>
+        <property name="idtype" type="string">
+            <column name="idtype" length="5"/>
+        </property>
+        <property name="idno" type="string">
+            <column name="idno" length="50"/>
+        </property>
+        <property name="receiveddate" type="timestamp">
+            <column name="receiveddate" length="23"/>
+        </property>
+        <property name="issuecity" type="string">
+            <column name="issuecity" length="50"/>
+        </property>
+        <property name="issuedate" type="timestamp">
+            <column name="issuedate" length="23"/>
+        </property>
+        <property name="issuecountry" type="string">
+            <column name="issuecountry" length="50"/>
+        </property>
+        <property name="issuedby" type="string">
+            <column name="issuedby" length="50"/>
+        </property>
+        <property name="documentno" type="string">
+            <column name="documentno" length="50"/>
+        </property>
+        <property name="fileddate" type="timestamp">
+            <column name="fileddate" length="23"/>
+        </property>
+        <property name="reviewedby" type="string">
+            <column name="reviewedby" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

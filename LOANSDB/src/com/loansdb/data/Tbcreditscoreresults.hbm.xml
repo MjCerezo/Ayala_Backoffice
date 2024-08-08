@@ -1,0 +1,15 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbcreditscoreresults" table="TBCREDITSCORERESULTS" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="appno" type="string">
+            <column name="appno" length="50"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="scoreresults" type="string">
+            <column name="scoreresults" length="50"/>
+        </property>
+        <property name="scorevalue" type="big_decimal">
+            <column name="scorevalue" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

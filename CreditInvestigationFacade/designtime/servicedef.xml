@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="CreditInvestigationFacade" class="com.etel.ci.CreditInvestigationFacade" CRUDService="false" type="JavaService" springFile="CreditInvestigationFacade.spring.xml">
+    <operation name="age">
+        <parameter name="dob" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="int" isList="false"/>
+    </operation>
+    <operation name="ciReportAccessRights">
+        <parameter name="rptid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.ci.forms.CIReportAccessRights" isList="false"/>
+    </operation>
+    <operation name="ciRequestAccessRigths">
+        <parameter name="requestid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.ci.forms.CIRequestAccessRights" isList="false"/>
+    </operation>
+    <operation name="createReport">
+        <parameter name="rptmain" typeRef="com.coopdb.data.Tbcireportmain" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteCIDeskItem">
+        <parameter name="bankchkID" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="creditchkID" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="tradechkID" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteItem">
+        <parameter name="dependentsID" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="employmentID" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="businessID" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="traderefID" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="fullnameOfRequestedBy">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getAllCIReportperAppNo">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.etel.ci.forms.CIEvalForm" isList="true"/>
+    </operation>
+    <operation name="getAppdetailByAppno">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.ci.forms.CIAppDetails" isList="false"/>
+    </operation>
+    <operation name="getBVRField">
+        <parameter name="bid" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="rptid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcibvr" isList="false"/>
+    </operation>
+    <operation name="getCIFNoByReportID">
+        <parameter name="rptID" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getCIFRecord">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.ci.forms.CIFRecord" isList="false"/>
+    </operation>
+    <operation name="getCIReport">
+        <parameter name="rptID" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcireportmain" isList="false"/>
+    </operation>
+    <operation name="getCIRequest">
+        <parameter name="requestID" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcirequest" isList="false"/>
+    </operation>
+    <operation name="getCiReportListByAppno">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcireportmain" isList="true"/>
+    </operation>
+    <operation name="getCiReportListByRequestId">
+        <parameter name="rqstid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcireportmain" isList="true"/>
+    </operation>
+    <operation name="getCiRequestTotal">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="lastname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="firstname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="middlename" typeRef="java.lang.String" isList="false"/>
+        <parameter name="corporatename" typeRef="java.lang.String" isList="false"/>
+        <parameter name="customertype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cirequestid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="requeststatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxResult" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="assigneduser" typeRef="java.lang.String" isList="false"/>
+        <parameter name="viewflag" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="int" isList="false"/>
+    </operation>
+    <operation name="getDeskCIActivity">
+        <parameter name="rptid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="activity" typeRef="java.lang.String" isList="false"/>
+        <parameter name="activityID" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdeskciactivity" isList="false"/>
+    </operation>
+    <operation name="getDeskCIDetails">
+        <parameter name="rptid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="activity" typeRef="java.lang.String" isList="false"/>
+        <parameter name="emporbusid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdeskcidetails" isList="true"/>
+    </operation>
+    <operation name="getDeskCIDetailsBVR">
+        <parameter name="rptid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="emporbusid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdeskcidetails" isList="true"/>
+    </operation>
+    <operation name="getDeskCIDetailsEVR">
+        <parameter name="rptid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="emporbusid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdeskcidetails" isList="true"/>
+    </operation>
+    <operation name="getDeskCIDetailsPDRN">
+        <parameter name="rptid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="emporbusid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdeskcidetails" isList="true"/>
+    </operation>
+    <operation name="getEVRField">
+        <parameter name="eid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcievr" isList="false"/>
+    </operation>
+    <operation name="getListofCiRequest">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="lastname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="firstname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="middlename" typeRef="java.lang.String" isList="false"/>
+        <parameter name="corporatename" typeRef="java.lang.String" isList="false"/>
+        <parameter name="customertype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cirequestid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="requeststatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxResult" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="assigneduser" typeRef="java.lang.String" isList="false"/>
+        <parameter name="viewflag" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcirequest" isList="true"/>
+    </operation>
+    <operation name="getPDRNField">
+        <parameter name="rptid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.ci.report.field.PDRNField" isList="false"/>
+    </operation>
+    <operation name="isCISupervisorByCompanycode">
+        <parameter name="companycode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="boolean" isList="false"/>
+    </operation>
+    <operation name="listBVRField">
+        <parameter name="rptid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcibvr" isList="true"/>
+    </operation>
+    <operation name="listBankCheck">
+        <parameter name="rptid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcibankcheck" isList="true"/>
+    </operation>
+    <operation name="listCI">
+        <return typeRef="com.etel.ci.forms.CreditInvestigator" isList="true"/>
+    </operation>
+    <operation name="listCreditCheck">
+        <parameter name="rptid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcicreditcheck" isList="true"/>
+    </operation>
+    <operation name="listDependents">
+        <parameter name="rptid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcidependents" isList="true"/>
+    </operation>
+    <operation name="listEVRField">
+        <parameter name="rptid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcievr" isList="true"/>
+    </operation>
+    <operation name="listEvrBvrActivities">
+        <parameter name="rptid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="activitytype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.ci.report.desk.EvrBvrActivities" isList="true"/>
+    </operation>
+    <operation name="listTradeCheck">
+        <parameter name="rptid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcitradecheck" isList="true"/>
+    </operation>
+    <operation name="listTradeReference">
+        <parameter name="rptid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcitraderefcorp" isList="true"/>
+    </operation>
+    <operation name="saveOrUpdateBVRField">
+        <parameter name="bvr" typeRef="com.coopdb.data.Tbcibvr" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateBankCheck">
+        <parameter name="bank" typeRef="com.coopdb.data.Tbcibankcheck" isList="false"/>
+        <parameter name="act" typeRef="com.coopdb.data.Tbdeskciactivity" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateCreditCheck">
+        <parameter name="credit" typeRef="com.coopdb.data.Tbcicreditcheck" isList="false"/>
+        <parameter name="act" typeRef="com.coopdb.data.Tbdeskciactivity" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateDependents">
+        <parameter name="dep" typeRef="com.coopdb.data.Tbcidependents" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateDeskCIActivity">
+        <parameter name="ciactivity" typeRef="com.coopdb.data.Tbdeskciactivity" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateDeskCIDetails">
+        <parameter name="d" typeRef="com.coopdb.data.Tbdeskcidetails" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateEVRField">
+        <parameter name="evr" typeRef="com.coopdb.data.Tbcievr" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdatePDRNField">
+        <parameter name="pdrn" typeRef="com.coopdb.data.Tbcipdrn" isList="false"/>
+        <parameter name="res" typeRef="com.coopdb.data.Tbcipdrnresidence" isList="false"/>
+        <parameter name="h" typeRef="com.coopdb.data.Tbcipdrnverhighlights" isList="false"/>
+        <parameter name="rptid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateTradeCheck">
+        <parameter name="trade" typeRef="com.coopdb.data.Tbcitradecheck" isList="false"/>
+        <parameter name="act" typeRef="com.coopdb.data.Tbdeskciactivity" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateTradeReference">
+        <parameter name="t" typeRef="com.coopdb.data.Tbcitraderefcorp" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveUpdateCIRequest">
+        <parameter name="request" typeRef="com.coopdb.data.Tbcirequest" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="setEvalIDForCIEvalFromEval">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="submitCIReport">
+        <parameter name="rptstatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="rptid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="reasonforreturn" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="submitCIRequest">
+        <parameter name="requestID" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.ci.forms.CIReportAccessRights" name="CIReportAccessRights" supportsQuickData="false">
+            <element name="btnStartRpt" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="btndonereview" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="btnforreview" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="btnreturnci" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="isdisabled" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="isreadonly" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="evalIDForCIEvalFromEval" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.ci.forms.CIRequestAccessRights" name="CIRequestAccessRights" supportsQuickData="false">
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cancelrequestbtn" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="createreportbtn" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="formpanel" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="roassignedci" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="robankcheck" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="robvr" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="rocifname" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="rocifno" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="rocitype" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="rocompname" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="rocreditcheck" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="roevr" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="ropdrn" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="roremarks" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="rotradecheck" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="savebtn" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="searchcifbtn" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="submitbtn" typeRef="boolean" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.ci.forms.CIEvalForm" name="CIEvalForm" supportsQuickData="false">
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bankcheck" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bankcheckcireportdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="bankcheckcireportid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bvr" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bvrcireportdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="bvrcireportid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="creditcheck" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="creditcheckcireportdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="creditcheckcireportid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="evr" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="evrcireportdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="evrcireportid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="instruction" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="overallremarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="participationcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="pdrn" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="pdrncireportdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="pdrncireportid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subjectname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.ci.forms.CIAppDetails" name="CIAppDetails" supportsQuickData="false">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="coopcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.ci.forms.CIFRecord" name="CIFRecord" supportsQuickData="false">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="customername" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateofbirth" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateofincorporation" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="suffix" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.ci.report.field.PDRNField" name="PDRNField" supportsQuickData="false">
+            <element name="highlights" typeRef="com.coopdb.data.Tbcipdrnverhighlights" isList="false" allowNull="false"/>
+            <element name="pdrn" typeRef="com.coopdb.data.Tbcipdrn" isList="false" allowNull="false"/>
+            <element name="residence" typeRef="com.coopdb.data.Tbcipdrnresidence" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.ci.forms.CreditInvestigator" name="CreditInvestigator" supportsQuickData="false">
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.ci.report.desk.EvrBvrActivities" name="EvrBvrActivities" supportsQuickData="false">
+            <element name="activiy" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="businessid" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="cireportid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="employerorbusinessname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="employmentid" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="fulladdres" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="informantname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="overallremarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

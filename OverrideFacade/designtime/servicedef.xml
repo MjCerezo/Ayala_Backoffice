@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="OverrideFacade" class="com.etel.override.OverrideFacade" CRUDService="false" type="JavaService" springFile="OverrideFacade.spring.xml">
+    <operation name="addOverrideRule">
+        <parameter name="overridematrix" typeRef="com.coopdb.data.Tboverridematrix" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="checkOverride">
+        <parameter name="form" typeRef="com.etel.override.form.OverrideRequestForm" isList="false"/>
+        <return typeRef="com.etel.override.form.OverrideResponseForm" isList="true"/>
+    </operation>
+    <operation name="deleteOverrideRule">
+        <parameter name="overridematrix" typeRef="com.coopdb.data.Tboverridematrix" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="listOverrideRequest">
+        <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tboverriderequest" isList="true"/>
+    </operation>
+    <operation name="listOverrideRules">
+        <parameter name="txcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="subprodcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tboverridematrix" isList="true"/>
+    </operation>
+    <operation name="listPendingRemoteOverride">
+        <return typeRef="com.coopdb.data.Tboverriderequest" isList="true"/>
+    </operation>
+    <operation name="requestOverride">
+        <parameter name="form" typeRef="com.etel.deposittransaction.form.DepositTransactionForm" isList="false"/>
+        <parameter name="requests" typeRef="com.coopdb.data.Tboverriderequest" isList="true"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateOverride">
+        <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="password" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateOverrideAccountno">
+        <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="waitRemoteOverride">
+        <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.fintx.forms.OverrideResultForm" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.override.form.OverrideResponseForm" name="OverrideResponseForm" supportsQuickData="false">
+            <element name="matrix" typeRef="com.coopdb.data.Tboverridematrix" isList="false" allowNull="false"/>
+            <element name="overridemessage" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.override.form.OverrideRequestForm" name="OverrideRequestForm" supportsQuickData="false">
+            <element name="accountbranch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="amount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="prodcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subprodcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transactingbranch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

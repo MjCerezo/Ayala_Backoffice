@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbnetamt" table="TBNETAMT" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="userid" type="string">
+            <column name="userid" length="50"/>
+        </property>
+        <property name="currency" type="string">
+            <column name="currency" length="3"/>
+        </property>
+        <property name="userbalance" type="big_decimal">
+            <column name="userbalance" precision="16"/>
+        </property>
+        <property name="businessdate" type="timestamp">
+            <column name="businessdate" length="23"/>
+        </property>
+        <property name="transfertype" type="string">
+            <column name="transfertype" length="5"/>
+        </property>
+    </class>
+</hibernate-mapping>

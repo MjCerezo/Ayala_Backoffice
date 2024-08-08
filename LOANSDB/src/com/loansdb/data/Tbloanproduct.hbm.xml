@@ -1,0 +1,270 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbloanproduct" table="TBLOANPRODUCT" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="productcode" type="string">
+            <column name="productcode" length="5"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="companycode" type="string">
+            <column name="companycode" length="50"/>
+        </property>
+        <property name="productname" type="string">
+            <column name="productname" length="100"/>
+        </property>
+        <property name="producttype1" type="string">
+            <column name="producttype1" length="5"/>
+        </property>
+        <property name="producttype2" type="string">
+            <column name="producttype2" length="5"/>
+        </property>
+        <property name="minloanamountrule" type="string">
+            <column name="minloanamountrule" length="2"/>
+        </property>
+        <property name="maxloanamountrule" type="string">
+            <column name="maxloanamountrule" length="2"/>
+        </property>
+        <property name="minloanamount" type="big_decimal">
+            <column name="minloanamount" precision="20"/>
+        </property>
+        <property name="maxloanamount" type="big_decimal">
+            <column name="maxloanamount" precision="20"/>
+        </property>
+        <property name="mintermrule" type="string">
+            <column name="mintermrule" length="2"/>
+        </property>
+        <property name="maxtermrule" type="string">
+            <column name="maxtermrule" length="2"/>
+        </property>
+        <property name="minterm" type="big_decimal">
+            <column name="minterm" precision="20"/>
+        </property>
+        <property name="maxterm" type="big_decimal">
+            <column name="maxterm" precision="20"/>
+        </property>
+        <property name="interestraterule" type="string">
+            <column name="interestraterule" length="2"/>
+        </property>
+        <property name="defaultinterestrate" type="big_decimal">
+            <column name="defaultinterestrate" precision="20"/>
+        </property>
+        <property name="mininterestrate" type="big_decimal">
+            <column name="mininterestrate" precision="20"/>
+        </property>
+        <property name="maxinterestrate" type="big_decimal">
+            <column name="maxinterestrate" precision="20"/>
+        </property>
+        <property name="repaymenttype" type="string">
+            <column name="repaymenttype" length="2"/>
+        </property>
+        <property name="withrepricing" type="boolean">
+            <column name="withrepricing"/>
+        </property>
+        <property name="withpretermination" type="boolean">
+            <column name="withpretermination"/>
+        </property>
+        <property name="baseyear" type="integer">
+            <column name="baseyear"/>
+        </property>
+        <property name="securityclassification" type="string">
+            <column name="securityclassification" length="2"/>
+        </property>
+        <property name="securitytype" type="string">
+            <column name="securitytype" length="2"/>
+        </property>
+        <property name="repaymentmode" type="string">
+            <column name="repaymentmode" length="2"/>
+        </property>
+        <property name="repaymentcycle" type="string">
+            <column name="repaymentcycle" length="2"/>
+        </property>
+        <property name="hasretention" type="boolean">
+            <column name="hasretention"/>
+        </property>
+        <property name="retentionrate" type="big_decimal">
+            <column name="retentionrate" precision="20"/>
+        </property>
+        <property name="hasadvanceinterest" type="boolean">
+            <column name="hasadvanceinterest"/>
+        </property>
+        <property name="hasreavailment" type="boolean">
+            <column name="hasreavailment"/>
+        </property>
+        <property name="reavailementpayraterequired" type="big_decimal">
+            <column name="reavailementpayraterequired" precision="20"/>
+        </property>
+        <property name="indefaultcondition" type="integer">
+            <column name="indefaultcondition"/>
+        </property>
+        <property name="noofcomakerrequired" type="integer">
+            <column name="noofcomakerrequired"/>
+        </property>
+        <property name="haslpc" type="boolean">
+            <column name="haslpc"/>
+        </property>
+        <property name="lpcgraceperiod" type="integer">
+            <column name="lpcgraceperiod"/>
+        </property>
+        <property name="lpcrate" type="big_decimal">
+            <column name="lpcrate" precision="20"/>
+        </property>
+        <property name="lpcperiod" type="string">
+            <column name="lpcperiod" length="2"/>
+        </property>
+        <property name="haspastduecharges" type="boolean">
+            <column name="haspastduecharges"/>
+        </property>
+        <property name="excesspaymenthandling" type="string">
+            <column name="excesspaymenthandling" length="2"/>
+        </property>
+        <property name="nonworkingdatehandling" type="string">
+            <column name="nonworkingdatehandling" length="2"/>
+        </property>
+        <property name="incomerecognition" type="string">
+            <column name="incomerecognition" length="2"/>
+        </property>
+        <property name="upfrontchargesrate" type="big_decimal">
+            <column name="upfrontchargesrate" precision="20"/>
+        </property>
+        <property name="depedmaxloanamount1" type="big_decimal">
+            <column name="depedmaxloanamount1" precision="20"/>
+        </property>
+        <property name="depedmaxloanamount2" type="big_decimal">
+            <column name="depedmaxloanamount2" precision="20"/>
+        </property>
+        <property name="depedinterestrate1" type="big_decimal">
+            <column name="depedinterestrate1" precision="20"/>
+        </property>
+        <property name="depedinterestrate2" type="big_decimal">
+            <column name="depedinterestrate2" precision="20"/>
+        </property>
+        <property name="depedinterestrate3" type="big_decimal">
+            <column name="depedinterestrate3" precision="20"/>
+        </property>
+        <property name="interestpaid" type="string">
+            <column name="interestpaid" length="2"/>
+        </property>
+        <property name="seafarertermrule" type="string">
+            <column name="seafarertermrule" length="2"/>
+        </property>
+        <property name="mincapcon" type="big_decimal">
+            <column name="mincapcon" precision="20"/>
+        </property>
+        <property name="firstloaneligibilitymoa" type="big_decimal">
+            <column name="firstloaneligibilitymoa" precision="20"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="20"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="20"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="isadepedloan" type="boolean">
+            <column name="isadepedloan"/>
+        </property>
+        <property name="isaseafarerloan" type="boolean">
+            <column name="isaseafarerloan"/>
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="500"/>
+        </property>
+        <property name="hasDownpayment" type="boolean">
+            <column name="hasDownpayment"/>
+        </property>
+        <property name="downpayment" type="big_decimal">
+            <column name="downpayment" precision="20"/>
+        </property>
+        <property name="interesttype" type="string">
+            <column name="interesttype" length="5"/>
+        </property>
+        <property name="interestperiod" type="string">
+            <column name="interestperiod" length="5"/>
+        </property>
+        <property name="termperiod" type="string">
+            <column name="termperiod" length="5"/>
+        </property>
+        <property name="defaultterm" type="integer">
+            <column name="defaultterm"/>
+        </property>
+        <property name="iscomakerrequired" type="boolean">
+            <column name="iscomakerrequired"/>
+        </property>
+        <property name="iscollateralrequired" type="boolean">
+            <column name="iscollateralrequired"/>
+        </property>
+        <property name="calculatortype" type="string">
+            <column name="calculatortype" length="2"/>
+        </property>
+        <property name="hascoborrower" type="boolean">
+            <column name="hascoborrower"/>
+        </property>
+        <property name="hassurety" type="boolean">
+            <column name="hassurety"/>
+        </property>
+        <property name="hasaif" type="boolean">
+            <column name="hasaif"/>
+        </property>
+        <property name="collateralflag" type="boolean">
+            <column name="collateralflag"/>
+        </property>
+        <property name="repricingfreq" type="string">
+            <column name="repricingfreq" length="5"/>
+        </property>
+        <property name="subproductcode" type="string">
+            <column name="subproductcode" length="5"/>
+        </property>
+        <property name="subproductname" type="string">
+            <column name="subproductname" length="100"/>
+        </property>
+        <property name="currency" type="string">
+            <column name="currency" length="5"/>
+        </property>
+        <property name="intpaycomp" type="string">
+            <column name="intpaycomp" length="5"/>
+        </property>
+        <property name="intpaytype" type="string">
+            <column name="intpaytype" length="5"/>
+        </property>
+        <property name="enableindividual" type="boolean">
+            <column name="enableindividual"/>
+        </property>
+        <property name="enablecorporate" type="boolean">
+            <column name="enablecorporate"/>
+        </property>
+        <property name="enablesoleproprietor" type="boolean">
+            <column name="enablesoleproprietor"/>
+        </property>
+        <property name="creditmodel" type="string">
+            <column name="creditmodel" length="5"/>
+        </property>
+        <property name="policymodel" type="string">
+            <column name="policymodel" length="5"/>
+        </property>
+        <property name="workflowmodel" type="string">
+            <column name="workflowmodel" length="5"/>
+        </property>
+        <property name="riskmodel" type="string">
+            <column name="riskmodel" length="10"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="5"/>
+        </property>
+        <property name="hasadvanceamort" type="boolean">
+            <column name="hasadvanceamort"/>
+        </property>
+        <property name="noofadvamort" type="integer">
+            <column name="noofadvamort"/>
+        </property>
+        <property name="withreceivables" type="boolean">
+            <column name="withreceivables"/>
+        </property>
+        <property name="hasrollover" type="boolean">
+            <column name="hasrollover"/>
+        </property>
+    </class>
+</hibernate-mapping>

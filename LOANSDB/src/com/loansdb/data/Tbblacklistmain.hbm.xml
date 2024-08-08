@@ -1,0 +1,51 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbblacklistmain" table="TBBLACKLISTMAIN" catalog="CIFSDBUAT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="blacklistid" type="string">
+            <column name="blacklistid" length="50"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50"/>
+        </property>
+        <property name="fullname" type="string">
+            <column name="fullname" length="250"/>
+        </property>
+        <property name="dateofbirth" type="timestamp">
+            <column name="dateofbirth" length="23"/>
+        </property>
+        <property name="dateofincorporation" type="timestamp">
+            <column name="dateofincorporation" length="23"/>
+        </property>
+        <property name="startdate" type="timestamp">
+            <column name="startdate" length="23"/>
+        </property>
+        <property name="enddate" type="timestamp">
+            <column name="enddate" length="23"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="20"/>
+        </property>
+        <property name="blacklistsource" type="string">
+            <column name="blacklistsource" length="50"/>
+        </property>
+        <property name="customertype" type="string">
+            <column name="customertype" length="20"/>
+        </property>
+        <property name="createddate" type="timestamp">
+            <column name="createddate" length="23"/>
+        </property>
+        <property name="uploadrefid" type="string">
+            <column name="uploadrefid" length="20"/>
+        </property>
+        <property name="uploadeddate" type="timestamp">
+            <column name="uploadeddate" length="23"/>
+        </property>
+        <property name="uploadbatch" type="string">
+            <column name="uploadbatch" length="10"/>
+        </property>
+        <property name="isopenended" type="boolean">
+            <column name="isopenended"/>
+        </property>
+    </class>
+</hibernate-mapping>

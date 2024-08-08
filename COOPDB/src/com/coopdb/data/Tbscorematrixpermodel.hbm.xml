@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbscorematrixpermodel" table="TBSCOREMATRIXPERMODEL" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="modelno" type="string">
+            <column name="modelno" length="10" not-null="true"/>
+        </property>
+        <property name="operand1" type="string">
+            <column name="operand1" length="5"/>
+        </property>
+        <property name="value1" type="big_decimal">
+            <column name="value1" precision="16"/>
+        </property>
+        <property name="operand2" type="string">
+            <column name="operand2" length="5"/>
+        </property>
+        <property name="value2" type="big_decimal">
+            <column name="value2" precision="16"/>
+        </property>
+        <property name="result" type="string">
+            <column name="result" length="100"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="100"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

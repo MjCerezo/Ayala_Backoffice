@@ -1,0 +1,51 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tblamsublimits" table="TBLAMSUBLIMITS" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="evalreportid" type="integer">
+            <column name="evalreportid"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="maincfrefno" type="string">
+            <column name="maincfrefno" length="50"/>
+        </property>
+        <property name="cfrefno" type="string">
+            <column name="cfrefno" length="20"/>
+        </property>
+        <property name="cflevel" type="integer">
+            <column name="cflevel"/>
+        </property>
+        <property name="cfseqno" type="string">
+            <column name="cfseqno" length="20"/>
+        </property>
+        <property name="cfsubseqno" type="string">
+            <column name="cfsubseqno" length="20"/>
+        </property>
+        <property name="cfrefnoconcat" type="string">
+            <column name="cfrefnoconcat" length="50"/>
+        </property>
+        <property name="cfcode" type="string">
+            <column name="cfcode" length="10"/>
+        </property>
+        <property name="facilitytype" type="string">
+            <column name="facilitytype" length="50"/>
+        </property>
+        <property name="approvedloantamount" type="big_decimal">
+            <column name="approvedloantamount" precision="20"/>
+        </property>
+        <property name="availedamount" type="big_decimal">
+            <column name="availedamount" precision="20"/>
+        </property>
+        <property name="proposedamount" type="big_decimal">
+            <column name="proposedamount" precision="20"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="500"/>
+        </property>
+    </class>
+</hibernate-mapping>

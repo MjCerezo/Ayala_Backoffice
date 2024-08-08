@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="GLEntriesCASAFacade" class="com.etel.glcasa.GLEntriesCASAFacade" CRUDService="false" type="JavaService" springFile="GLEntriesCASAFacade.spring.xml">
+    <operation name="GLEntriesForm">
+        <parameter name="r" typeRef="com.etel.glentries.forms.GLEntriesForm" isList="true"/>
+        <return typeRef="com.etel.glentries.forms.GLEntriesForm" isList="true"/>
+    </operation>
+    <operation name="fileHandOff">
+        <parameter name="businessdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateGLEntries">
+        <parameter name="pnno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbglentries" isList="true"/>
+    </operation>
+    <operation name="getGLAccounts">
+        <return typeRef="com.coopdb.data.Tbcoa" isList="true"/>
+    </operation>
+    <operation name="getGLEntries">
+        <parameter name="pnno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.glentries.forms.GLEntriesForm" isList="true"/>
+    </operation>
+    <operation name="getGLEntriesByPnnoAndTxCode">
+        <parameter name="pnno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="islmstransaction" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="com.etel.glentries.forms.GLEntriesForm" isList="true"/>
+    </operation>
+    <operation name="getGLMatrix">
+        <return typeRef="com.coopdb.data.Tbglmatrixcasa" isList="true"/>
+    </operation>
+    <operation name="getGLMatrixPerProd">
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbglmatrixperprodcasa" isList="true"/>
+    </operation>
+    <operation name="getListOfAccountingEntries">
+        <parameter name="txcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbaccountingentriescasa" isList="true"/>
+    </operation>
+    <operation name="glentriesperprod">
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.glentries.forms.GLEntriesPerProductForm" isList="true"/>
+    </operation>
+    <operation name="saveGLperprod">
+        <parameter name="glentry" typeRef="com.coopdb.data.Tbglentriesperproduct" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrDeleteAccountingEntries">
+        <parameter name="acctentries" typeRef="com.coopdb.data.Tbaccountingentriescasa" isList="false"/>
+        <parameter name="action" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrDeleteGLMatrixPerProd">
+        <parameter name="glmatrixperprod" typeRef="com.coopdb.data.Tbglmatrixperprodcasa" isList="false"/>
+        <parameter name="action" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

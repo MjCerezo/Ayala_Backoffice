@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="CIFReportFacade" class="com.etel.cifreport.CIFReportFacade" CRUDService="false" type="JavaService" springFile="CIFReportFacade.spring.xml">
+    <operation name="getCIFComprehensive">
+        <parameter name="forms" typeRef="com.etel.cifreport.form.CIFParameterForm" isList="false"/>
+        <return typeRef="com.etel.cifreport.form.CIFComprehensiveForm" isList="true"/>
+    </operation>
+    <operation name="getCIFLink">
+        <return typeRef="com.etel.cifreport.form.CIFTransactionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getCIFWorkflow">
+        <parameter name="workflowid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.cifreport.form.CIFWorkFlowForm" isList="true"/>
+    </operation>
+    <operation name="getLOSLink">
+        <return typeRef="com.etel.cifreport.form.CIFTransactionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofCIFEnrollmentTransactionsBusiness">
+        <parameter name="forms" typeRef="com.etel.cifreport.form.CIFParameterForm" isList="false"/>
+        <return typeRef="com.etel.cifreport.form.CIFTransactionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofCIFEnrollmentTransactionsIndividual">
+        <parameter name="forms" typeRef="com.etel.cifreport.form.CIFParameterForm" isList="false"/>
+        <return typeRef="com.etel.cifreport.form.CIFTransactionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofClientProfileUpdate">
+        <parameter name="forms" typeRef="com.etel.cifreport.form.CIFParameterForm" isList="false"/>
+        <return typeRef="com.etel.cifreport.form.CIFTransactionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofCustomersBusiness">
+        <parameter name="forms" typeRef="com.etel.cifreport.form.CIFParameterForm" isList="false"/>
+        <return typeRef="com.etel.cifreport.form.CIFSchedulesReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofCustomersDOSRIBusiness">
+        <parameter name="forms" typeRef="com.etel.cifreport.form.CIFParameterForm" isList="false"/>
+        <return typeRef="com.etel.cifreport.form.CIFExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofCustomersDOSRIIndividual">
+        <parameter name="forms" typeRef="com.etel.cifreport.form.CIFParameterForm" isList="false"/>
+        <return typeRef="com.etel.cifreport.form.CIFExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofCustomersFATCABusiness">
+        <parameter name="forms" typeRef="com.etel.cifreport.form.CIFParameterForm" isList="false"/>
+        <return typeRef="com.etel.cifreport.form.CIFExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofCustomersFATCAIndividual">
+        <parameter name="forms" typeRef="com.etel.cifreport.form.CIFParameterForm" isList="false"/>
+        <return typeRef="com.etel.cifreport.form.CIFExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofCustomersIndividual">
+        <parameter name="forms" typeRef="com.etel.cifreport.form.CIFParameterForm" isList="false"/>
+        <return typeRef="com.etel.cifreport.form.CIFSchedulesReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofCustomersPEPBusiness">
+        <parameter name="forms" typeRef="com.etel.cifreport.form.CIFParameterForm" isList="false"/>
+        <return typeRef="com.etel.cifreport.form.CIFExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofCustomersPEPIndividual">
+        <parameter name="forms" typeRef="com.etel.cifreport.form.CIFParameterForm" isList="false"/>
+        <return typeRef="com.etel.cifreport.form.CIFExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofExceptionalAccountsDOSRIBusiness">
+        <parameter name="forms" typeRef="com.etel.cifreport.form.CIFParameterForm" isList="false"/>
+        <return typeRef="com.etel.cifreport.form.CIFExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofExceptionalAccountsDOSRIIndividual">
+        <parameter name="forms" typeRef="com.etel.cifreport.form.CIFParameterForm" isList="false"/>
+        <return typeRef="com.etel.cifreport.form.CIFExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofExceptionalAccountsFATCABusiness">
+        <parameter name="forms" typeRef="com.etel.cifreport.form.CIFParameterForm" isList="false"/>
+        <return typeRef="com.etel.cifreport.form.CIFExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofExceptionalAccountsFATCAIndividual">
+        <parameter name="forms" typeRef="com.etel.cifreport.form.CIFParameterForm" isList="false"/>
+        <return typeRef="com.etel.cifreport.form.CIFExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofExceptionalAccountsPEPBusiness">
+        <parameter name="forms" typeRef="com.etel.cifreport.form.CIFParameterForm" isList="false"/>
+        <return typeRef="com.etel.cifreport.form.CIFExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofExceptionalAccountsPEPIndividual">
+        <parameter name="forms" typeRef="com.etel.cifreport.form.CIFParameterForm" isList="false"/>
+        <return typeRef="com.etel.cifreport.form.CIFExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofUser">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companycode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.cifreport.form.AllUserForm" isList="true"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.cifreport.form.CIFComprehensiveForm" name="CIFComprehensiveForm" supportsQuickData="false">
+            <element name="barangay1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="barangay2" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="beneficiarydateofbirth" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="beneficiaryfirstname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="beneficiarylastname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="beneficiarymiddlename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="beneficiarysuffix" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="beneficiarytitle" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifStatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="city1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="city2" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cityofbirth" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="civilStat" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="communitiestype1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="communitiestype2" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="country1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="country2" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="countryofbirth" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datemembership" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dualcitizen" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="emailaddress" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="encodeddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="fatherfirstname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fatherlastname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fathermiddlename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fathertitle" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="faxnumber" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="gender" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="gsis" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="homeownership1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="homeownership2" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="homephoneno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="mailingaddress" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershipType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="mobilenumber" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="motherfirstname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="motherlastname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="mothermiddlename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="mothertitle" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="nationality" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="occupiedsince1" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="occupiedsince2" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="placeofbirth" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="postal1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="postal2" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="previouslastname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="province1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="province2" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="referredbycifname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="referredbycifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="relationtoborrower" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="religion" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="resident" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sexualpref" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="shortname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="spousefirstname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="spouselastname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="spousemiddlename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="spousetitle" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sss" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="streetno1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="streetno2" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subdivision1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subdivision2" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="suffix" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="suffix1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="suffix2" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="suffix3" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="suffix4" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="tin" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="title" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.cifreport.form.CIFParameterForm" name="CIFParameterForm" supportsQuickData="false">
+            <element name="asOf" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="businessType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifDbLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifStat" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="civilStat" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="endDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="firmSize" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="gender" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="losDbLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="nationality" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="noFilter" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="paidUpCapital" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="registerTin" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="riskRating" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="startDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="tellerName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.cifreport.form.CIFTransactionalReportForm" name="CIFTransactionalReportForm" supportsQuickData="false">
+            <element name="approvedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="businessType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="changefrom" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="changeto" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="changetype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifDbLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifStatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="city1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cityOfBirth" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="civilStat" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="country1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="custName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateEncoded" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateOfBirth" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateOfCorporation" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateOfMembership" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="daterequested" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="encodedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="firmSize" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fulladdress1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="gender" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="industryCode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="losDbLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="nationality" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="paidUpCapital" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="processName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="registrationNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="riskRating" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sss" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="statDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="tin" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.cifreport.form.CIFWorkFlowForm" name="CIFWorkFlowForm" supportsQuickData="false">
+            <element name="processid" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="processname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="workflowid" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.cifreport.form.CIFSchedulesReportForm" name="CIFSchedulesReportForm" supportsQuickData="false">
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="businessType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifDbLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifStatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="city1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cityOfBirth" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="civilStat" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="communitiestype1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="country1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="custName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateEncoded" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateOfBirth" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateOfCorporation" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="encodedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="firmSize" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fulladdress1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="gender" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="industryCode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="losDbLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="nationality" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="paidUpCapital" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="registrationNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="religion" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="riskRating" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sexualpref" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sss" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="statDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="tin" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.cifreport.form.CIFExceptionalReportForm" name="CIFExceptionalReportForm" supportsQuickData="false">
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="businessType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifStatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="city1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cityOfBirth" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="civilStat" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companyDirector" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="country1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="custName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateEncoded" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateOfBirth" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateOfCorporation" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dosri" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="encodedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="firmSize" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fulladdress1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="gender" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="govOffName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="govOffName2" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="govOffName3" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="grantPowerOfAttority" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="industryCode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="nationality" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="paidUpCapital" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="payTaxesInTheUS" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="positionFromQ1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="positionFromQ2" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="positionFromQ3" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="registrationNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="relationshipFromQ3" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="riskRating" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sss" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="statDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="stockholderOfCom" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="tin" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="usCitizenOrGreenCardHolder" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="usResidentResidesDaysMore183" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="usTIN" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.cifreport.form.AllUserForm" name="AllUserForm" supportsQuickData="false">
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="userid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

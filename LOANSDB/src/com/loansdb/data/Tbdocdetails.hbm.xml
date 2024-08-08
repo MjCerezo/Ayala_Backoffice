@@ -1,0 +1,147 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbdocdetails" table="TBDOCDETAILS" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="docid" type="integer">
+            <column name="docid"/>
+            <generator class="identity"/>
+        </id>
+        <property name="dmsid" type="string">
+            <column name="dmsid" length="50"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50"/>
+        </property>
+        <property name="pnno" type="string">
+            <column name="pnno" length="50"/>
+        </property>
+        <property name="linerefno" type="string">
+            <column name="linerefno" length="50"/>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="250"/>
+        </property>
+        <property name="signatoryname" type="string">
+            <column name="signatoryname" length="100"/>
+        </property>
+        <property name="collateralno" type="string">
+            <column name="collateralno" length="50"/>
+        </property>
+        <property name="doccategory" type="string">
+            <column name="doccategory" length="100"/>
+        </property>
+        <property name="doctype" type="string">
+            <column name="doctype" length="100"/>
+        </property>
+        <property name="datereceived" type="timestamp">
+            <column name="datereceived" length="23"/>
+        </property>
+        <property name="docstatus" type="string">
+            <column name="docstatus" length="50"/>
+        </property>
+        <property name="updatecycle" type="string">
+            <column name="updatecycle" length="50"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks"/>
+        </property>
+        <property name="idtype" type="string">
+            <column name="idtype" length="100"/>
+        </property>
+        <property name="idno" type="string">
+            <column name="idno" length="50"/>
+        </property>
+        <property name="issuedate" type="timestamp">
+            <column name="issuedate" length="23"/>
+        </property>
+        <property name="issuecountry" type="string">
+            <column name="issuecountry" length="50"/>
+        </property>
+        <property name="expirydate" type="timestamp">
+            <column name="expirydate" length="23"/>
+        </property>
+        <property name="issuedby" type="string">
+            <column name="issuedby" length="100"/>
+        </property>
+        <property name="coveredyear" type="string">
+            <column name="coveredyear" length="20"/>
+        </property>
+        <property name="datefiledbir" type="timestamp">
+            <column name="datefiledbir" length="23"/>
+        </property>
+        <property name="lineeffectivitydate" type="timestamp">
+            <column name="lineeffectivitydate" length="23"/>
+        </property>
+        <property name="lineexpirydate" type="timestamp">
+            <column name="lineexpirydate" length="23"/>
+        </property>
+        <property name="chassisno" type="string">
+            <column name="chassisno" length="100"/>
+        </property>
+        <property name="description" type="string">
+            <column name="description"/>
+        </property>
+        <property name="tctno" type="string">
+            <column name="tctno" length="50"/>
+        </property>
+        <property name="suretyno" type="string">
+            <column name="suretyno" length="50"/>
+        </property>
+        <property name="fundercifno" type="string">
+            <column name="fundercifno" length="50"/>
+        </property>
+        <property name="loitype" type="string">
+            <column name="loitype" length="50"/>
+        </property>
+        <property name="proofdoctype" type="string">
+            <column name="proofdoctype" length="50"/>
+        </property>
+        <property name="dateserved" type="timestamp">
+            <column name="dateserved" length="23"/>
+        </property>
+        <property name="uploadedby" type="string">
+            <column name="uploadedby" length="100"/>
+        </property>
+        <property name="dateuploaded" type="timestamp">
+            <column name="dateuploaded" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="100"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="dateadded" type="timestamp">
+            <column name="dateadded" length="23"/>
+        </property>
+        <property name="incorporationdate" type="timestamp">
+            <column name="incorporationdate" length="23"/>
+        </property>
+        <property name="registrationno" type="string">
+            <column name="registrationno" length="50"/>
+        </property>
+        <property name="registrationtype" type="string">
+            <column name="registrationtype" length="50"/>
+        </property>
+        <property name="dateofmeeting" type="timestamp">
+            <column name="dateofmeeting" length="23"/>
+        </property>
+        <property name="secsubmitteddate" type="timestamp">
+            <column name="secsubmitteddate" length="23"/>
+        </property>
+        <property name="statussecsubmission" type="string">
+            <column name="statussecsubmission" length="50"/>
+        </property>
+        <property name="loanappno" type="string">
+            <column name="loanappno" length="20"/>
+        </property>
+        <property name="dateofapplication" type="timestamp">
+            <column name="dateofapplication" length="23"/>
+        </property>
+        <property name="pqtype" type="string">
+            <column name="pqtype" length="50"/>
+        </property>
+        <property name="docanalystremarks" type="string">
+            <column name="docanalystremarks" length="300"/>
+        </property>
+    </class>
+</hibernate-mapping>

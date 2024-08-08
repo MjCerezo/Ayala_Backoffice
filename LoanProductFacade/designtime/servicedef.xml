@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="LoanProductFacade" class="com.etel.loanproduct.LoanProductFacade" CRUDService="false" type="JavaService" springFile="LoanProductFacade.spring.xml">
+    <operation name="checkProductCode">
+        <parameter name="productcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="checkProductNo">
+        <parameter name="productno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteBillingCutOFf">
+        <parameter name="billingCutOff" typeRef="com.coopdb.data.Tbbillingcutoffperprod" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteDeductions">
+        <parameter name="deductions" typeRef="com.coopdb.data.Tbdeductions" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteDocumentPerProduct">
+        <parameter name="doc" typeRef="com.coopdb.data.Tbdocsperproduct" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteLoanFee">
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="loanfeecode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteLoanFeesPerApp">
+        <parameter name="loanfees" typeRef="com.coopdb.data.Tbloanfeesperapp" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteRepayment">
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="schemecode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLoanFeesPerApp">
+        <parameter name="fee" typeRef="com.etel.loanproduct.forms.LoanFeeInputForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getAppStatusProcessName">
+        <parameter name="workflowid" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="sequenceno" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbworkflowprocess" isList="false"/>
+    </operation>
+    <operation name="getApplicationDetails">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tblstapp" isList="false"/>
+    </operation>
+    <operation name="getBOSPerProd">
+        <parameter name="productcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.loanproduct.forms.BOSForm" isList="true"/>
+    </operation>
+    <operation name="getDocumentsPerProduct">
+        <parameter name="productcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdocsperproduct" isList="true"/>
+    </operation>
+    <operation name="getDocumentsPerProductDocCat">
+        <parameter name="productcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="docCat" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdocsperproduct" isList="true"/>
+    </operation>
+    <operation name="getFeesandChargesPerProduct">
+        <parameter name="productcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbfeesandcharges" isList="false"/>
+    </operation>
+    <operation name="getListOfBillingCutOff">
+        <parameter name="productcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbbillingcutoffperprod" isList="true"/>
+    </operation>
+    <operation name="getListOfCollateralPerProd">
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcollateralperprod" isList="true"/>
+    </operation>
+    <operation name="getListOfDeductionsPerProductCode">
+        <parameter name="productcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdeductions" isList="true"/>
+    </operation>
+    <operation name="getListOfLoanProduct">
+        <parameter name="product" typeRef="java.lang.String" isList="false"/>
+        <parameter name="prodtype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbloanproduct" isList="true"/>
+    </operation>
+    <operation name="getListOfLoanProductPerCompany">
+        <parameter name="company" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.loanproduct.forms.Tbproductpercompanyform" isList="true"/>
+    </operation>
+    <operation name="getListOfLoanProductPerCompanyPerGroup">
+        <parameter name="company" typeRef="java.lang.String" isList="false"/>
+        <parameter name="prodgrp" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.loanproduct.forms.Tbproductpercompanyform" isList="true"/>
+    </operation>
+    <operation name="getListRepayments">
+        <return typeRef="com.coopdb.data.Tbloanrepaymentscheme" isList="true"/>
+    </operation>
+    <operation name="getLoanFees">
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbloanproductfees" isList="true"/>
+    </operation>
+    <operation name="getLoanFeesPerApp">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbloanfeesperapp" isList="true"/>
+    </operation>
+    <operation name="getLoanIntRateTable">
+        <parameter name="productcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.loanproduct.forms.LoanIntRateTable" isList="true"/>
+    </operation>
+    <operation name="getLoanProductByProductcode">
+        <parameter name="productcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbloanproduct" isList="false"/>
+    </operation>
+    <operation name="getLoanRepayScheme">
+        <parameter name="schemecode" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbloanrepaymentscheme" isList="true"/>
+    </operation>
+    <operation name="getLoanSchemePerProd">
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.loanproduct.forms.LoanSchemePerProdForm" isList="true"/>
+    </operation>
+    <operation name="getMembershipTypePerBos">
+        <parameter name="boscode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmembershiptypeperbos" isList="true"/>
+    </operation>
+    <operation name="getPayCyclePerLoanScheme">
+        <parameter name="schemecode" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="pi" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.loanproduct.forms.CyclePerLoanSchemeForm" isList="true"/>
+    </operation>
+    <operation name="getRepaymentScheme">
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.loanproduct.forms.RepaymentSchemeDisplayForm" isList="true"/>
+    </operation>
+    <operation name="getRepayments">
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbloanschemeperprod" isList="true"/>
+    </operation>
+    <operation name="getSavedCollateralPerProd">
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.codetable.forms.CodetableForm" isList="true"/>
+    </operation>
+    <operation name="getSavedParticulars">
+        <parameter name="productcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="lowest" typeRef="java.lang.String" isList="false"/>
+        <parameter name="highest" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.codetable.forms.CodetableForm" isList="true"/>
+    </operation>
+    <operation name="getSavedServiceStatus">
+        <parameter name="productcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="membertype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.codetable.forms.CodetableForm" isList="true"/>
+    </operation>
+    <operation name="getintratebyproduct">
+        <parameter name="productcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbintratebyterm" isList="true"/>
+    </operation>
+    <operation name="isDefaultLoanFee">
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="loanfeecode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Boolean" isList="false"/>
+    </operation>
+    <operation name="isUserHasARoleId">
+        <parameter name="roleid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="boolean" isList="false"/>
+    </operation>
+    <operation name="listCycleForm">
+        <parameter name="form" typeRef="com.etel.loanproduct.forms.CyclePerLoanSchemeForm" isList="true"/>
+        <return typeRef="com.etel.loanproduct.forms.CyclePerLoanSchemeForm" isList="true"/>
+    </operation>
+    <operation name="listLoanProduct">
+        <return typeRef="com.etel.loanproduct.forms.LoanProductForm" isList="true"/>
+    </operation>
+    <operation name="listLoanSchemePerProdForm">
+        <parameter name="form" typeRef="com.etel.loanproduct.forms.LoanSchemePerProdForm" isList="true"/>
+        <return typeRef="com.etel.loanproduct.forms.LoanSchemePerProdForm" isList="true"/>
+    </operation>
+    <operation name="saveBOS">
+        <parameter name="loanprod" typeRef="com.coopdb.data.Tbloanprodmembertype" isList="false"/>
+        <parameter name="servicestatus" typeRef="com.etel.codetable.forms.CodetableForm" isList="true"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveCollateralPerProd">
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="iscollateralrequired" typeRef="java.lang.Boolean" isList="false"/>
+        <parameter name="collateral" typeRef="com.etel.codetable.forms.CodetableForm" isList="true"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveDocumentPerProduct">
+        <parameter name="doc" typeRef="com.coopdb.data.Tbdocsperproduct" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveIntRatePerProduct">
+        <parameter name="intrecord" typeRef="com.coopdb.data.Tbintratebyterm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveIntRatePerProduct1">
+        <parameter name="intrecord" typeRef="com.coopdb.data.Tbintratebyterm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveLoanFee">
+        <parameter name="feeform" typeRef="com.etel.loanproduct.forms.LoanFeeForm" isList="false"/>
+        <parameter name="selectedloanfeecode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveLoanProduct">
+        <parameter name="product" typeRef="com.coopdb.data.Tbloanproduct" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveLoanProductFull">
+        <parameter name="product" typeRef="com.coopdb.data.Tbloanproduct" isList="false"/>
+        <parameter name="fees" typeRef="com.coopdb.data.Tbfeesandcharges" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveMLAC">
+        <parameter name="mlaparticulars" typeRef="com.etel.codetable.forms.CodetableForm" isList="true"/>
+        <parameter name="lowest" typeRef="java.lang.String" isList="false"/>
+        <parameter name="highest" typeRef="java.lang.String" isList="false"/>
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateBillingCutOff">
+        <parameter name="billingCutOff" typeRef="com.coopdb.data.Tbbillingcutoffperprod" isList="false"/>
+        <parameter name="beingUpdated" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateLoanFeesPerApp">
+        <parameter name="loanfees" typeRef="com.coopdb.data.Tbloanfeesperapp" isList="false"/>
+        <parameter name="prevloanfeecode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveRepayment">
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="schemecode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="repayment" typeRef="java.lang.String" isList="false"/>
+        <parameter name="selectedschemecode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveorUpdateDeduction">
+        <parameter name="deduction" typeRef="com.coopdb.data.Tbdeductions" isList="false"/>
+        <parameter name="beingUpdated" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="submitLoanProduct">
+        <parameter name="productcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.loanproduct.forms.LoanFeeInputForm" name="LoanFeeInputForm" supportsQuickData="false">
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bookingdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="businesstype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ciftype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="interestvalue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="matdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="maturityval" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="pastdueamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="principalvalue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="prodcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="refferaltype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="termperiod" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="termval" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.loanproduct.forms.BOSForm" name="BOSForm" supportsQuickData="false">
+            <element name="boscode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companyname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="maxloanableamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.loanproduct.forms.Tbproductpercompanyform" name="Tbproductpercompanyform" supportsQuickData="false">
+            <element name="assignedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateassigned" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="isactive" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="productcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="productname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="producttype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.loanproduct.forms.LoanIntRateTable" name="LoanIntRateTable" supportsQuickData="false">
+            <element name="loanterm" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="productcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="rate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.loanproduct.forms.LoanSchemePerProdForm" name="LoanSchemePerProdForm" supportsQuickData="false">
+            <element name="prodcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="repaymentscheme" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="schemecode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.loanproduct.forms.CyclePerLoanSchemeForm" name="CyclePerLoanSchemeForm" supportsQuickData="false">
+            <element name="cycle" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cyclecode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="pi" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="schemecode" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.loanproduct.forms.RepaymentSchemeDisplayForm" name="RepaymentSchemeDisplayForm" supportsQuickData="false">
+            <element name="intcycle" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="paycycle" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prodcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="repaymentscheme" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="schemecode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.loanproduct.forms.LoanProductForm" name="LoanProductForm" supportsQuickData="false">
+            <element name="productcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="productname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.loanproduct.forms.LoanFeeForm" name="LoanFeeForm" supportsQuickData="false">
+            <element name="agentamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="agentrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="agentrateapplied" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="agentrule" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="collectiontype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="documentrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="dstamt1" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="dstamt2" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="dstdiv" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="dstmul" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="dstmul1" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="dstmul1opt" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="effectivity" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="glcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="gldescription" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="inhouseamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="inhouserate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="inhouserateapplied" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="inhouserule" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanfeeamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanfeecode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanfeename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanfeerate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanfeerule" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prodcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="rateappliedto" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="QDEFacade" class="com.etel.qde.QDEFacade" CRUDService="false" type="JavaService" springFile="QDEFacade.spring.xml">
+    <operation name="createApplication">
+        <parameter name="qdeparams" typeRef="com.etel.qde.QDEParameters" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="dedupeResults">
+        <parameter name="qdeparams" typeRef="com.etel.qde.QDEParameters" isList="false"/>
+        <return typeRef="com.etel.qde.DedupeResult" isList="false"/>
+    </operation>
+    <operation name="deleteComaker">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCreditLine">
+        <parameter name="form" typeRef="com.etel.qdeforms.QDEParameterForm" isList="false"/>
+        <return typeRef="com.etel.forms.FormValidation" isList="false"/>
+    </operation>
+    <operation name="generateLI">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLO">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getBranchName">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getCIFCorp">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbcifcorporate" isList="false"/>
+    </operation>
+    <operation name="getCIFIndiv">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbcifindividual" isList="false"/>
+    </operation>
+    <operation name="getCIFMain">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbcifmain" isList="false"/>
+    </operation>
+    <operation name="getChapter">
+        <parameter name="chaptercode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getDosriDetails">
+        <parameter name="memappid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmemberdosri" isList="false"/>
+    </operation>
+    <operation name="getLoanApplications">
+        <parameter name="EmpID" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tblstapp" isList="true"/>
+    </operation>
+    <operation name="getLoansbyMemberID">
+        <parameter name="memid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.qdeforms.LoansForm" isList="false"/>
+    </operation>
+    <operation name="getMemStat">
+        <parameter name="codevalue" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getMember">
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmember" isList="false"/>
+    </operation>
+    <operation name="getMemberBusiness">
+        <parameter name="memid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmemberbusiness" isList="true"/>
+    </operation>
+    <operation name="getMemberComakers">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tblstcomakers" isList="true"/>
+    </operation>
+    <operation name="getMemberCreditCardInfo">
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmembercreditcardinfo" isList="true"/>
+    </operation>
+    <operation name="getMemberDependents">
+        <parameter name="memid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmemberdependents" isList="true"/>
+    </operation>
+    <operation name="getMemberEmployment">
+        <parameter name="memid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmemberemployment" isList="true"/>
+    </operation>
+    <operation name="getMemberFinancialInfo">
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="financialtype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmemberfinancialinfo" isList="true"/>
+    </operation>
+    <operation name="getSpsNameforDedupe">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="listLstapp">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.TblstappForm" isList="true"/>
+    </operation>
+    <operation name="listSpsLstapp">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.TblstappForm" isList="true"/>
+    </operation>
+    <operation name="returnLoanApplication">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="searchCIF">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="lname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="corporatename" typeRef="java.lang.String" isList="false"/>
+        <parameter name="custType" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.qdeforms.QDEParameterForm" isList="false"/>
+    </operation>
+    <operation name="searchMember">
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="firstname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="lastname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="empid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="memberOrEmployee" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.qdeforms.QDEParameterForm" isList="false"/>
+    </operation>
+    <operation name="setupApprovedCIF">
+        <parameter name="form" typeRef="com.etel.qdeforms.QDEParameterForm" isList="false"/>
+        <parameter name="ciftype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifstatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="isencoding" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="setupNewApplication">
+        <parameter name="form" typeRef="com.etel.qdeforms.QDEParameterForm" isList="false"/>
+        <parameter name="loans" typeRef="com.coopdb.data.Tbloans" isList="true"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="setupNewApplicationLOS">
+        <parameter name="form" typeRef="com.etel.qdeforms.QDEParameterForm" isList="false"/>
+        <return typeRef="com.etel.forms.FormValidation" isList="false"/>
+    </operation>
+    <operation name="setupNewApplicationLOSNotExisting">
+        <parameter name="form" typeRef="com.etel.qdeforms.QDEParameterForm" isList="false"/>
+        <return typeRef="com.etel.forms.FormValidation" isList="false"/>
+    </operation>
+    <operation name="setupNewCIF">
+        <parameter name="form" typeRef="com.etel.qdeforms.QDEParameterForm" isList="false"/>
+        <parameter name="ciftype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="setupNewCIFRB">
+        <parameter name="form" typeRef="com.etel.qdeforms.QDEParameterForm" isList="false"/>
+        <parameter name="ciftype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.qde.QDEParameters" name="QDEParameters" supportsQuickData="false">
+            <element name="applicationtype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateofbirth" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="employeeid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershipappid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershipid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershiptype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="servicestatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.qde.DedupeResult" name="DedupeResult" supportsQuickData="false">
+            <element name="listemployee" typeRef="com.coopdb.data.Tbemployee" isList="true" allowNull="false"/>
+            <element name="listmember" typeRef="com.coopdb.data.Tbmember" isList="true" allowNull="false"/>
+            <element name="listmembershipapp" typeRef="com.coopdb.data.Tbmembershipapp" isList="true" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.qdeforms.QDEParameterForm" name="QDEParameterForm" supportsQuickData="false">
+            <element name="applicationtype" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bankAccountNumber" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bankName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="barangay" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="btype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="businessname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="businessnameNotExisting" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="chapter" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cif" typeRef="com.cifsdb.data.Tbcifmain" isList="true" allowNull="false"/>
+            <element name="cifname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="city" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="company" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="count" typeRef="int" isList="false" allowNull="false"/>
+            <element name="country" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="custType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="date" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="emailaddress" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="employee" typeRef="com.coopdb.data.Tbemployee" isList="true" allowNull="false"/>
+            <element name="employeeid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="firstnameNotExisting" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fulladdress1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="homephoneareacode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="homephoneno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lastnameNotExisting" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanproduct" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="member" typeRef="com.coopdb.data.Tbmember" isList="true" allowNull="false"/>
+            <element name="membershipclass" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershipid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershipstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="mname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="mobilephoneareacode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="mobilephoneno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="postalcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="province" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sss" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="streetno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subdivision" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="suffix" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="tin" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="typefacility" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.qdeforms.LoansForm" name="LoansForm" supportsQuickData="false">
+            <element name="borrower" typeRef="com.coopdb.data.Tbloans" isList="true" allowNull="false"/>
+            <element name="comaker" typeRef="com.coopdb.data.Tbloans" isList="true" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="BranchFacade" class="com.etel.branch.BranchFacade" CRUDService="false" type="JavaService" springFile="BranchFacade.spring.xml">
+    <operation name="addBranch">
+        <parameter name="form" typeRef="com.etel.branch.forms.BranchForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteBranch">
+        <parameter name="form" typeRef="com.etel.branch.forms.BranchForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="displayBranchDetails">
+        <parameter name="branchname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.branch.forms.BranchForm" isList="true"/>
+    </operation>
+    <operation name="getAllBranchList">
+        <return typeRef="com.etel.branch.forms.BranchForm" isList="true"/>
+    </operation>
+    <operation name="getAllCompanyList">
+        <return typeRef="com.etel.company.forms.CompanyForm" isList="true"/>
+    </operation>
+    <operation name="getBranch">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.TbbranchId" isList="false"/>
+    </operation>
+    <operation name="getBranchDetails">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbbranch" isList="false"/>
+    </operation>
+    <operation name="getCoopBranches">
+        <parameter name="coopcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companycode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.branch.forms.BranchForm" isList="true"/>
+    </operation>
+    <operation name="getListOfBranch">
+        <parameter name="deactivated" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.branch.forms.BranchForm" isList="true"/>
+    </operation>
+    <operation name="getListOfBranchbyCompany">
+        <parameter name="companycode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.branch.forms.BranchForm" isList="true"/>
+    </operation>
+    <operation name="getListofBranchCodes">
+        <return typeRef="java.lang.String" isList="true"/>
+    </operation>
+    <operation name="searchBranch">
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.branch.forms.BranchForm" isList="true"/>
+    </operation>
+    <operation name="updateBranch">
+        <parameter name="form" typeRef="com.etel.branch.forms.BranchForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateClearingCutOffTime">
+        <parameter name="hour" typeRef="java.lang.String" isList="false"/>
+        <parameter name="minutes" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.branch.forms.BranchForm" name="BranchForm" supportsQuickData="false">
+            <element name="branchaddress" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branchclassification" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branchname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branchstatus" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="coopcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="currentbusinessdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="faxno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="gcaccount" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="isopen" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="mcaccount" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="nextbusinessdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="phoneno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbbranchId" name="TbbranchId" supportsQuickData="false">
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branchname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

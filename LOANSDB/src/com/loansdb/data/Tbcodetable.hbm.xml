@@ -1,0 +1,34 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbcodetable" table="TBCODETABLE" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.TbcodetableId">
+            <key-property name="codename" type="string">
+                <column name="codename" length="50"/>
+            </key-property>
+            <key-property name="codevalue" type="string">
+                <column name="codevalue" length="50"/>
+            </key-property>
+        </composite-id>
+        <property name="desc1" type="string">
+            <column name="desc1" length="500" not-null="true"/>
+        </property>
+        <property name="desc2" type="string">
+            <column name="desc2" length="500"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="1000"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="createddate" type="timestamp">
+            <column name="createddate" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="lastupdated" type="timestamp">
+            <column name="lastupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

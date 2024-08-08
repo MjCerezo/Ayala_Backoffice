@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="ComparableFacade" class="com.etel.Comparable.ComparableFacade" CRUDService="false" type="JavaService" springFile="ComparableFacade.spring.xml">
+    <operation name="addOrUpdateCompValCondo">
+        <parameter name="rel" typeRef="com.coopdb.data.Tbapprelcompvaluecondo" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addOrUpdateTavParkingSlot">
+        <parameter name="rel" typeRef="com.coopdb.data.Tbappreltavparkingslot" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addOrUpdateTcpParkingSlot">
+        <parameter name="rel" typeRef="com.coopdb.data.Tbappreltcpparkingslot" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addOrupdateAutoMrktSrvy">
+        <parameter name="market" typeRef="com.coopdb.data.Tbappautomarketsurvey" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addOrupdateBIRZonalVal">
+        <parameter name="rel" typeRef="com.coopdb.data.Tbapprelbirzone" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addOrupdateCompValBldg">
+        <parameter name="rel" typeRef="com.coopdb.data.Tbapprelcompvaluebldg" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addOrupdateCompValLand">
+        <parameter name="rel" typeRef="com.coopdb.data.Tbapprelcompvalueland" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addOrupdateComparableAuto">
+        <parameter name="comp" typeRef="com.coopdb.data.Tbappautocomparablelisting" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addOrupdateComparableRel">
+        <parameter name="rel" typeRef="com.coopdb.data.Tbapprelcomparablelisting" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addOrupdateLegalDescProp">
+        <parameter name="rel" typeRef="com.coopdb.data.Tbapprellegaldescproperty" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addOrupdateLienEncumbrance">
+        <parameter name="rel" typeRef="com.coopdb.data.Tbapprellienencumbrance" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addOrupdateRelOpinion">
+        <parameter name="rel" typeRef="com.coopdb.data.Tbapprelopinionsurvey" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addOrupdateTCPBldg">
+        <parameter name="rel" typeRef="com.coopdb.data.Tbappreltcpbldgimprovements" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addOrupdateTCPCondo">
+        <parameter name="rel" typeRef="com.coopdb.data.Tbappreltcpcondo" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addOrupdateTCPLand">
+        <parameter name="rel" typeRef="com.coopdb.data.Tbappreltcpland" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteAutoMarket">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteBasesOfEvaluationRel">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteComparableAuto">
+        <parameter name="id" typeRef="int" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteComparableRel">
+        <parameter name="id" typeRef="int" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteLegalDescProperty">
+        <parameter name="legaldescprop" typeRef="com.coopdb.data.Tbapprellegaldescproperty" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteRELCompValueById">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteRelOpinion">
+        <parameter name="id" typeRef="int" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteTCPCompValueById">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getAutoMarketSurvey">
+        <parameter name="appreportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbappautomarketsurvey" isList="true"/>
+    </operation>
+    <operation name="getListAutoComparable">
+        <parameter name="appreportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbappautocomparablelisting" isList="true"/>
+    </operation>
+    <operation name="getListCompValBldg">
+        <parameter name="appreportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbapprelcompvaluebldg" isList="true"/>
+    </operation>
+    <operation name="getListCompValCondo">
+        <parameter name="appreportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbapprelcompvaluecondo" isList="true"/>
+    </operation>
+    <operation name="getListCompValLand">
+        <parameter name="appreportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbapprelcompvalueland" isList="true"/>
+    </operation>
+    <operation name="getListComparableRel">
+        <parameter name="appreportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbapprelcomparablelisting" isList="true"/>
+    </operation>
+    <operation name="getListLegalDescProp">
+        <parameter name="appreportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbapprellegaldescproperty" isList="true"/>
+    </operation>
+    <operation name="getListLienEncumbrance">
+        <parameter name="appreportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbapprellienencumbrance" isList="true"/>
+    </operation>
+    <operation name="getListRelBIRzone">
+        <parameter name="appreportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbapprelbirzone" isList="true"/>
+    </operation>
+    <operation name="getListRelOpinion">
+        <parameter name="appreportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbapprelopinionsurvey" isList="true"/>
+    </operation>
+    <operation name="getListTCPBldg">
+        <parameter name="appreportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbappreltcpbldgimprovements" isList="true"/>
+    </operation>
+    <operation name="getListTCPCondo">
+        <parameter name="appreportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbappreltcpcondo" isList="true"/>
+    </operation>
+    <operation name="getListTCPLand">
+        <parameter name="appreportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbappreltcpland" isList="true"/>
+    </operation>
+    <operation name="getListTavParkingSlot">
+        <parameter name="appreportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbappreltavparkingslot" isList="true"/>
+    </operation>
+    <operation name="getListTcpParkingSlot">
+        <parameter name="appreportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbappreltcpparkingslot" isList="true"/>
+    </operation>
+    <operation name="sampleJavaOperation">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

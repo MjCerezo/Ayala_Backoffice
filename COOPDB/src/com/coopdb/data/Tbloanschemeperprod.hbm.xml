@@ -1,0 +1,16 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbloanschemeperprod" table="TBLOANSCHEMEPERPROD" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.TbloanschemeperprodId">
+            <key-property name="prodcode" type="string">
+                <column name="prodcode" length="5"/>
+            </key-property>
+            <key-property name="schemecode" type="string">
+                <column name="schemecode" length="5"/>
+            </key-property>
+        </composite-id>
+        <property name="repaymentscheme" type="string">
+            <column name="repaymentscheme" length="100"/>
+        </property>
+    </class>
+</hibernate-mapping>

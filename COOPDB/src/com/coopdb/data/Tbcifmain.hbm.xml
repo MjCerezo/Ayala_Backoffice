@@ -1,0 +1,159 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbcifmain" table="TBCIFMAIN" catalog="CIFSDBDXBANK_SAMULCO" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="cifno" type="string">
+            <column name="cifno" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="fullname" type="string">
+            <column name="fullname" length="100"/>
+        </property>
+        <property name="customertype" type="string">
+            <column name="customertype" length="10"/>
+        </property>
+        <property name="encodeddate" type="timestamp">
+            <column name="encodeddate" length="23"/>
+        </property>
+        <property name="encodedby" type="string">
+            <column name="encodedby" length="20"/>
+        </property>
+        <property name="cifstatus" type="string">
+            <column name="cifstatus" length="20"/>
+        </property>
+        <property name="cifstatusdate" type="timestamp">
+            <column name="cifstatusdate" length="23"/>
+        </property>
+        <property name="cifapprovedby" type="string">
+            <column name="cifapprovedby" length="50"/>
+        </property>
+        <property name="cifreturnedby" type="string">
+            <column name="cifreturnedby" length="50"/>
+        </property>
+        <property name="cifapproveddate" type="timestamp">
+            <column name="cifapproveddate" length="23"/>
+        </property>
+        <property name="cifreturnedbydate" type="timestamp">
+            <column name="cifreturnedbydate" length="23"/>
+        </property>
+        <property name="cifreturned" type="boolean">
+            <column name="cifreturned"/>
+        </property>
+        <property name="ciftype" type="string">
+            <column name="ciftype" length="50"/>
+        </property>
+        <property name="dateofbirth" type="timestamp">
+            <column name="dateofbirth" length="23"/>
+        </property>
+        <property name="assignedto" type="string">
+            <column name="assignedto" length="50"/>
+        </property>
+        <property name="borrowerfundertype" type="string">
+            <column name="borrowerfundertype" length="50"/>
+        </property>
+        <property name="approvalcode" type="string">
+            <column name="approvalcode" length="20"/>
+        </property>
+        <property name="dateofincorporation" type="timestamp">
+            <column name="dateofincorporation" length="23"/>
+        </property>
+        <property name="originatingteam" type="string">
+            <column name="originatingteam" length="50"/>
+        </property>
+        <property name="assignedby" type="string">
+            <column name="assignedby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="lastupdatedby" type="string">
+            <column name="lastupdatedby" length="50"/>
+        </property>
+        <property name="originatingbranch" type="string">
+            <column name="originatingbranch" length="50"/>
+        </property>
+        <property name="accreditedmktgconsultant" type="string">
+            <column name="accreditedmktgconsultant" length="50"/>
+        </property>
+        <property name="fulladdress1" type="string">
+            <column name="fulladdress1" length="300"/>
+        </property>
+        <property name="fulladdress2" type="string">
+            <column name="fulladdress2" length="300"/>
+        </property>
+        <property name="cifpurpose" type="string">
+            <column name="cifpurpose" length="100"/>
+        </property>
+        <property name="cifgroupcode" type="string">
+            <column name="cifgroupcode" length="10"/>
+        </property>
+        <property name="taxexempted" type="boolean">
+            <column name="taxexempted"/>
+        </property>
+        <property name="clienttype" type="string">
+            <column name="clienttype" length="10"/>
+        </property>
+        <property name="dateofregistration" type="timestamp">
+            <column name="dateofregistration" length="23"/>
+        </property>
+        <property name="accreditationstatus" type="string">
+            <column name="accreditationstatus" length="5"/>
+        </property>
+        <property name="referrorposition" type="string">
+            <column name="referrorposition" length="10"/>
+        </property>
+        <property name="declaredmaxvalueoftx" type="string">
+            <column name="declaredmaxvalueoftx" length="10"/>
+        </property>
+        <property name="referrorname" type="string">
+            <column name="referrorname" length="100"/>
+        </property>
+        <property name="deceasedflag" type="boolean">
+            <column name="deceasedflag"/>
+        </property>
+        <property name="maintainsaccttootherbanks" type="boolean">
+            <column name="maintainsaccttootherbanks"/>
+        </property>
+        <property name="accountfreezeflag" type="boolean">
+            <column name="accountfreezeflag"/>
+        </property>
+        <property name="referraltype" type="string">
+            <column name="referraltype" length="10"/>
+        </property>
+        <property name="tradeaccreditationdate" type="timestamp">
+            <column name="tradeaccreditationdate" length="23"/>
+        </property>
+        <property name="accreditationdate" type="timestamp">
+            <column name="accreditationdate" length="23"/>
+        </property>
+        <property name="isencoding" type="boolean">
+            <column name="isencoding"/>
+        </property>
+        <property name="riskrating" type="string">
+            <column name="riskrating" length="5"/>
+        </property>
+        <property name="oldcifno" type="string">
+            <column name="oldcifno" length="20"/>
+        </property>
+        <property name="profpiccode" type="string">
+            <column name="profpiccode"/>
+        </property>
+        <property name="cancelledby" type="string">
+            <column name="cancelledby"/>
+        </property>
+        <property name="datecancelled" type="timestamp">
+            <column name="datecancelled" length="23"/>
+        </property>
+        <property name="cbscode" type="string">
+            <column name="cbscode" length="250"/>
+        </property>
+        <property name="collectorareacode" type="string">
+            <column name="collectorareacode" length="50"/>
+        </property>
+        <property name="collectorsubareacode" type="string">
+            <column name="collectorsubareacode" length="50"/>
+        </property>
+        <property name="dateassigned" type="timestamp">
+            <column name="dateassigned" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

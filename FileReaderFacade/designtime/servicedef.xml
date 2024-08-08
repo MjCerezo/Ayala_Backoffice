@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="FileReaderFacade" class="com.etel.upload.FileReaderFacade" CRUDService="false" type="JavaService" springFile="FileReaderFacade.spring.xml">
+    <operation name="ReceivableForm">
+        <parameter name="r" typeRef="com.etel.uploadforms.EmployeeForm" isList="true"/>
+        <return typeRef="com.etel.uploadforms.EmployeeForm" isList="true"/>
+    </operation>
+    <operation name="removeAllExistingAuto">
+        <parameter name="form" typeRef="com.etel.filereaderforms.CollateralVehicleForm" isList="true"/>
+        <return typeRef="com.etel.filereaderforms.CollateralVehicleForm" isList="true"/>
+    </operation>
+    <operation name="removeAllExistingRel">
+        <parameter name="form" typeRef="com.etel.filereaderforms.CollateralRealEstateForm" isList="true"/>
+        <return typeRef="com.etel.filereaderforms.CollateralRealEstateForm" isList="true"/>
+    </operation>
+    <operation name="saveAuto">
+        <parameter name="form" typeRef="com.etel.filereaderforms.CollateralVehicleForm" isList="true"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateUploadedEmployee">
+        <parameter name="form" typeRef="com.etel.uploadforms.EmployeeForm" isList="true"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveRel">
+        <parameter name="form" typeRef="com.etel.filereaderforms.CollateralRealEstateForm" isList="true"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="uploadCollateral">
+        <parameter name="filename" typeRef="java.lang.String" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.filereaderforms.FormValidation" isList="false"/>
+    </operation>
+    <operation name="uploadEmployee">
+        <parameter name="filename" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.uploadforms.FormValidation2" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.uploadforms.EmployeeForm" name="EmployeeForm" supportsQuickData="false">
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="civilstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companyname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateofbirth" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="employeeid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="employmentstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="gender" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="gsis" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="isExisting" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="nationality" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="position" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="rank" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="row" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="sss" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="suffix" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="tin" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.filereaderforms.CollateralVehicleForm" name="CollateralVehicleForm" supportsQuickData="false">
+            <element name="accessories" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="collateralType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="color" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="conductionStickerNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="crNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateOfLastAppraisal" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="datePurchased" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="engineNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fuel" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="isExisting" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="kmReading" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lastAppraisedValue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="lastFairMarketValue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="location" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ltoOffice" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="make" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="model" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="modelDetails" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="mvFileNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="newOrused" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="noCylinders" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="orNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="plateNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="registeredowner" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="retailPrice" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="row" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="serialChassisNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="tireCondition" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="vehicleType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="vehicleValue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="year" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.filereaderforms.CollateralRealEstateForm" name="CollateralRealEstateForm" supportsQuickData="false">
+            <element name="area" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="bldgName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="blockNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="collateralType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateOfLastAppraisal" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="houseType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="isExisting" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="lastAppraisedValue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="lastFairMarketValue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="lotno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prevOwner" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prevTitleNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="propertyAddress" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="propertyType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="propertyValue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="registeredowner" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="row" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="titleno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="unitNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="unitType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.filereaderforms.FormValidation" name="FormValidation" supportsQuickData="false">
+            <element name="autoForm" typeRef="com.etel.filereaderforms.CollateralVehicleForm" isList="true" allowNull="false"/>
+            <element name="errorMessage" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="flag" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="receivableForm" typeRef="com.etel.filereaderforms.ReceivableForm" isList="true" allowNull="false"/>
+            <element name="relForm" typeRef="com.etel.filereaderforms.CollateralRealEstateForm" isList="true" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.uploadforms.FormValidation2" name="FormValidation2" supportsQuickData="false">
+            <element name="empForm" typeRef="com.etel.uploadforms.EmployeeForm" isList="true" allowNull="false"/>
+            <element name="errorMessage" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="flag" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

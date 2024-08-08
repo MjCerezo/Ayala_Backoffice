@@ -1,0 +1,51 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbdocpertransaction" table="TBDOCPERTRANSACTION" catalog="COOPDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="transid" type="integer">
+            <column name="transid"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txcode" type="string">
+            <column name="txcode" length="10" not-null="true"/>
+        </property>
+        <property name="documentcode" type="string">
+            <column name="documentcode" length="20"/>
+        </property>
+        <property name="documentname" type="string">
+            <column name="documentname" length="100"/>
+        </property>
+        <property name="productcode" type="string">
+            <column name="productcode" length="50"/>
+        </property>
+        <property name="applicationstatus" type="integer">
+            <column name="applicationstatus"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="300"/>
+        </property>
+        <property name="subtypecode" type="string">
+            <column name="subtypecode" length="10"/>
+        </property>
+        <property name="realestatecode" type="string">
+            <column name="realestatecode" length="10"/>
+        </property>
+        <property name="reqtype" type="string">
+            <column name="reqtype" length="20"/>
+        </property>
+        <property name="reqgroup" type="string">
+            <column name="reqgroup" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

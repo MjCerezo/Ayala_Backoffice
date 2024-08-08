@@ -1,0 +1,126 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbresign" table="TBRESIGN" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txbatch" type="string">
+            <column name="txbatch" length="3"/>
+        </property>
+        <property name="txdate" type="timestamp">
+            <column name="txdate" length="23"/>
+        </property>
+        <property name="txrefno" type="integer">
+            <column name="txrefno"/>
+        </property>
+        <property name="txcode" type="string">
+            <column name="txcode" length="30"/>
+        </property>
+        <property name="txmode" type="string">
+            <column name="txmode" length="1"/>
+        </property>
+        <property name="txvadt" type="timestamp">
+            <column name="txvadt" length="23"/>
+        </property>
+        <property name="membershipid" type="string">
+            <column name="membershipid" length="20"/>
+        </property>
+        <property name="employeeid" type="string">
+            <column name="employeeid" length="12"/>
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="50"/>
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="50"/>
+        </property>
+        <property name="middlename" type="string">
+            <column name="middlename" length="50"/>
+        </property>
+        <property name="reasoncode" type="string">
+            <column name="reasoncode" length="2"/>
+        </property>
+        <property name="reasoninfo" type="string">
+            <column name="reasoninfo" length="50"/>
+        </property>
+        <property name="txstatus" type="string">
+            <column name="txstatus" length="1"/>
+        </property>
+        <property name="txstatusdate" type="timestamp">
+            <column name="txstatusdate" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="creationdate" type="timestamp">
+            <column name="creationdate" length="23"/>
+        </property>
+        <property name="approvedby" type="string">
+            <column name="approvedby" length="50"/>
+        </property>
+        <property name="approvaldate" type="timestamp">
+            <column name="approvaldate" length="23"/>
+        </property>
+        <property name="txremarks" type="string">
+            <column name="txremarks" length="50"/>
+        </property>
+        <property name="capconinstruction" type="string">
+            <column name="capconinstruction" length="2"/>
+        </property>
+        <property name="capconbankname" type="string">
+            <column name="capconbankname" length="50"/>
+        </property>
+        <property name="capconbankacctno" type="string">
+            <column name="capconbankacctno" length="50"/>
+        </property>
+        <property name="capconaccttype" type="string">
+            <column name="capconaccttype" length="2"/>
+        </property>
+        <property name="dividendinstruction" type="string">
+            <column name="dividendinstruction" length="2"/>
+        </property>
+        <property name="dividendbankname" type="string">
+            <column name="dividendbankname" length="50"/>
+        </property>
+        <property name="dividendbankacctno" type="string">
+            <column name="dividendbankacctno" length="50"/>
+        </property>
+        <property name="dividendaccttype" type="string">
+            <column name="dividendaccttype" length="2"/>
+        </property>
+        <property name="cooponly" type="boolean">
+            <column name="cooponly"/>
+        </property>
+        <property name="bothcoopandcompany" type="boolean">
+            <column name="bothcoopandcompany"/>
+        </property>
+        <property name="effectivitydate" type="timestamp">
+            <column name="effectivitydate" length="23"/>
+        </property>
+        <property name="resignstatus" type="string">
+            <column name="resignstatus" length="10"/>
+        </property>
+        <property name="statusdate" type="timestamp">
+            <column name="statusdate" length="23"/>
+        </property>
+        <property name="boardresno" type="string">
+            <column name="boardresno" length="50"/>
+        </property>
+        <property name="boardremarks" type="string">
+            <column name="boardremarks" length="100"/>
+        </property>
+        <property name="boardapprovedby" type="string">
+            <column name="boardapprovedby" length="50"/>
+        </property>
+        <property name="boardapprovaldate" type="timestamp">
+            <column name="boardapprovaldate" length="23"/>
+        </property>
+        <property name="releasedeby" type="binary">
+            <column name="releasedeby"/>
+        </property>
+        <property name="releaseddate" type="timestamp">
+            <column name="releaseddate" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

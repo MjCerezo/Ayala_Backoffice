@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="DedupeFacade" class="com.etel.dedupe.DedupeFacade" CRUDService="false" type="JavaService" springFile="DedupeFacade.spring.xml">
+    <operation name="createApplication">
+        <parameter name="form" typeRef="com.etel.dedupe.forms.SearchParameters" isList="false"/>
+        <parameter name="apptype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.ReturnForm" isList="false"/>
+    </operation>
+    <operation name="getList">
+        <parameter name="params" typeRef="com.etel.dedupe.forms.SearchParameters" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbemployee" isList="true"/>
+    </operation>
+    <operation name="getReadonlyFields">
+        <parameter name="appid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.dedupe.forms.fromMasterList" isList="false"/>
+    </operation>
+    <operation name="getReferror">
+        <parameter name="name" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmember" isList="true"/>
+    </operation>
+    <operation name="getSearchPerson">
+        <parameter name="name" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmember" isList="true"/>
+    </operation>
+    <operation name="getSearchResult">
+        <parameter name="params" typeRef="com.etel.dedupe.forms.SearchParameters" isList="false"/>
+        <return typeRef="com.etel.dedupe.forms.SearchResult" isList="false"/>
+    </operation>
+    <operation name="sampleJavaOperation">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.dedupe.forms.SearchParameters" name="SearchParameters" supportsQuickData="false">
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateofbirth" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="employeeid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="referror" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="referrorcompany" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="relationship" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.dedupe.forms.fromMasterList" name="fromMasterList" supportsQuickData="false">
+            <element name="address1" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="address2" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="annualincome" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="bloddtype" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="businessincome" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="civilstatus" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="countryofbirth" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="dateofbirth" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="email" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="expirydate" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="firstname" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="gender" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="gsis" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="height" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="idno" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="idtype" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="issuedate" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="lastname" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="middlename" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="mobilephoneno" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="nationality" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="officephoneno" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="otherincome" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="phoneno" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="placeofbirth" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="primaryschool" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="primaryschoolyear" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="religion" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="secondaryschool" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="secondaryschoolyear" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="shortname" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="socialaffiliation" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="sss" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="suffix" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tertiaryschool" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tertiaryschoolyear" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tin" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="title" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="weight" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.dedupe.forms.SearchResult" name="SearchResult" supportsQuickData="false">
+            <element name="amla" typeRef="com.coopdb.data.Tbamlalistmain" isList="true" allowNull="false"/>
+            <element name="application" typeRef="com.coopdb.data.Tbmembershipapp" isList="true" allowNull="false"/>
+            <element name="blacklist" typeRef="com.coopdb.data.Tbblacklistmain" isList="true" allowNull="false"/>
+            <element name="employee" typeRef="com.coopdb.data.Tbemployee" isList="true" allowNull="false"/>
+            <element name="membership" typeRef="com.coopdb.data.Tbmember" isList="true" allowNull="false"/>
+            <element name="relatives" typeRef="com.coopdb.data.Tbmemberrelationship" isList="true" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

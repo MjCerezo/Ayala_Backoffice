@@ -1,0 +1,58 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tblamsecurities" table="TBLAMSECURITIES" catalog="LOANSDBUAT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.TblamsecuritiesId">
+            <key-property name="evalreportid" type="string">
+                <column name="evalreportid" length="50"/>
+            </key-property>
+            <key-property name="cfrefno" type="string">
+                <column name="cfrefno" length="50"/>
+            </key-property>
+            <key-property name="appno" type="string">
+                <column name="appno" length="50"/>
+            </key-property>
+            <key-property name="collateralid" type="string">
+                <column name="collateralid" length="50"/>
+            </key-property>
+        </composite-id>
+        <property name="collateraltype" type="string">
+            <column name="collateraltype" length="50"/>
+        </property>
+        <property name="collateralrefno" type="string">
+            <column name="collateralrefno" length="50"/>
+        </property>
+        <property name="unitvalue" type="big_decimal">
+            <column name="unitvalue" precision="20"/>
+        </property>
+        <property name="avperunit" type="big_decimal">
+            <column name="avperunit" precision="20"/>
+        </property>
+        <property name="totalav" type="big_decimal">
+            <column name="totalav" precision="20"/>
+        </property>
+        <property name="lvpercent1" type="big_decimal">
+            <column name="lvpercent1" precision="18"/>
+        </property>
+        <property name="lvamt1" type="big_decimal">
+            <column name="lvamt1" precision="20"/>
+        </property>
+        <property name="lvpercent2" type="big_decimal">
+            <column name="lvpercent2" precision="18"/>
+        </property>
+        <property name="lvamt2" type="big_decimal">
+            <column name="lvamt2" precision="20"/>
+        </property>
+        <property name="registeredowner" type="string">
+            <column name="registeredowner" length="300"/>
+        </property>
+        <property name="securitydescription" type="string">
+            <column name="securitydescription"/>
+        </property>
+        <property name="lastappraiseddate" type="timestamp">
+            <column name="lastappraiseddate" length="23"/>
+        </property>
+        <property name="lastappraisedby" type="string">
+            <column name="lastappraisedby" length="300"/>
+        </property>
+    </class>
+</hibernate-mapping>

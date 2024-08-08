@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="CollectionFacade" class="com.etel.collection.CollectionFacade" CRUDService="false" type="JavaService" springFile="CollectionFacade.spring.xml">
+    <operation name="readCollectionFile">
+        <parameter name="filepath" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.collection.form.CollectionForm" isList="true"/>
+    </operation>
+    <operation name="uploadCollectionFile">
+        <parameter name="file" typeRef="org.springframework.web.multipart.MultipartFile" isList="false"/>
+        <return typeRef="com.wavemaker.runtime.server.FileUploadResponse" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.collection.form.CollectionForm" name="CollectionForm" supportsQuickData="false">
+            <element name="accountName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountNumber" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="amount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="collector" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="productName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="valuedate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

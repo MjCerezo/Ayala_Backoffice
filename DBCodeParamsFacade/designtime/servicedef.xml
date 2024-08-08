@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="DBCodeParamsFacade" class="com.etel.dbcodeparams.DBCodeParamsFacade" CRUDService="false" type="JavaService" springFile="DBCodeParamsFacade.spring.xml">
+    <operation name="getListDBParams">
+        <return typeRef="com.coopdb.data.Tbdatabaseparams" isList="true"/>
+    </operation>
+    <operation name="getListTableField">
+        <parameter name="dbcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tbcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbfieldparams" isList="true"/>
+    </operation>
+    <operation name="getListTableParamsByDBCode">
+        <parameter name="dbcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbtableparams" isList="true"/>
+    </operation>
+    <operation name="saveOrDeleteDatabaseParams">
+        <parameter name="dbparams" typeRef="com.coopdb.data.Tbdatabaseparams" isList="false"/>
+        <parameter name="ident" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrDeleteFieldParams">
+        <parameter name="fieldparams" typeRef="com.coopdb.data.Tbfieldparams" isList="false"/>
+        <parameter name="ident" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrDeleteTableParams">
+        <parameter name="tableparams" typeRef="com.coopdb.data.Tbtableparams" isList="false"/>
+        <parameter name="ident" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

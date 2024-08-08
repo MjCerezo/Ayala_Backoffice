@@ -1,0 +1,75 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbdocspercfapp" table="TBDOCSPERCFAPP" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="docid" type="integer">
+            <column name="docid"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cfrefno" type="string">
+            <column name="cfrefno" length="50"/>
+        </property>
+        <property name="dmsid" type="string">
+            <column name="dmsid" length="50"/>
+        </property>
+        <property name="docchecklistid" type="integer">
+            <column name="docchecklistid"/>
+        </property>
+        <property name="doccategory" type="string">
+            <column name="doccategory" length="50"/>
+        </property>
+        <property name="documentcode" type="string">
+            <column name="documentcode" length="20"/>
+        </property>
+        <property name="documentname" type="string">
+            <column name="documentname" length="300"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="cfcode" type="string">
+            <column name="cfcode" length="50"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="docappstatus" type="string">
+            <column name="docappstatus" length="50"/>
+        </property>
+        <property name="docstatus" type="string">
+            <column name="docstatus" length="50"/>
+        </property>
+        <property name="applicationstatus" type="integer">
+            <column name="applicationstatus"/>
+        </property>
+        <property name="dateuploaded" type="timestamp">
+            <column name="dateuploaded" length="23"/>
+        </property>
+        <property name="uploadedby" type="string">
+            <column name="uploadedby" length="50"/>
+        </property>
+        <property name="issubmitted" type="boolean">
+            <column name="issubmitted"/>
+        </property>
+        <property name="isuploaded" type="boolean">
+            <column name="isuploaded"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="300"/>
+        </property>
+        <property name="enablenotarialfee" type="boolean">
+            <column name="enablenotarialfee"/>
+        </property>
+        <property name="enablerequired" type="boolean">
+            <column name="enablerequired"/>
+        </property>
+        <property name="docanalystremarks" type="string">
+            <column name="docanalystremarks" length="300"/>
+        </property>
+        <property name="isforpreloanrelease" type="boolean">
+            <column name="isforpreloanrelease"/>
+        </property>
+        <property name="isforavailment" type="boolean">
+            <column name="isforavailment"/>
+        </property>
+    </class>
+</hibernate-mapping>

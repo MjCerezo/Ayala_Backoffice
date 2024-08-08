@@ -1,0 +1,105 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbreceivables" table="TBRECEIVABLES" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="checkno" type="string">
+            <column name="checkno" length="100"/>
+        </property>
+        <property name="referenceno" type="string">
+            <column name="referenceno" length="50"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="50"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50"/>
+        </property>
+        <property name="tradecifno" type="string">
+            <column name="tradecifno" length="50"/>
+        </property>
+        <property name="tradetype" type="string">
+            <column name="tradetype" length="20"/>
+        </property>
+        <property name="receivabletype" type="string">
+            <column name="receivabletype" length="10"/>
+        </property>
+        <property name="clientsuppliername" type="string">
+            <column name="clientsuppliername" length="100"/>
+        </property>
+        <property name="clientsupplieraddress" type="string">
+            <column name="clientsupplieraddress" length="200"/>
+        </property>
+        <property name="contactperson" type="string">
+            <column name="contactperson" length="100"/>
+        </property>
+        <property name="contactposition" type="string">
+            <column name="contactposition" length="50"/>
+        </property>
+        <property name="emailaddress" type="string">
+            <column name="emailaddress" length="100"/>
+        </property>
+        <property name="mobile1" type="string">
+            <column name="mobile1" length="20"/>
+        </property>
+        <property name="mobile2" type="string">
+            <column name="mobile2" length="20"/>
+        </property>
+        <property name="landline1" type="string">
+            <column name="landline1" length="20"/>
+        </property>
+        <property name="landline2" type="string">
+            <column name="landline2" length="20"/>
+        </property>
+        <property name="accreditationstatus" type="string">
+            <column name="accreditationstatus" length="5"/>
+        </property>
+        <property name="bankname" type="string">
+            <column name="bankname" length="10"/>
+        </property>
+        <property name="branch" type="string">
+            <column name="branch" length="100"/>
+        </property>
+        <property name="checkdate" type="timestamp">
+            <column name="checkdate" length="23"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="16"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="500"/>
+        </property>
+        <property name="vehicletype" type="string">
+            <column name="vehicletype" length="50"/>
+        </property>
+        <property name="make" type="string">
+            <column name="make" length="50"/>
+        </property>
+        <property name="model" type="string">
+            <column name="model" length="50"/>
+        </property>
+        <property name="chassisno" type="string">
+            <column name="chassisno" length="50"/>
+        </property>
+        <property name="engineno" type="string">
+            <column name="engineno" length="50"/>
+        </property>
+        <property name="color" type="string">
+            <column name="color" length="50"/>
+        </property>
+        <property name="fuel" type="string">
+            <column name="fuel" length="50"/>
+        </property>
+        <property name="location" type="string">
+            <column name="location" length="50"/>
+        </property>
+        <property name="plateno" type="string">
+            <column name="plateno" length="50"/>
+        </property>
+        <property name="conductionstickerno" type="string">
+            <column name="conductionstickerno" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

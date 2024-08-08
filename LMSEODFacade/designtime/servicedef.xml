@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="LMSEODFacade" class="com.etel.lmseod.LMSEODFacade" CRUDService="false" type="JavaService" springFile="LMSEODFacade.spring.xml">
+    <operation name="getProcessingDate">
+        <return typeRef="com.coopdb.data.Tbprocessingdate" isList="false"/>
+    </operation>
+    <operation name="loanBooking">
+        <parameter name="loanTx" typeRef="com.etel.lms.forms.LoanAccountForm" isList="true"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="runLMSEOD_new">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="singletransactionPosting">
+        <parameter name="tx" typeRef="com.etel.lms.forms.LoanTransactionForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="transactionPosting">
+        <parameter name="txlist" typeRef="com.etel.lms.forms.LoanTransactionForm" isList="true"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateProcessEndDate">
+        <parameter name="processdate" typeRef="com.coopdb.data.Tbprocessingdate" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

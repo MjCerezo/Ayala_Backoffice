@@ -1,0 +1,48 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbdeskciactivity" table="TBDESKCIACTIVITY" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cireportid" type="string">
+            <column name="cireportid" length="20" not-null="true"/>
+        </property>
+        <property name="ciactivity" type="string">
+            <column name="ciactivity" length="20"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="informantname" type="string">
+            <column name="informantname" length="300"/>
+        </property>
+        <property name="informantcontactno" type="string">
+            <column name="informantcontactno" length="50"/>
+        </property>
+        <property name="informantposition" type="string">
+            <column name="informantposition" length="50"/>
+        </property>
+        <property name="overallfindings" type="string">
+            <column name="overallfindings" length="2"/>
+        </property>
+        <property name="overallremarks" type="string">
+            <column name="overallremarks" length="300"/>
+        </property>
+        <property name="employmentid" type="integer">
+            <column name="employmentid"/>
+        </property>
+        <property name="businessid" type="integer">
+            <column name="businessid"/>
+        </property>
+        <property name="bankid" type="integer">
+            <column name="bankid"/>
+        </property>
+        <property name="creditid" type="integer">
+            <column name="creditid"/>
+        </property>
+        <property name="tradeid" type="integer">
+            <column name="tradeid"/>
+        </property>
+    </class>
+</hibernate-mapping>

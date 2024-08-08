@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="RiskProfileFacade" class="com.etel.riskprofile.RiskProfileFacade" CRUDService="false" type="JavaService" springFile="RiskProfileFacade.spring.xml">
+    <operation name="addRiskProfile1">
+        <parameter name="risk" typeRef="com.coopdb.data.Tbriskprofile" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getRiskProfile">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbriskprofile" isList="true"/>
+    </operation>
+    <dataobjects/>
+</service>

@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbmemberdependents" table="TBMEMBERDEPENDENTS" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="membershipappid" type="string">
+            <column name="membershipappid" length="20"/>
+        </property>
+        <property name="membershipid" type="string">
+            <column name="membershipid" length="20"/>
+        </property>
+        <property name="fullname" type="string">
+            <column name="fullname" length="300"/>
+        </property>
+        <property name="dateofbirth" type="timestamp">
+            <column name="dateofbirth" length="23"/>
+        </property>
+        <property name="age" type="integer">
+            <column name="age"/>
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="20"/>
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="20"/>
+        </property>
+        <property name="relationship" type="string">
+            <column name="relationship" length="50"/>
+        </property>
+        <property name="ismember" type="boolean">
+            <column name="ismember"/>
+        </property>
+        <property name="contactno" type="string">
+            <column name="contactno" length="50"/>
+        </property>
+        <property name="dependentmemberid" type="string">
+            <column name="dependentmemberid" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

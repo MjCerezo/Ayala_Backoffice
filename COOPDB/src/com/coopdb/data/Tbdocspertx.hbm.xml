@@ -1,0 +1,36 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbdocspertx" table="TBDOCSPERTX" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txrefno" type="integer">
+            <column name="txrefno"/>
+        </property>
+        <property name="txcode" type="string">
+            <column name="txcode" length="10"/>
+        </property>
+        <property name="documentcode" type="string">
+            <column name="documentcode" length="20"/>
+        </property>
+        <property name="documentname" type="string">
+            <column name="documentname" length="100"/>
+        </property>
+        <property name="issubmitted" type="boolean">
+            <column name="issubmitted"/>
+        </property>
+        <property name="uploadedby" type="string">
+            <column name="uploadedby" length="50"/>
+        </property>
+        <property name="datesubmitted" type="timestamp">
+            <column name="datesubmitted" length="23"/>
+        </property>
+        <property name="isreviewed" type="boolean">
+            <column name="isreviewed"/>
+        </property>
+        <property name="datereviewed" type="timestamp">
+            <column name="datereviewed" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

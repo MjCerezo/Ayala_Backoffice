@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="MultipleTransactionsFacade" class="com.etel.multitx.MutlipleTransactionFacade" CRUDService="false" type="JavaService" springFile="MultipleTransactionsFacade.spring.xml">
+    <operation name="addTransaction">
+        <parameter name="transaction" typeRef="com.coopdb.data.Tbmultipletransaction" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="editTransaction">
+        <parameter name="transaction" typeRef="com.coopdb.data.Tbmultipletransaction" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getMultipleTransaction">
+        <parameter name="startDate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="endDate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="teller" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.multitx.form.MultipleTransDataForm" isList="true"/>
+    </operation>
+    <operation name="listAccounts">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.multitx.form.MultipleTransactionAccountForm" isList="true"/>
+    </operation>
+    <operation name="listCIF">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.inquiry.forms.CIFInquiryForm" isList="true"/>
+    </operation>
+    <operation name="listTransactions">
+        <parameter name="multitxrefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmultipletransaction" isList="true"/>
+    </operation>
+    <operation name="postTransaction">
+        <parameter name="multipletransactions" typeRef="com.coopdb.data.Tbmultipletransaction" isList="true"/>
+        <parameter name="paymentbreakdown" typeRef="com.etel.lmsinquiry.forms.PaymentBreakdownForm" isList="true"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.multitx.form.MultipleTransDataForm" name="MultipleTransDataForm" supportsQuickData="false">
+            <element name="amount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fulladdress1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="multitxrefno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txvaldt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.multitx.form.MultipleTransactionAccountForm" name="MultipleTransactionAccountForm" supportsQuickData="false">
+            <element name="accountbalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accounttype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="availablebalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="placementamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="productcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="productname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subproductcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subproductname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="wpassbook" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

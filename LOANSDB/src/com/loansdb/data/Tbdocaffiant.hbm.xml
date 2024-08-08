@@ -1,0 +1,36 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbdocaffiant" table="TBDOCAFFIANT" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="50"/>
+        </property>
+        <property name="documentcode" type="string">
+            <column name="documentcode" length="50"/>
+        </property>
+        <property name="affiant" type="string">
+            <column name="affiant" length="200"/>
+        </property>
+        <property name="govid" type="string">
+            <column name="govid" length="200"/>
+        </property>
+        <property name="idno" type="string">
+            <column name="idno" length="50"/>
+        </property>
+        <property name="placeissued" type="string">
+            <column name="placeissued" length="200"/>
+        </property>
+        <property name="dateissued" type="timestamp">
+            <column name="dateissued" length="23"/>
+        </property>
+        <property name="position" type="string">
+            <column name="position" length="50"/>
+        </property>
+        <property name="signatorycode" type="string">
+            <column name="signatorycode" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

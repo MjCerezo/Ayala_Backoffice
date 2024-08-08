@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbappraisalactivity" table="TBAPPRAISALACTIVITY" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appraisalreportid" type="string">
+            <column name="appraisalreportid" length="20" not-null="true"/>
+        </property>
+        <property name="collateraltype" type="string">
+            <column name="collateraltype" length="20"/>
+        </property>
+        <property name="referenceno" type="string">
+            <column name="referenceno" length="20"/>
+        </property>
+        <property name="collateralid" type="string">
+            <column name="collateralid" length="20"/>
+        </property>
+        <property name="overallfindings" type="string">
+            <column name="overallfindings" length="2"/>
+        </property>
+        <property name="overallremarks" type="string">
+            <column name="overallremarks" length="300"/>
+        </property>
+        <property name="loanablevalue" type="big_decimal">
+            <column name="loanablevalue" precision="20"/>
+        </property>
+        <property name="loanablepercent" type="big_decimal">
+            <column name="loanablepercent" precision="20"/>
+        </property>
+        <property name="appraisedvalue" type="big_decimal">
+            <column name="appraisedvalue" precision="20"/>
+        </property>
+        <property name="appraisedpercent" type="big_decimal">
+            <column name="appraisedpercent" precision="20"/>
+        </property>
+        <property name="marketvalue" type="big_decimal">
+            <column name="marketvalue" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

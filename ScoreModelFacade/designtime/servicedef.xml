@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="ScoreModelFacade" class="com.etel.scoremodel.ScoreModelFacade" CRUDService="false" type="JavaService" springFile="ScoreModelFacade.spring.xml">
+    <operation name="addModel">
+        <parameter name="modelname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="modeldesc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="passingscore" typeRef="java.math.BigDecimal" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addScoreCard">
+        <parameter name="modelno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="criteriaid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="subcriteriaid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fielddesc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tbcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fieldname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datatype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="weights" typeRef="java.math.BigDecimal" isList="false"/>
+        <parameter name="codename" typeRef="java.lang.String" isList="false"/>
+        <parameter name="dbcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="apprefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addScoreCardVal">
+        <parameter name="scorekey" typeRef="java.lang.String" isList="false"/>
+        <parameter name="oper1" typeRef="java.lang.String" isList="false"/>
+        <parameter name="value1" typeRef="java.lang.String" isList="false"/>
+        <parameter name="oper2" typeRef="java.lang.String" isList="false"/>
+        <parameter name="value2" typeRef="java.lang.String" isList="false"/>
+        <parameter name="score" typeRef="java.math.BigDecimal" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="codetableList">
+        <return typeRef="java.lang.String" isList="true"/>
+    </operation>
+    <operation name="deleteCharac">
+        <parameter name="scorekey" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteCharacDet">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteModel">
+        <parameter name="modelno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="duplicateModel">
+        <parameter name="modelname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="modeldesc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="passingscore" typeRef="java.math.BigDecimal" isList="false"/>
+        <parameter name="dupmodelno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getCodetableByDBAndTable">
+        <parameter name="dbname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="codestablename" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="true"/>
+    </operation>
+    <operation name="getColumnListByDBAndTable">
+        <parameter name="dbname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tablename" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="true"/>
+    </operation>
+    <operation name="getDBList">
+        <return typeRef="java.lang.String" isList="true"/>
+    </operation>
+    <operation name="getDatabaseParamsList">
+        <return typeRef="com.coopdb.data.Tbdatabaseparams" isList="true"/>
+    </operation>
+    <operation name="getModelList">
+        <return typeRef="com.coopdb.data.Tbscoremodel" isList="true"/>
+    </operation>
+    <operation name="getScoreCriteriaListByModelno">
+        <parameter name="modelno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbscorecriteria" isList="true"/>
+    </operation>
+    <operation name="getScoreMatrixListPerModel">
+        <parameter name="modelno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbscorematrixpermodel" isList="true"/>
+    </operation>
+    <operation name="getScoreSubCriteriaList">
+        <parameter name="modelno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="criteriaid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbscoresubcriteria" isList="true"/>
+    </operation>
+    <operation name="getScorecard">
+        <parameter name="modelno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="criteriaid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="subcriteriaid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.scoremodel.forms.ScoreItemsForm" isList="true"/>
+    </operation>
+    <operation name="getScorecardScore">
+        <parameter name="scorekey" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbscoreoperandsperitem" isList="true"/>
+    </operation>
+    <operation name="getTableListByDB">
+        <parameter name="dbname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="true"/>
+    </operation>
+    <operation name="saveOrDeleteScoreCriteria">
+        <parameter name="criteria" typeRef="com.coopdb.data.Tbscorecriteria" isList="false"/>
+        <parameter name="ident" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrDeleteScoreMatrixPerModel">
+        <parameter name="matrix" typeRef="com.coopdb.data.Tbscorematrixpermodel" isList="false"/>
+        <parameter name="ident" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrDeleteScoreSubCriteria">
+        <parameter name="subcriteria" typeRef="com.coopdb.data.Tbscoresubcriteria" isList="false"/>
+        <parameter name="ident" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateCreditModel">
+        <parameter name="model" typeRef="com.coopdb.data.Tbscoremodel" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateScoreCard">
+        <parameter name="tbscore" typeRef="com.coopdb.data.Tbscoreitems" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateScoreCardVal">
+        <parameter name="score" typeRef="com.coopdb.data.Tbscoreoperandsperitem" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.scoremodel.forms.ScoreItemsForm" name="ScoreItemsForm" supportsQuickData="false">
+            <element name="apprefno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="codename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="criteriaid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datatype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dbcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dbnametodisplay" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fielddesc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fieldname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fieldnametodisplay" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="itemseqno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="modelno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="scorekey" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subcriteriaid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="tbcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="tbnametodisplay" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="weights" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="SecurityFacade" class="com.etel.facade.SecurityFacade" CRUDService="false" type="JavaService" springFile="SecurityFacade.spring.xml">
+    <operation name="changePassword">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="password" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="checkUsername">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Boolean" isList="false"/>
+    </operation>
+    <operation name="datetimerecord">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="enableUserAcct">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="filterDeletedAcct">
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbuser" isList="true"/>
+    </operation>
+    <operation name="getListOfUserPerParam">
+        <parameter name="roleid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="company" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbuser" isList="true"/>
+    </operation>
+    <operation name="getListofRoles">
+        <return typeRef="com.etel.security.forms.TBRoleForm" isList="true"/>
+    </operation>
+    <operation name="getListofUsersPerUsernameOrRole">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="rolecode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="coopcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="company" typeRef="java.lang.String" isList="false"/>
+        <parameter name="groupcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxResult" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbuser" isList="true"/>
+    </operation>
+    <operation name="getSecurityParams">
+        <return typeRef="com.coopdb.data.Tbsecurityparams" isList="false"/>
+    </operation>
+    <operation name="getUserAccount">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.UserForm" isList="false"/>
+    </operation>
+    <operation name="getUserAgreementMessage">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getUserFirstname">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getUsersTotal">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="rolecode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="groupcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="coopcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="company" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <operation name="resendEmail">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="changepass" typeRef="java.lang.String" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.FormValidation" isList="false"/>
+    </operation>
+    <operation name="resetPassword">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.FormValidation" isList="false"/>
+    </operation>
+    <operation name="resetUserSession">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveSecurityParams">
+        <parameter name="params" typeRef="com.coopdb.data.Tbsecurityparams" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveUserAccount">
+        <parameter name="useracct" typeRef="com.coopdb.data.Tbuser" isList="false"/>
+        <parameter name="roles" typeRef="com.etel.security.forms.TBRoleForm" isList="true"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="userSessionCheck">
+        <return typeRef="boolean" isList="false"/>
+    </operation>
+    <operation name="validate">
+        <parameter name="useracct" typeRef="com.coopdb.data.Tbuser" isList="false"/>
+        <parameter name="role" typeRef="com.etel.security.forms.TBRoleForm" isList="false"/>
+        <parameter name="newOrEdited" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.FormValidation" isList="false"/>
+    </operation>
+    <operation name="validateMaxNoOfUser">
+        <return typeRef="boolean" isList="false"/>
+    </operation>
+    <operation name="validateOldPassword">
+        <parameter name="password" typeRef="java.lang.String" isList="false"/>
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="validatePassword">
+        <parameter name="password" typeRef="java.lang.String" isList="false"/>
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.FormValidation" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.security.forms.TBRoleForm" name="TBRoleForm" supportsQuickData="false">
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="rolename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.forms.UserForm" name="UserForm" supportsQuickData="false">
+            <element name="roles" typeRef="com.etel.security.forms.TBRoleForm" isList="true" allowNull="false"/>
+            <element name="useraccount" typeRef="com.coopdb.data.Tbuser" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.forms.FormValidation" name="FormValidation" supportsQuickData="false">
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="errorMessage" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="flag" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

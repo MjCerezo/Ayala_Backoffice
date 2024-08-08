@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="FormulasAndValuesFacade" class="com.etel.FormulasAndValues.FormulasAndValuesFacade" CRUDService="false" type="JavaService" springFile="FormulasAndValuesFacade.spring.xml">
+    <operation name="getAPA">
+        <return typeRef="com.etel.formulaandvalues.form.FormulaAndValuesForm" isList="true"/>
+    </operation>
+    <operation name="getSBL">
+        <return typeRef="com.etel.formulaandvalues.form.FormulaAndValuesForm" isList="true"/>
+    </operation>
+    <operation name="saveOrUpdateAPA">
+        <parameter name="apa" typeRef="com.coopdb.data.Tbapa" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateSBL">
+        <parameter name="sbl" typeRef="com.coopdb.data.Tbsbl" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.formulaandvalues.form.FormulaAndValuesForm" name="FormulaAndValuesForm" supportsQuickData="false">
+            <element name="currentratesbl" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="netunimpairedcapital" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="rr4checkingdeposit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="rr4savingsdeposit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="rr4termdeposit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="transferpoolrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

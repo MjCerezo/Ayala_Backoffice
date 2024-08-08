@@ -1,0 +1,57 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbamlaindividual" table="TBAMLAINDIVIDUAL" catalog="CIFSDBUAT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="amlalistid" type="string">
+            <column name="amlalistid" length="50"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50"/>
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="50"/>
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="50"/>
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="100"/>
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="100"/>
+        </property>
+        <property name="middlename" type="string">
+            <column name="middlename" length="100"/>
+        </property>
+        <property name="suffix" type="string">
+            <column name="suffix" length="50"/>
+        </property>
+        <property name="dateofbirth" type="timestamp">
+            <column name="dateofbirth" length="23"/>
+        </property>
+        <property name="startdate" type="timestamp">
+            <column name="startdate" length="23"/>
+        </property>
+        <property name="enddate" type="timestamp">
+            <column name="enddate" length="23"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="100"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="amlalistsource" type="string">
+            <column name="amlalistsource" length="50"/>
+        </property>
+        <property name="amlaliststatus" type="string">
+            <column name="amlaliststatus" length="50"/>
+        </property>
+        <property name="isopenended" type="boolean">
+            <column name="isopenended"/>
+        </property>
+    </class>
+</hibernate-mapping>

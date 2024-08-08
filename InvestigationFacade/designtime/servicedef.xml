@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="InvestigationFacade" class="com.etel.investigation.InvestigationFacade" CRUDService="false" type="JavaService" springFile="InvestigationFacade.spring.xml">
+    <operation name="generateInvestigationReport">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getInvestigationResList">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="invtype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbinvestigationresults" isList="true"/>
+    </operation>
+    <operation name="getInvestigationResPerType">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="invtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="participationcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbinvestigationresults" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateInvestigation">
+        <parameter name="inv" typeRef="com.coopdb.data.Tbinvestigationresults" isList="false"/>
+        <parameter name="invtype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

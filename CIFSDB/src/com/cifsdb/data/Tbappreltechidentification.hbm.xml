@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbappreltechidentification" table="TBAPPRELTECHIDENTIFICATION" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appraisalreportid" type="string">
+            <column name="appraisalreportid" length="20"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="collateralid" type="integer">
+            <column name="collateralid"/>
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="50"/>
+        </property>
+        <property name="lotno" type="string">
+            <column name="lotno" length="50"/>
+        </property>
+        <property name="blkno" type="string">
+            <column name="blkno" length="50"/>
+        </property>
+        <property name="regowner" type="string">
+            <column name="regowner" length="300"/>
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="300"/>
+        </property>
+        <property name="area" type="big_decimal">
+            <column name="area" precision="20"/>
+        </property>
+        <property name="verificationdate" type="timestamp">
+            <column name="verificationdate" length="23"/>
+        </property>
+        <property name="boundaries" type="string">
+            <column name="boundaries" length="300"/>
+        </property>
+    </class>
+</hibernate-mapping>

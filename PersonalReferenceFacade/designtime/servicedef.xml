@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="PersonalReferenceFacade" class="com.etel.personalreference.PersonalReferenceFacade" CRUDService="false" type="JavaService" springFile="PersonalReferenceFacade.spring.xml">
+    <operation name="deleteComaker">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deletePref">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="listComaker">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcomaker" isList="true"/>
+    </operation>
+    <operation name="listPersonalreference">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbpersonalreference" isList="true"/>
+    </operation>
+    <operation name="saveOrUpdateComaker">
+        <parameter name="ref" typeRef="com.coopdb.data.Tbcomaker" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdatePref">
+        <parameter name="ref" typeRef="com.cifsdb.data.Tbpersonalreference" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

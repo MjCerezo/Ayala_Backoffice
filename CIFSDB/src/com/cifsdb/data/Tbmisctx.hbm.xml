@@ -1,0 +1,60 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbmisctx" table="TBMISCTX" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txcode" type="string">
+            <column name="txcode" length="10"/>
+        </property>
+        <property name="mediatype" type="string">
+            <column name="mediatype" length="5"/>
+        </property>
+        <property name="medianumber" type="string">
+            <column name="medianumber" length="50"/>
+        </property>
+        <property name="txamount" type="big_decimal">
+            <column name="txamount" precision="18"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="250"/>
+        </property>
+        <property name="paymode" type="string">
+            <column name="paymode" length="2"/>
+        </property>
+        <property name="islateclearing" type="boolean">
+            <column name="islateclearing"/>
+        </property>
+        <property name="txrefno" type="string">
+            <column name="txrefno" length="20"/>
+        </property>
+        <property name="txdate" type="timestamp">
+            <column name="txdate" length="23"/>
+        </property>
+        <property name="txvaldt" type="timestamp">
+            <column name="txvaldt" length="23"/>
+        </property>
+        <property name="feecode" type="string">
+            <column name="feecode" length="20"/>
+        </property>
+        <property name="branchcode" type="string">
+            <column name="branchcode" length="5"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="errorcorrecttxrefno" type="string">
+            <column name="errorcorrecttxrefno" length="50"/>
+        </property>
+        <property name="errorcorrectind" type="boolean">
+            <column name="errorcorrectind"/>
+        </property>
+    </class>
+</hibernate-mapping>

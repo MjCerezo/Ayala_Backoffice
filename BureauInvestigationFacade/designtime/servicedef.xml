@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="BureauInvestigationFacade" class="com.etel.bureauinvestigation.BureauInvestigationFacade" CRUDService="false" type="JavaService" springFile="BureauInvestigationFacade.spring.xml">
+    <operation name="changeBapType">
+        <parameter name="bireportid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="baptype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="createBiReport">
+        <parameter name="birequestid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bireportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.ReturnForm" isList="false"/>
+    </operation>
+    <operation name="deleteAllBAPRecord">
+        <parameter name="bireportid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="baptype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteCMAP">
+        <parameter name="biID" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteMatch">
+        <parameter name="bapid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="doDownload">
+        <parameter name="filename" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.wavemaker.runtime.server.DownloadResponse" isList="false"/>
+    </operation>
+    <operation name="generateBAPXML">
+        <parameter name="bireportid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getAMLARecordByCifno">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.bureauinvestigation.forms.AMLAWatchlistForm" isList="true"/>
+    </operation>
+    <operation name="getAllBIReportperAppNo">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.etel.bureauinvestigation.forms.BIEvalForm" isList="true"/>
+    </operation>
+    <operation name="getBIReport">
+        <parameter name="bireportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbbireportmain" isList="false"/>
+    </operation>
+    <operation name="getBIReportAccessRight">
+        <parameter name="bireportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.bureauinvestigation.forms.BIAccessRightsForm" isList="false"/>
+    </operation>
+    <operation name="getBIRequest">
+        <parameter name="requestid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbbirequest" isList="false"/>
+    </operation>
+    <operation name="getBapList">
+        <parameter name="bireportid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="isFromFileUpload" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="com.etel.bureauinvestigation.forms.BAPListForm" isList="false"/>
+    </operation>
+    <operation name="getBapNfisRecord">
+        <parameter name="bapid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbbapnfis" isList="false"/>
+    </operation>
+    <operation name="getBiAccessRights">
+        <parameter name="requestid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="dlgType" typeRef="java.lang.String" isList="false"/>
+        <parameter name="viewflag" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="com.etel.bureauinvestigation.forms.BIAccessRightsForm" isList="false"/>
+    </operation>
+    <operation name="getBiActivity">
+        <parameter name="bireportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.bureauinvestigation.forms.BiActivityForm" isList="false"/>
+    </operation>
+    <operation name="getBiReportListByAppno">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbbireportmain" isList="true"/>
+    </operation>
+    <operation name="getBiReportListByRequestId">
+        <parameter name="birequestid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbbireportmain" isList="true"/>
+    </operation>
+    <operation name="getBiReportResultPerReportID">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bapbireportid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cmapbireportid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cicbireportid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="blacklistbireportid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="amlabireportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.bureauinvestigation.forms.BiActivityForm" isList="false"/>
+    </operation>
+    <operation name="getBiRequestListByCifno">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbbirequest" isList="true"/>
+    </operation>
+    <operation name="getBiRequestTotal">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="lastname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="firstname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="middlename" typeRef="java.lang.String" isList="false"/>
+        <parameter name="corporatename" typeRef="java.lang.String" isList="false"/>
+        <parameter name="customertype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="birequestid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="requeststatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="assigneduser" typeRef="java.lang.String" isList="false"/>
+        <parameter name="viewflag" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="int" isList="false"/>
+    </operation>
+    <operation name="getBlacklistRecordByCifno">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.bureauinvestigation.forms.BlacklistForm" isList="true"/>
+    </operation>
+    <operation name="getCIC">
+        <parameter name="bireportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbbicic" isList="false"/>
+    </operation>
+    <operation name="getCIFRecord">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.bureauinvestigation.forms.CIFRecordForm" isList="false"/>
+    </operation>
+    <operation name="getCMAP">
+        <parameter name="bireportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbbicmap" isList="false"/>
+    </operation>
+    <operation name="getCMAPList">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbbicmap" isList="true"/>
+    </operation>
+    <operation name="getListofBiRequest">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="lastname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="firstname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="middlename" typeRef="java.lang.String" isList="false"/>
+        <parameter name="corporatename" typeRef="java.lang.String" isList="false"/>
+        <parameter name="customertype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="birequestid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="requeststatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxResult" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="assigneduser" typeRef="java.lang.String" isList="false"/>
+        <parameter name="viewflag" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbbirequest" isList="true"/>
+    </operation>
+    <operation name="isBISupervisorByCompanycode">
+        <parameter name="companycode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="boolean" isList="false"/>
+    </operation>
+    <operation name="readBapXML">
+        <parameter name="filename" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bireportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveMatch">
+        <parameter name="bapid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateBIRequest">
+        <parameter name="request" typeRef="com.coopdb.data.Tbbirequest" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateBapNfis">
+        <parameter name="bapnfis" typeRef="com.coopdb.data.Tbbapnfis" isList="false"/>
+        <parameter name="baptype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateBiReport">
+        <parameter name="bireportmain" typeRef="com.coopdb.data.Tbbireportmain" isList="false"/>
+        <parameter name="bapactivity" typeRef="com.coopdb.data.Tbbiactivity" isList="false"/>
+        <parameter name="cmapdetails" typeRef="com.coopdb.data.Tbbicmap" isList="false"/>
+        <parameter name="cmapactivity" typeRef="com.coopdb.data.Tbbiactivity" isList="false"/>
+        <parameter name="cicdetails" typeRef="com.coopdb.data.Tbbicic" isList="false"/>
+        <parameter name="cicactivity" typeRef="com.coopdb.data.Tbbiactivity" isList="false"/>
+        <parameter name="externalblacklistactivity" typeRef="com.coopdb.data.Tbbiactivity" isList="false"/>
+        <parameter name="internalblacklistactivity" typeRef="com.coopdb.data.Tbbiactivity" isList="false"/>
+        <parameter name="externalamlawatchlistactivity" typeRef="com.coopdb.data.Tbbiactivity" isList="false"/>
+        <parameter name="internalamlawatchlistactivity" typeRef="com.coopdb.data.Tbbiactivity" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateCMAP">
+        <parameter name="data" typeRef="com.coopdb.data.Tbbicmap" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="submitBIRequest">
+        <parameter name="requestid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="submitBiReport">
+        <parameter name="bireportid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <parameter name="reasonforreturn" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.bureauinvestigation.forms.AMLAWatchlistForm" name="AMLAWatchlistForm" supportsQuickData="false">
+            <element name="amlalistid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="description" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="enddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="source" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="startdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.bureauinvestigation.forms.BIEvalForm" name="BIEvalForm" supportsQuickData="false">
+            <element name="amlareportid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="amlawatchlistedexternal" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="amlawatchlistedinternal" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bapbireportid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bapnfis" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="blacklistreportid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cic" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cicbireportid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cmap" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cmapbireportid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="externalblacklist" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="id" typeRef="com.coopdb.data.TbevalbiId" isList="false" allowNull="false"/>
+            <element name="instruction" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="internalblacklist" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="overallremarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="participationcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subjectname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.bureauinvestigation.forms.BIAccessRightsForm" name="BIAccessRightsForm" supportsQuickData="false">
+            <element name="btnCancel" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="btnCreateReport" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="btnDelete" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="btnReturn" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="btnReview" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="btnSave" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="btnStartRpt" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="btnSubmit" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="readOnly" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="slcAssignedBi" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="slcCompany" typeRef="boolean" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.bureauinvestigation.forms.BAPListForm" name="BAPListForm" supportsQuickData="false">
+            <element name="adversematch" typeRef="com.coopdb.data.Tbbapnfis" isList="true" allowNull="false"/>
+            <element name="cardmatch" typeRef="com.coopdb.data.Tbbapnfis" isList="true" allowNull="false"/>
+            <element name="casematch" typeRef="com.coopdb.data.Tbbapnfis" isList="true" allowNull="false"/>
+            <element name="mishandledmatch" typeRef="com.coopdb.data.Tbbapnfis" isList="true" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.bureauinvestigation.forms.BiActivityForm" name="BiActivityForm" supportsQuickData="false">
+            <element name="amlawatchlistexternal" typeRef="com.coopdb.data.Tbbiactivity" isList="false" allowNull="false"/>
+            <element name="amlawatchlistinternal" typeRef="com.coopdb.data.Tbbiactivity" isList="false" allowNull="false"/>
+            <element name="bapnfis" typeRef="com.coopdb.data.Tbbiactivity" isList="false" allowNull="false"/>
+            <element name="blacklistexternal" typeRef="com.coopdb.data.Tbbiactivity" isList="false" allowNull="false"/>
+            <element name="blacklistinternal" typeRef="com.coopdb.data.Tbbiactivity" isList="false" allowNull="false"/>
+            <element name="cic" typeRef="com.coopdb.data.Tbbiactivity" isList="false" allowNull="false"/>
+            <element name="cmap" typeRef="com.coopdb.data.Tbbiactivity" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.bureauinvestigation.forms.BlacklistForm" name="BlacklistForm" supportsQuickData="false">
+            <element name="blacklistid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="description" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="enddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="source" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="startdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.bureauinvestigation.forms.CIFRecordForm" name="CIFRecordForm" supportsQuickData="false">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="customername" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateofbirth" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateofincorporation" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="suffix" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

@@ -1,0 +1,36 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbdeskcidetails" table="TBDESKCIDETAILS" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cireportid" type="string">
+            <column name="cireportid" length="20"/>
+        </property>
+        <property name="ciactivity" type="string">
+            <column name="ciactivity" length="20"/>
+        </property>
+        <property name="category" type="string">
+            <column name="category" length="100"/>
+        </property>
+        <property name="declaredvalue" type="string">
+            <column name="declaredvalue" length="300"/>
+        </property>
+        <property name="findings" type="string">
+            <column name="findings" length="50"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="300"/>
+        </property>
+        <property name="employmentid" type="integer">
+            <column name="employmentid"/>
+        </property>
+        <property name="businessid" type="integer">
+            <column name="businessid"/>
+        </property>
+        <property name="deskciactivityid" type="integer">
+            <column name="deskciactivityid"/>
+        </property>
+    </class>
+</hibernate-mapping>

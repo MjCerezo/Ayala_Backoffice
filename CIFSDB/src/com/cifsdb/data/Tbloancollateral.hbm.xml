@@ -1,0 +1,51 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbloancollateral" table="TBLOANCOLLATERAL" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="collateralid" type="integer">
+            <column name="collateralid"/>
+            <generator class="identity"/>
+        </id>
+        <property name="collateralreferenceno" type="string">
+            <column name="collateralreferenceno" length="50"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="loanno" type="string">
+            <column name="loanno" length="20"/>
+        </property>
+        <property name="collateraltype" type="string">
+            <column name="collateraltype" length="50"/>
+        </property>
+        <property name="loanstatus" type="string">
+            <column name="loanstatus" length="50"/>
+        </property>
+        <property name="applicationstatus" type="string">
+            <column name="applicationstatus" length="50"/>
+        </property>
+        <property name="borrowername" type="string">
+            <column name="borrowername" length="300"/>
+        </property>
+        <property name="loanproduct" type="string">
+            <column name="loanproduct" length="20"/>
+        </property>
+        <property name="colid" type="string">
+            <column name="colid" length="20"/>
+        </property>
+        <property name="cfrefno1" type="string">
+            <column name="cfrefno1" length="50"/>
+        </property>
+        <property name="appraisedvalue" type="big_decimal">
+            <column name="appraisedvalue" precision="20"/>
+        </property>
+        <property name="loanablevalue" type="big_decimal">
+            <column name="loanablevalue" precision="20"/>
+        </property>
+        <property name="marketvalue" type="big_decimal">
+            <column name="marketvalue" precision="20"/>
+        </property>
+        <property name="lastappraisaldate" type="timestamp">
+            <column name="lastappraisaldate" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

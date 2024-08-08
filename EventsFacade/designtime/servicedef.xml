@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="EventsFacade" class="com.etel.events.EventsFacade" CRUDService="false" type="JavaService" springFile="EventsFacade.spring.xml">
+    <operation name="addEvents">
+        <parameter name="coopcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="eventcode" typeRef="int" isList="false"/>
+        <parameter name="govtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="eventtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="eventname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="eventdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="eventdesc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="eventvenue" typeRef="java.lang.String" isList="false"/>
+        <parameter name="isreq" typeRef="java.lang.Boolean" isList="false"/>
+        <parameter name="createdby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addGovernance">
+        <parameter name="memappid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="governancetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="checkGovernance">
+        <parameter name="memappid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteEvent">
+        <parameter name="coopcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="eventcode" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getEventCode">
+        <parameter name="coopcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbevents" isList="false"/>
+    </operation>
+    <operation name="getEventsPerCooperative">
+        <parameter name="coopcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbevents" isList="true"/>
+    </operation>
+    <operation name="getGovernanceChecklist">
+        <parameter name="memappid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbeventschecklist" isList="true"/>
+    </operation>
+    <operation name="getTbevents">
+        <return typeRef="com.coopdb.data.Tbevents" isList="true"/>
+    </operation>
+    <operation name="updateEvents">
+        <parameter name="coopcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="eventcode" typeRef="int" isList="false"/>
+        <parameter name="eventname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="eventdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="eventdesc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="eventvenue" typeRef="java.lang.String" isList="false"/>
+        <parameter name="isreq" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateGovernance">
+        <parameter name="governace" typeRef="com.coopdb.data.Tbeventschecklist" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

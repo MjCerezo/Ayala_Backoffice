@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbmanagerscheck" table="TBMANAGERSCHECK" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="payee" type="string">
+            <column name="payee" length="100"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="16"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="200"/>
+        </property>
+        <property name="daterequest" type="timestamp">
+            <column name="daterequest" length="23"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="3"/>
+        </property>
+        <property name="dateapproved" type="timestamp">
+            <column name="dateapproved" length="23"/>
+        </property>
+        <property name="datereleased" type="timestamp">
+            <column name="datereleased" length="23"/>
+        </property>
+        <property name="issuingbr" type="string">
+            <column name="issuingbr" length="20"/>
+        </property>
+        <property name="mccheckno" type="string">
+            <column name="mccheckno" length="50"/>
+        </property>
+        <property name="expiry" type="timestamp">
+            <column name="expiry" length="23"/>
+        </property>
+        <property name="checktype" type="string">
+            <column name="checktype" length="3"/>
+        </property>
+    </class>
+</hibernate-mapping>

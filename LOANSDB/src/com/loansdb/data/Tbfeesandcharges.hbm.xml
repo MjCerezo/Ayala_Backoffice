@@ -1,0 +1,426 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbfeesandcharges" table="TBFEESANDCHARGES" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="productcode" type="string">
+            <column name="productcode" length="10"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="dstflag" type="boolean">
+            <column name="dstflag"/>
+        </property>
+        <property name="dstrate" type="big_decimal">
+            <column name="dstrate" precision="18"/>
+        </property>
+        <property name="dstrule" type="string">
+            <column name="dstrule" length="1"/>
+        </property>
+        <property name="dstformuladiv" type="big_decimal">
+            <column name="dstformuladiv" precision="18"/>
+        </property>
+        <property name="dstformulamul" type="big_decimal">
+            <column name="dstformulamul" precision="18"/>
+        </property>
+        <property name="dstfixedamt" type="big_decimal">
+            <column name="dstfixedamt" precision="18"/>
+        </property>
+        <property name="dstamount1" type="big_decimal">
+            <column name="dstamount1" precision="18"/>
+        </property>
+        <property name="dstamount2" type="big_decimal">
+            <column name="dstamount2" precision="18"/>
+        </property>
+        <property name="dstcollection" type="string">
+            <column name="dstcollection" length="1"/>
+        </property>
+        <property name="notarialflag" type="boolean">
+            <column name="notarialflag"/>
+        </property>
+        <property name="notarialamt" type="big_decimal">
+            <column name="notarialamt" precision="18"/>
+        </property>
+        <property name="notarialamtperdoc" type="big_decimal">
+            <column name="notarialamtperdoc" precision="18"/>
+        </property>
+        <property name="notarialcollection" type="string">
+            <column name="notarialcollection" length="1"/>
+        </property>
+        <property name="vatflag" type="boolean">
+            <column name="vatflag"/>
+        </property>
+        <property name="vatrate" type="big_decimal">
+            <column name="vatrate" precision="18"/>
+        </property>
+        <property name="vatcollection" type="string">
+            <column name="vatcollection" length="1"/>
+        </property>
+        <property name="grtflag" type="boolean">
+            <column name="grtflag"/>
+        </property>
+        <property name="grtrate" type="big_decimal">
+            <column name="grtrate" precision="18"/>
+        </property>
+        <property name="grtcollection" type="string">
+            <column name="grtcollection" length="1"/>
+        </property>
+        <property name="appfeeflag" type="boolean">
+            <column name="appfeeflag"/>
+        </property>
+        <property name="appfeeamt" type="big_decimal">
+            <column name="appfeeamt" precision="18"/>
+        </property>
+        <property name="appfeerate" type="big_decimal">
+            <column name="appfeerate" precision="18"/>
+        </property>
+        <property name="appfeerule" type="string">
+            <column name="appfeerule" length="20"/>
+        </property>
+        <property name="appfeecollection" type="string">
+            <column name="appfeecollection" length="1"/>
+        </property>
+        <property name="servicefeeflag" type="boolean">
+            <column name="servicefeeflag"/>
+        </property>
+        <property name="servicefeeamt" type="big_decimal">
+            <column name="servicefeeamt" precision="18"/>
+        </property>
+        <property name="servicefeerate" type="big_decimal">
+            <column name="servicefeerate" precision="18"/>
+        </property>
+        <property name="servicefeerule" type="string">
+            <column name="servicefeerule" length="20"/>
+        </property>
+        <property name="servicefeecollection" type="string">
+            <column name="servicefeecollection" length="1"/>
+        </property>
+        <property name="processingfeeflag" type="boolean">
+            <column name="processingfeeflag"/>
+        </property>
+        <property name="processingfeerule" type="string">
+            <column name="processingfeerule" length="1"/>
+        </property>
+        <property name="processingfeeamt" type="big_decimal">
+            <column name="processingfeeamt" precision="18"/>
+        </property>
+        <property name="processingfeerate" type="big_decimal">
+            <column name="processingfeerate" precision="18"/>
+        </property>
+        <property name="processingfeeoption" type="string">
+            <column name="processingfeeoption" length="50"/>
+        </property>
+        <property name="processingfeeamt1" type="big_decimal">
+            <column name="processingfeeamt1" precision="18"/>
+        </property>
+        <property name="processingfeerate1" type="big_decimal">
+            <column name="processingfeerate1" precision="18"/>
+        </property>
+        <property name="processingfeeoption1" type="string">
+            <column name="processingfeeoption1" length="50"/>
+        </property>
+        <property name="processingfeecollection" type="string">
+            <column name="processingfeecollection" length="1" not-null="true"/>
+        </property>
+        <property name="fireinsuranceflag" type="boolean">
+            <column name="fireinsuranceflag"/>
+        </property>
+        <property name="fireinsurancerule" type="string">
+            <column name="fireinsurancerule" length="1"/>
+        </property>
+        <property name="fireinsuranceamt" type="big_decimal">
+            <column name="fireinsuranceamt" precision="18"/>
+        </property>
+        <property name="fireinsurancecollection" type="string">
+            <column name="fireinsurancecollection" length="1"/>
+        </property>
+        <property name="marineinsuranceflag" type="boolean">
+            <column name="marineinsuranceflag"/>
+        </property>
+        <property name="marineinsurancerule" type="string">
+            <column name="marineinsurancerule" length="1"/>
+        </property>
+        <property name="marineinsuranceamt" type="big_decimal">
+            <column name="marineinsuranceamt" precision="18"/>
+        </property>
+        <property name="marineinsurancecollection" type="string">
+            <column name="marineinsurancecollection" length="1"/>
+        </property>
+        <property name="comprehensiveflag" type="boolean">
+            <column name="comprehensiveflag"/>
+        </property>
+        <property name="comprehensiverule" type="string">
+            <column name="comprehensiverule" length="1"/>
+        </property>
+        <property name="comprehensiveamt" type="big_decimal">
+            <column name="comprehensiveamt" precision="18"/>
+        </property>
+        <property name="comprehensivecollection" type="string">
+            <column name="comprehensivecollection" length="1"/>
+        </property>
+        <property name="creditlifeflag" type="boolean">
+            <column name="creditlifeflag"/>
+        </property>
+        <property name="creditliferule" type="string">
+            <column name="creditliferule" length="1"/>
+        </property>
+        <property name="creditlifeamt" type="big_decimal">
+            <column name="creditlifeamt" precision="18"/>
+        </property>
+        <property name="creditlifediv" type="big_decimal">
+            <column name="creditlifediv" precision="18"/>
+        </property>
+        <property name="creditlifemul" type="big_decimal">
+            <column name="creditlifemul" precision="18"/>
+        </property>
+        <property name="creditlifecollection" type="string">
+            <column name="creditlifecollection" length="1"/>
+        </property>
+        <property name="agentcommflag" type="boolean">
+            <column name="agentcommflag"/>
+        </property>
+        <property name="agentcommrule" type="string">
+            <column name="agentcommrule" length="1"/>
+        </property>
+        <property name="agentcommamt" type="big_decimal">
+            <column name="agentcommamt" precision="18"/>
+        </property>
+        <property name="agentcommcollection" type="string">
+            <column name="agentcommcollection" length="1"/>
+        </property>
+        <property name="dealercommflag" type="boolean">
+            <column name="dealercommflag"/>
+        </property>
+        <property name="dealercommrule" type="string">
+            <column name="dealercommrule" length="1"/>
+        </property>
+        <property name="dealercommamt" type="big_decimal">
+            <column name="dealercommamt" precision="18"/>
+        </property>
+        <property name="dealercommcollection" type="string">
+            <column name="dealercommcollection" length="1"/>
+        </property>
+        <property name="advanceamortflag" type="boolean">
+            <column name="advanceamortflag"/>
+        </property>
+        <property name="interestchargeflag" type="boolean">
+            <column name="interestchargeflag"/>
+        </property>
+        <property name="interestchargecollection" type="string">
+            <column name="interestchargecollection" length="1"/>
+        </property>
+        <property name="remflag" type="boolean">
+            <column name="remflag"/>
+        </property>
+        <property name="remrule" type="string">
+            <column name="remrule" length="1"/>
+        </property>
+        <property name="remamt" type="big_decimal">
+            <column name="remamt" precision="18"/>
+        </property>
+        <property name="remcollection" type="string">
+            <column name="remcollection" length="1"/>
+        </property>
+        <property name="branchincentivefeeflag" type="boolean">
+            <column name="branchincentivefeeflag"/>
+        </property>
+        <property name="branchincentivefeerule" type="string">
+            <column name="branchincentivefeerule" length="1"/>
+        </property>
+        <property name="branchincentivefeeamt" type="big_decimal">
+            <column name="branchincentivefeeamt" precision="18"/>
+        </property>
+        <property name="branchincentivefeerate" type="big_decimal">
+            <column name="branchincentivefeerate" precision="18"/>
+        </property>
+        <property name="branchincentivefeecollection" type="string">
+            <column name="branchincentivefeecollection" length="1"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="atmtransfeeflag" type="boolean">
+            <column name="atmtransfeeflag"/>
+        </property>
+        <property name="atmtransamount" type="big_decimal">
+            <column name="atmtransamount" precision="18"/>
+        </property>
+        <property name="atmtransfeecollection" type="string">
+            <column name="atmtransfeecollection" length="1"/>
+        </property>
+        <property name="cashcardfeeflag" type="boolean">
+            <column name="cashcardfeeflag"/>
+        </property>
+        <property name="cashcardamount" type="big_decimal">
+            <column name="cashcardamount" precision="18"/>
+        </property>
+        <property name="cashcardfeecollection" type="string">
+            <column name="cashcardfeecollection" length="1"/>
+        </property>
+        <property name="depedincentiveflag" type="boolean">
+            <column name="depedincentiveflag"/>
+        </property>
+        <property name="depedincentiverule" type="string">
+            <column name="depedincentiverule" length="1"/>
+        </property>
+        <property name="depedincentiveamt" type="big_decimal">
+            <column name="depedincentiveamt" precision="18"/>
+        </property>
+        <property name="depedincentiverate" type="big_decimal">
+            <column name="depedincentiverate" precision="18"/>
+        </property>
+        <property name="depedincentivecollection" type="string">
+            <column name="depedincentivecollection" length="1"/>
+        </property>
+        <property name="processingfeeamt2" type="big_decimal">
+            <column name="processingfeeamt2" precision="18"/>
+        </property>
+        <property name="processingfeerate2" type="big_decimal">
+            <column name="processingfeerate2" precision="18"/>
+        </property>
+        <property name="processingfeeoption2" type="string">
+            <column name="processingfeeoption2" length="50"/>
+        </property>
+        <property name="mrifeeflag" type="boolean">
+            <column name="mrifeeflag"/>
+        </property>
+        <property name="mrifeerule" type="string">
+            <column name="mrifeerule" length="1"/>
+        </property>
+        <property name="mrifeeamt" type="big_decimal">
+            <column name="mrifeeamt" precision="18"/>
+        </property>
+        <property name="mrifeerate" type="big_decimal">
+            <column name="mrifeerate" precision="18"/>
+        </property>
+        <property name="mrifeecollection" type="string">
+            <column name="mrifeecollection" length="1"/>
+        </property>
+        <property name="chattelfeeflag" type="boolean">
+            <column name="chattelfeeflag"/>
+        </property>
+        <property name="chattelfeerule" type="string">
+            <column name="chattelfeerule" length="1"/>
+        </property>
+        <property name="chattelfeeamt" type="big_decimal">
+            <column name="chattelfeeamt" precision="18"/>
+        </property>
+        <property name="chattelfeerate" type="big_decimal">
+            <column name="chattelfeerate" precision="18"/>
+        </property>
+        <property name="chattelfeecollection" type="string">
+            <column name="chattelfeecollection" length="1"/>
+        </property>
+        <property name="appraisalfeeflag" type="boolean">
+            <column name="appraisalfeeflag"/>
+        </property>
+        <property name="appraisalfeerule" type="string">
+            <column name="appraisalfeerule" length="1"/>
+        </property>
+        <property name="appraisalfeeamt" type="big_decimal">
+            <column name="appraisalfeeamt" precision="18"/>
+        </property>
+        <property name="appraisalfeerate" type="big_decimal">
+            <column name="appraisalfeerate" precision="18"/>
+        </property>
+        <property name="appraisalfeecollection" type="string">
+            <column name="appraisalfeecollection" length="1"/>
+        </property>
+        <property name="preterminationflag" type="boolean">
+            <column name="preterminationflag"/>
+        </property>
+        <property name="preterminationrule" type="string">
+            <column name="preterminationrule" length="1"/>
+        </property>
+        <property name="preterminationamt" type="big_decimal">
+            <column name="preterminationamt" precision="18"/>
+        </property>
+        <property name="preterminationrate" type="big_decimal">
+            <column name="preterminationrate" precision="18"/>
+        </property>
+        <property name="preterminationcollection" type="string">
+            <column name="preterminationcollection" length="1"/>
+        </property>
+        <property name="prepaymentfeeflag" type="boolean">
+            <column name="prepaymentfeeflag"/>
+        </property>
+        <property name="prepaymentfeerule" type="string">
+            <column name="prepaymentfeerule" length="1"/>
+        </property>
+        <property name="prepaymentfeeamt" type="big_decimal">
+            <column name="prepaymentfeeamt" precision="18"/>
+        </property>
+        <property name="prepaymentfeerate" type="big_decimal">
+            <column name="prepaymentfeerate" precision="18"/>
+        </property>
+        <property name="prepaymentcollection" type="string">
+            <column name="prepaymentcollection" length="1"/>
+        </property>
+        <property name="commitmentfeeflag" type="boolean">
+            <column name="commitmentfeeflag"/>
+        </property>
+        <property name="commitmentfeerule" type="string">
+            <column name="commitmentfeerule" length="1"/>
+        </property>
+        <property name="commitmentfeeamt" type="big_decimal">
+            <column name="commitmentfeeamt" precision="18"/>
+        </property>
+        <property name="commitmentfeerate" type="big_decimal">
+            <column name="commitmentfeerate" precision="18"/>
+        </property>
+        <property name="commitmentfeecollection" type="string">
+            <column name="commitmentfeecollection" length="1"/>
+        </property>
+        <property name="ppdfeeflag" type="boolean">
+            <column name="ppdfeeflag"/>
+        </property>
+        <property name="ppdfeerule" type="string">
+            <column name="ppdfeerule" length="1"/>
+        </property>
+        <property name="ppdfeeamt" type="big_decimal">
+            <column name="ppdfeeamt" precision="18"/>
+        </property>
+        <property name="ppdfeerate" type="big_decimal">
+            <column name="ppdfeerate" precision="18"/>
+        </property>
+        <property name="ppdfeecollection" type="string">
+            <column name="ppdfeecollection" length="1"/>
+        </property>
+        <property name="variableflag1" type="boolean">
+            <column name="variableflag1"/>
+        </property>
+        <property name="variablename1" type="string">
+            <column name="variablename1" length="100"/>
+        </property>
+        <property name="variablerule1" type="string">
+            <column name="variablerule1" length="1"/>
+        </property>
+        <property name="variableamt1" type="big_decimal">
+            <column name="variableamt1" precision="18"/>
+        </property>
+        <property name="variablerate1" type="big_decimal">
+            <column name="variablerate1" precision="18"/>
+        </property>
+        <property name="variablecollection1" type="string">
+            <column name="variablecollection1" length="1"/>
+        </property>
+        <property name="variableflag2" type="boolean">
+            <column name="variableflag2"/>
+        </property>
+        <property name="variablename2" type="string">
+            <column name="variablename2" length="100"/>
+        </property>
+        <property name="variablerule2" type="string">
+            <column name="variablerule2" length="1"/>
+        </property>
+        <property name="variableamt2" type="big_decimal">
+            <column name="variableamt2" precision="18"/>
+        </property>
+        <property name="variablerate2" type="big_decimal">
+            <column name="variablerate2" precision="18"/>
+        </property>
+        <property name="variablecollection2" type="string">
+            <column name="variablecollection2" length="1"/>
+        </property>
+    </class>
+</hibernate-mapping>

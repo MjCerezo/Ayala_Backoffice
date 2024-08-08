@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="CollateralFacade" class="com.ete.collateral.CollateralFacade" CRUDService="false" type="JavaService" springFile="CollateralFacade.spring.xml">
+    <operation name="AppraisalButtonAccess">
+        <parameter name="reportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.collateralforms.AppraisalAccessRights" isList="false"/>
+    </operation>
+    <operation name="addOrupdateAppDeposit">
+        <parameter name="dep" typeRef="com.coopdb.data.Tbappraisaldeposits" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addOrupdateAutoAppraisal">
+        <parameter name="auto" typeRef="com.coopdb.data.Tbappraisalauto" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addOrupdateMachineries">
+        <parameter name="machine" typeRef="com.coopdb.data.Tbappraisalmachine" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addOrupdateRealEstate">
+        <parameter name="real" typeRef="com.coopdb.data.Tbappraisalrel" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addSingleCollateralToGrp">
+        <parameter name="data" typeRef="com.loansdb.data.Tbcollateralpergroup" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addorUpdateCARequest">
+        <parameter name="request" typeRef="com.coopdb.data.Tbcolappraisalrequest" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="appraisalChangeStatus">
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <parameter name="requestid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="reasonforreturn" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="checkCollateralMain">
+        <parameter name="referenceno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="checkIfExisting">
+        <parameter name="refno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="createCAReport">
+        <parameter name="carequestid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="careportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.ReturnForm" isList="false"/>
+    </operation>
+    <operation name="dedupeTbcollateralgroupmain">
+        <parameter name="grpID" typeRef="java.lang.String" isList="false"/>
+        <parameter name="grpName" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.collateralforms.DedupeCollateralFormGroup" isList="false"/>
+    </operation>
+    <operation name="dedupeTbcollateralmain">
+        <parameter name="referenceno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.collateralforms.DedupeCollateralForm" isList="false"/>
+    </operation>
+    <operation name="geTbcollateralmain">
+        <parameter name="referenceno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcollateralmain" isList="false"/>
+    </operation>
+    <operation name="generateAppraisalTableAuto">
+        <parameter name="refno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="apprisaltype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appraisalreportid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateAppraisalTableRel">
+        <parameter name="refno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="apprisaltype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appraisalreportid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCollateralGrpID">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getAppAutoByRepId">
+        <parameter name="appreportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbappraisalauto" isList="false"/>
+    </operation>
+    <operation name="getAppDepositsByRepId">
+        <parameter name="appreportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbappraisaldeposits" isList="false"/>
+    </operation>
+    <operation name="getAppMachineriesByRepId">
+        <parameter name="appreportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbappraisalmachine" isList="false"/>
+    </operation>
+    <operation name="getAppraisalDetailsViaID">
+        <parameter name="reportid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="requestid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.collateralforms.AppraisalForm" isList="false"/>
+    </operation>
+    <operation name="getAutoDetailsByReference">
+        <parameter name="reference" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcollateralauto" isList="false"/>
+    </operation>
+    <operation name="getCAAccessRights">
+        <parameter name="requestid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="dlgType" typeRef="java.lang.String" isList="false"/>
+        <parameter name="viewflag" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="com.etel.collateralforms.CAAccessRightsForm" isList="false"/>
+    </operation>
+    <operation name="getCAReportByRequestId">
+        <parameter name="requestid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbappraisalreportmain" isList="true"/>
+    </operation>
+    <operation name="getCArequestTotal">
+        <parameter name="appNo" typeRef="java.lang.String" isList="false"/>
+        <parameter name="reqId" typeRef="java.lang.String" isList="false"/>
+        <parameter name="refNo" typeRef="java.lang.String" isList="false"/>
+        <parameter name="reqStat" typeRef="java.lang.String" isList="false"/>
+        <parameter name="colType" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appType" typeRef="java.lang.String" isList="false"/>
+        <parameter name="colCat" typeRef="java.lang.String" isList="false"/>
+        <parameter name="assgndUser" typeRef="java.lang.String" isList="false"/>
+        <parameter name="viewflag" typeRef="java.lang.Boolean" isList="false"/>
+        <parameter name="isViewRequest" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="int" isList="false"/>
+    </operation>
+    <operation name="getCaReportMain">
+        <parameter name="appreportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbappraisalreportmain" isList="false"/>
+    </operation>
+    <operation name="getCollateralDetails">
+        <parameter name="colrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="coltype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.collateralforms.CollateralTables" isList="false"/>
+    </operation>
+    <operation name="getCollateralGrpMainList">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.collateralforms.TbCollateralMainFormGroup" isList="true"/>
+    </operation>
+    <operation name="getCollateralMainList">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="collateraltype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="audit" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="com.etel.collateralforms.TbCollateralMainForm" isList="true"/>
+    </operation>
+    <operation name="getCollateralbyCollateralTypeAndRefNo">
+        <parameter name="collateraltype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="referenceno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.collateralforms.CollateralTables" isList="false"/>
+    </operation>
+    <operation name="getDataByRequestId">
+        <parameter name="colappid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcolappraisalrequest" isList="false"/>
+    </operation>
+    <operation name="getListCArequest">
+        <parameter name="appNo" typeRef="java.lang.String" isList="false"/>
+        <parameter name="reqId" typeRef="java.lang.String" isList="false"/>
+        <parameter name="refNo" typeRef="java.lang.String" isList="false"/>
+        <parameter name="reqStat" typeRef="java.lang.String" isList="false"/>
+        <parameter name="colType" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appType" typeRef="java.lang.String" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxResult" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="viewflag" typeRef="java.lang.Boolean" isList="false"/>
+        <parameter name="colCat" typeRef="java.lang.String" isList="false"/>
+        <parameter name="assgndUser" typeRef="java.lang.String" isList="false"/>
+        <parameter name="isViewRequest" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcolappraisalrequest" isList="true"/>
+    </operation>
+    <operation name="getRealEstatebyReportId">
+        <parameter name="appreportid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbappraisalrel" isList="false"/>
+    </operation>
+    <operation name="getUserFullName">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="listCollateralperGrp">
+        <parameter name="grpID" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.loansdb.data.Tbcollateralpergroup" isList="true"/>
+    </operation>
+    <operation name="listGrpLoanApplicationUsage">
+        <parameter name="grpID" typeRef="java.lang.String" isList="false"/>
+        <parameter name="loanno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.loansdb.data.Tbloancollateralgroup" isList="true"/>
+    </operation>
+    <operation name="listLoanApplicationUsage">
+        <parameter name="referenceno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="loanno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.collateralforms.LoanApplicationUsageForm" isList="true"/>
+    </operation>
+    <operation name="listLoanCollateral">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.financial.form.CollateralLoanableForm" isList="true"/>
+    </operation>
+    <operation name="removeCollateral">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="referenceno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="removeGroupCollateralToLoan">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="grpID" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveAndSubmitRequest">
+        <parameter name="flag" typeRef="java.lang.Boolean" isList="false"/>
+        <parameter name="colappraisalrequestid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveAndUseCollateral">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="collateralrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="collateraltype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateApprMainMarketValueDetails">
+        <parameter name="values" typeRef="com.coopdb.data.Tbappraisalreportmain" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateAppraisal">
+        <parameter name="appraisals" typeRef="com.etel.collateralforms.AppraisalForm" isList="false"/>
+        <parameter name="collateraltype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.ReturnForm" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateAppraisalreportmain">
+        <parameter name="appraisalreportid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appraisalDate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="startReportFlag" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrupdateCollateral">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="saveOrupdate" typeRef="java.lang.String" isList="false"/>
+        <parameter name="collateraltype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="referenceno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="oldreferenceno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tb" typeRef="com.etel.collateralforms.CollateralTables" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrupdateCollateralGrpMain">
+        <parameter name="saveOrupdate" typeRef="java.lang.String" isList="false"/>
+        <parameter name="grpmain" typeRef="com.loansdb.data.Tbcollateralgroupmain" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateColInstStatus">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateReportStatus">
+        <parameter name="reportid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.ReturnForm" isList="false"/>
+    </operation>
+    <operation name="useCollateralGroup">
+        <parameter name="grpID" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="grpType" typeRef="java.lang.String" isList="false"/>
+        <parameter name="grpName" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.collateralforms.AppraisalAccessRights" name="AppraisalAccessRights" supportsQuickData="false">
+            <element name="disableDoneReview" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="disableReturn" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="disableSaveReport" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="disableStartReport" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="disableSubmitForReview" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="readOnly" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="showDoneReview" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="showReturn" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="showSaveReport" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="showStartReport" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="showSubmitForReview" typeRef="boolean" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.collateralforms.DedupeCollateralFormGroup" name="DedupeCollateralFormGroup" supportsQuickData="false">
+            <element name="flag" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.collateralforms.DedupeCollateralForm" name="DedupeCollateralForm" supportsQuickData="false">
+            <element name="collateralmain" typeRef="com.coopdb.data.Tbcollateralmain" isList="false" allowNull="false"/>
+            <element name="flag" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.collateralforms.AppraisalForm" name="AppraisalForm" supportsQuickData="false">
+            <element name="auto" typeRef="com.coopdb.data.Tbappraisalauto" isList="false" allowNull="false"/>
+            <element name="holdoutdeposits" typeRef="com.coopdb.data.Tbappraisaldeposits" isList="false" allowNull="false"/>
+            <element name="livestock" typeRef="com.coopdb.data.Tbappraisallivestock" isList="false" allowNull="false"/>
+            <element name="machineries" typeRef="com.coopdb.data.Tbappraisalmachine" isList="false" allowNull="false"/>
+            <element name="realestate" typeRef="com.coopdb.data.Tbappraisalrel" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.collateralforms.CAAccessRightsForm" name="CAAccessRightsForm" supportsQuickData="false">
+            <element name="btnCancel" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="btnCreateReport" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="btnDelete" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="btnReturn" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="btnReview" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="btnSave" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="btnSubmit" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="readOnly" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="slcAssignedCA" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="slcCompany" typeRef="boolean" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.collateralforms.CollateralTables" name="CollateralTables" supportsQuickData="false">
+            <element name="auto" typeRef="com.coopdb.data.Tbcollateralauto" isList="false" allowNull="false"/>
+            <element name="colauto" typeRef="com.coopdb.data.Tbcollateralauto" isList="true" allowNull="false"/>
+            <element name="colrel" typeRef="com.coopdb.data.Tbcollateralrel" isList="true" allowNull="false"/>
+            <element name="deposits" typeRef="com.coopdb.data.Tbcollateraldeposits" isList="false" allowNull="false"/>
+            <element name="livestock" typeRef="com.coopdb.data.Tbcollaterallivestock" isList="false" allowNull="false"/>
+            <element name="machineries" typeRef="com.coopdb.data.Tbcollateralmachineries" isList="false" allowNull="false"/>
+            <element name="main" typeRef="com.coopdb.data.Tbcollateralmain" isList="false" allowNull="false"/>
+            <element name="rel" typeRef="com.coopdb.data.Tbcollateralrel" isList="false" allowNull="false"/>
+            <element name="securities" typeRef="com.coopdb.data.Tbcollateralsecurities" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.collateralforms.TbCollateralMainForm" name="TbCollateralMainForm" supportsQuickData="false">
+            <element name="appraisalstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="collateralid" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="collateralstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="collateraltype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateoflastappraisal" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="newused" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="propertytype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="referenceno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.collateralforms.LoanApplicationUsageForm" name="LoanApplicationUsageForm" supportsQuickData="false">
+            <element name="applicationstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="borrowername" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="collateralreferenceno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanproduct" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.financial.form.CollateralLoanableForm" name="CollateralLoanableForm" supportsQuickData="false">
+            <element name="appraisedvalue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="collateralid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="collateralreferenceno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="collateraltype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lastappraisaldate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="loanablepercentage" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanablevalue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

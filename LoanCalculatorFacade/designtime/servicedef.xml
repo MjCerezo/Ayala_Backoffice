@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="LoanCalculatorFacade" class="com.etel.loancalc.LoanCalculatorFacade" CRUDService="false" type="JavaService" springFile="LoanCalculatorFacade.spring.xml">
+    <operation name="addCheckRecord">
+        <parameter name="pdc" typeRef="com.coopdb.data.Tbpdc" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addIrregSched">
+        <parameter name="sched" typeRef="com.coopdb.data.Tbirregsched" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addLoanAccountForOffset">
+        <parameter name="tbloans" typeRef="com.coopdb.data.Tbloans" isList="true"/>
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="computeLoan">
+        <parameter name="loancalc" typeRef="com.etel.loancalc.forms.LoanCalculatorForm" isList="false"/>
+        <return typeRef="com.etel.loancalc.forms.LoanCalculatorForm" isList="false"/>
+    </operation>
+    <operation name="deleteCheckRecord">
+        <parameter name="pdc" typeRef="com.coopdb.data.Tbpdc" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteIrregSched">
+        <parameter name="sched" typeRef="com.coopdb.data.Tbirregsched" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteLoanAccountForOffset">
+        <parameter name="loanoffset" typeRef="com.coopdb.data.Tbloanoffset" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getAccountInfoByAppno">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbaccountinfo" isList="false"/>
+    </operation>
+    <operation name="getCheckList">
+        <parameter name="loanappno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbpdc" isList="true"/>
+    </operation>
+    <operation name="getExistingLoansByCIFNo">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbloans" isList="true"/>
+    </operation>
+    <operation name="getIrregSchedList">
+        <parameter name="loanappno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbirregsched" isList="true"/>
+    </operation>
+    <operation name="getListLoanAcctForOffset">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbloanoffset" isList="true"/>
+    </operation>
+    <operation name="getLoanAccount">
+        <parameter name="pnno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbloans" isList="false"/>
+    </operation>
+    <operation name="getPaymentSched">
+        <parameter name="loancalc" typeRef="com.etel.loancalc.forms.LoanCalculatorForm" isList="false"/>
+        <return typeRef="com.etel.loancalc.forms.PaymentScheduleForm" isList="true"/>
+    </operation>
+    <operation name="getPayschedList">
+        <parameter name="loanappno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbpaysched" isList="true"/>
+    </operation>
+    <operation name="getTotalCheckAmount">
+        <parameter name="loanappno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="pdcs" typeRef="com.coopdb.data.Tbpdc" isList="true"/>
+        <return typeRef="java.math.BigDecimal" isList="false"/>
+    </operation>
+    <operation name="getTotalReceivablesByAppNo">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.math.BigDecimal" isList="false"/>
+    </operation>
+    <operation name="saveLoanDetails">
+        <parameter name="loancalc" typeRef="com.etel.loancalc.forms.LoanCalculatorForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.loancalc.forms.LoanCalculatorForm" name="LoanCalculatorForm" supportsQuickData="false">
+            <element name="advanceinterest" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="advintamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="advprinamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="amortfee" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="amountfinanced" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="bkintey" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="bookingdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="cfrefno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="clInsurance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="cycle" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="docstamp" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="downpayment" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="downpaymentpcnt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="dsttype" typeRef="int" isList="false" allowNull="false"/>
+            <element name="duedaterule" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="eir" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="eyrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="firstbookingdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="graceperiod" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="intchargeamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="intchargeday" typeRef="int" isList="false" allowNull="false"/>
+            <element name="intcycdesc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="intcycle" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="interestdue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="intpaycycdesc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="intpaycycle" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="intpaytype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="intpaytypedesc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="inttype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="inttypedesc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lastamort" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanappfee" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanappno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanpurpose" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lpcrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="maturitydate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="maturityvalue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="mir" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="netproceeds" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="noofadvint" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="noofadvprin" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="noofdocs" typeRef="int" isList="false" allowNull="false"/>
+            <element name="noofintpay" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="noofprinpay" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="notarialfee" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="offsetamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="offsetpn" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="origbookingdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="othercharges" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="paymentsched" typeRef="com.etel.loancalc.forms.PaymentScheduleForm" isList="true" allowNull="false"/>
+            <element name="pdclist" typeRef="com.etel.loancalc.forms.PDCForm" isList="true" allowNull="false"/>
+            <element name="ppynum" typeRef="int" isList="false" allowNull="false"/>
+            <element name="prinbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="prinpaycycdesc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prinpaycycle" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="processingFee" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="prodcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="productgroup" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="producttype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="rate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="repaytype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="repaytypedesc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="retentionamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="retentionpcnt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="servicefee" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="strothercharges" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="taInsurance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="term" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="termcycdesc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="termcycle" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="totalattachment" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalcharges" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalfeescharges" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalfeeschargesbilled" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalloanoffsetamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.loancalc.forms.PaymentScheduleForm" name="PaymentScheduleForm" supportsQuickData="false">
+            <element name="cashflow" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="charges" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="daysdiff" typeRef="java.lang.Double" isList="false" allowNull="false"/>
+            <element name="intEy" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="intrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="othercharge" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="prinbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="principal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="transAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="transDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="transType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="uidey" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

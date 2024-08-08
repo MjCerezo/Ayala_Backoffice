@@ -1,0 +1,13 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Penalty" table="penalty" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.PenaltyId">
+            <key-property name="acctno" type="string">
+                <column name="acctno" length="50"/>
+            </key-property>
+            <key-property name="penalty" type="big_decimal">
+                <column name="penalty" precision="18"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

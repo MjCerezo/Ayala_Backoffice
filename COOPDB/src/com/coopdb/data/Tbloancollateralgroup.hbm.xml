@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbloancollateralgroup" table="TBLOANCOLLATERALGROUP" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="groupid" type="string">
+            <column name="groupid" length="20" not-null="true"/>
+        </property>
+        <property name="grouptype" type="string">
+            <column name="grouptype" length="50"/>
+        </property>
+        <property name="groupname" type="string">
+            <column name="groupname" length="100"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="loanno" type="string">
+            <column name="loanno" length="50"/>
+        </property>
+        <property name="loanstatus" type="string">
+            <column name="loanstatus" length="50"/>
+        </property>
+        <property name="applicationstatus" type="string">
+            <column name="applicationstatus" length="50"/>
+        </property>
+        <property name="borrowername" type="string">
+            <column name="borrowername" length="300"/>
+        </property>
+        <property name="loanproduct" type="string">
+            <column name="loanproduct" length="20"/>
+        </property>
+        <property name="colid" type="string">
+            <column name="colid" length="20"/>
+        </property>
+        <property name="collateraltype" type="string">
+            <column name="collateraltype" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

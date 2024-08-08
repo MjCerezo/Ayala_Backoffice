@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbtransactioncode" table="TBTRANSACTIONCODE" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txcode" type="string">
+            <column name="txcode" length="6"/>
+        </property>
+        <property name="txname" type="string">
+            <column name="txname" length="100"/>
+        </property>
+        <property name="servicecharge" type="big_decimal">
+            <column name="servicecharge" precision="16"/>
+        </property>
+        <property name="mnemonic" type="string">
+            <column name="mnemonic" length="20"/>
+        </property>
+        <property name="isinteresttx" type="boolean">
+            <column name="isinteresttx"/>
+        </property>
+        <property name="txoper" type="integer">
+            <column name="txoper"/>
+        </property>
+        <property name="wreason" type="boolean">
+            <column name="wreason"/>
+        </property>
+        <property name="wcheck" type="boolean">
+            <column name="wcheck"/>
+        </property>
+        <property name="wcash" type="boolean">
+            <column name="wcash"/>
+        </property>
+        <property name="wtransfer" type="boolean">
+            <column name="wtransfer"/>
+        </property>
+    </class>
+</hibernate-mapping>

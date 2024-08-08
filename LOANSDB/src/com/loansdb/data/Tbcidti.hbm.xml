@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbcidti" table="TBCIDTI" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cireportid" type="string">
+            <column name="cireportid" length="20"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="10"/>
+        </property>
+        <property name="regno" type="string">
+            <column name="regno" length="20"/>
+        </property>
+        <property name="regdate" type="timestamp">
+            <column name="regdate" length="23"/>
+        </property>
+        <property name="expirydate" type="timestamp">
+            <column name="expirydate" length="23"/>
+        </property>
+        <property name="regowner" type="string">
+            <column name="regowner" length="100"/>
+        </property>
+        <property name="businesstype" type="string">
+            <column name="businesstype" length="20"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="datelastupdated" type="timestamp">
+            <column name="datelastupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

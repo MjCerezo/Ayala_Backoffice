@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="PassbookFacade" class="com.etel.passbook.PassbookFacade" CRUDService="false" type="JavaService" springFile="PassbookFacade.spring.xml">
+    <operation name="addPBSeries">
+        <parameter name="pb" typeRef="com.coopdb.data.Tbpassbookinventory" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deletePB">
+        <parameter name="pb" typeRef="com.coopdb.data.Tbpassbookinventory" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getPassbook">
+        <parameter name="passbookType" typeRef="java.lang.String" isList="false"/>
+        <parameter name="accountNo" typeRef="java.lang.String" isList="false"/>
+        <parameter name="totalLineNumber" typeRef="java.lang.String" isList="false"/>
+        <parameter name="lineno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startLineNumber" typeRef="java.lang.String" isList="false"/>
+        <parameter name="endLineNumber" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.passbook.form.PassbookDataForm" isList="true"/>
+    </operation>
+    <operation name="listPassbookPerCompanyPerBranch">
+        <parameter name="company" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbpassbookinventory" isList="true"/>
+    </operation>
+    <operation name="updatePassbook">
+        <parameter name="passbookType" typeRef="java.lang.String" isList="false"/>
+        <parameter name="accountNo" typeRef="java.lang.String" isList="false"/>
+        <parameter name="totalLineNumber" typeRef="java.lang.String" isList="false"/>
+        <parameter name="lineno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startLineNumber" typeRef="java.lang.String" isList="false"/>
+        <parameter name="endLineNumber" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.passbook.form.PassbookDataForm" name="PassbookDataForm" supportsQuickData="false">
+            <element name="deposit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="lineNumber" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="mnemonic" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="outBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="rowNumber" typeRef="java.math.BigInteger" isList="false" allowNull="false"/>
+            <element name="sequenceNo" typeRef="java.math.BigInteger" isList="false" allowNull="false"/>
+            <element name="txvaldt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="withdrawal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

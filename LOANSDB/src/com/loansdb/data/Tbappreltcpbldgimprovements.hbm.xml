@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbappreltcpbldgimprovements" table="TBAPPRELTCPBLDGIMPROVEMENTS" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appraisalreportid" type="string">
+            <column name="appraisalreportid" length="20"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="collateralid" type="integer">
+            <column name="collateralid"/>
+        </property>
+        <property name="bldg" type="string">
+            <column name="bldg" length="100"/>
+        </property>
+        <property name="tcp" type="big_decimal">
+            <column name="tcp" precision="20"/>
+        </property>
+        <property name="grosstcp" type="big_decimal">
+            <column name="grosstcp" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

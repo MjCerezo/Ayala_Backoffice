@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="RoleFacade" class="com.etel.role.RoleFacade" CRUDService="false" type="JavaService" springFile="RoleFacade.spring.xml">
+    <operation name="addRole">
+        <parameter name="rolesForm" typeRef="com.etel.role.forms.RoleForm" isList="false"/>
+        <return typeRef="com.etel.forms.FormValidation" isList="false"/>
+    </operation>
+    <operation name="deleteRole">
+        <parameter name="roleid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="rolename" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.FormValidation" isList="false"/>
+    </operation>
+    <operation name="getListRoleId">
+        <return typeRef="com.etel.role.forms.RoleForm" isList="true"/>
+    </operation>
+    <operation name="getMenuAccessRights">
+        <return typeRef="com.etel.role.forms.MenuForm" isList="false"/>
+    </operation>
+    <operation name="getRoleAccess">
+        <parameter name="roleid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="modulename" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.role.forms.AccessRightsForm" isList="true"/>
+    </operation>
+    <operation name="listAccessRightsSubModule">
+        <parameter name="modulename" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.role.forms.AccessRightsForm" isList="true"/>
+    </operation>
+    <operation name="listRoles">
+        <return typeRef="com.coopdb.data.Tbrole" isList="true"/>
+    </operation>
+    <operation name="saveRolesAccess">
+        <parameter name="roleAccess" typeRef="com.etel.role.forms.RoleAccessList" isList="false"/>
+        <return typeRef="com.etel.forms.FormValidation" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.role.forms.RoleForm" name="RoleForm" supportsQuickData="false">
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="rolename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.role.forms.MenuForm" name="MenuForm" supportsQuickData="false">
+            <element name="accreditedTrade" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="assignments" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="auditTrail" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="cifLink" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="company" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="createApp" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="createLineApplication" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="createLineAvailment" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="createLoanApplication" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="createLoanRollOver" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="defaultusers" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="docChecklist" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="documentMaintenace" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="emailUtility" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="group" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="home" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="inquiry" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="inquiryLineApplication" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="inquiryLineAvailment" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="inquiryLoanApplication" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="inquiryLoanRollOver" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="lmsLink" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="loanproduct" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="manualAssignments" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="myAssignments" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="otherTx" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="otherTxBureauInvestigation" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="otherTxCollateralAppraisal" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="otherTxCollateralMaintenance" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="otherTxCreditInvestigation" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="region" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="reports" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="roleAndAccessRights" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="security" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="securityParams" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="securityReports" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="sysAdmin" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="sysParams" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="systemWorkflow" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="team" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="userAccount" typeRef="boolean" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.role.forms.AccessRightsForm" name="AccessRightsForm" supportsQuickData="false">
+            <element name="accessid" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accesstype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="description" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="modulename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="navorder" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="navparent" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="parentnavorder" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="parentsubmodulename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="submodulename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.role.forms.RoleAccessList" name="RoleAccessList" supportsQuickData="false">
+            <element name="accessname" typeRef="com.coopdb.data.TbroleaccessId" isList="true" allowNull="false"/>
+            <element name="module" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

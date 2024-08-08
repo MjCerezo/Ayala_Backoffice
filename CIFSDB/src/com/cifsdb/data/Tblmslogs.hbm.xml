@@ -1,0 +1,36 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tblmslogs" table="TBLMSLOGS" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="rowId" type="string">
+            <column name="row_id" length="500"/>
+        </property>
+        <property name="reason" type="string">
+            <column name="reason" length="500"/>
+        </property>
+        <property name="filetype" type="string">
+            <column name="filetype" length="500"/>
+        </property>
+        <property name="filename" type="string">
+            <column name="filename" length="500"/>
+        </property>
+        <property name="timestamp" type="timestamp">
+            <column name="timestamp" length="23"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="18"/>
+        </property>
+        <property name="before" type="string">
+            <column name="before" length="500"/>
+        </property>
+        <property name="after" type="string">
+            <column name="after" length="500"/>
+        </property>
+        <property name="changetype" type="string">
+            <column name="changetype" length="500"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,51 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbtdc" table="TBTDC" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="accountno" type="string">
+            <column name="accountno" length="50"/>
+        </property>
+        <property name="tdcno" type="string">
+            <column name="tdcno" length="50"/>
+        </property>
+        <property name="placementamt" type="big_decimal">
+            <column name="placementamt" precision="18"/>
+        </property>
+        <property name="termindays" type="integer">
+            <column name="termindays"/>
+        </property>
+        <property name="interestamt" type="big_decimal">
+            <column name="interestamt" precision="18"/>
+        </property>
+        <property name="wtaxamt" type="big_decimal">
+            <column name="wtaxamt" precision="18"/>
+        </property>
+        <property name="docstamps" type="big_decimal">
+            <column name="docstamps" precision="18"/>
+        </property>
+        <property name="bookingdate" type="timestamp">
+            <column name="bookingdate" length="23"/>
+        </property>
+        <property name="maturitydate" type="timestamp">
+            <column name="maturitydate" length="23"/>
+        </property>
+        <property name="maturityvalue" type="big_decimal">
+            <column name="maturityvalue" precision="18"/>
+        </property>
+        <property name="issuedate" type="timestamp">
+            <column name="issuedate" length="23"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="3"/>
+        </property>
+        <property name="issuedby" type="string">
+            <column name="issuedby" length="25"/>
+        </property>
+        <property name="intrate" type="big_decimal">
+            <column name="intrate" precision="18"/>
+        </property>
+    </class>
+</hibernate-mapping>

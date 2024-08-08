@@ -1,0 +1,36 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbhousebank" table="TBHOUSEBANK" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="branchcode" type="string">
+            <column name="branchcode" length="50"/>
+        </property>
+        <property name="bankcode" type="string">
+            <column name="bankcode" length="50"/>
+        </property>
+        <property name="bankbranch" type="string">
+            <column name="bankbranch" length="50"/>
+        </property>
+        <property name="bankaccountnumber" type="string">
+            <column name="bankaccountnumber" length="50"/>
+        </property>
+        <property name="glcode" type="string">
+            <column name="glcode" length="50"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="50"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="bankname" type="string">
+            <column name="bankname" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

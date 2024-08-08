@@ -1,0 +1,169 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbgeneraldocs" table="TBGENERALDOCS" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.TbgeneraldocsId">
+            <key-property name="doccategory" type="string">
+                <column name="doccategory" length="50"/>
+            </key-property>
+            <key-property name="doctype" type="string">
+                <column name="doctype" length="50"/>
+            </key-property>
+        </composite-id>
+        <property name="docname" type="string">
+            <column name="docname" length="200"/>
+        </property>
+        <property name="appytoindiv" type="boolean">
+            <column name="appytoindiv"/>
+        </property>
+        <property name="applytocorp" type="boolean">
+            <column name="applytocorp"/>
+        </property>
+        <property name="applytosole" type="boolean">
+            <column name="applytosole"/>
+        </property>
+        <property name="applytopart" type="boolean">
+            <column name="applytopart"/>
+        </property>
+        <property name="flagappdate" type="boolean">
+            <column name="flagappdate"/>
+        </property>
+        <property name="flagchassisno" type="boolean">
+            <column name="flagchassisno"/>
+        </property>
+        <property name="flagcifsurety" type="boolean">
+            <column name="flagcifsurety"/>
+        </property>
+        <property name="flagcollateraldesc" type="boolean">
+            <column name="flagcollateraldesc"/>
+        </property>
+        <property name="flagcollateralno" type="boolean">
+            <column name="flagcollateralno"/>
+        </property>
+        <property name="flagcoveredyear" type="boolean">
+            <column name="flagcoveredyear"/>
+        </property>
+        <property name="flagcfeffectivitydt" type="boolean">
+            <column name="flagcfeffectivitydt"/>
+        </property>
+        <property name="flagcfexpirydt" type="boolean">
+            <column name="flagcfexpirydt"/>
+        </property>
+        <property name="flagcfname" type="boolean">
+            <column name="flagcfname"/>
+        </property>
+        <property name="flagcfrefno" type="boolean">
+            <column name="flagcfrefno"/>
+        </property>
+        <property name="flagcftype" type="boolean">
+            <column name="flagcftype"/>
+        </property>
+        <property name="flagfileddt" type="boolean">
+            <column name="flagfileddt"/>
+        </property>
+        <property name="flagreceiveddt" type="boolean">
+            <column name="flagreceiveddt"/>
+        </property>
+        <property name="flagdms" type="boolean">
+            <column name="flagdms"/>
+        </property>
+        <property name="flagdocno" type="boolean">
+            <column name="flagdocno"/>
+        </property>
+        <property name="flagdocstatus" type="boolean">
+            <column name="flagdocstatus"/>
+        </property>
+        <property name="flagdocexpirydt" type="boolean">
+            <column name="flagdocexpirydt"/>
+        </property>
+        <property name="flagidname" type="boolean">
+            <column name="flagidname"/>
+        </property>
+        <property name="flagidtype" type="boolean">
+            <column name="flagidtype"/>
+        </property>
+        <property name="flagidno" type="boolean">
+            <column name="flagidno"/>
+        </property>
+        <property name="flagissuecity" type="boolean">
+            <column name="flagissuecity"/>
+        </property>
+        <property name="flagissuecountry" type="boolean">
+            <column name="flagissuecountry"/>
+        </property>
+        <property name="flagissuedt" type="boolean">
+            <column name="flagissuedt"/>
+        </property>
+        <property name="flagissuedby" type="boolean">
+            <column name="flagissuedby"/>
+        </property>
+        <property name="flagloanacctno" type="boolean">
+            <column name="flagloanacctno"/>
+        </property>
+        <property name="flagloanappno" type="boolean">
+            <column name="flagloanappno"/>
+        </property>
+        <property name="flagloanprod" type="boolean">
+            <column name="flagloanprod"/>
+        </property>
+        <property name="flagpnno" type="boolean">
+            <column name="flagpnno"/>
+        </property>
+        <property name="flagremarks" type="boolean">
+            <column name="flagremarks"/>
+        </property>
+        <property name="flagsignatory" type="boolean">
+            <column name="flagsignatory"/>
+        </property>
+        <property name="flagsuretyname" type="boolean">
+            <column name="flagsuretyname"/>
+        </property>
+        <property name="flagtctno" type="boolean">
+            <column name="flagtctno"/>
+        </property>
+        <property name="flagupdatecyc" type="boolean">
+            <column name="flagupdatecyc"/>
+        </property>
+        <property name="flagincorporationdt" type="boolean">
+            <column name="flagincorporationdt"/>
+        </property>
+        <property name="flagregistrationno" type="boolean">
+            <column name="flagregistrationno"/>
+        </property>
+        <property name="flagregistrationtype" type="boolean">
+            <column name="flagregistrationtype"/>
+        </property>
+        <property name="flagactualmeeting" type="boolean">
+            <column name="flagactualmeeting"/>
+        </property>
+        <property name="flagsecdate" type="boolean">
+            <column name="flagsecdate"/>
+        </property>
+        <property name="flagsecstatus" type="boolean">
+            <column name="flagsecstatus"/>
+        </property>
+        <property name="flagdateadded" type="boolean">
+            <column name="flagdateadded"/>
+        </property>
+        <property name="flagprooftype" type="boolean">
+            <column name="flagprooftype"/>
+        </property>
+        <property name="flagloitype" type="boolean">
+            <column name="flagloitype"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="sysgenflag" type="boolean">
+            <column name="sysgenflag"/>
+        </property>
+    </class>
+</hibernate-mapping>

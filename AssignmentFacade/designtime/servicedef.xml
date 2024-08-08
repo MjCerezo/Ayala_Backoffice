@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="AssignmentFacade" class="com.etel.assignment.AssignmentFacade" CRUDService="false" type="JavaService" springFile="AssignmentFacade.spring.xml">
+    <operation name="assignCIFEncoder">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifencoder" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="batchApproval">
+        <parameter name="forapproval" typeRef="java.lang.String" isList="true"/>
+        <parameter name="approvalstage" typeRef="java.lang.String" isList="false"/>
+        <parameter name="approvalstatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="remarks" typeRef="java.lang.String" isList="false"/>
+        <parameter name="boardbatchremarks" typeRef="java.lang.String" isList="false"/>
+        <parameter name="boardbatchresno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getAllRecords">
+        <return typeRef="com.coopdb.data.Tbmember" isList="true"/>
+    </operation>
+    <operation name="getCIFEncoder">
+        <return typeRef="com.coopdb.data.Tbuser" isList="true"/>
+    </operation>
+    <operation name="getMyAssignmentAppList">
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxResult" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.etel.forms.TblstappForm" isList="true"/>
+    </operation>
+    <operation name="getMyAssignmentAppTotal">
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <operation name="getMyAssignmentBiReportList">
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxResult" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.etel.assignment.forms.BIReportAssignmentForm" isList="true"/>
+    </operation>
+    <operation name="getMyAssignmentBiReportTotal">
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <operation name="getMyAssignmentCaReportList">
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxResult" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbappraisalreportmain" isList="true"/>
+    </operation>
+    <operation name="getMyAssignmentCaReportTotal">
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <operation name="getMyAssignmentCiReportList">
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxResult" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.etel.assignment.forms.CIReportAssignmentForm" isList="true"/>
+    </operation>
+    <operation name="getMyAssignmentCiReportTotal">
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <operation name="grabUnassignedApp">
+        <parameter name="memappid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="hasAccess">
+        <parameter name="roleid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="boolean" isList="false"/>
+    </operation>
+    <operation name="listCIFAssignmentPerBranch">
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxResult" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.etel.assignment.forms.CIFAssignmentForm" isList="false"/>
+    </operation>
+    <operation name="listUnassignedAppReview">
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxresult" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.etel.assignment.forms.UnassignedAppReview" isList="true"/>
+    </operation>
+    <operation name="listUnassignedAppReviewTotal">
+        <return typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <operation name="searchMember">
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmember" isList="true"/>
+    </operation>
+    <operation name="updateAO">
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="aocode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.forms.TblstappForm" name="TblstappForm" supportsQuickData="false">
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountofficer" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="applicationdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="applicationstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="applicationtype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="approvedinterestrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="approvedlineamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="approvedloanamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="approvedterm" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="assignedevaluator" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cancelledby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ciforiginatingteam" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ciftin" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createevalreportflag" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="datelastupdated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="existingaccountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="existinglinerefno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="existingpnno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="facilityname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="initialloanamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="interestrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="interesttype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="isappraisalcompleted" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isbicompleted" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isbookdocpending" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isbooked" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="iscancelled" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="iscicompleted" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isdoneencoding" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isforamendment" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isforreconsideration" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isrejected" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isrevolvingline" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="issharedline" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="lastapplicationstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lastupdatedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lineremarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanproduct" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="losoriginatingteam" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="mainlinerefno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="paymenttype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="pnno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="proposedlineamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="purpose" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="reasonforcancellation" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="reasonforreject" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="recommendationremarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="recommendedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="regioncode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="rejectedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sharedtype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sourceofpayment" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="statusdatetime" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="term" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="termno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="typefacility" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="typeofline" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.assignment.forms.BIReportAssignmentForm" name="BIReportAssignmentForm" supportsQuickData="false">
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bireportid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="birequestid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="customername" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="isamlawatchlistrequired" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isbaprequired" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isblacklistrequired" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="iscicrequired" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="iscmaprequired" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="reportedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="requestedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="reviewedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.assignment.forms.CIReportAssignmentForm" name="CIReportAssignmentForm" supportsQuickData="false">
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cireportid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cirequestid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="citype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="customername" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="isbankcheck" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isbvr" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="iscreditcheck" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isevr" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="ispdrn" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="istradecheck" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="reportedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="requestedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="reviewedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.assignment.forms.CIFAssignmentForm" name="CIFAssignmentForm" supportsQuickData="false">
+            <element name="main" typeRef="com.cifsdb.data.Tbcifmain" isList="true" allowNull="false"/>
+            <element name="result" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.assignment.forms.UnassignedAppReview" name="UnassignedAppReview" supportsQuickData="false">
+            <element name="applicationdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="encodedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="encodeddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="membershipappid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

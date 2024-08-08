@@ -1,0 +1,129 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbmemberemployment" table="TBMEMBEREMPLOYMENT" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="membershipappid" type="string">
+            <column name="membershipappid" length="20"/>
+        </property>
+        <property name="membershipid" type="string">
+            <column name="membershipid" length="20"/>
+        </property>
+        <property name="employmentstatus" type="string">
+            <column name="employmentstatus" length="20"/>
+        </property>
+        <property name="employeeid" type="string">
+            <column name="employeeid" length="20"/>
+        </property>
+        <property name="companyid" type="string">
+            <column name="companyid" length="20"/>
+        </property>
+        <property name="position" type="string">
+            <column name="position" length="50"/>
+        </property>
+        <property name="joblevel" type="string">
+            <column name="joblevel" length="50"/>
+        </property>
+        <property name="datehiredto" type="timestamp">
+            <column name="datehiredto" length="23"/>
+        </property>
+        <property name="datehiredfrom" type="timestamp">
+            <column name="datehiredfrom" length="23"/>
+        </property>
+        <property name="yearsofemployment" type="string">
+            <column name="yearsofemployment" length="10"/>
+        </property>
+        <property name="dateresign" type="timestamp">
+            <column name="dateresign" length="23"/>
+        </property>
+        <property name="businesstype" type="string">
+            <column name="businesstype" length="20"/>
+        </property>
+        <property name="companyname" type="string">
+            <column name="companyname" length="100"/>
+        </property>
+        <property name="streetnoname" type="string">
+            <column name="streetnoname" length="100"/>
+        </property>
+        <property name="subdivision" type="string">
+            <column name="subdivision" length="50"/>
+        </property>
+        <property name="barangay" type="string">
+            <column name="barangay" length="50"/>
+        </property>
+        <property name="stateprovince" type="string">
+            <column name="stateprovince" length="50"/>
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="50"/>
+        </property>
+        <property name="region" type="string">
+            <column name="region" length="50"/>
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="50"/>
+        </property>
+        <property name="postalcode" type="string">
+            <column name="postalcode" length="50"/>
+        </property>
+        <property name="psiccode" type="string">
+            <column name="psiccode" length="10"/>
+        </property>
+        <property name="psiclevel1" type="string">
+            <column name="psiclevel1" length="10"/>
+        </property>
+        <property name="psiclevel2" type="string">
+            <column name="psiclevel2" length="10"/>
+        </property>
+        <property name="psiclevel3" type="string">
+            <column name="psiclevel3" length="10"/>
+        </property>
+        <property name="psoccode" type="string">
+            <column name="psoccode" length="10"/>
+        </property>
+        <property name="psoclevel1" type="string">
+            <column name="psoclevel1" length="10"/>
+        </property>
+        <property name="psoclevel2" type="string">
+            <column name="psoclevel2" length="10"/>
+        </property>
+        <property name="psoclevel3" type="string">
+            <column name="psoclevel3" length="10"/>
+        </property>
+        <property name="psoclevel4" type="string">
+            <column name="psoclevel4" length="10"/>
+        </property>
+        <property name="sector" type="string">
+            <column name="sector" length="50"/>
+        </property>
+        <property name="subsector" type="string">
+            <column name="subsector" length="50"/>
+        </property>
+        <property name="registrationnumber" type="string">
+            <column name="registrationnumber" length="50"/>
+        </property>
+        <property name="registrationdate" type="timestamp">
+            <column name="registrationdate" length="23"/>
+        </property>
+        <property name="areacodephone" type="string">
+            <column name="areacodephone" length="5"/>
+        </property>
+        <property name="phoneno" type="string">
+            <column name="phoneno" length="50"/>
+        </property>
+        <property name="netpay" type="big_decimal">
+            <column name="netpay" precision="20"/>
+        </property>
+        <property name="monthlysalary" type="big_decimal">
+            <column name="monthlysalary" precision="20"/>
+        </property>
+        <property name="servicestatus" type="string">
+            <column name="servicestatus" length="50"/>
+        </property>
+        <property name="sblcomp" type="boolean">
+            <column name="sblcomp"/>
+        </property>
+    </class>
+</hibernate-mapping>

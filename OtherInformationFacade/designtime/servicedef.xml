@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="OtherInformationFacade" class="com.etel.otherinfo.OtherInformationFacade" CRUDService="false" type="JavaService" springFile="OtherInformationFacade.spring.xml">
+    <operation name="deleteAllQ3">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deletePEP">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteQ3">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <operation name="getDosriInfo">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbdosri" isList="false"/>
+    </operation>
+    <operation name="getFatcaInfo">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbfatca" isList="false"/>
+    </operation>
+    <operation name="getPepInfo">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbpepinfo" isList="false"/>
+    </operation>
+    <operation name="listAffiliates">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.otherinfo.dosri.forms.AffiliatesOrSubsidiaries" isList="true"/>
+    </operation>
+    <operation name="listCommonDOSRI">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="relationcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.otherinfo.dosri.forms.CommonDOSRI" isList="true"/>
+    </operation>
+    <operation name="listFATCA">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.otherinfo.fatca.forms.FATCAViewForm" isList="true"/>
+    </operation>
+    <operation name="listGovernmentType">
+        <return typeRef="com.etel.codetable.forms.CodetableForm" isList="true"/>
+    </operation>
+    <operation name="listPEP">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.otherinfo.pep.forms.PEPViewForm" isList="true"/>
+    </operation>
+    <operation name="listPEPQ1">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbcifpepinfo" isList="true"/>
+    </operation>
+    <operation name="listPEPQ2">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbcifpepinfo" isList="true"/>
+    </operation>
+    <operation name="listQ1">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="empstatus" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.otherinfo.pep.forms.PresentPreviousGovEmp" isList="true"/>
+    </operation>
+    <operation name="listQ2">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="empstatus" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.otherinfo.pep.forms.PresentPreviousGovEmp" isList="true"/>
+    </operation>
+    <operation name="listQ3">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbpepq3" isList="true"/>
+    </operation>
+    <operation name="riskStatus">
+        <parameter name="risktype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="custtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="desc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="q1" typeRef="java.lang.Boolean" isList="false"/>
+        <parameter name="q2" typeRef="java.lang.Boolean" isList="false"/>
+        <parameter name="q3" typeRef="java.lang.Boolean" isList="false"/>
+        <parameter name="q4" typeRef="java.lang.Boolean" isList="false"/>
+        <parameter name="q5" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveDosriStatus">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveFATCAStatus">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateDosri">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="info" typeRef="com.cifsdb.data.Tbdosri" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateFatcaInfo">
+        <parameter name="info" typeRef="com.cifsdb.data.Tbfatca" isList="false"/>
+        <parameter name="businesstype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdatePepInfo">
+        <parameter name="info" typeRef="com.cifsdb.data.Tbpepinfo" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="risk" typeRef="com.cifsdb.data.Tbriskprofile" isList="false"/>
+        <parameter name="empstatus" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateQ1">
+        <parameter name="ref" typeRef="com.cifsdb.data.Tbcifpepinfo" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateQ2">
+        <parameter name="ref" typeRef="com.cifsdb.data.Tbcifpepinfo" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveQ3">
+        <parameter name="q3" typeRef="com.cifsdb.data.Tbpepq3" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.otherinfo.dosri.forms.AffiliatesOrSubsidiaries" name="AffiliatesOrSubsidiaries" supportsQuickData="false">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="company" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="indivcifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="position" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subAffCompany" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.otherinfo.dosri.forms.CommonDOSRI" name="CommonDOSRI" supportsQuickData="false">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="company" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="position" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.otherinfo.fatca.forms.FATCAViewForm" name="FATCAViewForm" supportsQuickData="false">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fatcastatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="relationship" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="q1" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="q2" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="q3" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="q4" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="q5" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="q6" typeRef="boolean" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.otherinfo.pep.forms.PEPViewForm" name="PEPViewForm" supportsQuickData="false">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="pepstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="relationship" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="q1" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="q2" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="q3" typeRef="boolean" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.otherinfo.pep.forms.PresentPreviousGovEmp" name="PresentPreviousGovEmp" supportsQuickData="false">
+            <element name="govType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="officeAgencyGOCC" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="positionInGov" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

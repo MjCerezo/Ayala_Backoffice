@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbreferror" table="TBREFERROR" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="membershipappid" type="string">
+            <column name="membershipappid" length="50"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="membershipid" type="string">
+            <column name="membershipid" length="50"/>
+        </property>
+        <property name="refmemberid" type="string">
+            <column name="refmemberid" length="50"/>
+        </property>
+        <property name="empid" type="string">
+            <column name="empid" length="50"/>
+        </property>
+        <property name="referrorname" type="string">
+            <column name="referrorname" length="300"/>
+        </property>
+        <property name="employername" type="string">
+            <column name="employername" length="50"/>
+        </property>
+        <property name="position" type="string">
+            <column name="position" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbuseraccess" table="TBUSERACCESS" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.TbuseraccessId">
+            <key-property name="username" type="string">
+                <column name="username" length="50"/>
+            </key-property>
+            <key-property name="roleid" type="string">
+                <column name="roleid" length="50"/>
+            </key-property>
+            <key-property name="accessname" type="string">
+                <column name="accessname" length="100"/>
+            </key-property>
+        </composite-id>
+        <property name="modulename" type="string">
+            <column name="modulename" length="10"/>
+        </property>
+        <property name="assigneddate" type="timestamp">
+            <column name="assigneddate" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

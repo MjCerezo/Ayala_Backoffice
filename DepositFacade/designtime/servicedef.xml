@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="DepositFacade" class="com.etel.deposit.DepositFacade" CRUDService="false" type="JavaService" springFile="DepositFacade.spring.xml">
+    <operation name="getClearedChecks">
+        <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbchecksforclearing" isList="true"/>
+    </operation>
+    <operation name="getDepositDetails">
+        <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdepdetail" isList="false"/>
+    </operation>
+    <operation name="listAccountOwners">
+        <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdepositcif" isList="true"/>
+    </operation>
+    <operation name="listDeposits">
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.deposit.form.DepositAccountForm" isList="true"/>
+    </operation>
+    <operation name="listLedgerPerAcctno">
+        <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.deposit.form.DepositLedgerForm" isList="true"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.deposit.form.DepositAccountForm" name="DepositAccountForm" supportsQuickData="false">
+            <element name="accountname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctbalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="acctno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctsts" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateavailed" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="floatamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="pledgeamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="productcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="productname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subprodcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subprodname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.deposit.form.DepositLedgerForm" name="DepositLedgerForm" supportsQuickData="false">
+            <element name="acctno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="outbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="txamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="txoper" typeRef="int" isList="false" allowNull="false"/>
+            <element name="txrefNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

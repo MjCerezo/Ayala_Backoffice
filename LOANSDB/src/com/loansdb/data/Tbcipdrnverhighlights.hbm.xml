@@ -1,0 +1,105 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbcipdrnverhighlights" table="TBCIPDRNVERHIGHLIGHTS" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="cireportid" type="string">
+            <column name="cireportid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="supplementaryinfo" type="string">
+            <column name="supplementaryinfo" length="1000"/>
+        </property>
+        <property name="residency" type="string">
+            <column name="residency" length="50"/>
+        </property>
+        <property name="othernoteworthyfindings" type="string">
+            <column name="othernoteworthyfindings" length="50"/>
+        </property>
+        <property name="isactualvisit" type="boolean">
+            <column name="isactualvisit"/>
+        </property>
+        <property name="ismeralcowatertel" type="boolean">
+            <column name="ismeralcowatertel"/>
+        </property>
+        <property name="isneighbors" type="boolean">
+            <column name="isneighbors"/>
+        </property>
+        <property name="ishomeownersassoclist" type="boolean">
+            <column name="ishomeownersassoclist"/>
+        </property>
+        <property name="isbrgyofficials" type="boolean">
+            <column name="isbrgyofficials"/>
+        </property>
+        <property name="isadminoffice" type="boolean">
+            <column name="isadminoffice"/>
+        </property>
+        <property name="isidtype" type="boolean">
+            <column name="isidtype"/>
+        </property>
+        <property name="issecurityguard" type="boolean">
+            <column name="issecurityguard"/>
+        </property>
+        <property name="isother" type="boolean">
+            <column name="isother"/>
+        </property>
+        <property name="informantsname1" type="string">
+            <column name="informantsname1" length="300"/>
+        </property>
+        <property name="informantsrelation1" type="string">
+            <column name="informantsrelation1" length="100"/>
+        </property>
+        <property name="informantsaddress1" type="string">
+            <column name="informantsaddress1" length="100"/>
+        </property>
+        <property name="informantsremarks1" type="string">
+            <column name="informantsremarks1" length="300"/>
+        </property>
+        <property name="informantsname2" type="string">
+            <column name="informantsname2" length="300"/>
+        </property>
+        <property name="informantsrelation2" type="string">
+            <column name="informantsrelation2" length="100"/>
+        </property>
+        <property name="informantsaddress2" type="string">
+            <column name="informantsaddress2" length="100"/>
+        </property>
+        <property name="informantsremarks2" type="string">
+            <column name="informantsremarks2" length="300"/>
+        </property>
+        <property name="informantsname3" type="string">
+            <column name="informantsname3" length="300"/>
+        </property>
+        <property name="informantsrelation3" type="string">
+            <column name="informantsrelation3" length="100"/>
+        </property>
+        <property name="informantsaddress3" type="string">
+            <column name="informantsaddress3" length="100"/>
+        </property>
+        <property name="informantsremarks3" type="string">
+            <column name="informantsremarks3" length="300"/>
+        </property>
+        <property name="informantsname4" type="string">
+            <column name="informantsname4" length="300"/>
+        </property>
+        <property name="informantsrelation4" type="string">
+            <column name="informantsrelation4" length="100"/>
+        </property>
+        <property name="informantsaddress4" type="string">
+            <column name="informantsaddress4" length="100"/>
+        </property>
+        <property name="informantsremarks4" type="string">
+            <column name="informantsremarks4" length="300"/>
+        </property>
+        <property name="informantsname5" type="string">
+            <column name="informantsname5" length="300"/>
+        </property>
+        <property name="informantsrelation5" type="string">
+            <column name="informantsrelation5" length="100"/>
+        </property>
+        <property name="informantsaddress5" type="string">
+            <column name="informantsaddress5" length="100"/>
+        </property>
+        <property name="informantsremarks5" type="string">
+            <column name="informantsremarks5" length="300"/>
+        </property>
+    </class>
+</hibernate-mapping>

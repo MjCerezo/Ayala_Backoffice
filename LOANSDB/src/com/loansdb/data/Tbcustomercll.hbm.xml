@@ -1,0 +1,40 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbcustomercll" table="TBCUSTOMERCLL" catalog="LOANSPBBDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.TbcustomercllId">
+            <key-property name="cifid" type="string">
+                <column name="cifid" length="20"/>
+            </key-property>
+            <key-property name="cifname" type="binary">
+                <column name="cifname"/>
+            </key-property>
+            <key-property name="refid" type="string">
+                <column name="refid" length="20"/>
+            </key-property>
+            <key-property name="type" type="string">
+                <column name="type" length="10"/>
+            </key-property>
+            <key-property name="relationshipgroup" type="string">
+                <column name="relationshipgroup" length="10"/>
+            </key-property>
+            <key-property name="relationshipcode" type="string">
+                <column name="relationshipcode" length="10"/>
+            </key-property>
+            <key-property name="cllrelationshiptype" type="string">
+                <column name="cllrelationshiptype" length="10"/>
+            </key-property>
+            <key-property name="createdby" type="string">
+                <column name="createdby" length="100"/>
+            </key-property>
+            <key-property name="datecreated" type="timestamp">
+                <column name="datecreated" length="23"/>
+            </key-property>
+            <key-property name="updatedby" type="string">
+                <column name="updatedby" length="100"/>
+            </key-property>
+            <key-property name="dateupdated" type="timestamp">
+                <column name="dateupdated" length="23"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

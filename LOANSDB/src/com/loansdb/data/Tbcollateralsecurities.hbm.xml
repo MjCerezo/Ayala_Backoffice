@@ -1,0 +1,150 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbcollateralsecurities" table="TBCOLLATERALSECURITIES" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="collateralid" type="string">
+            <column name="collateralid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="referenceno" type="string">
+            <column name="referenceno" length="50"/>
+        </property>
+        <property name="collateralstatus" type="string">
+            <column name="collateralstatus" length="50"/>
+        </property>
+        <property name="appraisalstatus" type="string">
+            <column name="appraisalstatus" length="50"/>
+        </property>
+        <property name="dateencoded" type="timestamp">
+            <column name="dateencoded" length="23"/>
+        </property>
+        <property name="encodedby" type="string">
+            <column name="encodedby" length="50"/>
+        </property>
+        <property name="securitycode" type="string">
+            <column name="securitycode" length="50"/>
+        </property>
+        <property name="securitydesc" type="string">
+            <column name="securitydesc" length="100"/>
+        </property>
+        <property name="isinno" type="string">
+            <column name="isinno" length="50"/>
+        </property>
+        <property name="issuername" type="string">
+            <column name="issuername" length="100"/>
+        </property>
+        <property name="unitvalue" type="big_decimal">
+            <column name="unitvalue" precision="20"/>
+        </property>
+        <property name="rating" type="string">
+            <column name="rating" length="50"/>
+        </property>
+        <property name="maturitydate" type="timestamp">
+            <column name="maturitydate" length="23"/>
+        </property>
+        <property name="fundname" type="string">
+            <column name="fundname" length="100"/>
+        </property>
+        <property name="schemename" type="string">
+            <column name="schemename" length="100"/>
+        </property>
+        <property name="intpayout" type="big_decimal">
+            <column name="intpayout" precision="20"/>
+        </property>
+        <property name="bondduration" type="string">
+            <column name="bondduration" length="50"/>
+        </property>
+        <property name="securityprice" type="big_decimal">
+            <column name="securityprice" precision="20"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="300"/>
+        </property>
+        <property name="securityreferenceno" type="string">
+            <column name="securityreferenceno" length="50"/>
+        </property>
+        <property name="noofunits" type="integer">
+            <column name="noofunits"/>
+        </property>
+        <property name="intrate" type="big_decimal">
+            <column name="intrate" precision="20"/>
+        </property>
+        <property name="securitytype" type="string">
+            <column name="securitytype" length="5"/>
+        </property>
+        <property name="couponrate" type="big_decimal">
+            <column name="couponrate" precision="18"/>
+        </property>
+        <property name="listingdate" type="timestamp">
+            <column name="listingdate" length="23"/>
+        </property>
+        <property name="issuedate" type="timestamp">
+            <column name="issuedate" length="23"/>
+        </property>
+        <property name="issueamount" type="big_decimal">
+            <column name="issueamount" precision="18"/>
+        </property>
+        <property name="govcorp" type="string">
+            <column name="govcorp" length="50"/>
+        </property>
+        <property name="couponfreq" type="string">
+            <column name="couponfreq" length="50"/>
+        </property>
+        <property name="brokerspecialist" type="string">
+            <column name="brokerspecialist" length="300"/>
+        </property>
+        <property name="securityform" type="string">
+            <column name="securityform" length="10"/>
+        </property>
+        <property name="beneficialowner" type="string">
+            <column name="beneficialowner" length="300"/>
+        </property>
+        <property name="brokercontactname" type="string">
+            <column name="brokercontactname" length="300"/>
+        </property>
+        <property name="couponperyr" type="string">
+            <column name="couponperyr" length="100"/>
+        </property>
+        <property name="custodiansec" type="string">
+            <column name="custodiansec" length="300"/>
+        </property>
+        <property name="desc1" type="string">
+            <column name="desc1" length="500"/>
+        </property>
+        <property name="discountrate" type="big_decimal">
+            <column name="discountrate" precision="20"/>
+        </property>
+        <property name="facevalue" type="big_decimal">
+            <column name="facevalue" precision="20"/>
+        </property>
+        <property name="lendersname" type="string">
+            <column name="lendersname" length="300"/>
+        </property>
+        <property name="marketvalue" type="big_decimal">
+            <column name="marketvalue" precision="20"/>
+        </property>
+        <property name="maturityvalue" type="big_decimal">
+            <column name="maturityvalue" precision="20"/>
+        </property>
+        <property name="noofshares" type="big_decimal">
+            <column name="noofshares" precision="20"/>
+        </property>
+        <property name="prinamount" type="big_decimal">
+            <column name="prinamount" precision="20"/>
+        </property>
+        <property name="pnno" type="string">
+            <column name="pnno" length="300"/>
+        </property>
+        <property name="priceasof" type="big_decimal">
+            <column name="priceasof" precision="20"/>
+        </property>
+        <property name="priceprshare" type="big_decimal">
+            <column name="priceprshare" precision="20"/>
+        </property>
+        <property name="term" type="integer">
+            <column name="term"/>
+        </property>
+        <property name="valuedate" type="timestamp">
+            <column name="valuedate" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

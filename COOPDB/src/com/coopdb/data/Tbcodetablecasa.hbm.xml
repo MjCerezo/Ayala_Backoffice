@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbcodetablecasa" table="TBCODETABLECASA" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="codename" type="string">
+            <column name="codename" length="20"/>
+        </property>
+        <property name="codevalue" type="string">
+            <column name="codevalue" length="20"/>
+        </property>
+        <property name="desc1" type="string">
+            <column name="desc1" length="100"/>
+        </property>
+        <property name="desc2" type="string">
+            <column name="desc2" length="100"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="500"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="createddate" type="timestamp">
+            <column name="createddate" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

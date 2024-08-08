@@ -1,0 +1,45 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbappautomarketsurvey" table="TBAPPAUTOMARKETSURVEY" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appraisalreportid" type="string">
+            <column name="appraisalreportid" length="20" not-null="true"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="year" type="string">
+            <column name="year" length="50"/>
+        </property>
+        <property name="make" type="string">
+            <column name="make" length="50"/>
+        </property>
+        <property name="modelseries" type="string">
+            <column name="modelseries" length="50"/>
+        </property>
+        <property name="modeldetails" type="string">
+            <column name="modeldetails" length="50"/>
+        </property>
+        <property name="fuel" type="string">
+            <column name="fuel" length="50"/>
+        </property>
+        <property name="mileage" type="string">
+            <column name="mileage" length="50"/>
+        </property>
+        <property name="marketvalue" type="big_decimal">
+            <column name="marketvalue" precision="20"/>
+        </property>
+        <property name="contactperson" type="string">
+            <column name="contactperson" length="100"/>
+        </property>
+        <property name="contactno" type="string">
+            <column name="contactno" length="50"/>
+        </property>
+        <property name="vehicletype" type="string">
+            <column name="vehicletype" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

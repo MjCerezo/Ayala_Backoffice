@@ -1,0 +1,21 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbqibhistory" table="TBQIBHISTORY" catalog="CIFSDBDXBANK_SAMULCO" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50" not-null="true"/>
+        </property>
+        <property name="activitydate" type="timestamp">
+            <column name="activitydate" length="23"/>
+        </property>
+        <property name="activitydesc" type="string">
+            <column name="activitydesc" length="100"/>
+        </property>
+        <property name="username" type="string">
+            <column name="username" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

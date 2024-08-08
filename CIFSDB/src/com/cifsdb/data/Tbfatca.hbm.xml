@@ -1,0 +1,93 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbfatca" table="TBFATCA" catalog="AcaciaAyalaMembershipDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="cifno" type="string">
+            <column name="cifno" length="50"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="q1" type="boolean">
+            <column name="q1"/>
+        </property>
+        <property name="q1since" type="timestamp">
+            <column name="q1since" length="23"/>
+        </property>
+        <property name="q2" type="boolean">
+            <column name="q2"/>
+        </property>
+        <property name="q3" type="boolean">
+            <column name="q3"/>
+        </property>
+        <property name="q4" type="boolean">
+            <column name="q4"/>
+        </property>
+        <property name="q5" type="boolean">
+            <column name="q5"/>
+        </property>
+        <property name="ustin" type="string">
+            <column name="ustin" length="50"/>
+        </property>
+        <property name="ustelno" type="string">
+            <column name="ustelno" length="50"/>
+        </property>
+        <property name="usaddress1" type="string">
+            <column name="usaddress1" length="100"/>
+        </property>
+        <property name="usaddress2" type="string">
+            <column name="usaddress2" length="100"/>
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="50"/>
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="100"/>
+        </property>
+        <property name="zipcode" type="string">
+            <column name="zipcode" length="100"/>
+        </property>
+        <property name="q6" type="boolean">
+            <column name="q6"/>
+        </property>
+        <property name="usplaceofbirth" type="string">
+            <column name="usplaceofbirth" length="50"/>
+        </property>
+        <property name="othernationality" type="string">
+            <column name="othernationality" length="50"/>
+        </property>
+        <property name="fatcastatus" type="string">
+            <column name="fatcastatus" length="50"/>
+        </property>
+        <property name="areadesc" type="string">
+            <column name="areadesc" length="250"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100"/>
+        </property>
+        <property name="createddate" type="timestamp">
+            <column name="createddate" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="100"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="fficlass1" type="string">
+            <column name="fficlass1" length="2"/>
+        </property>
+        <property name="fficlass2" type="string">
+            <column name="fficlass2" length="2"/>
+        </property>
+        <property name="isfi" type="boolean">
+            <column name="isfi"/>
+        </property>
+        <property name="ficlass" type="string">
+            <column name="ficlass" length="2"/>
+        </property>
+        <property name="giin" type="string">
+            <column name="giin" length="50"/>
+        </property>
+        <property name="secexchange" type="string">
+            <column name="secexchange" length="2"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,2509 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="CIFSDB" class="com.cifsdb.CIFSDB" CRUDService="true" type="DataService" springFile="CIFSDB.spring.xml">
+    <operation operationType="hqlquery" name="getTbblacklistmainById">
+        <parameter name="id" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbblacklistmain" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.cifsdb.data.Cifmembershiptype" supportsQuickData="true">
+            <element name="id" typeRef="com.cifsdb.data.CifmembershiptypeId" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Ciftin" supportsQuickData="true">
+            <element name="id" typeRef="com.cifsdb.data.CiftinId" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Ciftitle" supportsQuickData="true">
+            <element name="id" typeRef="com.cifsdb.data.CiftitleId" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.CityOfBirth" supportsQuickData="true">
+            <element name="id" typeRef="com.cifsdb.data.CityOfBirthId" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbaccessrights" supportsQuickData="true">
+            <element name="id" typeRef="com.cifsdb.data.TbaccessrightsId" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="accesstype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="submodulename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="description" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbamlacorporate" supportsQuickData="true">
+            <element name="amlalistid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="country" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="description" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="corporatename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateofincorporation" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="startdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="enddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="amlaliststatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="amlalistsource" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isopenended" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbamlaindividual" supportsQuickData="true">
+            <element name="amlalistid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="country" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="description" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="suffix" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateofbirth" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="startdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="enddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="amlalistsource" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="amlaliststatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isopenended" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbamlalistmain" supportsQuickData="true">
+            <element name="amlalistid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateofbirth" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="dateofincorporation" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="startdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="enddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="amlalistsource" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="isopenended" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbamlanoncountries" supportsQuickData="true">
+            <element name="countrycode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="countryname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="reference" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="startdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="enddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="uploadrefid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="uploadeddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="uploadbatch" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbamlarequest" supportsQuickData="true">
+            <element name="requestid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="amlalistid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="corporatename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="suffix" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="country" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateofbirth" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="dateofincorporation" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="requeststatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="requesttype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="requestdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="requestedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="amlaliststatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="amlalistsource" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="description" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="startdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="enddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="approverremarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="uploadeddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="uploadflag" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="isopenended" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbauditevents" supportsQuickData="true">
+            <element name="eventid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="eventname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="moduleid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbaudittrail" supportsQuickData="true">
+            <element name="audittrailid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="eventname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="eventdescription" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="eventdatetime" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="module" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="ipaddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbbankaccounts" supportsQuickData="true">
+            <element name="id" typeRef="com.cifsdb.data.TbbankaccountsId" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="transtype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accounttype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="bankname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateopened" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="adb" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="outstandingbal" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="loantype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="valuedate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="maturitydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="investmenttype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbblacklistcorporate" supportsQuickData="true">
+            <element name="blacklistid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="country" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="description" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="corporatename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateofincorporation" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="startdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="enddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="blackliststatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="blacklistsource" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="courtcaseno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="courtbranchcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="uploadrefid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="uploadeddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="uploadbatch" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isopenended" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbblacklistindividual" supportsQuickData="true">
+            <element name="blacklistid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="country" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="description" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="suffix" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateofbirth" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="startdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="enddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="blacklistsource" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="blackliststatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="courtcaseno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="courtbranchcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="uploadrefid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="uploadeddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="uploadbatch" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isopenended" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbblacklistmain" supportsQuickData="true">
+            <element name="blacklistid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateofbirth" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="dateofincorporation" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="startdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="enddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="blacklistsource" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="uploadrefid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="uploadeddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="uploadbatch" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isopenended" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbblacklistrequest" supportsQuickData="true">
+            <element name="requestid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="blacklistid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="corporatename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="suffix" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="country" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateofbirth" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="dateofincorporation" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="requeststatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="requesttype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="requestdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="requestedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="blackliststatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="blacklistsource" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="description" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="startdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="enddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="approverremarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="courtcaseno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="courtbranchcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="uploadrefid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="uploadeddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="uploadbatch" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="uploadflag" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="isopenended" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbbranch" supportsQuickData="true">
+            <element name="id" typeRef="com.cifsdb.data.TbbranchId" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="branchaddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="phoneno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="faxno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="branchstatus" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="isopen" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="branchclassification" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="currentbusinessdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="nextbusinessdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbchangecifdetailsrequest" supportsQuickData="true">
+            <element name="requestid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="changetype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="requestedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="daterequested" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="requeststatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="requesttype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="approvedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateapprove" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="approverremarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="teamcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="changefrom" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="changeto" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbcifbusiness" supportsQuickData="true">
+            <element name="businessid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="businessname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="businesstype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="natureofbusiness" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="businesstin" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="businessclass" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="businessphoneno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="businessfaxno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="emailaddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psic" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="incoporationdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="yearsofservice" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="grossincome" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="annualmonthind" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fulladdress1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="streetno1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subdivision1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="country1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="province1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="city1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="barangay1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="postalcode1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="postalcodename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="homeownership1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="otherhomeownership1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="occupiedsince1" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="countrycodephone" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="areacodephone" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="countrycodefax" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="areacodefax" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="buscifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psiccode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psiclevel1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psiclevel2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psiclevel3" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psiclevel4" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mngbusid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isautogenerated" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="genmanager" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="gmcif" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbcifcancellationrequest" supportsQuickData="true">
+            <element name="requestid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="maincifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="requesteddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="requestedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cancellationcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="teamcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="makerequestid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="reasonforcancellation" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbcifcorporate" supportsQuickData="true">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="corporatename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="ciftype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cifstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="borrowerfundertype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="teamcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="assignedto" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="tradename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateofincorporation" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="firmsize" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="nationality" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isresident" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="noofemployees" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="monthlyincomesale" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="registrationtype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="tin" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="sss" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="termofexistence" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="lessee" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="businesstype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isqualifiedinvestor" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="legalform" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psic" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="grossincome" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="nettaxableincome" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="monthlyexpenses" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="addresstype1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fulladdress1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="streetno1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subdivision1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="country1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="province1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="city1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="barangay1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="postalcode1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="postalcodename1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="homeownership1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="otherhomeownership1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="occupiedsince1" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="addresstype2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="issameaddress1" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="fulladdress2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="streetno2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="barangay2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subdivision2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="city2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="country2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="province2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="postalcode2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="postalcodename2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="homeownership2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="otherhomeownership2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="occupiedsince2" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="mobilenumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="homephoneno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="faxnumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="emailaddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="contacttype1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="contactvalue1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="contacttype2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="contactvalue2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="registrationno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="countrycodemobile" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="areacodemobile" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="countrycodephone" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="areacodephone" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="countrycodefax" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="areacodefax" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="website" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="maincontact1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psiccode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psiclevel1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psiclevel2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psiclevel3" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="ismailingaddress" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="cifgroupcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="residenceclassification" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="paidupcapital" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="declaredmaxvalueoftx" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="registrationtype2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="registrationno2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="registrationdate2" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="expirydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="expirydate1" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="expirydate2" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbcifdependents" supportsQuickData="true">
+            <element name="dependentid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateofbirth" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="issameasfulladdress1" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="issameasfulladdress2" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="address" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="age" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="gradeyear" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="relationship" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="otherrelationship" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="gender" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="contactNumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbcifemployment" supportsQuickData="true">
+            <element name="employmentid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="emprecordtype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="employername" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="position" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="empstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="employertin" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="employerphoneno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psic" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psoc" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="seafarerid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="seafarervessel" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="seafarerduration" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="seafarerembarkationdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="seafarerdisembarkationdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="seafarerpercentageofallotment" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="seafarerallottee1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="seafarerallottee2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="department" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="rank" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datehiredfrom" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="datehiredto" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="yearsofservice" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="immediatehead" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="grossincome" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="annualmonthind" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fulladdress1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="streetno1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subdivision1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="country" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="province1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="city1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="barangay1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="postalcode1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="postalcodename1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="divisioncode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="stationcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="employeeno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="regioncode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="countrycodephone" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="areacodephone" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="empcifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="otheremploymentstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psiccode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psiclevel1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psiclevel2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psiclevel3" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psiclevel4" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psoccode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psoclevel1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psoclevel2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psoclevel3" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psoclevel4" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isdepedemployee" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="monthsofservice" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="positioncategory" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="otherpositioncategory" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="ispresent" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="occupationstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mngempid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isautogenerated" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="depedposition" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="businesstype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="employeraddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="employerId" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbcifgroup" supportsQuickData="true">
+            <element name="cifgroupcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifgroupname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbcifindividual" supportsQuickData="true">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="shortname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="suffix" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="previouslastname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="preferredname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="title" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateofbirth" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="age" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="civilstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="gender" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="placeofbirth" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="nationality" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="noofdependents" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="fulladdress1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="streetno1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subdivision1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="permanentaddstreetno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="permanentaddstreetname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="barangay1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="province1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="city1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="country1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="postalcode1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fulladdress2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="streetno2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subdivision2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="presentaddstreetno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="presentaddstreetname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="barangay2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="province2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="city2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="country2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="postalcode2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="issameaddress1" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="issameaddress2" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="homeownership1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="homeownership2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="otherhomeownership1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="otherhomeownership2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="occupiedsince1" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="occupiedsince2" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="lengthofstaymo" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="lengthofstayyear" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="emailaddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="contacttype1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="contactvalue1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="contacttype2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="contactvalue2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="faxnumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="homecountrycode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="homephonearea" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="homephoneno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mobilecountrycode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mobilephonearea" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mobilenumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="officephonecountrycode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="officephonearea" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="officephoneno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="addresstype1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="addresstype2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="participationcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="relationtoborrower" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="tin" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="sss" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="statusloan" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="sector" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="sizeoffirm" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="spouseid" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="specificpurpose" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="idtype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="idno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="issuedate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="expirydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="placeissued" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="countryofissue" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="countryofbirth" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mailingaddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="billingaddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mailingstreetno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mailinghouseno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mailingstreetname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mailingbarangay" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mailingcity" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mailingstate" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mailingzipcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mailingzipcodename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mailingusesameaspresent" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="mailingusesameaspermanent" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="postalcodename2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="spousecifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="spousedateofbirth" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="spousetitle" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="spousefirstname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="spouselastname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="spousemiddlename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="spousesuffix" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fatherdateofbirth" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="fathercifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fathertitle" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fatherfirstname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fathermiddlename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fatherlastname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fathersuffix" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mothercifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="motherdateofbirth" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="mothertitle" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="motherfirstname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="motherlastname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mothermiddlename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mothersuffix" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="presentaddzipcodename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="permanentaddzipcodename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="postalcodename1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dualcitizen" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="othernationality" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="resident" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="carsowned" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isqualifiedinvestor" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="coursepostgrad" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="schoolpostgrad" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="schoolcollege" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="coursecollege" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="sourceoffunds" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="othersourceoffunds" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="annualincome" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="asset" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="networth" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cityofbirth" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="acrnumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="countrycodemobile" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="areacodemobile" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="countrycodephone" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="areacodephone" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="countrycodefax" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="areacodefax" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="usstateofbirth" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="usplaceofbirth" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="ussocialsecurityno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="gsis" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="employmentstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="ismailingaddress" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="cifgroupcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mothermaidenmname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="beneficiarycifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="beneficiarydateofbirth" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="beneficiarytitle" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="beneficiaryfirstname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="beneficiarylastname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="beneficiarymiddlename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="beneficiarysuffix" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="indivoccupation" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="residenceclassification" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="stateofbirth" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="religion" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="communitiestype1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="communitiestype2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="sexualpref" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="membershiptype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datemembership" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="referredbycifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="referredbycifname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="bankAccountNumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="bankName" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbcifindividualrequest" supportsQuickData="true">
+            <element name="requestid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="title" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="suffix" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="shortname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="previouslastname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="streetno1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subdivision1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="country1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="province1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="city1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="barangay1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="postalcode1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="homeownership1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="otherhomeownership1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="occupiedsince1" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="issameaddress1" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="mobilephone" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mobilecountrycode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mobileareacode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mobilenumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="homephone" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="homecountrycode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="homeareacode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="homenumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="faxphone" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="faxcountrycode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="faxareacode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="faxnumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="emailaddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="contacttype1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="contactvalue1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="contacttype2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="contactvalue2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="civilstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="spousetitle" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="spouselastname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="spousefirstname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="spousemiddlename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="spousesuffix" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fulladdress1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fulladdress2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="country2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="province2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="city2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="streetno2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="homeownership2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subdivision2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="barangay2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="postalcode2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="otherhomeownership2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="occupiedsince2" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="spousecifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="spousedateofbirth" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="ismailingaddress" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="postalcodename1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="postalcodename2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbcifmain" supportsQuickData="true">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="encodeddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="encodedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cifstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cifstatusdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="cifapprovedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cifreturnedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cifapproveddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="cifreturnedbydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="cifreturned" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="ciftype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateofbirth" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="assignedto" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="borrowerfundertype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="approvalcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateofincorporation" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="originatingteam" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="assignedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="lastupdatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="originatingbranch" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accreditedmktgconsultant" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fulladdress1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fulladdress2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cifpurpose" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cifgroupcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="taxexempted" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="clienttype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateofregistration" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="accreditationstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="referrorposition" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="declaredmaxvalueoftx" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="referrorname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="deceasedflag" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="maintainsaccttootherbanks" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="accountfreezeflag" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="referraltype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="tradeaccreditationdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="accreditationdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="isencoding" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="riskrating" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldcifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="profpiccode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cancelledby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datecancelled" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="cbscode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="collectorareacode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="collectorsubareacode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateassigned" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="cifdeclinedBy" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cifdeclinedDate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="cifoldStatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cifoldStatusDate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="returnRemarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="approvedRemarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cancelRemarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="declinedRemarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="companyCode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="memberId" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="memberStatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="shareCapitalAccountNumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbcifmergerequest" supportsQuickData="true">
+            <element name="requestid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="maincifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mergedcifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="requestdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="requeststatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="approvedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateapproved" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="approverremarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="teamcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="requestedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbcifpepinfo" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="type" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="govtype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="govname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="position" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbcodename" supportsQuickData="true">
+            <element name="codename" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="iseditable" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbcodetable" supportsQuickData="true">
+            <element name="id" typeRef="com.cifsdb.data.TbcodetableId" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="desc1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="desc2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbcompany" supportsQuickData="true">
+            <element name="id" typeRef="com.cifsdb.data.TbcompanyId" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="hcompanycode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="address" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="phoneno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="faxno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="emailaddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="website" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="companystatus" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="logo" typeRef="java.sql.Blob" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isloscompany" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbcorporaterequest" supportsQuickData="true">
+            <element name="requestid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="title" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="corporatename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="tradename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="streetno1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subdivision1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="country1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="province1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="city1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="barangay1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="postalcode1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="homeownership1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="otherhomeownership1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="occupiedsince1" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="issameaddress1" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="mobilephone" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mobilecountrycode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mobileareacode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mobilenumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="officephone" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="officecountrycode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="officeareacode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="officenumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="faxphone" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="faxcountrycode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="faxareacode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="faxnumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="emailaddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="website" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="maincontact1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fulladdress1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fulladdress2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="country2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="province2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="city2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="streetno2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="homeownership2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subdivision2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="barangay2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="postalcode2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="otherhomeownership2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="occupiedsince2" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="ismailingaddress" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="postalcodename1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="postalcodename2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbcountry" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="code" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="country" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="stateprovince" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="city" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="areadesc" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="postalcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="areacode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="countrycode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbcreditcardinfo" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bank" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cardtype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateexpiry" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="creditlimit" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="limitbalance" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="cardno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbcustomerrelationship" supportsQuickData="true">
+            <element name="relid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="maincifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="maincifname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="relatedcifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="relationshipcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="relatedcifname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="status" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="dateadded" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="addedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isautogenerated" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="relationshipdesc" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mngempid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbdepedcodes" supportsQuickData="true">
+            <element name="id" typeRef="com.cifsdb.data.TbdepedcodesId" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="regionname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="divisionname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="stationname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbdocdetails" supportsQuickData="true">
+            <element name="docid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="dmsid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="pnno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="linerefno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="signatoryname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="collateralno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="doccategory" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="doctype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datereceived" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="docstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="updatecycle" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="idtype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="idno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="issuedate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="issuecountry" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="expirydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="issuedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="coveredyear" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datefiledbir" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="lineeffectivitydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="lineexpirydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="chassisno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="description" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="tctno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="suretyno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fundercifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="loitype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="proofdoctype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateserved" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="uploadedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateuploaded" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="dateadded" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="incorporationdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="registrationno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="registrationtype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateofmeeting" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="secsubmitteddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="statussecsubmission" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="loanappno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateofapplication" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="pqtype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="otherdoc" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="issueplace" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="docfilename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="docbasecode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbdosri" supportsQuickData="true">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="q1" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="q2" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="q3" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="q4" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="q5" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="subsidiary1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subsidiary2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subsidiary3" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subsidiary4" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subsidiary5" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="nameofdosrirelative" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="positionofdosrirelative" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dosristatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbemailformats" supportsQuickData="true">
+            <element name="emailcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="formatname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="recipient" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="sender" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="groupcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="teamemail" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subject" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbemailparams" supportsQuickData="true">
+            <element name="id" typeRef="com.cifsdb.data.TbemailparamsId" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="emailadd" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbexistingloansother" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loantype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="originalamt" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="intrate" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="term" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="daterelease" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="maturitydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="principalamt" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="prinintrate" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="outstandingbal" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="bank" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="hascreditcheck" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="amortizationamt" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbfatca" supportsQuickData="true">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="q1" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="q1since" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="q2" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="q3" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="q4" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="q5" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="ustin" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="ustelno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="usaddress1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="usaddress2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="city" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="state" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="zipcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="q6" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="usplaceofbirth" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="othernationality" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fatcastatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="areadesc" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="fficlass1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fficlass2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isfi" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="ficlass" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="giin" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="secexchange" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbgroup" supportsQuickData="true">
+            <element name="groupcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="groupname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isapprovingcommittee" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbhistory" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="historydatetime" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="eventdescription" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="eventname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="appno" typeRef="byte" isList="true" allowNull="true"/>
+            <element name="eventid" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="ipaddress" typeRef="byte" isList="true" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbmanagement" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="suffix" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateofbirth" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="position" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="nationality" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="noofshares" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="amtsubscribed" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="ownershippercentage" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="relationshipcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="relatedcifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="businesstype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="boarddesignation" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="signatorylevel" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="corporatename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateofincorporation" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mngempid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isautogenerated" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="positioncategory" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbnotes" supportsQuickData="true">
+            <element name="noteid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="noteddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="notedbyuser" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="notedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="notetype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="notes" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isurgent" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="lastupdatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastupdatedname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datetimeofcall" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="purposeofcall" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="phoneno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbotheraccounts" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="bankaccttype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="bank" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountnumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateopened" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="adb" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="outstandingbal" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="accounttype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="loantype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="pncnno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="valuedate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="maturitydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="investmenttype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="investmentrefno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="atmcardno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbothercontactrequest" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="requestid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="position" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="contactperson" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="otherdetails" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="directnumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mobilenumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="emailaddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbothercontacts" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="contactperson" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="otherdetails" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="directnumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mobilenumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="emailaddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="position" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbpasswordbank" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="password" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbpepinfo" supportsQuickData="true">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="q1" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="govposition1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="govoffice1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="govtype1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="q2" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="govposition2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="govoffice2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="govtype2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="q3" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="famname1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="relationship1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="famgovposition1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="famgovoffice1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="famgovtype1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="famname2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="relationship2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="famgovposition2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="famgovoffice2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="famgovtype2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="pepstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="q1position" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="q1govoffice" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="q1govtype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="q2position" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="q2govoffice" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="q2govtype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbpepq3" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="familymembername" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="relationship" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="govposition" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="govagencygocc" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="govtype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="otherrelationship" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbpersonalreference" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="personalrefname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="employername" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="employeraddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="contactno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="relationship" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbproperties" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="smtpIsdisabled" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="smtpTimeinterval" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="smtpEmailaddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="smtpPassword" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="smtpEmailaddalias" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="smtpHost" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="smtpPort" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="rptUrl" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="rptUsername" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="rptPassword" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dmsUrl" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbpsiccodes" supportsQuickData="true">
+            <element name="psiccode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="level1code" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="level1desc" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="level2code" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="level2desc" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="psicdesc" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbpsoccodes" supportsQuickData="true">
+            <element name="psoccode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="level1code" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="level1desc" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="level2code" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="level2desc" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="level3code" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="level3desc" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="level4desc" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbqibhistory" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="activitydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="activitydesc" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbqibinfo" supportsQuickData="true">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="registrationdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="registrationnumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="validityyears" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="validitydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="evaluatormarketing" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="positionmarketing" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="evaluatorcompliance" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="positioncompliance" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="evaluationdatemarketing" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="evaluationdatecompliance" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="keyobjective1" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="keyobjective2" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="keyobjective3" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="keyobjective4" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="keyobjective5" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="keyobjectiveothers" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="portfolioinv1" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="portfolioinv2" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="portfolioinv3" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="portfolioinv4" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="portfolioinv5" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="portfolioinv6" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="portfolioinv7" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="portfolioinvothers" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="intendedinv" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="intendedinvothers" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="appetiterisk" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="appetiteriskothers" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="qibposition1" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="qibposition2" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="qibposition3" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="qibposition4" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="qibpositionothers" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="yeartrading" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="yeartradingothers" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="registrationstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="terminationreason" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="currentnetworth" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="amountofinvestment" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="currentportfoliosecurities" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="currentportfoliosecuritiesothers" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="amountofsecurities" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbreferrors" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="referraltype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="referrorname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="validuntil" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="accreditationdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbriskprofile" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="riskprofiletype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="description" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="q1" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="q2" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="q3" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="q4" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="q5" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="result" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbrole" supportsQuickData="true">
+            <element name="id" typeRef="com.cifsdb.data.TbroleId" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbroleaccess" supportsQuickData="true">
+            <element name="id" typeRef="com.cifsdb.data.TbroleaccessId" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="modulename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="assigneddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="assignedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbsecurityparams" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="minimumpasswordlength" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="maxinvalidattempts" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="minimumspecialchar" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="minimumlowercase" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="minimumuppercase" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="minimumnumber" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="maxpasswordage" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="addomain" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="adusername" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="adpassword" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="securitymessage" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="passwordhistorycount" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="repeatcharacterregex" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="numdaysbeforepasswordexpirewarn" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="validityperiodindays" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="ldapurl" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="defaultpassword" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="minimumusernamelength" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="maximumusernamelength" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbsequence" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="product" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="year" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="sequence" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbsmtp" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subject" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="body" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="recipient" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="sender" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cc" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="bcc" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="flag" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="datesent" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="appstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateadded" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="addedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="emailcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbteammembers" supportsQuickData="true">
+            <element name="teamcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="teamrole" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbteams" supportsQuickData="true">
+            <element name="teamcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="groupcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="teamname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="backupofficer" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="officer" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isofficeravailable" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbtradereference" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="tradetype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="clientsuppliername" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="clientsupplieraddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="contactperson" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="contactposition" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lengthofbusinessrelations" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="departmentconnected" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="emailaddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="productservicesoffered" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="avebillingamtpertrans" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="mobile1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mobile2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="landline1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="landline2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accreditationstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="tradecifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbuser" supportsQuickData="true">
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="password" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="emailadd" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastIp" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastlogondate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="lastpasswordchange" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="isloggedon" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="islocked" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="isactive" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="issuspended" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="isactivedirectorymember" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="invalidattemptscount" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="pwexpirydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="validitydateto" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="validitydatefrom" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="validitytimeto" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="validitytimefrom" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="ischangepwrequired" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="ispwneverexpire" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="isdisabled" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="invalidattempip" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastlogoutdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="lastsession" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="groupcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="teamcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="terminatedsessionip" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datetimelockedout" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="position" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbuseraccess" supportsQuickData="true">
+            <element name="id" typeRef="com.cifsdb.data.TbuseraccessId" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="modulename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="assigneddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Tbuserroles" supportsQuickData="true">
+            <element name="id" typeRef="com.cifsdb.data.TbuserrolesId" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="rolename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="assigneddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="assignedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.TbcompanyId" name="id" supportsQuickData="false">
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="companyname" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.TbuserrolesId" name="id" supportsQuickData="false">
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.TbaccessrightsId" name="id" supportsQuickData="false">
+            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="modulename" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.CifmembershiptypeId" name="id" supportsQuickData="false">
+            <element name="originatingBranch" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifNo" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="membershipType" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.CiftitleId" name="id" supportsQuickData="false">
+            <element name="originatingBranch" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifNo" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="title" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.TbcodetableId" name="id" supportsQuickData="false">
+            <element name="codename" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="codevalue" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.CityOfBirthId" name="id" supportsQuickData="false">
+            <element name="originatingBranch" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifNo" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="presentAddressCountry" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="presentAddressProvince" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="presentAddressCity" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.TbroleId" name="id" supportsQuickData="false">
+            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="rolename" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.TbroleaccessId" name="id" supportsQuickData="false">
+            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.TbemailparamsId" name="id" supportsQuickData="false">
+            <element name="emailtype" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="emailcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.TbdepedcodesId" name="id" supportsQuickData="false">
+            <element name="regioncode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="divisioncode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="stationcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.TbbranchId" name="id" supportsQuickData="false">
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="branchname" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.TbbankaccountsId" name="id" supportsQuickData="false">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="accountrefno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.TbuseraccessId" name="id" supportsQuickData="false">
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.CiftinId" name="id" supportsQuickData="false">
+            <element name="originatingBranch" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifNo" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="tin" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+    </dataobjects>
+</service>

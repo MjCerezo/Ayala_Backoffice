@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbgroup" table="TBGROUP" catalog="AcaciaAyalaMembershipDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="groupcode" type="string">
+            <column name="groupcode" length="50"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="companycode" type="string">
+            <column name="companycode" length="50" not-null="true"/>
+        </property>
+        <property name="branchcode" type="string">
+            <column name="branchcode" length="50" not-null="true"/>
+        </property>
+        <property name="groupname" type="string">
+            <column name="groupname" length="100"/>
+        </property>
+        <property name="isapprovingcommittee" type="boolean">
+            <column name="isapprovingcommittee"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="100"/>
+        </property>
+    </class>
+</hibernate-mapping>

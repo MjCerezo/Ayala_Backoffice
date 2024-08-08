@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="InquiryFacade" class="com.etel.inquiry.InquiryFacade" CRUDService="false" type="JavaService" springFile="InquiryFacade.spring.xml">
+    <operation name="ReceivableForm">
+        <parameter name="r" typeRef="com.etel.inquiry.forms.NonMemberInquiryForm" isList="true"/>
+        <return typeRef="com.etel.inquiry.forms.NonMemberInquiryForm" isList="true"/>
+    </operation>
+    <operation name="applicationInquiry">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="lname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="applicationstatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <parameter name="corporatename" typeRef="java.lang.String" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxresult" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="customertype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="applicationtype" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.etel.inquiry.forms.InquiryForm" isList="true"/>
+    </operation>
+    <operation name="applicationInquiry2">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="lname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="corporatename" typeRef="java.lang.String" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxresult" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="customertype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="isExisting" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.inquiry.forms.InquiryForm" isList="true"/>
+    </operation>
+    <operation name="applicationInquiry2Count">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="lname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="corporatename" typeRef="java.lang.String" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxresult" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="customertype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="isExisting" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="int" isList="false"/>
+    </operation>
+    <operation name="applicationInquiryCount">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="lname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="applicationstatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <parameter name="corporatename" typeRef="java.lang.String" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxresult" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="customertype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="applicationtype" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="int" isList="false"/>
+    </operation>
+    <operation name="companyListPerStages">
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <parameter name="applicationStatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="daysCount" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.inquiry.forms.CompanyListPerStagesForm" isList="true"/>
+    </operation>
+    <operation name="countSearchedMember">
+        <parameter name="membername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <operation name="countSearchedMemberBills">
+        <parameter name="membername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <operation name="dedupeCIF">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="lname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="mname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="nameCorpSole" typeRef="java.lang.String" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxresult" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="customertype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.inquiry.forms.DedupeCIFForm" isList="true"/>
+    </operation>
+    <operation name="dedupeCIFCount">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="lname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="mname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="nameCorpSole" typeRef="java.lang.String" isList="false"/>
+        <parameter name="customertype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="int" isList="false"/>
+    </operation>
+    <operation name="findLedgerByAccountno">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tblntxjrnl" isList="true"/>
+    </operation>
+    <operation name="findPayschedByAccountno">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbpaysched" isList="true"/>
+    </operation>
+    <operation name="getCifTotalResult">
+        <parameter name="customertype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifnumber" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifstatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fullname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="ciftype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="birthdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="encodeddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="dateofincorporation" typeRef="java.util.Date" isList="false"/>
+        <parameter name="lname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="mname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fulladdress" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <operation name="getListofLoanAccounts">
+        <parameter name="name" typeRef="java.lang.String" isList="false"/>
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="refno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbloans" isList="true"/>
+    </operation>
+    <operation name="getMember">
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmember" isList="false"/>
+    </operation>
+    <operation name="listBusiness">
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmemberbusiness" isList="true"/>
+    </operation>
+    <operation name="listEmployment">
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmemberemployment" isList="true"/>
+    </operation>
+    <operation name="listNonMember">
+        <parameter name="name" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.inquiry.forms.NonMemberInquiryForm" isList="true"/>
+    </operation>
+    <operation name="membershipListPerStages">
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <parameter name="applicationStatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="daysCount" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.inquiry.forms.MembershipListPerStagesForm" isList="true"/>
+    </operation>
+    <operation name="searchCIF">
+        <parameter name="customertype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifnumber" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifstatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fullname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="ciftype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="birthdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="encodeddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="dateofincorporation" typeRef="java.util.Date" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxResult" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="lname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="mname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fulladdress" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.inquiry.forms.CIFInquiryForm" isList="true"/>
+    </operation>
+    <operation name="searchCIFRB">
+        <parameter name="customertype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifnumber" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifstatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fullname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="ciftype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="birthdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="encodeddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="dateofincorporation" typeRef="java.util.Date" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxResult" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="lname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="mname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fulladdress" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.inquiry.forms.CIFInquiryForm" isList="true"/>
+    </operation>
+    <operation name="searchLoanApplications">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appstatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="firstname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="lastname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxresult" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tblstapp" isList="true"/>
+    </operation>
+    <operation name="searchMember">
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="membername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxresult" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmember" isList="true"/>
+    </operation>
+    <operation name="searchMemberBills">
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="membername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxresult" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmember" isList="true"/>
+    </operation>
+    <operation name="searchMembershipApplication">
+        <parameter name="srch" typeRef="com.etel.inquiry.forms.MembershipApplicationForm" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxresult" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmembershipapp" isList="true"/>
+    </operation>
+    <operation name="searchMembershipApplicationCount">
+        <parameter name="srch" typeRef="com.etel.inquiry.forms.MembershipApplicationForm" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxresult" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.inquiry.forms.NonMemberInquiryForm" name="NonMemberInquiryForm" supportsQuickData="false">
+            <element name="acctno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="codeno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="refMemberName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="referencetype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="type" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.inquiry.forms.InquiryForm" name="InquiryForm" supportsQuickData="false">
+            <element name="accountofficer" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="applicationstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="applicationtype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="id" typeRef="int" isList="false" allowNull="false"/>
+            <element name="loanproduct" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="losoriginatingteam" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="statusdatetime" typeRef="java.util.Date" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.inquiry.forms.CompanyListPerStagesForm" name="CompanyListPerStagesForm" supportsQuickData="false">
+            <element name="applicationStatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companyAddress" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companyName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companyNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateEncoded" typeRef="java.util.Date" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.inquiry.forms.DedupeCIFForm" name="DedupeCIFForm" supportsQuickData="false">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateofbirth" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateofincorporation" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="encodedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="encodeddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="fulladdress1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fulladdress2" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="id" typeRef="int" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="teamcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="tin" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.inquiry.forms.MembershipListPerStagesForm" name="MembershipListPerStagesForm" supportsQuickData="false">
+            <element name="applicationStatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companyCode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companyName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateCreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="employeeId" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fullName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="trn" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.inquiry.forms.CIFInquiryForm" name="CIFInquiryForm" supportsQuickData="false">
+            <element name="assignedto" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="birthdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="borrowerfundertype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifapprovedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifapproveddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifpurpose" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ciftype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateofincorporation" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="encodedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="encodeddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="fulladdress1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fulladdress2" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="tin" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.inquiry.forms.MembershipApplicationForm" name="MembershipApplicationForm" supportsQuickData="false">
+            <element name="accountofficer" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="applicationstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branchofservice" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="employeeid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="encodeddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="encoder" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershipappid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershiptype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="originatingbranch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

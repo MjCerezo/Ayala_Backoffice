@@ -1,0 +1,180 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbcipdrnresidence" table="TBCIPDRNRESIDENCE" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="cireportid" type="string">
+            <column name="cireportid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="homeownership" type="string">
+            <column name="homeownership" length="20"/>
+        </property>
+        <property name="livingwith" type="string">
+            <column name="livingwith" length="50"/>
+        </property>
+        <property name="monthlyrentaldues" type="big_decimal">
+            <column name="monthlyrentaldues" precision="20"/>
+        </property>
+        <property name="landlordsname" type="string">
+            <column name="landlordsname" length="300"/>
+        </property>
+        <property name="telno" type="string">
+            <column name="telno" length="50"/>
+        </property>
+        <property name="monthlyamort" type="big_decimal">
+            <column name="monthlyamort" precision="20"/>
+        </property>
+        <property name="mortgagorname" type="string">
+            <column name="mortgagorname" length="300"/>
+        </property>
+        <property name="residencetype" type="string">
+            <column name="residencetype" length="50"/>
+        </property>
+        <property name="nostorey" type="string">
+            <column name="nostorey" length="5"/>
+        </property>
+        <property name="classification" type="string">
+            <column name="classification" length="50"/>
+        </property>
+        <property name="housecondition" type="string">
+            <column name="housecondition" length="50"/>
+        </property>
+        <property name="areafloor" type="string">
+            <column name="areafloor" length="50"/>
+        </property>
+        <property name="arealot" type="string">
+            <column name="arealot" length="50"/>
+        </property>
+        <property name="residencenearestcorner" type="string">
+            <column name="residencenearestcorner"/>
+        </property>
+        <property name="appliances" type="string">
+            <column name="appliances" length="50"/>
+        </property>
+        <property name="parkingspace" type="string">
+            <column name="parkingspace" length="50"/>
+        </property>
+        <property name="residenceage" type="string">
+            <column name="residenceage" length="50"/>
+        </property>
+        <property name="residencemake" type="string">
+            <column name="residencemake" length="50"/>
+        </property>
+        <property name="generalappearance" type="string">
+            <column name="generalappearance" length="50"/>
+        </property>
+        <property name="accessibility" type="string">
+            <column name="accessibility" length="50"/>
+        </property>
+        <property name="residenceinterior" type="string">
+            <column name="residenceinterior" length="50"/>
+        </property>
+        <property name="residenceexterior" type="string">
+            <column name="residenceexterior" length="50"/>
+        </property>
+        <property name="residencelandmark" type="string">
+            <column name="residencelandmark" length="100"/>
+        </property>
+        <property name="vehicle1" type="string">
+            <column name="vehicle1" length="50"/>
+        </property>
+        <property name="yearmodel1" type="string">
+            <column name="yearmodel1" length="50"/>
+        </property>
+        <property name="plateno1" type="string">
+            <column name="plateno1" length="50"/>
+        </property>
+        <property name="mortgagedfinancedby1" type="string">
+            <column name="mortgagedfinancedby1" length="100"/>
+        </property>
+        <property name="vehicle2" type="string">
+            <column name="vehicle2" length="50"/>
+        </property>
+        <property name="yearmodel2" type="string">
+            <column name="yearmodel2" length="50"/>
+        </property>
+        <property name="plateno2" type="string">
+            <column name="plateno2" length="50"/>
+        </property>
+        <property name="mortgagedfinancedby2" type="string">
+            <column name="mortgagedfinancedby2" length="100"/>
+        </property>
+        <property name="vehicle3" type="string">
+            <column name="vehicle3" length="50"/>
+        </property>
+        <property name="yearmodel3" type="string">
+            <column name="yearmodel3" length="50"/>
+        </property>
+        <property name="plateno3" type="string">
+            <column name="plateno3" length="50"/>
+        </property>
+        <property name="mortgagedfinancedby3" type="string">
+            <column name="mortgagedfinancedby3" length="100"/>
+        </property>
+        <property name="isresidential" type="boolean">
+            <column name="isresidential"/>
+        </property>
+        <property name="iscommercial" type="boolean">
+            <column name="iscommercial"/>
+        </property>
+        <property name="isindustrial" type="boolean">
+            <column name="isindustrial"/>
+        </property>
+        <property name="isagricultural" type="boolean">
+            <column name="isagricultural"/>
+        </property>
+        <property name="ismixed" type="boolean">
+            <column name="ismixed"/>
+        </property>
+        <property name="issubdivision" type="boolean">
+            <column name="issubdivision"/>
+        </property>
+        <property name="isexclusive" type="boolean">
+            <column name="isexclusive"/>
+        </property>
+        <property name="isgovtproj" type="boolean">
+            <column name="isgovtproj"/>
+        </property>
+        <property name="isprivate" type="boolean">
+            <column name="isprivate"/>
+        </property>
+        <property name="ispublic" type="boolean">
+            <column name="ispublic"/>
+        </property>
+        <property name="isnoincome" type="boolean">
+            <column name="isnoincome"/>
+        </property>
+        <property name="isverylowincome" type="boolean">
+            <column name="isverylowincome"/>
+        </property>
+        <property name="ismiddleincome" type="boolean">
+            <column name="ismiddleincome"/>
+        </property>
+        <property name="islowincome" type="boolean">
+            <column name="islowincome"/>
+        </property>
+        <property name="isupperincome" type="boolean">
+            <column name="isupperincome"/>
+        </property>
+        <property name="isinteriorlocation" type="boolean">
+            <column name="isinteriorlocation"/>
+        </property>
+        <property name="isgrayarea" type="boolean">
+            <column name="isgrayarea"/>
+        </property>
+        <property name="issquatters" type="boolean">
+            <column name="issquatters"/>
+        </property>
+        <property name="isnotorious" type="boolean">
+            <column name="isnotorious"/>
+        </property>
+        <property name="ispeaceful" type="boolean">
+            <column name="ispeaceful"/>
+        </property>
+    </class>
+</hibernate-mapping>

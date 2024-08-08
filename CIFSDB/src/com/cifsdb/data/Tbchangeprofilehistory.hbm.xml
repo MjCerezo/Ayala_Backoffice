@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbchangeprofilehistory" table="TBCHANGEPROFILEHISTORY" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="memberid" type="string">
+            <column name="memberid" length="20"/>
+        </property>
+        <property name="changecategorytype" type="string">
+            <column name="changecategorytype" length="5"/>
+        </property>
+        <property name="changefieldtype" type="string">
+            <column name="changefieldtype" length="5"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="source" type="string">
+            <column name="source" length="5"/>
+        </property>
+        <property name="updatecount" type="integer">
+            <column name="updatecount"/>
+        </property>
+        <property name="updateremarks" type="string">
+            <column name="updateremarks" length="300"/>
+        </property>
+        <property name="updaterefno" type="integer">
+            <column name="updaterefno"/>
+        </property>
+        <property name="oldvalue" type="string">
+            <column name="oldvalue" length="300"/>
+        </property>
+        <property name="newvalue" type="string">
+            <column name="newvalue" length="300"/>
+        </property>
+    </class>
+</hibernate-mapping>

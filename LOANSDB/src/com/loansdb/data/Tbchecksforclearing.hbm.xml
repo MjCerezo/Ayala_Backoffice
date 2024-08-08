@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbchecksforclearing" table="TBCHECKSFORCLEARING" catalog="LOANSDBUAT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="brstn" type="string">
+            <column name="brstn" length="20"/>
+        </property>
+        <property name="checkamount" type="big_decimal">
+            <column name="checkamount"/>
+        </property>
+        <property name="checkdate" type="timestamp">
+            <column name="checkdate" length="23"/>
+        </property>
+        <property name="checknumber" type="string">
+            <column name="checknumber" length="20"/>
+        </property>
+        <property name="checktype" type="integer">
+            <column name="checktype"/>
+        </property>
+        <property name="clearingdate" type="timestamp">
+            <column name="clearingdate" length="23"/>
+        </property>
+        <property name="clearingdays" type="integer">
+            <column name="clearingdays"/>
+        </property>
+        <property name="islateclearing" type="boolean">
+            <column name="islateclearing"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="25"/>
+        </property>
+        <property name="accountnumber" type="string">
+            <column name="accountnumber" length="16"/>
+        </property>
+    </class>
+</hibernate-mapping>

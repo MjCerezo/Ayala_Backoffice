@@ -1,0 +1,45 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tblstbankaccounts" table="TBLSTBANKACCOUNTS" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="membershipid" type="string">
+            <column name="membershipid" length="50"/>
+        </property>
+        <property name="financialtype" type="string">
+            <column name="financialtype" length="10"/>
+        </property>
+        <property name="bankaccttype" type="string">
+            <column name="bankaccttype" length="10"/>
+        </property>
+        <property name="bank" type="string">
+            <column name="bank" length="100"/>
+        </property>
+        <property name="accountstatus" type="string">
+            <column name="accountstatus" length="10"/>
+        </property>
+        <property name="outstandingbal" type="big_decimal">
+            <column name="outstandingbal" precision="20"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="lastupdated" type="timestamp">
+            <column name="lastupdated" length="23"/>
+        </property>
+        <property name="accountrefno" type="string">
+            <column name="accountrefno" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

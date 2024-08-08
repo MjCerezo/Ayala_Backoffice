@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbamlanoncountries" table="TBAMLANONCOUNTRIES" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="countrycode" type="string">
+            <column name="countrycode" length="10"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="countryname" type="string">
+            <column name="countryname" length="100"/>
+        </property>
+        <property name="reference" type="string">
+            <column name="reference" length="250"/>
+        </property>
+        <property name="startdate" type="timestamp">
+            <column name="startdate" length="23"/>
+        </property>
+        <property name="enddate" type="timestamp">
+            <column name="enddate" length="23"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="250"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="uploadrefid" type="string">
+            <column name="uploadrefid" length="20"/>
+        </property>
+        <property name="uploadeddate" type="timestamp">
+            <column name="uploadeddate" length="23"/>
+        </property>
+        <property name="uploadbatch" type="string">
+            <column name="uploadbatch" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

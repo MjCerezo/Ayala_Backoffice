@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="CICReportFacade" class="com.etel.CICReport.CICReportFacade" CRUDService="false" type="JavaService" springFile="CICReportFacade.spring.xml">
+    <operation name="generateCIC_getCoveredTransaction">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getCoveredTransaction">
+        <parameter name="forms" typeRef="com.etel.cicreports.form.CICParametersForm" isList="false"/>
+        <return typeRef="com.etel.cicreports.form.CICDataForm" isList="true"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.cicreports.form.CICDataForm" name="CICDataForm" supportsQuickData="false">
+            <element name="accountName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="address" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="custType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="transType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.cicreports.form.CICParametersForm" name="CICParametersForm" supportsQuickData="false">
+            <element name="cifDbLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="from" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="losDbLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="to" typeRef="java.util.Date" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

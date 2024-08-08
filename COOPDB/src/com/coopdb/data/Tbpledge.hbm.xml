@@ -1,0 +1,48 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbpledge" table="TBPLEDGE" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="membershipid" type="string">
+            <column name="membershipid" length="20"/>
+        </property>
+        <property name="membershipappid" type="string">
+            <column name="membershipappid" length="20"/>
+        </property>
+        <property name="savingsacctno" type="string">
+            <column name="savingsacctno" length="20"/>
+        </property>
+        <property name="savingspledgeamt" type="big_decimal">
+            <column name="savingspledgeamt" precision="20"/>
+        </property>
+        <property name="savingspycycle" type="string">
+            <column name="savingspycycle" length="5"/>
+        </property>
+        <property name="capconacctno" type="string">
+            <column name="capconacctno" length="20"/>
+        </property>
+        <property name="capconpledgeamt" type="big_decimal">
+            <column name="capconpledgeamt" precision="20"/>
+        </property>
+        <property name="capconpycycle" type="string">
+            <column name="capconpycycle" length="5"/>
+        </property>
+        <property name="capcontermno" type="integer">
+            <column name="capcontermno"/>
+        </property>
+        <property name="noofshare" type="integer">
+            <column name="noofshare"/>
+        </property>
+        <property name="shareparvalue" type="big_decimal">
+            <column name="shareparvalue" precision="20"/>
+        </property>
+        <property name="totalcapcon" type="big_decimal">
+            <column name="totalcapcon" precision="20"/>
+        </property>
+        <property name="capcontermperiod" type="string">
+            <column name="capcontermperiod" length="5"/>
+        </property>
+    </class>
+</hibernate-mapping>

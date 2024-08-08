@@ -1,0 +1,165 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbmember" table="TBMEMBER" catalog="LOANSDBUAT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="slaidNo" type="string">
+            <column name="SLAIdNo" length="12"/>
+        </property>
+        <property name="employeeNo" type="string">
+            <column name="EmployeeNo" length="15"/>
+        </property>
+        <property name="lastName" type="string">
+            <column name="LastName" length="50"/>
+        </property>
+        <property name="firstName" type="string">
+            <column name="FirstName" length="50"/>
+        </property>
+        <property name="middleName" type="string">
+            <column name="MiddleName" length="50"/>
+        </property>
+        <property name="slatype" type="string">
+            <column name="SLAType" length="1"/>
+        </property>
+        <property name="slasubtype" type="string">
+            <column name="SLASubtype" length="1"/>
+        </property>
+        <property name="slamemberDate" type="timestamp">
+            <column name="SLAMemberDate" length="23"/>
+        </property>
+        <property name="slastatus" type="string">
+            <column name="SLAStatus" length="1"/>
+        </property>
+        <property name="slastatusDate" type="timestamp">
+            <column name="SLAStatusDate" length="23"/>
+        </property>
+        <property name="companyCode" type="string">
+            <column name="CompanyCode" length="3"/>
+        </property>
+        <property name="branchCode" type="string">
+            <column name="BranchCode" length="4"/>
+        </property>
+        <property name="department" type="string">
+            <column name="Department" length="10"/>
+        </property>
+        <property name="positionCode" type="string">
+            <column name="PositionCode" length="4"/>
+        </property>
+        <property name="rank" type="string">
+            <column name="Rank" length="1"/>
+        </property>
+        <property name="satoCode" type="string">
+            <column name="SatoCode" length="3"/>
+        </property>
+        <property name="payrollCode" type="string">
+            <column name="PayrollCode" length="1"/>
+        </property>
+        <property name="empStatus" type="string">
+            <column name="EmpStatus" length="1"/>
+        </property>
+        <property name="prevEmployeeNo" type="string">
+            <column name="PrevEmployeeNo" length="12"/>
+        </property>
+        <property name="prevCompany" type="string">
+            <column name="PrevCompany" length="3"/>
+        </property>
+        <property name="prevSato" type="string">
+            <column name="PrevSato" length="3"/>
+        </property>
+        <property name="prevRank" type="string">
+            <column name="PrevRank" length="10"/>
+        </property>
+        <property name="telephoneNo1" type="string">
+            <column name="TelephoneNo1" length="20"/>
+        </property>
+        <property name="telephoneNo2" type="string">
+            <column name="TelephoneNo2" length="20"/>
+        </property>
+        <property name="telephoneNo3" type="string">
+            <column name="TelephoneNo3" length="20"/>
+        </property>
+        <property name="emailAddress" type="string">
+            <column name="EmailAddress" length="50"/>
+        </property>
+        <property name="spouseLastName" type="string">
+            <column name="SpouseLastName" length="50"/>
+        </property>
+        <property name="spouseFirstName" type="string">
+            <column name="SpouseFirstName" length="50"/>
+        </property>
+        <property name="spouseMiddleName" type="string">
+            <column name="SpouseMiddleName" length="50"/>
+        </property>
+        <property name="spouseBirthdate" type="timestamp">
+            <column name="SpouseBirthdate" length="23"/>
+        </property>
+        <property name="spousePhone" type="string">
+            <column name="SpousePhone" length="20"/>
+        </property>
+        <property name="spouseCompany" type="string">
+            <column name="SpouseCompany" length="50"/>
+        </property>
+        <property name="cashCardAccountNo" type="string">
+            <column name="CashCardAccountNo" length="16"/>
+        </property>
+        <property name="cashCardDate" type="timestamp">
+            <column name="CashCardDate" length="23"/>
+        </property>
+        <property name="oldCashCard" type="string">
+            <column name="OldCashCard" length="16"/>
+        </property>
+        <property name="capconAccountno" type="string">
+            <column name="CAPCON_Accountno" length="16"/>
+        </property>
+        <property name="capconRegContribution" type="big_decimal">
+            <column name="CAPCON_RegContribution" precision="11"/>
+        </property>
+        <property name="capconOldContribution" type="big_decimal">
+            <column name="CAPCON_OldContribution" precision="11"/>
+        </property>
+        <property name="capconEffectivityDate" type="timestamp">
+            <column name="CAPCON_EffectivityDate" length="23"/>
+        </property>
+        <property name="savingsAccountNo" type="string">
+            <column name="SAVINGS_AccountNo" length="16"/>
+        </property>
+        <property name="savingsRegContribution" type="big_decimal">
+            <column name="SAVINGS_RegContribution" precision="11"/>
+        </property>
+        <property name="savingsOldContribution" type="big_decimal">
+            <column name="SAVINGS_OldContribution" precision="11"/>
+        </property>
+        <property name="savingsEffectivityDate" type="timestamp">
+            <column name="SAVINGS_EffectivityDate" length="23"/>
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CreatedBy" length="50"/>
+        </property>
+        <property name="dateCreated" type="timestamp">
+            <column name="DateCreated" length="23"/>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="ModifiedBy" length="50"/>
+        </property>
+        <property name="dateModified" type="timestamp">
+            <column name="DateModified" length="23"/>
+        </property>
+        <property name="dateHired" type="timestamp">
+            <column name="DateHired" length="23"/>
+        </property>
+        <property name="ar1" type="big_decimal">
+            <column name="AR1" precision="18"/>
+        </property>
+        <property name="ar2" type="big_decimal">
+            <column name="AR2" precision="18"/>
+        </property>
+        <property name="ar1esc" type="string">
+            <column name="AR1Esc" length="2"/>
+        </property>
+        <property name="ar2esc" type="string">
+            <column name="AR2Esc" length="2"/>
+        </property>
+    </class>
+</hibernate-mapping>

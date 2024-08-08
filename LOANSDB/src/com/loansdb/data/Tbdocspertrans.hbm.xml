@@ -1,0 +1,54 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbdocspertrans" table="TBDOCSPERTRANS" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txcode" type="string">
+            <column name="txcode" length="50"/>
+        </property>
+        <property name="doccategory" type="string">
+            <column name="doccategory" length="50"/>
+        </property>
+        <property name="documentcode" type="string">
+            <column name="documentcode" length="20"/>
+        </property>
+        <property name="documentname" type="string">
+            <column name="documentname" length="100"/>
+        </property>
+        <property name="applicationstatus" type="integer">
+            <column name="applicationstatus"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="300"/>
+        </property>
+        <property name="isindivrequired" type="boolean">
+            <column name="isindivrequired"/>
+        </property>
+        <property name="iscorprequired" type="boolean">
+            <column name="iscorprequired"/>
+        </property>
+        <property name="issoleproprequired" type="boolean">
+            <column name="issoleproprequired"/>
+        </property>
+        <property name="ispartnerrequired" type="boolean">
+            <column name="ispartnerrequired"/>
+        </property>
+        <property name="enablenotarialfee" type="boolean">
+            <column name="enablenotarialfee"/>
+        </property>
+    </class>
+</hibernate-mapping>

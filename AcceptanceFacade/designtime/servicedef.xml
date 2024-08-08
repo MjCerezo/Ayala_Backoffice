@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="AcceptanceFacade" class="com.etel.acceptance.AcceptanceFacade" CRUDService="false" type="JavaService" springFile="AcceptanceFacade.spring.xml">
+    <operation name="sampleJavaOperation">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateLstApp">
+        <parameter name="app" typeRef="com.coopdb.data.Tblstapp" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

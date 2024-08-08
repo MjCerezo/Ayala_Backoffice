@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbapprelsummary" table="TBAPPRELSUMMARY" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appraisalreportid" type="string">
+            <column name="appraisalreportid" length="20"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="tctno" type="string">
+            <column name="tctno" length="50"/>
+        </property>
+        <property name="lotblkno" type="string">
+            <column name="lotblkno" length="50"/>
+        </property>
+        <property name="valuesqm" type="big_decimal">
+            <column name="valuesqm" precision="20"/>
+        </property>
+        <property name="fairmarketvalue" type="big_decimal">
+            <column name="fairmarketvalue" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbchapter" table="TBCHAPTER" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.TbchapterId">
+            <key-property name="chaptercode" type="string">
+                <column name="chaptercode" length="20"/>
+            </key-property>
+            <key-property name="branchcode" type="string">
+                <column name="branchcode" length="20"/>
+            </key-property>
+        </composite-id>
+        <property name="chaptername" type="string">
+            <column name="chaptername" length="50" not-null="true"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="coopcode" type="string">
+            <column name="coopcode" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

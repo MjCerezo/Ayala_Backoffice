@@ -1,0 +1,63 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tblstexistingloansother" table="TBLSTEXISTINGLOANSOTHER" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="20" not-null="true"/>
+        </property>
+        <property name="loantype" type="string">
+            <column name="loantype" length="20"/>
+        </property>
+        <property name="originalamt" type="big_decimal">
+            <column name="originalamt" precision="20"/>
+        </property>
+        <property name="intrate" type="big_decimal">
+            <column name="intrate" precision="20"/>
+        </property>
+        <property name="term" type="string">
+            <column name="term" length="10"/>
+        </property>
+        <property name="daterelease" type="timestamp">
+            <column name="daterelease" length="23"/>
+        </property>
+        <property name="maturitydate" type="timestamp">
+            <column name="maturitydate" length="23"/>
+        </property>
+        <property name="principalamt" type="big_decimal">
+            <column name="principalamt" precision="20"/>
+        </property>
+        <property name="prinintrate" type="big_decimal">
+            <column name="prinintrate" precision="20"/>
+        </property>
+        <property name="outstandingbal" type="big_decimal">
+            <column name="outstandingbal" precision="20"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="10"/>
+        </property>
+        <property name="bank" type="string">
+            <column name="bank" length="50"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="20"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="20"/>
+        </property>
+        <property name="lastupdated" type="timestamp">
+            <column name="lastupdated" length="23"/>
+        </property>
+        <property name="hascreditcheck" type="boolean">
+            <column name="hascreditcheck"/>
+        </property>
+        <property name="amortizationamt" type="big_decimal">
+            <column name="amortizationamt" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

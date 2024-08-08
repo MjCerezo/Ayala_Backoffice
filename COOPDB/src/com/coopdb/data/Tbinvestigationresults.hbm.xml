@@ -1,0 +1,210 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbinvestigationresults" table="TBINVESTIGATIONRESULTS" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="50"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50"/>
+        </property>
+        <property name="participationcode" type="string">
+            <column name="participationcode" length="5"/>
+        </property>
+        <property name="fullname" type="string">
+            <column name="fullname" length="500"/>
+        </property>
+        <property name="reporttype" type="string">
+            <column name="reporttype" length="20"/>
+        </property>
+        <property name="bibapnfis" type="string">
+            <column name="bibapnfis" length="50"/>
+        </property>
+        <property name="bibapnfisremarks" type="string">
+            <column name="bibapnfisremarks" length="1000"/>
+        </property>
+        <property name="bicmap" type="string">
+            <column name="bicmap" length="50"/>
+        </property>
+        <property name="bicmapremarks" type="string">
+            <column name="bicmapremarks" length="1000"/>
+        </property>
+        <property name="bicic" type="string">
+            <column name="bicic" length="50"/>
+        </property>
+        <property name="bicicremarks" type="string">
+            <column name="bicicremarks" length="1000"/>
+        </property>
+        <property name="biblacklistinternal" type="string">
+            <column name="biblacklistinternal" length="50"/>
+        </property>
+        <property name="biblacklistinternalremarks" type="string">
+            <column name="biblacklistinternalremarks" length="1000"/>
+        </property>
+        <property name="biblacklistexternal" type="string">
+            <column name="biblacklistexternal" length="50"/>
+        </property>
+        <property name="biblacklistexternalremarks" type="string">
+            <column name="biblacklistexternalremarks" length="1000"/>
+        </property>
+        <property name="biamla" type="string">
+            <column name="biamla" length="50"/>
+        </property>
+        <property name="biamlaremarks" type="string">
+            <column name="biamlaremarks" length="1000"/>
+        </property>
+        <property name="cipdrn" type="string">
+            <column name="cipdrn" length="50"/>
+        </property>
+        <property name="cipdrnremarks" type="string">
+            <column name="cipdrnremarks" length="1000"/>
+        </property>
+        <property name="cievr" type="string">
+            <column name="cievr" length="50"/>
+        </property>
+        <property name="cievrremarks" type="string">
+            <column name="cievrremarks" length="1000"/>
+        </property>
+        <property name="cibvr" type="string">
+            <column name="cibvr" length="50"/>
+        </property>
+        <property name="cibvrremarks" type="string">
+            <column name="cibvrremarks" length="1000"/>
+        </property>
+        <property name="cibankcheck" type="string">
+            <column name="cibankcheck" length="50"/>
+        </property>
+        <property name="cibankcheckremarks" type="string">
+            <column name="cibankcheckremarks" length="1000"/>
+        </property>
+        <property name="cicreditcheck" type="string">
+            <column name="cicreditcheck" length="50"/>
+        </property>
+        <property name="cicreditcheckremarks" type="string">
+            <column name="cicreditcheckremarks" length="1000"/>
+        </property>
+        <property name="citradecheck" type="string">
+            <column name="citradecheck" length="50"/>
+        </property>
+        <property name="citradecheckremarks" type="string">
+            <column name="citradecheckremarks" length="50"/>
+        </property>
+        <property name="collateralrefno" type="string">
+            <column name="collateralrefno" length="50"/>
+        </property>
+        <property name="collateraltype" type="string">
+            <column name="collateraltype" length="50"/>
+        </property>
+        <property name="lastappraisaldate" type="timestamp">
+            <column name="lastappraisaldate" length="23"/>
+        </property>
+        <property name="appraisedby" type="string">
+            <column name="appraisedby" length="300"/>
+        </property>
+        <property name="appraisalstatus" type="string">
+            <column name="appraisalstatus" length="50"/>
+        </property>
+        <property name="appraisedvalue" type="big_decimal">
+            <column name="appraisedvalue" precision="18"/>
+        </property>
+        <property name="loanablevalue" type="big_decimal">
+            <column name="loanablevalue" precision="18"/>
+        </property>
+        <property name="dateencoded" type="timestamp">
+            <column name="dateencoded" length="23"/>
+        </property>
+        <property name="encodedby" type="string">
+            <column name="encodedby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="300"/>
+        </property>
+        <property name="avrate" type="big_decimal">
+            <column name="avrate" precision="18"/>
+        </property>
+        <property name="lvrate" type="big_decimal">
+            <column name="lvrate" precision="18"/>
+        </property>
+        <property name="sellingprice" type="big_decimal">
+            <column name="sellingprice" precision="18"/>
+        </property>
+        <property name="bibapnfisfacilitatedby" type="string">
+            <column name="bibapnfisfacilitatedby" length="50"/>
+        </property>
+        <property name="bibapnfisdatefacilitated" type="timestamp">
+            <column name="bibapnfisdatefacilitated" length="23"/>
+        </property>
+        <property name="bicmapfacilitatedby" type="string">
+            <column name="bicmapfacilitatedby" length="50"/>
+        </property>
+        <property name="bicmapdatefacilitated" type="timestamp">
+            <column name="bicmapdatefacilitated" length="23"/>
+        </property>
+        <property name="bicicfacilitatedby" type="string">
+            <column name="bicicfacilitatedby" length="50"/>
+        </property>
+        <property name="bicicdatefacilitated" type="timestamp">
+            <column name="bicicdatefacilitated" length="23"/>
+        </property>
+        <property name="biblacklistinternalfacilitatedby" type="string">
+            <column name="biblacklistinternalfacilitatedby" length="50"/>
+        </property>
+        <property name="biblacklistinternaldatefacilitated" type="timestamp">
+            <column name="biblacklistinternaldatefacilitated" length="23"/>
+        </property>
+        <property name="biblacklistexternalfacilitatedby" type="string">
+            <column name="biblacklistexternalfacilitatedby" length="50"/>
+        </property>
+        <property name="biblacklistexternaldatefacilitated" type="timestamp">
+            <column name="biblacklistexternaldatefacilitated" length="23"/>
+        </property>
+        <property name="biamlafacilitatedby" type="string">
+            <column name="biamlafacilitatedby" length="50"/>
+        </property>
+        <property name="biamladatefacilitated" type="timestamp">
+            <column name="biamladatefacilitated" length="23"/>
+        </property>
+        <property name="cipdrnfacilitatedby" type="string">
+            <column name="cipdrnfacilitatedby" length="50"/>
+        </property>
+        <property name="cipdrndatefacilitated" type="timestamp">
+            <column name="cipdrndatefacilitated" length="23"/>
+        </property>
+        <property name="cievrfacilitatedby" type="string">
+            <column name="cievrfacilitatedby" length="50"/>
+        </property>
+        <property name="cievrdatefacilitated" type="timestamp">
+            <column name="cievrdatefacilitated" length="23"/>
+        </property>
+        <property name="cibvrfacilitatedby" type="string">
+            <column name="cibvrfacilitatedby" length="50"/>
+        </property>
+        <property name="cibvrdatefacilitated" type="timestamp">
+            <column name="cibvrdatefacilitated" length="23"/>
+        </property>
+        <property name="cibankcheckfacilitatedby" type="string">
+            <column name="cibankcheckfacilitatedby" length="50"/>
+        </property>
+        <property name="cibankcheckdatefacilitated" type="timestamp">
+            <column name="cibankcheckdatefacilitated" length="23"/>
+        </property>
+        <property name="cicreditcheckfacilitatedby" type="string">
+            <column name="cicreditcheckfacilitatedby" length="50"/>
+        </property>
+        <property name="cicreditcheckdatefacilitated" type="timestamp">
+            <column name="cicreditcheckdatefacilitated" length="23"/>
+        </property>
+        <property name="citradecheckfacilitatedby" type="string">
+            <column name="citradecheckfacilitatedby" length="50"/>
+        </property>
+        <property name="citradecheckdatefacilitated" type="timestamp">
+            <column name="citradecheckdatefacilitated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

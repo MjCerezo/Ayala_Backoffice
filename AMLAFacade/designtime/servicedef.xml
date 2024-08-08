@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="AMLAFacade" class="com.etel.amla.AMLAFacade" CRUDService="false" type="JavaService" springFile="AMLAFacade.spring.xml">
+    <operation name="addAmlaCorp">
+        <parameter name="form" typeRef="com.etel.amla.forms.AmlaForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addAmlaIndiv">
+        <parameter name="form" typeRef="com.etel.amla.forms.AmlaForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addAmlaNonCoopCountries">
+        <parameter name="form" typeRef="com.etel.amla.forms.AMLANonCountriesForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addAmlaRequest">
+        <parameter name="form" typeRef="com.etel.amla.forms.AmlaForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteAmlaNonCoop">
+        <parameter name="form" typeRef="com.etel.amla.forms.AMLANonCountriesForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getAllCountry">
+        <return typeRef="com.coopdb.data.Tbcountry" isList="true"/>
+    </operation>
+    <operation name="getAllNonCoopCountries">
+        <return typeRef="com.coopdb.data.Tbamlanoncountries" isList="true"/>
+    </operation>
+    <operation name="getAmlaNonCoopRecord">
+        <parameter name="form" typeRef="com.etel.amla.forms.AMLANonCountriesForm" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbamlanoncountries" isList="false"/>
+    </operation>
+    <operation name="getIndividualRecord">
+        <parameter name="amlalistid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbamlaindividual" isList="false"/>
+    </operation>
+    <operation name="getRequestRecord">
+        <parameter name="requestid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbamlarequest" isList="false"/>
+    </operation>
+    <operation name="saveNewAmlaMain">
+        <parameter name="form" typeRef="com.etel.amla.forms.AmlaForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="searchAmla">
+        <parameter name="form" typeRef="com.etel.amla.forms.AmlaInquiryForm" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbamlalistmain" isList="true"/>
+    </operation>
+    <operation name="searchCIF">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.amla.forms.AmlaForm" isList="false"/>
+    </operation>
+    <operation name="searchRequestByStatus">
+        <parameter name="form" typeRef="com.etel.amla.forms.AMLApprovalForm" isList="false"/>
+        <parameter name="requestid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbamlarequest" isList="true"/>
+    </operation>
+    <operation name="updateAmalNonCoopCountries">
+        <parameter name="form" typeRef="com.etel.amla.forms.AMLANonCountriesForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateAmlaCorp">
+        <parameter name="form" typeRef="com.etel.amla.forms.AmlaForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateAmlaIndiv">
+        <parameter name="form" typeRef="com.etel.amla.forms.AmlaForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateAmlaRequestStatus">
+        <parameter name="requestid" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="requeststatus" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateDraftRequest">
+        <parameter name="middlename" typeRef="java.lang.String" isList="false"/>
+        <parameter name="suffix" typeRef="java.lang.String" isList="false"/>
+        <parameter name="remarks" typeRef="java.lang.String" isList="false"/>
+        <parameter name="openended" typeRef="java.lang.Boolean" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="country" typeRef="java.lang.String" isList="false"/>
+        <parameter name="reference" typeRef="java.lang.String" isList="false"/>
+        <parameter name="source" typeRef="java.lang.String" isList="false"/>
+        <parameter name="requestid" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="requeststatus" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateNewAmlaMain">
+        <parameter name="form" typeRef="com.etel.amla.forms.AmlaForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.amla.forms.AmlaForm" name="AmlaForm" supportsQuickData="false">
+            <element name="amlalistid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="amlalistsource" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="amlaliststatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="approverremarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="corporatename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="country" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateofbirth" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateofincorporation" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="description" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="enddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="openendeddate" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="requestdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="requestedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="requeststatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="requesttype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="startdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="suffix" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.amla.forms.AMLANonCountriesForm" name="AMLANonCountriesForm" supportsQuickData="false">
+            <element name="countrycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="countryname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="enddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="reference" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="startdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="uploadbatch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="uploadeddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="uploadrefid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.amla.forms.AmlaInquiryForm" name="AmlaInquiryForm" supportsQuickData="false">
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateofbirth" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateofincorporation" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.amla.forms.AMLApprovalForm" name="AMLApprovalForm" supportsQuickData="false">
+            <element name="customername" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateuploaded" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="requeststatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="requesttype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="source" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

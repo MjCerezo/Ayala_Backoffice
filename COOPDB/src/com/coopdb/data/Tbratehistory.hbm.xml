@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbratehistory" table="TBRATEHISTORY" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="Id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="currency" type="string">
+            <column name="Currency" length="3"/>
+        </property>
+        <property name="boardrate" type="big_decimal">
+            <column name="Boardrate" precision="16"/>
+        </property>
+        <property name="irr" type="big_decimal">
+            <column name="Irr" precision="16"/>
+        </property>
+        <property name="pds" type="big_decimal">
+            <column name="Pds" precision="16"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="Updatedby" length="30"/>
+        </property>
+        <property name="updateddate" type="timestamp">
+            <column name="Updateddate" length="23"/>
+        </property>
+        <property name="buySell" type="string">
+            <column name="BuySell" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

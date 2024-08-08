@@ -1,0 +1,13 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Ciftest" table="ciftest" catalog="CIFSDBDXBANK" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.cifsdb.data.CiftestId">
+            <key-property name="cifno" type="string">
+                <column name="cifno"/>
+            </key-property>
+            <key-property name="name" type="string">
+                <column name="name"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbterminal" table="TBTERMINAL" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="ipaddress" type="string">
+            <column name="ipaddress" length="20"/>
+        </property>
+        <property name="terminal" type="string">
+            <column name="terminal" length="50"/>
+        </property>
+        <property name="unitid" type="string">
+            <column name="unitid" length="20"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="userid" type="string">
+            <column name="userid" length="25"/>
+        </property>
+    </class>
+</hibernate-mapping>

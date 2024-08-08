@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbemailformats" table="TBEMAILFORMATS" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="emailcode" type="string">
+            <column name="emailcode" length="50"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="formatname" type="string">
+            <column name="formatname" length="100" not-null="true"/>
+        </property>
+        <property name="recipient" type="string">
+            <column name="recipient" length="2000"/>
+        </property>
+        <property name="sender" type="string">
+            <column name="sender"/>
+        </property>
+        <property name="groupcode" type="string">
+            <column name="groupcode" length="50"/>
+        </property>
+        <property name="teamemail" type="string">
+            <column name="teamemail" length="1000"/>
+        </property>
+        <property name="subject" type="string">
+            <column name="subject"/>
+        </property>
+        <property name="createddate" type="timestamp">
+            <column name="createddate" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

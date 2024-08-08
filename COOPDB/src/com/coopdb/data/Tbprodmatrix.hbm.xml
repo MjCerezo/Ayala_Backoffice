@@ -1,0 +1,174 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbprodmatrix" table="TBPRODMATRIX" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="prodgroup" type="string">
+            <column name="prodgroup" length="2"/>
+        </property>
+        <property name="prodcode" type="string">
+            <column name="prodcode" length="2"/>
+        </property>
+        <property name="prodname" type="string">
+            <column name="prodname" length="100"/>
+        </property>
+        <property name="prodsname" type="string">
+            <column name="prodsname" length="100"/>
+        </property>
+        <property name="currency" type="string">
+            <column name="currency" length="3"/>
+        </property>
+        <property name="minterm" type="integer">
+            <column name="minterm"/>
+        </property>
+        <property name="minperiod" type="string">
+            <column name="minperiod" length="2"/>
+        </property>
+        <property name="maxterm" type="integer">
+            <column name="maxterm"/>
+        </property>
+        <property name="maxperiod" type="string">
+            <column name="maxperiod" length="2"/>
+        </property>
+        <property name="reqinitialdepamt" type="big_decimal">
+            <column name="reqinitialdepamt" precision="16"/>
+        </property>
+        <property name="reqdepfreq" type="string">
+            <column name="reqdepfreq" length="2"/>
+        </property>
+        <property name="reqmonthlydepamt" type="big_decimal">
+            <column name="reqmonthlydepamt" precision="16"/>
+        </property>
+        <property name="passbookind" type="boolean">
+            <column name="passbookind"/>
+        </property>
+        <property name="checkbookind" type="boolean">
+            <column name="checkbookind"/>
+        </property>
+        <property name="certtimedepind" type="boolean">
+            <column name="certtimedepind"/>
+        </property>
+        <property name="atmind" type="boolean">
+            <column name="atmind"/>
+        </property>
+        <property name="soaind" type="boolean">
+            <column name="soaind"/>
+        </property>
+        <property name="freqsoaprint" type="string">
+            <column name="freqsoaprint" length="10"/>
+        </property>
+        <property name="posttx" type="string">
+            <column name="posttx" length="2"/>
+        </property>
+        <property name="minbalei" type="big_decimal">
+            <column name="minbalei" precision="16"/>
+        </property>
+        <property name="baltype" type="string">
+            <column name="baltype" length="1"/>
+        </property>
+        <property name="balcomp" type="string">
+            <column name="balcomp" length="1"/>
+        </property>
+        <property name="baseyear" type="integer">
+            <column name="baseyear"/>
+        </property>
+        <property name="inttype" type="string">
+            <column name="inttype" length="1"/>
+        </property>
+        <property name="intrate" type="big_decimal">
+            <column name="intrate" precision="18"/>
+        </property>
+        <property name="intplan" type="string">
+            <column name="intplan" length="100"/>
+        </property>
+        <property name="freqintcomp" type="string">
+            <column name="freqintcomp" length="2"/>
+        </property>
+        <property name="freqintpost" type="string">
+            <column name="freqintpost" length="2"/>
+        </property>
+        <property name="freqintpayout" type="string">
+            <column name="freqintpayout" length="2"/>
+        </property>
+        <property name="wtaxrate" type="big_decimal">
+            <column name="wtaxrate" precision="16"/>
+        </property>
+        <property name="docstampind" type="boolean">
+            <column name="docstampind"/>
+        </property>
+        <property name="pretermplan" type="string">
+            <column name="pretermplan" length="100"/>
+        </property>
+        <property name="rbmminmainbal" type="big_decimal">
+            <column name="rbmminmainbal" precision="16"/>
+        </property>
+        <property name="rbmbaltype" type="string">
+            <column name="rbmbaltype" length="2"/>
+        </property>
+        <property name="rbmbalcomp" type="string">
+            <column name="rbmbalcomp" length="2"/>
+        </property>
+        <property name="rbmfreqcomp" type="string">
+            <column name="rbmfreqcomp" length="2"/>
+        </property>
+        <property name="rbmchrgbelminbal" type="big_decimal">
+            <column name="rbmchrgbelminbal" precision="16"/>
+        </property>
+        <property name="sequence" type="integer">
+            <column name="sequence"/>
+        </property>
+        <property name="instcode" type="string">
+            <column name="instcode" length="10"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="10"/>
+        </property>
+        <property name="createddate" type="timestamp">
+            <column name="createddate" length="23"/>
+        </property>
+        <property name="ataind" type="boolean">
+            <column name="ataind"/>
+        </property>
+        <property name="maxbalance" type="big_decimal">
+            <column name="maxbalance" precision="20"/>
+        </property>
+        <property name="age" type="integer">
+            <column name="age"/>
+        </property>
+        <property name="dormancytermno" type="integer">
+            <column name="dormancytermno"/>
+        </property>
+        <property name="dormancytermperiod" type="string">
+            <column name="dormancytermperiod" length="5"/>
+        </property>
+        <property name="escheattermno" type="integer">
+            <column name="escheattermno"/>
+        </property>
+        <property name="escheattermperiod" type="string">
+            <column name="escheattermperiod" length="5"/>
+        </property>
+        <property name="inactivetermno" type="integer">
+            <column name="inactivetermno"/>
+        </property>
+        <property name="inactivetermperiod" type="string">
+            <column name="inactivetermperiod" length="5"/>
+        </property>
+        <property name="customertype" type="string">
+            <column name="customertype" length="5"/>
+        </property>
+        <property name="isenable" type="boolean">
+            <column name="isenable"/>
+        </property>
+        <property name="maxwithdraw" type="integer">
+            <column name="maxwithdraw"/>
+        </property>
+        <property name="maxwithdrawfreq" type="string">
+            <column name="maxwithdrawfreq" length="5"/>
+        </property>
+        <property name="freqintaccr" type="string">
+            <column name="freqintaccr" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

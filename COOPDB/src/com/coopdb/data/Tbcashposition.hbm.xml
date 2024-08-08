@@ -1,0 +1,51 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbcashposition" table="TBCASHPOSITION" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txvaldt" type="timestamp">
+            <column name="txvaldt" length="23"/>
+        </property>
+        <property name="txdate" type="timestamp">
+            <column name="txdate" length="23"/>
+        </property>
+        <property name="unit" type="string">
+            <column name="unit" length="10"/>
+        </property>
+        <property name="origin" type="string">
+            <column name="origin" length="50"/>
+        </property>
+        <property name="destination" type="string">
+            <column name="destination" length="50"/>
+        </property>
+        <property name="currency" type="string">
+            <column name="currency" length="3"/>
+        </property>
+        <property name="txamount" type="big_decimal">
+            <column name="txamount" precision="16"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="200"/>
+        </property>
+        <property name="txref" type="string">
+            <column name="txref" length="20"/>
+        </property>
+        <property name="txstatus" type="string">
+            <column name="txstatus" length="3"/>
+        </property>
+        <property name="instcode" type="string">
+            <column name="instcode" length="10"/>
+        </property>
+        <property name="transfertype" type="string">
+            <column name="transfertype" length="5"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="txstatusdate" type="timestamp">
+            <column name="txstatusdate" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

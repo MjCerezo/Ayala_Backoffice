@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbirregsched" table="TBIRREGSCHED" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="loanappno" type="string">
+            <column name="loanappno" length="50"/>
+        </property>
+        <property name="transdate" type="timestamp">
+            <column name="transdate" length="23"/>
+        </property>
+        <property name="transamount" type="big_decimal">
+            <column name="transamount" precision="20"/>
+        </property>
+        <property name="principal" type="big_decimal">
+            <column name="principal" precision="20"/>
+        </property>
+        <property name="checkno" type="string">
+            <column name="checkno" length="50"/>
+        </property>
+        <property name="referenceno" type="string">
+            <column name="referenceno" length="50"/>
+        </property>
+        <property name="receivabletype" type="string">
+            <column name="receivabletype" length="50"/>
+        </property>
+        <property name="receivableid" type="integer">
+            <column name="receivableid"/>
+        </property>
+    </class>
+</hibernate-mapping>

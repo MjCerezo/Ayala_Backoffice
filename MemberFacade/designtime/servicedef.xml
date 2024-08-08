@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="MemberFacade" class="member.MemberFacade" CRUDService="false" type="JavaService" springFile="MemberFacade.spring.xml">
+    <operation name="computerCapconPledge">
+        <parameter name="monthlypayment" typeRef="java.lang.String" isList="false"/>
+        <parameter name="numberofmonths" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="totalshares" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.math.BigDecimal" isList="false"/>
+    </operation>
+    <operation name="deleteMemberRelation">
+        <parameter name="relid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getCapCon">
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="member.forms.CapConDeposits" isList="true"/>
+    </operation>
+    <operation name="getCooperativePerID">
+        <parameter name="id" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcooperative" isList="false"/>
+    </operation>
+    <operation name="getDeposits">
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="member.forms.CapConDeposits" isList="true"/>
+    </operation>
+    <operation name="getMember">
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="member.forms.memberProfile" isList="false"/>
+    </operation>
+    <operation name="getMemberInquiryHeader">
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="member.forms.MemberProfileHeader" isList="false"/>
+    </operation>
+    <operation name="getMemberProfile">
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="member.forms.memberProfile" isList="false"/>
+    </operation>
+    <operation name="getMemberProfileInquiry">
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmember" isList="false"/>
+    </operation>
+    <operation name="getMemberViaID">
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmember" isList="false"/>
+    </operation>
+    <operation name="getPledgeDetails">
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbpledge" isList="false"/>
+    </operation>
+    <operation name="getProfileUpdateDocuments">
+        <parameter name="txrefno" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdocchecklist" isList="true"/>
+    </operation>
+    <operation name="getProfileUpdateRequest">
+        <parameter name="txrefno" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbupdateprofilerequest" isList="false"/>
+    </operation>
+    <operation name="getUploadedPhoto">
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveMember2x2Photo">
+        <parameter name="directory" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tempfile" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveProfileRequestAsDraft">
+        <parameter name="req" typeRef="com.coopdb.data.Tbupdateprofilerequest" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="searchChangeProfileHistory">
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <parameter name="changeCategory" typeRef="java.lang.String" isList="false"/>
+        <parameter name="changeFieldType" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="member.forms.ChangeProfileForm" isList="true"/>
+    </operation>
+    <operation name="updateMemberPersonalProfile">
+        <parameter name="details" typeRef="com.coopdb.data.Tbmember" isList="false"/>
+        <parameter name="category" typeRef="java.lang.String" isList="false"/>
+        <parameter name="source" typeRef="java.lang.String" isList="false"/>
+        <parameter name="remarks" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="member.forms.ReturnForm" isList="false"/>
+    </operation>
+    <operation name="updateProfile">
+        <parameter name="fields" typeRef="com.coopdb.data.Tbmember" isList="false"/>
+        <parameter name="changecategory" typeRef="java.lang.String" isList="false"/>
+        <parameter name="remarks" typeRef="java.lang.String" isList="false"/>
+        <parameter name="source" typeRef="java.lang.String" isList="false"/>
+        <parameter name="refno" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="member.forms.ReturnForm" isList="false"/>
+    </operation>
+    <operation name="updateProfileRequest">
+        <parameter name="details" typeRef="com.coopdb.data.Tbupdateprofilerequest" isList="false"/>
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="changecategory" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="member.forms.ReturnForm" isList="false"/>
+    </operation>
+    <operation name="updateProfileUpdateDocuments">
+        <parameter name="doc" typeRef="com.coopdb.data.Tbdocchecklist" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="upload2x2MemberPicture">
+        <parameter name="file" typeRef="org.springframework.web.multipart.MultipartFile" isList="false"/>
+        <return typeRef="com.wavemaker.runtime.server.FileUploadResponse" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="member.forms.CapConDeposits" name="CapConDeposits" supportsQuickData="false">
+            <element name="accountbalancecapcpon" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="accountbalancedeposits" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="accountnocapcon" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountnodeposits" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accounttypedeposits" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sumcapcon" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="sumdeposits" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="member.forms.memberProfile" name="memberProfile" supportsQuickData="false">
+            <element name="capitalcontibutions" typeRef="member.forms.CapConDeposits" isList="true" allowNull="false"/>
+            <element name="loanaccountsborrower" typeRef="com.coopdb.data.Tbloans" isList="true" allowNull="false"/>
+            <element name="loanaccountscomaker" typeRef="com.coopdb.data.Tbloans" isList="true" allowNull="false"/>
+            <element name="memberdeposits" typeRef="member.forms.CapConDeposits" isList="true" allowNull="false"/>
+            <element name="memberpersonalinformation" typeRef="com.coopdb.data.Tbmember" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="member.forms.MemberProfileHeader" name="MemberProfileHeader" supportsQuickData="false">
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branchofservice" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="employeeid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membername" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershipappid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershipdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="membershipid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershipstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershiptype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="originatingbranch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="picture" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="servicestatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="member.forms.ChangeProfileForm" name="ChangeProfileForm" supportsQuickData="false">
+            <element name="changecategorytype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="changefieldtype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="memberid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membername" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="newvalue" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="oldvalue" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="updatecount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="updateremarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="member.forms.ReturnForm" name="ReturnForm" supportsQuickData="false">
+            <element name="flag" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="message" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="optionalvalue" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

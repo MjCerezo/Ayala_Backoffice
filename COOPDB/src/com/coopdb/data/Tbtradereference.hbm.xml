@@ -1,0 +1,63 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbtradereference" table="TBTRADEREFERENCE" catalog="CIFSDBDXBANK_SAMULCO" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50"/>
+        </property>
+        <property name="tradetype" type="string">
+            <column name="tradetype" length="50"/>
+        </property>
+        <property name="clientsuppliername" type="string">
+            <column name="clientsuppliername" length="100"/>
+        </property>
+        <property name="clientsupplieraddress" type="string">
+            <column name="clientsupplieraddress" length="200"/>
+        </property>
+        <property name="contactperson" type="string">
+            <column name="contactperson" length="100"/>
+        </property>
+        <property name="contactposition" type="string">
+            <column name="contactposition" length="50"/>
+        </property>
+        <property name="lengthofbusinessrelations" type="string">
+            <column name="lengthofbusinessrelations" length="50"/>
+        </property>
+        <property name="departmentconnected" type="string">
+            <column name="departmentconnected" length="50"/>
+        </property>
+        <property name="emailaddress" type="string">
+            <column name="emailaddress" length="100"/>
+        </property>
+        <property name="productservicesoffered" type="string">
+            <column name="productservicesoffered" length="250"/>
+        </property>
+        <property name="avebillingamtpertrans" type="big_decimal">
+            <column name="avebillingamtpertrans" precision="20"/>
+        </property>
+        <property name="mobile1" type="string">
+            <column name="mobile1" length="20"/>
+        </property>
+        <property name="mobile2" type="string">
+            <column name="mobile2" length="20"/>
+        </property>
+        <property name="landline1" type="string">
+            <column name="landline1" length="20"/>
+        </property>
+        <property name="landline2" type="string">
+            <column name="landline2" length="20"/>
+        </property>
+        <property name="customertype" type="string">
+            <column name="customertype" length="10"/>
+        </property>
+        <property name="accreditationstatus" type="string">
+            <column name="accreditationstatus" length="5"/>
+        </property>
+        <property name="tradecifno" type="string">
+            <column name="tradecifno" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

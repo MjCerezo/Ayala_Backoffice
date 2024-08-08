@@ -1,0 +1,93 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbcollateraldeposits" table="TBCOLLATERALDEPOSITS" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="collateralid" type="string">
+            <column name="collateralid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="referenceno" type="string">
+            <column name="referenceno" length="50"/>
+        </property>
+        <property name="collateralstatus" type="string">
+            <column name="collateralstatus" length="50"/>
+        </property>
+        <property name="appraisalstatus" type="string">
+            <column name="appraisalstatus" length="50"/>
+        </property>
+        <property name="dateencoded" type="timestamp">
+            <column name="dateencoded" length="23"/>
+        </property>
+        <property name="encodedby" type="string">
+            <column name="encodedby" length="50"/>
+        </property>
+        <property name="registeredname" type="string">
+            <column name="registeredname" length="100"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="20"/>
+        </property>
+        <property name="intrate" type="big_decimal">
+            <column name="intrate" precision="20"/>
+        </property>
+        <property name="dateofplacement" type="timestamp">
+            <column name="dateofplacement" length="23"/>
+        </property>
+        <property name="maturitydate" type="timestamp">
+            <column name="maturitydate" length="23"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="300"/>
+        </property>
+        <property name="acctnumber" type="string">
+            <column name="acctnumber" length="50"/>
+        </property>
+        <property name="holdouttype" type="string">
+            <column name="holdouttype" length="10"/>
+        </property>
+        <property name="beneficialowner" type="string">
+            <column name="beneficialowner" length="200"/>
+        </property>
+        <property name="secrefno" type="string">
+            <column name="secrefno" length="100"/>
+        </property>
+        <property name="acctno" type="string">
+            <column name="acctno" length="100"/>
+        </property>
+        <property name="accttype" type="string">
+            <column name="accttype" length="100"/>
+        </property>
+        <property name="bankname" type="string">
+            <column name="bankname" length="100"/>
+        </property>
+        <property name="branch" type="string">
+            <column name="branch" length="100"/>
+        </property>
+        <property name="outstandingbal" type="big_decimal">
+            <column name="outstandingbal" precision="20"/>
+        </property>
+        <property name="desc1" type="string">
+            <column name="desc1" length="500"/>
+        </property>
+        <property name="placementrefno" type="string">
+            <column name="placementrefno" length="100"/>
+        </property>
+        <property name="lendersname" type="string">
+            <column name="lendersname" length="200"/>
+        </property>
+        <property name="prinamount" type="big_decimal">
+            <column name="prinamount" precision="20"/>
+        </property>
+        <property name="maturityvalue" type="big_decimal">
+            <column name="maturityvalue" precision="20"/>
+        </property>
+        <property name="valuedate" type="timestamp">
+            <column name="valuedate" length="23"/>
+        </property>
+        <property name="interestrate" type="big_decimal">
+            <column name="interestrate" precision="20"/>
+        </property>
+        <property name="term" type="string">
+            <column name="term" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

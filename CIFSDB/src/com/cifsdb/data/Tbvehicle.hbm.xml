@@ -1,0 +1,21 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbvehicle" table="TBVEHICLE" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="automakeid" type="integer">
+            <column name="automakeid"/>
+            <generator class="identity"/>
+        </id>
+        <property name="make" type="string">
+            <column name="make" length="100"/>
+        </property>
+        <property name="model" type="string">
+            <column name="model" length="100"/>
+        </property>
+        <property name="vehiclecategory" type="string">
+            <column name="vehiclecategory" length="100"/>
+        </property>
+        <property name="modeldetails" type="string">
+            <column name="modeldetails" length="100"/>
+        </property>
+    </class>
+</hibernate-mapping>

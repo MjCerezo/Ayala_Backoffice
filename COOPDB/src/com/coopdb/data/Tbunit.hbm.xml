@@ -1,0 +1,51 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbunit" table="TBUNIT" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="brid" type="string">
+            <column name="brid" length="4"/>
+        </property>
+        <property name="brname" type="string">
+            <column name="brname" length="100"/>
+        </property>
+        <property name="braddress" type="string">
+            <column name="braddress" length="250"/>
+        </property>
+        <property name="brstatus" type="string">
+            <column name="brstatus" length="1"/>
+        </property>
+        <property name="currency" type="string">
+            <column name="currency" length="3"/>
+        </property>
+        <property name="currbusinessdate" type="timestamp">
+            <column name="currbusinessdate" length="23"/>
+        </property>
+        <property name="nextbusinessdate" type="timestamp">
+            <column name="nextbusinessdate" length="23"/>
+        </property>
+        <property name="seqno" type="integer">
+            <column name="seqno"/>
+        </property>
+        <property name="sequser" type="integer">
+            <column name="sequser"/>
+        </property>
+        <property name="seqmerch" type="integer">
+            <column name="seqmerch"/>
+        </property>
+        <property name="seqtdc" type="integer">
+            <column name="seqtdc"/>
+        </property>
+        <property name="seqyy" type="string">
+            <column name="seqyy" length="2"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="instcode" type="string">
+            <column name="instcode" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

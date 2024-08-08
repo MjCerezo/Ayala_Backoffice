@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="BankMaintenanceFacade" class="com.etel.bankmaintenance.BankMaintenanceFacade" CRUDService="false" type="JavaService" springFile="BankMaintenanceFacade.spring.xml">
+    <operation name="deleteBank">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteHouseBank">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getBankDetailsPerBranchAndStatus">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bankcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbhousebank" isList="true"/>
+    </operation>
+    <operation name="getBanks">
+        <return typeRef="com.coopdb.data.Tbbanks" isList="true"/>
+    </operation>
+    <operation name="getBanksDetails">
+        <parameter name="bankCode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbhousebank" isList="false"/>
+    </operation>
+    <operation name="getBanksListPerBranch">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbbanks" isList="true"/>
+    </operation>
+    <operation name="getBanksListPerBranchAndStatus">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbhousebank" isList="true"/>
+    </operation>
+    <operation name="getHouseBank">
+        <parameter name="houseBank" typeRef="com.coopdb.data.Tbhousebank" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbhousebank" isList="true"/>
+    </operation>
+    <operation name="getHouseBankListPerParams">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bankcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bankbranch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbhousebank" isList="true"/>
+    </operation>
+    <operation name="saveBank">
+        <parameter name="banks" typeRef="com.coopdb.data.Tbbanks" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveHouseBank">
+        <parameter name="houseBank" typeRef="com.coopdb.data.Tbhousebank" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="setHouseBankStatus">
+        <parameter name="houseBank" typeRef="com.coopdb.data.Tbhousebank" isList="false"/>
+        <parameter name="changeType" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

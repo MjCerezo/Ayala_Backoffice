@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="ApprovalFacade" class="com.etel.approval.ApprovalFacade" CRUDService="false" type="JavaService" springFile="ApprovalFacade.spring.xml">
+    <operation name="approvalReadStatus">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLoanApprovalDetails">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="loanamount" typeRef="java.math.BigDecimal" isList="false"/>
+        <parameter name="transactiontype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <parameter name="approvallevel" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="approver" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getApprovalLevel">
+        <parameter name="loanamount" typeRef="java.math.BigDecimal" isList="false"/>
+        <parameter name="transactiontype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <operation name="getApprovalMatrixByTranstype">
+        <parameter name="transactiontype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbapprovalmatrix" isList="false"/>
+    </operation>
+    <operation name="getDecisionCount">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="decision" typeRef="java.lang.String" isList="false"/>
+        <parameter name="approvallevel" typeRef="int" isList="false"/>
+        <return typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <operation name="getLAMMainCFTotalProposedAmt">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.math.BigDecimal" isList="false"/>
+    </operation>
+    <operation name="getListOfLoanApprDetails">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="decisionflag" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbloanapprovaldetails" isList="true"/>
+    </operation>
+    <operation name="getLoanApprovalDetails">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbloanapprovaldetails" isList="false"/>
+    </operation>
+    <operation name="getTotalLoanAmountByApp">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.math.BigDecimal" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateLoanApprDetails">
+        <parameter name="loanapprddetails" typeRef="com.coopdb.data.Tbloanapprovaldetails" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="validateApproval">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="decision" typeRef="java.lang.String" isList="false"/>
+        <parameter name="transactiontype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="product" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Boolean" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

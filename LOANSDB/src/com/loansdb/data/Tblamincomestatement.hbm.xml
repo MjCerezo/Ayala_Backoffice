@@ -1,0 +1,45 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tblamincomestatement" table="TBLAMINCOMESTATEMENT" catalog="LOANSDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cfappno" type="string">
+            <column name="cfappno" length="50"/>
+        </property>
+        <property name="cfrefno" type="string">
+            <column name="cfrefno" length="50"/>
+        </property>
+        <property name="year" type="timestamp">
+            <column name="year" length="23"/>
+        </property>
+        <property name="costgoodssold" type="big_decimal">
+            <column name="costgoodssold" precision="20"/>
+        </property>
+        <property name="operatingexpenses" type="big_decimal">
+            <column name="operatingexpenses" precision="20"/>
+        </property>
+        <property name="earningsbefore" type="big_decimal">
+            <column name="earningsbefore" precision="20"/>
+        </property>
+        <property name="financecost" type="big_decimal">
+            <column name="financecost" precision="20"/>
+        </property>
+        <property name="netincome" type="big_decimal">
+            <column name="netincome" precision="20"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="lastupdated" type="timestamp">
+            <column name="lastupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

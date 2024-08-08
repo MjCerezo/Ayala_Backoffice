@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="DefaultUsersFacade" class="com.etel.defaultusers.DefaultUsersFacade" CRUDService="false" type="JavaService" springFile="DefaultUsersFacade.spring.xml">
+    <operation name="deleteApprovalMatrix">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteDefaultUsers">
+        <parameter name="companycode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="displayDefaultUsers">
+        <return typeRef="com.coopdb.data.Tbdefaultusers" isList="true"/>
+    </operation>
+    <operation name="getApprovalMatrixRecord">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbapprovalmatrix" isList="false"/>
+    </operation>
+    <operation name="getDefaultUserByCompany">
+        <parameter name="companycode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.defaultusers.forms.DefaultUsers" isList="false"/>
+    </operation>
+    <operation name="getListOfApprovalMatrix">
+        <return typeRef="com.coopdb.data.Tbapprovalmatrix" isList="true"/>
+    </operation>
+    <operation name="getListofUser">
+        <return typeRef="com.coopdb.data.Tbuser" isList="true"/>
+    </operation>
+    <operation name="getListofUserByCompany">
+        <parameter name="companycode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbuser" isList="true"/>
+    </operation>
+    <operation name="listCompany">
+        <return typeRef="com.etel.defaultusers.forms.CompanyName" isList="true"/>
+    </operation>
+    <operation name="listUsernamePerRole">
+        <parameter name="roleid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companycode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbuser" isList="true"/>
+    </operation>
+    <operation name="saveOrUpdateApprovalMatrix">
+        <parameter name="form" typeRef="com.etel.defaultusers.forms.ApprovalMatrixForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveUpdateDefaultUsers">
+        <parameter name="defaultusers" typeRef="com.coopdb.data.Tbdefaultusers" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.defaultusers.forms.DefaultUsers" name="DefaultUsers" supportsQuickData="false">
+            <element name="appraisalsupervisor" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bisupervisor" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bookingofficer" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cisupervisor" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="documentationhead" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="evaluatorheadc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="evaluatorheadr" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="releasingapprover" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="secadmin" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="systemadmin" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.defaultusers.forms.CompanyName" name="CompanyName" supportsQuickData="false">
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companyname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.defaultusers.forms.ApprovalMatrixForm" name="ApprovalMatrixForm" supportsQuickData="false">
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="lastupdated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="level1approver" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="level1limit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="level1requiredapproval" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="level1requiredrejected" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="level1rule" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="level2approver" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="level2limit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="level2requiredapproval" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="level2requiredrejected" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="level2rule" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="level3approver" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="level3limit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="level3requiredapproval" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="level3requiredrejected" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="level3rule" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="level4approver" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="level4limit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="level4requiredapproval" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="level4requiredrejected" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="level4rule" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanproduct" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transactiontype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

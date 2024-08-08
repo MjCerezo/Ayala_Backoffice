@@ -1,0 +1,72 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbreceivablesmain" table="TBRECEIVABLESMAIN" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="referenceno" type="string">
+            <column name="referenceno" length="50"/>
+        </property>
+        <property name="receivabletype" type="string">
+            <column name="receivabletype" length="10"/>
+        </property>
+        <property name="bankname" type="string">
+            <column name="bankname" length="10"/>
+        </property>
+        <property name="branch" type="string">
+            <column name="branch" length="100"/>
+        </property>
+        <property name="checkdate" type="timestamp">
+            <column name="checkdate" length="23"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="16"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="500"/>
+        </property>
+        <property name="vehicletype" type="string">
+            <column name="vehicletype" length="50"/>
+        </property>
+        <property name="make" type="string">
+            <column name="make" length="50"/>
+        </property>
+        <property name="model" type="string">
+            <column name="model" length="50"/>
+        </property>
+        <property name="chassisno" type="string">
+            <column name="chassisno" length="50"/>
+        </property>
+        <property name="engineno" type="string">
+            <column name="engineno" length="50"/>
+        </property>
+        <property name="color" type="string">
+            <column name="color" length="50"/>
+        </property>
+        <property name="fuel" type="string">
+            <column name="fuel" length="50"/>
+        </property>
+        <property name="location" type="string">
+            <column name="location" length="50"/>
+        </property>
+        <property name="plateno" type="string">
+            <column name="plateno" length="50"/>
+        </property>
+        <property name="conductionstickerno" type="string">
+            <column name="conductionstickerno" length="50"/>
+        </property>
+        <property name="dateencoded" type="timestamp">
+            <column name="dateencoded" length="23"/>
+        </property>
+        <property name="encodedby" type="string">
+            <column name="encodedby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

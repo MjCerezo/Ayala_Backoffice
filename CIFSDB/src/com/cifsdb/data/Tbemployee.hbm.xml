@@ -1,0 +1,270 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbemployee" table="TBEMPLOYEE" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="employeeid" type="string">
+            <column name="employeeid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="employmentstatus" type="string">
+            <column name="employmentstatus" length="20"/>
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="100"/>
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="100"/>
+        </property>
+        <property name="middlename" type="string">
+            <column name="middlename" length="100"/>
+        </property>
+        <property name="suffix" type="string">
+            <column name="suffix" length="10"/>
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="10"/>
+        </property>
+        <property name="civilstatus" type="string">
+            <column name="civilstatus" length="10"/>
+        </property>
+        <property name="nationality" type="string">
+            <column name="nationality" length="50"/>
+        </property>
+        <property name="dateofbirth" type="timestamp">
+            <column name="dateofbirth" length="23"/>
+        </property>
+        <property name="birthplace" type="string">
+            <column name="birthplace" length="50"/>
+        </property>
+        <property name="sss" type="string">
+            <column name="sss" length="20"/>
+        </property>
+        <property name="tin" type="string">
+            <column name="tin" length="20"/>
+        </property>
+        <property name="emailadd" type="string">
+            <column name="emailadd" length="100"/>
+        </property>
+        <property name="homephoneareacode" type="string">
+            <column name="homephoneareacode" length="5"/>
+        </property>
+        <property name="homephoneno" type="string">
+            <column name="homephoneno" length="50"/>
+        </property>
+        <property name="mobilephoneareacode" type="string">
+            <column name="mobilephoneareacode" length="5"/>
+        </property>
+        <property name="mobilephoneno" type="string">
+            <column name="mobilephoneno" length="50"/>
+        </property>
+        <property name="officephoneareacode" type="string">
+            <column name="officephoneareacode" length="5"/>
+        </property>
+        <property name="officephoneno" type="string">
+            <column name="officephoneno" length="50"/>
+        </property>
+        <property name="streetnoname1" type="string">
+            <column name="streetnoname1" length="100"/>
+        </property>
+        <property name="subdivision1" type="string">
+            <column name="subdivision1" length="50"/>
+        </property>
+        <property name="barangay1" type="string">
+            <column name="barangay1" length="50"/>
+        </property>
+        <property name="stateprovince1" type="string">
+            <column name="stateprovince1" length="50"/>
+        </property>
+        <property name="city1" type="string">
+            <column name="city1" length="50"/>
+        </property>
+        <property name="region1" type="string">
+            <column name="region1" length="50"/>
+        </property>
+        <property name="country1" type="string">
+            <column name="country1" length="50"/>
+        </property>
+        <property name="postalcode1" type="string">
+            <column name="postalcode1" length="50"/>
+        </property>
+        <property name="fulladdress1" type="string">
+            <column name="fulladdress1" length="300"/>
+        </property>
+        <property name="sameaspermanentaddress" type="boolean">
+            <column name="sameaspermanentaddress"/>
+        </property>
+        <property name="streetnoname2" type="string">
+            <column name="streetnoname2" length="100"/>
+        </property>
+        <property name="subdivision2" type="string">
+            <column name="subdivision2" length="50"/>
+        </property>
+        <property name="barangay2" type="string">
+            <column name="barangay2" length="50"/>
+        </property>
+        <property name="stateprovince2" type="string">
+            <column name="stateprovince2" length="50"/>
+        </property>
+        <property name="city2" type="string">
+            <column name="city2" length="50"/>
+        </property>
+        <property name="region2" type="string">
+            <column name="region2" length="50"/>
+        </property>
+        <property name="country2" type="string">
+            <column name="country2" length="50"/>
+        </property>
+        <property name="postalcode2" type="string">
+            <column name="postalcode2" length="50"/>
+        </property>
+        <property name="fulladdress2" type="string">
+            <column name="fulladdress2" length="300"/>
+        </property>
+        <property name="datehired" type="timestamp">
+            <column name="datehired" length="23"/>
+        </property>
+        <property name="dateregular" type="timestamp">
+            <column name="dateregular" length="23"/>
+        </property>
+        <property name="branch" type="string">
+            <column name="branch" length="50"/>
+        </property>
+        <property name="rank" type="string">
+            <column name="rank" length="50"/>
+        </property>
+        <property name="companyname" type="string">
+            <column name="companyname" length="100"/>
+        </property>
+        <property name="companycode" type="string">
+            <column name="companycode" length="50"/>
+        </property>
+        <property name="department" type="string">
+            <column name="department" length="50"/>
+        </property>
+        <property name="empstatus" type="string">
+            <column name="empstatus" length="20"/>
+        </property>
+        <property name="payrollacctno" type="string">
+            <column name="payrollacctno" length="50"/>
+        </property>
+        <property name="cashcardacctno" type="string">
+            <column name="cashcardacctno" length="50"/>
+        </property>
+        <property name="dateresigned" type="timestamp">
+            <column name="dateresigned" length="23"/>
+        </property>
+        <property name="prevemployeeno" type="string">
+            <column name="prevemployeeno" length="20"/>
+        </property>
+        <property name="beneficiarylastname1" type="string">
+            <column name="beneficiarylastname1" length="100"/>
+        </property>
+        <property name="beneficiaryfirstname1" type="string">
+            <column name="beneficiaryfirstname1" length="100"/>
+        </property>
+        <property name="beneficiarylmiddlename1" type="string">
+            <column name="beneficiarylmiddlename1" length="100"/>
+        </property>
+        <property name="beneficiarysuffix1" type="string">
+            <column name="beneficiarysuffix1" length="10"/>
+        </property>
+        <property name="beneficiaryaddress1" type="string">
+            <column name="beneficiaryaddress1" length="300"/>
+        </property>
+        <property name="beneficiaryphone1" type="string">
+            <column name="beneficiaryphone1" length="50"/>
+        </property>
+        <property name="beneficiaryrelationship1" type="string">
+            <column name="beneficiaryrelationship1" length="20"/>
+        </property>
+        <property name="beneficiarylastname2" type="string">
+            <column name="beneficiarylastname2" length="100"/>
+        </property>
+        <property name="beneficiaryfirstname2" type="string">
+            <column name="beneficiaryfirstname2" length="100"/>
+        </property>
+        <property name="beneficiarylmiddlename2" type="string">
+            <column name="beneficiarylmiddlename2" length="100"/>
+        </property>
+        <property name="beneficiarysuffix2" type="string">
+            <column name="beneficiarysuffix2" length="10"/>
+        </property>
+        <property name="beneficiaryaddress2" type="string">
+            <column name="beneficiaryaddress2" length="300"/>
+        </property>
+        <property name="beneficiaryphone2" type="string">
+            <column name="beneficiaryphone2" length="50"/>
+        </property>
+        <property name="beneficiaryrelationship2" type="string">
+            <column name="beneficiaryrelationship2" length="20"/>
+        </property>
+        <property name="beneficiarylastname3" type="string">
+            <column name="beneficiarylastname3" length="100"/>
+        </property>
+        <property name="beneficiaryfirstname3" type="string">
+            <column name="beneficiaryfirstname3" length="100"/>
+        </property>
+        <property name="beneficiarylmiddlename3" type="string">
+            <column name="beneficiarylmiddlename3" length="100"/>
+        </property>
+        <property name="beneficiarysuffix3" type="string">
+            <column name="beneficiarysuffix3" length="10"/>
+        </property>
+        <property name="beneficiaryaddress3" type="string">
+            <column name="beneficiaryaddress3" length="300"/>
+        </property>
+        <property name="beneficiaryrelationship3" type="string">
+            <column name="beneficiaryrelationship3" length="20"/>
+        </property>
+        <property name="beneficiarylastname4" type="string">
+            <column name="beneficiarylastname4" length="100"/>
+        </property>
+        <property name="beneficiaryfirstname4" type="string">
+            <column name="beneficiaryfirstname4" length="100"/>
+        </property>
+        <property name="beneficiarylmiddlename4" type="string">
+            <column name="beneficiarylmiddlename4" length="100"/>
+        </property>
+        <property name="beneficiarysuffix4" type="string">
+            <column name="beneficiarysuffix4" length="10"/>
+        </property>
+        <property name="beneficiaryaddress4" type="string">
+            <column name="beneficiaryaddress4" length="300"/>
+        </property>
+        <property name="beneficiaryrelationship4" type="string">
+            <column name="beneficiaryrelationship4" length="20"/>
+        </property>
+        <property name="beneficiarylastname5" type="string">
+            <column name="beneficiarylastname5" length="100"/>
+        </property>
+        <property name="beneficiaryfirstname5" type="string">
+            <column name="beneficiaryfirstname5" length="100"/>
+        </property>
+        <property name="beneficiarylmiddlename5" type="string">
+            <column name="beneficiarylmiddlename5" length="100"/>
+        </property>
+        <property name="beneficiarysuffix5" type="string">
+            <column name="beneficiarysuffix5" length="10"/>
+        </property>
+        <property name="beneficiaryaddress5" type="string">
+            <column name="beneficiaryaddress5" length="300"/>
+        </property>
+        <property name="beneficiaryrelationship5" type="string">
+            <column name="beneficiaryrelationship5" length="20"/>
+        </property>
+        <property name="gsis" type="string">
+            <column name="gsis" length="50"/>
+        </property>
+        <property name="netpay" type="big_decimal">
+            <column name="netpay" precision="20"/>
+        </property>
+        <property name="monthlysalary" type="big_decimal">
+            <column name="monthlysalary" precision="20"/>
+        </property>
+        <property name="servicestatus" type="string">
+            <column name="servicestatus" length="50"/>
+        </property>
+        <property name="position" type="string">
+            <column name="position" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

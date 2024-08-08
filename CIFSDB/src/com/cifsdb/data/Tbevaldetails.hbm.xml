@@ -1,0 +1,114 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbevaldetails" table="TBEVALDETAILS" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="appno" type="string">
+            <column name="appno" length="50"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50"/>
+        </property>
+        <property name="collateralassement" type="string">
+            <column name="collateralassement" length="50"/>
+        </property>
+        <property name="capacityevaluation" type="string">
+            <column name="capacityevaluation" length="50"/>
+        </property>
+        <property name="repaymentevaluation" type="string">
+            <column name="repaymentevaluation" length="50"/>
+        </property>
+        <property name="othernotablefindings" type="string">
+            <column name="othernotablefindings" length="50"/>
+        </property>
+        <property name="collateralassementremarks" type="string">
+            <column name="collateralassementremarks" length="500"/>
+        </property>
+        <property name="capacityevaluationremarks" type="string">
+            <column name="capacityevaluationremarks" length="500"/>
+        </property>
+        <property name="repaymentevaluationremarks" type="string">
+            <column name="repaymentevaluationremarks" length="500"/>
+        </property>
+        <property name="othernotablefindingsremarks" type="string">
+            <column name="othernotablefindingsremarks" length="500"/>
+        </property>
+        <property name="bapnfisresult" type="string">
+            <column name="bapnfisresult" length="50"/>
+        </property>
+        <property name="bapnfisremarks" type="string">
+            <column name="bapnfisremarks" length="100"/>
+        </property>
+        <property name="cmapresult" type="string">
+            <column name="cmapresult" length="50"/>
+        </property>
+        <property name="cmapremarks" type="string">
+            <column name="cmapremarks" length="100"/>
+        </property>
+        <property name="cicresult" type="string">
+            <column name="cicresult" length="50"/>
+        </property>
+        <property name="cicremarks" type="string">
+            <column name="cicremarks" length="100"/>
+        </property>
+        <property name="blacklistinternalresult" type="string">
+            <column name="blacklistinternalresult" length="50"/>
+        </property>
+        <property name="blacklistinternarlremarks" type="string">
+            <column name="blacklistinternarlremarks" length="100"/>
+        </property>
+        <property name="blacklistexternalresult" type="string">
+            <column name="blacklistexternalresult" length="50"/>
+        </property>
+        <property name="blacklistexternalremarks" type="string">
+            <column name="blacklistexternalremarks" length="100"/>
+        </property>
+        <property name="amlaresult" type="string">
+            <column name="amlaresult" length="50"/>
+        </property>
+        <property name="amlaremarks" type="string">
+            <column name="amlaremarks" length="100"/>
+        </property>
+        <property name="pdrnresult" type="string">
+            <column name="pdrnresult" length="50"/>
+        </property>
+        <property name="pdrnremarks" type="string">
+            <column name="pdrnremarks" length="100"/>
+        </property>
+        <property name="evrresult" type="string">
+            <column name="evrresult" length="50"/>
+        </property>
+        <property name="evrremarks" type="string">
+            <column name="evrremarks" length="100"/>
+        </property>
+        <property name="bvrresult" type="string">
+            <column name="bvrresult" length="50"/>
+        </property>
+        <property name="bvrremarks" type="string">
+            <column name="bvrremarks" length="100"/>
+        </property>
+        <property name="bankcheckresult" type="string">
+            <column name="bankcheckresult" length="50"/>
+        </property>
+        <property name="bankcheckremarks" type="string">
+            <column name="bankcheckremarks" length="100"/>
+        </property>
+        <property name="creditcheckresult" type="string">
+            <column name="creditcheckresult" length="50"/>
+        </property>
+        <property name="creditcheckremarks" type="string">
+            <column name="creditcheckremarks" length="100"/>
+        </property>
+        <property name="tradecheckresult" type="string">
+            <column name="tradecheckresult" length="50"/>
+        </property>
+        <property name="tradecheckremarks" type="string">
+            <column name="tradecheckremarks" length="100"/>
+        </property>
+        <property name="approverdecision" type="string">
+            <column name="approverdecision" length="50"/>
+        </property>
+        <property name="approverremarks" type="string">
+            <column name="approverremarks" length="100"/>
+        </property>
+    </class>
+</hibernate-mapping>

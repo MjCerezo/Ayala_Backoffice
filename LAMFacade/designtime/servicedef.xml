@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="LAMFacade" class="com.etel.lam.LAMFacade" CRUDService="false" type="JavaService" springFile="LAMFacade.spring.xml">
+    <operation name="addDefaultCovenants">
+        <parameter name="defaultcovenants" typeRef="com.loansdb.data.Tbcovenants" isList="true"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cflevel" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="cfseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfsubseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefnoconcat" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addLAMDocuments">
+        <parameter name="docspercf" typeRef="com.loansdb.data.Tbdocspercf" isList="true"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cflevel" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="cfseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfsubseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefnoconcat" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteFSByAppnoAndID">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fsid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteIncomeExpense">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteLAMCovenants">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteLAMDocuments">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getAPADetails">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.loansdb.data.Tblamapa" isList="false"/>
+    </operation>
+    <operation name="getCFGroupExposureList">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.lam.forms.CFGroupExposureForm" isList="true"/>
+    </operation>
+    <operation name="getCreditDealings">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.loansdb.data.Tbcicreditcheck" isList="true"/>
+    </operation>
+    <operation name="getFSDetailsByAppNoAndID">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fsid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.loansdb.data.Tbfinancialstatements" isList="false"/>
+    </operation>
+    <operation name="getFSMain">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.loansdb.data.Tbfsmain" isList="false"/>
+    </operation>
+    <operation name="getLAMBorrowerProfile">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.loansdb.data.Tblamborrowerprofile" isList="false"/>
+    </operation>
+    <operation name="getLAMCorporateProfile">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.loansdb.data.Tblamcorporateprofile" isList="false"/>
+    </operation>
+    <operation name="getLAMCovenants">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.loansdb.data.Tblamcovenants" isList="false"/>
+    </operation>
+    <operation name="getLAMDocuments">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.loansdb.data.Tblamdocumentation" isList="false"/>
+    </operation>
+    <operation name="getLAMHistoryDMS">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.lam.forms.LAMDMSHistoryForm" isList="true"/>
+    </operation>
+    <operation name="getLAMLoanDetails">
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cflevel" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="cfseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfsubseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefnoconcat" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.loansdb.data.Tblamloandetails" isList="true"/>
+    </operation>
+    <operation name="getLAMOtherTermsCondition">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.loansdb.data.Tblamothertermconditions" isList="false"/>
+    </operation>
+    <operation name="getLAMRationaleRecomm">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.loansdb.data.Tblamrationalerecomm" isList="false"/>
+    </operation>
+    <operation name="getLAMRiskProfile">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.loansdb.data.Tblamriskprofile" isList="false"/>
+    </operation>
+    <operation name="getListOfDocsPerCF">
+        <parameter name="facilitycode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="documentcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.loansdb.data.Tbdocspercf" isList="true"/>
+    </operation>
+    <operation name="getListOfFSDetailsByAppNo">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.etel.lam.forms.FinancialStatementListForm" isList="false"/>
+    </operation>
+    <operation name="getListOfIncomeExpense">
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="fundtype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.loansdb.data.Tbapaotherincomeexpense" isList="true"/>
+    </operation>
+    <operation name="getManagementTeam">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="notshareholder" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbmanagement" isList="true"/>
+    </operation>
+    <operation name="getShareholdersInfo">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="relationcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbmanagement" isList="true"/>
+    </operation>
+    <operation name="saveCFDetailsToLAM">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveLAMHistory">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateAPA">
+        <parameter name="form" typeRef="com.etel.lam.forms.LAMAPAForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateBackground">
+        <parameter name="cprofile" typeRef="com.loansdb.data.Tblamcorporateprofile" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateCovenants">
+        <parameter name="lamcovenants" typeRef="com.loansdb.data.Tblamcovenants" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateDocumentation">
+        <parameter name="allfac" typeRef="com.loansdb.data.Tblamdocumentation" isList="false"/>
+        <parameter name="finfac" typeRef="com.loansdb.data.Tblamdocumentation" isList="false"/>
+        <parameter name="mobfac" typeRef="com.loansdb.data.Tblamdocumentation" isList="false"/>
+        <parameter name="stockfac" typeRef="com.loansdb.data.Tblamdocumentation" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateFS">
+        <parameter name="fs" typeRef="com.loansdb.data.Tbfinancialstatements" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateFSMain">
+        <parameter name="fsmain" typeRef="com.loansdb.data.Tbfsmain" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateLAMBorProfile">
+        <parameter name="borprofile" typeRef="com.loansdb.data.Tblamborrowerprofile" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateLAMDocumentation">
+        <parameter name="lamdocs" typeRef="com.loansdb.data.Tblamdocumentation" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateLAMLoanDetails">
+        <parameter name="cfdetails" typeRef="com.loansdb.data.Tbcfdetails" isList="true"/>
+        <parameter name="evalreportid" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateOtherFunds">
+        <parameter name="form" typeRef="com.etel.lam.forms.OtherIncomeExpenseForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateOtherTerms">
+        <parameter name="otherTerm" typeRef="com.loansdb.data.Tblamothertermconditions" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateRationaleRecomm">
+        <parameter name="recomm" typeRef="com.loansdb.data.Tblamrationalerecomm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateRiskProfile">
+        <parameter name="riskprofile" typeRef="com.loansdb.data.Tblamriskprofile" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.lam.forms.CFGroupExposureForm" name="CFGroupExposureForm" supportsQuickData="false">
+            <element name="creditline" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="facilityname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="interestrate" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="maincifname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="maincifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="outstandingbalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="relatedcifname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="relatedcifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="term" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="validity" typeRef="java.util.Date" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.lam.forms.LAMDMSHistoryForm" name="LAMDMSHistoryForm" supportsQuickData="false">
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cfrefno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateuploaded" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dmsid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="evalreportid" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="uploadedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.lam.forms.FinancialStatementListForm" name="FinancialStatementListForm" supportsQuickData="false">
+            <element name="fs1" typeRef="com.loansdb.data.Tbfinancialstatements" isList="false" allowNull="false"/>
+            <element name="fs2" typeRef="com.loansdb.data.Tbfinancialstatements" isList="false" allowNull="false"/>
+            <element name="fs3" typeRef="com.loansdb.data.Tbfinancialstatements" isList="false" allowNull="false"/>
+            <element name="fs4" typeRef="com.loansdb.data.Tbfinancialstatements" isList="false" allowNull="false"/>
+            <element name="fs5" typeRef="com.loansdb.data.Tbfinancialstatements" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.lam.forms.LAMAPAForm" name="LAMAPAForm" supportsQuickData="false">
+            <element name="acctno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="avefundsupplied" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="aveintratefunds" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="aveintrateloan" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="costnetfundused" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="depositnetreserve" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="endreviewdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="expenseinterestrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="incomenetfundsupplied" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="interestexpense" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="interestincomeloan" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loans" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="netfundsuppliedused" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="netincomelossfunds" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="ratereturn" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="reserveproduct" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="reservereqrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="startreviewdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="totalexpensefunds" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalincomefunds" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalnodays" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="tpr" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.lam.forms.OtherIncomeExpenseForm" name="OtherIncomeExpenseForm" supportsQuickData="false">
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="evalreportid" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="expenseamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="expensename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fundtype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="incomeamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="incomename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="totalexpenseamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalincomeamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

@@ -1,0 +1,46 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tblstcomakers" table="TBLSTCOMAKERS" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.cifsdb.data.TblstcomakersId">
+            <key-property name="appno" type="string">
+                <column name="appno" length="20"/>
+            </key-property>
+            <key-property name="membershipid" type="string">
+                <column name="membershipid" length="20"/>
+            </key-property>
+        </composite-id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20" not-null="true"/>
+        </property>
+        <property name="customername" type="string">
+            <column name="customername" length="300"/>
+        </property>
+        <property name="dateadded" type="timestamp">
+            <column name="dateadded" length="23"/>
+        </property>
+        <property name="participationcode" type="string">
+            <column name="participationcode" length="5"/>
+        </property>
+        <property name="membername" type="string">
+            <column name="membername" length="300"/>
+        </property>
+        <property name="fulladdress" type="string">
+            <column name="fulladdress" length="300"/>
+        </property>
+        <property name="accountno" type="string">
+            <column name="accountno" length="20"/>
+        </property>
+        <property name="monthlyincome" type="big_decimal">
+            <column name="monthlyincome" precision="20"/>
+        </property>
+        <property name="businessincome" type="big_decimal">
+            <column name="businessincome" precision="20"/>
+        </property>
+        <property name="otherincome" type="big_decimal">
+            <column name="otherincome" precision="20"/>
+        </property>
+        <property name="totalincome" type="big_decimal">
+            <column name="totalincome" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

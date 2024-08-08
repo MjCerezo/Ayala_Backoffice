@@ -1,0 +1,129 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbfinancialstatements" table="TBFINANCIALSTATEMENTS" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="fsid" type="integer">
+            <column name="fsid"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cfappno" type="string">
+            <column name="cfappno" length="50"/>
+        </property>
+        <property name="evalreportid" type="integer">
+            <column name="evalreportid"/>
+        </property>
+        <property name="year" type="timestamp">
+            <column name="year" length="23"/>
+        </property>
+        <property name="auditoropinion" type="string">
+            <column name="auditoropinion" length="5"/>
+        </property>
+        <property name="bscashequivalents" type="big_decimal">
+            <column name="bscashequivalents" precision="20"/>
+        </property>
+        <property name="bstradereceivable" type="big_decimal">
+            <column name="bstradereceivable" precision="20"/>
+        </property>
+        <property name="bsinventories" type="big_decimal">
+            <column name="bsinventories" precision="20"/>
+        </property>
+        <property name="bscurrentassets" type="big_decimal">
+            <column name="bscurrentassets" precision="20"/>
+        </property>
+        <property name="bstotalassets" type="big_decimal">
+            <column name="bstotalassets" precision="20"/>
+        </property>
+        <property name="bstradepayable" type="big_decimal">
+            <column name="bstradepayable" precision="20"/>
+        </property>
+        <property name="bscurrentportiondebt" type="big_decimal">
+            <column name="bscurrentportiondebt" precision="20"/>
+        </property>
+        <property name="bscurrentliabilities" type="big_decimal">
+            <column name="bscurrentliabilities" precision="20"/>
+        </property>
+        <property name="bslongtermdebt" type="big_decimal">
+            <column name="bslongtermdebt" precision="20"/>
+        </property>
+        <property name="bspayablerelatedparty" type="big_decimal">
+            <column name="bspayablerelatedparty" precision="20"/>
+        </property>
+        <property name="bstotalliabilities" type="big_decimal">
+            <column name="bstotalliabilities" precision="20"/>
+        </property>
+        <property name="bsnetworth" type="big_decimal">
+            <column name="bsnetworth" precision="20"/>
+        </property>
+        <property name="bsnetworkingcapital" type="big_decimal">
+            <column name="bsnetworkingcapital" precision="20"/>
+        </property>
+        <property name="issales" type="big_decimal">
+            <column name="issales" precision="20"/>
+        </property>
+        <property name="iscostgoodssold" type="big_decimal">
+            <column name="iscostgoodssold" precision="20"/>
+        </property>
+        <property name="isoperatingexpenses" type="big_decimal">
+            <column name="isoperatingexpenses" precision="20"/>
+        </property>
+        <property name="isearningsbefore" type="big_decimal">
+            <column name="isearningsbefore" precision="20"/>
+        </property>
+        <property name="isfinancecost" type="big_decimal">
+            <column name="isfinancecost" precision="20"/>
+        </property>
+        <property name="isnetincome" type="big_decimal">
+            <column name="isnetincome" precision="20"/>
+        </property>
+        <property name="growthrate" type="big_decimal">
+            <column name="growthrate" precision="20"/>
+        </property>
+        <property name="profgrosssmargin" type="big_decimal">
+            <column name="profgrosssmargin" precision="20"/>
+        </property>
+        <property name="profoperatingmargin" type="big_decimal">
+            <column name="profoperatingmargin" precision="20"/>
+        </property>
+        <property name="profnetmargin" type="big_decimal">
+            <column name="profnetmargin" precision="20"/>
+        </property>
+        <property name="profreturnasset" type="big_decimal">
+            <column name="profreturnasset" precision="20"/>
+        </property>
+        <property name="profreturnequity" type="big_decimal">
+            <column name="profreturnequity" precision="20"/>
+        </property>
+        <property name="profcashflowmargin" type="big_decimal">
+            <column name="profcashflowmargin" precision="20"/>
+        </property>
+        <property name="liqcurrentratio" type="big_decimal">
+            <column name="liqcurrentratio" precision="20"/>
+        </property>
+        <property name="liqquickratio" type="big_decimal">
+            <column name="liqquickratio" precision="20"/>
+        </property>
+        <property name="levdebtequityratio" type="big_decimal">
+            <column name="levdebtequityratio" precision="20"/>
+        </property>
+        <property name="levdebtassetratio" type="big_decimal">
+            <column name="levdebtassetratio" precision="20"/>
+        </property>
+        <property name="levdebtincomeratio" type="big_decimal">
+            <column name="levdebtincomeratio" precision="20"/>
+        </property>
+        <property name="levinterestcoverage" type="big_decimal">
+            <column name="levinterestcoverage" precision="20"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="lastupdated" type="timestamp">
+            <column name="lastupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbevalmonthlyexpense" table="TBEVALMONTHLYEXPENSE" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="evalreportid" type="integer">
+            <column name="evalreportid"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="persontype" type="string">
+            <column name="persontype" length="20"/>
+        </property>
+        <property name="expensetype" type="string">
+            <column name="expensetype" length="50"/>
+        </property>
+        <property name="expenseamount" type="big_decimal">
+            <column name="expenseamount" precision="20"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks"/>
+        </property>
+    </class>
+</hibernate-mapping>

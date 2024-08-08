@@ -1,0 +1,66 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbholdamtcheck" table="TBHOLDAMTCHECK" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="accountno" type="string">
+            <column name="accountno" length="16"/>
+        </property>
+        <property name="accountname" type="string">
+            <column name="accountname" length="300"/>
+        </property>
+        <property name="checkno" type="string">
+            <column name="checkno" length="50"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="16"/>
+        </property>
+        <property name="currency" type="string">
+            <column name="currency" length="5"/>
+        </property>
+        <property name="datehold" type="timestamp">
+            <column name="datehold" length="23"/>
+        </property>
+        <property name="validitydate" type="timestamp">
+            <column name="validitydate" length="23"/>
+        </property>
+        <property name="expirydate" type="timestamp">
+            <column name="expirydate" length="23"/>
+        </property>
+        <property name="datereleased" type="timestamp">
+            <column name="datereleased" length="23"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="holdby" type="string">
+            <column name="holdby" length="16"/>
+        </property>
+        <property name="holdreason" type="string">
+            <column name="holdreason" length="2"/>
+        </property>
+        <property name="releaseby" type="string">
+            <column name="releaseby" length="16"/>
+        </property>
+        <property name="releasereason" type="string">
+            <column name="releasereason" length="2"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="250"/>
+        </property>
+        <property name="txcode" type="string">
+            <column name="txcode" length="6"/>
+        </property>
+        <property name="status" type="integer">
+            <column name="status"/>
+        </property>
+        <property name="unit" type="string">
+            <column name="unit" length="10"/>
+        </property>
+        <property name="instcode" type="string">
+            <column name="instcode" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,60 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbappdosri" table="TBAPPDOSRI" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="membershipappid" type="string">
+            <column name="membershipappid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="membershipid" type="string">
+            <column name="membershipid" length="20"/>
+        </property>
+        <property name="fullname" type="string">
+            <column name="fullname" length="300"/>
+        </property>
+        <property name="dosristatus" type="string">
+            <column name="dosristatus" length="10"/>
+        </property>
+        <property name="q1" type="boolean">
+            <column name="q1"/>
+        </property>
+        <property name="q2" type="boolean">
+            <column name="q2"/>
+        </property>
+        <property name="q3" type="boolean">
+            <column name="q3"/>
+        </property>
+        <property name="q4" type="boolean">
+            <column name="q4"/>
+        </property>
+        <property name="q5" type="boolean">
+            <column name="q5"/>
+        </property>
+        <property name="nameofrelative" type="string">
+            <column name="nameofrelative" length="300"/>
+        </property>
+        <property name="positionofrelative" type="string">
+            <column name="positionofrelative" length="300"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="nameofstockholder" type="string">
+            <column name="nameofstockholder" length="300"/>
+        </property>
+        <property name="positionofstockholder" type="string">
+            <column name="positionofstockholder" length="300"/>
+        </property>
+        <property name="q6" type="boolean">
+            <column name="q6"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,69 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbcollateralmachineries" table="TBCOLLATERALMACHINERIES" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="collateralid" type="string">
+            <column name="collateralid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="referenceno" type="string">
+            <column name="referenceno" length="50"/>
+        </property>
+        <property name="collateralstatus" type="string">
+            <column name="collateralstatus" length="50"/>
+        </property>
+        <property name="appraisalstatus" type="string">
+            <column name="appraisalstatus" length="50"/>
+        </property>
+        <property name="dateencoded" type="timestamp">
+            <column name="dateencoded" length="23"/>
+        </property>
+        <property name="encodedby" type="string">
+            <column name="encodedby" length="50"/>
+        </property>
+        <property name="machinerydetails" type="string">
+            <column name="machinerydetails" length="100"/>
+        </property>
+        <property name="manufacturer" type="string">
+            <column name="manufacturer" length="100"/>
+        </property>
+        <property name="manufacturedyear" type="integer">
+            <column name="manufacturedyear"/>
+        </property>
+        <property name="machinelocation" type="string">
+            <column name="machinelocation" length="100"/>
+        </property>
+        <property name="machinecondition" type="string">
+            <column name="machinecondition" length="50"/>
+        </property>
+        <property name="intendeduse" type="string">
+            <column name="intendeduse" length="100"/>
+        </property>
+        <property name="machinevalue" type="big_decimal">
+            <column name="machinevalue" precision="20"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="300"/>
+        </property>
+        <property name="serialnumber" type="string">
+            <column name="serialnumber" length="50"/>
+        </property>
+        <property name="engineno" type="string">
+            <column name="engineno" length="200"/>
+        </property>
+        <property name="model" type="string">
+            <column name="model" length="200"/>
+        </property>
+        <property name="fuel" type="string">
+            <column name="fuel" length="200"/>
+        </property>
+        <property name="datepruchased" type="timestamp">
+            <column name="datepruchased" length="23"/>
+        </property>
+        <property name="color" type="string">
+            <column name="color" length="200"/>
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="500"/>
+        </property>
+    </class>
+</hibernate-mapping>

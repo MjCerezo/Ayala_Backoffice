@@ -1,0 +1,69 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbglentriescasa" table="TBGLENTRIESCASA" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txdate" type="timestamp">
+            <column name="Txdate" length="23" not-null="true"/>
+        </property>
+        <property name="accountno" type="string">
+            <column name="accountno" length="50"/>
+        </property>
+        <property name="txcode" type="string">
+            <column name="txcode" length="250"/>
+        </property>
+        <property name="txctr" type="integer">
+            <column name="txctr"/>
+        </property>
+        <property name="txseqno" type="string">
+            <column name="txseqno" length="30"/>
+        </property>
+        <property name="txcurr" type="string">
+            <column name="txcurr" length="3"/>
+        </property>
+        <property name="txamt" type="big_decimal">
+            <column name="txamt" precision="18"/>
+        </property>
+        <property name="glline" type="string">
+            <column name="glline" length="25"/>
+        </property>
+        <property name="gllegveh" type="string">
+            <column name="gllegveh" length="25"/>
+        </property>
+        <property name="glbranch" type="string">
+            <column name="glbranch" length="250"/>
+        </property>
+        <property name="glsl" type="string">
+            <column name="glsl" length="25"/>
+        </property>
+        <property name="debit" type="big_decimal">
+            <column name="debit" precision="18"/>
+        </property>
+        <property name="credit" type="big_decimal">
+            <column name="credit" precision="18"/>
+        </property>
+        <property name="txprod" type="string">
+            <column name="txprod" length="50"/>
+        </property>
+        <property name="txsubprod" type="string">
+            <column name="txsubprod" length="15"/>
+        </property>
+        <property name="txvaldt" type="timestamp">
+            <column name="txvaldt" length="23"/>
+        </property>
+        <property name="txlegveh" type="string">
+            <column name="txlegveh" length="5"/>
+        </property>
+        <property name="txbr" type="string">
+            <column name="txbr" length="250"/>
+        </property>
+        <property name="txglbr" type="string">
+            <column name="txglbr" length="50"/>
+        </property>
+        <property name="costc" type="string">
+            <column name="costc" length="25"/>
+        </property>
+    </class>
+</hibernate-mapping>

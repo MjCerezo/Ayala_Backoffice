@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="CreditFacilityFacade" class="com.etel.creditfacility.CreditFacilityFacade" CRUDService="false" type="JavaService" springFile="CreditFacilityFacade.spring.xml">
+    <operation name="addCreditFacility">
+        <parameter name="cfdetails" typeRef="com.loansdb.data.Tbcfdetails" isList="false"/>
+        <parameter name="maincfrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="maincflevel" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maincfseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="maincfsubseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="company" typeRef="com.etel.company.forms.CompanyForm" isList="true"/>
+        <return typeRef="com.etel.forms.ReturnForm" isList="false"/>
+    </operation>
+    <operation name="addDefaultCovenants">
+        <parameter name="defaultcovenants" typeRef="com.loansdb.data.Tbcovenants" isList="true"/>
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cflevel" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="cfseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfsubseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefnoconcat" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addDefaultTermsCondition">
+        <parameter name="termcondition" typeRef="java.lang.String" isList="true"/>
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cflevel" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="cfseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfsubseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefnoconcat" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="createNewLineAvailment">
+        <parameter name="form" typeRef="com.etel.creditfacility.forms.LineAvailmentForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteCFTermsCondition">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteCoobligor">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cflevel" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="cfseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfsubseqno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteCovenants">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteCreditFacility">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cflevel" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="cfseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfsubseqno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="findCFbyCIFNo">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.loansdb.data.Tbcfdetails" isList="true"/>
+    </operation>
+    <operation name="getCFByAppnoCfRefnoCfLevelCfSeqno">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cflevel" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="cfseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfsubseqno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.loansdb.data.Tbcfdetails" isList="true"/>
+    </operation>
+    <operation name="getCFCompanyList">
+        <parameter name="cfrefnoconcat" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.company.forms.CompanyForm" isList="true"/>
+    </operation>
+    <operation name="getCfDetailsByCifNoAndCfLevel">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cflevel" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="isexpired" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="com.loansdb.data.Tbcfdetails" isList="true"/>
+    </operation>
+    <operation name="getCoObligorList">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cflevel" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="cfseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfsubseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefnoconcat" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.loansdb.data.Tbcfcoobligor" isList="true"/>
+    </operation>
+    <operation name="getCreditFacilityDetails">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cflevel" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="cfseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfsubseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefnoconcat" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.loansdb.data.Tbcfdetails" isList="false"/>
+    </operation>
+    <operation name="getDefaultCovenants">
+        <parameter name="str" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.loansdb.data.Tbcovenants" isList="true"/>
+    </operation>
+    <operation name="getDefaultTermsCondition">
+        <parameter name="c1" typeRef="java.lang.String" isList="false"/>
+        <parameter name="c2" typeRef="java.lang.String" isList="false"/>
+        <parameter name="c3" typeRef="java.lang.String" isList="false"/>
+        <parameter name="facilitycode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="true"/>
+    </operation>
+    <operation name="getListOfAvailmentsByStatus">
+        <parameter name="cfrefnoconcat" typeRef="java.lang.String" isList="false"/>
+        <parameter name="applicationtype" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="txstat" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.loansdb.data.Tbaccountinfo" isList="true"/>
+    </operation>
+    <operation name="getListOfCFTermsCondition">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cflevel" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="cfseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfsubseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefnoconcat" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.loansdb.data.Tbcftermconditions" isList="true"/>
+    </operation>
+    <operation name="getListOfCovenants">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cflevel" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="cfseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfsubseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefnoconcat" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.loansdb.data.Tbcfcovenants" isList="true"/>
+    </operation>
+    <operation name="getListOfCreditFacilityByAppNo">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.loansdb.data.Tbcfdetails" isList="true"/>
+    </operation>
+    <operation name="getListOfLoanProdPerCF">
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="facilitycode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.creditfacility.forms.LoanProdPerCFForm" isList="true"/>
+    </operation>
+    <operation name="getSubsidiaries">
+        <parameter name="maincifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="searchcifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="searchcorporatename" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.creditfacility.forms.CorpSubsidiaryForm" isList="true"/>
+    </operation>
+    <operation name="listExistingForm">
+        <parameter name="form" typeRef="com.etel.creditfacility.forms.ExistingFacilityForm" isList="true"/>
+        <return typeRef="com.etel.creditfacility.forms.ExistingFacilityForm" isList="true"/>
+    </operation>
+    <operation name="replicateCreditFacility">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="newappno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveCFCompany">
+        <parameter name="company" typeRef="com.etel.company.forms.CompanyForm" isList="true"/>
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cflevel" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="cfseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfsubseqno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfrefnoconcat" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateCFTermsCondition">
+        <parameter name="termcondtition" typeRef="com.loansdb.data.Tbcftermconditions" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateCoObligor">
+        <parameter name="cf" typeRef="com.loansdb.data.Tbcfcoobligor" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateCovenants">
+        <parameter name="cfcovenants" typeRef="com.loansdb.data.Tbcfcovenants" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateCreditFacility">
+        <parameter name="cfdetails" typeRef="com.loansdb.data.Tbcfdetails" isList="false"/>
+        <parameter name="company" typeRef="com.etel.company.forms.CompanyForm" isList="true"/>
+        <return typeRef="com.etel.forms.ReturnForm" isList="false"/>
+    </operation>
+    <operation name="searchExistingFacilityByCifNo">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.creditfacility.forms.ExistingFacilityForm" isList="true"/>
+    </operation>
+    <operation name="validateCoObligor">
+        <parameter name="cfrefnoconcat" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfcifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cfappno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.creditfacility.forms.LineAvailmentForm" name="LineAvailmentForm" supportsQuickData="false">
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountofficer" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="amortamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="applicationdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="applicationstatus" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="applicationtype" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="approvedinterestrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="approvedlineamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="approvedloanamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="approvedterm" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cancelledby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cfrefno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ciforiginatingteam" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ciftin" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createevalreportflag" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="datelastupdated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dtbook" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="eir" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="existingaccountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="existinglinerefno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="existingpnno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="eyrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="fduedt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="initialloanamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="interestdue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="interestperiod" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="isappraisalcompleted" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isbicompleted" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isbookdocpending" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isbooked" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="iscancelled" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="iscicompleted" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isdoneencoding" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isforamendment" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isforreconsideration" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isrejected" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="lastapplicationstatus" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="lastupdatedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanproduct" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanpurpose" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanterm" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="losoriginatingteam" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="mainlinerefno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="mir" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="paymentcycle" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="pnno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ppynum" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="proposedlineamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="reasonforcancellation" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="reasonforreject" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="recommendationremarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="recommendedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="regioncode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="rejectedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="repaymenttype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="statusdatetime" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="termperiod" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="typefacility" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="typeofline" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.creditfacility.forms.LoanProdPerCFForm" name="LoanProdPerCFForm" supportsQuickData="false">
+            <element name="facilitycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="facilityname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prodcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="productname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="repaymenttype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.creditfacility.forms.CorpSubsidiaryForm" name="CorpSubsidiaryForm" supportsQuickData="false">
+            <element name="businesstype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="corporatename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateofincorporation" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="encodeddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="fulladdress1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="originatingteam" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="tin" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.creditfacility.forms.ExistingFacilityForm" name="ExistingFacilityForm" supportsQuickData="false">
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cfappno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cfapprovedamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="cfproposedamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="cfrefnoconcat" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cfstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="facilitytype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

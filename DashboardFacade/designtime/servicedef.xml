@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="DashboardFacade" class="com.etel.dashboard.DashboardFacade" CRUDService="false" type="JavaService" springFile="DashboardFacade.spring.xml">
+    <operation name="ResignationAssignments">
+        <parameter name="stage" typeRef="java.lang.String" isList="false"/>
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.dashboard.forms.ResignationAssignments" isList="true"/>
+    </operation>
+    <operation name="countMyTransactionAssignments">
+        <parameter name="str" typeRef="java.lang.String" isList="false"/>
+        <parameter name="stage" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <operation name="countResignations">
+        <return typeRef="com.etel.dashboard.forms.ResignationBucket" isList="false"/>
+    </operation>
+    <operation name="dashboardListCIF">
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxresult" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="fullname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifstatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="isEncoding" typeRef="java.lang.Boolean" isList="false"/>
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="customertype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.dashboard.forms.DashboardListFormCIF" isList="true"/>
+    </operation>
+    <operation name="dashboardListCIFCount">
+        <parameter name="fullname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifstatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="isEncoding" typeRef="java.lang.Boolean" isList="false"/>
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="customertype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="int" isList="false"/>
+    </operation>
+    <operation name="getCIFDashboard">
+        <return typeRef="com.etel.dashboard.forms.CIFDashboard" isList="false"/>
+    </operation>
+    <operation name="getCIFDashboardList">
+        <parameter name="query" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbcifmain" isList="true"/>
+    </operation>
+    <operation name="getCompanyDashboard">
+        <return typeRef="com.etel.dashboard.forms.TMPFrom" isList="true"/>
+    </operation>
+    <operation name="getDashBoard">
+        <return typeRef="com.etel.dashboard.forms.DashBoardForm" isList="true"/>
+    </operation>
+    <operation name="getFinancialTransactions">
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbloanfin" isList="true"/>
+    </operation>
+    <operation name="getListofToFollowDocumentsCIF">
+        <parameter name="getDocType" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.dashboard.forms.DashBoardDocumentsForm" isList="true"/>
+    </operation>
+    <operation name="getListofToFollowDocumentsCIFCount">
+        <parameter name="getDocType" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="int" isList="false"/>
+    </operation>
+    <operation name="getListofToFollowDocumentsLoans">
+        <parameter name="getDocType" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.dashboard.forms.DashBoardDocumentsForm" isList="true"/>
+    </operation>
+    <operation name="getListofToFollowDocumentsLoansCount">
+        <parameter name="getDocType" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="int" isList="false"/>
+    </operation>
+    <operation name="getLoanApplicationAssignments">
+        <parameter name="stage" typeRef="java.lang.String" isList="false"/>
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.dashboard.forms.LoanApplicationAssignments" isList="true"/>
+    </operation>
+    <operation name="getLoanDashboard">
+        <return typeRef="com.etel.dashboard.forms.TMPFrom" isList="true"/>
+    </operation>
+    <operation name="getLoanTransactions">
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.dashboard.forms.LoanForm" isList="true"/>
+    </operation>
+    <operation name="getMembershipDashboard">
+        <return typeRef="com.etel.dashboard.forms.TMPFrom" isList="true"/>
+    </operation>
+    <operation name="getTMP">
+        <return typeRef="com.etel.dashboard.forms.TMPFrom" isList="true"/>
+    </operation>
+    <operation name="getWorkflowProcessList">
+        <parameter name="workflowid" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="viewby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="company" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.dashboard.forms.WorkflowDashboardForm" isList="true"/>
+    </operation>
+    <operation name="getmyDashboard">
+        <return typeRef="com.etel.dashboard.forms.MyDashboard" isList="false"/>
+    </operation>
+    <operation name="listLoanOtherTrans">
+        <parameter name="seqno" typeRef="int" isList="false"/>
+        <parameter name="total" typeRef="int" isList="false"/>
+        <return typeRef="com.etel.dashboard.forms.MyTransactions" isList="false"/>
+    </operation>
+    <operation name="listLoanTransactions">
+        <parameter name="bucket" typeRef="int" isList="false"/>
+        <parameter name="stage" typeRef="int" isList="false"/>
+        <return typeRef="com.etel.dashboard.forms.MyTransactions" isList="true"/>
+    </operation>
+    <operation name="listMyTransactions">
+        <return typeRef="com.etel.dashboard.forms.MyTransactions" isList="true"/>
+    </operation>
+    <operation name="listNewMembershipOtheBucket">
+        <parameter name="dtFrom" typeRef="java.util.Date" isList="false"/>
+        <parameter name="dtTo" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="com.etel.dashboard.forms.MembershipOtherBucket" isList="false"/>
+    </operation>
+    <operation name="listOtherTxLoans">
+        <parameter name="appstatus" typeRef="int" isList="false"/>
+        <return typeRef="com.coopdb.data.Tblstapp" isList="true"/>
+    </operation>
+    <operation name="listResignTransactions">
+        <return typeRef="com.etel.dashboard.forms.MyTransactions" isList="true"/>
+    </operation>
+    <operation name="listUpdateProfileOtherBucket">
+        <return typeRef="com.etel.dashboard.forms.UpdateProfileRequestOtherBucket" isList="false"/>
+    </operation>
+    <operation name="listUpdateProfileRequestAssignments">
+        <parameter name="stage" typeRef="java.lang.String" isList="false"/>
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.dashboard.forms.UpdateProfileRequestAssignment" isList="true"/>
+    </operation>
+    <operation name="listUpdateProfileRequests">
+        <return typeRef="com.etel.dashboard.forms.MyTransactions" isList="true"/>
+    </operation>
+    <operation name="myTransactionAssignments">
+        <parameter name="stage" typeRef="java.lang.String" isList="false"/>
+        <parameter name="searchstr" typeRef="java.lang.String" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxresult" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.etel.dashboard.forms.TransactionAssignments" isList="true"/>
+    </operation>
+    <operation name="summaryLoanApplications">
+        <return typeRef="com.etel.dashboard.forms.LoanAppBucket" isList="false"/>
+    </operation>
+    <operation name="testLoan">
+        <return typeRef="com.etel.dashboard.forms.MyLoans" isList="false"/>
+    </operation>
+    <operation name="testmyMembership">
+        <return typeRef="com.etel.dashboard.forms.MyMembership" isList="false"/>
+    </operation>
+    <operation name="updateFinStatus">
+        <parameter name="listOfFin" typeRef="com.coopdb.data.Tbloanfin" isList="true"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateLoanStatus">
+        <parameter name="listOfLoans" typeRef="com.etel.dashboard.forms.LoanForm" isList="true"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.dashboard.forms.ResignationAssignments" name="ResignationAssignments" supportsQuickData="false">
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="creationdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershipid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txrefno" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.dashboard.forms.ResignationBucket" name="ResignationBucket" supportsQuickData="false">
+            <element name="approvedresignation" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="declinedresignation" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="deferredresignation" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="releasedmembership" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.dashboard.forms.DashboardListFormCIF" name="DashboardListFormCIF" supportsQuickData="false">
+            <element name="assignedto" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateofbirth" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateofincorporation" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="id" typeRef="int" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.dashboard.forms.CIFDashboard" name="CIFDashboard" supportsQuickData="false">
+            <element name="approvedCompany" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="approvedMember" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="cancelled" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="fdeforreviewCompany" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="fdeforreviewMember" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="fdeongoingCompany" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="fdeongoingMember" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="merged" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="qdeforreviewCompany" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="qdeforreviewMember" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="qdeongoingCompany" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="qdeongoingMember" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.dashboard.forms.TMPFrom" name="TMPFrom" supportsQuickData="false">
+            <element name="day1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="day2" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="day3" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="day4" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="day5" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="total" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transactionName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.dashboard.forms.DashBoardForm" name="DashBoardForm" supportsQuickData="false">
+            <element name="pending" typeRef="int" isList="false" allowNull="false"/>
+            <element name="posted" typeRef="int" isList="false" allowNull="false"/>
+            <element name="txType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.dashboard.forms.DashBoardDocumentsForm" name="DashBoardDocumentsForm" supportsQuickData="false">
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateofsubmission" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="documentname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fullaname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.dashboard.forms.LoanApplicationAssignments" name="LoanApplicationAssignments" supportsQuickData="false">
+            <element name="applicationdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="isdoneencoding" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="loanproduct" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="pnno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.dashboard.forms.LoanForm" name="LoanForm" supportsQuickData="false">
+            <element name="amortization" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="clientid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="paycycle" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="product" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="txrefno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txstatusdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.dashboard.forms.WorkflowDashboardForm" name="WorkflowDashboardForm" supportsQuickData="false">
+            <element name="bucket1" typeRef="int" isList="false" allowNull="false"/>
+            <element name="bucket2" typeRef="int" isList="false" allowNull="false"/>
+            <element name="bucket3" typeRef="int" isList="false" allowNull="false"/>
+            <element name="bucket4" typeRef="int" isList="false" allowNull="false"/>
+            <element name="bucket5" typeRef="int" isList="false" allowNull="false"/>
+            <element name="buckettotal" typeRef="int" isList="false" allowNull="false"/>
+            <element name="processname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sequenceno" typeRef="int" isList="false" allowNull="false"/>
+            <element name="workflowid" typeRef="int" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.dashboard.forms.MyDashboard" name="MyDashboard" supportsQuickData="false">
+            <element name="deposits" typeRef="com.etel.dashboard.forms.MyDeposits" isList="false" allowNull="false"/>
+            <element name="generalledger" typeRef="com.etel.dashboard.forms.MyGeneralLedger" isList="false" allowNull="false"/>
+            <element name="loans" typeRef="com.etel.dashboard.forms.MyLoans" isList="false" allowNull="false"/>
+            <element name="membership" typeRef="com.etel.dashboard.forms.MyMembership" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.dashboard.forms.MyTransactions" name="MyTransactions" supportsQuickData="false">
+            <element name="stage" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="total" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.dashboard.forms.MembershipOtherBucket" name="MembershipOtherBucket" supportsQuickData="false">
+            <element name="approved" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="declined" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="deferred" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.dashboard.forms.UpdateProfileRequestOtherBucket" name="UpdateProfileRequestOtherBucket" supportsQuickData="false">
+            <element name="approved" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="cancelled" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="declined" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.dashboard.forms.UpdateProfileRequestAssignment" name="UpdateProfileRequestAssignment" supportsQuickData="false">
+            <element name="changecategory" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membername" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershipid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="requestdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="requestedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txrefno" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.dashboard.forms.TransactionAssignments" name="TransactionAssignments" supportsQuickData="false">
+            <element name="accountofficer" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="amount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="applicationdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="encodedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershipappid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershipappstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershipstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershiptype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="orno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="servicestatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.dashboard.forms.LoanAppBucket" name="LoanAppBucket" supportsQuickData="false">
+            <element name="booked" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="declined" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="foramendment" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="rejected" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.dashboard.forms.MyLoans" name="MyLoans" supportsQuickData="false">
+            <element name="adjustments" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="loanforposting" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="loanpayments" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="newloanapp" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.dashboard.forms.MyMembership" name="MyMembership" supportsQuickData="false">
+            <element name="newmemberapp" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="resignation" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="retention" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="updateprofile" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

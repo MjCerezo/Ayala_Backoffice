@@ -1,0 +1,93 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbloanreleaseinst" table="TBLOANRELEASEINST" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="applno" type="string">
+            <column name="applno" length="50"/>
+        </property>
+        <property name="pnno" type="string">
+            <column name="pnno" length="50"/>
+        </property>
+        <property name="checkno" type="string">
+            <column name="checkno" length="50"/>
+        </property>
+        <property name="checkacctno" type="string">
+            <column name="checkacctno" length="50"/>
+        </property>
+        <property name="checkbank" type="string">
+            <column name="checkbank" length="200"/>
+        </property>
+        <property name="checkbrstn" type="string">
+            <column name="checkbrstn" length="50"/>
+        </property>
+        <property name="checkbranch" type="string">
+            <column name="checkbranch" length="50"/>
+        </property>
+        <property name="checkdate" type="timestamp">
+            <column name="checkdate" length="23"/>
+        </property>
+        <property name="creditbank" type="string">
+            <column name="creditbank" length="200"/>
+        </property>
+        <property name="creditaccttype" type="string">
+            <column name="creditaccttype" length="50"/>
+        </property>
+        <property name="creditacctno" type="string">
+            <column name="creditacctno" length="50"/>
+        </property>
+        <property name="creditbrstn" type="string">
+            <column name="creditbrstn" length="50"/>
+        </property>
+        <property name="creditbranch" type="string">
+            <column name="creditbranch" length="50"/>
+        </property>
+        <property name="payeename" type="string">
+            <column name="payeename" length="500"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="18"/>
+        </property>
+        <property name="disposition" type="string">
+            <column name="disposition" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="1000"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="50"/>
+        </property>
+        <property name="rolloverpn" type="string">
+            <column name="rolloverpn" length="50"/>
+        </property>
+        <property name="bankbranch" type="string">
+            <column name="bankbranch" length="50"/>
+        </property>
+        <property name="bankaccountno" type="string">
+            <column name="bankaccountno" length="50"/>
+        </property>
+        <property name="bank" type="string">
+            <column name="bank" length="50"/>
+        </property>
+        <property name="glno" type="string">
+            <column name="glno" length="50"/>
+        </property>
+        <property name="glcode" type="string">
+            <column name="glcode" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

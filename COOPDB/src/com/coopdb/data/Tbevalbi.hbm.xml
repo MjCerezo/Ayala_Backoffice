@@ -1,0 +1,58 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbevalbi" table="TBEVALBI" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.TbevalbiId">
+            <key-property name="evalreportid" type="integer">
+                <column name="evalreportid"/>
+            </key-property>
+            <key-property name="cifno" type="string">
+                <column name="cifno" length="50"/>
+            </key-property>
+        </composite-id>
+        <property name="appno" type="string">
+            <column name="appno" length="50"/>
+        </property>
+        <property name="subjectname" type="string">
+            <column name="subjectname" length="500"/>
+        </property>
+        <property name="bapbireportid" type="string">
+            <column name="bapbireportid" length="50"/>
+        </property>
+        <property name="bapnfis" type="string">
+            <column name="bapnfis" length="50"/>
+        </property>
+        <property name="cmapbireportid" type="string">
+            <column name="cmapbireportid" length="100"/>
+        </property>
+        <property name="cmap" type="string">
+            <column name="cmap" length="50"/>
+        </property>
+        <property name="cicbireportid" type="string">
+            <column name="cicbireportid" length="50"/>
+        </property>
+        <property name="cic" type="string">
+            <column name="cic" length="50"/>
+        </property>
+        <property name="blacklistreportid" type="string">
+            <column name="blacklistreportid" length="50"/>
+        </property>
+        <property name="internalblacklist" type="string">
+            <column name="internalblacklist" length="50"/>
+        </property>
+        <property name="externalblacklist" type="string">
+            <column name="externalblacklist" length="50"/>
+        </property>
+        <property name="amlareportid" type="string">
+            <column name="amlareportid" length="50"/>
+        </property>
+        <property name="amlawatchlistedinternal" type="string">
+            <column name="amlawatchlistedinternal" length="50"/>
+        </property>
+        <property name="amlawatchlistedexternal" type="string">
+            <column name="amlawatchlistedexternal" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbloanbuyout" table="TBLOANBUYOUT" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="50"/>
+        </property>
+        <property name="otherlendinginst" type="string">
+            <column name="otherlendinginst" length="300"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

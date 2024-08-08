@@ -1,0 +1,87 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbcreditfacility" table="TBCREDITFACILITY" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="lineappno" type="string">
+            <column name="lineappno" length="50"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50"/>
+        </property>
+        <property name="facilitycode" type="string">
+            <column name="facilitycode" length="5"/>
+        </property>
+        <property name="facilityname" type="string">
+            <column name="facilityname" length="50"/>
+        </property>
+        <property name="facilitytype" type="string">
+            <column name="facilitytype" length="5"/>
+        </property>
+        <property name="proposedlimit" type="big_decimal">
+            <column name="proposedlimit" precision="20"/>
+        </property>
+        <property name="approvedlimit" type="big_decimal">
+            <column name="approvedlimit" precision="20"/>
+        </property>
+        <property name="ishared" type="boolean">
+            <column name="ishared"/>
+        </property>
+        <property name="allocationtype" type="string">
+            <column name="allocationtype" length="5"/>
+        </property>
+        <property name="sharetype" type="string">
+            <column name="sharetype" length="5"/>
+        </property>
+        <property name="startdate" type="timestamp">
+            <column name="startdate" length="23"/>
+        </property>
+        <property name="expirydate" type="timestamp">
+            <column name="expirydate" length="23"/>
+        </property>
+        <property name="interestrate" type="big_decimal">
+            <column name="interestrate" precision="18"/>
+        </property>
+        <property name="interestperiod" type="string">
+            <column name="interestperiod" length="50"/>
+        </property>
+        <property name="defaultrepaymenttype" type="string">
+            <column name="defaultrepaymenttype" length="2"/>
+        </property>
+        <property name="currency" type="string">
+            <column name="currency" length="5"/>
+        </property>
+        <property name="availablefund" type="big_decimal">
+            <column name="availablefund" precision="20"/>
+        </property>
+        <property name="amountutilized" type="big_decimal">
+            <column name="amountutilized" precision="20"/>
+        </property>
+        <property name="linestatus" type="string">
+            <column name="linestatus" length="5"/>
+        </property>
+        <property name="term" type="big_decimal">
+            <column name="term" precision="18"/>
+        </property>
+        <property name="termperiod" type="string">
+            <column name="termperiod" length="50"/>
+        </property>
+        <property name="purpose" type="string">
+            <column name="purpose" length="50"/>
+        </property>
+        <property name="isrevolving" type="boolean">
+            <column name="isrevolving"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="500"/>
+        </property>
+        <property name="sourceofpayment" type="string">
+            <column name="sourceofpayment" length="500"/>
+        </property>
+        <property name="clause1" type="string">
+            <column name="clause1" length="500"/>
+        </property>
+        <property name="currentperformance" type="string">
+            <column name="currentperformance" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

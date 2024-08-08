@@ -1,0 +1,25 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbapprovedlamdms" table="TBAPPROVEDLAMDMS" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.TbapprovedlamdmsId">
+            <key-property name="appno" type="string">
+                <column name="appno" length="20"/>
+            </key-property>
+            <key-property name="cfrefno" type="string">
+                <column name="cfrefno" length="50"/>
+            </key-property>
+        </composite-id>
+        <property name="evalreportid" type="integer">
+            <column name="evalreportid"/>
+        </property>
+        <property name="dmsid" type="string">
+            <column name="dmsid" length="10"/>
+        </property>
+        <property name="dateuploaded" type="timestamp">
+            <column name="dateuploaded" length="23"/>
+        </property>
+        <property name="uploadedby" type="string">
+            <column name="uploadedby" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

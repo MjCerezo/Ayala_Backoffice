@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="AyalaCompany" class="com.etel.ayalacompany.AyalaCompanyFacade" CRUDService="false" type="JavaService" springFile="AyalaCompany.spring.xml">
+    <operation name="deleteCompany">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="listCompany">
+        <return typeRef="com.coopdb.data.AyalaCompany" isList="true"/>
+    </operation>
+    <operation name="saveOrUpdateCompany">
+        <parameter name="com" typeRef="com.coopdb.data.AyalaCompany" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

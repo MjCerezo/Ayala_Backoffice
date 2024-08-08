@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="AccountFacade" class="com.casa.acct.AccountFacade" CRUDService="false" type="JavaService" springFile="AccountFacade.spring.xml">
+    <operation name="acctAlertOff">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <operation name="acctClose">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.acct.forms.AccountGenericForm" isList="false"/>
+    </operation>
+    <operation name="acctInfo">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.acct.forms.AccountMaintenanceForm" isList="false"/>
+    </operation>
+    <operation name="acctSave">
+        <parameter name="form" typeRef="com.casa.acct.forms.AccountMaintenanceForm" isList="false"/>
+        <return typeRef="com.casa.acct.forms.AccountGenericForm" isList="false"/>
+    </operation>
+    <operation name="addPlaceHoldAmt">
+        <parameter name="hold" typeRef="com.coopdb.data.Tbholdamtcheck" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="checkAccount">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.acct.forms.AccountGenericForm" isList="false"/>
+    </operation>
+    <operation name="checkDeceased">
+        <parameter name="memberno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.acct.forms.CheckDeceasedForm" isList="false"/>
+    </operation>
+    <operation name="checkMemberNo">
+        <parameter name="memberno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.user.forms.UserInfoForm" isList="false"/>
+    </operation>
+    <operation name="checkMemberNoName">
+        <parameter name="name" typeRef="java.lang.String" isList="false"/>
+        <parameter name="custtype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.acct.forms.InquiryCIFNameList" isList="true"/>
+    </operation>
+    <operation name="checkMishandled">
+        <parameter name="memberno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="int" isList="false"/>
+    </operation>
+    <operation name="createAccount">
+        <parameter name="dep" typeRef="com.coopdb.data.Tbdeposit" isList="false"/>
+        <parameter name="ciflist" typeRef="com.coopdb.data.Tbdepositcif" isList="true"/>
+        <return typeRef="com.casa.acct.forms.AccountGenericForm" isList="false"/>
+    </operation>
+    <operation name="createAccountWithCIF">
+        <parameter name="dep" typeRef="com.coopdb.data.Tbdeposit" isList="false"/>
+        <parameter name="ciflist" typeRef="com.coopdb.data.Tbdepositcif" isList="true"/>
+        <parameter name="list" typeRef="com.etel.qdeforms.QDEParameterForm" isList="true"/>
+        <parameter name="ciftype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifstatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="isencoding" typeRef="boolean" isList="false"/>
+        <return typeRef="com.casa.acct.forms.AccountGenericForm" isList="false"/>
+    </operation>
+    <operation name="createNewProduct">
+        <parameter name="input" typeRef="com.coopdb.data.Tbprodmatrix" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteExternalAcct">
+        <parameter name="id" typeRef="int" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="externalList">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="accttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbotheraccounts" isList="true"/>
+    </operation>
+    <operation name="freezeAccount">
+        <parameter name="data" typeRef="com.coopdb.data.Tbfreezeaccount" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getAcctClosure">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.acct.forms.AccountClosureForm" isList="false"/>
+    </operation>
+    <operation name="getControlno">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getExtAcctbyID">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbotheraccounts" isList="false"/>
+    </operation>
+    <operation name="getFloatItems">
+        <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbchecksforclearing" isList="true"/>
+    </operation>
+    <operation name="getFreezeInfo">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbfreezeaccount" isList="false"/>
+    </operation>
+    <operation name="getHoldAmtList">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.acct.forms.PlaceHoldForm" isList="true"/>
+    </operation>
+    <operation name="getListHoldAmt">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbholdamtcheck" isList="true"/>
+    </operation>
+    <operation name="getProdList">
+        <parameter name="prodgroup" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbprodmatrix" isList="true"/>
+    </operation>
+    <operation name="getProductDetail">
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="subprodcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbprodmatrix" isList="false"/>
+    </operation>
+    <operation name="getTDCList">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.acct.forms.TimeDepositCertForm" isList="true"/>
+    </operation>
+    <operation name="getTimeDepAcctDet">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.acct.forms.TimeDepositAccountDetailForm" isList="false"/>
+    </operation>
+    <operation name="getTimeDepAcctList">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.acct.forms.TimeDepositListForm" isList="true"/>
+    </operation>
+    <operation name="getTimeDepMatAcctList">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdeposit" isList="true"/>
+    </operation>
+    <operation name="initForm">
+        <return typeRef="com.casa.acct.forms.AccountClosureFormDetail" isList="false"/>
+    </operation>
+    <operation name="liftFreeze">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="liftHoldAmt">
+        <parameter name="id" typeRef="int" isList="false"/>
+        <parameter name="liftreason" typeRef="java.lang.String" isList="false"/>
+        <parameter name="businessdt" typeRef="java.util.Date" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.acct.forms.AccountGenericForm" isList="false"/>
+    </operation>
+    <operation name="liftSPO">
+        <parameter name="id" typeRef="int" isList="false"/>
+        <parameter name="liftreason" typeRef="java.lang.String" isList="false"/>
+        <parameter name="businessdt" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="com.casa.acct.forms.AccountGenericForm" isList="false"/>
+    </operation>
+    <operation name="listAccountsByProduct">
+        <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="name" typeRef="java.lang.String" isList="false"/>
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.acct.forms.AccountMaintenanceForm" isList="true"/>
+    </operation>
+    <operation name="listCIFWatchlist">
+        <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.acct.forms.CIFWatchlistMainForm" isList="false"/>
+    </operation>
+    <operation name="listFileMaintenanceHistory">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.acct.forms.FileMaintenanceHistory" isList="true"/>
+    </operation>
+    <operation name="listLiftGarnish">
+        <parameter name="accountNo" typeRef="java.lang.String" isList="false"/>
+        <parameter name="acctsStaus" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.acct.forms.LiftGarnishFormData" isList="true"/>
+    </operation>
+    <operation name="listLockedAmount">
+        <parameter name="typeoflock" typeRef="java.lang.String" isList="false"/>
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="amount" typeRef="java.math.BigDecimal" isList="false"/>
+        <parameter name="reason" typeRef="java.lang.String" isList="false"/>
+        <parameter name="expirydate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tblockamount" isList="true"/>
+    </operation>
+    <operation name="listMaturedAccounts">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbtimedeposit" isList="true"/>
+    </operation>
+    <operation name="lockUnlockAmount">
+        <parameter name="lockamount" typeRef="com.coopdb.data.Tblockamount" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="placeHoldAmt">
+        <parameter name="record" typeRef="com.coopdb.data.Tbholdamtcheck" isList="false"/>
+        <return typeRef="com.casa.acct.forms.AccountGenericForm" isList="false"/>
+    </operation>
+    <operation name="placeHoldCheck">
+        <parameter name="record" typeRef="com.coopdb.data.Tbholdamtcheck" isList="false"/>
+        <return typeRef="com.casa.acct.forms.AccountGenericForm" isList="false"/>
+    </operation>
+    <operation name="pretermTDAccount">
+        <parameter name="td" typeRef="com.coopdb.data.Tbtimedeposit" isList="false"/>
+        <parameter name="modeOfPayment" typeRef="java.lang.String" isList="false"/>
+        <parameter name="creditAcctNo" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="rolloverTimeDepositAccount">
+        <parameter name="dep" typeRef="com.coopdb.data.Tbdeposit" isList="false"/>
+        <return typeRef="com.casa.acct.forms.AccountGenericForm" isList="false"/>
+    </operation>
+    <operation name="saveOrupdateExternalAcct">
+        <parameter name="ext" typeRef="com.cifsdb.data.Tbotheraccounts" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveTDDetails">
+        <parameter name="td" typeRef="com.coopdb.data.Tbtimedeposit" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="searchDeposit">
+        <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="name" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdeposit" isList="true"/>
+    </operation>
+    <operation name="spoList">
+        <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.acct.forms.StopPaymentOrderForm" isList="true"/>
+    </operation>
+    <operation name="submitMatAcctAction">
+        <parameter name="form" typeRef="com.casa.acct.forms.MaturedAccountActionForm" isList="false"/>
+        <return typeRef="com.casa.acct.forms.AccountGenericForm" isList="false"/>
+    </operation>
+    <operation name="sumExtOutstandingBalance">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="accttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.math.BigDecimal" isList="false"/>
+    </operation>
+    <operation name="updateLiftHoldAmt">
+        <parameter name="hold" typeRef="com.coopdb.data.Tbholdamtcheck" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateSigcard">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="filename" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.casa.acct.forms.AccountGenericForm" name="AccountGenericForm" supportsQuickData="false">
+            <element name="result" typeRef="int" isList="false" allowNull="false"/>
+            <element name="value" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.acct.forms.AccountMaintenanceForm" name="AccountMaintenanceForm" supportsQuickData="false">
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctsts" typeRef="int" isList="false" allowNull="false"/>
+            <element name="alertflag" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="alertlevel" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="alertmessage" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="channel" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dtopened" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="jointaccttype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="posttx" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prodtype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="refofficer" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="shortname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="solofficer" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="watchlist" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ataind" typeRef="boolean" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.acct.forms.CheckDeceasedForm" name="CheckDeceasedForm" supportsQuickData="false">
+            <element name="deceasedflag" typeRef="boolean" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.user.forms.UserInfoForm" name="UserInfoForm" supportsQuickData="false">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateofbirth" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="result" typeRef="int" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.acct.forms.InquiryCIFNameList" name="InquiryCIFNameList" supportsQuickData="false">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="custtype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dob" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="maidenname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.acct.forms.AccountClosureForm" name="AccountClosureForm" supportsQuickData="false">
+            <element name="accountname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="availablebal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="closingbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="currentbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="dtlastupdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="floatamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="holdamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="posttx" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="unpostedint" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="wtaxamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.acct.forms.PlaceHoldForm" name="PlaceHoldForm" supportsQuickData="false">
+            <element name="accountname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="amount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="availbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="datehold" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="expirydate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="holdreason" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="id" typeRef="int" isList="false" allowNull="false"/>
+            <element name="validitydate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.acct.forms.TimeDepositCertForm" name="TimeDepositCertForm" supportsQuickData="false">
+            <element name="accountbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="controlno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datebook" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="intrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="lesswtax" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="matamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="matdt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="placementamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="taxrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="term" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.acct.forms.TimeDepositAccountDetailForm" name="TimeDepositAccountDetailForm" supportsQuickData="false">
+            <element name="branchname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="intrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="lesswtax" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="matamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="opendt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="placementamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="taxrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.acct.forms.TimeDepositListForm" name="TimeDepositListForm" supportsQuickData="false">
+            <element name="accountbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="accountname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="matdt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="term" typeRef="int" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.acct.forms.AccountClosureFormDetail" name="AccountClosureFormDetail" supportsQuickData="false">
+            <element name="accountname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="availablebal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="closingbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="currentbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="dtlastupdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="floatamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="holdamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="posttx" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="unpostedint" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="wtaxamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.acct.forms.CIFWatchlistMainForm" name="CIFWatchlistMainForm" supportsQuickData="false">
+            <element name="list" typeRef="com.casa.acct.forms.CIFWatchlistForm" isList="true" allowNull="false"/>
+            <element name="view" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.acct.forms.FileMaintenanceHistory" name="FileMaintenanceHistory" supportsQuickData="false">
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="effectivitydate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="expirydate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="txname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.acct.forms.LiftGarnishFormData" name="LiftGarnishFormData" supportsQuickData="false">
+            <element name="accountName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="effectivitydate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="expirydate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="lockreason" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.acct.forms.StopPaymentOrderForm" name="StopPaymentOrderForm" supportsQuickData="false">
+            <element name="acctno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="chkno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datehold" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="holdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="reason" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="validitydate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.acct.forms.MaturedAccountActionForm" name="MaturedAccountActionForm" supportsQuickData="false">
+            <element name="cracctno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="deposit" typeRef="com.coopdb.data.Tbdeposit" isList="false" allowNull="false"/>
+            <element name="modeofrelease" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="payoutamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

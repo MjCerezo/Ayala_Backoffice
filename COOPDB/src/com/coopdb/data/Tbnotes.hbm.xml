@@ -1,0 +1,48 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbnotes" table="TBNOTES" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="noteid" type="integer">
+            <column name="noteid"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20" not-null="true"/>
+        </property>
+        <property name="noteddate" type="timestamp">
+            <column name="noteddate" length="23"/>
+        </property>
+        <property name="notedbyuser" type="string">
+            <column name="notedbyuser" length="20"/>
+        </property>
+        <property name="notedby" type="string">
+            <column name="notedby" length="250"/>
+        </property>
+        <property name="notetype" type="string">
+            <column name="notetype" length="2"/>
+        </property>
+        <property name="notes" type="string">
+            <column name="notes" length="8000"/>
+        </property>
+        <property name="isurgent" type="boolean">
+            <column name="isurgent"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="lastupdatedby" type="string">
+            <column name="lastupdatedby" length="20"/>
+        </property>
+        <property name="lastupdatedname" type="string">
+            <column name="lastupdatedname" length="250"/>
+        </property>
+        <property name="datetimeofcall" type="timestamp">
+            <column name="datetimeofcall" length="23"/>
+        </property>
+        <property name="purposeofcall" type="string">
+            <column name="purposeofcall" length="250"/>
+        </property>
+        <property name="phoneno" type="string">
+            <column name="phoneno" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="TimeDepositFacade" class="com.etel.timedeposit.TimeDepositFacade" CRUDService="false" type="JavaService" springFile="TimeDepositFacade.spring.xml">
+    <operation name="changeDisposition">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="newdispo" typeRef="java.lang.String" isList="false"/>
+        <parameter name="credittoacctno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="intdispo" typeRef="java.lang.String" isList="false"/>
+        <parameter name="placementamt" typeRef="java.math.BigDecimal" isList="false"/>
+        <parameter name="term" typeRef="int" isList="false"/>
+        <parameter name="intRate" typeRef="java.math.BigDecimal" isList="false"/>
+        <parameter name="wTaxRate" typeRef="java.math.BigDecimal" isList="false"/>
+        <parameter name="bookDate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="matDate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="tdcno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="passbookno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="computeMaturityDate">
+        <parameter name="placementdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="term" typeRef="int" isList="false"/>
+        <parameter name="termFreq" typeRef="java.lang.String" isList="false"/>
+        <parameter name="skipWeekend" typeRef="int" isList="false"/>
+        <parameter name="skipHoliday" typeRef="int" isList="false"/>
+        <return typeRef="java.util.Date" isList="false"/>
+    </operation>
+    <operation name="getTimeDeposit">
+        <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbtimedeposit" isList="false"/>
+    </operation>
+    <operation name="interestWithdrawal">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="amount" typeRef="java.math.BigDecimal" isList="false"/>
+        <parameter name="modeofrelease" typeRef="java.lang.String" isList="false"/>
+        <parameter name="credtitoaccountno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="amttocredit" typeRef="java.math.BigDecimal" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="listMaturingAccounts">
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="dispo" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbtimedeposit" isList="true"/>
+    </operation>
+    <operation name="terminateAccount">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="disposition" typeRef="java.lang.String" isList="false"/>
+        <parameter name="intdisposition" typeRef="java.lang.String" isList="false"/>
+        <parameter name="prindisposition" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="terminateTDAccount">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="credittoacctno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

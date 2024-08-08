@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="CIFGroupFacade" class="com.etel.cifgroup.CIFGroupFacade" CRUDService="false" type="JavaService" springFile="CIFGroupFacade.spring.xml">
+    <operation name="addCIFGroup">
+        <parameter name="group" typeRef="com.cifsdb.data.Tbcifgroup" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteCIFGroup">
+        <parameter name="groupcode" typeRef="com.cifsdb.data.Tbcifgroup" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="displayCIFGroupDetails">
+        <parameter name="groupcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbcifgroup" isList="true"/>
+    </operation>
+    <operation name="getListCIFGroup">
+        <return typeRef="com.cifsdb.data.Tbcifgroup" isList="true"/>
+    </operation>
+    <operation name="updateCIFGroup">
+        <parameter name="group" typeRef="com.cifsdb.data.Tbcifgroup" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

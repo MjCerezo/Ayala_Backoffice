@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbpolicygroup" table="TBPOLICYGROUP" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="modelno" type="string">
+            <column name="modelno" length="100"/>
+        </property>
+        <property name="groupname" type="string">
+            <column name="groupname" length="250"/>
+        </property>
+        <property name="groupkey" type="string">
+            <column name="groupkey" length="250"/>
+        </property>
+        <property name="policydesc" type="string">
+            <column name="policydesc" length="250"/>
+        </property>
+        <property name="approvallevel" type="string">
+            <column name="approvallevel" length="250"/>
+        </property>
+        <property name="keydesc" type="string">
+            <column name="keydesc" length="250"/>
+        </property>
+        <property name="keyids" type="string">
+            <column name="keyids" length="200"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="100"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

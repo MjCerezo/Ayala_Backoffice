@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="DepositProductInterestFacade" class="com.etel.depositproductinterest.DepositProductInterestFacade" CRUDService="false" type="JavaService" springFile="DepositProductInterestFacade.spring.xml">
+    <operation name="listDepositProductInterestRates">
+        <parameter name="depositproductinterestrate" typeRef="com.coopdb.data.Tbdepositproductinterestrate" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdepositproductinterestrate" isList="true"/>
+    </operation>
+    <operation name="saveOrUpdateProductInterest">
+        <parameter name="depositproductinterestrate" typeRef="com.coopdb.data.Tbdepositproductinterestrate" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>
