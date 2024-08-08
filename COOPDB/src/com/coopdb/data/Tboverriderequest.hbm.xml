@@ -1,0 +1,48 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tboverriderequest" table="TBOVERRIDEREQUEST" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txrefno" type="string">
+            <column name="txrefno" length="50"/>
+        </property>
+        <property name="txcode" type="string">
+            <column name="txcode" length="6"/>
+        </property>
+        <property name="accountno" type="string">
+            <column name="accountno" length="20"/>
+        </property>
+        <property name="requestdate" type="timestamp">
+            <column name="requestdate" length="23"/>
+        </property>
+        <property name="requestedby" type="string">
+            <column name="requestedby" length="50"/>
+        </property>
+        <property name="overrideby" type="string">
+            <column name="overrideby" length="50"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="50"/>
+        </property>
+        <property name="statusdate" type="timestamp">
+            <column name="statusdate" length="23"/>
+        </property>
+        <property name="overriderule" type="string">
+            <column name="overriderule" length="50"/>
+        </property>
+        <property name="overrideruleid" type="integer">
+            <column name="overrideruleid"/>
+        </property>
+        <property name="requirementtype" type="string">
+            <column name="requirementtype" length="50"/>
+        </property>
+        <property name="requirementgroup" type="string">
+            <column name="requirementgroup" length="50"/>
+        </property>
+        <property name="overridemessage" type="string">
+            <column name="overridemessage" length="150"/>
+        </property>
+    </class>
+</hibernate-mapping>

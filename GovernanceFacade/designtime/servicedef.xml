@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="GovernanceFacade" class="com.etel.governance.GovernanceFacade" CRUDService="false" type="JavaService" springFile="GovernanceFacade.spring.xml">
+    <operation name="getEvents">
+        <parameter name="govertype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbeventschecklist" isList="true"/>
+    </operation>
+    <operation name="getMember">
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.governance.governancePojo" isList="false"/>
+    </operation>
+    <operation name="getMemberEventsforUpdates">
+        <parameter name="govertype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbeventschecklist" isList="true"/>
+    </operation>
+    <operation name="getMemberGovernance">
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmembereventschecklist" isList="true"/>
+    </operation>
+    <operation name="getMemberchecklist">
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbeventschecklist" isList="true"/>
+    </operation>
+    <operation name="saveMemberEvents">
+        <parameter name="eventcode" typeRef="java.lang.String" isList="true"/>
+        <parameter name="hasattended" typeRef="java.lang.Boolean" isList="true"/>
+        <parameter name="governancetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="setUpGovernance">
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="governancetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateGovernancePerId">
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="hasattended" typeRef="java.lang.Boolean" isList="false"/>
+        <parameter name="eventdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="required" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateMemberEvents">
+        <parameter name="eventcode" typeRef="java.lang.String" isList="true"/>
+        <parameter name="hasattended" typeRef="java.lang.Boolean" isList="true"/>
+        <parameter name="governancetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateMemberEventsChecklist">
+        <parameter name="list" typeRef="com.coopdb.data.Tbeventschecklist" isList="true"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateMemberGovernanceEvents">
+        <parameter name="memberevent" typeRef="com.coopdb.data.Tbmembereventschecklist" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.coopdb.data.Tbeventschecklist" name="Tbeventschecklist" supportsQuickData="false">
+            <element name="eventcode" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="eventdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="eventname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="eventtype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="governancetype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="hasattended" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="isrequired" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="membershipappid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershipid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.governance.governancePojo" name="governancePojo" supportsQuickData="false">
+            <element name="chapter" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="governancetype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membergovernancechecklist" typeRef="com.coopdb.data.Tbmembereventschecklist" isList="true" allowNull="false"/>
+            <element name="membername" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershipclass" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershipdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="membershipid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="membershipstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

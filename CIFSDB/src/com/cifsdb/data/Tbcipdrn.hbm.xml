@@ -1,0 +1,132 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbcipdrn" table="TBCIPDRN" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="cireportid" type="string">
+            <column name="cireportid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="10"/>
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="100"/>
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="100"/>
+        </property>
+        <property name="middlename" type="string">
+            <column name="middlename" length="100"/>
+        </property>
+        <property name="suffix" type="string">
+            <column name="suffix" length="10"/>
+        </property>
+        <property name="dateofbirth" type="timestamp">
+            <column name="dateofbirth" length="23"/>
+        </property>
+        <property name="age" type="integer">
+            <column name="age"/>
+        </property>
+        <property name="nationality" type="string">
+            <column name="nationality" length="50"/>
+        </property>
+        <property name="civilstatus" type="string">
+            <column name="civilstatus" length="10"/>
+        </property>
+        <property name="incomesource" type="string">
+            <column name="incomesource" length="10"/>
+        </property>
+        <property name="homephone" type="string">
+            <column name="homephone" length="50"/>
+        </property>
+        <property name="mobilephone" type="string">
+            <column name="mobilephone" length="50"/>
+        </property>
+        <property name="spousetitle" type="string">
+            <column name="spousetitle" length="10"/>
+        </property>
+        <property name="spouselastname" type="string">
+            <column name="spouselastname" length="100"/>
+        </property>
+        <property name="spousefirstname" type="string">
+            <column name="spousefirstname" length="100"/>
+        </property>
+        <property name="spousemiddlename" type="string">
+            <column name="spousemiddlename" length="100"/>
+        </property>
+        <property name="spousesuffix" type="string">
+            <column name="spousesuffix" length="10"/>
+        </property>
+        <property name="spousedateofbirth" type="timestamp">
+            <column name="spousedateofbirth" length="23"/>
+        </property>
+        <property name="spouseage" type="integer">
+            <column name="spouseage"/>
+        </property>
+        <property name="spousenationality" type="string">
+            <column name="spousenationality" length="50"/>
+        </property>
+        <property name="spouseincomesource" type="string">
+            <column name="spouseincomesource" length="10"/>
+        </property>
+        <property name="homeno" type="string">
+            <column name="homeno" length="50"/>
+        </property>
+        <property name="streetno" type="string">
+            <column name="streetno" length="50"/>
+        </property>
+        <property name="streetname" type="string">
+            <column name="streetname" length="100"/>
+        </property>
+        <property name="barangay" type="string">
+            <column name="barangay" length="100"/>
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="50"/>
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="50"/>
+        </property>
+        <property name="postalcode" type="string">
+            <column name="postalcode" length="50"/>
+        </property>
+        <property name="lengthofstayyears" type="integer">
+            <column name="lengthofstayyears"/>
+        </property>
+        <property name="lengthofstaymonths" type="integer">
+            <column name="lengthofstaymonths"/>
+        </property>
+        <property name="previousaddress" type="string">
+            <column name="previousaddress" length="300"/>
+        </property>
+        <property name="reputation" type="string">
+            <column name="reputation" length="50"/>
+        </property>
+        <property name="appcategory" type="string">
+            <column name="appcategory" length="50"/>
+        </property>
+        <property name="loanpurpose" type="string">
+            <column name="loanpurpose" length="50"/>
+        </property>
+        <property name="acctofficer" type="string">
+            <column name="acctofficer" length="50"/>
+        </property>
+        <property name="prevlengthofstayyears" type="integer">
+            <column name="prevlengthofstayyears"/>
+        </property>
+        <property name="prevlengthofstaymonths" type="integer">
+            <column name="prevlengthofstaymonths"/>
+        </property>
+        <property name="provincialaddress" type="string">
+            <column name="provincialaddress" length="300"/>
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

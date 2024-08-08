@@ -1,0 +1,19 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbmembershiptypeperbos" table="TBMEMBERSHIPTYPEPERBOS" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.TbmembershiptypeperbosId">
+            <key-property name="boscode" type="string">
+                <column name="boscode" length="10"/>
+            </key-property>
+            <key-property name="membertypecode" type="string">
+                <column name="membertypecode" length="50"/>
+            </key-property>
+        </composite-id>
+        <property name="dateadded" type="timestamp">
+            <column name="dateadded" length="23"/>
+        </property>
+        <property name="addedby" type="string">
+            <column name="addedby" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,90 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbcasafin" table="TBCASAFIN" catalog="COOPDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txbatch" type="string">
+            <column name="Txbatch" length="3"/>
+        </property>
+        <property name="txdate" type="timestamp">
+            <column name="Txdate" length="23"/>
+        </property>
+        <property name="txRefNo" type="string">
+            <column name="TxRefNo" length="20"/>
+        </property>
+        <property name="txcode" type="string">
+            <column name="Txcode" length="3"/>
+        </property>
+        <property name="txmode" type="string">
+            <column name="Txmode" length="1"/>
+        </property>
+        <property name="txvaldt" type="timestamp">
+            <column name="Txvaldt" length="23"/>
+        </property>
+        <property name="slaidNo" type="string">
+            <column name="SLAIdNo" length="12"/>
+        </property>
+        <property name="employeeNo" type="string">
+            <column name="EmployeeNo" length="12"/>
+        </property>
+        <property name="lastName" type="string">
+            <column name="LastName" length="50"/>
+        </property>
+        <property name="firstName" type="string">
+            <column name="FirstName" length="50"/>
+        </property>
+        <property name="middleName" type="string">
+            <column name="MiddleName" length="50"/>
+        </property>
+        <property name="accountNo" type="string">
+            <column name="AccountNo" length="20"/>
+        </property>
+        <property name="txAmount" type="big_decimal">
+            <column name="TxAmount" precision="16"/>
+        </property>
+        <property name="txStatus" type="string">
+            <column name="TxStatus" length="1"/>
+        </property>
+        <property name="txStatusDate" type="timestamp">
+            <column name="TxStatusDate" length="23"/>
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CreatedBy" length="50"/>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="CreationDate" length="23"/>
+        </property>
+        <property name="approvedBy" type="string">
+            <column name="ApprovedBy" length="50"/>
+        </property>
+        <property name="approvalDate" type="timestamp">
+            <column name="ApprovalDate" length="23"/>
+        </property>
+        <property name="txoper" type="integer">
+            <column name="Txoper"/>
+        </property>
+        <property name="particulars" type="string">
+            <column name="Particulars" length="200"/>
+        </property>
+        <property name="reason" type="string">
+            <column name="Reason" length="3"/>
+        </property>
+        <property name="brstn" type="string">
+            <column name="brstn" length="20"/>
+        </property>
+        <property name="checkamount" type="big_decimal">
+            <column name="checkamount" precision="16"/>
+        </property>
+        <property name="checkdate" type="string">
+            <column name="checkdate" length="10"/>
+        </property>
+        <property name="checknumber" type="string">
+            <column name="checknumber" length="20"/>
+        </property>
+        <property name="checktype" type="integer">
+            <column name="checktype"/>
+        </property>
+    </class>
+</hibernate-mapping>

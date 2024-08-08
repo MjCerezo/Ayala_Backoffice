@@ -1,0 +1,13 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Jointaccounts" table="jointaccounts" catalog="ACACIADBDXBANK_SAMULCO" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.JointaccountsId">
+            <key-property name="oldAccountNumber" type="string">
+                <column name="OldAccountNumber" length="50"/>
+            </key-property>
+            <key-property name="oldCifnumber" type="string">
+                <column name="OldCIFNumber" length="50"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

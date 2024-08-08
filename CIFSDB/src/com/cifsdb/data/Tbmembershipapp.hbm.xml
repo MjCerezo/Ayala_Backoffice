@@ -1,0 +1,642 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbmembershipapp" table="TBMEMBERSHIPAPP" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="membershipappid" type="string">
+            <column name="membershipappid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="membershipid" type="string">
+            <column name="membershipid" length="20"/>
+        </property>
+        <property name="membershipappstatus" type="string">
+            <column name="membershipappstatus" length="2"/>
+        </property>
+        <property name="oldemployeeid" type="string">
+            <column name="oldemployeeid" length="50"/>
+        </property>
+        <property name="newemployeeid" type="string">
+            <column name="newemployeeid" length="50"/>
+        </property>
+        <property name="isreturnee" type="boolean">
+            <column name="isreturnee"/>
+        </property>
+        <property name="isregular" type="boolean">
+            <column name="isregular"/>
+        </property>
+        <property name="applicanttype" type="string">
+            <column name="applicanttype" length="10"/>
+        </property>
+        <property name="applicationdate" type="timestamp">
+            <column name="applicationdate" length="23"/>
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="100"/>
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="100"/>
+        </property>
+        <property name="middlename" type="string">
+            <column name="middlename" length="100"/>
+        </property>
+        <property name="suffix" type="string">
+            <column name="suffix" length="10"/>
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="10"/>
+        </property>
+        <property name="shortname" type="string">
+            <column name="shortname" length="50"/>
+        </property>
+        <property name="nationality" type="string">
+            <column name="nationality" length="50"/>
+        </property>
+        <property name="civilstatus" type="string">
+            <column name="civilstatus" length="10"/>
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="10"/>
+        </property>
+        <property name="dateofbirth" type="timestamp">
+            <column name="dateofbirth" length="23"/>
+        </property>
+        <property name="age" type="integer">
+            <column name="age"/>
+        </property>
+        <property name="placeofbirth" type="string">
+            <column name="placeofbirth" length="50"/>
+        </property>
+        <property name="countryofbirth" type="string">
+            <column name="countryofbirth" length="50"/>
+        </property>
+        <property name="bloodtype" type="string">
+            <column name="bloodtype" length="10"/>
+        </property>
+        <property name="heightfeet" type="string">
+            <column name="heightfeet" length="50"/>
+        </property>
+        <property name="heightinches" type="string">
+            <column name="heightinches" length="50"/>
+        </property>
+        <property name="weight" type="big_decimal">
+            <column name="weight" precision="20"/>
+        </property>
+        <property name="religion" type="string">
+            <column name="religion" length="50"/>
+        </property>
+        <property name="socialaffiliation" type="string">
+            <column name="socialaffiliation" length="50"/>
+        </property>
+        <property name="highesteducation" type="string">
+            <column name="highesteducation" length="100"/>
+        </property>
+        <property name="streetnoname1" type="string">
+            <column name="streetnoname1" length="100"/>
+        </property>
+        <property name="subdivision1" type="string">
+            <column name="subdivision1" length="50"/>
+        </property>
+        <property name="barangay1" type="string">
+            <column name="barangay1" length="50"/>
+        </property>
+        <property name="stateprovince1" type="string">
+            <column name="stateprovince1" length="50"/>
+        </property>
+        <property name="city1" type="string">
+            <column name="city1" length="50"/>
+        </property>
+        <property name="region1" type="string">
+            <column name="region1" length="50"/>
+        </property>
+        <property name="country1" type="string">
+            <column name="country1" length="50"/>
+        </property>
+        <property name="postalcode1" type="string">
+            <column name="postalcode1" length="50"/>
+        </property>
+        <property name="occupiedsince1" type="timestamp">
+            <column name="occupiedsince1" length="23"/>
+        </property>
+        <property name="ownershiptype1" type="string">
+            <column name="ownershiptype1" length="50"/>
+        </property>
+        <property name="fulladdress1" type="string">
+            <column name="fulladdress1" length="300"/>
+        </property>
+        <property name="sameaspermanentaddress" type="boolean">
+            <column name="sameaspermanentaddress"/>
+        </property>
+        <property name="streetnoname2" type="string">
+            <column name="streetnoname2" length="100"/>
+        </property>
+        <property name="subdivision2" type="string">
+            <column name="subdivision2" length="50"/>
+        </property>
+        <property name="barangay2" type="string">
+            <column name="barangay2" length="50"/>
+        </property>
+        <property name="stateprovince2" type="string">
+            <column name="stateprovince2" length="50"/>
+        </property>
+        <property name="city2" type="string">
+            <column name="city2" length="50"/>
+        </property>
+        <property name="region2" type="string">
+            <column name="region2" length="50"/>
+        </property>
+        <property name="country2" type="string">
+            <column name="country2" length="50"/>
+        </property>
+        <property name="postalcode2" type="string">
+            <column name="postalcode2" length="50"/>
+        </property>
+        <property name="fulladdress2" type="string">
+            <column name="fulladdress2" length="300"/>
+        </property>
+        <property name="occupiedsince2" type="timestamp">
+            <column name="occupiedsince2" length="23"/>
+        </property>
+        <property name="ownershiptype2" type="string">
+            <column name="ownershiptype2" length="50"/>
+        </property>
+        <property name="homephoneareacode" type="string">
+            <column name="homephoneareacode" length="5"/>
+        </property>
+        <property name="homephoneno" type="string">
+            <column name="homephoneno" length="50"/>
+        </property>
+        <property name="mobilephoneareacode" type="string">
+            <column name="mobilephoneareacode" length="5"/>
+        </property>
+        <property name="mobilephoneno" type="string">
+            <column name="mobilephoneno" length="50"/>
+        </property>
+        <property name="officephoneareacode" type="string">
+            <column name="officephoneareacode" length="5"/>
+        </property>
+        <property name="officephoneno" type="string">
+            <column name="officephoneno" length="50"/>
+        </property>
+        <property name="schoolpostgraduate" type="string">
+            <column name="schoolpostgraduate" length="100"/>
+        </property>
+        <property name="coursepostgraduate" type="string">
+            <column name="coursepostgraduate" length="100"/>
+        </property>
+        <property name="postgradyear" type="string">
+            <column name="postgradyear" length="20"/>
+        </property>
+        <property name="schoolcollege" type="string">
+            <column name="schoolcollege" length="100"/>
+        </property>
+        <property name="coursecollege" type="string">
+            <column name="coursecollege" length="100"/>
+        </property>
+        <property name="collegegradyear" type="string">
+            <column name="collegegradyear" length="20"/>
+        </property>
+        <property name="isstockholder" type="boolean">
+            <column name="isstockholder"/>
+        </property>
+        <property name="isdirector" type="boolean">
+            <column name="isdirector"/>
+        </property>
+        <property name="salary" type="big_decimal">
+            <column name="salary" precision="20"/>
+        </property>
+        <property name="businessincome" type="big_decimal">
+            <column name="businessincome" precision="20"/>
+        </property>
+        <property name="otherincome" type="big_decimal">
+            <column name="otherincome" precision="20"/>
+        </property>
+        <property name="spousesalary" type="big_decimal">
+            <column name="spousesalary" precision="20"/>
+        </property>
+        <property name="spousebusinesssalary" type="big_decimal">
+            <column name="spousebusinesssalary" precision="20"/>
+        </property>
+        <property name="spouseotherincome" type="big_decimal">
+            <column name="spouseotherincome" precision="20"/>
+        </property>
+        <property name="spouselastname" type="string">
+            <column name="spouselastname" length="100"/>
+        </property>
+        <property name="spousefirstname" type="string">
+            <column name="spousefirstname" length="100"/>
+        </property>
+        <property name="spousemiddlename" type="string">
+            <column name="spousemiddlename" length="100"/>
+        </property>
+        <property name="spousemaidenname" type="string">
+            <column name="spousemaidenname" length="100"/>
+        </property>
+        <property name="spousesuffix" type="string">
+            <column name="spousesuffix" length="20"/>
+        </property>
+        <property name="tin" type="string">
+            <column name="tin" length="20"/>
+        </property>
+        <property name="sss" type="string">
+            <column name="sss" length="20"/>
+        </property>
+        <property name="gsis" type="string">
+            <column name="gsis" length="20"/>
+        </property>
+        <property name="areacodephone" type="string">
+            <column name="areacodephone" length="10"/>
+        </property>
+        <property name="phoneno" type="string">
+            <column name="phoneno" length="20"/>
+        </property>
+        <property name="emailaddress" type="string">
+            <column name="emailaddress" length="50"/>
+        </property>
+        <property name="idtype" type="string">
+            <column name="idtype" length="20"/>
+        </property>
+        <property name="idno" type="string">
+            <column name="idno" length="50"/>
+        </property>
+        <property name="issuedate" type="timestamp">
+            <column name="issuedate" length="23"/>
+        </property>
+        <property name="expirydate" type="timestamp">
+            <column name="expirydate" length="23"/>
+        </property>
+        <property name="chaptercode" type="string">
+            <column name="chaptercode" length="50"/>
+        </property>
+        <property name="encodedby" type="string">
+            <column name="encodedby" length="50"/>
+        </property>
+        <property name="encodeddate" type="timestamp">
+            <column name="encodeddate" length="23"/>
+        </property>
+        <property name="edcomapprover" type="string">
+            <column name="edcomapprover" length="50"/>
+        </property>
+        <property name="edcomapprovalstatus" type="string">
+            <column name="edcomapprovalstatus" length="50"/>
+        </property>
+        <property name="edcomappstatusdate" type="timestamp">
+            <column name="edcomappstatusdate" length="23"/>
+        </property>
+        <property name="edcomapproverremarks" type="string">
+            <column name="edcomapproverremarks" length="300"/>
+        </property>
+        <property name="boardapprover" type="string">
+            <column name="boardapprover" length="50"/>
+        </property>
+        <property name="boardapprovalstatus" type="string">
+            <column name="boardapprovalstatus" length="50"/>
+        </property>
+        <property name="boardappstatusdate" type="timestamp">
+            <column name="boardappstatusdate" length="23"/>
+        </property>
+        <property name="boardapproverremarks" type="string">
+            <column name="boardapproverremarks" length="300"/>
+        </property>
+        <property name="assignedto" type="string">
+            <column name="assignedto" length="50"/>
+        </property>
+        <property name="assigneddate" type="timestamp">
+            <column name="assigneddate" length="23"/>
+        </property>
+        <property name="cashier" type="string">
+            <column name="cashier" length="50"/>
+        </property>
+        <property name="paymentapprovaldate" type="timestamp">
+            <column name="paymentapprovaldate" length="23"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="300"/>
+        </property>
+        <property name="recommendedby" type="string">
+            <column name="recommendedby" length="50"/>
+        </property>
+        <property name="recommendationdate" type="timestamp">
+            <column name="recommendationdate" length="23"/>
+        </property>
+        <property name="reviewedby" type="string">
+            <column name="reviewedby" length="50"/>
+        </property>
+        <property name="revieweddate" type="timestamp">
+            <column name="revieweddate" length="23"/>
+        </property>
+        <property name="issameasapplicant" type="boolean">
+            <column name="issameasapplicant"/>
+        </property>
+        <property name="spousestreetnoname" type="string">
+            <column name="spousestreetnoname" length="100"/>
+        </property>
+        <property name="spousesubdivision" type="string">
+            <column name="spousesubdivision" length="50"/>
+        </property>
+        <property name="spousebarangay" type="string">
+            <column name="spousebarangay" length="50"/>
+        </property>
+        <property name="spousestateprovince" type="string">
+            <column name="spousestateprovince" length="50"/>
+        </property>
+        <property name="spousecity" type="string">
+            <column name="spousecity" length="50"/>
+        </property>
+        <property name="spouseregion" type="string">
+            <column name="spouseregion" length="50"/>
+        </property>
+        <property name="spousecountry" type="string">
+            <column name="spousecountry" length="50"/>
+        </property>
+        <property name="spousepostalcode" type="string">
+            <column name="spousepostalcode" length="50"/>
+        </property>
+        <property name="spousefulladdress" type="string">
+            <column name="spousefulladdress" length="100"/>
+        </property>
+        <property name="spouseoccupiedsince" type="timestamp">
+            <column name="spouseoccupiedsince" length="23"/>
+        </property>
+        <property name="spouseownershiptype" type="string">
+            <column name="spouseownershiptype" length="50"/>
+        </property>
+        <property name="issameasapplicantmother" type="boolean">
+            <column name="issameasapplicantmother"/>
+        </property>
+        <property name="motherstreetnoname" type="string">
+            <column name="motherstreetnoname" length="100"/>
+        </property>
+        <property name="mothersubdivision" type="string">
+            <column name="mothersubdivision" length="50"/>
+        </property>
+        <property name="motherbarangay" type="string">
+            <column name="motherbarangay" length="50"/>
+        </property>
+        <property name="motherstateprovince" type="string">
+            <column name="motherstateprovince" length="50"/>
+        </property>
+        <property name="mothercity" type="string">
+            <column name="mothercity" length="50"/>
+        </property>
+        <property name="motherregion" type="string">
+            <column name="motherregion" length="50"/>
+        </property>
+        <property name="mothercountry" type="string">
+            <column name="mothercountry" length="50"/>
+        </property>
+        <property name="motherpostalcode" type="string">
+            <column name="motherpostalcode" length="50"/>
+        </property>
+        <property name="motherfulladdress" type="string">
+            <column name="motherfulladdress" length="100"/>
+        </property>
+        <property name="motheroccupiedsince" type="timestamp">
+            <column name="motheroccupiedsince" length="23"/>
+        </property>
+        <property name="motherownershiptype" type="string">
+            <column name="motherownershiptype" length="50"/>
+        </property>
+        <property name="motherlastname" type="string">
+            <column name="motherlastname" length="100"/>
+        </property>
+        <property name="motherfirstname" type="string">
+            <column name="motherfirstname" length="100"/>
+        </property>
+        <property name="mothermiddlename" type="string">
+            <column name="mothermiddlename" length="100"/>
+        </property>
+        <property name="mothermaidenname" type="string">
+            <column name="mothermaidenname" length="100"/>
+        </property>
+        <property name="mothersuffix" type="string">
+            <column name="mothersuffix" length="10"/>
+        </property>
+        <property name="issameasapplicantfather" type="boolean">
+            <column name="issameasapplicantfather"/>
+        </property>
+        <property name="fatherstreetnoname" type="string">
+            <column name="fatherstreetnoname" length="100"/>
+        </property>
+        <property name="fathersubdivision" type="string">
+            <column name="fathersubdivision" length="50"/>
+        </property>
+        <property name="fatherbarangay" type="string">
+            <column name="fatherbarangay" length="50"/>
+        </property>
+        <property name="fatherstateprovince" type="string">
+            <column name="fatherstateprovince" length="50"/>
+        </property>
+        <property name="fathercity" type="string">
+            <column name="fathercity" length="50"/>
+        </property>
+        <property name="fatherregion" type="string">
+            <column name="fatherregion" length="50"/>
+        </property>
+        <property name="fathercountry" type="string">
+            <column name="fathercountry" length="50"/>
+        </property>
+        <property name="fatherpostalcode" type="string">
+            <column name="fatherpostalcode" length="50"/>
+        </property>
+        <property name="fatherfulladdress" type="string">
+            <column name="fatherfulladdress" length="100"/>
+        </property>
+        <property name="fatheroccupiedsince" type="timestamp">
+            <column name="fatheroccupiedsince" length="23"/>
+        </property>
+        <property name="fatherownershiptype" type="string">
+            <column name="fatherownershiptype" length="50"/>
+        </property>
+        <property name="fatherlastname" type="string">
+            <column name="fatherlastname" length="100"/>
+        </property>
+        <property name="fatherfirstname" type="string">
+            <column name="fatherfirstname" length="100"/>
+        </property>
+        <property name="fathermiddlename" type="string">
+            <column name="fathermiddlename" length="100"/>
+        </property>
+        <property name="fathersuffix" type="string">
+            <column name="fathersuffix" length="10"/>
+        </property>
+        <property name="referroname" type="string">
+            <column name="referroname" length="300"/>
+        </property>
+        <property name="referrorfulladdress" type="string">
+            <column name="referrorfulladdress" length="300"/>
+        </property>
+        <property name="ismemberofothercoop" type="boolean">
+            <column name="ismemberofothercoop"/>
+        </property>
+        <property name="isspousemember" type="boolean">
+            <column name="isspousemember"/>
+        </property>
+        <property name="isfathermember" type="boolean">
+            <column name="isfathermember"/>
+        </property>
+        <property name="ismothermember" type="boolean">
+            <column name="ismothermember"/>
+        </property>
+        <property name="statusdate" type="timestamp">
+            <column name="statusdate" length="23"/>
+        </property>
+        <property name="boardresno" type="string">
+            <column name="boardresno" length="10"/>
+        </property>
+        <property name="membershipclass" type="string">
+            <column name="membershipclass" length="50"/>
+        </property>
+        <property name="withmoa" type="boolean">
+            <column name="withmoa"/>
+        </property>
+        <property name="branch" type="string">
+            <column name="branch" length="50"/>
+        </property>
+        <property name="primaryschoolname" type="string">
+            <column name="primaryschoolname" length="100"/>
+        </property>
+        <property name="primaryyrgrad" type="string">
+            <column name="primaryyrgrad" length="4"/>
+        </property>
+        <property name="secondschoolname" type="string">
+            <column name="secondschoolname" length="100"/>
+        </property>
+        <property name="secondyrgrad" type="string">
+            <column name="secondyrgrad" length="4"/>
+        </property>
+        <property name="tertiaryschoolname" type="string">
+            <column name="tertiaryschoolname" length="100"/>
+        </property>
+        <property name="tertiarycourse" type="string">
+            <column name="tertiarycourse" length="50"/>
+        </property>
+        <property name="tertiaryyrgrad" type="string">
+            <column name="tertiaryyrgrad" length="4"/>
+        </property>
+        <property name="orno" type="string">
+            <column name="orno" length="50"/>
+        </property>
+        <property name="capconpledge" type="big_decimal">
+            <column name="capconpledge" precision="20"/>
+        </property>
+        <property name="savingspledge" type="big_decimal">
+            <column name="savingspledge" precision="20"/>
+        </property>
+        <property name="applicantsource" type="string">
+            <column name="applicantsource" length="50"/>
+        </property>
+        <property name="employeeid" type="string">
+            <column name="employeeid" length="50"/>
+        </property>
+        <property name="sharecapital" type="big_decimal">
+            <column name="sharecapital" precision="20"/>
+        </property>
+        <property name="noofshares" type="integer">
+            <column name="noofshares"/>
+        </property>
+        <property name="shareparvalue" type="big_decimal">
+            <column name="shareparvalue" precision="20"/>
+        </property>
+        <property name="attendedseminar" type="boolean">
+            <column name="attendedseminar"/>
+        </property>
+        <property name="seminardate" type="timestamp">
+            <column name="seminardate" length="23"/>
+        </property>
+        <property name="mothermembershipid" type="string">
+            <column name="mothermembershipid" length="20"/>
+        </property>
+        <property name="fathermembershipid" type="string">
+            <column name="fathermembershipid" length="20"/>
+        </property>
+        <property name="spousemembershipid" type="string">
+            <column name="spousemembershipid" length="20"/>
+        </property>
+        <property name="coopcode" type="string">
+            <column name="coopcode" length="20"/>
+        </property>
+        <property name="companycode" type="string">
+            <column name="companycode" length="50"/>
+        </property>
+        <property name="spousedob" type="timestamp">
+            <column name="spousedob" length="23"/>
+        </property>
+        <property name="spousetitle" type="string">
+            <column name="spousetitle" length="5"/>
+        </property>
+        <property name="motherdob" type="timestamp">
+            <column name="motherdob" length="23"/>
+        </property>
+        <property name="mothertitle" type="string">
+            <column name="mothertitle" length="5"/>
+        </property>
+        <property name="fatherdob" type="timestamp">
+            <column name="fatherdob" length="23"/>
+        </property>
+        <property name="fathertitle" type="string">
+            <column name="fathertitle" length="5"/>
+        </property>
+        <property name="capconpledgeamt" type="big_decimal">
+            <column name="capconpledgeamt" precision="20"/>
+        </property>
+        <property name="noofshare" type="integer">
+            <column name="noofshare"/>
+        </property>
+        <property name="totalcapcon" type="big_decimal">
+            <column name="totalcapcon" precision="20"/>
+        </property>
+        <property name="capcontermno" type="integer">
+            <column name="capcontermno"/>
+        </property>
+        <property name="capcontermperiod" type="string">
+            <column name="capcontermperiod" length="5"/>
+        </property>
+        <property name="capconpycycle" type="string">
+            <column name="capconpycycle" length="5"/>
+        </property>
+        <property name="savingspledgeamt" type="big_decimal">
+            <column name="savingspledgeamt" precision="20"/>
+        </property>
+        <property name="savingspycycle" type="string">
+            <column name="savingspycycle" length="5"/>
+        </property>
+        <property name="reviewremarks" type="string">
+            <column name="reviewremarks"/>
+        </property>
+        <property name="returnremarks" type="string">
+            <column name="returnremarks"/>
+        </property>
+        <property name="membershipfee" type="big_decimal">
+            <column name="membershipfee" precision="20"/>
+        </property>
+        <property name="ispaid" type="boolean">
+            <column name="ispaid"/>
+        </property>
+        <property name="txrefno" type="string">
+            <column name="txrefno" length="20"/>
+        </property>
+        <property name="groupcode" type="string">
+            <column name="groupcode" length="50"/>
+        </property>
+        <property name="servicestatus" type="string">
+            <column name="servicestatus" length="5"/>
+        </property>
+        <property name="accountofficer" type="string">
+            <column name="accountofficer" length="50"/>
+        </property>
+        <property name="picture" type="string">
+            <column name="picture"/>
+        </property>
+        <property name="membershipstatus" type="string">
+            <column name="membershipstatus" length="50"/>
+        </property>
+        <property name="originatingbranch" type="string">
+            <column name="originatingbranch" length="50"/>
+        </property>
+        <property name="agentcode" type="string">
+            <column name="agentcode" length="50"/>
+        </property>
+        <property name="employeeavailable" type="boolean">
+            <column name="employeeavailable"/>
+        </property>
+    </class>
+</hibernate-mapping>

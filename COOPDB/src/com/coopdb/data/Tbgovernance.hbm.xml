@@ -1,0 +1,36 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbgovernance" table="TBGOVERNANCE" catalog="COOPDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="membershipid" type="string">
+            <column name="membershipid" length="20"/>
+        </property>
+        <property name="governancetype" type="string">
+            <column name="governancetype" length="10"/>
+        </property>
+        <property name="eventtype" type="string">
+            <column name="eventtype" length="50"/>
+        </property>
+        <property name="eventname" type="string">
+            <column name="eventname" length="100"/>
+        </property>
+        <property name="eventdate" type="timestamp">
+            <column name="eventdate" length="23"/>
+        </property>
+        <property name="eventdescription" type="string">
+            <column name="eventdescription" length="100"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="300"/>
+        </property>
+        <property name="isrequired" type="boolean">
+            <column name="isrequired"/>
+        </property>
+        <property name="hasattended" type="boolean">
+            <column name="hasattended"/>
+        </property>
+    </class>
+</hibernate-mapping>

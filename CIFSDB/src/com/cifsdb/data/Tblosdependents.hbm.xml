@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tblosdependents" table="TBLOSDEPENDENTS" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="dependentid" type="integer">
+            <column name="dependentid"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50" not-null="true"/>
+        </property>
+        <property name="fullname" type="string">
+            <column name="fullname" length="250"/>
+        </property>
+        <property name="dateofbirth" type="timestamp">
+            <column name="dateofbirth" length="23"/>
+        </property>
+        <property name="issameasfulladdress1" type="boolean">
+            <column name="issameasfulladdress1"/>
+        </property>
+        <property name="issameasfulladdress2" type="boolean">
+            <column name="issameasfulladdress2"/>
+        </property>
+        <property name="address" type="string">
+            <column name="address"/>
+        </property>
+        <property name="age" type="integer">
+            <column name="age"/>
+        </property>
+        <property name="gradeyear" type="string">
+            <column name="gradeyear" length="50"/>
+        </property>
+        <property name="relationship" type="string">
+            <column name="relationship" length="50"/>
+        </property>
+        <property name="otherrelationship" type="string">
+            <column name="otherrelationship" length="50"/>
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="2"/>
+        </property>
+    </class>
+</hibernate-mapping>

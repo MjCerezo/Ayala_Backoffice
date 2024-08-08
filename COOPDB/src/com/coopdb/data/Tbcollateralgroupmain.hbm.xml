@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbcollateralgroupmain" table="TBCOLLATERALGROUPMAIN" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="groupid" type="string">
+            <column name="groupid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="groupname" type="string">
+            <column name="groupname" length="100"/>
+        </property>
+        <property name="grouptype" type="string">
+            <column name="grouptype" length="50"/>
+        </property>
+        <property name="groupstatus" type="string">
+            <column name="groupstatus" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="groupappraisalstatus" type="string">
+            <column name="groupappraisalstatus" length="50"/>
+        </property>
+        <property name="dateoflastappraisal" type="timestamp">
+            <column name="dateoflastappraisal" length="23"/>
+        </property>
+        <property name="totalappraisedvalue" type="big_decimal">
+            <column name="totalappraisedvalue" precision="20"/>
+        </property>
+        <property name="totalfairmarket" type="big_decimal">
+            <column name="totalfairmarket" precision="20"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

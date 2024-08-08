@@ -1,0 +1,67 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tblineamendmentinst" table="TBLINEAMENDMENTINST" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.TblineamendmentinstId">
+            <key-property name="cfappno" type="string">
+                <column name="cfappno" length="50"/>
+            </key-property>
+            <key-property name="cfrefno" type="string">
+                <column name="cfrefno" length="50"/>
+            </key-property>
+        </composite-id>
+        <property name="creditlimitmainflag" type="boolean">
+            <column name="creditlimitmainflag"/>
+        </property>
+        <property name="termflag" type="boolean">
+            <column name="termflag"/>
+        </property>
+        <property name="intrateflag" type="boolean">
+            <column name="intrateflag"/>
+        </property>
+        <property name="addclientflag" type="boolean">
+            <column name="addclientflag"/>
+        </property>
+        <property name="addsubfacilityflag" type="boolean">
+            <column name="addsubfacilityflag"/>
+        </property>
+        <property name="addcoobligorflag" type="boolean">
+            <column name="addcoobligorflag"/>
+        </property>
+        <property name="suretyflag" type="boolean">
+            <column name="suretyflag"/>
+        </property>
+        <property name="termsconditionsflag" type="boolean">
+            <column name="termsconditionsflag"/>
+        </property>
+        <property name="renewalflag" type="boolean">
+            <column name="renewalflag"/>
+        </property>
+        <property name="covenantsecuritiesflag" type="boolean">
+            <column name="covenantsecuritiesflag"/>
+        </property>
+        <property name="creditlimitsubflag" type="boolean">
+            <column name="creditlimitsubflag"/>
+        </property>
+        <property name="creditlimitcoobflag" type="boolean">
+            <column name="creditlimitcoobflag"/>
+        </property>
+        <property name="termsubflag" type="boolean">
+            <column name="termsubflag"/>
+        </property>
+        <property name="intratesubflag" type="boolean">
+            <column name="intratesubflag"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="amendmentflag" type="boolean">
+            <column name="amendmentflag"/>
+        </property>
+        <property name="requestdetails" type="string">
+            <column name="requestdetails"/>
+        </property>
+    </class>
+</hibernate-mapping>

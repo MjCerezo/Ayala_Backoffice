@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbfieldparams" table="TBFIELDPARAMS" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="fieldcode" type="string">
+            <column name="fieldcode" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="dbcode" type="string">
+            <column name="dbcode" length="10" not-null="true"/>
+        </property>
+        <property name="tbcode" type="string">
+            <column name="tbcode" length="10" not-null="true"/>
+        </property>
+        <property name="fieldname" type="string">
+            <column name="fieldname" length="100" not-null="true"/>
+        </property>
+        <property name="fieldnametodisplay" type="string">
+            <column name="fieldnametodisplay" length="100"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="100"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

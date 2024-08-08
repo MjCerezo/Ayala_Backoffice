@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbcfmaintenance" table="TBCFMAINTENANCE" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="facilitycode" type="string">
+            <column name="facilitycode" length="5"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="facilityname" type="string">
+            <column name="facilityname" length="200"/>
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="1"/>
+        </property>
+        <property name="enablesubfacility" type="boolean">
+            <column name="enablesubfacility"/>
+        </property>
+        <property name="enablecoobligor" type="boolean">
+            <column name="enablecoobligor"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

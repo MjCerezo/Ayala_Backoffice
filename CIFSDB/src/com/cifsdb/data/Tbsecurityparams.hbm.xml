@@ -1,0 +1,66 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbsecurityparams" table="TBSECURITYPARAMS" catalog="AcaciaAyalaMembershipDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="minimumpasswordlength" type="integer">
+            <column name="minimumpasswordlength"/>
+        </property>
+        <property name="maxinvalidattempts" type="integer">
+            <column name="maxinvalidattempts"/>
+        </property>
+        <property name="minimumspecialchar" type="integer">
+            <column name="minimumspecialchar"/>
+        </property>
+        <property name="minimumlowercase" type="integer">
+            <column name="minimumlowercase"/>
+        </property>
+        <property name="minimumuppercase" type="integer">
+            <column name="minimumuppercase"/>
+        </property>
+        <property name="minimumnumber" type="integer">
+            <column name="minimumnumber"/>
+        </property>
+        <property name="maxpasswordage" type="integer">
+            <column name="maxpasswordage"/>
+        </property>
+        <property name="addomain" type="string">
+            <column name="addomain" length="50"/>
+        </property>
+        <property name="adusername" type="string">
+            <column name="adusername" length="50"/>
+        </property>
+        <property name="adpassword" type="string">
+            <column name="adpassword" length="50"/>
+        </property>
+        <property name="securitymessage" type="string">
+            <column name="securitymessage" length="1000"/>
+        </property>
+        <property name="passwordhistorycount" type="integer">
+            <column name="passwordhistorycount"/>
+        </property>
+        <property name="repeatcharacterregex" type="integer">
+            <column name="repeatcharacterregex"/>
+        </property>
+        <property name="numdaysbeforepasswordexpirewarn" type="integer">
+            <column name="numdaysbeforepasswordexpirewarn"/>
+        </property>
+        <property name="validityperiodindays" type="integer">
+            <column name="validityperiodindays"/>
+        </property>
+        <property name="ldapurl" type="string">
+            <column name="ldapurl" length="100"/>
+        </property>
+        <property name="defaultpassword" type="string">
+            <column name="defaultpassword" length="100"/>
+        </property>
+        <property name="minimumusernamelength" type="integer">
+            <column name="minimumusernamelength"/>
+        </property>
+        <property name="maximumusernamelength" type="integer">
+            <column name="maximumusernamelength"/>
+        </property>
+    </class>
+</hibernate-mapping>

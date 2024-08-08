@@ -1,0 +1,43 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbdocspercf" table="TBDOCSPERCF" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.TbdocspercfId">
+            <key-property name="facilitycode" type="string">
+                <column name="facilitycode" length="10"/>
+            </key-property>
+            <key-property name="documentcode" type="string">
+                <column name="documentcode" length="50"/>
+            </key-property>
+            <key-property name="doccategory" type="string">
+                <column name="doccategory" length="50"/>
+            </key-property>
+        </composite-id>
+        <property name="facilityname" type="string">
+            <column name="facilityname" length="100"/>
+        </property>
+        <property name="documentname" type="string">
+            <column name="documentname" length="300"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="lastupdated" type="timestamp">
+            <column name="lastupdated" length="23"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="300"/>
+        </property>
+        <property name="enablenotarialfee" type="boolean">
+            <column name="enablenotarialfee"/>
+        </property>
+        <property name="enablerequired" type="boolean">
+            <column name="enablerequired"/>
+        </property>
+    </class>
+</hibernate-mapping>

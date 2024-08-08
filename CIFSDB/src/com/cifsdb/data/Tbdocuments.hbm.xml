@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbdocuments" table="TBDOCUMENTS" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="documentcode" type="string">
+            <column name="documentcode" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="documentname" type="string">
+            <column name="documentname" length="100"/>
+        </property>
+        <property name="doccategory" type="string">
+            <column name="doccategory" length="50"/>
+        </property>
+        <property name="doctype" type="string">
+            <column name="doctype" length="50"/>
+        </property>
+        <property name="applicationstatus" type="integer">
+            <column name="applicationstatus"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="300" not-null="true"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="iseditable" type="boolean">
+            <column name="iseditable"/>
+        </property>
+        <property name="iscifavailable" type="boolean">
+            <column name="iscifavailable"/>
+        </property>
+    </class>
+</hibernate-mapping>

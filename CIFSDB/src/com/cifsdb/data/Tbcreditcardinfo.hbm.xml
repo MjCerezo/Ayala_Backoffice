@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbcreditcardinfo" table="TBCREDITCARDINFO" catalog="AcaciaAyalaMembershipDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20" not-null="true"/>
+        </property>
+        <property name="bank" type="string">
+            <column name="bank" length="50"/>
+        </property>
+        <property name="cardtype" type="string">
+            <column name="cardtype" length="10"/>
+        </property>
+        <property name="dateexpiry" type="timestamp">
+            <column name="dateexpiry" length="23"/>
+        </property>
+        <property name="creditlimit" type="big_decimal">
+            <column name="creditlimit" precision="20"/>
+        </property>
+        <property name="limitbalance" type="big_decimal">
+            <column name="limitbalance" precision="20"/>
+        </property>
+        <property name="cardno" type="string">
+            <column name="cardno" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

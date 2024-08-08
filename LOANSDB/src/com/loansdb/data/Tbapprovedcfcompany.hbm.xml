@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbapprovedcfcompany" table="TBAPPROVEDCFCOMPANY" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cfrefno" type="string">
+            <column name="cfrefno" length="50"/>
+        </property>
+        <property name="cflevel" type="integer">
+            <column name="cflevel"/>
+        </property>
+        <property name="cfseqno" type="string">
+            <column name="cfseqno" length="20"/>
+        </property>
+        <property name="cfsubseqno" type="string">
+            <column name="cfsubseqno" length="20"/>
+        </property>
+        <property name="cfrefnoconcat" type="string">
+            <column name="cfrefnoconcat" length="50"/>
+        </property>
+        <property name="cfappno" type="string">
+            <column name="cfappno" length="20"/>
+        </property>
+        <property name="companycode" type="string">
+            <column name="companycode" length="50"/>
+        </property>
+        <property name="companyname" type="string">
+            <column name="companyname" length="100"/>
+        </property>
+        <property name="dateassigned" type="timestamp">
+            <column name="dateassigned" length="23"/>
+        </property>
+        <property name="assignedby" type="string">
+            <column name="assignedby" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

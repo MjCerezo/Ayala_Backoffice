@@ -1,0 +1,25 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbprofilechangehistory" table="TBPROFILECHANGEHISTORY" catalog="COOPDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.TbprofilechangehistoryId">
+            <key-property name="id" type="integer">
+                <column name="id"/>
+            </key-property>
+            <key-property name="membershipid" type="string">
+                <column name="membershipid" length="20"/>
+            </key-property>
+            <key-property name="changecategory" type="string">
+                <column name="changecategory" length="20"/>
+            </key-property>
+            <key-property name="dateupdated" type="timestamp">
+                <column name="dateupdated" length="23"/>
+            </key-property>
+            <key-property name="updatedby" type="string">
+                <column name="updatedby" length="50"/>
+            </key-property>
+            <key-property name="source" type="string">
+                <column name="source" length="20"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

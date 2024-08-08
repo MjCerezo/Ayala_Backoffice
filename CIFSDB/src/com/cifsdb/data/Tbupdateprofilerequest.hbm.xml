@@ -1,0 +1,75 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbupdateprofilerequest" table="TBUPDATEPROFILEREQUEST" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txrefno" type="integer">
+            <column name="txrefno"/>
+        </property>
+        <property name="txdate" type="timestamp">
+            <column name="txdate" length="23"/>
+        </property>
+        <property name="txcode" type="string">
+            <column name="txcode" length="10"/>
+        </property>
+        <property name="memberid" type="string">
+            <column name="memberid" length="20"/>
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="100"/>
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="100"/>
+        </property>
+        <property name="middlename" type="string">
+            <column name="middlename" length="100"/>
+        </property>
+        <property name="dateofbirth" type="timestamp">
+            <column name="dateofbirth" length="23"/>
+        </property>
+        <property name="txstatus" type="string">
+            <column name="txstatus" length="5"/>
+        </property>
+        <property name="civilstatus" type="string">
+            <column name="civilstatus" length="5"/>
+        </property>
+        <property name="daterequested" type="timestamp">
+            <column name="daterequested" length="23"/>
+        </property>
+        <property name="requestedby" type="string">
+            <column name="requestedby" length="50"/>
+        </property>
+        <property name="requestremarks" type="string">
+            <column name="requestremarks" length="300"/>
+        </property>
+        <property name="approvedby" type="string">
+            <column name="approvedby" length="50"/>
+        </property>
+        <property name="approvedt" type="timestamp">
+            <column name="approvedt" length="23"/>
+        </property>
+        <property name="approvalremarks" type="string">
+            <column name="approvalremarks" length="300"/>
+        </property>
+        <property name="changecategorytype" type="string">
+            <column name="changecategorytype" length="5"/>
+        </property>
+        <property name="source" type="string">
+            <column name="source" length="5"/>
+        </property>
+        <property name="membershipstatus" type="string">
+            <column name="membershipstatus" length="50"/>
+        </property>
+        <property name="membershipclass" type="string">
+            <column name="membershipclass" length="50"/>
+        </property>
+        <property name="branch" type="string">
+            <column name="branch" length="50"/>
+        </property>
+        <property name="companycode" type="string">
+            <column name="companycode" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

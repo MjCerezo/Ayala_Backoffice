@@ -1,0 +1,40 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbglentriesperproduct" table="TBGLENTRIESPERPRODUCT" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.cifsdb.data.TbglentriesperproductId">
+            <key-property name="prodcode" type="string">
+                <column name="prodcode" length="10"/>
+            </key-property>
+            <key-property name="txcode" type="string">
+                <column name="txcode" length="10"/>
+            </key-property>
+            <key-property name="glacctno" type="string">
+                <column name="glacctno" length="50"/>
+            </key-property>
+            <key-property name="glline" type="string">
+                <column name="glline" length="50"/>
+            </key-property>
+        </composite-id>
+        <property name="acctdesc" type="string">
+            <column name="acctdesc" length="100"/>
+        </property>
+        <property name="txmode" type="string">
+            <column name="txmode" length="10"/>
+        </property>
+        <property name="txoper" type="string">
+            <column name="txoper" length="1"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="glline1" type="string">
+            <column name="glline1" length="50"/>
+        </property>
+        <property name="glline2" type="string">
+            <column name="glline2" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,57 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tblstsourceincome" table="TBLSTSOURCEINCOME" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="20" not-null="true"/>
+        </property>
+        <property name="participationcode" type="string">
+            <column name="participationcode" length="10"/>
+        </property>
+        <property name="monthlyincome" type="big_decimal">
+            <column name="monthlyincome" precision="20"/>
+        </property>
+        <property name="otherincome" type="big_decimal">
+            <column name="otherincome" precision="20"/>
+        </property>
+        <property name="totalincome" type="big_decimal">
+            <column name="totalincome" precision="20"/>
+        </property>
+        <property name="lessrental" type="big_decimal">
+            <column name="lessrental" precision="20"/>
+        </property>
+        <property name="lessutilities" type="big_decimal">
+            <column name="lessutilities" precision="20"/>
+        </property>
+        <property name="lessfood" type="big_decimal">
+            <column name="lessfood" precision="20"/>
+        </property>
+        <property name="lessmedical" type="big_decimal">
+            <column name="lessmedical" precision="20"/>
+        </property>
+        <property name="lessotherexpense" type="big_decimal">
+            <column name="lessotherexpense" precision="20"/>
+        </property>
+        <property name="netincome" type="big_decimal">
+            <column name="netincome" precision="20"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="20"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="20"/>
+        </property>
+        <property name="lastupdated" type="timestamp">
+            <column name="lastupdated" length="23"/>
+        </property>
+        <property name="businessincome" type="big_decimal">
+            <column name="businessincome" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

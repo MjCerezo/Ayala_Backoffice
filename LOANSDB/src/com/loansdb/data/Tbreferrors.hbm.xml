@@ -1,0 +1,21 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbreferrors" table="TBREFERRORS" catalog="CIFSDBUAT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="referraltype" type="string">
+            <column name="referraltype" length="10"/>
+        </property>
+        <property name="referrorname" type="string">
+            <column name="referrorname" length="50"/>
+        </property>
+        <property name="validuntil" type="timestamp">
+            <column name="validuntil" length="23"/>
+        </property>
+        <property name="accreditationdate" type="timestamp">
+            <column name="accreditationdate" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

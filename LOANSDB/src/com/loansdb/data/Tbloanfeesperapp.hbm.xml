@@ -1,0 +1,37 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbloanfeesperapp" table="TBLOANFEESPERAPP" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.TbloanfeesperappId">
+            <key-property name="appno" type="string">
+                <column name="appno" length="50"/>
+            </key-property>
+            <key-property name="loanfeecode" type="string">
+                <column name="loanfeecode" length="50"/>
+            </key-property>
+        </composite-id>
+        <property name="feeamount" type="big_decimal">
+            <column name="feeamount" precision="18"/>
+        </property>
+        <property name="collectionrule" type="string">
+            <column name="collectionrule" length="50"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="50"/>
+        </property>
+        <property name="dateupdate" type="timestamp">
+            <column name="dateupdate" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="acctno" type="string">
+            <column name="acctno" length="50"/>
+        </property>
+        <property name="doccount" type="integer">
+            <column name="doccount"/>
+        </property>
+        <property name="docrate" type="big_decimal">
+            <column name="docrate" precision="18"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,52 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbbranch" table="TBBRANCH" catalog="AcaciaAyalaMembershipDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.cifsdb.data.TbbranchId">
+            <key-property name="branchcode" type="string">
+                <column name="branchcode" length="50"/>
+            </key-property>
+            <key-property name="branchname" type="string">
+                <column name="branchname"/>
+            </key-property>
+        </composite-id>
+        <property name="companycode" type="string">
+            <column name="companycode" length="50"/>
+        </property>
+        <property name="branchaddress" type="string">
+            <column name="branchaddress" length="100"/>
+        </property>
+        <property name="phoneno" type="string">
+            <column name="phoneno" length="50"/>
+        </property>
+        <property name="faxno" type="string">
+            <column name="faxno" length="50"/>
+        </property>
+        <property name="branchstatus" type="boolean">
+            <column name="branchstatus"/>
+        </property>
+        <property name="isopen" type="boolean">
+            <column name="isopen"/>
+        </property>
+        <property name="branchclassification" type="string">
+            <column name="branchclassification" length="20"/>
+        </property>
+        <property name="currentbusinessdate" type="timestamp">
+            <column name="currentbusinessdate" length="23"/>
+        </property>
+        <property name="nextbusinessdate" type="timestamp">
+            <column name="nextbusinessdate" length="23"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="100"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="GAAPerBOSFacade" class="com.etel.gaaaperbos.GAAPerBOSFacade" CRUDService="false" type="JavaService" springFile="GAAPerBOSFacade.spring.xml">
+    <operation name="deleteGAA">
+        <parameter name="id" typeRef="int" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="listGAAPerBOS">
+        <parameter name="boscode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbgaaperbos" isList="true"/>
+    </operation>
+    <operation name="saveGAA">
+        <parameter name="gaaperbos" typeRef="com.coopdb.data.Tbgaaperbos" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

@@ -1,0 +1,13 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbdatabaseparams" table="TBDATABASEPARAMS" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.TbdatabaseparamsId">
+            <key-property name="systemname" type="string">
+                <column name="systemname" length="50"/>
+            </key-property>
+            <key-property name="databasename" type="string">
+                <column name="databasename" length="50"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

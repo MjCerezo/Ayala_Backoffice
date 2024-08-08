@@ -1,0 +1,2339 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="ReportsFacade" class="com.etel.reports.ReportsFacade" CRUDService="false" type="JavaService" springFile="ReportsFacade.spring.xml">
+    <operation name="AccrualSched">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="ActiveDormatAccount">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttitle" typeRef="java.lang.String" isList="false"/>
+        <parameter name="reporttype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="userid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="AllAcceptedTrans">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="AllDormatReport">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttitle" typeRef="java.lang.String" isList="false"/>
+        <parameter name="reporttype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="userid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="AllRejectedTrans">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="AllSupOverridetx">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="AllTellerReport">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttitle" typeRef="java.lang.String" isList="false"/>
+        <parameter name="reporttype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="userid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="AllTimeOutAcceptedtx">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="AnnexCheckDiscounting">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="sigName1" typeRef="java.lang.String" isList="false"/>
+        <parameter name="sigName2" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="CASASavingsReport">
+        <parameter name="parameters" typeRef="com.etel.reports.forms.SavingsReportParam" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="CashInCashOut">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="CertTimeDep">
+        <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="address" typeRef="java.lang.String" isList="false"/>
+        <parameter name="issuedt" typeRef="java.util.Date" isList="false"/>
+        <parameter name="matdt" typeRef="java.util.Date" isList="false"/>
+        <parameter name="name" typeRef="java.lang.String" isList="false"/>
+        <parameter name="term" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="interest" typeRef="java.math.BigDecimal" isList="false"/>
+        <parameter name="sum" typeRef="java.math.BigDecimal" isList="false"/>
+        <parameter name="brname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tdcno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="CurrentAccountReport">
+        <parameter name="params" typeRef="com.etel.reports.forms.CurrentAcctReportParam" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyTrialBalance">
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DormatAccountBelowMinimum">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttitle" typeRef="java.lang.String" isList="false"/>
+        <parameter name="reporttype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="userid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="EJournalPDF">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="ErrorCorrectionTrans">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="JournalRegister">
+        <parameter name="first" typeRef="java.util.Date" isList="false"/>
+        <parameter name="second" typeRef="java.util.Date" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="legveh" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="ListMemberAllMembershipStatus">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="ListMemberAllMembershipType">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="ListMemberAllServiceStatus">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="ListMemberPerMembershipStatus">
+        <parameter name="applicationDateFrom" typeRef="java.util.Date" isList="false"/>
+        <parameter name="applicationDateTo" typeRef="java.util.Date" isList="false"/>
+        <parameter name="MemStat" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="ListMemberPerMembershipType">
+        <parameter name="applicationDateFrom" typeRef="java.util.Date" isList="false"/>
+        <parameter name="applicationDateTo" typeRef="java.util.Date" isList="false"/>
+        <parameter name="MemType" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="ListMemberPerServiceStatus">
+        <parameter name="applicationDateFrom" typeRef="java.util.Date" isList="false"/>
+        <parameter name="applicationDateTo" typeRef="java.util.Date" isList="false"/>
+        <parameter name="ServStat" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="ListMemberperAccountOfficer">
+        <parameter name="applicationDateFrom" typeRef="java.util.Date" isList="false"/>
+        <parameter name="applicationDateTo" typeRef="java.util.Date" isList="false"/>
+        <parameter name="AccOfficer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="LoanApplicationReport">
+        <parameter name="coop" typeRef="java.lang.String" isList="false"/>
+        <parameter name="reporttype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="appdatefrom" typeRef="java.util.Date" isList="false"/>
+        <parameter name="appdateto" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="Loanworksheetamortization">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="MembershipListbyBranch">
+        <parameter name="applicationDateFrom" typeRef="java.util.Date" isList="false"/>
+        <parameter name="applicationDateTo" typeRef="java.util.Date" isList="false"/>
+        <parameter name="br" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="MembershipReport">
+        <parameter name="reporttype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="coop" typeRef="java.lang.String" isList="false"/>
+        <parameter name="apptype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="appdatefrom" typeRef="java.util.Date" isList="false"/>
+        <parameter name="appdateto" typeRef="java.util.Date" isList="false"/>
+        <parameter name="memdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="SupOverridetx">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="TellersTotal">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="TimeDepositReport">
+        <parameter name="params" typeRef="com.etel.reports.forms.TimeDepParam" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="auditTrail">
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <parameter name="module" typeRef="java.lang.String" isList="false"/>
+        <parameter name="user" typeRef="java.lang.String" isList="false"/>
+        <parameter name="eventdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="authorizationLetter">
+        <parameter name="id" typeRef="java.lang.String" isList="false"/>
+        <parameter name="name" typeRef="java.lang.String" isList="false"/>
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="billing">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="cocoLife">
+        <parameter name="applno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="creditLineSummary">
+        <parameter name="cifname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="customerListAllCustomerType">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="customerListFATCA">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="customerType" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="customerListPEP">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="customerType" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="customerListPerStatus">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="customerType" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="disclosureStatement">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateASOFDATEBALANCES">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateAccountLoanLedger">
+        <parameter name="pnno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateAllErrorCorrected">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateBatchTransactionDeposit">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="batchtxrefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateBatchTransactionLoan">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="batchtxrefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateBillsLoanOR">
+        <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_BranchTransactionListfortheDayFinancial">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="prodtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_BranchTransactionListfortheDayFinancialTermProducts">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="prodtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_CashTransferMovements">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_ComprehensiveList">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="prodtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_CustomerListofDepositAccounts">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="accountname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_DailyListofAccuredInterestPayable">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="subprod" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_DailyListofMaturedUnwithdrawnAccounts">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="subprod" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_DailyListofNewPlacement">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="subprod" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_DailyListofPreTerminatedAccounts">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="subprod" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_DailyListofRollOvers">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="subprod" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_DailySummaryTransaction">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_DailySummaryofTransactionPerProduct">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="prodname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_DailyTransactionIntegration">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_FileMaintenanceUpdateTransactions">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_ListOfForceClearTransaction">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_ListofAccountsClassifiedtoDormant">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_ListofAccountswithP500Transactions">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_ListofActivatedDormantAccounts">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_ListofAutoRenewAutoRollTermDepositPlacements">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="dispositiontype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_ListofClosedAccounts">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="accountstatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_ListofClosedTerminatedPreterminatedAccountsfortheDay">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="prodtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_ListofErrorCorrectedTransactions">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_ListofEscheatedAccounts">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="prodtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_ListofIssuedCTDPassbookCKBook">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_ListofLateCheckDeposits">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_ListofNewlyOpenedAccountsfortheDay">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="prodtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_ListofOverrideTransactions">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_ListofRejectedTransactions">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_MasterListSavings">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="subprod" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_MasterListTimeDeposit">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="subprod" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_MasterListofAccounts">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="prodtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_MasterListofAccountsBelowMinimumBalance">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="prodtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_MasterListofAccountsDormant5years10Years">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_MonthEndSummaryTransaction">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_MonthEndTransactionIntegration">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_OtherBankReturnCheck">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_SAMasterlistSummary">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_SavingsandPremiumSavings">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="subprod" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_ScheduleofAccountswithNegativeBalancesTemporaryOverdraft">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_ScheduleofAccruedInterestPayable">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_SummaryofDailyTransaction">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="subprod" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_TDMasterlistSummary">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_TellerListofTransactionsfortheDay">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="transtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIC_Companies">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIC_CreditCardContracts">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIC_Individuals">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIC_InstallmentContracts">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIC_LinksBetweenSubjects">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIC_NonInstallmentContracts">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIC_SubjectNegativeEvents">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIC_Utilities">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIF_ComprehensiveList">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIF_CustomerListDOSRIBusiness">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="riskrating" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIF_CustomerListDOSRIIndividual">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="riskrating" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIF_CustomerListFATCABusiness">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="riskrating" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIF_CustomerListFATCAIndividual">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="riskrating" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIF_CustomerListPEPBusiness">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="riskrating" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIF_CustomerListPEPIndividual">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="riskrating" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIF_ExceptionalAccountsDOSRIBusiness">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIF_ExceptionalAccountsDOSRIIndividual">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIF_ExceptionalAccountsFATCABusiness">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIF_ExceptionalAccountsFATCAIndividual">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIF_ExceptionalAccountsPEPBusiness">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIF_ExceptionalAccountsPEPIndividual">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIF_ListofCIFEnrollmentTransactionsBusiness">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="registrationtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="businesstype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="paidupcapital" typeRef="java.lang.String" isList="false"/>
+        <parameter name="firmsize" typeRef="java.lang.String" isList="false"/>
+        <parameter name="nationality" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifstatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="riskrating" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIF_ListofCIFEnrollmentTransactionsIndividual">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="gender" typeRef="java.lang.String" isList="false"/>
+        <parameter name="civilstat" typeRef="java.lang.String" isList="false"/>
+        <parameter name="nationality" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifstatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="riskrating" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIF_ListofClientProfileUpdateTransactions">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIF_ListofCustomersBusiness">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIF_ListofCustomersIndividual">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCocolife_Form">
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="applno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCollectionTransactionLoan">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="batchtxrefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateDEP_DepositAccountSizing">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateDETAILSOFLATESTPAYMENTLOANS">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateDOSRIHOLDOUTLOANS">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateDailyListofAccountsBelowMinimumBalance">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateDailyListofAccuredInterestPayable">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateDailyListofActivatedDormantAccounts">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateDailyListofClosedAccounts">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateDailyListofDormantAccounts">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateDailyListofDormantAccounts10Years">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateDailyListofDormantAccounts5Years">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateDailyListofDormantAccountsfallingBelowMinimumBalance2Months">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateDailyListofNewAccounts">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateDailyListofNewPlacements">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateDailyTransactionReport">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateElectronicJournal">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11a1">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11a2">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11a3">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11a4">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11aByStatus">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11b">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11b1">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11b2">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11b3">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11b4">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11c">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11c1">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11c2">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11c3">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11c4">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11d">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11d1">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11d2">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11d3">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11d4">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11e">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11e1">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11e2">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11e3">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11e4">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateFRP_Sch11f">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateGrossDepositsandWithdrawalfortheQuarter">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLIRF">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_BorrowerListofLoanAccounts">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="borrowertype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="businessname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="firstname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="lastname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_CollectionDueAndOverdue">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="collector" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_CollectionReport">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <parameter name="accountstat" typeRef="java.lang.String" isList="false"/>
+        <parameter name="sourcepayment" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_ComprehensiveList">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="prodtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_DelinquencyBucketListDueAmount">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_DelinquencyBucketListLoanAmount">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_InterestAccrualSetup">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_JournalEntriesfortheDay">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="transdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_LMS_LoanReleasePerRange">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_LMS_ScheduleOfLoanAccountsFromOldToCurrent">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="transdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="accountStatFrom" typeRef="java.lang.String" isList="false"/>
+        <parameter name="accountStatTo" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_ListOfLoanReleasesPerFirmSize">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_ListofDecidedLoanApplications">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="accountstatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="borrowertype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <parameter name="decision" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_ListofDisapprovedTransactions">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_ListofLMSTransactions">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="transstat" typeRef="java.lang.String" isList="false"/>
+        <parameter name="transtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="borrowertype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_ListofLoanAccounts">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="transdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="accountstatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="borrowertype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_ListofLoanApplications">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="accountstatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="borrowertype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_ListofLoanReleases">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="borrowertype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_ListofUnpostedFinancialTransactions">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_ScheduleofAccountswithArrearages">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_ScheduleofDueAmortizations">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_ScheduleofHeldSecurities">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="transdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_ScheduleofOutstandingAccruedInterestReceivables">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_ScheduleofOutstandingUnearnedInterestDiscounts">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_ScheduleofReceivedDocumentsSecurities">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="transdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLoanDisclosureStatement">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLoanPromissoryNote">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateMIS_ListofLoanAccountsFullyPaidBeforeMaturityDate">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateMIS_ListofLoanAccountswithExcessPaymentBalance">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateMIS_ListofLoanReleasestoDOSRI">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateMIS_ListofLoanReleasestoFATCA">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateMIS_ListofLoanReleasestoPEP">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateMIS_ListofWaviedInterestsPenaltiesandOtherCharges">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateMIS_LoanCollections">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateMIS_LoanGrantPerformanceReview">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateMIS_LoanGrantPerformanceReviewperBranch">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateMIS_LoansTargetvsPerformance">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enterTargetCount" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="enterTargetAmount" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateMIS_RecordedLoanIncomeperBranch">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateMIS_ScheduleofLoanAccountsfromCurrenttoDelinquency">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="transdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="fromaccountstat" typeRef="java.lang.String" isList="false"/>
+        <parameter name="toaccountstat" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateMIS_ScheduleofLoanAccountswithAccountsReceivableBalance">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateMIS_ScheduleofLoanAccountswithOutstandingLPC">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateMIS_ScheduleofLoanReleasesperBranch">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateMIS_ScheduleofLoanReleasesperSolicitingOfficer">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="officer" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateMultiTransactionOR">
+        <parameter name="multitxrefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateOR">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generatePDIC_AMLA">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generatePDIC_ANNEXF">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generatePDIC_ANNEXG">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generatePDIC_AssessmentTableBaseDay1">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generatePDIC_AssessmentTableBaseDay2">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generatePDIC_BASEDONDEPOSITBALANCES">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generatePDIC_BREAKDOWNOFDEPOSITLIABILITIES">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generatePDIC_CONSOLIDATEDSCHEDULEOFOTHERLIABILITYACCOUNTS">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generatePDIC_DailyListofDormantAccounts">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generatePDIC_DailyListofDormantAccounts10Years">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generatePDIC_DailyListofDormantAccounts5Years">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generatePDIC_DailyListofDormantAccountsfallingBelowMinimumBalance2Months">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generatePDIC_RI_C1">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateSOA">
+        <parameter name="pnno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateSummaryOfCreditReview">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="BAPNFIS" typeRef="java.lang.String" isList="false"/>
+        <parameter name="CMAPResult" typeRef="java.lang.String" isList="false"/>
+        <parameter name="CICResult" typeRef="java.lang.String" isList="false"/>
+        <parameter name="BlacklistInternalResult" typeRef="java.lang.String" isList="false"/>
+        <parameter name="BlacklistExternalResult" typeRef="java.lang.String" isList="false"/>
+        <parameter name="AMLAWatchlistResult" typeRef="java.lang.String" isList="false"/>
+        <parameter name="PDRNResult" typeRef="java.lang.String" isList="false"/>
+        <parameter name="EVRResult" typeRef="java.lang.String" isList="false"/>
+        <parameter name="BankCheckResult" typeRef="java.lang.String" isList="false"/>
+        <parameter name="CreditCheckResult" typeRef="java.lang.String" isList="false"/>
+        <parameter name="TradeCheckResult" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateTellersTotal">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="businessdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="userid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generate_COA">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptAgrarianReform">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <parameter name="preparedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptAllRejectedTransactions">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="errorcorrect" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptAllSuccessfulTransactions">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="errorcorrect" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptAllTimeOutTransactions">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptAllTransactionReversals">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptCIFAccountProfitability">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="otherIncome" typeRef="java.math.BigDecimal" isList="false"/>
+        <parameter name="otherExpense" typeRef="java.math.BigDecimal" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptClientListByRisk">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptCommercialLoans">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <parameter name="preparedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptDailyListofMaturedbutUnwithdrawnAccounts">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptDepositsSOA">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="accountname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptDisclosure">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="applno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptLMS_CollectionReport">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="company" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="START_DATE" typeRef="java.util.Date" isList="false"/>
+        <parameter name="END_DATE" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptLMS_DelinquencyAgeingByProduct">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="loantype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptLMS_DelinquencyBucketList">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="productcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptLMS_DetailedAccountingEntriesForTheDay_product">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="company" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="product" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptLMS_LoanTrialBalance">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="company" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptLMS_ScheduleOfAccountWithArrearage">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptLMS_ageingRreport">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptLOSListOfApprovedCF">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptLOSListOfLineAvailmentApplication">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="applicationDateFrom" typeRef="java.util.Date" isList="false"/>
+        <parameter name="applicationDateTo" typeRef="java.util.Date" isList="false"/>
+        <parameter name="applicationtype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptLOSListOfRetailLoanApplication">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="applicationDateFrom" typeRef="java.util.Date" isList="false"/>
+        <parameter name="applicationDateTo" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptLOSListOfRetailLoanApplicationPerAppStatus">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="applicationDateFrom" typeRef="java.util.Date" isList="false"/>
+        <parameter name="applicationDateTo" typeRef="java.util.Date" isList="false"/>
+        <parameter name="applicationstatus" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptListOfOutstandingLoans">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="reportname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="loantype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="preparedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptLoanWorksheet">
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="createdby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptLoansLitigation">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptMLClientsLoans">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptOfficialBillingUI">
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptOtherAgriculturalCreditLoans">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <parameter name="preparedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptPromissoryNote">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="pnno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="applno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptRealEstateLoan">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <parameter name="preparedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptSummaryofDailyCashInCashOut">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="userid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptTellerTransactionTotals">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="curdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="userid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="clearingdays" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generaterptsampleGraphPick">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="changetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getListApptype">
+        <return typeRef="com.etel.reports.forms.ReportApptype" isList="true"/>
+    </operation>
+    <operation name="getListofOfficerPerAocode">
+        <return typeRef="com.etel.reports.forms.AccountOfficersForm" isList="true"/>
+    </operation>
+    <operation name="getListofUsers">
+        <return typeRef="com.etel.reports.forms.ReportTellerName" isList="true"/>
+    </operation>
+    <operation name="getLogo">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getPN">
+        <parameter name="coopcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getReport">
+        <parameter name="reportName" typeRef="java.lang.String" isList="false"/>
+        <parameter name="rptDate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getSignatories">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.loansdb.data.Tbdefaultsignatories" isList="false"/>
+    </operation>
+    <operation name="inputtedFinancial">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="frequency" typeRef="java.lang.String" isList="false"/>
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <parameter name="datemonthyear" typeRef="java.util.Date" isList="false"/>
+        <parameter name="datefrom" typeRef="java.util.Date" isList="false"/>
+        <parameter name="dateto" typeRef="java.util.Date" isList="false"/>
+        <parameter name="transtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="transstatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="printedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="inventOfLendings">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="company" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="inventOfLendingsPerCutoffPDF">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="month" typeRef="java.lang.String" isList="false"/>
+        <parameter name="monthName" typeRef="java.lang.String" isList="false"/>
+        <parameter name="company" typeRef="java.lang.String" isList="false"/>
+        <parameter name="year" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="listOfInputtedA">
+        <parameter name="givenDate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="listOfInputtedB">
+        <parameter name="fromDate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="toDate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="loanDisbursementVoucher">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="applno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="loanReleaseDaily">
+        <parameter name="first" typeRef="java.util.Date" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="loanReleaseOnDemand">
+        <parameter name="first" typeRef="java.util.Date" isList="false"/>
+        <parameter name="second" typeRef="java.util.Date" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="loanReleases">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="frequency" typeRef="java.lang.String" isList="false"/>
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <parameter name="datemonthyear" typeRef="java.util.Date" isList="false"/>
+        <parameter name="datefrom" typeRef="java.util.Date" isList="false"/>
+        <parameter name="dateto" typeRef="java.util.Date" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="printedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="loanWorksheet">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="postedFinancial">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="frequency" typeRef="java.lang.String" isList="false"/>
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <parameter name="datemonthyear" typeRef="java.util.Date" isList="false"/>
+        <parameter name="datefrom" typeRef="java.util.Date" isList="false"/>
+        <parameter name="dateto" typeRef="java.util.Date" isList="false"/>
+        <parameter name="transtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="printedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="postedTransactionB">
+        <parameter name="fromDate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="toDate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="postedTransationA">
+        <parameter name="givenDate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="printCOA">
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="printValidationSliDeposit">
+        <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="printValidationSliWithdrawal">
+        <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="printValidationSlipMulti">
+        <parameter name="multitxrefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="reprintMultiTransactionOR">
+        <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="reprintValidation">
+        <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="validationType" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="searchApprovedCf">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.reports.forms.SearchApprovedCFForm" isList="true"/>
+    </operation>
+    <operation name="setLogo">
+        <parameter name="logo" typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updatePassbook">
+        <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="lineno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="validateBillsLoansPayment">
+        <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="validateMisc">
+        <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.reports.forms.SavingsReportParam" name="SavingsReportParam" supportsQuickData="false">
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="filetype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="reporttype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.reports.forms.CurrentAcctReportParam" name="CurrentAcctReportParam" supportsQuickData="false">
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="filetype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="reporttype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.reports.forms.TimeDepParam" name="TimeDepParam" supportsQuickData="false">
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="filetype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="reporttype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.reports.forms.ReportApptype" name="ReportApptype" supportsQuickData="false">
+            <element name="processid" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="processname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sequenceno" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.reports.forms.AccountOfficersForm" name="AccountOfficersForm" supportsQuickData="false">
+            <element name="accountofficers" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="aocode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="suffix" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.reports.forms.ReportTellerName" name="ReportTellerName" supportsQuickData="false">
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="tellername" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="userid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.reports.forms.SearchApprovedCFForm" name="SearchApprovedCFForm" supportsQuickData="false">
+            <element name="cifname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

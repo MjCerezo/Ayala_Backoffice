@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tboverride" table="TBOVERRIDE" catalog="ACACIARBDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="sequence" type="integer">
+            <column name="sequence"/>
+        </property>
+        <property name="chargeamount" type="big_decimal">
+            <column name="chargeamount" precision="16"/>
+        </property>
+        <property name="accountno" type="string">
+            <column name="accountno" length="20"/>
+        </property>
+        <property name="txcode" type="string">
+            <column name="txcode" length="6"/>
+        </property>
+        <property name="txdate" type="timestamp">
+            <column name="txdate" length="23"/>
+        </property>
+        <property name="txby" type="string">
+            <column name="txby" length="20"/>
+        </property>
+        <property name="overrideby" type="string">
+            <column name="overrideby" length="20"/>
+        </property>
+        <property name="status" type="integer">
+            <column name="status"/>
+        </property>
+    </class>
+</hibernate-mapping>

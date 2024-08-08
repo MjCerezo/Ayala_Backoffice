@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="CreditLineFacade" class="com.etel.creditline.CreditLineFacade" CRUDService="false" type="JavaService" springFile="CreditLineFacade.spring.xml">
+    <operation name="addDays">
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <parameter name="days" typeRef="int" isList="false"/>
+        <return typeRef="java.util.Date" isList="false"/>
+    </operation>
+    <operation name="checkIfExistingInCreditLine">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="checkStatusActive">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbapprovedcf" isList="false"/>
+    </operation>
+    <operation name="creditLineInquiry">
+        <parameter name="cif" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.CreditLineForm" isList="true"/>
+    </operation>
+    <operation name="getCreditLineDetails">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbapprovedcf" isList="false"/>
+    </operation>
+    <operation name="getListOfCreditFacilityType">
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.CreditLineForm" isList="true"/>
+    </operation>
+    <operation name="saveCreditLineSetupCorp">
+        <parameter name="form" typeRef="com.etel.forms.CreditLineForm" isList="false"/>
+        <return typeRef="com.etel.forms.FormValidation" isList="false"/>
+    </operation>
+    <operation name="saveCreditLineSetupIndiv">
+        <parameter name="form" typeRef="com.etel.forms.CreditLineForm" isList="false"/>
+        <return typeRef="com.etel.forms.FormValidation" isList="false"/>
+    </operation>
+    <operation name="searchExistingFacilityByCifNo">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.ExistFacilityForm" isList="true"/>
+    </operation>
+    <operation name="searchFacility">
+        <parameter name="cfappno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fullname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxresult" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.etel.forms.ExistFacilityForm" isList="true"/>
+    </operation>
+    <operation name="searchFacilityCount">
+        <parameter name="cfappno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fullname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="int" isList="false"/>
+    </operation>
+    <operation name="totalActiveCreditLine">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="int" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.forms.CreditLineForm" name="CreditLineForm" supportsQuickData="false">
+            <element name="cfamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="cfappno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cfapprovedamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="cfbalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="cfcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cfcurrency" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cfdtopen" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="cfexpdt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="cfintrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="cfintrateperiod" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cflevel" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="cfmaker" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cfmaxrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="cfminrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="cfproposedamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="cfrefno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cfrefnoconcat" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cfrevolving" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="cfseqno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cfstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cfsubseqno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cfterm" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="cftermperiod" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cftype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="custype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="facilitycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="facilityname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="type" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.forms.ExistFacilityForm" name="ExistFacilityForm" supportsQuickData="false">
+            <element name="cfamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="cfappno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cfapprovedamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="cfbalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="cfexpdt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="cfintrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="cfmaker" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cfrefnoconcat" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cfstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cfterm" typeRef="int" isList="false" allowNull="false"/>
+            <element name="cftermperiod" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cftype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datestatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="facilitytype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="id" typeRef="int" isList="false" allowNull="false"/>
+            <element name="cfrevolving" typeRef="boolean" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

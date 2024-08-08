@@ -1,0 +1,57 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbapprellegaldescproperty" table="TBAPPRELLEGALDESCPROPERTY" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="collateralid" type="integer">
+            <column name="collateralid"/>
+        </property>
+        <property name="appraisalreportid" type="string">
+            <column name="appraisalreportid" length="20"/>
+        </property>
+        <property name="certtitle" type="string">
+            <column name="certtitle" length="50"/>
+        </property>
+        <property name="certtitleno" type="string">
+            <column name="certtitleno" length="50"/>
+        </property>
+        <property name="lotno" type="string">
+            <column name="lotno" length="50"/>
+        </property>
+        <property name="blockno" type="string">
+            <column name="blockno" length="50"/>
+        </property>
+        <property name="planno" type="string">
+            <column name="planno" length="50"/>
+        </property>
+        <property name="lotareasqm" type="string">
+            <column name="lotareasqm" length="50"/>
+        </property>
+        <property name="registeredowner" type="string">
+            <column name="registeredowner" length="200"/>
+        </property>
+        <property name="unitno" type="string">
+            <column name="unitno" length="50"/>
+        </property>
+        <property name="floorno" type="string">
+            <column name="floorno" length="50"/>
+        </property>
+        <property name="towerbldgno" type="string">
+            <column name="towerbldgno" length="50"/>
+        </property>
+        <property name="clusterno" type="string">
+            <column name="clusterno" length="50"/>
+        </property>
+        <property name="floorarea" type="string">
+            <column name="floorarea" length="50"/>
+        </property>
+        <property name="registrydeeds" type="string">
+            <column name="registrydeeds" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

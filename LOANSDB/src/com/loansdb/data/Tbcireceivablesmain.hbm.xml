@@ -1,0 +1,63 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbcireceivablesmain" table="TBCIRECEIVABLESMAIN" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="cireceivableid" type="integer">
+            <column name="cireceivableid"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="reporttype" type="string">
+            <column name="reporttype" length="20"/>
+        </property>
+        <property name="reportstatus" type="string">
+            <column name="reportstatus" length="10"/>
+        </property>
+        <property name="customername" type="string">
+            <column name="customername" length="300"/>
+        </property>
+        <property name="assignedci" type="string">
+            <column name="assignedci" length="20"/>
+        </property>
+        <property name="assignedcis" type="string">
+            <column name="assignedcis" length="20"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="reportdate" type="timestamp">
+            <column name="reportdate" length="23"/>
+        </property>
+        <property name="dateassigned" type="timestamp">
+            <column name="dateassigned" length="23"/>
+        </property>
+        <property name="datesubmitted" type="timestamp">
+            <column name="datesubmitted" length="23"/>
+        </property>
+        <property name="datereviewed" type="timestamp">
+            <column name="datereviewed" length="23"/>
+        </property>
+        <property name="reviewedby" type="string">
+            <column name="reviewedby" length="20"/>
+        </property>
+        <property name="reasonreturn" type="string">
+            <column name="reasonreturn" length="300"/>
+        </property>
+        <property name="companycode" type="string">
+            <column name="companycode" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

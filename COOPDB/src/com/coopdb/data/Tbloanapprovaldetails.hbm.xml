@@ -1,0 +1,40 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbloanapprovaldetails" table="TBLOANAPPROVALDETAILS" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.TbloanapprovaldetailsId">
+            <key-property name="evalreportid" type="integer">
+                <column name="evalreportid"/>
+            </key-property>
+            <key-property name="appno" type="string">
+                <column name="appno" length="50"/>
+            </key-property>
+            <key-property name="username" type="string">
+                <column name="username" length="50"/>
+            </key-property>
+            <key-property name="approvallevel" type="integer">
+                <column name="approvallevel"/>
+            </key-property>
+        </composite-id>
+        <property name="decision" type="string">
+            <column name="decision" length="50"/>
+        </property>
+        <property name="readstatus" type="boolean">
+            <column name="readstatus"/>
+        </property>
+        <property name="lastreaddate" type="timestamp">
+            <column name="lastreaddate" length="23"/>
+        </property>
+        <property name="assigneddate" type="timestamp">
+            <column name="assigneddate" length="23"/>
+        </property>
+        <property name="decisiondate" type="timestamp">
+            <column name="decisiondate" length="23"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="300"/>
+        </property>
+        <property name="approvalsequence" type="integer">
+            <column name="approvalsequence"/>
+        </property>
+    </class>
+</hibernate-mapping>

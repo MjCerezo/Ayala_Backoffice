@@ -1,0 +1,19 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbcollateralperprod" table="TBCOLLATERALPERPROD" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.TbcollateralperprodId">
+            <key-property name="prodcode" type="string">
+                <column name="prodcode" length="5"/>
+            </key-property>
+            <key-property name="collateraltype" type="string">
+                <column name="collateraltype" length="5"/>
+            </key-property>
+        </composite-id>
+        <property name="dateadded" type="timestamp">
+            <column name="dateadded" length="23"/>
+        </property>
+        <property name="addedby" type="string">
+            <column name="addedby" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

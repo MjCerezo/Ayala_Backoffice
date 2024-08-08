@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="EmailFacade" class="com.etel.email.EmailFacade" CRUDService="false" type="JavaService" springFile="EmailFacade.spring.xml">
+    <operation name="deleteEmailFormat">
+        <parameter name="emailcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteEmailParams">
+        <parameter name="emailtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="emailcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getEmailCodeList">
+        <return typeRef="com.coopdb.data.Tbemailformats" isList="true"/>
+    </operation>
+    <operation name="getEmailFormatList">
+        <return typeRef="com.coopdb.data.Tbemailformats" isList="true"/>
+    </operation>
+    <operation name="getEmailParamsList">
+        <return typeRef="com.etel.email.forms.TBEmailParamsForm" isList="true"/>
+    </operation>
+    <operation name="getUsernameList">
+        <return typeRef="java.lang.String" isList="true"/>
+    </operation>
+    <operation name="saveEmailFormat">
+        <parameter name="format" typeRef="com.coopdb.data.Tbemailformats" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveEmailParams">
+        <parameter name="addEmParams" typeRef="com.etel.email.forms.TBEmailParamsForm" isList="false"/>
+        <parameter name="updateEmParams" typeRef="com.etel.email.forms.TBEmailParamsForm" isList="false"/>
+        <parameter name="newOrEdited" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveEmailSMTP">
+        <parameter name="emailform" typeRef="com.etel.email.forms.EmailForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="sendEmail">
+        <parameter name="emailCode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="userName" typeRef="java.lang.String" isList="false"/>
+        <parameter name="changePassword" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.FormValidation" isList="false"/>
+    </operation>
+    <operation name="sendEmailFoLoanApplicationApprover">
+        <parameter name="emailCode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="sendEmailForMemberAndCompanyApplication">
+        <parameter name="emailCode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="userName" typeRef="java.lang.String" isList="false"/>
+        <parameter name="password" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="validateEmailFormat">
+        <parameter name="format" typeRef="com.coopdb.data.Tbemailformats" isList="false"/>
+        <parameter name="newOrEdited" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.FormValidation" isList="false"/>
+    </operation>
+    <operation name="validateEmailParams">
+        <parameter name="emParams" typeRef="com.etel.email.forms.TBEmailParamsForm" isList="false"/>
+        <return typeRef="com.etel.forms.FormValidation" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.email.forms.TBEmailParamsForm" name="TBEmailParamsForm" supportsQuickData="false">
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="emailadd" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="emailcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="emailtype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.email.forms.EmailForm" name="EmailForm" supportsQuickData="false">
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bcc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="body" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="emailcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="flag" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="recipient" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="requestid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subject" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="teamcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbapilogs" table="TBAPILOGS" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="apitype" type="string">
+            <column name="apitype" length="50"/>
+        </property>
+        <property name="issuccess" type="boolean">
+            <column name="issuccess"/>
+        </property>
+        <property name="requestbody" type="string">
+            <column name="requestbody"/>
+        </property>
+        <property name="responsebody" type="string">
+            <column name="responsebody"/>
+        </property>
+        <property name="dateinvoked" type="timestamp">
+            <column name="dateinvoked" length="23"/>
+        </property>
+        <property name="invokedby" type="string">
+            <column name="invokedby" length="100"/>
+        </property>
+    </class>
+</hibernate-mapping>

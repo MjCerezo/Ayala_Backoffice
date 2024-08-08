@@ -1,0 +1,21 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tblamrationalerecomm" table="TBLAMRATIONALERECOMM" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="evalreportid" type="integer">
+            <column name="evalreportid"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="year" type="integer">
+            <column name="year"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="8000"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,43 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbfssubsection" table="TBFSSUBSECTION" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.TbfssubsectionId">
+            <key-property name="fssection" type="string">
+                <column name="fssection" length="5"/>
+            </key-property>
+            <key-property name="fssubsection" type="string">
+                <column name="fssubsection" length="5"/>
+            </key-property>
+            <key-property name="fssubsectiondesc" type="string">
+                <column name="fssubsectiondesc" length="300"/>
+            </key-property>
+        </composite-id>
+        <property name="applytocorp" type="boolean">
+            <column name="applytocorp"/>
+        </property>
+        <property name="applytosole" type="boolean">
+            <column name="applytosole"/>
+        </property>
+        <property name="applytopart" type="boolean">
+            <column name="applytopart"/>
+        </property>
+        <property name="itemnameflag" type="boolean">
+            <column name="itemnameflag"/>
+        </property>
+        <property name="sequence" type="integer">
+            <column name="sequence"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="lastupdated" type="timestamp">
+            <column name="lastupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

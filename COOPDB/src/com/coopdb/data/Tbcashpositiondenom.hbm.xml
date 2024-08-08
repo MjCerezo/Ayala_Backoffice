@@ -1,0 +1,57 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbcashpositiondenom" table="TBCASHPOSITIONDENOM" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txrefno" type="string">
+            <column name="txrefno" length="20"/>
+        </property>
+        <property name="txamount" type="big_decimal">
+            <column name="txamount" precision="16"/>
+        </property>
+        <property name="dnm1000" type="integer">
+            <column name="dnm1000"/>
+        </property>
+        <property name="dnm500" type="integer">
+            <column name="dnm500"/>
+        </property>
+        <property name="dnm200" type="integer">
+            <column name="dnm200"/>
+        </property>
+        <property name="dnm100" type="integer">
+            <column name="dnm100"/>
+        </property>
+        <property name="dnm50" type="integer">
+            <column name="dnm50"/>
+        </property>
+        <property name="dnm20" type="integer">
+            <column name="dnm20"/>
+        </property>
+        <property name="dnm10" type="integer">
+            <column name="dnm10"/>
+        </property>
+        <property name="dnm5" type="integer">
+            <column name="dnm5"/>
+        </property>
+        <property name="dnm1" type="integer">
+            <column name="dnm1"/>
+        </property>
+        <property name="dnm25cnt" type="integer">
+            <column name="dnm25cnt"/>
+        </property>
+        <property name="dnm10cnt" type="integer">
+            <column name="dnm10cnt"/>
+        </property>
+        <property name="dnm5cnt" type="integer">
+            <column name="dnm5cnt"/>
+        </property>
+        <property name="dnm1cnt" type="integer">
+            <column name="dnm1cnt"/>
+        </property>
+        <property name="instcode" type="string">
+            <column name="instcode" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

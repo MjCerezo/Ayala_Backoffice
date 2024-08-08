@@ -1,0 +1,156 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbdocsperapplication" table="TBDOCSPERAPPLICATION" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="docid" type="integer">
+            <column name="docid"/>
+            <generator class="identity"/>
+        </id>
+        <property name="dmsid" type="string">
+            <column name="dmsid" length="50"/>
+        </property>
+        <property name="documentcode" type="string">
+            <column name="documentcode" length="20"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="docstatus" type="string">
+            <column name="docstatus" length="50"/>
+        </property>
+        <property name="dateuploaded" type="timestamp">
+            <column name="dateuploaded" length="23"/>
+        </property>
+        <property name="uploadedby" type="string">
+            <column name="uploadedby" length="50"/>
+        </property>
+        <property name="issubmitted" type="boolean">
+            <column name="issubmitted"/>
+        </property>
+        <property name="isuploaded" type="boolean">
+            <column name="isuploaded"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="300"/>
+        </property>
+        <property name="documentname" type="string">
+            <column name="documentname" length="300"/>
+        </property>
+        <property name="doccategory" type="string">
+            <column name="doccategory" length="50"/>
+        </property>
+        <property name="docappstatus" type="string">
+            <column name="docappstatus" length="50"/>
+        </property>
+        <property name="applicationstatus" type="integer">
+            <column name="applicationstatus"/>
+        </property>
+        <property name="docchecklistid" type="integer">
+            <column name="docchecklistid"/>
+        </property>
+        <property name="docanalystremarks" type="string">
+            <column name="docanalystremarks" length="300"/>
+        </property>
+        <property name="txcode" type="string">
+            <column name="txcode" length="10"/>
+        </property>
+        <property name="docbasecode" type="string">
+            <column name="docbasecode"/>
+        </property>
+        <property name="filename" type="string">
+            <column name="filename" length="100"/>
+        </property>
+        <property name="datereqsubmission" type="timestamp">
+            <column name="datereqsubmission" length="23"/>
+        </property>
+        <property name="datesubmitted" type="timestamp">
+            <column name="datesubmitted" length="23"/>
+        </property>
+        <property name="applicationdate" type="timestamp">
+            <column name="applicationdate" length="23"/>
+        </property>
+        <property name="cfeffectivedate" type="timestamp">
+            <column name="cfeffectivedate" length="23"/>
+        </property>
+        <property name="cfexpirydate" type="timestamp">
+            <column name="cfexpirydate" length="23"/>
+        </property>
+        <property name="cfname" type="string">
+            <column name="cfname" length="300"/>
+        </property>
+        <property name="cfrefno" type="string">
+            <column name="cfrefno" length="50"/>
+        </property>
+        <property name="cftype" type="string">
+            <column name="cftype" length="50"/>
+        </property>
+        <property name="loanacctno" type="string">
+            <column name="loanacctno" length="50"/>
+        </property>
+        <property name="loanproduct" type="string">
+            <column name="loanproduct" length="50"/>
+        </property>
+        <property name="pnno" type="string">
+            <column name="pnno" length="50"/>
+        </property>
+        <property name="updatecycle" type="string">
+            <column name="updatecycle" length="5"/>
+        </property>
+        <property name="cifnosurety" type="string">
+            <column name="cifnosurety" length="50"/>
+        </property>
+        <property name="suretyname" type="string">
+            <column name="suretyname" length="300"/>
+        </property>
+        <property name="signatory" type="string">
+            <column name="signatory" length="300"/>
+        </property>
+        <property name="collateraldesc" type="string">
+            <column name="collateraldesc" length="300"/>
+        </property>
+        <property name="collateralno" type="string">
+            <column name="collateralno" length="50"/>
+        </property>
+        <property name="chassisno" type="string">
+            <column name="chassisno" length="50"/>
+        </property>
+        <property name="tctno" type="string">
+            <column name="tctno" length="50"/>
+        </property>
+        <property name="coveredyear" type="integer">
+            <column name="coveredyear"/>
+        </property>
+        <property name="idname" type="string">
+            <column name="idname" length="300"/>
+        </property>
+        <property name="idtype" type="string">
+            <column name="idtype" length="5"/>
+        </property>
+        <property name="idno" type="string">
+            <column name="idno" length="50"/>
+        </property>
+        <property name="receiveddate" type="timestamp">
+            <column name="receiveddate" length="23"/>
+        </property>
+        <property name="issuecity" type="string">
+            <column name="issuecity" length="50"/>
+        </property>
+        <property name="issuedate" type="timestamp">
+            <column name="issuedate" length="23"/>
+        </property>
+        <property name="issuecountry" type="string">
+            <column name="issuecountry" length="50"/>
+        </property>
+        <property name="issuedby" type="string">
+            <column name="issuedby" length="50"/>
+        </property>
+        <property name="documentno" type="string">
+            <column name="documentno" length="50"/>
+        </property>
+        <property name="fileddate" type="timestamp">
+            <column name="fileddate" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

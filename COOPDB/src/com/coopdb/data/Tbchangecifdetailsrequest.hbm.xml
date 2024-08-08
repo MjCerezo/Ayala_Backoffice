@@ -1,0 +1,54 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbchangecifdetailsrequest" table="TBCHANGECIFDETAILSREQUEST" catalog="CIFSDBDXBANK_SAMULCO" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="requestid" type="string">
+            <column name="requestid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="fullname" type="string">
+            <column name="fullname" length="250"/>
+        </property>
+        <property name="changetype" type="string">
+            <column name="changetype" length="50"/>
+        </property>
+        <property name="requestedby" type="string">
+            <column name="requestedby" length="250"/>
+        </property>
+        <property name="daterequested" type="timestamp">
+            <column name="daterequested" length="23"/>
+        </property>
+        <property name="requeststatus" type="string">
+            <column name="requeststatus" length="50"/>
+        </property>
+        <property name="requesttype" type="string">
+            <column name="requesttype" length="50"/>
+        </property>
+        <property name="customertype" type="string">
+            <column name="customertype" length="20"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="200"/>
+        </property>
+        <property name="approvedby" type="string">
+            <column name="approvedby" length="50"/>
+        </property>
+        <property name="dateapprove" type="timestamp">
+            <column name="dateapprove" length="23"/>
+        </property>
+        <property name="approverremarks" type="string">
+            <column name="approverremarks" length="200"/>
+        </property>
+        <property name="teamcode" type="string">
+            <column name="teamcode" length="20"/>
+        </property>
+        <property name="changefrom" type="string">
+            <column name="changefrom" length="500"/>
+        </property>
+        <property name="changeto" type="string">
+            <column name="changeto" length="500"/>
+        </property>
+    </class>
+</hibernate-mapping>

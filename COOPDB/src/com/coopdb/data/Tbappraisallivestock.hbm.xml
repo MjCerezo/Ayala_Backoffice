@@ -1,0 +1,93 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbappraisallivestock" table="TBAPPRAISALLIVESTOCK" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="appraisalreportid" type="string">
+            <column name="appraisalreportid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="collateralid" type="integer">
+            <column name="collateralid"/>
+        </property>
+        <property name="referenceno" type="string">
+            <column name="referenceno" length="50"/>
+        </property>
+        <property name="typelivestock" type="string">
+            <column name="typelivestock" length="3"/>
+        </property>
+        <property name="requestingofficer" type="string">
+            <column name="requestingofficer" length="50"/>
+        </property>
+        <property name="department" type="string">
+            <column name="department" length="50"/>
+        </property>
+        <property name="appraisaldate" type="timestamp">
+            <column name="appraisaldate" length="23"/>
+        </property>
+        <property name="reportdate" type="timestamp">
+            <column name="reportdate" length="23"/>
+        </property>
+        <property name="appraiser" type="string">
+            <column name="appraiser" length="50"/>
+        </property>
+        <property name="reviewedby" type="string">
+            <column name="reviewedby" length="50"/>
+        </property>
+        <property name="revieweddate" type="timestamp">
+            <column name="revieweddate" length="23"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="2"/>
+        </property>
+        <property name="statusdate" type="timestamp">
+            <column name="statusdate" length="23"/>
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="50"/>
+        </property>
+        <property name="weight" type="big_decimal">
+            <column name="weight" precision="20"/>
+        </property>
+        <property name="purchasedprice" type="big_decimal">
+            <column name="purchasedprice" precision="20"/>
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="10"/>
+        </property>
+        <property name="fatness" type="big_decimal">
+            <column name="fatness" precision="20"/>
+        </property>
+        <property name="muscling" type="string">
+            <column name="muscling" length="50"/>
+        </property>
+        <property name="age" type="integer">
+            <column name="age"/>
+        </property>
+        <property name="appraisedvalue" type="big_decimal">
+            <column name="appraisedvalue" precision="20"/>
+        </property>
+        <property name="loanablevalue" type="big_decimal">
+            <column name="loanablevalue" precision="20"/>
+        </property>
+        <property name="description" type="string">
+            <column name="description"/>
+        </property>
+        <property name="overallremarks" type="string">
+            <column name="overallremarks"/>
+        </property>
+        <property name="appvalpercent" type="big_decimal">
+            <column name="appvalpercent" precision="20"/>
+        </property>
+        <property name="marketvalue" type="big_decimal">
+            <column name="marketvalue" precision="20"/>
+        </property>
+        <property name="loanablepercent" type="big_decimal">
+            <column name="loanablepercent" precision="20"/>
+        </property>
+        <property name="marketpercent" type="big_decimal">
+            <column name="marketpercent" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

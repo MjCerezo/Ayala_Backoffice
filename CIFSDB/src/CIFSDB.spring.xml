@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+
+<!-- Generated 08/06/2024 19:26:31
+
+Configuration for 'CIFSDB' database service
+
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+
+    <bean 
+        id="CIFSDB"
+        class="com.cifsdb.CIFSDB"
+        scope="singleton"
+        lazy-init="true">
+        <property name="dataServiceManager">
+            <ref bean="CIFSDBDataService"/>
+        </property>
+        <property name="taskManager">
+            <ref bean="CIFSDBTaskMgr"/>
+        </property>
+    </bean>
+
+
+    <bean 
+        class="com.wavemaker.runtime.data.spring.WMPropertyPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        <property name="locations">
+            <list>
+                <value>classpath:CIFSDB.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean 
+        id="CIFSDBDataSource"
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
+        lazy-init="true">
+        <property name="driverClassName" value="${CIFSDB.driverClassName}"/>
+        <property name="url" value="${CIFSDB.connectionUrl}"/>
+        <property name="username" value="${CIFSDB.username}"/>
+        <property name="password" value="${CIFSDB.password}"/>
+    </bean>
+
+
+    <bean 
+        id="CIFSDBTxMgr" 
+        class="org.springframework.orm.hibernate3.HibernateTransactionManager"
+        lazy-init="true">
+        <property name="sessionFactory">
+            <ref bean="CIFSDBSessionFactory"/>
+        </property>
+    </bean>
+
+
+    <bean 
+        id="CIFSDBHibernateTemplate"
+        class="org.springframework.orm.hibernate3.HibernateTemplate"
+        lazy-init="true">
+        <property name="sessionFactory"> 
+            <ref bean="CIFSDBSessionFactory"/>
+        </property>
+    </bean>  
+
+
+    <bean 
+        id="CIFSDBSessionFactory" 
+        class="com.wavemaker.runtime.data.spring.ConfigurationAndSessionFactoryBean"
+        lazy-init="true">
+
+        <!-- A unique name for this SessionFactory's configuration -->
+        <property name="name" value="CIFSDB"/>
+        <property name="dataSource" ref="CIFSDBDataSource"/>
+
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${CIFSDB.dialect}</prop>
+                <prop key="hibernate.transaction.factory_class">
+                    org.hibernate.transaction.JDBCTransactionFactory
+                </prop>
+                <prop key="hibernate.current_session_context_class">thread</prop>
+                
+            </props> 
+        </property>
+
+        <property name="mappingResources">
+            <list>
+
+<value>com/cifsdb/data/Ciftin.hbm.xml</value>
+<value>com/cifsdb/data/Tbblacklistmain.hbm.xml</value>
+<value>com/cifsdb/data/Tbothercontacts.hbm.xml</value>
+<value>com/cifsdb/data/Cifmembershiptype.hbm.xml</value>
+<value>com/cifsdb/data/Tbqibinfo.hbm.xml</value>
+<value>com/cifsdb/data/Tbexistingloansother.hbm.xml</value>
+<value>com/cifsdb/data/Tbpsoccodes.hbm.xml</value>
+<value>com/cifsdb/data/Tbamlarequest.hbm.xml</value>
+<value>com/cifsdb/data/Tbmanagement.hbm.xml</value>
+<value>com/cifsdb/data/Tbuseraccess.hbm.xml</value>
+<value>com/cifsdb/data/Tbnotes.hbm.xml</value>
+<value>com/cifsdb/data/Tbbankaccounts.hbm.xml</value>
+<value>com/cifsdb/data/Tbemailformats.hbm.xml</value>
+<value>com/cifsdb/data/Tbotheraccounts.hbm.xml</value>
+<value>com/cifsdb/data/Tbuserroles.hbm.xml</value>
+<value>com/cifsdb/data/Tbcifmain.hbm.xml</value>
+<value>com/cifsdb/data/Tbauditevents.hbm.xml</value>
+<value>com/cifsdb/data/Tbcustomerrelationship.hbm.xml</value>
+<value>com/cifsdb/data/Tbrole.hbm.xml</value>
+<value>com/cifsdb/data/Tbriskprofile.hbm.xml</value>
+<value>com/cifsdb/data/Tbblacklistrequest.hbm.xml</value>
+<value>com/cifsdb/data/Tbpepinfo.hbm.xml</value>
+<value>com/cifsdb/data/Tbblacklistcorporate.hbm.xml</value>
+<value>com/cifsdb/data/Tbcifindividual.hbm.xml</value>
+<value>com/cifsdb/data/Tbpepq3.hbm.xml</value>
+<value>com/cifsdb/data/Tbcifmergerequest.hbm.xml</value>
+<value>com/cifsdb/data/Tbamlanoncountries.hbm.xml</value>
+<value>com/cifsdb/data/Tbsecurityparams.hbm.xml</value>
+<value>com/cifsdb/data/Tbreferrors.hbm.xml</value>
+<value>com/cifsdb/data/Tbsmtp.hbm.xml</value>
+<value>com/cifsdb/data/Tbcifpepinfo.hbm.xml</value>
+<value>com/cifsdb/data/Tbothercontactrequest.hbm.xml</value>
+<value>com/cifsdb/data/Tbsequence.hbm.xml</value>
+<value>com/cifsdb/data/Tbpasswordbank.hbm.xml</value>
+<value>com/cifsdb/data/Tbaccessrights.hbm.xml</value>
+<value>com/cifsdb/data/Tbroleaccess.hbm.xml</value>
+<value>com/cifsdb/data/Tbcifemployment.hbm.xml</value>
+<value>com/cifsdb/data/Tbcifindividualrequest.hbm.xml</value>
+<value>com/cifsdb/data/Tbdocdetails.hbm.xml</value>
+<value>com/cifsdb/data/Tbdosri.hbm.xml</value>
+<value>com/cifsdb/data/Tbblacklistindividual.hbm.xml</value>
+<value>com/cifsdb/data/Tbamlaindividual.hbm.xml</value>
+<value>com/cifsdb/data/Tbteammembers.hbm.xml</value>
+<value>com/cifsdb/data/Tbcifbusiness.hbm.xml</value>
+<value>com/cifsdb/data/Tbamlacorporate.hbm.xml</value>
+<value>com/cifsdb/data/Tbproperties.hbm.xml</value>
+<value>com/cifsdb/data/Tbgroup.hbm.xml</value>
+<value>com/cifsdb/data/Tbfatca.hbm.xml</value>
+<value>com/cifsdb/data/Tbtradereference.hbm.xml</value>
+<value>com/cifsdb/data/Tbcifgroup.hbm.xml</value>
+<value>com/cifsdb/data/Tbemailparams.hbm.xml</value>
+<value>com/cifsdb/data/Tbhistory.hbm.xml</value>
+<value>com/cifsdb/data/CityOfBirth.hbm.xml</value>
+<value>com/cifsdb/data/Tbqibhistory.hbm.xml</value>
+<value>com/cifsdb/data/Tbbranch.hbm.xml</value>
+<value>com/cifsdb/data/Tbdepedcodes.hbm.xml</value>
+<value>com/cifsdb/data/Tbcompany.hbm.xml</value>
+<value>com/cifsdb/data/Ciftitle.hbm.xml</value>
+<value>com/cifsdb/data/Tbaudittrail.hbm.xml</value>
+<value>com/cifsdb/data/Tbcifdependents.hbm.xml</value>
+<value>com/cifsdb/data/Tbcreditcardinfo.hbm.xml</value>
+<value>com/cifsdb/data/Tbpsiccodes.hbm.xml</value>
+<value>com/cifsdb/data/Tbcifcorporate.hbm.xml</value>
+<value>com/cifsdb/data/Tbchangecifdetailsrequest.hbm.xml</value>
+<value>com/cifsdb/data/Tbpersonalreference.hbm.xml</value>
+<value>com/cifsdb/data/Tbcorporaterequest.hbm.xml</value>
+<value>com/cifsdb/data/Tbcountry.hbm.xml</value>
+<value>com/cifsdb/data/Tbamlalistmain.hbm.xml</value>
+<value>com/cifsdb/data/Tbuser.hbm.xml</value>
+<value>com/cifsdb/data/Tbteams.hbm.xml</value>
+<value>com/cifsdb/data/Tbcodetable.hbm.xml</value>
+<value>com/cifsdb/data/Tbcifcancellationrequest.hbm.xml</value>
+<value>com/cifsdb/data/Tbcodename.hbm.xml</value>
+
+<value>com/cifsdb/data/Tbblacklistmain.ql.xml</value>
+<value>com/cifsdb/data/app-queries.ql.xml</value>
+
+            </list>
+        </property>
+
+    </bean>
+
+
+    <!-- the data service bean instance is injected into the service bean -->
+    <bean 
+        id="CIFSDBDataService" 
+        class="com.wavemaker.runtime.data.spring.SpringDataServiceManager"
+        lazy-init="true">
+        <constructor-arg>
+            <!-- the value of the "name" property of the SessionFactory -->
+            <value>CIFSDB</value>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="CIFSDBHibernateTemplate"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="CIFSDBTxMgr"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="CIFSDBTaskMgr"/>
+        </constructor-arg>
+        <constructor-arg>
+            <map>
+                <entry key="useIndividualCRUDOperations" value="false"/>
+                <entry key="refreshEntities" value=""/> 
+            </map>
+        </constructor-arg>
+    </bean>
+
+
+    <bean 
+        id="CIFSDBTaskMgr"
+        class="com.wavemaker.runtime.data.DefaultTaskManager"
+        lazy-init="true"/>
+
+    <bean class="com.wavemaker.runtime.service.events.EventWire"
+        lazy-init="false">
+        <property name="serviceWire" ref="CIFSDBServiceWire"/>
+        <property name="eventListener">
+            <bean class="com.wavemaker.runtime.data.DataServiceEventListener"/>
+        </property>
+    </bean>
+
+    <bean id="CIFSDBServiceWire"
+        class="com.wavemaker.runtime.service.reflect.ReflectServiceWire"
+        lazy-init="false" scope="singleton">
+        <property name="serviceId" value="CIFSDB"/>
+        <property name="serviceType" ref="DataService"/>
+    </bean>
+
+</beans>

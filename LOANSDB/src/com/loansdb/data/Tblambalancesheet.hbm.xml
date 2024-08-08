@@ -1,0 +1,66 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tblambalancesheet" table="TBLAMBALANCESHEET" catalog="LOANSDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cfappno" type="string">
+            <column name="cfappno" length="50"/>
+        </property>
+        <property name="cfrefno" type="string">
+            <column name="cfrefno" length="50"/>
+        </property>
+        <property name="year" type="timestamp">
+            <column name="year" length="23"/>
+        </property>
+        <property name="cashequivalents" type="big_decimal">
+            <column name="cashequivalents" precision="20"/>
+        </property>
+        <property name="tradereceivable" type="big_decimal">
+            <column name="tradereceivable" precision="20"/>
+        </property>
+        <property name="inventories" type="big_decimal">
+            <column name="inventories" precision="20"/>
+        </property>
+        <property name="currentassets" type="big_decimal">
+            <column name="currentassets" precision="20"/>
+        </property>
+        <property name="totalassets" type="big_decimal">
+            <column name="totalassets" precision="20"/>
+        </property>
+        <property name="tradepayable" type="big_decimal">
+            <column name="tradepayable" precision="20"/>
+        </property>
+        <property name="currentportiondebt" type="big_decimal">
+            <column name="currentportiondebt" precision="20"/>
+        </property>
+        <property name="currentliabilities" type="big_decimal">
+            <column name="currentliabilities" precision="20"/>
+        </property>
+        <property name="payablerelatedparty" type="big_decimal">
+            <column name="payablerelatedparty" precision="20"/>
+        </property>
+        <property name="totalliabilities" type="big_decimal">
+            <column name="totalliabilities" precision="20"/>
+        </property>
+        <property name="networth" type="big_decimal">
+            <column name="networth" precision="20"/>
+        </property>
+        <property name="networkingcapital" type="big_decimal">
+            <column name="networkingcapital" precision="20"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="lastupdated" type="timestamp">
+            <column name="lastupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

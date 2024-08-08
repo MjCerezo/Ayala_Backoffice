@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="LoanApplicationFacade" class="com.etel.loan.LoanApplicationFacade" CRUDService="false" type="JavaService" springFile="LoanApplicationFacade.spring.xml">
+    <operation name="searchLoanApplication">
+        <parameter name="tat" typeRef="java.lang.String" isList="false"/>
+        <parameter name="emp" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.etel.loanform.LoanAppInquiryForApprovalForm" isList="true"/>
+    </operation>
+    <operation name="searchLoanApplicationForApproval">
+        <parameter name="tat" typeRef="java.lang.String" isList="false"/>
+        <parameter name="emp" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.loanform.LoanAppInquiryForApprovalForm" isList="true"/>
+    </operation>
+    <operation name="searchLoanApplicationForBooking">
+        <parameter name="tat" typeRef="java.lang.String" isList="false"/>
+        <parameter name="emp" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.loanform.LoanAppInquiryForReleaseForm" isList="true"/>
+    </operation>
+    <operation name="searchLoanApplicationForRelease">
+        <parameter name="tat" typeRef="java.lang.String" isList="false"/>
+        <parameter name="emp" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.loanform.LoanAppInquiryForReleaseForm" isList="true"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.loanform.LoanAppInquiryForApprovalForm" name="LoanAppInquiryForApprovalForm" supportsQuickData="false">
+            <element name="cluster" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companyName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="employeeIdNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="employeeName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="memberId" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="statusDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="transNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="deviationFlag" typeRef="boolean" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.loanform.LoanAppInquiryForReleaseForm" name="LoanAppInquiryForReleaseForm" supportsQuickData="false">
+            <element name="amortization" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="cluster" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companyName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="depositAccountNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="employeeIdNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="intRate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="memberId" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="memberName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="modeRelease" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="netProceeds" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="statusDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="term" typeRef="int" isList="false" allowNull="false"/>
+            <element name="transNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="deviationFlag" typeRef="boolean" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

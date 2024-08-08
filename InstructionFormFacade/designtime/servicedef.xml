@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="InstructionFormFacade" class="com.etel.instruction.InstructionFormFacade" CRUDService="false" type="JavaService" springFile="InstructionFormFacade.spring.xml">
+    <operation name="checkIfReportIsOpened">
+        <parameter name="reportid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Boolean" isList="false"/>
+    </operation>
+    <operation name="checkInstructionSheet">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="doneReviewReport">
+        <parameter name="reportid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateInvestigation">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="investntype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateInvestigationCA">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getBIHistory">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbbireportmain" isList="true"/>
+    </operation>
+    <operation name="getCAHistory">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="collateraltype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="referenceno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbappraisalreportmain" isList="true"/>
+    </operation>
+    <operation name="getCIHistory">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcireportmain" isList="true"/>
+    </operation>
+    <operation name="getInstructionAccessRights">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.instruction.forms.InstructionAccessRightsForm" isList="false"/>
+    </operation>
+    <operation name="getInvestigationList">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="investigationtype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.instruction.forms.InvestigationFormList" isList="false"/>
+    </operation>
+    <operation name="getInvestigationListCA">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="investigationtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="collateralcategory" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.instruction.forms.InvestigationFormList" isList="false"/>
+    </operation>
+    <operation name="getInvestigationListCAGroup">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="investigationtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="collateralcategory" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.instruction.forms.InvestigationForm" isList="true"/>
+    </operation>
+    <operation name="getInvestigationListCASingle">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="investigationtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="collateralcategory" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.instruction.forms.InvestigationForm" isList="true"/>
+    </operation>
+    <operation name="getLstapp">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tblstapp" isList="false"/>
+    </operation>
+    <operation name="isOpenedBySupervisor">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="investigationtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="collateralid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Boolean" isList="false"/>
+    </operation>
+    <operation name="list">
+        <parameter name="list" typeRef="com.etel.instruction.forms.InvestigationForm" isList="true"/>
+        <return typeRef="com.etel.instruction.forms.InvestigationForm" isList="true"/>
+    </operation>
+    <operation name="saveInvestigation">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="investigationtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="instruction" typeRef="java.lang.String" isList="false"/>
+        <parameter name="aoremarks" typeRef="java.lang.String" isList="false"/>
+        <parameter name="assignedsupervisor" typeRef="java.lang.String" isList="false"/>
+        <parameter name="supervisorremarks" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveInvestigationCA">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="investigationtype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="instruction" typeRef="java.lang.String" isList="false"/>
+        <parameter name="aoremarks" typeRef="java.lang.String" isList="false"/>
+        <parameter name="assignedsupervisor" typeRef="java.lang.String" isList="false"/>
+        <parameter name="supervisorremarks" typeRef="java.lang.String" isList="false"/>
+        <parameter name="colid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="startReport">
+        <parameter name="reportid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="submitReport">
+        <parameter name="reportid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="validateRequest">
+        <parameter name="requestform" typeRef="com.etel.instruction.forms.RequestValidationForm" isList="false"/>
+        <return typeRef="com.etel.forms.ReturnForm" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.instruction.forms.InstructionAccessRightsForm" name="InstructionAccessRightsForm" supportsQuickData="false">
+            <element name="btnCreateRequest" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="btnSave" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="slcInstruction" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="txtAORemarks" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="txtSupervisorRemarks" typeRef="boolean" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.instruction.forms.InvestigationFormList" name="InvestigationFormList" supportsQuickData="false">
+            <element name="corporate" typeRef="com.etel.instruction.forms.InvestigationForm" isList="true" allowNull="false"/>
+            <element name="group" typeRef="com.etel.instruction.forms.InvestigationForm" isList="true" allowNull="false"/>
+            <element name="individual" typeRef="com.etel.instruction.forms.InvestigationForm" isList="true" allowNull="false"/>
+            <element name="single" typeRef="com.etel.instruction.forms.InvestigationForm" isList="true" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.instruction.forms.InvestigationForm" name="InvestigationForm" supportsQuickData="false">
+            <element name="aoremarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="colid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="collateraltype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="customername" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="groupid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="groupname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="grouptype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="initiatedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="instruction" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="investigationtype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lastrecorddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="neworused" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="participationcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="propertytype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="referenceno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="supervisor" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="supervisorremarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.instruction.forms.RequestValidationForm" name="RequestValidationForm" supportsQuickData="false">
+            <element name="amla" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bankcheck" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="bap" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="blacklist" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="bvr" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="cic" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cmap" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="creditcheck" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="evr" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="investigationtype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="pdrn" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tradecheck" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

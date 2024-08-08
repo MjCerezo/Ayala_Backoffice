@@ -1,0 +1,141 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbqibinfo" table="TBQIBINFO" catalog="CIFSDBUAT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="cifno" type="string">
+            <column name="cifno" length="50"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="registrationdate" type="timestamp">
+            <column name="registrationdate" length="23"/>
+        </property>
+        <property name="registrationnumber" type="string">
+            <column name="registrationnumber" length="50"/>
+        </property>
+        <property name="validityyears" type="integer">
+            <column name="validityyears"/>
+        </property>
+        <property name="validitydate" type="timestamp">
+            <column name="validitydate" length="23"/>
+        </property>
+        <property name="evaluatormarketing" type="string">
+            <column name="evaluatormarketing" length="50"/>
+        </property>
+        <property name="positionmarketing" type="string">
+            <column name="positionmarketing" length="50"/>
+        </property>
+        <property name="evaluatorcompliance" type="string">
+            <column name="evaluatorcompliance" length="50"/>
+        </property>
+        <property name="positioncompliance" type="string">
+            <column name="positioncompliance" length="50"/>
+        </property>
+        <property name="evaluationdatemarketing" type="timestamp">
+            <column name="evaluationdatemarketing" length="23"/>
+        </property>
+        <property name="evaluationdatecompliance" type="timestamp">
+            <column name="evaluationdatecompliance" length="23"/>
+        </property>
+        <property name="keyobjective1" type="boolean">
+            <column name="keyobjective1"/>
+        </property>
+        <property name="keyobjective2" type="boolean">
+            <column name="keyobjective2"/>
+        </property>
+        <property name="keyobjective3" type="boolean">
+            <column name="keyobjective3"/>
+        </property>
+        <property name="keyobjective4" type="boolean">
+            <column name="keyobjective4"/>
+        </property>
+        <property name="keyobjective5" type="boolean">
+            <column name="keyobjective5"/>
+        </property>
+        <property name="keyobjectiveothers" type="string">
+            <column name="keyobjectiveothers" length="100"/>
+        </property>
+        <property name="portfolioinv1" type="boolean">
+            <column name="portfolioinv1"/>
+        </property>
+        <property name="portfolioinv2" type="boolean">
+            <column name="portfolioinv2"/>
+        </property>
+        <property name="portfolioinv3" type="boolean">
+            <column name="portfolioinv3"/>
+        </property>
+        <property name="portfolioinv4" type="boolean">
+            <column name="portfolioinv4"/>
+        </property>
+        <property name="portfolioinv5" type="boolean">
+            <column name="portfolioinv5"/>
+        </property>
+        <property name="portfolioinv6" type="boolean">
+            <column name="portfolioinv6"/>
+        </property>
+        <property name="portfolioinv7" type="boolean">
+            <column name="portfolioinv7"/>
+        </property>
+        <property name="portfolioinvothers" type="string">
+            <column name="portfolioinvothers" length="100"/>
+        </property>
+        <property name="intendedinv" type="string">
+            <column name="intendedinv" length="50"/>
+        </property>
+        <property name="intendedinvothers" type="string">
+            <column name="intendedinvothers" length="100"/>
+        </property>
+        <property name="appetiterisk" type="string">
+            <column name="appetiterisk" length="50"/>
+        </property>
+        <property name="appetiteriskothers" type="string">
+            <column name="appetiteriskothers" length="100"/>
+        </property>
+        <property name="qibposition1" type="boolean">
+            <column name="qibposition1"/>
+        </property>
+        <property name="qibposition2" type="boolean">
+            <column name="qibposition2"/>
+        </property>
+        <property name="qibposition3" type="boolean">
+            <column name="qibposition3"/>
+        </property>
+        <property name="qibposition4" type="boolean">
+            <column name="qibposition4"/>
+        </property>
+        <property name="qibpositionothers" type="string">
+            <column name="qibpositionothers" length="100"/>
+        </property>
+        <property name="yeartrading" type="string">
+            <column name="yeartrading" length="50"/>
+        </property>
+        <property name="yeartradingothers" type="string">
+            <column name="yeartradingothers" length="100"/>
+        </property>
+        <property name="registrationstatus" type="string">
+            <column name="registrationstatus" length="50"/>
+        </property>
+        <property name="terminationreason" type="string">
+            <column name="terminationreason"/>
+        </property>
+        <property name="currentnetworth" type="big_decimal">
+            <column name="currentnetworth" precision="20"/>
+        </property>
+        <property name="amountofinvestment" type="big_decimal">
+            <column name="amountofinvestment" precision="20"/>
+        </property>
+        <property name="currentportfoliosecurities" type="string">
+            <column name="currentportfoliosecurities" length="50"/>
+        </property>
+        <property name="currentportfoliosecuritiesothers" type="string">
+            <column name="currentportfoliosecuritiesothers" length="50"/>
+        </property>
+        <property name="amountofsecurities" type="big_decimal">
+            <column name="amountofsecurities" precision="20"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="100"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

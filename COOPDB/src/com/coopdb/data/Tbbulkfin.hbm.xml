@@ -1,0 +1,153 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbbulkfin" table="TBBULKFIN" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txcode" type="string">
+            <column name="txcode" length="6"/>
+        </property>
+        <property name="txref" type="string">
+            <column name="txref" length="20"/>
+        </property>
+        <property name="txbatch" type="string">
+            <column name="txbatch" length="4"/>
+        </property>
+        <property name="txoper" type="integer">
+            <column name="txoper"/>
+        </property>
+        <property name="txrefmain" type="string">
+            <column name="txrefmain" length="20" not-null="true"/>
+        </property>
+        <property name="txvaldt" type="timestamp">
+            <column name="txvaldt" length="23"/>
+        </property>
+        <property name="txdate" type="timestamp">
+            <column name="txdate" length="23"/>
+        </property>
+        <property name="username" type="string">
+            <column name="username" length="50"/>
+        </property>
+        <property name="accountno" type="string">
+            <column name="accountno" length="50"/>
+        </property>
+        <property name="acctname" type="string">
+            <column name="acctname" length="200"/>
+        </property>
+        <property name="txamount" type="big_decimal">
+            <column name="txamount" precision="16"/>
+        </property>
+        <property name="currency" type="string">
+            <column name="currency" length="3"/>
+        </property>
+        <property name="checkacctno" type="string">
+            <column name="checkacctno" length="50"/>
+        </property>
+        <property name="checkno" type="string">
+            <column name="checkno" length="50"/>
+        </property>
+        <property name="checkdate" type="timestamp">
+            <column name="checkdate" length="23"/>
+        </property>
+        <property name="cleartype" type="string">
+            <column name="cleartype" length="2"/>
+        </property>
+        <property name="draweebank" type="string">
+            <column name="draweebank" length="10"/>
+        </property>
+        <property name="brstnno" type="string">
+            <column name="brstnno" length="20"/>
+        </property>
+        <property name="reasoncode" type="string">
+            <column name="reasoncode" length="10"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks"/>
+        </property>
+        <property name="accountnoto" type="string">
+            <column name="accountnoto" length="50"/>
+        </property>
+        <property name="passbook" type="integer">
+            <column name="passbook"/>
+        </property>
+        <property name="ledgerlineno" type="integer">
+            <column name="ledgerlineno"/>
+        </property>
+        <property name="txby" type="string">
+            <column name="txby" length="50"/>
+        </property>
+        <property name="txstatus" type="string">
+            <column name="txstatus" length="3"/>
+        </property>
+        <property name="override" type="integer">
+            <column name="override"/>
+        </property>
+        <property name="overrideby" type="string">
+            <column name="overrideby" length="20"/>
+        </property>
+        <property name="terminalid" type="string">
+            <column name="terminalid" length="10"/>
+        </property>
+        <property name="unit" type="string">
+            <column name="unit" length="10"/>
+        </property>
+        <property name="instcode" type="string">
+            <column name="instcode" length="10"/>
+        </property>
+        <property name="checklateind" type="boolean">
+            <column name="checklateind"/>
+        </property>
+        <property name="pbookprintind" type="integer">
+            <column name="pbookprintind"/>
+        </property>
+        <property name="hostacceptind" type="string">
+            <column name="hostacceptind" length="10"/>
+        </property>
+        <property name="errorcorrectind" type="integer">
+            <column name="errorcorrectind"/>
+        </property>
+        <property name="bpind" type="integer">
+            <column name="bpind"/>
+        </property>
+        <property name="chargeoverride" type="integer">
+            <column name="chargeoverride"/>
+        </property>
+        <property name="chargeoverrideby" type="string">
+            <column name="chargeoverrideby" length="20"/>
+        </property>
+        <property name="chargeamount" type="big_decimal">
+            <column name="chargeamount" precision="16"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount"/>
+        </property>
+        <property name="dateapproved" type="string">
+            <column name="dateapproved" length="27"/>
+        </property>
+        <property name="datereleased" type="string">
+            <column name="datereleased" length="27"/>
+        </property>
+        <property name="daterequest" type="string">
+            <column name="daterequest" length="27"/>
+        </property>
+        <property name="expiry" type="string">
+            <column name="expiry" length="27"/>
+        </property>
+        <property name="issuingbr" type="string">
+            <column name="issuingbr"/>
+        </property>
+        <property name="mccheckno" type="integer">
+            <column name="mccheckno"/>
+        </property>
+        <property name="payee" type="string">
+            <column name="payee"/>
+        </property>
+        <property name="status" type="integer">
+            <column name="status"/>
+        </property>
+        <property name="batchid" type="integer">
+            <column name="batchid"/>
+        </property>
+    </class>
+</hibernate-mapping>

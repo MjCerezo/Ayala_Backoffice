@@ -1,0 +1,16 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Ciftin" table="CIFTIN" catalog="AcaciaAyalaMembershipDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.cifsdb.data.CiftinId">
+            <key-property name="originatingBranch" type="string">
+                <column name="`Originating Branch`" length="50"/>
+            </key-property>
+            <key-property name="cifNo" type="string">
+                <column name="`CIF No`" length="50"/>
+            </key-property>
+            <key-property name="tin" type="string">
+                <column name="TIN" length="50"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

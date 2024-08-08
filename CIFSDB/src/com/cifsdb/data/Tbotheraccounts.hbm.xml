@@ -1,0 +1,69 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbotheraccounts" table="TBOTHERACCOUNTS" catalog="AcaciaAyalaMembershipDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="bankaccttype" type="string">
+            <column name="bankaccttype" length="50"/>
+        </property>
+        <property name="bank" type="string">
+            <column name="bank" length="50"/>
+        </property>
+        <property name="branch" type="string">
+            <column name="branch" length="50"/>
+        </property>
+        <property name="accountname" type="string">
+            <column name="accountname" length="250"/>
+        </property>
+        <property name="accountnumber" type="string">
+            <column name="accountnumber" length="50"/>
+        </property>
+        <property name="dateopened" type="timestamp">
+            <column name="dateopened" length="23"/>
+        </property>
+        <property name="adb" type="big_decimal">
+            <column name="adb" precision="20"/>
+        </property>
+        <property name="outstandingbal" type="big_decimal">
+            <column name="outstandingbal" precision="20"/>
+        </property>
+        <property name="accounttype" type="string">
+            <column name="accounttype" length="50"/>
+        </property>
+        <property name="loantype" type="string">
+            <column name="loantype" length="50"/>
+        </property>
+        <property name="pncnno" type="string">
+            <column name="pncnno" length="50"/>
+        </property>
+        <property name="valuedate" type="timestamp">
+            <column name="valuedate" length="23"/>
+        </property>
+        <property name="maturitydate" type="timestamp">
+            <column name="maturitydate" length="23"/>
+        </property>
+        <property name="investmenttype" type="string">
+            <column name="investmenttype" length="50"/>
+        </property>
+        <property name="investmentrefno" type="string">
+            <column name="investmentrefno" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="currency" type="string">
+            <column name="currency" length="50"/>
+        </property>
+        <property name="atmcardno" type="string">
+            <column name="atmcardno" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

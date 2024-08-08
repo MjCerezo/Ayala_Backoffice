@@ -1,0 +1,60 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tblockamount" table="TBLOCKAMOUNT" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="typeoflock" type="string">
+            <column name="typeoflock" length="2"/>
+        </property>
+        <property name="txrefno" type="string">
+            <column name="txrefno" length="50"/>
+        </property>
+        <property name="accountno" type="string">
+            <column name="accountno" length="50"/>
+        </property>
+        <property name="txamount" type="big_decimal">
+            <column name="txamount" precision="18"/>
+        </property>
+        <property name="txstatus" type="string">
+            <column name="txstatus" length="2"/>
+        </property>
+        <property name="txstatusdate" type="timestamp">
+            <column name="txstatusdate" length="23"/>
+        </property>
+        <property name="effectivitydate" type="timestamp">
+            <column name="effectivitydate" length="23"/>
+        </property>
+        <property name="expirydate" type="timestamp">
+            <column name="expirydate" length="23"/>
+        </property>
+        <property name="lockreason" type="string">
+            <column name="lockreason" length="2"/>
+        </property>
+        <property name="unlockreason" type="string">
+            <column name="unlockreason" length="2"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="500"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="liftremarks" type="string">
+            <column name="liftremarks" length="500"/>
+        </property>
+        <property name="branchcode" type="string">
+            <column name="branchcode" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,97 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbloanproductfees" table="TBLOANPRODUCTFEES" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.TbloanproductfeesId">
+            <key-property name="prodcode" type="string">
+                <column name="prodcode" length="10"/>
+            </key-property>
+            <key-property name="loanfeecode" type="string">
+                <column name="loanfeecode" length="10"/>
+            </key-property>
+        </composite-id>
+        <property name="loanfeename" type="string">
+            <column name="loanfeename" length="100"/>
+        </property>
+        <property name="loanfeeamt" type="big_decimal">
+            <column name="loanfeeamt" precision="18"/>
+        </property>
+        <property name="loanfeerate" type="big_decimal">
+            <column name="loanfeerate" precision="18"/>
+        </property>
+        <property name="effectivedate" type="timestamp">
+            <column name="effectivedate" length="23"/>
+        </property>
+        <property name="loanfeetype" type="string">
+            <column name="loanfeetype" length="10"/>
+        </property>
+        <property name="dstamt1" type="big_decimal">
+            <column name="dstamt1" precision="18"/>
+        </property>
+        <property name="dstamt2" type="big_decimal">
+            <column name="dstamt2" precision="18"/>
+        </property>
+        <property name="dstformuladiv" type="big_decimal">
+            <column name="dstformuladiv" precision="18"/>
+        </property>
+        <property name="dstformulamul" type="big_decimal">
+            <column name="dstformulamul" precision="18"/>
+        </property>
+        <property name="loancollection" type="string">
+            <column name="loancollection" length="5"/>
+        </property>
+        <property name="notdocamt" type="big_decimal">
+            <column name="notdocamt" precision="18"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="rateappliedto" type="string">
+            <column name="rateappliedto" length="50"/>
+        </property>
+        <property name="inhouserule" type="string">
+            <column name="inhouserule" length="5"/>
+        </property>
+        <property name="inhouserate" type="big_decimal">
+            <column name="inhouserate" precision="18"/>
+        </property>
+        <property name="inhouseamt" type="big_decimal">
+            <column name="inhouseamt" precision="18"/>
+        </property>
+        <property name="agentrule" type="string">
+            <column name="agentrule" length="5"/>
+        </property>
+        <property name="agentrate" type="big_decimal">
+            <column name="agentrate" precision="18"/>
+        </property>
+        <property name="agentamt" type="big_decimal">
+            <column name="agentamt" precision="18"/>
+        </property>
+        <property name="inhouserateapplied" type="string">
+            <column name="inhouserateapplied" length="5"/>
+        </property>
+        <property name="agentrateapplied" type="string">
+            <column name="agentrateapplied" length="5"/>
+        </property>
+        <property name="dstformulamul1" type="big_decimal">
+            <column name="dstformulamul1" precision="18"/>
+        </property>
+        <property name="dstformulamul1opt" type="string">
+            <column name="dstformulamul1opt" length="50"/>
+        </property>
+        <property name="glcode" type="string">
+            <column name="glcode" length="50"/>
+        </property>
+        <property name="gldescription" type="string">
+            <column name="gldescription" length="300"/>
+        </property>
+    </class>
+</hibernate-mapping>

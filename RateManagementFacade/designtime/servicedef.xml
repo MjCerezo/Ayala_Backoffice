@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="RateManagementFacade" class="com.etel.RateManagement.RateManagementFacade" CRUDService="false" type="JavaService" springFile="RateManagementFacade.spring.xml">
+    <operation name="addOrupdateRates">
+        <parameter name="rate" typeRef="com.coopdb.data.Tbrates" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteRates">
+        <parameter name="id" typeRef="int" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getListRates">
+        <return typeRef="com.coopdb.data.Tbrates" isList="true"/>
+    </operation>
+    <operation name="sampleJavaOperation">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

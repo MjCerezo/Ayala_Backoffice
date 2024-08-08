@@ -1,0 +1,99 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbpepinfo" table="TBPEPINFO" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="cifno" type="string">
+            <column name="cifno" length="50"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="q1" type="boolean">
+            <column name="q1"/>
+        </property>
+        <property name="govposition1" type="string">
+            <column name="govposition1" length="50"/>
+        </property>
+        <property name="govoffice1" type="string">
+            <column name="govoffice1" length="100"/>
+        </property>
+        <property name="govtype1" type="string">
+            <column name="govtype1" length="50"/>
+        </property>
+        <property name="q2" type="boolean">
+            <column name="q2"/>
+        </property>
+        <property name="govposition2" type="string">
+            <column name="govposition2" length="50"/>
+        </property>
+        <property name="govoffice2" type="string">
+            <column name="govoffice2" length="100"/>
+        </property>
+        <property name="govtype2" type="string">
+            <column name="govtype2" length="50"/>
+        </property>
+        <property name="q3" type="boolean">
+            <column name="q3"/>
+        </property>
+        <property name="famname1" type="string">
+            <column name="famname1" length="100"/>
+        </property>
+        <property name="relationship1" type="string">
+            <column name="relationship1" length="50"/>
+        </property>
+        <property name="famgovposition1" type="string">
+            <column name="famgovposition1" length="50"/>
+        </property>
+        <property name="famgovoffice1" type="string">
+            <column name="famgovoffice1" length="100"/>
+        </property>
+        <property name="famgovtype1" type="string">
+            <column name="famgovtype1" length="50"/>
+        </property>
+        <property name="famname2" type="string">
+            <column name="famname2" length="100"/>
+        </property>
+        <property name="relationship2" type="string">
+            <column name="relationship2" length="50"/>
+        </property>
+        <property name="famgovposition2" type="string">
+            <column name="famgovposition2" length="50"/>
+        </property>
+        <property name="famgovoffice2" type="string">
+            <column name="famgovoffice2" length="100"/>
+        </property>
+        <property name="famgovtype2" type="string">
+            <column name="famgovtype2" length="50"/>
+        </property>
+        <property name="pepstatus" type="string">
+            <column name="pepstatus" length="50"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100"/>
+        </property>
+        <property name="createddate" type="timestamp">
+            <column name="createddate" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="100"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="q1position" type="string">
+            <column name="q1position" length="50"/>
+        </property>
+        <property name="q1govoffice" type="string">
+            <column name="q1govoffice" length="100"/>
+        </property>
+        <property name="q1govtype" type="string">
+            <column name="q1govtype" length="50"/>
+        </property>
+        <property name="q2position" type="string">
+            <column name="q2position" length="50"/>
+        </property>
+        <property name="q2govoffice" type="string">
+            <column name="q2govoffice" length="100"/>
+        </property>
+        <property name="q2govtype" type="string">
+            <column name="q2govtype" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

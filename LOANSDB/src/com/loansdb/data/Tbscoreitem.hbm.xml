@@ -1,0 +1,18 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbscoreitem" table="TBSCOREITEM" catalog="LOANSDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="itemid" type="string">
+            <column name="itemid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="subcriteriaid" type="string">
+            <column name="subcriteriaid" length="20"/>
+        </property>
+        <property name="itemname" type="string">
+            <column name="itemname" length="300"/>
+        </property>
+        <property name="score" type="integer">
+            <column name="score"/>
+        </property>
+    </class>
+</hibernate-mapping>

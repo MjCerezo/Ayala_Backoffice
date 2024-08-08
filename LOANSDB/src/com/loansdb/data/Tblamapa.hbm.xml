@@ -1,0 +1,81 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tblamapa" table="TBLAMAPA" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="acctno" type="string">
+            <column name="acctno" length="50"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50"/>
+        </property>
+        <property name="startreviewdate" type="timestamp">
+            <column name="startreviewdate" length="23"/>
+        </property>
+        <property name="endreviewdate" type="timestamp">
+            <column name="endreviewdate" length="23"/>
+        </property>
+        <property name="totalnodays" type="integer">
+            <column name="totalnodays"/>
+        </property>
+        <property name="avefundsupplied" type="big_decimal">
+            <column name="avefundsupplied" precision="20"/>
+        </property>
+        <property name="reservereqrate" type="big_decimal">
+            <column name="reservereqrate" precision="20"/>
+        </property>
+        <property name="reserveproduct" type="big_decimal">
+            <column name="reserveproduct" precision="20"/>
+        </property>
+        <property name="depositnetreserve" type="big_decimal">
+            <column name="depositnetreserve" precision="20"/>
+        </property>
+        <property name="loans" type="big_decimal">
+            <column name="loans" precision="20"/>
+        </property>
+        <property name="netfundsuppliedused" type="big_decimal">
+            <column name="netfundsuppliedused" precision="20"/>
+        </property>
+        <property name="aveintratefunds" type="big_decimal">
+            <column name="aveintratefunds" precision="20"/>
+        </property>
+        <property name="aveintrateloan" type="big_decimal">
+            <column name="aveintrateloan" precision="20"/>
+        </property>
+        <property name="interestincomeloan" type="big_decimal">
+            <column name="interestincomeloan" precision="20"/>
+        </property>
+        <property name="incomenetfundsupplied" type="big_decimal">
+            <column name="incomenetfundsupplied" precision="20"/>
+        </property>
+        <property name="totalincomefunds" type="big_decimal">
+            <column name="totalincomefunds" precision="20"/>
+        </property>
+        <property name="tpr" type="big_decimal">
+            <column name="tpr" precision="20"/>
+        </property>
+        <property name="interestexpense" type="big_decimal">
+            <column name="interestexpense" precision="20"/>
+        </property>
+        <property name="expenseinterestrate" type="big_decimal">
+            <column name="expenseinterestrate" precision="20"/>
+        </property>
+        <property name="costnetfundused" type="big_decimal">
+            <column name="costnetfundused" precision="20"/>
+        </property>
+        <property name="totalexpensefunds" type="big_decimal">
+            <column name="totalexpensefunds" precision="20"/>
+        </property>
+        <property name="netincomelossfunds" type="big_decimal">
+            <column name="netincomelossfunds" precision="20"/>
+        </property>
+        <property name="ratereturn" type="big_decimal">
+            <column name="ratereturn" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

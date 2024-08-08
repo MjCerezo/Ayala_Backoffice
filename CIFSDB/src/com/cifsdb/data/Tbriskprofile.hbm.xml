@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbriskprofile" table="TBRISKPROFILE" catalog="AcaciaAyalaMembershipDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="riskprofiletype" type="string">
+            <column name="riskprofiletype" length="1"/>
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="100"/>
+        </property>
+        <property name="customertype" type="string">
+            <column name="customertype" length="1"/>
+        </property>
+        <property name="q1" type="boolean">
+            <column name="q1"/>
+        </property>
+        <property name="q2" type="boolean">
+            <column name="q2"/>
+        </property>
+        <property name="q3" type="boolean">
+            <column name="q3"/>
+        </property>
+        <property name="q4" type="boolean">
+            <column name="q4"/>
+        </property>
+        <property name="q5" type="boolean">
+            <column name="q5"/>
+        </property>
+        <property name="result" type="string">
+            <column name="result" length="1"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="100"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tblogs" table="TBLOGS" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="modulename" type="string">
+            <column name="modulename"/>
+        </property>
+        <property name="eventname" type="string">
+            <column name="eventname"/>
+        </property>
+        <property name="eventdate" type="timestamp">
+            <column name="eventdate" length="23"/>
+        </property>
+        <property name="currentdate" type="timestamp">
+            <column name="currentdate" length="23"/>
+        </property>
+        <property name="nextdate" type="timestamp">
+            <column name="nextdate" length="23"/>
+        </property>
+        <property name="description" type="string">
+            <column name="description"/>
+        </property>
+        <property name="errordescription" type="string">
+            <column name="errordescription"/>
+        </property>
+        <property name="uniquekey" type="string">
+            <column name="uniquekey"/>
+        </property>
+    </class>
+</hibernate-mapping>

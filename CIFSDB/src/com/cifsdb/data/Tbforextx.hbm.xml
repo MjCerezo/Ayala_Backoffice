@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbforextx" table="TBFOREXTX" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="currency" type="string">
+            <column name="currency" length="3"/>
+        </property>
+        <property name="txtype" type="integer">
+            <column name="txtype"/>
+        </property>
+        <property name="rate" type="string">
+            <column name="rate" length="50"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="16"/>
+        </property>
+        <property name="rateamount" type="big_decimal">
+            <column name="rateamount" precision="16"/>
+        </property>
+        <property name="amounttopay" type="big_decimal">
+            <column name="amounttopay" precision="16"/>
+        </property>
+        <property name="custtype" type="integer">
+            <column name="custtype"/>
+        </property>
+        <property name="accountno" type="string">
+            <column name="accountno" length="30"/>
+        </property>
+        <property name="custname" type="string">
+            <column name="custname" length="150"/>
+        </property>
+        <property name="custaddress" type="string">
+            <column name="custaddress" length="200"/>
+        </property>
+        <property name="custcontact" type="string">
+            <column name="custcontact" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

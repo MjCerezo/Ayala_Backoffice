@@ -1,0 +1,135 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tblstappbusiness" table="TBLSTAPPBUSINESS" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="businessid" type="integer">
+            <column name="businessid"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="50" not-null="true"/>
+        </property>
+        <property name="businessname" type="string">
+            <column name="businessname" length="100"/>
+        </property>
+        <property name="businesstype" type="string">
+            <column name="businesstype" length="50"/>
+        </property>
+        <property name="natureofbusiness" type="string">
+            <column name="natureofbusiness" length="50"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50"/>
+        </property>
+        <property name="businesstin" type="string">
+            <column name="businesstin" length="50"/>
+        </property>
+        <property name="businessclass" type="string">
+            <column name="businessclass" length="50"/>
+        </property>
+        <property name="businessphoneno" type="string">
+            <column name="businessphoneno" length="20"/>
+        </property>
+        <property name="businessfaxno" type="string">
+            <column name="businessfaxno" length="50"/>
+        </property>
+        <property name="emailaddress" type="string">
+            <column name="emailaddress" length="100"/>
+        </property>
+        <property name="psic" type="string">
+            <column name="psic" length="50"/>
+        </property>
+        <property name="incoporationdate" type="timestamp">
+            <column name="incoporationdate" length="23"/>
+        </property>
+        <property name="yearsofservice" type="integer">
+            <column name="yearsofservice"/>
+        </property>
+        <property name="grossincome" type="big_decimal">
+            <column name="grossincome" precision="20"/>
+        </property>
+        <property name="annualmonthind" type="string">
+            <column name="annualmonthind" length="50"/>
+        </property>
+        <property name="currency" type="string">
+            <column name="currency" length="50"/>
+        </property>
+        <property name="fulladdress1" type="string">
+            <column name="fulladdress1" length="300"/>
+        </property>
+        <property name="streetno1" type="string">
+            <column name="streetno1" length="100"/>
+        </property>
+        <property name="subdivision1" type="string">
+            <column name="subdivision1" length="100"/>
+        </property>
+        <property name="country1" type="string">
+            <column name="country1" length="50"/>
+        </property>
+        <property name="province1" type="string">
+            <column name="province1" length="50"/>
+        </property>
+        <property name="city1" type="string">
+            <column name="city1" length="50"/>
+        </property>
+        <property name="barangay1" type="string">
+            <column name="barangay1" length="50"/>
+        </property>
+        <property name="postalcode1" type="string">
+            <column name="postalcode1" length="50"/>
+        </property>
+        <property name="postalcodename" type="string">
+            <column name="postalcodename" length="50"/>
+        </property>
+        <property name="homeownership1" type="string">
+            <column name="homeownership1" length="50"/>
+        </property>
+        <property name="otherhomeownership1" type="string">
+            <column name="otherhomeownership1" length="50"/>
+        </property>
+        <property name="occupiedsince1" type="timestamp">
+            <column name="occupiedsince1" length="23"/>
+        </property>
+        <property name="countrycodephone" type="string">
+            <column name="countrycodephone" length="3"/>
+        </property>
+        <property name="areacodephone" type="string">
+            <column name="areacodephone" length="4"/>
+        </property>
+        <property name="countrycodefax" type="string">
+            <column name="countrycodefax" length="3"/>
+        </property>
+        <property name="areacodefax" type="string">
+            <column name="areacodefax" length="4"/>
+        </property>
+        <property name="buscifno" type="string">
+            <column name="buscifno" length="20"/>
+        </property>
+        <property name="psiccode" type="string">
+            <column name="psiccode" length="10"/>
+        </property>
+        <property name="psiclevel1" type="string">
+            <column name="psiclevel1" length="10"/>
+        </property>
+        <property name="psiclevel2" type="string">
+            <column name="psiclevel2" length="10"/>
+        </property>
+        <property name="psiclevel3" type="string">
+            <column name="psiclevel3" length="10"/>
+        </property>
+        <property name="psiclevel4" type="string">
+            <column name="psiclevel4" length="10"/>
+        </property>
+        <property name="mngbusid" type="string">
+            <column name="mngbusid" length="10"/>
+        </property>
+        <property name="isautogenerated" type="boolean">
+            <column name="isautogenerated"/>
+        </property>
+        <property name="genmanager" type="string">
+            <column name="genmanager" length="100"/>
+        </property>
+        <property name="gmcif" type="string">
+            <column name="gmcif" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

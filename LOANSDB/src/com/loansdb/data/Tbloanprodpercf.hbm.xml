@@ -1,0 +1,25 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbloanprodpercf" table="TBLOANPRODPERCF" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.TbloanprodpercfId">
+            <key-property name="prodcode" type="string">
+                <column name="prodcode" length="5"/>
+            </key-property>
+            <key-property name="facilitycode" type="string">
+                <column name="facilitycode" length="5"/>
+            </key-property>
+        </composite-id>
+        <property name="repaymentcode" type="string">
+            <column name="repaymentcode" length="5"/>
+        </property>
+        <property name="productname" type="string">
+            <column name="productname" length="300"/>
+        </property>
+        <property name="facilityname" type="string">
+            <column name="facilityname" length="300"/>
+        </property>
+        <property name="repaymenttype" type="string">
+            <column name="repaymenttype" length="100"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbmemberpersonalreference" table="TBMEMBERPERSONALREFERENCE" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="membershipappid" type="string">
+            <column name="membershipappid" length="20"/>
+        </property>
+        <property name="membershipid" type="string">
+            <column name="membershipid" length="20"/>
+        </property>
+        <property name="fullname" type="string">
+            <column name="fullname" length="300"/>
+        </property>
+        <property name="fulladdress" type="string">
+            <column name="fulladdress" length="300"/>
+        </property>
+        <property name="relationship" type="string">
+            <column name="relationship" length="50"/>
+        </property>
+        <property name="contactno" type="string">
+            <column name="contactno" length="50"/>
+        </property>
+        <property name="personalrefmemberid" type="string">
+            <column name="personalrefmemberid" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

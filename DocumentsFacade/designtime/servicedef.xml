@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="DocumentsFacade" class="com.etel.documents.DocumentsFacade" CRUDService="false" type="JavaService" springFile="DocumentsFacade.spring.xml">
+    <operation name="addDocument">
+        <parameter name="doc" typeRef="com.cifsdb.data.Tbdocdetails" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addDocumentLOS">
+        <parameter name="category" typeRef="java.lang.String" isList="false"/>
+        <parameter name="doccode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="docname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="remarks" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addRequiredDocuments">
+        <parameter name="req" typeRef="com.coopdb.data.Tbdocpertransactiontype" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="batchUpdateDocsSubmit">
+        <parameter name="docs" typeRef="com.coopdb.data.Tbdocsperapplication" isList="true"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="byCat">
+        <parameter name="category" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdocuments" isList="true"/>
+    </operation>
+    <operation name="checkDocCode">
+        <parameter name="code" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="checkPicOrPDF">
+        <parameter name="docid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteDoc">
+        <parameter name="code" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteDocs">
+        <parameter name="documentcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteDocument">
+        <parameter name="docid" typeRef="int" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteRequiredDocuments">
+        <parameter name="doccode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="displayDocsDetails">
+        <parameter name="doccategory" typeRef="java.lang.String" isList="false"/>
+        <parameter name="doctype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbdocdetails" isList="true"/>
+    </operation>
+    <operation name="documentPerTrans">
+        <parameter name="txname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbtransaction" isList="true"/>
+    </operation>
+    <operation name="getDocDetails">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="doccat" typeRef="java.lang.String" isList="false"/>
+        <parameter name="doccode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbdocdetails" isList="true"/>
+    </operation>
+    <operation name="getDocIDbyMemberIDandDocID">
+        <parameter name="memid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="docid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getDocumentPerProduct">
+        <parameter name="loanproduct" typeRef="java.lang.String" isList="false"/>
+        <parameter name="doccategory" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdocsperproduct" isList="true"/>
+    </operation>
+    <operation name="getDocumentPerProductNoDocCat">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdocsperproduct" isList="true"/>
+    </operation>
+    <operation name="getDocuments">
+        <return typeRef="com.coopdb.data.Tbdocuments" isList="true"/>
+    </operation>
+    <operation name="getDocumentsByDocCat">
+        <parameter name="doccat" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdocuments" isList="true"/>
+    </operation>
+    <operation name="getDocumentsPerLoanApplication">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="doccategory" typeRef="java.lang.String" isList="false"/>
+        <parameter name="doccode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdocsperapplication" isList="true"/>
+    </operation>
+    <operation name="getDocumentsPerLoanApplicationNoDocCat">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="doccode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdocsperapplication" isList="true"/>
+    </operation>
+    <operation name="getNewMemberAppDocChecklist">
+        <parameter name="membershipappid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdocchecklist" isList="true"/>
+    </operation>
+    <operation name="previewLoanApplicationDocument">
+        <parameter name="docid" typeRef="int" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="previewMembershipDocument">
+        <parameter name="docid" typeRef="int" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="refreshLoanApplicationDocumentChecklist">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="refreshMembershipDocumentsChecklist">
+        <parameter name="membershipid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="membershipappid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="reqDocuments">
+        <parameter name="txcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdocpertransactiontype" isList="true"/>
+    </operation>
+    <operation name="saveOrUpdateDocDetails">
+        <parameter name="details" typeRef="com.cifsdb.data.Tbdocdetails" isList="false"/>
+        <parameter name="filepath" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateDocs">
+        <parameter name="ref" typeRef="com.coopdb.data.Tbdocuments" isList="false"/>
+        <parameter name="meth" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="tbDocuments">
+        <return typeRef="com.coopdb.data.Tbdocuments" isList="true"/>
+    </operation>
+    <operation name="updateDocperApp">
+        <parameter name="doc" typeRef="com.coopdb.data.Tbdocsperapplication" isList="false"/>
+        <parameter name="filepath" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateDocument">
+        <parameter name="field" typeRef="java.lang.String" isList="false"/>
+        <parameter name="doc" typeRef="com.coopdb.data.Tbdocchecklist" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateDocumentLOS">
+        <parameter name="category" typeRef="java.lang.String" isList="false"/>
+        <parameter name="doccode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="docname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="remarks" typeRef="java.lang.String" isList="false"/>
+        <parameter name="iseditable" typeRef="boolean" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="uploadFile">
+        <parameter name="file" typeRef="org.springframework.web.multipart.MultipartFile" isList="false"/>
+        <return typeRef="com.wavemaker.runtime.server.FileUploadResponse" isList="false"/>
+    </operation>
+    <operation name="verifyNewMemberAppDocumentChecklist">
+        <parameter name="membershipappid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="viewDocument">
+        <parameter name="docid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="viewDocumentLAS">
+        <parameter name="docid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

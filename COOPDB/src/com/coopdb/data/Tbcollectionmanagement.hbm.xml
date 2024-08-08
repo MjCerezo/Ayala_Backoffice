@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbcollectionmanagement" table="TBCOLLECTIONMANAGEMENT" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="accountno" type="string">
+            <column name="accountno" length="50"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="autodebitaccountno" type="string">
+            <column name="autodebitaccountno" length="50"/>
+        </property>
+        <property name="accountname" type="string">
+            <column name="accountname" length="50"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="50"/>
+        </property>
+        <property name="loanpaymode" type="string">
+            <column name="loanpaymode" length="50"/>
+        </property>
+        <property name="collectionnoti" type="string">
+            <column name="collectionnoti" length="50"/>
+        </property>
+        <property name="email1" type="string">
+            <column name="email1" length="50"/>
+        </property>
+        <property name="email2" type="string">
+            <column name="email2" length="50"/>
+        </property>
+        <property name="address1" type="string">
+            <column name="address1" length="50"/>
+        </property>
+        <property name="address2" type="string">
+            <column name="address2" length="50"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

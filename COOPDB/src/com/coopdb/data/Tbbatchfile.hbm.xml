@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbbatchfile" table="TBBATCHFILE" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="batchfilename" type="string">
+            <column name="batchfilename" length="200"/>
+        </property>
+        <property name="batchstatus" type="integer">
+            <column name="batchstatus"/>
+        </property>
+        <property name="batchdate" type="timestamp">
+            <column name="batchdate" length="23"/>
+        </property>
+        <property name="companycode" type="string">
+            <column name="companycode" length="20"/>
+        </property>
+        <property name="originatingbr" type="string">
+            <column name="originatingbr" length="10"/>
+        </property>
+        <property name="processedby" type="string">
+            <column name="processedby" length="20"/>
+        </property>
+        <property name="uploadedby" type="string">
+            <column name="uploadedby" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

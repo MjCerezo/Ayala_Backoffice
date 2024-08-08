@@ -1,0 +1,72 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbappbeneficiary" table="TBAPPBENEFICIARY" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="membershipappid" type="string">
+            <column name="membershipappid" length="20" not-null="true"/>
+        </property>
+        <property name="membershipid" type="string">
+            <column name="membershipid" length="20"/>
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="50" not-null="true"/>
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="50" not-null="true"/>
+        </property>
+        <property name="middlename" type="string">
+            <column name="middlename" length="50"/>
+        </property>
+        <property name="fulladdress" type="string">
+            <column name="fulladdress" length="300"/>
+        </property>
+        <property name="relationship" type="string">
+            <column name="relationship" length="50"/>
+        </property>
+        <property name="contactno" type="string">
+            <column name="contactno" length="50"/>
+        </property>
+        <property name="age" type="integer">
+            <column name="age"/>
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="20"/>
+        </property>
+        <property name="dateofbirth" type="timestamp">
+            <column name="dateofbirth" length="23"/>
+        </property>
+        <property name="ismember" type="boolean">
+            <column name="ismember"/>
+        </property>
+        <property name="streetnoname" type="string">
+            <column name="streetnoname" length="100"/>
+        </property>
+        <property name="subdivision" type="string">
+            <column name="subdivision" length="50"/>
+        </property>
+        <property name="barangay" type="string">
+            <column name="barangay" length="50"/>
+        </property>
+        <property name="stateprovince" type="string">
+            <column name="stateprovince" length="50"/>
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="50"/>
+        </property>
+        <property name="region" type="string">
+            <column name="region" length="50"/>
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="50"/>
+        </property>
+        <property name="postalcode" type="string">
+            <column name="postalcode" length="50"/>
+        </property>
+        <property name="beneficiarymemberid" type="string">
+            <column name="beneficiarymemberid" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

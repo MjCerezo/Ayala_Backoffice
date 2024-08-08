@@ -1,0 +1,87 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbapprovalmatrix" table="TBAPPROVALMATRIX" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="transactiontype" type="string">
+            <column name="transactiontype" length="250"/>
+        </property>
+        <property name="loanproduct" type="string">
+            <column name="loanproduct" length="250"/>
+        </property>
+        <property name="level1approver" type="string">
+            <column name="level1approver" length="250"/>
+        </property>
+        <property name="level2approver" type="string">
+            <column name="level2approver" length="250"/>
+        </property>
+        <property name="level3approver" type="string">
+            <column name="level3approver" length="250"/>
+        </property>
+        <property name="level1requiredapproval" type="integer">
+            <column name="level1requiredapproval"/>
+        </property>
+        <property name="level2requiredapproval" type="integer">
+            <column name="level2requiredapproval"/>
+        </property>
+        <property name="level3requiredapproval" type="integer">
+            <column name="level3requiredapproval"/>
+        </property>
+        <property name="level1requiredrejected" type="integer">
+            <column name="level1requiredrejected"/>
+        </property>
+        <property name="level2requiredrejected" type="integer">
+            <column name="level2requiredrejected"/>
+        </property>
+        <property name="level3requiredrejected" type="integer">
+            <column name="level3requiredrejected"/>
+        </property>
+        <property name="level1rule" type="string">
+            <column name="level1rule" length="250"/>
+        </property>
+        <property name="level2rule" type="string">
+            <column name="level2rule" length="250"/>
+        </property>
+        <property name="level3rule" type="string">
+            <column name="level3rule" length="250"/>
+        </property>
+        <property name="level1limit" type="big_decimal">
+            <column name="level1limit" precision="20"/>
+        </property>
+        <property name="level2limit" type="big_decimal">
+            <column name="level2limit" precision="20"/>
+        </property>
+        <property name="level3limit" type="big_decimal">
+            <column name="level3limit" precision="20"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="250"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="250"/>
+        </property>
+        <property name="lastupdated" type="timestamp">
+            <column name="lastupdated" length="23"/>
+        </property>
+        <property name="level4approver" type="string">
+            <column name="level4approver" length="250"/>
+        </property>
+        <property name="level4requiredapproval" type="integer">
+            <column name="level4requiredapproval"/>
+        </property>
+        <property name="level4requiredrejected" type="integer">
+            <column name="level4requiredrejected"/>
+        </property>
+        <property name="level4rule" type="string">
+            <column name="level4rule" length="250"/>
+        </property>
+        <property name="level4limit" type="big_decimal">
+            <column name="level4limit" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="UserAccountFacade" class="com.user.maintenance.UserAccountFacade" CRUDService="false" type="JavaService" springFile="UserAccountFacade.spring.xml">
+    <operation name="accessRightsMain">
+        <return typeRef="com.user.maintenance.form.AccessRights" isList="true"/>
+    </operation>
+    <operation name="accessRightsSub">
+        <parameter name="role" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.user.maintenance.form.AccessRights" isList="true"/>
+    </operation>
+    <operation name="addModule">
+        <parameter name="rec" typeRef="com.coopdb.data.Tbcodetablecasa" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addRole">
+        <parameter name="rec" typeRef="com.coopdb.data.Tbcodetablecasa" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addRoleAccess">
+        <parameter name="rec" typeRef="com.coopdb.data.Tbroleaccess" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="createUser">
+        <parameter name="user" typeRef="com.coopdb.data.Tbuser" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteModule">
+        <parameter name="id" typeRef="int" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteRole">
+        <parameter name="id" typeRef="int" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteRoleAccess">
+        <parameter name="id" typeRef="int" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="editUser">
+        <parameter name="form" typeRef="com.user.maintenance.form.UserEditForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getUserByUsername">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbuser" isList="false"/>
+    </operation>
+    <operation name="getUserRolesByUsername">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.security.forms.TBRoleForm" isList="true"/>
+    </operation>
+    <operation name="mainMod">
+        <return typeRef="com.coopdb.data.Tbcodetablecasa" isList="true"/>
+    </operation>
+    <operation name="pageList">
+        <return typeRef="java.lang.String" isList="true"/>
+    </operation>
+    <operation name="roleAccessList">
+        <parameter name="role" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbroleaccess" isList="true"/>
+    </operation>
+    <operation name="roleList">
+        <return typeRef="com.coopdb.data.Tbcodetablecasa" isList="true"/>
+    </operation>
+    <operation name="saveUserGLAccount">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="glcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="selectMainSub">
+        <return typeRef="com.user.maintenance.form.MainSubSelectModuleForm" isList="false"/>
+    </operation>
+    <operation name="subMod">
+        <return typeRef="com.coopdb.data.Tbcodetablecasa" isList="true"/>
+    </operation>
+    <operation name="userInfo">
+        <parameter name="id" typeRef="int" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbuser" isList="false"/>
+    </operation>
+    <operation name="userList">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="instcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.user.maintenance.form.UserListForm" isList="true"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.user.maintenance.form.AccessRights" name="AccessRights" supportsQuickData="false">
+            <element name="level" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="module" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="modulename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="page" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subcount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.user.maintenance.form.UserEditForm" name="UserEditForm" supportsQuickData="false">
+            <element name="dtupdated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="email" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="id" typeRef="int" isList="false" allowNull="false"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="tellerslimit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="active" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="locked" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="passneverexp" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="suspended" typeRef="boolean" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.user.maintenance.form.MainSubSelectModuleForm" name="MainSubSelectModuleForm" supportsQuickData="false"/>
+        <dataobject javaType="com.user.maintenance.form.UserListForm" name="UserListForm" supportsQuickData="false">
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="id" typeRef="int" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="role" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="unitbalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="userid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

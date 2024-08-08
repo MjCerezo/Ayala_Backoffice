@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tboverridematrix" table="TBOVERRIDEMATRIX" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txcode" type="string">
+            <column name="txcode" length="50"/>
+        </property>
+        <property name="prodcode" type="string">
+            <column name="prodcode" length="50"/>
+        </property>
+        <property name="subprodcode" type="string">
+            <column name="subprodcode" length="50"/>
+        </property>
+        <property name="overriderule" type="string">
+            <column name="overriderule" length="50"/>
+        </property>
+        <property name="overriderole" type="string">
+            <column name="overriderole" length="50"/>
+        </property>
+        <property name="overrideusername" type="string">
+            <column name="overrideusername" length="50"/>
+        </property>
+        <property name="minamount" type="big_decimal">
+            <column name="minamount" precision="18"/>
+        </property>
+        <property name="maxamount" type="big_decimal">
+            <column name="maxamount" precision="18"/>
+        </property>
+        <property name="requirementtype" type="string">
+            <column name="requirementtype" length="50"/>
+        </property>
+        <property name="requirementgroup" type="string">
+            <column name="requirementgroup" length="50"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

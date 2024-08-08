@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="LMSReportFacade" class="com.etel.lmsreport.LMSReportFacade" CRUDService="false" type="JavaService" springFile="LMSReportFacade.spring.xml">
+    <operation name="convertDateFromMonthAndYear">
+        <parameter name="month" typeRef="int" isList="false"/>
+        <parameter name="year" typeRef="int" isList="false"/>
+        <return typeRef="java.util.Date" isList="false"/>
+    </operation>
+    <operation name="generateCASA_CollectionDueAndOverdue">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="areacode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="subareacode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="collector" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_InterestAccrualReport">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="groupby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="company" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_LoanInterestAndPenaltyComputationWorksheet">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asOf" typeRef="java.util.Date" isList="false"/>
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_AgingbyAmortDetailed">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="agingfilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_AgingbyAmortSummary">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="agingfilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_AgingbyAmortSummaryProd">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="agingfilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_AgingbyMatDetailed">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="agingfilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_AgingbyMatSummary">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="agingfilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_AgingbyMatSummaryProd">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="agingfilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_AgingbyPARDetailed">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="agingfilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_AgingbyPARSummary">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="agingfilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_AgingbyPARSummaryProd">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="agingfilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateLMS_BatchTransactionLoans">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="batchtxrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getAgingByAmort_Detailed">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSAgingReportForm" isList="true"/>
+    </operation>
+    <operation name="getAgingByAmort_Summary">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSAgingReportForm" isList="true"/>
+    </operation>
+    <operation name="getAgingByAmort_Summary_Product">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSAgingReportForm" isList="true"/>
+    </operation>
+    <operation name="getAgingByMat_Detailed">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSAgingReportForm" isList="true"/>
+    </operation>
+    <operation name="getAgingByMat_Summary">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSAgingReportForm" isList="true"/>
+    </operation>
+    <operation name="getAgingByMat_Summary_Product">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSAgingReportForm" isList="true"/>
+    </operation>
+    <operation name="getAgingByPAR_Detailed">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSAgingReportForm" isList="true"/>
+    </operation>
+    <operation name="getAgingByPAR_Summary">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSAgingReportForm" isList="true"/>
+    </operation>
+    <operation name="getAgingByPAR_Summary_Product">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSAgingReportForm" isList="true"/>
+    </operation>
+    <operation name="getBorrowerListofLoanAccounts">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSBalancesReportForm" isList="true"/>
+    </operation>
+    <operation name="getCollectionDueAndOverdue">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="areacode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="subareacode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="collector" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <parameter name="page" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="maxresult" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSCollectorForm" isList="true"/>
+    </operation>
+    <operation name="getCollectionDueAndOverdueCount">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="areacode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="subareacode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="collector" typeRef="java.lang.String" isList="false"/>
+        <parameter name="asof" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="int" isList="false"/>
+    </operation>
+    <operation name="getCollectionReport">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSAnalyticalReportForm" isList="true"/>
+    </operation>
+    <operation name="getDelinquencyBucketListDueAmount">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSAnalyticalReportForm" isList="true"/>
+    </operation>
+    <operation name="getDelinquencyBucketListLoanAccount">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSAnalyticalReportForm" isList="true"/>
+    </operation>
+    <operation name="getInterestAccrualSetupforthePeriod">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSDataForm" isList="true"/>
+    </operation>
+    <operation name="getJournalEntriesfortheDay">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSDataForm" isList="true"/>
+    </operation>
+    <operation name="getLMSBranch">
+        <return typeRef="com.etel.lmsreport.form.LMSReportForms" isList="true"/>
+    </operation>
+    <operation name="getLMSComprehensive">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSComprehensiveListForm" isList="true"/>
+    </operation>
+    <operation name="getLMSReportTransStatus">
+        <parameter name="codename" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSReportForms" isList="true"/>
+    </operation>
+    <operation name="getLMSReportTransType">
+        <parameter name="codename" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSReportForms" isList="true"/>
+    </operation>
+    <operation name="getListOfLoanAccountsFullyPaidBeforeMaturityDate">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSAnalyticalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListOfLoanReleasesPerFirmSize">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSDataForm" isList="true"/>
+    </operation>
+    <operation name="getListofDecidedLoanApplications">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSDataForm" isList="true"/>
+    </operation>
+    <operation name="getListofDisapprovedTransactions">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSExceptionReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofLMSTransactions">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSDataForm" isList="true"/>
+    </operation>
+    <operation name="getListofLoanAccounts">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSBalancesReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofLoanAccountswithExcessPaymentBalance">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSBalancesReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofLoanApplications">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSDataForm" isList="true"/>
+    </operation>
+    <operation name="getListofLoanReleases">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSDataForm" isList="true"/>
+    </operation>
+    <operation name="getListofLoanReleasesFATCARelated">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSExceptionReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofLoanReleasestoDOSRI">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSExceptionReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofLoanReleasestoPEP">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSExceptionReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofUnpostedFinancialTransactions">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSExceptionReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofWaivedInterestsPenaltiesOtherCharges">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSExceptionReportForm" isList="true"/>
+    </operation>
+    <operation name="getLoanApplicationStatus">
+        <parameter name="workflowid" typeRef="int" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSWorkflowProcessReportForm" isList="true"/>
+    </operation>
+    <operation name="getLoanCollectionsPerBranchSolicitingOfficerApprovingOfficer">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSAnalyticalReportForm" isList="true"/>
+    </operation>
+    <operation name="getLoanGrantPerformanceReviewPerBranch">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSAnalyticalReportForm" isList="true"/>
+    </operation>
+    <operation name="getLoanGrantPerformanceReviewPerBranchSolicitingOfficerApprovingOfficer">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSAnalyticalReportForm" isList="true"/>
+    </operation>
+    <operation name="getLoanInterestAndPenaltyComputationWorksheet">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSDataForm" isList="true"/>
+    </operation>
+    <operation name="getLoanReleasesPerRange">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSDataForm" isList="true"/>
+    </operation>
+    <operation name="getLoansTargetvsPerformance">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSAnalyticalReportForm" isList="true"/>
+    </operation>
+    <operation name="getLoansUsers">
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSUserForms" isList="true"/>
+    </operation>
+    <operation name="getRecordedLoanIncomeperBranch">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSAnalyticalReportForm" isList="true"/>
+    </operation>
+    <operation name="getScheduleofAccountswithArrearages">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSAnalyticalReportForm" isList="true"/>
+    </operation>
+    <operation name="getScheduleofDueAmortizations">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSBalancesReportForm" isList="true"/>
+    </operation>
+    <operation name="getScheduleofHeldSecurities">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSDataForm" isList="true"/>
+    </operation>
+    <operation name="getScheduleofLoanAccountsfromOldStatustoCurrentStatus">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSBalancesReportForm" isList="true"/>
+    </operation>
+    <operation name="getScheduleofLoanAccountswithAccountsReceivableBalance">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSBalancesReportForm" isList="true"/>
+    </operation>
+    <operation name="getScheduleofLoanAccountswithOutstandingLPC">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSBalancesReportForm" isList="true"/>
+    </operation>
+    <operation name="getScheduleofLoanReleasesperBranch">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSBalancesReportForm" isList="true"/>
+    </operation>
+    <operation name="getScheduleofLoanReleasesperSolicitingOfficer">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSBalancesReportForm" isList="true"/>
+    </operation>
+    <operation name="getScheduleofOutstandingAccruedInterestReceivables">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSBalancesReportForm" isList="true"/>
+    </operation>
+    <operation name="getScheduleofOutstandingUnearnedInterestDiscounts">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSBalancesReportForm" isList="true"/>
+    </operation>
+    <operation name="getScheduleofReceivedDocumentsSecurities">
+        <parameter name="forms" typeRef="com.etel.lmsreport.form.LMSParametersForm" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSDataForm" isList="true"/>
+    </operation>
+    <operation name="getYears">
+        <parameter name="startYear" typeRef="int" isList="false"/>
+        <return typeRef="java.lang.Integer" isList="true"/>
+    </operation>
+    <operation name="listLMSUnearnedInterest">
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="groupby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="com.etel.lmsreport.form.LMSUnearnedInterestForm" isList="true"/>
+    </operation>
+    <operation name="listOfLoanAccts">
+        <parameter name="pnno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fullname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="product" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companycode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.lmsreport.form.LMSAgingReportForm" name="LMSAgingReportForm" supportsQuickData="false">
+            <element name="address" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="amortamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="arrears" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="collectiontype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="collectorname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="day181to365" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="day181to365ParAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="day181to365ParRate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="day1to30" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="day1to30ParAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="day1to30ParRate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="day31to60" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="day31to60ParAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="day31to60ParRate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="day61to90" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="day61to90ParAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="day61to90ParRate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="day91to180" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="day91to180ParAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="day91to180ParRate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="dayover365" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="dayover365ParAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="dayover365ParRate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="dtbook" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lasttransdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="loanprod" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="matdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="noofdelinquent" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="notyetdue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="parRateAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="parRateTotal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="pnno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prinamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="prinbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="regularsavings" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="sharedcapcommon" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.lmsreport.form.LMSParametersForm" name="LMSParametersForm" supportsQuickData="false">
+            <element name="accountStatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="agingType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="asOf" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="borrowerType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="businessName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifDbLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateFilter" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="decision" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="endDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="enterStoredAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="enterStoredCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="enterTargetAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="enterTargetCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="firstName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="from" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="fromAccountStat" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lastName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanOfficer" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanProduct" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="losDbLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="noFilter" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="officer" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sourceOfPayment" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="startDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="to" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="toAccountStat" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="transStat" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.lmsreport.form.LMSBalancesReportForm" name="LMSBalancesReportForm" supportsQuickData="false">
+            <element name="accountName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctsts" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="airBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="amortzAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="amortzDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="applicationNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="approvedBy" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="arBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateAvailed" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateOfPayment" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="exessPayOutsBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="fromStatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="installmentNo" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="intRate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanAccountNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanOutBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanProduct" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lpcBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="maturityDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="origAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="outBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="outLoanBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="outsAccruedInt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="outsUnearnedInt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="pnNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prinBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="productname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="reclassDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="solicitingOff" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="term" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="toStatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="totalAmountPerProdHeadOffice" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalAmountPerSoliciting" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalAmountToUpdate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalCountPerProdHeadOffice" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalCountPerSoliciting" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalNoOfInstal" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="uidBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.lmsreport.form.LMSCollectorForm" name="LMSCollectorForm" supportsQuickData="false">
+            <element name="amortamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="amortsched" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="area" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="atchmnt1" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="atchmnt2" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="atchmnt3" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="atchmnt4" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="atchmnt5" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="collectorname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="id" typeRef="int" isList="false" allowNull="false"/>
+            <element name="interest" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanappno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanproduct" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="penalty" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="pnno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="presentaddress" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prinbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="principal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="subarea" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="totalresult" typeRef="int" isList="false" allowNull="false"/>
+            <element name="tranamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="tranamttotal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.lmsreport.form.LMSAnalyticalReportForm" name="LMSAnalyticalReportForm" supportsQuickData="false">
+            <element name="accountName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountReceivable" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="accountStat" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctsts" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="amountOfPayment" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="amountToUpdate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="collector" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateOfPayment" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="days121To150No" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="days151To180No" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="days180NoPlus" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="days1To30No" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="days31To60No" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="days61To90No" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="days91To120No" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="instToGo" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="interest" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="lastInstPaid" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="lastTransaction" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="latePaymentCharge" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanOfficer" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanProd" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanProduct" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="matDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="monthlyAmozt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="nextDueDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="originalLoanAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="outsBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="outstandingBalance121To150" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="outstandingBalance151To180" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="outstandingBalance180Plus" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="outstandingBalance1To30" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="outstandingBalance31To60" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="outstandingBalance61To90" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="outstandingBalance91To120" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="percentCurrent" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="percentLitigation" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="percentPaidOff" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="percentPastDue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="percentPerBranch" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="pnNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="pnno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="principal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="sourceOfPayment" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sum121To150" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="sum151To180" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="sum180Plus" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="sum1To30" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="sum31To60" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="sum61To90" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="sum91To120" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="term" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalActualPerformanceAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalActualPerformanceCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalAmountReceived" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalCollectionAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalCollectionAmountPerBranch" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalCollectionCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalCurrent" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalCurrentCollection" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalCurrentCollectionCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalCurrentCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalDifferenceCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalDifferenceTargetAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalLitigation" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalLitigationCollection" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalLitigationCollectionCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalLitigationCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalPaidOff" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalPaidOffCollection" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalPaidOffCollectionCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalPaidOffCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalPastDue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalPastDueCollection" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalPastDueCollectionCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalPastDueCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalPercent" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalTargetAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalTargetCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="txDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.lmsreport.form.LMSDataForm" name="LMSDataForm" supportsQuickData="false">
+            <element name="accountCode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountTitle" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accoutName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctsts" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="amountApplied" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="applicationNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="applicationStatusDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="applno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="approvaldecision" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="areaname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bookingdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="collectorname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companyname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="credit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="dateApplied" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateAvailed" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="datesubmitted" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="debit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="delaybal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="docNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="documentname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dtbook" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="duedate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="eir" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="firstDueDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="fistDueDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="intRate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="intSetUpAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="intbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="intcredit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="intdays" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="intdebit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="interestrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="intpaycycdesc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="inttypedesc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="journal_Details" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="largeCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="largeTotal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanAccountNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanAcctNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanProduct" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanPurpose" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="lpcRate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="lpcRateFrequen" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="matdt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="maturityDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="mediumCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="mediumTotal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="microCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="microTotal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="noofinstallment" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="penbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="pendays" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="penpaid" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="pnNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="pnno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="pnterm" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="prinbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="prindebit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="prinpaycycdesc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prnicredit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="processBy" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="productname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="secName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="secNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="shouldbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="smallCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="smallTotal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="solicitingOff" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="solicitingOfficer" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subarea" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="term" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="transType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transactionAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="transactionDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="transactionRefNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transactionValueDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="transactioncode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transtat" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transtype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txOthers" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="txaddtnlint" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="txar1" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="txexcessbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="txint" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="txpenalty" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="txprinbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="txrefno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txvaldt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="upTo100kCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="upTo100kTotal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="upTo10mCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="upTo10mOverCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="upTo10mOverTotal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="upTo10mTotal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="upTo1mCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="upTo1mTotal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="upTo2mCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="upTo2mTotal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="upTo500kCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="upTo500kTotal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="upTo5mCount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="upTo5mTotal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="uploadedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.lmsreport.form.LMSReportForms" name="LMSReportForms" supportsQuickData="false">
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branchname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="codename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="codevalue" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="coopcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="desc1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.lmsreport.form.LMSComprehensiveListForm" name="LMSComprehensiveListForm" supportsQuickData="false">
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctst" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctst1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="addtnlint" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="air" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="amortfee" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="amortizationAmt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="amtfinance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="applno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="appraisalstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ar1" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="ar12" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="colStat" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="colType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="collateralreferenceno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateoflastappraisal" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="ddlq" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="dispo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="downpay" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="dtbook" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dtbook1" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dtbook2" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="eir" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="excessbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="eyrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="faceamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="fduedt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="fduedt1" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="fullname1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="iltogo" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="intDueNext" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="interestdue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="intpaycycdesc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="intpaytypedesc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="inttypedesc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanProduct" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="lpcbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="lstpydt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="maturityvalue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="mir" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="netprcds" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="nominal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="nxtduedt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="nxtilno" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="partialint" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="partialprin" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="pnamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="pnno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ppynum" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="preTerm" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="prinDueNext" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="prinbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="prinpaycycdesc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="repaytypedesc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="retentionamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="term" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalfeescharges" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalloanoffset" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="tpdilduedt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="tpdilno" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="uidAdv" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="uidbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="unpaidint" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="unpaidprin" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.lmsreport.form.LMSExceptionReportForm" name="LMSExceptionReportForm" supportsQuickData="false">
+            <element name="acctName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="amountWaived" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="amtReleased" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="approvedBy" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateReleased" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="intRate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanAcctNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="loanProduct" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="maturityDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="outBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="particulars" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="pnNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="positionRank" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="postedBy" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="q1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="q2" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="q3" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="q4" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="solicitingOfficer" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="transType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transactionAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="transactionRefNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transactionValueDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="transactioncode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transtat" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.lmsreport.form.LMSWorkflowProcessReportForm" name="LMSWorkflowProcessReportForm" supportsQuickData="false">
+            <element name="processid" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="processname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sequenceno" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="workflowid" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.lmsreport.form.LMSUserForms" name="LMSUserForms" supportsQuickData="false">
+            <element name="branchid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="userid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.lmsreport.form.LMSUnearnedInterestForm" name="LMSUnearnedInterestForm" supportsQuickData="false">
+            <element name="accountname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bookdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="intamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="intearned" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="maturitydate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="product" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="uidbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

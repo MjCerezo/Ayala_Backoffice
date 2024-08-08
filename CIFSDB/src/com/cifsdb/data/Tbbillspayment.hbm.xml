@@ -1,0 +1,90 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbbillspayment" table="TBBILLSPAYMENT" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="merchantcode" type="string">
+            <column name="merchantcode" length="4"/>
+        </property>
+        <property name="paymentslipno" type="string">
+            <column name="paymentslipno" length="50"/>
+        </property>
+        <property name="subsaccountno" type="string">
+            <column name="subsaccountno" length="20"/>
+        </property>
+        <property name="subsname" type="string">
+            <column name="subsname" length="150"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="16"/>
+        </property>
+        <property name="currency" type="string">
+            <column name="currency" length="3"/>
+        </property>
+        <property name="orno" type="string">
+            <column name="orno" length="10"/>
+        </property>
+        <property name="paymmode" type="string">
+            <column name="paymmode" length="3"/>
+        </property>
+        <property name="checkacctno" type="string">
+            <column name="checkacctno" length="50"/>
+        </property>
+        <property name="checkdate" type="timestamp">
+            <column name="checkdate" length="23"/>
+        </property>
+        <property name="clearingtype" type="string">
+            <column name="clearingtype" length="3"/>
+        </property>
+        <property name="bankcode" type="string">
+            <column name="bankcode" length="20"/>
+        </property>
+        <property name="bankname" type="string">
+            <column name="bankname" length="300"/>
+        </property>
+        <property name="brstnno" type="string">
+            <column name="brstnno" length="30"/>
+        </property>
+        <property name="debitaccountno" type="string">
+            <column name="debitaccountno" length="20"/>
+        </property>
+        <property name="txstatus" type="string">
+            <column name="txstatus" length="3"/>
+        </property>
+        <property name="txby" type="string">
+            <column name="txby" length="20"/>
+        </property>
+        <property name="txrefno" type="string">
+            <column name="txrefno" length="20"/>
+        </property>
+        <property name="unit" type="string">
+            <column name="unit" length="10"/>
+        </property>
+        <property name="instcode" type="string">
+            <column name="instcode" length="10"/>
+        </property>
+        <property name="typepayment" type="string">
+            <column name="typepayment" length="3"/>
+        </property>
+        <property name="membershipid" type="string">
+            <column name="membershipid" length="20"/>
+        </property>
+        <property name="membername" type="string">
+            <column name="membername" length="300"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="300"/>
+        </property>
+        <property name="txdate" type="timestamp">
+            <column name="txdate" length="23"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="islatecheck" type="boolean">
+            <column name="islatecheck"/>
+        </property>
+    </class>
+</hibernate-mapping>

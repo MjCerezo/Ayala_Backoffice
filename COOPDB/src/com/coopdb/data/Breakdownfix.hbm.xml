@@ -1,0 +1,40 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Breakdownfix" table="breakdownfix" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.BreakdownfixId">
+            <key-property name="txnDate" type="string">
+                <column name="TXN_DATE" length="10"/>
+            </key-property>
+            <key-property name="memberId" type="string">
+                <column name="MEMBER_ID" length="50"/>
+            </key-property>
+            <key-property name="memberName" type="string">
+                <column name="MEMBER_NAME" length="50"/>
+            </key-property>
+            <key-property name="dxbankAcctNo" type="string">
+                <column name="DXBANK_ACCT_NO" length="50"/>
+            </key-property>
+            <key-property name="loanAcctNo" type="string">
+                <column name="LOAN_ACCT_NO" length="50"/>
+            </key-property>
+            <key-property name="refNo" type="string">
+                <column name="REF_NO" length="50"/>
+            </key-property>
+            <key-property name="loanProduct" type="string">
+                <column name="LOAN_PRODUCT" length="50"/>
+            </key-property>
+            <key-property name="principalPaid" type="big_decimal">
+                <column name="PRINCIPAL_PAID" precision="16"/>
+            </key-property>
+            <key-property name="interestPaid" type="big_decimal">
+                <column name="INTEREST_PAID" precision="16"/>
+            </key-property>
+            <key-property name="penaltyPaid" type="big_decimal">
+                <column name="PENALTY_PAID" precision="16"/>
+            </key-property>
+            <key-property name="column11" type="string">
+                <column name="column11" length="1"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

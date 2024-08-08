@@ -1,0 +1,72 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbbicmap" table="TBBICMAP" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="cmapid" type="integer">
+            <column name="cmapid"/>
+            <generator class="identity"/>
+        </id>
+        <property name="bireportid" type="string">
+            <column name="bireportid" length="20" not-null="true"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="dmsid" type="string">
+            <column name="dmsid" length="50"/>
+        </property>
+        <property name="description" type="string">
+            <column name="description"/>
+        </property>
+        <property name="birequestid" type="string">
+            <column name="birequestid" length="20"/>
+        </property>
+        <property name="reportdate" type="timestamp">
+            <column name="reportdate" length="23"/>
+        </property>
+        <property name="repo" type="string">
+            <column name="repo" length="10"/>
+        </property>
+        <property name="reporttype" type="string">
+            <column name="reporttype" length="10"/>
+        </property>
+        <property name="recordname" type="string">
+            <column name="recordname" length="300"/>
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="1000"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="18"/>
+        </property>
+        <property name="draweebank" type="string">
+            <column name="draweebank" length="100"/>
+        </property>
+        <property name="reasonreturned" type="string">
+            <column name="reasonreturned" length="10"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="300"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="100"/>
+        </property>
+        <property name="datereporteddt" type="timestamp">
+            <column name="datereporteddt" length="23"/>
+        </property>
+        <property name="dateofbirth" type="timestamp">
+            <column name="dateofbirth" length="23"/>
+        </property>
+        <property name="telephoneno" type="string">
+            <column name="telephoneno" length="50"/>
+        </property>
+        <property name="datedisconnected" type="timestamp">
+            <column name="datedisconnected" length="23"/>
+        </property>
+        <property name="pastdue" type="string">
+            <column name="pastdue" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

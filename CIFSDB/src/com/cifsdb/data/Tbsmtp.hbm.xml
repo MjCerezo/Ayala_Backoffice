@@ -1,0 +1,48 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbsmtp" table="TBSMTP" catalog="AcaciaAyalaMembershipDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="subject" type="string">
+            <column name="subject" length="1000"/>
+        </property>
+        <property name="body" type="string">
+            <column name="body"/>
+        </property>
+        <property name="recipient" type="string">
+            <column name="recipient" length="2000"/>
+        </property>
+        <property name="sender" type="string">
+            <column name="sender" length="200"/>
+        </property>
+        <property name="cc" type="string">
+            <column name="cc" length="2000"/>
+        </property>
+        <property name="bcc" type="string">
+            <column name="bcc" length="2000"/>
+        </property>
+        <property name="flag" type="integer">
+            <column name="flag"/>
+        </property>
+        <property name="datesent" type="timestamp">
+            <column name="datesent" length="23"/>
+        </property>
+        <property name="appstatus" type="string">
+            <column name="appstatus" length="10"/>
+        </property>
+        <property name="dateadded" type="timestamp">
+            <column name="dateadded" length="23"/>
+        </property>
+        <property name="addedby" type="string">
+            <column name="addedby" length="50"/>
+        </property>
+        <property name="emailcode" type="string">
+            <column name="emailcode" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

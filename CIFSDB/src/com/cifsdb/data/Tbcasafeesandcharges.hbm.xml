@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbcasafeesandcharges" table="TBCASAFEESANDCHARGES" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="coopcode" type="string">
+            <column name="coopcode" length="10"/>
+        </property>
+        <property name="code" type="string">
+            <column name="code" length="20"/>
+        </property>
+        <property name="subcode" type="string">
+            <column name="subcode" length="50"/>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="100"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="16"/>
+        </property>
+        <property name="chargetype" type="string">
+            <column name="chargetype" length="1"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

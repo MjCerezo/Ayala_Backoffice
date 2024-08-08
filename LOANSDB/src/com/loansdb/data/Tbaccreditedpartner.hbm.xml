@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbaccreditedpartner" table="TBACCREDITEDPARTNER" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="cifno" type="string">
+            <column name="cifno" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="customertradename" type="string">
+            <column name="customertradename" length="100"/>
+        </property>
+        <property name="exposurelimit" type="big_decimal">
+            <column name="exposurelimit" precision="20"/>
+        </property>
+        <property name="currentexposure" type="big_decimal">
+            <column name="currentexposure" precision="20"/>
+        </property>
+        <property name="remainingunused" type="big_decimal">
+            <column name="remainingunused" precision="20"/>
+        </property>
+        <property name="overthelimit" type="big_decimal">
+            <column name="overthelimit" precision="20"/>
+        </property>
+        <property name="accreditationstatus" type="string">
+            <column name="accreditationstatus" length="5"/>
+        </property>
+        <property name="dateofaccreditation" type="timestamp">
+            <column name="dateofaccreditation" length="23" not-null="true"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

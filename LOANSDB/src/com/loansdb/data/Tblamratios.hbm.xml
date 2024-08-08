@@ -1,0 +1,66 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tblamratios" table="TBLAMRATIOS" catalog="LOANSDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cfappno" type="string">
+            <column name="cfappno" length="50"/>
+        </property>
+        <property name="cfrefno" type="string">
+            <column name="cfrefno" length="50"/>
+        </property>
+        <property name="year" type="timestamp">
+            <column name="year" length="23"/>
+        </property>
+        <property name="growthrate" type="big_decimal">
+            <column name="growthrate" precision="20"/>
+        </property>
+        <property name="profgrosssmargin" type="big_decimal">
+            <column name="profgrosssmargin" precision="20"/>
+        </property>
+        <property name="profoperatingmargin" type="big_decimal">
+            <column name="profoperatingmargin" precision="20"/>
+        </property>
+        <property name="profnetmargin" type="big_decimal">
+            <column name="profnetmargin" precision="20"/>
+        </property>
+        <property name="profreturnasset" type="big_decimal">
+            <column name="profreturnasset" precision="20"/>
+        </property>
+        <property name="profreturnequity" type="big_decimal">
+            <column name="profreturnequity" precision="20"/>
+        </property>
+        <property name="profcashflowmargin" type="big_decimal">
+            <column name="profcashflowmargin" precision="20"/>
+        </property>
+        <property name="liqcurrentratio" type="big_decimal">
+            <column name="liqcurrentratio" precision="20"/>
+        </property>
+        <property name="liqquickratio" type="big_decimal">
+            <column name="liqquickratio" precision="20"/>
+        </property>
+        <property name="levdebtequityratio" type="big_decimal">
+            <column name="levdebtequityratio" precision="20"/>
+        </property>
+        <property name="levdebtincomeratio" type="big_decimal">
+            <column name="levdebtincomeratio" precision="20"/>
+        </property>
+        <property name="liqinterestcoverage" type="big_decimal">
+            <column name="liqinterestcoverage" precision="20"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="lastupdated" type="timestamp">
+            <column name="lastupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

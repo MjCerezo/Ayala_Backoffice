@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="CollectionManagementFacade" class="com.etel.CollectionManagement.CollectionManagementFacade" CRUDService="false" type="JavaService" springFile="CollectionManagementFacade.spring.xml">
+    <operation name="getCollectionDetails">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcollectionmanagement" isList="false"/>
+    </operation>
+    <operation name="saveCollectionDetails">
+        <parameter name="collection" typeRef="com.coopdb.data.Tbcollectionmanagement" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

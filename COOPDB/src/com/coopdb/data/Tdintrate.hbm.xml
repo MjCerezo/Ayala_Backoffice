@@ -1,0 +1,13 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tdintrate" table="tdintrate" catalog="ACACIADBDXBANK_SAMULCO" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.TdintrateId">
+            <key-property name="oldacctno" type="string">
+                <column name="oldacctno" length="50"/>
+            </key-property>
+            <key-property name="intrate" type="big_decimal">
+                <column name="intrate" precision="18"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

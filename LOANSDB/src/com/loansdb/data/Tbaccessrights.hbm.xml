@@ -1,0 +1,34 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbaccessrights" table="TBACCESSRIGHTS" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.TbaccessrightsId">
+            <key-property name="accessname" type="string">
+                <column name="accessname" length="100"/>
+            </key-property>
+            <key-property name="modulename" type="string">
+                <column name="modulename" length="50"/>
+            </key-property>
+        </composite-id>
+        <property name="accesstype" type="string">
+            <column name="accesstype" length="10"/>
+        </property>
+        <property name="submodulename" type="string">
+            <column name="submodulename" length="50"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="createddate" type="timestamp">
+            <column name="createddate" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="200"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbpepq3" table="TBPEPQ3" catalog="CIFSDBUAT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50" not-null="true"/>
+        </property>
+        <property name="familymembername" type="string">
+            <column name="familymembername" length="100"/>
+        </property>
+        <property name="relationship" type="string">
+            <column name="relationship" length="50"/>
+        </property>
+        <property name="govposition" type="string">
+            <column name="govposition" length="100"/>
+        </property>
+        <property name="govagencygocc" type="string">
+            <column name="govagencygocc" length="100"/>
+        </property>
+        <property name="govtype" type="string">
+            <column name="govtype" length="50"/>
+        </property>
+        <property name="otherrelationship" type="string">
+            <column name="otherrelationship" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

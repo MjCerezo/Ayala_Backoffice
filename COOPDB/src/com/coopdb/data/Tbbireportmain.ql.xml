@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Generated 08/04/2024 12:54:30
+
+Queries for entity: Tbbireportmain.
+
+@design.generated: Marks a generated query.
+
+-->
+
+<hibernate-mapping>
+
+    <query 
+        name="getTbbireportmainById"
+        comment="Example HQL Query
+                 @design.generated">
+                 
+        <query-param name="id" type="java.lang.String"/>
+
+            from Tbbireportmain _a where _a.id=:id 
+
+    </query>
+
+</hibernate-mapping>

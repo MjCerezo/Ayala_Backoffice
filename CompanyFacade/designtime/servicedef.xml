@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="CompanyFacade" class="com.etel.company.CompanyFacade" CRUDService="false" type="JavaService" springFile="CompanyFacade.spring.xml">
+    <operation name="checkPicOrPDF">
+        <parameter name="coopcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteCompany">
+        <parameter name="form" typeRef="com.etel.company.forms.CompanyForm" isList="false"/>
+        <parameter name="tableparameter" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteMemberCompany">
+        <parameter name="coopcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companycode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getAllCooperativeCompanies">
+        <return typeRef="com.etel.company.forms.CooperativeForm" isList="true"/>
+    </operation>
+    <operation name="getBranchDropdown">
+        <return typeRef="com.etel.company.forms.CompanyBranchForm" isList="true"/>
+    </operation>
+    <operation name="getCompany">
+        <parameter name="companycode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tableparameter" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.company.forms.CompanyForm" isList="false"/>
+    </operation>
+    <operation name="getListOfCompany">
+        <parameter name="tableparameter" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.company.forms.CompanyForm" isList="true"/>
+    </operation>
+    <operation name="getListProdperCoop">
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="coopcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbproductpercoop" isList="true"/>
+    </operation>
+    <operation name="getMemberCompanyPerCooperative">
+        <parameter name="coopcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.company.forms.CompanyForm" isList="true"/>
+    </operation>
+    <operation name="getMemberCompanyPerCooperativePerMemberType">
+        <parameter name="coopcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="membertype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.company.forms.CompanyForm" isList="true"/>
+    </operation>
+    <operation name="getSavedMemberType">
+        <parameter name="boscode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.codetable.forms.CodetableForm" isList="true"/>
+    </operation>
+    <operation name="saveMemberType">
+        <parameter name="boscode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="membertype" typeRef="com.etel.codetable.forms.CodetableForm" isList="true"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateCompany">
+        <parameter name="form" typeRef="com.etel.company.forms.CompanyForm" isList="false"/>
+        <parameter name="tableparameter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="flag" typeRef="java.lang.String" isList="false"/>
+        <parameter name="filepath" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateMemberCompanyPerCooperative">
+        <parameter name="company" typeRef="com.coopdb.data.Tbmembercompany" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateProdlist">
+        <parameter name="prod" typeRef="com.coopdb.data.Tbproductpercoop" isList="true"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="uploadFile">
+        <parameter name="file" typeRef="org.springframework.web.multipart.MultipartFile" isList="false"/>
+        <return typeRef="com.wavemaker.runtime.server.FileUploadResponse" isList="false"/>
+    </operation>
+    <operation name="uploadFile2">
+        <parameter name="file" typeRef="org.springframework.web.multipart.MultipartFile" isList="false"/>
+        <return typeRef="com.wavemaker.runtime.server.FileUploadResponse" isList="false"/>
+    </operation>
+    <operation name="viewImage">
+        <parameter name="coopcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.company.forms.CompanyForm" name="CompanyForm" supportsQuickData="false">
+            <element name="address" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="areacode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="barangay" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="businesstype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="city" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companyname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companystatus" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="coopcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="coopname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="coopsize" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="coopstatus" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="country" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="emailaddress" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="faxareacode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="faxno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="faxphoneno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="finefee" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="hcomepanycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="logofilename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="maxloanamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="membershipfee" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="phoneno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="postalcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="psiccode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="psiclevel1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="psiclevel2" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="psiclevel3" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="psoccode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="psoclevel1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="psoclevel2" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="psoclevel3" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="psoclevel4" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="region" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sharecapitalparval" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="stateprovince" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="streetnoname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subdivision" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="website" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.company.forms.CooperativeForm" name="CooperativeForm" supportsQuickData="false">
+            <element name="address" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="coopcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="coopname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="coopsize" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="coopstatus" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="emailaddress" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="faxno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="finefee" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="logo" typeRef="java.sql.Blob" isList="false" allowNull="false"/>
+            <element name="membershipfee" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="phoneno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sharecapitalparval" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="website" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.company.forms.CompanyBranchForm" name="CompanyBranchForm" supportsQuickData="false">
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branchname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

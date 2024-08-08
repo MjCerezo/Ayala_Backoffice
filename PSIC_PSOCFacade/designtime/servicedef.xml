@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="PSIC_PSOCFacade" class="com.etel.indocc.IndoccFacade" CRUDService="false" type="JavaService" springFile="PSIC_PSOCFacade.spring.xml">
+    <operation name="getByPSICCode">
+        <parameter name="psiccode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbpsiccodes" isList="false"/>
+    </operation>
+    <operation name="getByPSOCCode">
+        <parameter name="psoccode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbpsoccodes" isList="false"/>
+    </operation>
+    <operation name="psicDescByLevel2Code">
+        <parameter name="psiclevel2Code" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbpsiccodes" isList="true"/>
+    </operation>
+    <operation name="psiclevel1Code">
+        <return typeRef="com.coopdb.data.Tbpsiccodes" isList="true"/>
+    </operation>
+    <operation name="psiclevel2CodeByLevel1Code">
+        <parameter name="psiclevel1Code" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbpsiccodes" isList="true"/>
+    </operation>
+    <operation name="psoclevel1Code">
+        <return typeRef="com.coopdb.data.Tbpsoccodes" isList="true"/>
+    </operation>
+    <operation name="psoclevel2CodeByLevel1Code">
+        <parameter name="psoclevel1code" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbpsoccodes" isList="true"/>
+    </operation>
+    <operation name="psoclevel3CodeByLevel2Code">
+        <parameter name="psoclevel2code" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbpsoccodes" isList="true"/>
+    </operation>
+    <operation name="psoclevel4DescByLevel3Code">
+        <parameter name="psoclevel3Code" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbpsoccodes" isList="true"/>
+    </operation>
+    <operation name="searchPSIC">
+        <parameter name="str" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbpsiccodes" isList="true"/>
+    </operation>
+    <operation name="searchPSOC">
+        <parameter name="str" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbpsoccodes" isList="true"/>
+    </operation>
+    <dataobjects/>
+</service>

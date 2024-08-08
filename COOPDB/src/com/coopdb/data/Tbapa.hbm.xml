@@ -1,0 +1,21 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbapa" table="TBAPA" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="rr4savingsdeposit" type="big_decimal">
+            <column name="rr4savingsdeposit" precision="16"/>
+        </property>
+        <property name="rr4termdeposit" type="big_decimal">
+            <column name="rr4termdeposit" precision="16"/>
+        </property>
+        <property name="rr4checkingdeposit" type="big_decimal">
+            <column name="rr4checkingdeposit" precision="16"/>
+        </property>
+        <property name="transferpoolrate" type="big_decimal">
+            <column name="transferpoolrate" precision="16"/>
+        </property>
+    </class>
+</hibernate-mapping>

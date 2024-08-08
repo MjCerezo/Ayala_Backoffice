@@ -1,0 +1,78 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbcollateraldetailsauto" table="TBCOLLATERALDETAILSAUTO" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="colid" type="integer">
+            <column name="colid"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="collateraltype" type="string">
+            <column name="collateraltype" length="50"/>
+        </property>
+        <property name="loantranstype" type="string">
+            <column name="loantranstype" length="50"/>
+        </property>
+        <property name="automake" type="string">
+            <column name="automake" length="100"/>
+        </property>
+        <property name="automodel" type="string">
+            <column name="automodel" length="100"/>
+        </property>
+        <property name="automodeldetails" type="string">
+            <column name="automodeldetails" length="100"/>
+        </property>
+        <property name="autoyear" type="string">
+            <column name="autoyear" length="5"/>
+        </property>
+        <property name="autovehiclecategory" type="string">
+            <column name="autovehiclecategory" length="100"/>
+        </property>
+        <property name="autovehicletype" type="string">
+            <column name="autovehicletype" length="100"/>
+        </property>
+        <property name="engineno" type="string">
+            <column name="engineno" length="50"/>
+        </property>
+        <property name="chassisno" type="string">
+            <column name="chassisno" length="50"/>
+        </property>
+        <property name="carcolor" type="string">
+            <column name="carcolor" length="50"/>
+        </property>
+        <property name="orcr" type="string">
+            <column name="orcr" length="50"/>
+        </property>
+        <property name="plateno" type="string">
+            <column name="plateno" length="50"/>
+        </property>
+        <property name="csno" type="string">
+            <column name="csno" length="50"/>
+        </property>
+        <property name="salesinvoice" type="string">
+            <column name="salesinvoice" length="50"/>
+        </property>
+        <property name="deliveryreceiptno" type="string">
+            <column name="deliveryreceiptno" length="50"/>
+        </property>
+        <property name="agentname" type="string">
+            <column name="agentname" length="100"/>
+        </property>
+        <property name="salesman" type="string">
+            <column name="salesman" length="100"/>
+        </property>
+        <property name="sellingprice" type="big_decimal">
+            <column name="sellingprice" precision="20"/>
+        </property>
+        <property name="discount" type="big_decimal">
+            <column name="discount" precision="20"/>
+        </property>
+        <property name="netsellingprice" type="big_decimal">
+            <column name="netsellingprice" precision="20"/>
+        </property>
+        <property name="dealersname" type="string">
+            <column name="dealersname" length="100"/>
+        </property>
+    </class>
+</hibernate-mapping>

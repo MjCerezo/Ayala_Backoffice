@@ -1,0 +1,90 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbgrouppayment" table="TBGROUPPAYMENT" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="txrefno" type="string">
+            <column name="txrefno" length="50"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="txdate" type="timestamp">
+            <column name="txdate" length="23"/>
+        </property>
+        <property name="txvaldt" type="timestamp">
+            <column name="txvaldt" length="23"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50"/>
+        </property>
+        <property name="cifname" type="string">
+            <column name="cifname" length="500"/>
+        </property>
+        <property name="txamt" type="big_decimal">
+            <column name="txamt" precision="20"/>
+        </property>
+        <property name="txchkno" type="string">
+            <column name="txchkno" length="50"/>
+        </property>
+        <property name="txchkdt" type="timestamp">
+            <column name="txchkdt" length="23"/>
+        </property>
+        <property name="txbrstn" type="string">
+            <column name="txbrstn" length="50"/>
+        </property>
+        <property name="txchkbankname" type="string">
+            <column name="txchkbankname" length="200"/>
+        </property>
+        <property name="txchkbankbr" type="string">
+            <column name="txchkbankbr" length="200"/>
+        </property>
+        <property name="encodedby" type="string">
+            <column name="encodedby" length="50"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="approvedby" type="string">
+            <column name="approvedby" length="50"/>
+        </property>
+        <property name="approveddate" type="timestamp">
+            <column name="approveddate" length="23"/>
+        </property>
+        <property name="noofacctapplied" type="integer">
+            <column name="noofacctapplied"/>
+        </property>
+        <property name="txstat" type="string">
+            <column name="txstat" length="50"/>
+        </property>
+        <property name="txor" type="string">
+            <column name="txor" length="50"/>
+        </property>
+        <property name="legveh" type="string">
+            <column name="legveh" length="50"/>
+        </property>
+        <property name="prodcode" type="string">
+            <column name="prodcode" length="50"/>
+        </property>
+        <property name="txmode" type="string">
+            <column name="txmode" length="10"/>
+        </property>
+        <property name="commrate" type="big_decimal">
+            <column name="commrate" precision="18"/>
+        </property>
+        <property name="commamt" type="big_decimal">
+            <column name="commamt" precision="18"/>
+        </property>
+        <property name="wtaxrate" type="big_decimal">
+            <column name="wtaxrate" precision="18"/>
+        </property>
+        <property name="wtaxamt" type="big_decimal">
+            <column name="wtaxamt" precision="18"/>
+        </property>
+        <property name="addtnlint" type="big_decimal">
+            <column name="addtnlint" precision="18"/>
+        </property>
+        <property name="txdepositorybank" type="string">
+            <column name="txdepositorybank" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

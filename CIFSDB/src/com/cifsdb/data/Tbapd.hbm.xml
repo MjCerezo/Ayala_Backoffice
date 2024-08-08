@@ -1,0 +1,31 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbapd" table="TBAPD" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.cifsdb.data.TbapdId">
+            <key-property name="memberid" type="string">
+                <column name="memberid" length="20"/>
+            </key-property>
+            <key-property name="payslipperiod" type="timestamp">
+                <column name="payslipperiod" length="23"/>
+            </key-property>
+        </composite-id>
+        <property name="gmp" type="big_decimal">
+            <column name="gmp" precision="20"/>
+        </property>
+        <property name="nthp" type="big_decimal">
+            <column name="nthp" precision="20"/>
+        </property>
+        <property name="gaa" type="big_decimal">
+            <column name="gaa" precision="20"/>
+        </property>
+        <property name="totaladjustments" type="big_decimal">
+            <column name="totaladjustments" precision="20"/>
+        </property>
+        <property name="netnthpgaa" type="big_decimal">
+            <column name="netnthpgaa" precision="20"/>
+        </property>
+        <property name="avp" type="big_decimal">
+            <column name="avp" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

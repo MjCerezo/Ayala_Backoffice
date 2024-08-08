@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="AccountChartFacade" class="com.etel.facade.AccountChartFacade" CRUDService="false" type="JavaService" springFile="AccountChartFacade.spring.xml">
+    <operation name="deleteItem">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="displayAccountDescription">
+        <parameter name="accountDescript" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcoa" isList="true"/>
+    </operation>
+    <operation name="listCoa">
+        <return typeRef="com.coopdb.data.Tbcoa" isList="true"/>
+    </operation>
+    <operation name="saveOrUpdateCoa">
+        <parameter name="d" typeRef="com.coopdb.data.Tbcoa" isList="false"/>
+        <parameter name="oldaccountno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="uploadCOA">
+        <parameter name="filename" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

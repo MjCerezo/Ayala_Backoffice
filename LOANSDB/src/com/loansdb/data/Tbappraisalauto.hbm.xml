@@ -1,0 +1,381 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbappraisalauto" table="TBAPPRAISALAUTO" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="appraisalreportid" type="string">
+            <column name="appraisalreportid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="collateralid" type="string">
+            <column name="collateralid" length="20"/>
+        </property>
+        <property name="requestingofficer" type="string">
+            <column name="requestingofficer" length="50"/>
+        </property>
+        <property name="department" type="string">
+            <column name="department" length="50"/>
+        </property>
+        <property name="appraisaldate" type="timestamp">
+            <column name="appraisaldate" length="23"/>
+        </property>
+        <property name="reportdate" type="timestamp">
+            <column name="reportdate" length="23"/>
+        </property>
+        <property name="appraiser" type="string">
+            <column name="appraiser" length="50"/>
+        </property>
+        <property name="reviewedby" type="string">
+            <column name="reviewedby" length="50"/>
+        </property>
+        <property name="revieweddate" type="timestamp">
+            <column name="revieweddate" length="23"/>
+        </property>
+        <property name="make" type="string">
+            <column name="make" length="50"/>
+        </property>
+        <property name="modelseries" type="string">
+            <column name="modelseries" length="50"/>
+        </property>
+        <property name="vehiclecategory" type="string">
+            <column name="vehiclecategory" length="50"/>
+        </property>
+        <property name="modeldetails" type="string">
+            <column name="modeldetails" length="50"/>
+        </property>
+        <property name="mvfileno" type="string">
+            <column name="mvfileno" length="50"/>
+        </property>
+        <property name="year" type="string">
+            <column name="year" length="4"/>
+        </property>
+        <property name="motorno" type="string">
+            <column name="motorno" length="50"/>
+        </property>
+        <property name="chassisno" type="string">
+            <column name="chassisno" length="50"/>
+        </property>
+        <property name="plateno" type="string">
+            <column name="plateno" length="50"/>
+        </property>
+        <property name="color" type="string">
+            <column name="color" length="50"/>
+        </property>
+        <property name="mileage" type="integer">
+            <column name="mileage"/>
+        </property>
+        <property name="cylinder" type="string">
+            <column name="cylinder" length="10"/>
+        </property>
+        <property name="transmission" type="string">
+            <column name="transmission" length="10"/>
+        </property>
+        <property name="exFrontbumper" type="string">
+            <column name="ex_frontbumper" length="10"/>
+        </property>
+        <property name="exRearbumper" type="string">
+            <column name="ex_rearbumper" length="10"/>
+        </property>
+        <property name="exHood" type="string">
+            <column name="ex_hood" length="10"/>
+        </property>
+        <property name="exLffender" type="string">
+            <column name="ex_lffender" length="10"/>
+        </property>
+        <property name="exRffender" type="string">
+            <column name="ex_rffender" length="10"/>
+        </property>
+        <property name="exLfdoor" type="string">
+            <column name="ex_lfdoor" length="10"/>
+        </property>
+        <property name="exRfdoor" type="string">
+            <column name="ex_rfdoor" length="10"/>
+        </property>
+        <property name="exRrdoor" type="string">
+            <column name="ex_rrdoor" length="10"/>
+        </property>
+        <property name="exLrdoor" type="string">
+            <column name="ex_lrdoor" length="10"/>
+        </property>
+        <property name="exLrfender" type="string">
+            <column name="ex_lrfender" length="10"/>
+        </property>
+        <property name="exRrfender" type="string">
+            <column name="ex_rrfender" length="10"/>
+        </property>
+        <property name="exRearcompartment" type="string">
+            <column name="ex_rearcompartment" length="10"/>
+        </property>
+        <property name="exTires" type="string">
+            <column name="ex_tires" length="10"/>
+        </property>
+        <property name="inFrontpanel" type="string">
+            <column name="in_frontpanel" length="10"/>
+        </property>
+        <property name="inWindowhandle" type="string">
+            <column name="in_windowhandle" length="10"/>
+        </property>
+        <property name="inWindowlocks" type="string">
+            <column name="in_windowlocks" length="10"/>
+        </property>
+        <property name="inFrontseatcover" type="string">
+            <column name="in_frontseatcover" length="10"/>
+        </property>
+        <property name="inRearseatcover" type="string">
+            <column name="in_rearseatcover" length="10"/>
+        </property>
+        <property name="inFloormats" type="string">
+            <column name="in_floormats" length="10"/>
+        </property>
+        <property name="inUpholstery" type="string">
+            <column name="in_upholstery" length="10"/>
+        </property>
+        <property name="inCeiling" type="string">
+            <column name="in_ceiling" length="10"/>
+        </property>
+        <property name="inHeadrest" type="string">
+            <column name="in_headrest" length="10"/>
+        </property>
+        <property name="inFloorings" type="string">
+            <column name="in_floorings" length="10"/>
+        </property>
+        <property name="inRearview" type="string">
+            <column name="in_rearview" length="10"/>
+        </property>
+        <property name="inArmrest" type="string">
+            <column name="in_armrest" length="10"/>
+        </property>
+        <property name="meEngine" type="string">
+            <column name="me_engine" length="10"/>
+        </property>
+        <property name="meTransmission" type="string">
+            <column name="me_transmission" length="10"/>
+        </property>
+        <property name="meBrakes" type="string">
+            <column name="me_brakes" length="10"/>
+        </property>
+        <property name="meBattery" type="string">
+            <column name="me_battery" length="10"/>
+        </property>
+        <property name="accStereo" type="string">
+            <column name="acc_stereo" length="10"/>
+        </property>
+        <property name="accAircon" type="string">
+            <column name="acc_aircon" length="10"/>
+        </property>
+        <property name="accSpeakers" type="string">
+            <column name="acc_speakers" length="10"/>
+        </property>
+        <property name="accMags" type="string">
+            <column name="acc_mags" length="10"/>
+        </property>
+        <property name="accSparetire" type="boolean">
+            <column name="acc_sparetire"/>
+        </property>
+        <property name="accTools" type="boolean">
+            <column name="acc_tools"/>
+        </property>
+        <property name="elHeadlights" type="string">
+            <column name="el_headlights" length="10"/>
+        </property>
+        <property name="elSignallights" type="string">
+            <column name="el_signallights" length="10"/>
+        </property>
+        <property name="elHorn" type="string">
+            <column name="el_horn" length="10"/>
+        </property>
+        <property name="elWiper" type="string">
+            <column name="el_wiper" length="10"/>
+        </property>
+        <property name="elGauges" type="string">
+            <column name="el_gauges" length="10"/>
+        </property>
+        <property name="genExternal" type="string">
+            <column name="gen_external" length="10"/>
+        </property>
+        <property name="genInternal" type="string">
+            <column name="gen_internal" length="10"/>
+        </property>
+        <property name="genMechanical" type="string">
+            <column name="gen_mechanical" length="10"/>
+        </property>
+        <property name="genElectrical" type="string">
+            <column name="gen_electrical" length="10"/>
+        </property>
+        <property name="generalcondition" type="string">
+            <column name="generalcondition" length="10"/>
+        </property>
+        <property name="remEngineverified" type="boolean">
+            <column name="rem_engineverified"/>
+        </property>
+        <property name="remChassisverified" type="boolean">
+            <column name="rem_chassisverified"/>
+        </property>
+        <property name="remLtoagency" type="string">
+            <column name="rem_ltoagency" length="50"/>
+        </property>
+        <property name="remMvfileno" type="string">
+            <column name="rem_mvfileno" length="50"/>
+        </property>
+        <property name="remLocation" type="string">
+            <column name="rem_location" length="50"/>
+        </property>
+        <property name="recomCarhistory" type="boolean">
+            <column name="recom_carhistory"/>
+        </property>
+        <property name="recomUnitencumbered" type="boolean">
+            <column name="recom_unitencumbered"/>
+        </property>
+        <property name="recomEncumberedto" type="string">
+            <column name="recom_encumberedto" length="100"/>
+        </property>
+        <property name="recomInspectedby" type="string">
+            <column name="recom_inspectedby" length="100"/>
+        </property>
+        <property name="recomRemarks" type="string">
+            <column name="recom_remarks" length="1000"/>
+        </property>
+        <property name="appraisedValue" type="big_decimal">
+            <column name="appraised_value" precision="18"/>
+        </property>
+        <property name="modeofuse" type="string">
+            <column name="modeofuse" length="50"/>
+        </property>
+        <property name="unitageyr" type="integer">
+            <column name="unitageyr"/>
+        </property>
+        <property name="unitagemo" type="integer">
+            <column name="unitagemo"/>
+        </property>
+        <property name="ageinyrs" type="string">
+            <column name="ageinyrs" length="15"/>
+        </property>
+        <property name="repodate" type="timestamp">
+            <column name="repodate" length="23"/>
+        </property>
+        <property name="averagemileageperyear" type="string">
+            <column name="averagemileageperyear" length="15"/>
+        </property>
+        <property name="dateacquired" type="timestamp">
+            <column name="dateacquired" length="23"/>
+        </property>
+        <property name="depreciation" type="short">
+            <column name="depreciation" precision="3"/>
+        </property>
+        <property name="agedepreciationrate" type="short">
+            <column name="agedepreciationrate" precision="3"/>
+        </property>
+        <property name="genconditionrate" type="short">
+            <column name="genconditionrate" precision="3"/>
+        </property>
+        <property name="totaldepreciation" type="short">
+            <column name="totaldepreciation" precision="3"/>
+        </property>
+        <property name="acquisitioncost" type="big_decimal">
+            <column name="acquisitioncost" precision="18"/>
+        </property>
+        <property name="value1" type="big_decimal">
+            <column name="value1" precision="18"/>
+        </property>
+        <property name="value2" type="big_decimal">
+            <column name="value2" precision="18"/>
+        </property>
+        <property name="markup" type="short">
+            <column name="markup" precision="3"/>
+        </property>
+        <property name="percentvalue1" type="short">
+            <column name="percentvalue1" precision="3"/>
+        </property>
+        <property name="percentvalue2" type="short">
+            <column name="percentvalue2" precision="3"/>
+        </property>
+        <property name="concludedvalue" type="big_decimal">
+            <column name="concludedvalue" precision="18"/>
+        </property>
+        <property name="sayvalue" type="big_decimal">
+            <column name="sayvalue" precision="18"/>
+        </property>
+        <property name="certificateregistration" type="string">
+            <column name="certificateregistration" length="50"/>
+        </property>
+        <property name="dateregistered" type="timestamp">
+            <column name="dateregistered" length="23"/>
+        </property>
+        <property name="ltooffice" type="string">
+            <column name="ltooffice" length="50"/>
+        </property>
+        <property name="orno" type="string">
+            <column name="orno" length="50"/>
+        </property>
+        <property name="source" type="string">
+            <column name="source"/>
+        </property>
+        <property name="accessories" type="string">
+            <column name="accessories"/>
+        </property>
+        <property name="bodycondition" type="string">
+            <column name="bodycondition"/>
+        </property>
+        <property name="appraisedvalue" type="big_decimal">
+            <column name="appraisedvalue" precision="20"/>
+        </property>
+        <property name="marketvalue" type="big_decimal">
+            <column name="marketvalue" precision="20"/>
+        </property>
+        <property name="marketsurvey" type="string">
+            <column name="marketsurvey"/>
+        </property>
+        <property name="tirecondition" type="string">
+            <column name="tirecondition" length="50"/>
+        </property>
+        <property name="registeredto" type="string">
+            <column name="registeredto" length="100"/>
+        </property>
+        <property name="fuel" type="string">
+            <column name="fuel" length="50"/>
+        </property>
+        <property name="kmreading" type="big_decimal">
+            <column name="kmreading" precision="20"/>
+        </property>
+        <property name="engineno" type="string">
+            <column name="engineno" length="50"/>
+        </property>
+        <property name="location" type="string">
+            <column name="location" length="50"/>
+        </property>
+        <property name="lessmarketresistance" type="big_decimal">
+            <column name="lessmarketresistance" precision="20"/>
+        </property>
+        <property name="loanablevalue" type="big_decimal">
+            <column name="loanablevalue" precision="20"/>
+        </property>
+        <property name="vehicledesc" type="string">
+            <column name="vehicledesc"/>
+        </property>
+        <property name="retailprice" type="big_decimal">
+            <column name="retailprice" precision="20"/>
+        </property>
+        <property name="marketpercent" type="big_decimal">
+            <column name="marketpercent" precision="20"/>
+        </property>
+        <property name="marketresistancetotal" type="big_decimal">
+            <column name="marketresistancetotal" precision="20"/>
+        </property>
+        <property name="loanablepercent" type="big_decimal">
+            <column name="loanablepercent" precision="20"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="1000"/>
+        </property>
+        <property name="datepurchased" type="timestamp">
+            <column name="datepurchased" length="23"/>
+        </property>
+        <property name="referenceno" type="string">
+            <column name="referenceno" length="50"/>
+        </property>
+        <property name="appraisedpercent" type="big_decimal">
+            <column name="appraisedpercent" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

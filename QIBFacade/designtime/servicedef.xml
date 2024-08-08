@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="QIBFacade" class="com.etel.qib.QIBFacade" CRUDService="false" type="JavaService" springFile="QIBFacade.spring.xml">
+    <operation name="deleteQIB">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getListofCodesPerCodename">
+        <parameter name="codename" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.codetable.forms.CodetableForm" isList="true"/>
+    </operation>
+    <operation name="getListofCodesPerCodename2">
+        <parameter name="codename" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.codetable.forms.CodetableForm" isList="true"/>
+    </operation>
+    <operation name="getQIBInfo">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbqibinfo" isList="false"/>
+    </operation>
+    <operation name="qibHistory">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbqibhistory" isList="true"/>
+    </operation>
+    <operation name="saveOrUpdateQIB">
+        <parameter name="info" typeRef="com.cifsdb.data.Tbqibinfo" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.FormValidation" isList="false"/>
+    </operation>
+    <operation name="saveQIBHistory">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="validateQIBInfo">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.FormValidation" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

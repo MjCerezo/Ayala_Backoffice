@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbbiactivity" table="TBBIACTIVITY" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.TbbiactivityId">
+            <key-property name="bireportid" type="string">
+                <column name="bireportid" length="20"/>
+            </key-property>
+            <key-property name="biactivity" type="string">
+                <column name="biactivity" length="50"/>
+            </key-property>
+        </composite-id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="overallresults" type="string">
+            <column name="overallresults" length="20"/>
+        </property>
+        <property name="overallremarks" type="string">
+            <column name="overallremarks" length="300"/>
+        </property>
+    </class>
+</hibernate-mapping>

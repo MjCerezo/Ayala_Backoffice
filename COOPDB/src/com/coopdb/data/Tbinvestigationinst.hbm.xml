@@ -1,0 +1,88 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbinvestigationinst" table="TBINVESTIGATIONINST" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.TbinvestigationinstId">
+            <key-property name="appno" type="string">
+                <column name="appno" length="20"/>
+            </key-property>
+            <key-property name="cifno" type="string">
+                <column name="cifno" length="20"/>
+            </key-property>
+            <key-property name="investigationtype" type="string">
+                <column name="investigationtype" length="3"/>
+            </key-property>
+        </composite-id>
+        <property name="customername" type="string">
+            <column name="customername" length="300"/>
+        </property>
+        <property name="instruction" type="string">
+            <column name="instruction" length="2"/>
+        </property>
+        <property name="initiatedby" type="string">
+            <column name="initiatedby" length="20"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="20"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="aoremarks" type="string">
+            <column name="aoremarks" length="8000"/>
+        </property>
+        <property name="supervisor" type="string">
+            <column name="supervisor" length="20"/>
+        </property>
+        <property name="supervisorremarks" type="string">
+            <column name="supervisorremarks" length="8000"/>
+        </property>
+        <property name="customertype" type="string">
+            <column name="customertype" length="2"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="15"/>
+        </property>
+        <property name="lastrecorddate" type="timestamp">
+            <column name="lastrecorddate" length="23"/>
+        </property>
+        <property name="participationcode" type="string">
+            <column name="participationcode" length="3" not-null="true"/>
+        </property>
+        <property name="companycode" type="string">
+            <column name="companycode" length="50"/>
+        </property>
+        <property name="referenceno" type="string">
+            <column name="referenceno" length="50"/>
+        </property>
+        <property name="collateraltype" type="string">
+            <column name="collateraltype" length="50"/>
+        </property>
+        <property name="dateoflastappraisal" type="timestamp">
+            <column name="dateoflastappraisal" length="23"/>
+        </property>
+        <property name="lastappraisedvalue" type="big_decimal">
+            <column name="lastappraisedvalue" precision="20"/>
+        </property>
+        <property name="appraisalstatus" type="string">
+            <column name="appraisalstatus" length="50"/>
+        </property>
+        <property name="groupid" type="string">
+            <column name="groupid" length="20"/>
+        </property>
+        <property name="groupname" type="string">
+            <column name="groupname" length="100"/>
+        </property>
+        <property name="grouptype" type="string">
+            <column name="grouptype" length="50"/>
+        </property>
+        <property name="totalappraisedvalue" type="big_decimal">
+            <column name="totalappraisedvalue" precision="20"/>
+        </property>
+        <property name="collateralcategory" type="string">
+            <column name="collateralcategory" length="2"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbcifcancellationrequest" table="TBCIFCANCELLATIONREQUEST" catalog="CIFSDBDXBANK_SAMULCO" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="requestid" type="string">
+            <column name="requestid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="maincifno" type="string">
+            <column name="maincifno" length="50"/>
+        </property>
+        <property name="fullname" type="string">
+            <column name="fullname" length="250"/>
+        </property>
+        <property name="customertype" type="string">
+            <column name="customertype" length="20"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="20"/>
+        </property>
+        <property name="requesteddate" type="timestamp">
+            <column name="requesteddate" length="23"/>
+        </property>
+        <property name="requestedby" type="string">
+            <column name="requestedby" length="50"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="250"/>
+        </property>
+        <property name="cancellationcode" type="string">
+            <column name="cancellationcode" length="50"/>
+        </property>
+        <property name="teamcode" type="string">
+            <column name="teamcode" length="50"/>
+        </property>
+        <property name="makerequestid" type="string">
+            <column name="makerequestid" length="20"/>
+        </property>
+        <property name="reasonforcancellation" type="string">
+            <column name="reasonforcancellation"/>
+        </property>
+    </class>
+</hibernate-mapping>

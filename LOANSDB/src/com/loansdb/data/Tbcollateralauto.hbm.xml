@@ -1,0 +1,117 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbcollateralauto" table="TBCOLLATERALAUTO" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="collateralid" type="string">
+            <column name="collateralid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="referenceno" type="string">
+            <column name="referenceno" length="50"/>
+        </property>
+        <property name="collateralstatus" type="string">
+            <column name="collateralstatus" length="50"/>
+        </property>
+        <property name="appraisalstatus" type="string">
+            <column name="appraisalstatus" length="50"/>
+        </property>
+        <property name="dateencoded" type="timestamp">
+            <column name="dateencoded" length="23"/>
+        </property>
+        <property name="encodedby" type="string">
+            <column name="encodedby" length="50"/>
+        </property>
+        <property name="vehicletype" type="string">
+            <column name="vehicletype" length="50"/>
+        </property>
+        <property name="neworused" type="string">
+            <column name="neworused" length="50"/>
+        </property>
+        <property name="make" type="string">
+            <column name="make" length="50"/>
+        </property>
+        <property name="model" type="string">
+            <column name="model" length="50"/>
+        </property>
+        <property name="modeldetails" type="string">
+            <column name="modeldetails" length="50"/>
+        </property>
+        <property name="vehiclevalue" type="big_decimal">
+            <column name="vehiclevalue" precision="20"/>
+        </property>
+        <property name="year" type="string">
+            <column name="year" length="50"/>
+        </property>
+        <property name="serialchassisno" type="string">
+            <column name="serialchassisno" length="50"/>
+        </property>
+        <property name="engineno" type="string">
+            <column name="engineno" length="50"/>
+        </property>
+        <property name="crnumber" type="string">
+            <column name="crnumber" length="50"/>
+        </property>
+        <property name="ornumber" type="string">
+            <column name="ornumber" length="50"/>
+        </property>
+        <property name="mvfileno" type="string">
+            <column name="mvfileno" length="50"/>
+        </property>
+        <property name="plateno" type="string">
+            <column name="plateno" length="50"/>
+        </property>
+        <property name="retailprice" type="big_decimal">
+            <column name="retailprice" precision="20"/>
+        </property>
+        <property name="conductionstickerno" type="string">
+            <column name="conductionstickerno" length="50"/>
+        </property>
+        <property name="fuel" type="string">
+            <column name="fuel" length="50"/>
+        </property>
+        <property name="noofcylinders" type="string">
+            <column name="noofcylinders" length="50"/>
+        </property>
+        <property name="location" type="string">
+            <column name="location" length="100"/>
+        </property>
+        <property name="registeredowner" type="string">
+            <column name="registeredowner" length="100"/>
+        </property>
+        <property name="ltooffice" type="string">
+            <column name="ltooffice" length="100"/>
+        </property>
+        <property name="datepurchased" type="timestamp">
+            <column name="datepurchased" length="23"/>
+        </property>
+        <property name="kmreading" type="string">
+            <column name="kmreading" length="50"/>
+        </property>
+        <property name="color" type="string">
+            <column name="color" length="50"/>
+        </property>
+        <property name="tirecondition" type="string">
+            <column name="tirecondition" length="50"/>
+        </property>
+        <property name="accessories" type="string">
+            <column name="accessories" length="100"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="300"/>
+        </property>
+        <property name="loanablevalue" type="big_decimal">
+            <column name="loanablevalue" precision="20"/>
+        </property>
+        <property name="loanablepercent" type="big_decimal">
+            <column name="loanablepercent" precision="20"/>
+        </property>
+        <property name="appraisedvalue" type="big_decimal">
+            <column name="appraisedvalue" precision="20"/>
+        </property>
+        <property name="appraisedpercent" type="big_decimal">
+            <column name="appraisedpercent" precision="20"/>
+        </property>
+        <property name="marketvalue" type="big_decimal">
+            <column name="marketvalue" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

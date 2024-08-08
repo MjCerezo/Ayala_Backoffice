@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="CustomerRelationshipFacade" class="com.etel.CustomerRelationship.CustomerRelationshipFacade" CRUDService="false" type="JavaService" springFile="CustomerRelationshipFacade.spring.xml">
+    <operation name="deleteParSps">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="relCode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="relcifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteRelCorp">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="relCode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="relCifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="mngempid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteRelCorpRB">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="relCode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="relCifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="mngempid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="sampleJavaOperation">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveCustRelParSps">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveCustRelParSpsRB">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveCustRelationshipCorp">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="relCode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="relCifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

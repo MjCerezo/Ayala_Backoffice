@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbpassbookinventory" table="TBPASSBOOKINVENTORY" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="seriesfrom" type="string">
+            <column name="seriesfrom" length="50"/>
+        </property>
+        <property name="seriesto" type="string">
+            <column name="seriesto" length="50"/>
+        </property>
+        <property name="branch" type="string">
+            <column name="branch" length="50"/>
+        </property>
+        <property name="company" type="string">
+            <column name="company" length="50"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="250"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="50"/>
+        </property>
+        <property name="currentseriesno" type="string">
+            <column name="currentseriesno" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

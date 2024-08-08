@@ -1,0 +1,118 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbmembercompany" table="TBMEMBERCOMPANY" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.TbmembercompanyId">
+            <key-property name="companycode" type="string">
+                <column name="companycode" length="50"/>
+            </key-property>
+            <key-property name="companyname" type="string">
+                <column name="companyname" length="100"/>
+            </key-property>
+        </composite-id>
+        <property name="coopcode" type="string">
+            <column name="coopcode" length="50"/>
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="100"/>
+        </property>
+        <property name="phoneno" type="string">
+            <column name="phoneno" length="50"/>
+        </property>
+        <property name="faxno" type="string">
+            <column name="faxno" length="50"/>
+        </property>
+        <property name="emailaddress" type="string">
+            <column name="emailaddress" length="100"/>
+        </property>
+        <property name="website" type="string">
+            <column name="website" length="50"/>
+        </property>
+        <property name="companystatus" type="boolean">
+            <column name="companystatus"/>
+        </property>
+        <property name="logo" type="blob">
+            <column name="logo"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="100"/>
+        </property>
+        <property name="psiccode" type="string">
+            <column name="psiccode" length="50"/>
+        </property>
+        <property name="psiclevel1" type="string">
+            <column name="psiclevel1" length="50"/>
+        </property>
+        <property name="psiclevel2" type="string">
+            <column name="psiclevel2" length="50"/>
+        </property>
+        <property name="psiclevel3" type="string">
+            <column name="psiclevel3" length="50"/>
+        </property>
+        <property name="psoccode" type="string">
+            <column name="psoccode" length="50"/>
+        </property>
+        <property name="psoclevel1" type="string">
+            <column name="psoclevel1" length="50"/>
+        </property>
+        <property name="psoclevel2" type="string">
+            <column name="psoclevel2" length="50"/>
+        </property>
+        <property name="psoclevel3" type="string">
+            <column name="psoclevel3" length="50"/>
+        </property>
+        <property name="psoclevel4" type="string">
+            <column name="psoclevel4" length="50"/>
+        </property>
+        <property name="businesstype" type="string">
+            <column name="businesstype" length="5"/>
+        </property>
+        <property name="faxareacode" type="string">
+            <column name="faxareacode" length="5"/>
+        </property>
+        <property name="faxphoneno" type="string">
+            <column name="faxphoneno" length="10"/>
+        </property>
+        <property name="areacode" type="string">
+            <column name="areacode" length="5"/>
+        </property>
+        <property name="streetnoname" type="string">
+            <column name="streetnoname" length="100"/>
+        </property>
+        <property name="subdivision" type="string">
+            <column name="subdivision" length="100"/>
+        </property>
+        <property name="barangay" type="string">
+            <column name="barangay" length="100"/>
+        </property>
+        <property name="stateprovince" type="string">
+            <column name="stateprovince" length="100"/>
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="100"/>
+        </property>
+        <property name="region" type="string">
+            <column name="region" length="50"/>
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="50"/>
+        </property>
+        <property name="postalcode" type="string">
+            <column name="postalcode" length="50"/>
+        </property>
+        <property name="membershipclass" type="string">
+            <column name="membershipclass" length="50"/>
+        </property>
+        <property name="maxloanableamount" type="big_decimal">
+            <column name="maxloanableamount" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

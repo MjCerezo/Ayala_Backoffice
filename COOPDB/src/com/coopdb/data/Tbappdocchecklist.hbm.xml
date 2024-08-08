@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbappdocchecklist" table="TBAPPDOCCHECKLIST" catalog="COOPDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="memberid" type="string">
+            <column name="memberid" length="20"/>
+        </property>
+        <property name="documentcode" type="string">
+            <column name="documentcode" length="10"/>
+        </property>
+        <property name="documentname" type="string">
+            <column name="documentname" length="100"/>
+        </property>
+        <property name="isrequired" type="boolean">
+            <column name="isrequired"/>
+        </property>
+        <property name="issubmitted" type="boolean">
+            <column name="issubmitted"/>
+        </property>
+        <property name="datesubmitted" type="boolean">
+            <column name="datesubmitted"/>
+        </property>
+        <property name="isrequestwaiver" type="boolean">
+            <column name="isrequestwaiver"/>
+        </property>
+        <property name="dateapproved" type="timestamp">
+            <column name="dateapproved" length="23"/>
+        </property>
+        <property name="ispoa" type="boolean">
+            <column name="ispoa"/>
+        </property>
+        <property name="reqtype" type="string">
+            <column name="reqtype" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

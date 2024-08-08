@@ -1,0 +1,72 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbappbusiness" table="TBAPPBUSINESS" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="membershipappid" type="string">
+            <column name="membershipappid" length="20"/>
+        </property>
+        <property name="businessname" type="string">
+            <column name="businessname" length="100"/>
+        </property>
+        <property name="streetnoname" type="string">
+            <column name="streetnoname" length="100"/>
+        </property>
+        <property name="subdivison" type="string">
+            <column name="subdivison" length="50"/>
+        </property>
+        <property name="barangay" type="string">
+            <column name="barangay" length="50"/>
+        </property>
+        <property name="stateprovince" type="string">
+            <column name="stateprovince" length="50"/>
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="50"/>
+        </property>
+        <property name="region" type="string">
+            <column name="region" length="50"/>
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="50"/>
+        </property>
+        <property name="postalcode" type="string">
+            <column name="postalcode" length="50"/>
+        </property>
+        <property name="fulladdress" type="string">
+            <column name="fulladdress" length="300"/>
+        </property>
+        <property name="businessclass" type="string">
+            <column name="businessclass" length="50"/>
+        </property>
+        <property name="natureofbusiness" type="string">
+            <column name="natureofbusiness" length="50"/>
+        </property>
+        <property name="areacodephone" type="string">
+            <column name="areacodephone" length="5"/>
+        </property>
+        <property name="phoneno" type="string">
+            <column name="phoneno" length="50"/>
+        </property>
+        <property name="incorporationdate" type="timestamp">
+            <column name="incorporationdate" length="23"/>
+        </property>
+        <property name="lengthofoperation" type="string">
+            <column name="lengthofoperation" length="20"/>
+        </property>
+        <property name="psiccode" type="string">
+            <column name="psiccode" length="10"/>
+        </property>
+        <property name="psiclevel1" type="string">
+            <column name="psiclevel1" length="10"/>
+        </property>
+        <property name="psiclevel2" type="string">
+            <column name="psiclevel2" length="10"/>
+        </property>
+        <property name="psiclevel3" type="string">
+            <column name="psiclevel3" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

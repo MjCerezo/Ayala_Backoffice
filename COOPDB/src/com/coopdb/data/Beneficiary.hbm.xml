@@ -1,0 +1,52 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Beneficiary" table="beneficiary" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.BeneficiaryId">
+            <key-property name="cifNo" type="string">
+                <column name="CIF_No" length="50"/>
+            </key-property>
+            <key-property name="dxbankCif" type="string">
+                <column name="DXBANK_CIF" length="50"/>
+            </key-property>
+            <key-property name="firstnameCorporateName" type="string">
+                <column name="Firstname_Corporate_Name" length="50"/>
+            </key-property>
+            <key-property name="middlename" type="string">
+                <column name="Middlename" length="50"/>
+            </key-property>
+            <key-property name="lastname" type="string">
+                <column name="Lastname" length="50"/>
+            </key-property>
+            <key-property name="beneficiaryTitle" type="byte">
+                <column name="Beneficiary_Title"/>
+            </key-property>
+            <key-property name="beneficiaryFirstname" type="string">
+                <column name="Beneficiary_Firstname" length="50"/>
+            </key-property>
+            <key-property name="beneficiaryMiddlename" type="string">
+                <column name="Beneficiary_Middlename" length="50"/>
+            </key-property>
+            <key-property name="beneficiaryLastname" type="string">
+                <column name="Beneficiary_Lastname" length="50"/>
+            </key-property>
+            <key-property name="beneficiarySuffix" type="string">
+                <column name="Beneficiary_Suffix" length="50"/>
+            </key-property>
+            <key-property name="beneficiaryDateOfBirth" type="string">
+                <column name="Beneficiary_Date_of_Birth" length="10"/>
+            </key-property>
+            <key-property name="beneficiaryRelationshipToCustomer" type="string">
+                <column name="Beneficiary_Relationship_to_Customer" length="50"/>
+            </key-property>
+            <key-property name="membershipDate" type="string">
+                <column name="Membership_Date" length="10"/>
+            </key-property>
+            <key-property name="membershipType" type="string">
+                <column name="Membership_Type" length="50"/>
+            </key-property>
+            <key-property name="column15" type="string">
+                <column name="column15" length="50"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

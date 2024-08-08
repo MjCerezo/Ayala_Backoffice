@@ -1,0 +1,46 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbevents" table="TBEVENTS" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.cifsdb.data.TbeventsId">
+            <key-property name="eventcode" type="integer">
+                <column name="eventcode"/>
+            </key-property>
+            <key-property name="coopcode" type="string">
+                <column name="coopcode" length="50"/>
+            </key-property>
+        </composite-id>
+        <property name="eventtype" type="string">
+            <column name="eventtype" length="5"/>
+        </property>
+        <property name="eventname" type="string">
+            <column name="eventname" length="100"/>
+        </property>
+        <property name="eventdate" type="timestamp">
+            <column name="eventdate" length="23"/>
+        </property>
+        <property name="eventdesc" type="string">
+            <column name="eventdesc" length="300"/>
+        </property>
+        <property name="eventvenue" type="string">
+            <column name="eventvenue" length="100"/>
+        </property>
+        <property name="govtypeclassification" type="string">
+            <column name="govtypeclassification" length="5"/>
+        </property>
+        <property name="isrequired" type="boolean">
+            <column name="isrequired"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

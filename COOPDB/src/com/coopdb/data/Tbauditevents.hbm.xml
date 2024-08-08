@@ -1,0 +1,15 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbauditevents" table="TBAUDITEVENTS" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="eventid" type="integer">
+            <column name="eventid"/>
+            <generator class="identity"/>
+        </id>
+        <property name="eventname" type="string">
+            <column name="eventname" length="50"/>
+        </property>
+        <property name="moduleid" type="string">
+            <column name="moduleid" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

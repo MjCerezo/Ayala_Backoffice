@@ -1,0 +1,195 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbevalreport" table="TBEVALREPORT" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="evalreportid" type="integer">
+            <column name="evalreportid"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="customername" type="string">
+            <column name="customername" length="300"/>
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="200"/>
+        </property>
+        <property name="spousename" type="string">
+            <column name="spousename" length="300"/>
+        </property>
+        <property name="customertype" type="string">
+            <column name="customertype" length="2"/>
+        </property>
+        <property name="assignedevaluator" type="string">
+            <column name="assignedevaluator" length="50"/>
+        </property>
+        <property name="dateassigned" type="timestamp">
+            <column name="dateassigned" length="23"/>
+        </property>
+        <property name="evalreporttype" type="string">
+            <column name="evalreporttype" length="50"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="2"/>
+        </property>
+        <property name="companycode" type="string">
+            <column name="companycode" length="50"/>
+        </property>
+        <property name="evaluationdate" type="timestamp">
+            <column name="evaluationdate" length="23"/>
+        </property>
+        <property name="assignedevaluationhead" type="string">
+            <column name="assignedevaluationhead" length="50"/>
+        </property>
+        <property name="datereviewed" type="timestamp">
+            <column name="datereviewed" length="23"/>
+        </property>
+        <property name="loanproduct" type="string">
+            <column name="loanproduct" length="20"/>
+        </property>
+        <property name="interesttype" type="string">
+            <column name="interesttype" length="20"/>
+        </property>
+        <property name="repaymenttype" type="string">
+            <column name="repaymenttype" length="20"/>
+        </property>
+        <property name="loanamount" type="big_decimal">
+            <column name="loanamount" precision="20"/>
+        </property>
+        <property name="term" type="string">
+            <column name="term" length="20"/>
+        </property>
+        <property name="interestrate" type="big_decimal">
+            <column name="interestrate" precision="20"/>
+        </property>
+        <property name="paymentcycle" type="string">
+            <column name="paymentcycle" length="20"/>
+        </property>
+        <property name="noinstallment" type="integer">
+            <column name="noinstallment"/>
+        </property>
+        <property name="bookingdate" type="timestamp">
+            <column name="bookingdate" length="23"/>
+        </property>
+        <property name="firstduedate" type="timestamp">
+            <column name="firstduedate" length="23"/>
+        </property>
+        <property name="maturitydate" type="timestamp">
+            <column name="maturitydate" length="23"/>
+        </property>
+        <property name="amountfinance" type="big_decimal">
+            <column name="amountfinance" precision="20"/>
+        </property>
+        <property name="totalinterestdue" type="big_decimal">
+            <column name="totalinterestdue" precision="20"/>
+        </property>
+        <property name="advanceinterest" type="big_decimal">
+            <column name="advanceinterest" precision="20"/>
+        </property>
+        <property name="installmentamt" type="big_decimal">
+            <column name="installmentamt" precision="20"/>
+        </property>
+        <property name="lastinstallmentamt" type="big_decimal">
+            <column name="lastinstallmentamt" precision="20"/>
+        </property>
+        <property name="eir" type="big_decimal">
+            <column name="eir" precision="20"/>
+        </property>
+        <property name="mir" type="big_decimal">
+            <column name="mir" precision="20"/>
+        </property>
+        <property name="ey" type="big_decimal">
+            <column name="ey" precision="20"/>
+        </property>
+        <property name="dstcomputation" type="big_decimal">
+            <column name="dstcomputation" precision="20"/>
+        </property>
+        <property name="docstamps" type="big_decimal">
+            <column name="docstamps" precision="20"/>
+        </property>
+        <property name="othercharges" type="big_decimal">
+            <column name="othercharges" precision="20"/>
+        </property>
+        <property name="totalcharges" type="big_decimal">
+            <column name="totalcharges" precision="20"/>
+        </property>
+        <property name="loanproceeds" type="big_decimal">
+            <column name="loanproceeds" precision="20"/>
+        </property>
+        <property name="evaluatorremarks" type="string">
+            <column name="evaluatorremarks"/>
+        </property>
+        <property name="evaluationheadremarks" type="string">
+            <column name="evaluationheadremarks"/>
+        </property>
+        <property name="totalapplicantincome" type="big_decimal">
+            <column name="totalapplicantincome" precision="20"/>
+        </property>
+        <property name="totalspouseincome" type="big_decimal">
+            <column name="totalspouseincome" precision="20"/>
+        </property>
+        <property name="totalcomakerincome" type="big_decimal">
+            <column name="totalcomakerincome" precision="20"/>
+        </property>
+        <property name="totalcombinedgrossincome" type="big_decimal">
+            <column name="totalcombinedgrossincome" precision="20"/>
+        </property>
+        <property name="totalapplicantexpense" type="big_decimal">
+            <column name="totalapplicantexpense" precision="20"/>
+        </property>
+        <property name="totalspouseexpense" type="big_decimal">
+            <column name="totalspouseexpense" precision="20"/>
+        </property>
+        <property name="totalcomakerexpense" type="big_decimal">
+            <column name="totalcomakerexpense" precision="20"/>
+        </property>
+        <property name="totalcombinedgrossexpense" type="big_decimal">
+            <column name="totalcombinedgrossexpense" precision="20"/>
+        </property>
+        <property name="recommendedby" type="string">
+            <column name="recommendedby" length="50"/>
+        </property>
+        <property name="acceptanceclientdecision" type="string">
+            <column name="acceptanceclientdecision" length="5"/>
+        </property>
+        <property name="acceptanceremarks" type="string">
+            <column name="acceptanceremarks" length="300"/>
+        </property>
+        <property name="noofcomaker" type="integer">
+            <column name="noofcomaker"/>
+        </property>
+        <property name="loanpurpose" type="string">
+            <column name="loanpurpose" length="5"/>
+        </property>
+        <property name="branchcode" type="string">
+            <column name="branchcode" length="50"/>
+        </property>
+        <property name="losoriginatingteam" type="string">
+            <column name="losoriginatingteam" length="50"/>
+        </property>
+        <property name="accountofficer" type="string">
+            <column name="accountofficer" length="100"/>
+        </property>
+        <property name="reconno" type="integer">
+            <column name="reconno"/>
+        </property>
+        <property name="amendno" type="integer">
+            <column name="amendno"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="datesubmitted" type="timestamp">
+            <column name="datesubmitted" length="23"/>
+        </property>
+        <property name="evalheadremarks" type="string">
+            <column name="evalheadremarks" length="300"/>
+        </property>
+    </class>
+</hibernate-mapping>

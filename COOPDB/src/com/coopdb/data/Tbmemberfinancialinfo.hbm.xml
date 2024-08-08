@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbmemberfinancialinfo" table="TBMEMBERFINANCIALINFO" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="membershipappid" type="string">
+            <column name="membershipappid" length="20"/>
+        </property>
+        <property name="membershipid" type="string">
+            <column name="membershipid" length="20"/>
+        </property>
+        <property name="financialtype" type="string">
+            <column name="financialtype" length="20"/>
+        </property>
+        <property name="bankname" type="string">
+            <column name="bankname" length="100"/>
+        </property>
+        <property name="accounttype" type="string">
+            <column name="accounttype" length="20"/>
+        </property>
+        <property name="assettype" type="string">
+            <column name="assettype" length="20"/>
+        </property>
+        <property name="assetdesc" type="string">
+            <column name="assetdesc" length="50"/>
+        </property>
+        <property name="accountstatus" type="string">
+            <column name="accountstatus" length="5"/>
+        </property>
+        <property name="outstandingbalance" type="big_decimal">
+            <column name="outstandingbalance" precision="20"/>
+        </property>
+        <property name="branch" type="string">
+            <column name="branch" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

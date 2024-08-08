@@ -1,0 +1,414 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbloans" table="TBLOANS" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="legveh" type="string">
+            <column name="legveh" length="5"/>
+        </property>
+        <property name="legbranch" type="string">
+            <column name="legbranch" length="5"/>
+        </property>
+        <property name="accountno" type="string">
+            <column name="accountno" length="50"/>
+        </property>
+        <property name="slaidno" type="string">
+            <column name="slaidno" length="12"/>
+        </property>
+        <property name="principalNo" type="string">
+            <column name="PrincipalNo" length="12"/>
+        </property>
+        <property name="coMaker1" type="string">
+            <column name="CoMaker1" length="12"/>
+        </property>
+        <property name="coMaker2" type="string">
+            <column name="CoMaker2" length="12"/>
+        </property>
+        <property name="productGroup" type="string">
+            <column name="productGroup" length="50"/>
+        </property>
+        <property name="loantype" type="string">
+            <column name="loantype" length="50"/>
+        </property>
+        <property name="prodcode" type="string">
+            <column name="prodcode" length="50"/>
+        </property>
+        <property name="subprd1" type="string">
+            <column name="subprd1" length="50"/>
+        </property>
+        <property name="subprd2" type="string">
+            <column name="subprd2" length="50"/>
+        </property>
+        <property name="seccode" type="string">
+            <column name="seccode" length="3"/>
+        </property>
+        <property name="applno" type="string">
+            <column name="applno" length="16"/>
+        </property>
+        <property name="pnno" type="string">
+            <column name="pnno" length="50"/>
+        </property>
+        <property name="pnamt" type="big_decimal">
+            <column name="pnamt" precision="16"/>
+        </property>
+        <property name="pnintrate" type="big_decimal">
+            <column name="pnintrate" precision="16"/>
+        </property>
+        <property name="pnintmethod" type="string">
+            <column name="pnintmethod" length="1"/>
+        </property>
+        <property name="pnterm" type="big_decimal">
+            <column name="pnterm" precision="16"/>
+        </property>
+        <property name="pntermcyc" type="string">
+            <column name="pntermcyc" length="10"/>
+        </property>
+        <property name="pnilno" type="integer">
+            <column name="pnilno"/>
+        </property>
+        <property name="pnilnocyc" type="integer">
+            <column name="pnilnocyc"/>
+        </property>
+        <property name="faceamt" type="big_decimal">
+            <column name="faceamt" precision="16"/>
+        </property>
+        <property name="pymtplan" type="string">
+            <column name="pymtplan" length="10"/>
+        </property>
+        <property name="effyield" type="big_decimal">
+            <column name="effyield" precision="16"/>
+        </property>
+        <property name="accrtype" type="string">
+            <column name="accrtype" length="2"/>
+        </property>
+        <property name="inttyp" type="string">
+            <column name="inttyp" length="2"/>
+        </property>
+        <property name="dtbook" type="timestamp">
+            <column name="dtbook" length="23"/>
+        </property>
+        <property name="fduedt" type="timestamp">
+            <column name="fduedt" length="23"/>
+        </property>
+        <property name="matdt" type="timestamp">
+            <column name="matdt" length="23"/>
+        </property>
+        <property name="uiadv" type="big_decimal">
+            <column name="uiadv" precision="16"/>
+        </property>
+        <property name="uiadvno" type="integer">
+            <column name="uiadvno"/>
+        </property>
+        <property name="reviewdate" type="timestamp">
+            <column name="reviewdate" length="23"/>
+        </property>
+        <property name="reviewdays" type="integer">
+            <column name="reviewdays"/>
+        </property>
+        <property name="lpcrate" type="big_decimal">
+            <column name="lpcrate" precision="16"/>
+        </property>
+        <property name="graceprd" type="integer">
+            <column name="graceprd"/>
+        </property>
+        <property name="pdcctr" type="integer">
+            <column name="pdcctr"/>
+        </property>
+        <property name="loanoff" type="string">
+            <column name="loanoff" length="50"/>
+        </property>
+        <property name="loanpur" type="string">
+            <column name="loanpur" length="50"/>
+        </property>
+        <property name="tdueilno" type="integer">
+            <column name="tdueilno"/>
+        </property>
+        <property name="tdueilduedt" type="timestamp">
+            <column name="tdueilduedt" length="23"/>
+        </property>
+        <property name="tdueilamt" type="big_decimal">
+            <column name="tdueilamt" precision="16"/>
+        </property>
+        <property name="tdueintamt" type="big_decimal">
+            <column name="tdueintamt" precision="16"/>
+        </property>
+        <property name="tdueprinamt" type="big_decimal">
+            <column name="tdueprinamt" precision="16"/>
+        </property>
+        <property name="tpdilno" type="integer">
+            <column name="tpdilno"/>
+        </property>
+        <property name="tpdilduedt" type="timestamp">
+            <column name="tpdilduedt" length="23"/>
+        </property>
+        <property name="tpdilamt" type="big_decimal">
+            <column name="tpdilamt" precision="16"/>
+        </property>
+        <property name="tpdintamt" type="big_decimal">
+            <column name="tpdintamt" precision="16"/>
+        </property>
+        <property name="tpdprinamt" type="big_decimal">
+            <column name="tpdprinamt" precision="16"/>
+        </property>
+        <property name="idealprinbal" type="big_decimal">
+            <column name="idealprinbal" precision="16"/>
+        </property>
+        <property name="idealloanbal" type="big_decimal">
+            <column name="idealloanbal" precision="16"/>
+        </property>
+        <property name="prinbal" type="big_decimal">
+            <column name="prinbal" precision="16"/>
+        </property>
+        <property name="loanbal" type="big_decimal">
+            <column name="loanbal" precision="16"/>
+        </property>
+        <property name="excessbal" type="big_decimal">
+            <column name="excessbal" precision="16"/>
+        </property>
+        <property name="lpcbal" type="big_decimal">
+            <column name="lpcbal" precision="16"/>
+        </property>
+        <property name="uidbal" type="big_decimal">
+            <column name="uidbal" precision="16"/>
+        </property>
+        <property name="ienc" type="big_decimal">
+            <column name="ienc" precision="16"/>
+        </property>
+        <property name="air" type="big_decimal">
+            <column name="AIR" precision="16"/>
+        </property>
+        <property name="ar1" type="big_decimal">
+            <column name="ar1" precision="16"/>
+        </property>
+        <property name="ar2" type="big_decimal">
+            <column name="ar2" precision="16"/>
+        </property>
+        <property name="ar1esc" type="string">
+            <column name="ar1esc" length="2"/>
+        </property>
+        <property name="ar2esc" type="string">
+            <column name="ar2esc" length="2"/>
+        </property>
+        <property name="chk4clr" type="big_decimal">
+            <column name="chk4clr" precision="16"/>
+        </property>
+        <property name="iltogo" type="integer">
+            <column name="iltogo"/>
+        </property>
+        <property name="dlylpc" type="big_decimal">
+            <column name="dlylpc" precision="16"/>
+        </property>
+        <property name="partialint" type="big_decimal">
+            <column name="partialint" precision="16"/>
+        </property>
+        <property name="partialprin" type="big_decimal">
+            <column name="partialprin" precision="16"/>
+        </property>
+        <property name="lpdduedt" type="timestamp">
+            <column name="lpdduedt" length="23"/>
+        </property>
+        <property name="lpdilno" type="integer">
+            <column name="lpdilno"/>
+        </property>
+        <property name="lstaccrdt" type="timestamp">
+            <column name="lstaccrdt" length="23"/>
+        </property>
+        <property name="lstpyamt" type="big_decimal">
+            <column name="lstpyamt" precision="16"/>
+        </property>
+        <property name="lstpydt" type="timestamp">
+            <column name="lstpydt" length="23"/>
+        </property>
+        <property name="lsttxcod" type="string">
+            <column name="lsttxcod" length="5"/>
+        </property>
+        <property name="lsttxdt" type="timestamp">
+            <column name="lsttxdt" length="23"/>
+        </property>
+        <property name="nxtilno" type="integer">
+            <column name="nxtilno"/>
+        </property>
+        <property name="nxtduedt" type="timestamp">
+            <column name="nxtduedt" length="23"/>
+        </property>
+        <property name="nxtilamt" type="big_decimal">
+            <column name="nxtilamt" precision="16"/>
+        </property>
+        <property name="nxtintamt" type="big_decimal">
+            <column name="nxtintamt" precision="16"/>
+        </property>
+        <property name="nxtprinamt" type="big_decimal">
+            <column name="nxtprinamt" precision="16"/>
+        </property>
+        <property name="remedsts" type="integer">
+            <column name="remedsts"/>
+        </property>
+        <property name="acctsts" type="integer">
+            <column name="acctsts"/>
+        </property>
+        <property name="acctstsDate" type="timestamp">
+            <column name="acctsts_date" length="23"/>
+        </property>
+        <property name="oldsts" type="integer">
+            <column name="oldsts"/>
+        </property>
+        <property name="ddlq" type="integer">
+            <column name="ddlq"/>
+        </property>
+        <property name="ddlqBucket" type="integer">
+            <column name="ddlq_bucket"/>
+        </property>
+        <property name="ddlqBucketPrev" type="integer">
+            <column name="ddlq_bucket_prev"/>
+        </property>
+        <property name="collAgency" type="string">
+            <column name="coll_agency" length="30"/>
+        </property>
+        <property name="collCollector" type="string">
+            <column name="coll_collector" length="30"/>
+        </property>
+        <property name="collZone" type="string">
+            <column name="coll_zone" length="30"/>
+        </property>
+        <property name="xpd1" type="integer">
+            <column name="xpd1"/>
+        </property>
+        <property name="xpd30" type="integer">
+            <column name="xpd30"/>
+        </property>
+        <property name="xpd60" type="integer">
+            <column name="xpd60"/>
+        </property>
+        <property name="xpd90" type="integer">
+            <column name="xpd90"/>
+        </property>
+        <property name="interestAmt" type="big_decimal">
+            <column name="InterestAmt" precision="16"/>
+        </property>
+        <property name="eir" type="big_decimal">
+            <column name="EIR" precision="16"/>
+        </property>
+        <property name="amortizationAmt" type="big_decimal">
+            <column name="AmortizationAmt" precision="16"/>
+        </property>
+        <property name="paymentCycle" type="integer">
+            <column name="PaymentCycle"/>
+        </property>
+        <property name="relType" type="integer">
+            <column name="RelType"/>
+        </property>
+        <property name="factorRate" type="big_decimal">
+            <column name="FactorRate" precision="16"/>
+        </property>
+        <property name="ouid" type="big_decimal">
+            <column name="OUID" precision="16"/>
+        </property>
+        <property name="ytdprinpd" type="big_decimal">
+            <column name="YTDprinpd" precision="16"/>
+        </property>
+        <property name="ytdintpd" type="big_decimal">
+            <column name="YTDintpd" precision="16"/>
+        </property>
+        <property name="btdprinpd" type="big_decimal">
+            <column name="BTDprinpd" precision="16"/>
+        </property>
+        <property name="btdintpd" type="big_decimal">
+            <column name="BTDintpd" precision="16"/>
+        </property>
+        <property name="prodPriorityCode" type="integer">
+            <column name="ProdPriorityCode"/>
+        </property>
+        <property name="nxtdueilno" type="integer">
+            <column name="nxtdueilno"/>
+        </property>
+        <property name="nxtdueilduedt" type="timestamp">
+            <column name="nxtdueilduedt" length="23"/>
+        </property>
+        <property name="nxtdueilamt" type="big_decimal">
+            <column name="nxtdueilamt" precision="16"/>
+        </property>
+        <property name="nxtdueilint" type="big_decimal">
+            <column name="nxtdueilint" precision="16"/>
+        </property>
+        <property name="nxtdueilprin" type="big_decimal">
+            <column name="nxtdueilprin" precision="16"/>
+        </property>
+        <property name="unpaidint" type="big_decimal">
+            <column name="unpaidint" precision="16"/>
+        </property>
+        <property name="unpaidprin" type="big_decimal">
+            <column name="unpaidprin" precision="16"/>
+        </property>
+        <property name="aer" type="big_decimal">
+            <column name="AER" precision="16"/>
+        </property>
+        <property name="fullname" type="string">
+            <column name="fullname"/>
+        </property>
+        <property name="refno" type="string">
+            <column name="refno" length="20"/>
+        </property>
+        <property name="facilityid" type="string">
+            <column name="facilityid" length="20"/>
+        </property>
+        <property name="curruidamt" type="big_decimal">
+            <column name="curruidamt" precision="16"/>
+        </property>
+        <property name="curruidctr" type="big_decimal">
+            <column name="curruidctr" precision="16"/>
+        </property>
+        <property name="currdailyint" type="big_decimal">
+            <column name="currdailyint" precision="16"/>
+        </property>
+        <property name="mtdint" type="big_decimal">
+            <column name="mtdint" precision="16"/>
+        </property>
+        <property name="oldddlq" type="integer">
+            <column name="oldddlq"/>
+        </property>
+        <property name="intpycomp" type="string">
+            <column name="intpycomp" length="3"/>
+        </property>
+        <property name="memint" type="big_decimal">
+            <column name="memint" precision="16"/>
+        </property>
+        <property name="intpaytype" type="string">
+            <column name="intpaytype" length="3"/>
+        </property>
+        <property name="cfrefno1" type="string">
+            <column name="cfrefno1" length="50"/>
+        </property>
+        <property name="cfrefno2" type="string">
+            <column name="cfrefno2" length="50"/>
+        </property>
+        <property name="intcycdesc" type="string">
+            <column name="intcycdesc" length="50"/>
+        </property>
+        <property name="termcycdesc" type="string">
+            <column name="termcycdesc" length="50"/>
+        </property>
+        <property name="interestperiod" type="string">
+            <column name="interestperiod" length="50"/>
+        </property>
+        <property name="addtnlint" type="big_decimal">
+            <column name="addtnlint" precision="18"/>
+        </property>
+        <property name="wtaxflag" type="boolean">
+            <column name="wtaxflag"/>
+        </property>
+        <property name="incomerecognition" type="string">
+            <column name="incomerecognition" length="2"/>
+        </property>
+        <property name="baseyear" type="integer">
+            <column name="baseyear"/>
+        </property>
+        <property name="excesspaymenthandling" type="string">
+            <column name="excesspaymenthandling" length="5"/>
+        </property>
+        <property name="ddlqtype" type="string">
+            <column name="ddlqtype" length="5"/>
+        </property>
+    </class>
+</hibernate-mapping>

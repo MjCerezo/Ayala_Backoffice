@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="VehicleFacade" class="com.etel.vehicle.VehicleFacade" CRUDService="false" type="JavaService" springFile="VehicleFacade.spring.xml">
+    <operation name="getAutoCollateralDetails">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcollateraldetailsauto" isList="false"/>
+    </operation>
+    <operation name="getMakeListByVehicleType">
+        <parameter name="vehicletype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.vehicleforms.VehicleForm" isList="true"/>
+    </operation>
+    <operation name="getModelDetails">
+        <parameter name="vehicletype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="make" typeRef="java.lang.String" isList="false"/>
+        <parameter name="model" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.vehicleforms.VehicleForm" isList="true"/>
+    </operation>
+    <operation name="getModelListByVehicleTypeAndMake">
+        <parameter name="vehicletype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="make" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.vehicleforms.VehicleForm" isList="true"/>
+    </operation>
+    <operation name="getVehicleCategoryList">
+        <return typeRef="com.etel.vehicleforms.VehicleForm" isList="true"/>
+    </operation>
+    <operation name="listVehicle">
+        <return typeRef="com.coopdb.data.Tbvehicle" isList="true"/>
+    </operation>
+    <operation name="saveCollateralDetailsAuto">
+        <parameter name="autodetails" typeRef="com.coopdb.data.Tbcollateraldetailsauto" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateVehicle">
+        <parameter name="car" typeRef="com.coopdb.data.Tbvehicle" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="searchByFieldVehicle">
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbvehicle" isList="true"/>
+    </operation>
+    <operation name="searchWithMake">
+        <parameter name="make" typeRef="java.lang.String" isList="false"/>
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbvehicle" isList="true"/>
+    </operation>
+    <operation name="vehiclemakeList">
+        <return typeRef="java.lang.String" isList="true"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.vehicleforms.VehicleForm" name="VehicleForm" supportsQuickData="false">
+            <element name="make" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="model" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="modeldetails" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="vehiclecategory" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

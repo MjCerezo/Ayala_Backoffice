@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbcodename" table="TBCODENAME" catalog="AcaciaAyalaMembershipDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="codename" type="string">
+            <column name="codename" length="50"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="iseditable" type="boolean">
+            <column name="iseditable"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="100"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="createddate" type="timestamp">
+            <column name="createddate" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="lastupdated" type="timestamp">
+            <column name="lastupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

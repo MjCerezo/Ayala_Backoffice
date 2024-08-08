@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbapprelmarketsurvey" table="TBAPPRELMARKETSURVEY" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appraisalreportid" type="string">
+            <column name="appraisalreportid" length="20"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="institution" type="string">
+            <column name="institution" length="300"/>
+        </property>
+        <property name="informant" type="string">
+            <column name="informant" length="300"/>
+        </property>
+        <property name="amountfrom" type="big_decimal">
+            <column name="amountfrom" precision="20"/>
+        </property>
+        <property name="amountto" type="big_decimal">
+            <column name="amountto" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

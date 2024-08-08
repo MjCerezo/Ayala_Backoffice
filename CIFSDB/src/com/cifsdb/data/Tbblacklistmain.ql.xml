@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Generated 08/06/2024 19:26:31
+
+Queries for entity: Tbblacklistmain.
+
+@design.generated: Marks a generated query.
+
+-->
+
+<hibernate-mapping>
+
+    <query 
+        name="getTbblacklistmainById"
+        comment="Example HQL Query
+                 @design.generated">
+                 
+        <query-param name="id" type="java.lang.String"/>
+
+            from Tbblacklistmain _a where _a.id=:id 
+
+    </query>
+
+</hibernate-mapping>

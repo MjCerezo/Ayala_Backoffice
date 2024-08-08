@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="ManagementFacade" class="com.etel.management.ManagementFacade" CRUDService="false" type="JavaService" springFile="ManagementFacade.spring.xml">
+    <operation name="checkIfExisting">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="relatedcifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="relcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="ofcrposition" typeRef="java.lang.String" isList="false"/>
+        <parameter name="poscategory" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteDir">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteManagement">
+        <parameter name="id" typeRef="int" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteNew">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteRegOwner">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteUnusedBusinessType">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="oldBtype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteUnusedBusinessTypeRB">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="oldBtype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getGenManager">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbmanagement" isList="false"/>
+    </operation>
+    <operation name="getManagementRecord">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="id" typeRef="int" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbmanagement" isList="false"/>
+    </operation>
+    <operation name="listDirectorsTrustees">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbmanagement" isList="true"/>
+    </operation>
+    <operation name="listGenMngr">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbmanagement" isList="true"/>
+    </operation>
+    <operation name="listOfficers">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbmanagement" isList="true"/>
+    </operation>
+    <operation name="listPartners">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbmanagement" isList="true"/>
+    </operation>
+    <operation name="listRegOwner">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbmanagement" isList="true"/>
+    </operation>
+    <operation name="listShareholdersCorp">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbmanagement" isList="true"/>
+    </operation>
+    <operation name="listShareholdersIndiv">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbmanagement" isList="true"/>
+    </operation>
+    <operation name="listSignatories">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbmanagement" isList="true"/>
+    </operation>
+    <operation name="mngmtList">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="pcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="shaCustType" typeRef="java.lang.String" isList="false"/>
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbmanagement" isList="true"/>
+    </operation>
+    <operation name="mngmtList2">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="oldBtype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbmanagement" isList="true"/>
+    </operation>
+    <operation name="mngmtList2RB">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="oldBtype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbmanagementlos" isList="true"/>
+    </operation>
+    <operation name="saveOrUpdateDir">
+        <parameter name="ref" typeRef="com.cifsdb.data.Tbmanagement" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateOfficer">
+        <parameter name="ref" typeRef="com.cifsdb.data.Tbmanagement" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateRegOwner">
+        <parameter name="ref" typeRef="com.cifsdb.data.Tbmanagement" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateShareCorp">
+        <parameter name="ref" typeRef="com.cifsdb.data.Tbmanagement" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateShareIndiv">
+        <parameter name="ref" typeRef="com.cifsdb.data.Tbmanagement" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateSignatory">
+        <parameter name="ref" typeRef="com.cifsdb.data.Tbmanagement" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="setupManagement">
+        <parameter name="form" typeRef="com.etel.managementforms.ManagementForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateBusinessType">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="btype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateManagement">
+        <parameter name="mg" typeRef="com.cifsdb.data.Tbmanagement" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.managementforms.ManagementForm" name="ManagementForm" supportsQuickData="false">
+            <element name="businesstype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="corporatename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="date" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateofincorporation" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="fname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="mname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="nationality" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="pcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="relationcifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="suffix" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

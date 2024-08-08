@@ -1,0 +1,57 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbfsitempercifno" table="TBFSITEMPERCIFNO" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50"/>
+        </property>
+        <property name="fstype" type="string">
+            <column name="fstype" length="10" not-null="true"/>
+        </property>
+        <property name="fsdate" type="timestamp">
+            <column name="fsdate" length="23" not-null="true"/>
+        </property>
+        <property name="fssection" type="string">
+            <column name="fssection" length="5" not-null="true"/>
+        </property>
+        <property name="fssubsection" type="string">
+            <column name="fssubsection" length="5" not-null="true"/>
+        </property>
+        <property name="fsitemtype" type="string">
+            <column name="fsitemtype" length="5" not-null="true"/>
+        </property>
+        <property name="fsitemname" type="string">
+            <column name="fsitemname" length="300" not-null="true"/>
+        </property>
+        <property name="fsitemamt" type="big_decimal">
+            <column name="fsitemamt" precision="20"/>
+        </property>
+        <property name="sequence" type="integer">
+            <column name="sequence"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="lastupdated" type="timestamp">
+            <column name="lastupdated" length="23"/>
+        </property>
+        <property name="itemnameflag" type="boolean">
+            <column name="itemnameflag"/>
+        </property>
+        <property name="industryflag" type="boolean">
+            <column name="industryflag"/>
+        </property>
+        <property name="industryname" type="string">
+            <column name="industryname" length="300"/>
+        </property>
+    </class>
+</hibernate-mapping>

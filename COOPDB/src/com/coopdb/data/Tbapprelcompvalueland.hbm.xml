@@ -1,0 +1,45 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbapprelcompvalueland" table="TBAPPRELCOMPVALUELAND" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appraisalreportid" type="string">
+            <column name="appraisalreportid" length="20"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="collateralid" type="integer">
+            <column name="collateralid"/>
+        </property>
+        <property name="grossarea" type="big_decimal">
+            <column name="grossarea" precision="18"/>
+        </property>
+        <property name="lesseasement" type="big_decimal">
+            <column name="lesseasement" precision="18"/>
+        </property>
+        <property name="netarea" type="big_decimal">
+            <column name="netarea" precision="18"/>
+        </property>
+        <property name="landvalue" type="big_decimal">
+            <column name="landvalue" precision="18"/>
+        </property>
+        <property name="subtotalland" type="big_decimal">
+            <column name="subtotalland" precision="18"/>
+        </property>
+        <property name="lessenroachment" type="big_decimal">
+            <column name="lessenroachment" precision="18"/>
+        </property>
+        <property name="lessroadrightofway" type="big_decimal">
+            <column name="lessroadrightofway" precision="18"/>
+        </property>
+        <property name="lesswaterwayscreek" type="big_decimal">
+            <column name="lesswaterwayscreek" precision="18"/>
+        </property>
+        <property name="lessroadwidening" type="big_decimal">
+            <column name="lessroadwidening" precision="18"/>
+        </property>
+    </class>
+</hibernate-mapping>

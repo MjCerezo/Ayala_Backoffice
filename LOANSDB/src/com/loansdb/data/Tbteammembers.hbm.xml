@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbteammembers" table="TBTEAMMEMBERS" catalog="CIFSDBUAT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="teamcode" type="string">
+            <column name="teamcode" length="10"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="username" type="string">
+            <column name="username" length="100"/>
+        </property>
+        <property name="teamrole" type="string">
+            <column name="teamrole" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="100"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,70 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbstatusaccessmatrix" table="TBSTATUSACCESSMATRIX" catalog="LOANSDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.TbstatusaccessmatrixId">
+            <key-property name="accessid" type="integer">
+                <column name="accessid"/>
+            </key-property>
+            <key-property name="workflowid" type="integer">
+                <column name="workflowid"/>
+            </key-property>
+            <key-property name="sequenceno" type="integer">
+                <column name="sequenceno"/>
+            </key-property>
+        </composite-id>
+        <property name="processname" type="string">
+            <column name="processname" length="100"/>
+        </property>
+        <property name="encoding" type="integer">
+            <column name="encoding"/>
+        </property>
+        <property name="investifationandappraisal" type="integer">
+            <column name="investifationandappraisal"/>
+        </property>
+        <property name="evaluation" type="integer">
+            <column name="evaluation"/>
+        </property>
+        <property name="recommendation" type="integer">
+            <column name="recommendation"/>
+        </property>
+        <property name="creditapproval" type="integer">
+            <column name="creditapproval"/>
+        </property>
+        <property name="clientacceptance" type="integer">
+            <column name="clientacceptance"/>
+        </property>
+        <property name="documentinsurance" type="integer">
+            <column name="documentinsurance"/>
+        </property>
+        <property name="releasingapproval" type="integer">
+            <column name="releasingapproval"/>
+        </property>
+        <property name="bookandreleasing" type="integer">
+            <column name="bookandreleasing"/>
+        </property>
+        <property name="booked" type="integer">
+            <column name="booked"/>
+        </property>
+        <property name="bookeddocpending" type="integer">
+            <column name="bookeddocpending"/>
+        </property>
+        <property name="cancelled" type="integer">
+            <column name="cancelled"/>
+        </property>
+        <property name="rejected" type="integer">
+            <column name="rejected"/>
+        </property>
+        <property name="approvedlines" type="integer">
+            <column name="approvedlines"/>
+        </property>
+        <property name="approvedlinesdocpending" type="integer">
+            <column name="approvedlinesdocpending"/>
+        </property>
+        <property name="linecreation" type="integer">
+            <column name="linecreation"/>
+        </property>
+        <property name="lineupdate" type="integer">
+            <column name="lineupdate"/>
+        </property>
+    </class>
+</hibernate-mapping>

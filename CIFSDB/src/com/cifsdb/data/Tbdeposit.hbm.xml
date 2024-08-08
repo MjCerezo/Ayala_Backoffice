@@ -1,0 +1,333 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbdeposit" table="TBDEPOSIT" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="Id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="productCode" type="string">
+            <column name="ProductCode" length="2"/>
+        </property>
+        <property name="subProductCode" type="string">
+            <column name="SubProductCode" length="2"/>
+        </property>
+        <property name="accountNo" type="string">
+            <column name="AccountNo" length="20" not-null="true"/>
+        </property>
+        <property name="accountnoata" type="string">
+            <column name="accountnoata" length="20"/>
+        </property>
+        <property name="accountName" type="string">
+            <column name="AccountName" length="500"/>
+        </property>
+        <property name="slaidNo" type="string">
+            <column name="SLAIdNo" length="150"/>
+        </property>
+        <property name="employeeNo" type="string">
+            <column name="EmployeeNo" length="150"/>
+        </property>
+        <property name="accountBalance" type="big_decimal">
+            <column name="AccountBalance" precision="16"/>
+        </property>
+        <property name="floatAmount" type="big_decimal">
+            <column name="FloatAmount" precision="16"/>
+        </property>
+        <property name="accountStatus" type="integer">
+            <column name="AccountStatus"/>
+        </property>
+        <property name="statusDate" type="timestamp">
+            <column name="StatusDate" length="23"/>
+        </property>
+        <property name="pledgeAmount" type="big_decimal">
+            <column name="PledgeAmount" precision="16"/>
+        </property>
+        <property name="pledgeSchedule" type="string">
+            <column name="PledgeSchedule" length="1"/>
+        </property>
+        <property name="accumulatedBalance" type="big_decimal">
+            <column name="AccumulatedBalance" precision="16"/>
+        </property>
+        <property name="daysElapsed" type="integer">
+            <column name="DaysElapsed"/>
+        </property>
+        <property name="averageDailyBalance" type="big_decimal">
+            <column name="AverageDailyBalance" precision="16"/>
+        </property>
+        <property name="mtdint" type="big_decimal">
+            <column name="MTDInt" precision="16"/>
+        </property>
+        <property name="btdint" type="big_decimal">
+            <column name="BTDInt" precision="16"/>
+        </property>
+        <property name="mtdcredits" type="big_decimal">
+            <column name="MTDCredits" precision="16"/>
+        </property>
+        <property name="ytdcredits" type="big_decimal">
+            <column name="YTDCredits" precision="16"/>
+        </property>
+        <property name="btdcredits" type="big_decimal">
+            <column name="BTDCredits" precision="16"/>
+        </property>
+        <property name="mtddebits" type="big_decimal">
+            <column name="MTDDebits" precision="16"/>
+        </property>
+        <property name="ytddebits" type="big_decimal">
+            <column name="YTDDebits" precision="16"/>
+        </property>
+        <property name="btddebits" type="big_decimal">
+            <column name="BTDDebits" precision="16"/>
+        </property>
+        <property name="totalNoCredits" type="integer">
+            <column name="TotalNoCredits"/>
+        </property>
+        <property name="totalNoDebits" type="integer">
+            <column name="TotalNoDebits"/>
+        </property>
+        <property name="bookDate" type="timestamp">
+            <column name="BookDate" length="23"/>
+        </property>
+        <property name="intRate" type="big_decimal">
+            <column name="IntRate" precision="18"/>
+        </property>
+        <property name="wtaxrate" type="big_decimal">
+            <column name="WTAXRate" precision="18"/>
+        </property>
+        <property name="term" type="integer">
+            <column name="Term"/>
+        </property>
+        <property name="maturityDate" type="timestamp">
+            <column name="MaturityDate" length="23"/>
+        </property>
+        <property name="compoundingFreq" type="string">
+            <column name="CompoundingFreq" length="1"/>
+        </property>
+        <property name="maintainingBalance" type="big_decimal">
+            <column name="MaintainingBalance" precision="16"/>
+        </property>
+        <property name="toEarnInterestBalance" type="big_decimal">
+            <column name="ToEarnInterestBalance" precision="16"/>
+        </property>
+        <property name="posttx" type="string">
+            <column name="Posttx" length="2"/>
+        </property>
+        <property name="oldstatus" type="integer">
+            <column name="Oldstatus"/>
+        </property>
+        <property name="oldStatusDate" type="timestamp">
+            <column name="OldStatusDate" length="23"/>
+        </property>
+        <property name="jointAcctType" type="string">
+            <column name="JointAcctType" length="2"/>
+        </property>
+        <property name="ownershipType" type="integer">
+            <column name="OwnershipType"/>
+        </property>
+        <property name="placementAmt" type="big_decimal">
+            <column name="PlacementAmt" precision="16"/>
+        </property>
+        <property name="lessWtaxAmt" type="big_decimal">
+            <column name="LessWTaxAmt" precision="16"/>
+        </property>
+        <property name="matAmt" type="big_decimal">
+            <column name="MatAmt" precision="16"/>
+        </property>
+        <property name="placeholdAmt" type="big_decimal">
+            <column name="PlaceholdAmt" precision="16"/>
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CreatedBy" length="20"/>
+        </property>
+        <property name="watchlistCode" type="string">
+            <column name="WatchlistCode" length="2"/>
+        </property>
+        <property name="unit" type="string">
+            <column name="unit" length="10"/>
+        </property>
+        <property name="instcode" type="string">
+            <column name="instcode" length="10"/>
+        </property>
+        <property name="alertflag" type="integer">
+            <column name="alertflag"/>
+        </property>
+        <property name="alertmessage" type="string">
+            <column name="alertmessage" length="450"/>
+        </property>
+        <property name="alertlevel" type="integer">
+            <column name="alertlevel"/>
+        </property>
+        <property name="dispoflag" type="string">
+            <column name="dispoflag" length="10"/>
+        </property>
+        <property name="dispofreetext" type="string">
+            <column name="dispofreetext" length="250"/>
+        </property>
+        <property name="tdcno" type="string">
+            <column name="tdcno" length="20"/>
+        </property>
+        <property name="tdcreleaseind" type="integer">
+            <column name="tdcreleaseind"/>
+        </property>
+        <property name="jrnlno" type="integer">
+            <column name="jrnlno"/>
+        </property>
+        <property name="xbelowmin" type="integer">
+            <column name="xbelowmin"/>
+        </property>
+        <property name="xreturnchk" type="integer">
+            <column name="xreturnchk"/>
+        </property>
+        <property name="int4credit" type="big_decimal">
+            <column name="int4credit" precision="16"/>
+        </property>
+        <property name="prevmonthadb" type="big_decimal">
+            <column name="prevmonthadb" precision="16"/>
+        </property>
+        <property name="prevmtdint" type="big_decimal">
+            <column name="prevmtdint" precision="16"/>
+        </property>
+        <property name="prevint4credit" type="big_decimal">
+            <column name="prevint4credit" precision="16"/>
+        </property>
+        <property name="lasttxdate" type="timestamp">
+            <column name="lasttxdate" length="23"/>
+        </property>
+        <property name="lasttxcode" type="string">
+            <column name="lasttxcode" length="6"/>
+        </property>
+        <property name="minbalctr" type="integer">
+            <column name="minbalctr"/>
+        </property>
+        <property name="chk4clr" type="integer">
+            <column name="chk4clr"/>
+        </property>
+        <property name="adbavailbal" type="big_decimal">
+            <column name="adbavailbal" precision="16"/>
+        </property>
+        <property name="adbbookbal" type="big_decimal">
+            <column name="adbbookbal" precision="16"/>
+        </property>
+        <property name="eomadbavailbal" type="big_decimal">
+            <column name="eomadbavailbal" precision="16"/>
+        </property>
+        <property name="eomadbbookbal" type="big_decimal">
+            <column name="eomadbbookbal" precision="16"/>
+        </property>
+        <property name="eoyadbavailbal" type="big_decimal">
+            <column name="eoyadbavailbal" precision="16"/>
+        </property>
+        <property name="eoyadbbookbal" type="big_decimal">
+            <column name="eoyadbbookbal" precision="16"/>
+        </property>
+        <property name="passbookbal" type="big_decimal">
+            <column name="passbookbal" precision="16"/>
+        </property>
+        <property name="ytdadbavailbal" type="big_decimal">
+            <column name="ytdadbavailbal" precision="16"/>
+        </property>
+        <property name="ytdaddbookbal" type="big_decimal">
+            <column name="ytdaddbookbal" precision="16"/>
+        </property>
+        <property name="ytdaccumcredit" type="big_decimal">
+            <column name="ytdaccumcredit" precision="16"/>
+        </property>
+        <property name="ytdaccumdebit" type="big_decimal">
+            <column name="ytdaccumdebit" precision="16"/>
+        </property>
+        <property name="ytdintearned" type="big_decimal">
+            <column name="ytdintearned" precision="16"/>
+        </property>
+        <property name="mtdintearned" type="big_decimal">
+            <column name="mtdintearned" precision="16"/>
+        </property>
+        <property name="earmarkbal" type="big_decimal">
+            <column name="earmarkbal" precision="16"/>
+        </property>
+        <property name="freezeind" type="integer">
+            <column name="freezeind"/>
+        </property>
+        <property name="freezeexpdt" type="timestamp">
+            <column name="freezeexpdt" length="23"/>
+        </property>
+        <property name="freezeid" type="integer">
+            <column name="freezeid"/>
+        </property>
+        <property name="regioncode" type="string">
+            <column name="regioncode" length="3"/>
+        </property>
+        <property name="areacode" type="string">
+            <column name="areacode" length="3"/>
+        </property>
+        <property name="bpapproved" type="big_decimal">
+            <column name="bpapproved" precision="16"/>
+        </property>
+        <property name="bpexpirydt" type="timestamp">
+            <column name="bpexpirydt" length="23"/>
+        </property>
+        <property name="bpstatus" type="string">
+            <column name="bpstatus" length="1"/>
+        </property>
+        <property name="bpavailed" type="big_decimal">
+            <column name="bpavailed" precision="16"/>
+        </property>
+        <property name="garnishedbal" type="big_decimal">
+            <column name="garnishedbal" precision="16"/>
+        </property>
+        <property name="accumbook" type="big_decimal">
+            <column name="accumbook" precision="16"/>
+        </property>
+        <property name="accumavail" type="big_decimal">
+            <column name="accumavail" precision="16"/>
+        </property>
+        <property name="soadispo" type="string">
+            <column name="soadispo" length="5"/>
+        </property>
+        <property name="solicitingofficer" type="string">
+            <column name="solicitingofficer" length="300"/>
+        </property>
+        <property name="referralofficer" type="string">
+            <column name="referralofficer" length="300"/>
+        </property>
+        <property name="campaign" type="string">
+            <column name="campaign" length="100"/>
+        </property>
+        <property name="deliverydispo" type="string">
+            <column name="deliverydispo" length="5"/>
+        </property>
+        <property name="addressdispo" type="string">
+            <column name="addressdispo" length="300"/>
+        </property>
+        <property name="withdrawcount" type="integer">
+            <column name="withdrawcount"/>
+        </property>
+        <property name="maxwithdrawind" type="boolean">
+            <column name="maxwithdrawind"/>
+        </property>
+        <property name="maxwithdrawfreq" type="string">
+            <column name="maxwithdrawfreq" length="5"/>
+        </property>
+        <property name="maxwithdrawdate" type="timestamp">
+            <column name="maxwithdrawdate" length="23"/>
+        </property>
+        <property name="addonrate" type="big_decimal">
+            <column name="addonrate" precision="18"/>
+        </property>
+        <property name="initialdeposit" type="boolean">
+            <column name="initialdeposit"/>
+        </property>
+        <property name="sigbasecode" type="string">
+            <column name="sigbasecode"/>
+        </property>
+        <property name="sigfilename" type="string">
+            <column name="sigfilename" length="100"/>
+        </property>
+        <property name="interestbalance" type="big_decimal">
+            <column name="interestbalance" precision="18"/>
+        </property>
+        <property name="interestpaid" type="big_decimal">
+            <column name="interestpaid" precision="18"/>
+        </property>
+        <property name="interestearned" type="big_decimal">
+            <column name="interestearned" precision="18"/>
+        </property>
+    </class>
+</hibernate-mapping>

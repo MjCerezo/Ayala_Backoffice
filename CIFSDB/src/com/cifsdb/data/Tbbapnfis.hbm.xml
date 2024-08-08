@@ -1,0 +1,117 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbbapnfis" table="TBBAPNFIS" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="bapid" type="integer">
+            <column name="bapid"/>
+            <generator class="identity"/>
+        </id>
+        <property name="bireportid" type="string">
+            <column name="bireportid" length="20" not-null="true"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="reporttype" type="string">
+            <column name="reporttype" length="10"/>
+        </property>
+        <property name="recordname" type="string">
+            <column name="recordname"/>
+        </property>
+        <property name="dateofbirth" type="timestamp">
+            <column name="dateofbirth" length="23"/>
+        </property>
+        <property name="address" type="string">
+            <column name="address"/>
+        </property>
+        <property name="spouse" type="string">
+            <column name="spouse"/>
+        </property>
+        <property name="businessname" type="string">
+            <column name="businessname"/>
+        </property>
+        <property name="adverseentrytype" type="string">
+            <column name="adverseentrytype" length="10"/>
+        </property>
+        <property name="loantype" type="string">
+            <column name="loantype" length="50"/>
+        </property>
+        <property name="reporteddate" type="timestamp">
+            <column name="reporteddate" length="23"/>
+        </property>
+        <property name="securityamount" type="big_decimal">
+            <column name="securityamount" precision="20"/>
+        </property>
+        <property name="bank" type="string">
+            <column name="bank" length="100"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="8000"/>
+        </property>
+        <property name="cardnumber" type="string">
+            <column name="cardnumber" length="50"/>
+        </property>
+        <property name="balance" type="big_decimal">
+            <column name="balance" precision="20"/>
+        </property>
+        <property name="plaintiff" type="string">
+            <column name="plaintiff"/>
+        </property>
+        <property name="codefendant" type="string">
+            <column name="codefendant"/>
+        </property>
+        <property name="casenumber" type="string">
+            <column name="casenumber" length="50"/>
+        </property>
+        <property name="naturecase" type="string">
+            <column name="naturecase" length="50"/>
+        </property>
+        <property name="courtsalanumber" type="string">
+            <column name="courtsalanumber" length="50"/>
+        </property>
+        <property name="jointaccounttype" type="string">
+            <column name="jointaccounttype" length="10"/>
+        </property>
+        <property name="jointaccountname" type="string">
+            <column name="jointaccountname"/>
+        </property>
+        <property name="dateofincorporation" type="timestamp">
+            <column name="dateofincorporation" length="23"/>
+        </property>
+        <property name="customertype" type="string">
+            <column name="customertype" length="10"/>
+        </property>
+        <property name="participationcode" type="string">
+            <column name="participationcode" length="10"/>
+        </property>
+        <property name="def1typ" type="string">
+            <column name="def1typ" length="10"/>
+        </property>
+        <property name="def2typ" type="string">
+            <column name="def2typ" length="10"/>
+        </property>
+        <property name="filedate" type="timestamp">
+            <column name="filedate" length="23"/>
+        </property>
+        <property name="opened" type="timestamp">
+            <column name="opened" length="23"/>
+        </property>
+        <property name="closed" type="timestamp">
+            <column name="closed" length="23"/>
+        </property>
+        <property name="ismatched" type="boolean">
+            <column name="ismatched"/>
+        </property>
+        <property name="isfromfileupload" type="boolean">
+            <column name="isfromfileupload"/>
+        </property>
+        <property name="branch" type="string">
+            <column name="branch" length="100"/>
+        </property>
+        <property name="creditlimit" type="big_decimal">
+            <column name="creditlimit" precision="18"/>
+        </property>
+    </class>
+</hibernate-mapping>

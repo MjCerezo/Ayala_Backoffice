@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="NoGenerator" class="com.etel.generator.NoGenerator" CRUDService="false" type="JavaService" springFile="NoGenerator.spring.xml">
+    <operation name="generateAMLAID">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateBlacklistID">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateBusID">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIFNoCorp">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIFNoIndiv">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCIFNoSoleProp">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCompanyCode">
+        <parameter name="companyName" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateEmpID">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateMemberId">
+        <parameter name="productType" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateMemberUserName">
+        <parameter name="cifNo" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateMngID">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

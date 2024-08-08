@@ -1,0 +1,267 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbcievr" table="TBCIEVR" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cireportid" type="string">
+            <column name="cireportid" length="20"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="10"/>
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="100"/>
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="100"/>
+        </property>
+        <property name="middlename" type="string">
+            <column name="middlename" length="100"/>
+        </property>
+        <property name="suffix" type="string">
+            <column name="suffix" length="10"/>
+        </property>
+        <property name="dateofbirth" type="timestamp">
+            <column name="dateofbirth" length="23"/>
+        </property>
+        <property name="presentemployer" type="string">
+            <column name="presentemployer" length="100"/>
+        </property>
+        <property name="position" type="string">
+            <column name="position" length="50"/>
+        </property>
+        <property name="employmentstatus" type="string">
+            <column name="employmentstatus" length="50"/>
+        </property>
+        <property name="datehired" type="timestamp">
+            <column name="datehired" length="23"/>
+        </property>
+        <property name="lengthofserviceyears" type="integer">
+            <column name="lengthofserviceyears"/>
+        </property>
+        <property name="lengthofservicemonths" type="integer">
+            <column name="lengthofservicemonths"/>
+        </property>
+        <property name="basicsalary" type="big_decimal">
+            <column name="basicsalary" precision="20"/>
+        </property>
+        <property name="allowance" type="big_decimal">
+            <column name="allowance" precision="20"/>
+        </property>
+        <property name="commission" type="big_decimal">
+            <column name="commission" precision="20"/>
+        </property>
+        <property name="totalincome" type="big_decimal">
+            <column name="totalincome" precision="20"/>
+        </property>
+        <property name="informantsname1" type="string">
+            <column name="informantsname1" length="300"/>
+        </property>
+        <property name="informantsposition1" type="string">
+            <column name="informantsposition1" length="100"/>
+        </property>
+        <property name="informantsname2" type="string">
+            <column name="informantsname2" length="300"/>
+        </property>
+        <property name="informantsposition2" type="string">
+            <column name="informantsposition2" length="100"/>
+        </property>
+        <property name="informantsname3" type="string">
+            <column name="informantsname3" length="300"/>
+        </property>
+        <property name="informantsposition3" type="string">
+            <column name="informantsposition3" length="100"/>
+        </property>
+        <property name="informantsname4" type="string">
+            <column name="informantsname4" length="300"/>
+        </property>
+        <property name="informantsposition4" type="string">
+            <column name="informantsposition4" length="100"/>
+        </property>
+        <property name="informantsname5" type="string">
+            <column name="informantsname5" length="300"/>
+        </property>
+        <property name="informantsposition5" type="string">
+            <column name="informantsposition5" length="100"/>
+        </property>
+        <property name="companyaddressno" type="string">
+            <column name="companyaddressno" length="50"/>
+        </property>
+        <property name="companystreetname" type="string">
+            <column name="companystreetname" length="100"/>
+        </property>
+        <property name="barangay" type="string">
+            <column name="barangay" length="100"/>
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="50"/>
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="50"/>
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="50"/>
+        </property>
+        <property name="postalcode" type="string">
+            <column name="postalcode" length="50"/>
+        </property>
+        <property name="businessphone" type="string">
+            <column name="businessphone" length="50"/>
+        </property>
+        <property name="businesstype" type="string">
+            <column name="businesstype" length="10"/>
+        </property>
+        <property name="naturebusiness" type="string">
+            <column name="naturebusiness" length="10"/>
+        </property>
+        <property name="businesslocation" type="string">
+            <column name="businesslocation" length="50"/>
+        </property>
+        <property name="landlordadmin" type="string">
+            <column name="landlordadmin" length="300"/>
+        </property>
+        <property name="telno" type="string">
+            <column name="telno" length="50"/>
+        </property>
+        <property name="tenantsincemonrental" type="string">
+            <column name="tenantsincemonrental" length="50"/>
+        </property>
+        <property name="noofempclaimed" type="integer">
+            <column name="noofempclaimed"/>
+        </property>
+        <property name="noofempseen" type="integer">
+            <column name="noofempseen"/>
+        </property>
+        <property name="bldgadmin" type="string">
+            <column name="bldgadmin" length="10"/>
+        </property>
+        <property name="furnituresfixtures" type="string">
+            <column name="furnituresfixtures" length="100"/>
+        </property>
+        <property name="plantlotarea" type="string">
+            <column name="plantlotarea" length="50"/>
+        </property>
+        <property name="plantfloorarea" type="string">
+            <column name="plantfloorarea" length="50"/>
+        </property>
+        <property name="neighborhoodcondition" type="string">
+            <column name="neighborhoodcondition" length="50"/>
+        </property>
+        <property name="officeappearance" type="string">
+            <column name="officeappearance" length="50"/>
+        </property>
+        <property name="noyearbusinessoperation" type="string">
+            <column name="noyearbusinessoperation" length="10"/>
+        </property>
+        <property name="orgtype" type="string">
+            <column name="orgtype" length="50"/>
+        </property>
+        <property name="ownership" type="string">
+            <column name="ownership" length="50"/>
+        </property>
+        <property name="registrationdate" type="timestamp">
+            <column name="registrationdate" length="23"/>
+        </property>
+        <property name="registeredowner" type="string">
+            <column name="registeredowner" length="300"/>
+        </property>
+        <property name="docspresented" type="string">
+            <column name="docspresented" length="50"/>
+        </property>
+        <property name="regno" type="string">
+            <column name="regno" length="50"/>
+        </property>
+        <property name="supplementaryinfo" type="string">
+            <column name="supplementaryinfo" length="1000"/>
+        </property>
+        <property name="pfregconfirmed" type="boolean">
+            <column name="pfregconfirmed"/>
+        </property>
+        <property name="pfhighturnoverinvratio" type="boolean">
+            <column name="pfhighturnoverinvratio"/>
+        </property>
+        <property name="pfmarketableprodlines" type="boolean">
+            <column name="pfmarketableprodlines"/>
+        </property>
+        <property name="pfideallocation" type="boolean">
+            <column name="pfideallocation"/>
+        </property>
+        <property name="pfbusinessexistingoperational" type="boolean">
+            <column name="pfbusinessexistingoperational"/>
+        </property>
+        <property name="pflowoperationalcost" type="boolean">
+            <column name="pflowoperationalcost"/>
+        </property>
+        <property name="pfgoodcreditreputation" type="boolean">
+            <column name="pfgoodcreditreputation"/>
+        </property>
+        <property name="pfnoknowncollectionproblems" type="boolean">
+            <column name="pfnoknowncollectionproblems"/>
+        </property>
+        <property name="pfbriskbusinessactivity" type="boolean">
+            <column name="pfbriskbusinessactivity"/>
+        </property>
+        <property name="pfbusinessageactual" type="boolean">
+            <column name="pfbusinessageactual"/>
+        </property>
+        <property name="nfbusinessnotexistingatgivenaddress" type="boolean">
+            <column name="nfbusinessnotexistingatgivenaddress"/>
+        </property>
+        <property name="nfunlocatedaddress" type="boolean">
+            <column name="nfunlocatedaddress"/>
+        </property>
+        <property name="nfnotregistered" type="boolean">
+            <column name="nfnotregistered"/>
+        </property>
+        <property name="nfregistrationnotverified" type="boolean">
+            <column name="nfregistrationnotverified"/>
+        </property>
+        <property name="nfunconfirmedownership" type="boolean">
+            <column name="nfunconfirmedownership"/>
+        </property>
+        <property name="nfnotownerofbusiness" type="boolean">
+            <column name="nfnotownerofbusiness"/>
+        </property>
+        <property name="nfless2yrsataddress" type="boolean">
+            <column name="nfless2yrsataddress"/>
+        </property>
+        <property name="nfless3yrsinbusiness" type="boolean">
+            <column name="nfless3yrsinbusiness"/>
+        </property>
+        <property name="nfpoorinteriorlocation" type="boolean">
+            <column name="nfpoorinteriorlocation"/>
+        </property>
+        <property name="nflowturnoverinventory" type="boolean">
+            <column name="nflowturnoverinventory"/>
+        </property>
+        <property name="nfhighoperationalcost" type="boolean">
+            <column name="nfhighoperationalcost"/>
+        </property>
+        <property name="nfnoexistingoffice" type="boolean">
+            <column name="nfnoexistingoffice"/>
+        </property>
+        <property name="nfnobusinessactivitynoted" type="boolean">
+            <column name="nfnobusinessactivitynoted"/>
+        </property>
+        <property name="nfnoactualoperationsobeserved" type="boolean">
+            <column name="nfnoactualoperationsobeserved"/>
+        </property>
+        <property name="nftemporarilynotoperational" type="boolean">
+            <column name="nftemporarilynotoperational"/>
+        </property>
+        <property name="nfcancelapplication" type="boolean">
+            <column name="nfcancelapplication"/>
+        </property>
+        <property name="nfnobusinesssignage" type="boolean">
+            <column name="nfnobusinesssignage"/>
+        </property>
+    </class>
+</hibernate-mapping>

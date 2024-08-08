@@ -1,0 +1,93 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbtimedeposit" table="TBTIMEDEPOSIT" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="accountno" type="string">
+            <column name="accountno" length="50"/>
+        </property>
+        <property name="accountname" type="string">
+            <column name="accountname" length="300"/>
+        </property>
+        <property name="producttype" type="string">
+            <column name="producttype" length="5"/>
+        </property>
+        <property name="dispositiontype" type="string">
+            <column name="dispositiontype" length="50"/>
+        </property>
+        <property name="intpyfreq" type="string">
+            <column name="intpyfreq" length="5"/>
+        </property>
+        <property name="placeamt" type="big_decimal">
+            <column name="placeamt" precision="16"/>
+        </property>
+        <property name="term" type="integer">
+            <column name="term"/>
+        </property>
+        <property name="prindispo" type="string">
+            <column name="prindispo" length="5"/>
+        </property>
+        <property name="intdispo" type="string">
+            <column name="intdispo" length="5"/>
+        </property>
+        <property name="wtaxrate" type="big_decimal">
+            <column name="wtaxrate" precision="18"/>
+        </property>
+        <property name="dtbook" type="timestamp">
+            <column name="dtbook" length="23"/>
+        </property>
+        <property name="dtmat" type="timestamp">
+            <column name="dtmat" length="23"/>
+        </property>
+        <property name="totalint" type="big_decimal">
+            <column name="totalint" precision="16"/>
+        </property>
+        <property name="lesswtaxamt" type="big_decimal">
+            <column name="lesswtaxamt" precision="16"/>
+        </property>
+        <property name="lessdocstamp" type="big_decimal">
+            <column name="lessdocstamp" precision="16"/>
+        </property>
+        <property name="matvalue" type="big_decimal">
+            <column name="matvalue" precision="16"/>
+        </property>
+        <property name="prindispoacctno" type="string">
+            <column name="prindispoacctno" length="50"/>
+        </property>
+        <property name="intdispoacttno" type="string">
+            <column name="intdispoacttno" length="50"/>
+        </property>
+        <property name="branchcode" type="string">
+            <column name="branchcode" length="50"/>
+        </property>
+        <property name="intamt" type="big_decimal">
+            <column name="intamt" precision="16"/>
+        </property>
+        <property name="coopcode" type="string">
+            <column name="coopcode" length="10"/>
+        </property>
+        <property name="grossint" type="big_decimal">
+            <column name="grossint" precision="18"/>
+        </property>
+        <property name="netint" type="big_decimal">
+            <column name="netint" precision="18"/>
+        </property>
+        <property name="oldacctno" type="string">
+            <column name="oldacctno" length="20"/>
+        </property>
+        <property name="intrate" type="big_decimal">
+            <column name="intrate" precision="16"/>
+        </property>
+        <property name="oldintrate" type="big_decimal">
+            <column name="oldintrate" precision="16"/>
+        </property>
+        <property name="termfreq" type="string">
+            <column name="termfreq" length="20"/>
+        </property>
+        <property name="termfreqno" type="integer">
+            <column name="termfreqno"/>
+        </property>
+    </class>
+</hibernate-mapping>

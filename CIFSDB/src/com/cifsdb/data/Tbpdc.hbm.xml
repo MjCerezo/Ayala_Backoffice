@@ -1,0 +1,99 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbpdc" table="TBPDC" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="checkno" type="string">
+            <column name="checkno" length="50"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="cifname" type="string">
+            <column name="cifname" length="50"/>
+        </property>
+        <property name="purpose" type="string">
+            <column name="purpose" length="50"/>
+        </property>
+        <property name="targetacctno" type="string">
+            <column name="targetacctno" length="50"/>
+        </property>
+        <property name="checkbrstn" type="string">
+            <column name="checkbrstn" length="50"/>
+        </property>
+        <property name="checkacctno" type="string">
+            <column name="checkacctno" length="50"/>
+        </property>
+        <property name="checkamount" type="big_decimal">
+            <column name="checkamount" precision="20"/>
+        </property>
+        <property name="checkdate" type="timestamp">
+            <column name="checkdate" length="23"/>
+        </property>
+        <property name="checkcurrency" type="string">
+            <column name="checkcurrency" length="50"/>
+        </property>
+        <property name="checkduedate" type="timestamp">
+            <column name="checkduedate" length="23"/>
+        </property>
+        <property name="checkstatus" type="string">
+            <column name="checkstatus" length="50"/>
+        </property>
+        <property name="checkacctname" type="string">
+            <column name="checkacctname" length="50"/>
+        </property>
+        <property name="checkpayableto" type="string">
+            <column name="checkpayableto" length="50"/>
+        </property>
+        <property name="createdatetime" type="timestamp">
+            <column name="createdatetime" length="23"/>
+        </property>
+        <property name="createusername" type="string">
+            <column name="createusername" length="50"/>
+        </property>
+        <property name="createbranch" type="string">
+            <column name="createbranch" length="50"/>
+        </property>
+        <property name="updatedatetime" type="timestamp">
+            <column name="updatedatetime" length="23"/>
+        </property>
+        <property name="updateusername" type="string">
+            <column name="updateusername" length="50"/>
+        </property>
+        <property name="updatebranch" type="string">
+            <column name="updatebranch" length="50"/>
+        </property>
+        <property name="updatereason" type="string">
+            <column name="updatereason" length="50"/>
+        </property>
+        <property name="bankname" type="string">
+            <column name="bankname" length="100"/>
+        </property>
+        <property name="paymentduedate" type="timestamp">
+            <column name="paymentduedate" length="23"/>
+        </property>
+        <property name="paymentilno" type="integer">
+            <column name="paymentilno"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="100"/>
+        </property>
+        <property name="particulars" type="string">
+            <column name="particulars" length="1"/>
+        </property>
+        <property name="source" type="string">
+            <column name="source" length="5"/>
+        </property>
+        <property name="brstn" type="string">
+            <column name="brstn" length="50"/>
+        </property>
+        <property name="checkmonitoringdate" type="timestamp">
+            <column name="checkmonitoringdate" length="23"/>
+        </property>
+        <property name="targetpnno" type="string">
+            <column name="targetpnno" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

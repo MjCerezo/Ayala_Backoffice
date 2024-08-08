@@ -1,0 +1,25 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbemailparams" table="TBEMAILPARAMS" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.TbemailparamsId">
+            <key-property name="emailtype" type="string">
+                <column name="emailtype" length="50"/>
+            </key-property>
+            <key-property name="emailcode" type="string">
+                <column name="emailcode" length="50"/>
+            </key-property>
+            <key-property name="username" type="string">
+                <column name="username" length="100"/>
+            </key-property>
+        </composite-id>
+        <property name="emailadd" type="string">
+            <column name="emailadd" length="250"/>
+        </property>
+        <property name="createddate" type="timestamp">
+            <column name="createddate" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

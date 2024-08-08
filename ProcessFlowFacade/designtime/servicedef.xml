@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="ProcessFlowFacade" class="com.etel.processflow.ProcessFlowFacade" CRUDService="false" type="JavaService" springFile="ProcessFlowFacade.spring.xml">
+    <operation name="AddPflow">
+        <parameter name="form" typeRef="com.etel.processflow.form.ProcessFlowForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deletePflow">
+        <parameter name="form" typeRef="com.etel.processflow.form.ProcessFlowForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteProcess">
+        <parameter name="form" typeRef="com.etel.processflow.form.ProcessFlowForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getListProcessflow">
+        <parameter name="workflowid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbworkflowprocess" isList="true"/>
+    </operation>
+    <operation name="getProcessPerWorkFlowID">
+        <parameter name="workflowid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.processflow.form.ProcessFlowForm" isList="true"/>
+    </operation>
+    <operation name="updateProcess">
+        <parameter name="form" typeRef="com.etel.processflow.form.ProcessFlowForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updateTabAccess">
+        <parameter name="form" typeRef="com.etel.processflow.form.TabAccessForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.processflow.form.ProcessFlowForm" name="ProcessFlowForm" supportsQuickData="false">
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="isbookprocess" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="iscancelprocess" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isrejectprocess" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="isvisibleindb" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="processid" typeRef="java.lang.Object" isList="false" allowNull="false"/>
+            <element name="processname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="returncode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="returnoption" typeRef="java.lang.Object" isList="false" allowNull="false"/>
+            <element name="sequenceno" typeRef="java.lang.Object" isList="false" allowNull="false"/>
+            <element name="submitcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="submitoption1" typeRef="java.lang.Object" isList="false" allowNull="false"/>
+            <element name="submitoption2" typeRef="java.lang.Object" isList="false" allowNull="false"/>
+            <element name="submitoption3" typeRef="java.lang.Object" isList="false" allowNull="false"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="workflowid" typeRef="java.lang.Object" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.processflow.form.TabAccessForm" name="TabAccessForm" supportsQuickData="false">
+            <element name="processid" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="sequenceno" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="tabapprovedlines" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tabapprovedlinesdocpending" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tabboardapproval" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tabbookandreleasing" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tabbooked" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tabbookeddocpending" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tabcancelled" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tabclientacceptance" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tabcreditapproval" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tabdocumentinsurance" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tabencoding" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tabevaluation" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tabhistory" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tabinvestigationandappraisal" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tablinecreation" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tablineupdate" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tabnotes" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tabrecommendation" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tabrejected" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="tabreleasingapproval" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="workflowid" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

@@ -1,0 +1,204 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbapprelcompvaluebldg" table="TBAPPRELCOMPVALUEBLDG" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appraisalreportid" type="string">
+            <column name="appraisalreportid" length="20"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="collateralid" type="integer">
+            <column name="collateralid"/>
+        </property>
+        <property name="groundfloorarea" type="big_decimal">
+            <column name="groundfloorarea" precision="18"/>
+        </property>
+        <property name="rcngf" type="big_decimal">
+            <column name="rcngf" precision="18"/>
+        </property>
+        <property name="subtotalgfappraisedvalue" type="big_decimal">
+            <column name="subtotalgfappraisedvalue" precision="18"/>
+        </property>
+        <property name="secondfloorarea" type="big_decimal">
+            <column name="secondfloorarea" precision="18"/>
+        </property>
+        <property name="rcn2f" type="big_decimal">
+            <column name="rcn2f" precision="18"/>
+        </property>
+        <property name="subtotal2fappraisedvalue" type="big_decimal">
+            <column name="subtotal2fappraisedvalue" precision="18"/>
+        </property>
+        <property name="thirdfloorarea" type="big_decimal">
+            <column name="thirdfloorarea" precision="18"/>
+        </property>
+        <property name="rcn3f" type="big_decimal">
+            <column name="rcn3f" precision="18"/>
+        </property>
+        <property name="subtotal3fappraisedvalue" type="big_decimal">
+            <column name="subtotal3fappraisedvalue" precision="18"/>
+        </property>
+        <property name="fourthfloorarea" type="big_decimal">
+            <column name="fourthfloorarea" precision="18"/>
+        </property>
+        <property name="rcn4f" type="big_decimal">
+            <column name="rcn4f" precision="18"/>
+        </property>
+        <property name="subtotal4fappraisedvalue" type="big_decimal">
+            <column name="subtotal4fappraisedvalue" precision="18"/>
+        </property>
+        <property name="fifthfloorarea" type="big_decimal">
+            <column name="fifthfloorarea" precision="18"/>
+        </property>
+        <property name="rcn5f" type="big_decimal">
+            <column name="rcn5f" precision="18"/>
+        </property>
+        <property name="subtotal5fappraisedvalue" type="big_decimal">
+            <column name="subtotal5fappraisedvalue" precision="18"/>
+        </property>
+        <property name="roofdeck" type="big_decimal">
+            <column name="roofdeck" precision="18"/>
+        </property>
+        <property name="rcnrd" type="big_decimal">
+            <column name="rcnrd" precision="18"/>
+        </property>
+        <property name="subtotalrdappraisedvalue" type="big_decimal">
+            <column name="subtotalrdappraisedvalue" precision="18"/>
+        </property>
+        <property name="carport" type="big_decimal">
+            <column name="carport" precision="18"/>
+        </property>
+        <property name="rcncarport" type="big_decimal">
+            <column name="rcncarport" precision="18"/>
+        </property>
+        <property name="subtotalrcncarport" type="big_decimal">
+            <column name="subtotalrcncarport" precision="18"/>
+        </property>
+        <property name="porch" type="big_decimal">
+            <column name="porch" precision="18"/>
+        </property>
+        <property name="rcnporch" type="big_decimal">
+            <column name="rcnporch" precision="18"/>
+        </property>
+        <property name="subtotalporchappraisedvalue" type="big_decimal">
+            <column name="subtotalporchappraisedvalue" precision="18"/>
+        </property>
+        <property name="servicearea" type="big_decimal">
+            <column name="servicearea" precision="18"/>
+        </property>
+        <property name="rcnsa" type="big_decimal">
+            <column name="rcnsa" precision="18"/>
+        </property>
+        <property name="subtotalsaappraisedvalue" type="big_decimal">
+            <column name="subtotalsaappraisedvalue" precision="18"/>
+        </property>
+        <property name="lanai" type="big_decimal">
+            <column name="lanai" precision="18"/>
+        </property>
+        <property name="rcnlanai" type="big_decimal">
+            <column name="rcnlanai" precision="18"/>
+        </property>
+        <property name="subtotallanaiappraisedvalue" type="big_decimal">
+            <column name="subtotallanaiappraisedvalue" precision="18"/>
+        </property>
+        <property name="terrace1" type="big_decimal">
+            <column name="terrace1" precision="18"/>
+        </property>
+        <property name="terrace2" type="big_decimal">
+            <column name="terrace2" precision="18"/>
+        </property>
+        <property name="terrace3" type="big_decimal">
+            <column name="terrace3" precision="18"/>
+        </property>
+        <property name="terrace4" type="big_decimal">
+            <column name="terrace4" precision="18"/>
+        </property>
+        <property name="terrace5" type="big_decimal">
+            <column name="terrace5" precision="18"/>
+        </property>
+        <property name="terrace6" type="big_decimal">
+            <column name="terrace6" precision="18"/>
+        </property>
+        <property name="terrace7" type="big_decimal">
+            <column name="terrace7" precision="18"/>
+        </property>
+        <property name="terrace8" type="big_decimal">
+            <column name="terrace8" precision="18"/>
+        </property>
+        <property name="terrace9" type="big_decimal">
+            <column name="terrace9" precision="18"/>
+        </property>
+        <property name="terrace10" type="big_decimal">
+            <column name="terrace10" precision="18"/>
+        </property>
+        <property name="rcnterrace" type="big_decimal">
+            <column name="rcnterrace" precision="18"/>
+        </property>
+        <property name="subtotalterraceappraisedvalue" type="big_decimal">
+            <column name="subtotalterraceappraisedvalue" precision="18"/>
+        </property>
+        <property name="patio" type="big_decimal">
+            <column name="patio" precision="18"/>
+        </property>
+        <property name="rcnpatio" type="big_decimal">
+            <column name="rcnpatio" precision="18"/>
+        </property>
+        <property name="subtotalpatioappraisedvalue" type="big_decimal">
+            <column name="subtotalpatioappraisedvalue" precision="18"/>
+        </property>
+        <property name="pavement" type="big_decimal">
+            <column name="pavement" precision="18"/>
+        </property>
+        <property name="rcnpavement" type="big_decimal">
+            <column name="rcnpavement" precision="18"/>
+        </property>
+        <property name="subtotalpavementappraisedvalue" type="big_decimal">
+            <column name="subtotalpavementappraisedvalue" precision="18"/>
+        </property>
+        <property name="others" type="big_decimal">
+            <column name="others" precision="18"/>
+        </property>
+        <property name="rcnothers" type="big_decimal">
+            <column name="rcnothers" precision="18"/>
+        </property>
+        <property name="subtotaltohersappraisedvalue" type="big_decimal">
+            <column name="subtotaltohersappraisedvalue" precision="18"/>
+        </property>
+        <property name="bldgname" type="string">
+            <column name="bldgname" length="50"/>
+        </property>
+        <property name="balcony" type="big_decimal">
+            <column name="balcony" precision="18"/>
+        </property>
+        <property name="rcnbalcony" type="big_decimal">
+            <column name="rcnbalcony" precision="18"/>
+        </property>
+        <property name="subtotalbalconyappraisedvalue" type="big_decimal">
+            <column name="subtotalbalconyappraisedvalue" precision="18"/>
+        </property>
+        <property name="depreciationcomputation" type="string">
+            <column name="depreciationcomputation" length="50"/>
+        </property>
+        <property name="actualeffectiveage" type="integer">
+            <column name="actualeffectiveage"/>
+        </property>
+        <property name="totaleconomiclife" type="big_decimal">
+            <column name="totaleconomiclife" precision="18"/>
+        </property>
+        <property name="percentdepreciation" type="string">
+            <column name="percentdepreciation" length="50"/>
+        </property>
+        <property name="depreciationimprovements" type="big_decimal">
+            <column name="depreciationimprovements" precision="18"/>
+        </property>
+        <property name="netappraisedvalueofimprovements" type="big_decimal">
+            <column name="netappraisedvalueofimprovements" precision="18"/>
+        </property>
+        <property name="totalappraisedvaluebldg" type="big_decimal">
+            <column name="totalappraisedvaluebldg" precision="18"/>
+        </property>
+    </class>
+</hibernate-mapping>

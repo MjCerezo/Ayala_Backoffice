@@ -1,0 +1,48 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbincomeexpense" table="TBINCOMEEXPENSE" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="50"/>
+        </property>
+        <property name="evalreportid" type="integer">
+            <column name="evalreportid"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50"/>
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="5"/>
+        </property>
+        <property name="particulars" type="string">
+            <column name="particulars" length="50"/>
+        </property>
+        <property name="otherparticulars" type="string">
+            <column name="otherparticulars" length="50"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="18" not-null="true"/>
+        </property>
+        <property name="datefrom" type="timestamp">
+            <column name="datefrom" length="23"/>
+        </property>
+        <property name="dateto" type="timestamp">
+            <column name="dateto" length="23"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

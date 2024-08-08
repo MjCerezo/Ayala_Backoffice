@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="HistoryFacade" class="com.etel.history.HistoryFacade" CRUDService="false" type="JavaService" springFile="HistoryFacade.spring.xml">
+    <operation name="addHistory">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="description" typeRef="java.lang.String" isList="false"/>
+        <parameter name="remarks" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="listHistory">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbhistory" isList="true"/>
+    </operation>
+    <operation name="saveHistory">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="eventid" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="eventdescription" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

@@ -1,0 +1,45 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbdefaultusers" table="TBDEFAULTUSERS" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="companycode" type="string">
+            <column name="companycode" length="10"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="bisupervisor" type="string">
+            <column name="bisupervisor" length="20"/>
+        </property>
+        <property name="cisupervisor" type="string">
+            <column name="cisupervisor" length="20"/>
+        </property>
+        <property name="appraisalsupervisor" type="string">
+            <column name="appraisalsupervisor" length="20"/>
+        </property>
+        <property name="evaluatorheadr" type="string">
+            <column name="evaluatorheadr" length="20"/>
+        </property>
+        <property name="evaluatorheadc" type="string">
+            <column name="evaluatorheadc" length="20"/>
+        </property>
+        <property name="documentationhead" type="string">
+            <column name="documentationhead" length="20"/>
+        </property>
+        <property name="bookingofficer" type="string">
+            <column name="bookingofficer" length="20"/>
+        </property>
+        <property name="releasingapprover" type="string">
+            <column name="releasingapprover" length="20"/>
+        </property>
+        <property name="systemadmin" type="string">
+            <column name="systemadmin" length="20"/>
+        </property>
+        <property name="secadmin" type="string">
+            <column name="secadmin" length="20"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

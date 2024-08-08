@@ -1,0 +1,36 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbtdcprint" table="TBTDCPRINT" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="tdcno" type="string">
+            <column name="tdcno" length="20"/>
+        </property>
+        <property name="accountno" type="string">
+            <column name="accountno" length="20"/>
+        </property>
+        <property name="issuedt" type="timestamp">
+            <column name="issuedt" length="23"/>
+        </property>
+        <property name="matdt" type="timestamp">
+            <column name="matdt" length="23"/>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="150"/>
+        </property>
+        <property name="term" type="integer">
+            <column name="term"/>
+        </property>
+        <property name="interest" type="big_decimal">
+            <column name="interest" precision="16"/>
+        </property>
+        <property name="totalsum" type="big_decimal">
+            <column name="totalsum" precision="16"/>
+        </property>
+        <property name="status" type="integer">
+            <column name="status"/>
+        </property>
+    </class>
+</hibernate-mapping>

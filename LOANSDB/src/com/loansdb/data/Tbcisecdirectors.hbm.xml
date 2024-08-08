@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbcisecdirectors" table="TBCISECDIRECTORS" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="cireportid" type="string">
+            <column name="cireportid" length="20"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="100"/>
+        </property>
+        <property name="nationality" type="string">
+            <column name="nationality" length="50"/>
+        </property>
+        <property name="residenceaddress" type="string">
+            <column name="residenceaddress" length="200"/>
+        </property>
+    </class>
+</hibernate-mapping>

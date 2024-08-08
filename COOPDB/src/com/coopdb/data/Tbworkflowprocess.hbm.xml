@@ -1,0 +1,124 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbworkflowprocess" table="TBWORKFLOWPROCESS" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.TbworkflowprocessId">
+            <key-property name="processid" type="integer">
+                <column name="processid"/>
+            </key-property>
+            <key-property name="workflowid" type="integer">
+                <column name="workflowid"/>
+            </key-property>
+            <key-property name="sequenceno" type="integer">
+                <column name="sequenceno"/>
+            </key-property>
+        </composite-id>
+        <property name="processname" type="string">
+            <column name="processname" length="100"/>
+        </property>
+        <property name="submitcode" type="string">
+            <column name="submitcode" length="2"/>
+        </property>
+        <property name="submitoption1" type="integer">
+            <column name="submitoption1"/>
+        </property>
+        <property name="submitoption2" type="integer">
+            <column name="submitoption2"/>
+        </property>
+        <property name="submitoption3" type="integer">
+            <column name="submitoption3"/>
+        </property>
+        <property name="returncode" type="string">
+            <column name="returncode" length="2"/>
+        </property>
+        <property name="returnoption" type="integer">
+            <column name="returnoption"/>
+        </property>
+        <property name="isbookprocess" type="boolean">
+            <column name="isbookprocess"/>
+        </property>
+        <property name="iscancelprocess" type="boolean">
+            <column name="iscancelprocess"/>
+        </property>
+        <property name="isrejectprocess" type="boolean">
+            <column name="isrejectprocess"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="isvisibleindb" type="boolean">
+            <column name="isvisibleindb"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="300"/>
+        </property>
+        <property name="tabencoding" type="boolean">
+            <column name="tabencoding"/>
+        </property>
+        <property name="tabinvestigationandappraisal" type="boolean">
+            <column name="tabinvestigationandappraisal"/>
+        </property>
+        <property name="tabevaluation" type="boolean">
+            <column name="tabevaluation"/>
+        </property>
+        <property name="tabrecommendation" type="boolean">
+            <column name="tabrecommendation"/>
+        </property>
+        <property name="tabcreditapproval" type="boolean">
+            <column name="tabcreditapproval"/>
+        </property>
+        <property name="tabclientacceptance" type="boolean">
+            <column name="tabclientacceptance"/>
+        </property>
+        <property name="tabdocumentinsurance" type="boolean">
+            <column name="tabdocumentinsurance"/>
+        </property>
+        <property name="tabreleasingapproval" type="boolean">
+            <column name="tabreleasingapproval"/>
+        </property>
+        <property name="tabbookandreleasing" type="boolean">
+            <column name="tabbookandreleasing"/>
+        </property>
+        <property name="tabbooked" type="boolean">
+            <column name="tabbooked"/>
+        </property>
+        <property name="tabbookeddocpending" type="boolean">
+            <column name="tabbookeddocpending"/>
+        </property>
+        <property name="tabcancelled" type="boolean">
+            <column name="tabcancelled"/>
+        </property>
+        <property name="tabrejected" type="boolean">
+            <column name="tabrejected"/>
+        </property>
+        <property name="tabapprovedlines" type="boolean">
+            <column name="tabapprovedlines"/>
+        </property>
+        <property name="tabapprovedlinesdocpending" type="boolean">
+            <column name="tabapprovedlinesdocpending"/>
+        </property>
+        <property name="tabboardapproval" type="boolean">
+            <column name="tabboardapproval"/>
+        </property>
+        <property name="tablinecreation" type="boolean">
+            <column name="tablinecreation"/>
+        </property>
+        <property name="tablineupdate" type="boolean">
+            <column name="tablineupdate"/>
+        </property>
+        <property name="tabnotes" type="boolean">
+            <column name="tabnotes"/>
+        </property>
+        <property name="tabhistory" type="boolean">
+            <column name="tabhistory"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbnotification" table="TBNOTIFICATION" catalog="LOANSDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="timestamps" type="timestamp">
+            <column name="timestamps" length="23"/>
+        </property>
+        <property name="transrefno" type="string">
+            <column name="transrefno" length="10"/>
+        </property>
+        <property name="username" type="string">
+            <column name="username" length="50"/>
+        </property>
+        <property name="details" type="string">
+            <column name="details" length="300"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="2"/>
+        </property>
+        <property name="statusdate" type="timestamp">
+            <column name="statusdate" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

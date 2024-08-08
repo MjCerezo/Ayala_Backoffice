@@ -1,0 +1,57 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbprocessingdate" table="TBPROCESSINGDATE" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="functionname" type="string">
+            <column name="functionname" length="50"/>
+        </property>
+        <property name="startdate" type="timestamp">
+            <column name="startdate" length="23"/>
+        </property>
+        <property name="enddate" type="timestamp">
+            <column name="enddate" length="23"/>
+        </property>
+        <property name="eodcasa" type="integer">
+            <column name="eodcasa"/>
+        </property>
+        <property name="eodloans" type="integer">
+            <column name="eodloans"/>
+        </property>
+        <property name="eoddept" type="integer">
+            <column name="eoddept"/>
+        </property>
+        <property name="eodreadcol" type="integer">
+            <column name="eodreadcol"/>
+        </property>
+        <property name="eodreadcom" type="integer">
+            <column name="eodreadcom"/>
+        </property>
+        <property name="eodpersla" type="integer">
+            <column name="eodpersla"/>
+        </property>
+        <property name="eodbran" type="integer">
+            <column name="eodbran"/>
+        </property>
+        <property name="eodposn" type="integer">
+            <column name="eodposn"/>
+        </property>
+        <property name="eodccard" type="integer">
+            <column name="eodccard"/>
+        </property>
+        <property name="eodreport" type="integer">
+            <column name="eodreport"/>
+        </property>
+        <property name="eodcmpy" type="integer">
+            <column name="eodcmpy"/>
+        </property>
+        <property name="eodauto" type="integer">
+            <column name="eodauto"/>
+        </property>
+        <property name="eoddeduct" type="integer">
+            <column name="eoddeduct"/>
+        </property>
+    </class>
+</hibernate-mapping>

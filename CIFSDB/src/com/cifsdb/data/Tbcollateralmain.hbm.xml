@@ -1,0 +1,51 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbcollateralmain" table="TBCOLLATERALMAIN" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="collateralid" type="integer">
+            <column name="collateralid"/>
+            <generator class="identity"/>
+        </id>
+        <property name="colgroupid" type="string">
+            <column name="colgroupid" length="20"/>
+        </property>
+        <property name="collateraltype" type="string">
+            <column name="collateraltype" length="50"/>
+        </property>
+        <property name="appraisalreportid" type="string">
+            <column name="appraisalreportid" length="50"/>
+        </property>
+        <property name="referenceno" type="string">
+            <column name="referenceno" length="50"/>
+        </property>
+        <property name="collateralstatus" type="string">
+            <column name="collateralstatus" length="50"/>
+        </property>
+        <property name="appraisalstatus" type="string">
+            <column name="appraisalstatus" length="50"/>
+        </property>
+        <property name="dateencoded" type="timestamp">
+            <column name="dateencoded" length="23"/>
+        </property>
+        <property name="encodedby" type="string">
+            <column name="encodedby" length="50"/>
+        </property>
+        <property name="registeredowner" type="string">
+            <column name="registeredowner" length="100"/>
+        </property>
+        <property name="dateoflastappraisal" type="timestamp">
+            <column name="dateoflastappraisal" length="23"/>
+        </property>
+        <property name="lastappraisedvalue" type="big_decimal">
+            <column name="lastappraisedvalue" precision="20"/>
+        </property>
+        <property name="lastfairmarketvalue" type="big_decimal">
+            <column name="lastfairmarketvalue" precision="20"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

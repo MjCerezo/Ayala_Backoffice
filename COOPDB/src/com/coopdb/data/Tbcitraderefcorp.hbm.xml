@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbcitraderefcorp" table="TBCITRADEREFCORP" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="traderefid" type="integer">
+            <column name="traderefid"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cireportid" type="string">
+            <column name="cireportid" length="20"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="tradetype" type="string">
+            <column name="tradetype" length="50"/>
+        </property>
+        <property name="companyname" type="string">
+            <column name="companyname" length="100"/>
+        </property>
+        <property name="telno" type="string">
+            <column name="telno" length="50"/>
+        </property>
+        <property name="contactperson" type="string">
+            <column name="contactperson" length="300"/>
+        </property>
+        <property name="goodspurchaseddealings" type="string">
+            <column name="goodspurchaseddealings"/>
+        </property>
+        <property name="terms" type="string">
+            <column name="terms" length="50"/>
+        </property>
+        <property name="tradecifno" type="string">
+            <column name="tradecifno" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

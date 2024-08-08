@@ -1,0 +1,63 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbfsoperand" table="TBFSOPERAND" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="fsoprgroupcode" type="string">
+            <column name="fsoprgroupcode" length="5"/>
+        </property>
+        <property name="fsopttype" type="string">
+            <column name="fsopttype" length="5"/>
+        </property>
+        <property name="fsoptname" type="string">
+            <column name="fsoptname" length="300"/>
+        </property>
+        <property name="fsident" type="string">
+            <column name="fsident" length="20"/>
+        </property>
+        <property name="fsoptapplyto" type="string">
+            <column name="fsoptapplyto" length="20"/>
+        </property>
+        <property name="fssection" type="string">
+            <column name="fssection" length="5"/>
+        </property>
+        <property name="fssubsection" type="string">
+            <column name="fssubsection" length="5"/>
+        </property>
+        <property name="fsitemtype" type="string">
+            <column name="fsitemtype" length="5"/>
+        </property>
+        <property name="fsitemname" type="string">
+            <column name="fsitemname" length="300"/>
+        </property>
+        <property name="applytocorp" type="boolean">
+            <column name="applytocorp"/>
+        </property>
+        <property name="applytosole" type="boolean">
+            <column name="applytosole"/>
+        </property>
+        <property name="applytopart" type="boolean">
+            <column name="applytopart"/>
+        </property>
+        <property name="sequence" type="integer">
+            <column name="sequence"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="lastupdated" type="timestamp">
+            <column name="lastupdated" length="23"/>
+        </property>
+        <property name="fssectionmain" type="string">
+            <column name="fssectionmain" length="5"/>
+        </property>
+    </class>
+</hibernate-mapping>

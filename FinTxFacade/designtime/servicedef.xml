@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="FinTxFacade" class="com.casa.FinTxFacade" CRUDService="false" type="JavaService" springFile="FinTxFacade.spring.xml">
+    <operation name="accountInquiry">
+        <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.fintx.forms.AccountInquiryMainForm" isList="false"/>
+    </operation>
+    <operation name="accountInquiryName">
+        <parameter name="name" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.fintx.forms.InquiryNameList" isList="true"/>
+    </operation>
+    <operation name="actinqform">
+        <return typeRef="com.casa.fintx.forms.AccountInquiryForm" isList="false"/>
+    </operation>
+    <operation name="actinqhistform">
+        <return typeRef="com.casa.fintx.forms.AccountInquiryJournalForm" isList="false"/>
+    </operation>
+    <operation name="cancelOverrideTX">
+        <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="cashDepWithDrCrMemo">
+        <parameter name="jrnl" typeRef="com.coopdb.data.Tbfintxjrnl" isList="false"/>
+        <parameter name="checklist" typeRef="com.coopdb.data.Tbfintxchecklist" isList="true"/>
+        <return typeRef="com.casa.fintx.forms.FinGenericForm" isList="false"/>
+    </operation>
+    <operation name="cashPos">
+        <parameter name="form" typeRef="com.casa.fintx.forms.CashPositionForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="cashPosDenom">
+        <parameter name="txref" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.fintx.forms.CashPositionConfirmForm" isList="false"/>
+    </operation>
+    <operation name="checkAcct">
+        <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.fintx.forms.AccountCheckForm" isList="false"/>
+    </operation>
+    <operation name="checkAcctFundTrans">
+        <parameter name="acctnoto" typeRef="java.lang.String" isList="false"/>
+        <parameter name="acctnofrom" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.fintx.forms.AccountCheckForm" isList="false"/>
+    </operation>
+    <operation name="checkBranch">
+        <parameter name="brcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <operation name="confirmCashPos">
+        <parameter name="txref" typeRef="java.lang.String" isList="false"/>
+        <parameter name="act" typeRef="java.lang.String" isList="false"/>
+        <parameter name="remarks" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="depositMc">
+        <parameter name="data" typeRef="com.coopdb.data.Tbmctxjrnl" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="errorCorrect">
+        <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getCashInCashOut">
+        <parameter name="userid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="currency" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.fintx.forms.CashInCashOutForm" isList="false"/>
+    </operation>
+    <operation name="getTxinfo">
+        <parameter name="txname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbtransactioncode" isList="false"/>
+    </operation>
+    <operation name="initOverride">
+        <parameter name="data" typeRef="com.coopdb.data.Tboverride" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="lockAmount">
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="amount" typeRef="java.math.BigDecimal" isList="false"/>
+        <parameter name="reason" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="mcgcDeposit">
+        <parameter name="fin" typeRef="com.coopdb.data.Tbfintxjrnl" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="overrideTransaction">
+        <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="printDocSlip">
+        <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <operation name="requestMc">
+        <parameter name="data" typeRef="com.coopdb.data.Tbmanagerscheck" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="requestRemoteOverride">
+        <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="requestRemoteOverrideAction">
+        <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="val" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="requestRemoteOverrideCount">
+        <return typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <operation name="requestRemoteOverrideList">
+        <return typeRef="com.casa.fintx.forms.OverrideActionForm" isList="true"/>
+    </operation>
+    <operation name="requestRemoteOverrideResult">
+        <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.fintx.forms.OverrideResultForm" isList="false"/>
+    </operation>
+    <operation name="requestRemoteOverrideWait">
+        <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <operation name="saveBuySellFx">
+        <parameter name="brjrnl" typeRef="com.coopdb.data.Tbbrfintxjrnl" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="unlockAmount">
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="amount" typeRef="java.math.BigDecimal" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="userCashPos">
+        <parameter name="userid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbnetamt" isList="true"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.casa.fintx.forms.AccountInquiryMainForm" name="AccountInquiryMainForm" supportsQuickData="false">
+            <element name="atainq" typeRef="com.casa.fintx.forms.AccountInquiryForm" isList="false" allowNull="false"/>
+            <element name="histlist" typeRef="com.casa.fintx.forms.AccountInquiryJournalForm" isList="true" allowNull="false"/>
+            <element name="inquiry" typeRef="com.casa.fintx.forms.AccountInquiryForm" isList="false" allowNull="false"/>
+            <element name="result" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.fintx.forms.InquiryNameList" name="InquiryNameList" supportsQuickData="false">
+            <element name="acctno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctsts" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="productCode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.fintx.forms.AccountInquiryForm" name="AccountInquiryForm" supportsQuickData="false">
+            <element name="accountbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountnoata" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="alertflag" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="alertlevel" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="alertmessage" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bpapproved" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="bpavailed" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datelast" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateopened" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="earmarkbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="floatamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="garnishedbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="holdamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="maintainingBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="minimummaintainingBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="posttx" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prodcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="product" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.fintx.forms.AccountInquiryJournalForm" name="AccountInquiryJournalForm" supportsQuickData="false">
+            <element name="accountname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="checkacctno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="credit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="debit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="errorcorrect" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="outbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="sequenceNo" typeRef="java.math.BigInteger" isList="false" allowNull="false"/>
+            <element name="txamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="txbrrefno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="txrefno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txvaldt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="unit" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.fintx.forms.FinGenericForm" name="FinGenericForm" supportsQuickData="false">
+            <element name="override" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="posttx" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="posttxdesc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="posttxdescsec" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="posttxsec" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="result" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txrefbr" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txrefno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.fintx.forms.CashPositionForm" name="CashPositionForm" supportsQuickData="false">
+            <element name="cashdnm" typeRef="com.coopdb.data.Tbcashpositiondenom" isList="false" allowNull="false"/>
+            <element name="cashpos" typeRef="com.coopdb.data.Tbcashposition" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.fintx.forms.CashPositionConfirmForm" name="CashPositionConfirmForm" supportsQuickData="false">
+            <element name="denom" typeRef="com.coopdb.data.Tbcashpositiondenom" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.fintx.forms.AccountCheckForm" name="AccountCheckForm" supportsQuickData="false">
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="availbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="mainbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="posttx" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prodtype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="result" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="samecurrency" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subprod" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="unit" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="certtimedepind" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="checkbookind" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="passbookind" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="soaind" typeRef="boolean" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.fintx.forms.CashInCashOutForm" name="CashInCashOutForm" supportsQuickData="false">
+            <element name="cashin" typeRef="com.coopdb.data.Tbcashposition" isList="true" allowNull="false"/>
+            <element name="cashout" typeRef="com.coopdb.data.Tbcashposition" isList="true" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.Tboverride" name="Tboverride" supportsQuickData="false">
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="chargeamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="overrideby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sequence" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="txby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.fintx.forms.OverrideActionForm" name="OverrideActionForm" supportsQuickData="false">
+            <element name="acctno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="amount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="source" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txrefno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.casa.fintx.forms.OverrideResultForm" name="OverrideResultForm" supportsQuickData="false">
+            <element name="overrideby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="result" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="resultstr" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

@@ -1,0 +1,60 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbcolappraisalrequest" table="TBCOLAPPRAISALREQUEST" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="colappraisalrequestid" type="string">
+            <column name="colappraisalrequestid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="referenceno" type="string">
+            <column name="referenceno" length="50"/>
+        </property>
+        <property name="collateraltype" type="string">
+            <column name="collateraltype" length="50"/>
+        </property>
+        <property name="typeappraisal" type="string">
+            <column name="typeappraisal" length="50"/>
+        </property>
+        <property name="assignedappsupervisor" type="string">
+            <column name="assignedappsupervisor" length="20"/>
+        </property>
+        <property name="requestedby" type="string">
+            <column name="requestedby" length="50"/>
+        </property>
+        <property name="daterequested" type="timestamp">
+            <column name="daterequested" length="23"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="2"/>
+        </property>
+        <property name="statusdate" type="timestamp">
+            <column name="statusdate" length="23"/>
+        </property>
+        <property name="assignedappraiser" type="string">
+            <column name="assignedappraiser" length="20"/>
+        </property>
+        <property name="companycode" type="string">
+            <column name="companycode" length="5"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="8000"/>
+        </property>
+        <property name="purposeofappraisal" type="string">
+            <column name="purposeofappraisal"/>
+        </property>
+        <property name="collateralcategory" type="string">
+            <column name="collateralcategory" length="2"/>
+        </property>
+        <property name="groupid" type="string">
+            <column name="groupid" length="20"/>
+        </property>
+        <property name="newused" type="string">
+            <column name="newused" length="2"/>
+        </property>
+        <property name="propertytype" type="string">
+            <column name="propertytype" length="5"/>
+        </property>
+    </class>
+</hibernate-mapping>

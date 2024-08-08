@@ -1,0 +1,52 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbaccountofficer" table="TBACCOUNTOFFICER" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.TbaccountofficerId">
+            <key-property name="companycode" type="string">
+                <column name="companycode" length="50"/>
+            </key-property>
+            <key-property name="aocode" type="string">
+                <column name="aocode" length="50"/>
+            </key-property>
+        </composite-id>
+        <property name="lastname" type="string">
+            <column name="lastname" length="100"/>
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="100"/>
+        </property>
+        <property name="middlename" type="string">
+            <column name="middlename" length="100"/>
+        </property>
+        <property name="suffix" type="string">
+            <column name="suffix" length="10"/>
+        </property>
+        <property name="bankacctno" type="string">
+            <column name="bankacctno" length="50"/>
+        </property>
+        <property name="streetnoname" type="string">
+            <column name="streetnoname" length="100"/>
+        </property>
+        <property name="subdivision" type="string">
+            <column name="subdivision" length="100"/>
+        </property>
+        <property name="barangay" type="string">
+            <column name="barangay" length="100"/>
+        </property>
+        <property name="stateprovince" type="string">
+            <column name="stateprovince" length="100"/>
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="100"/>
+        </property>
+        <property name="postalcode" type="string">
+            <column name="postalcode" length="50"/>
+        </property>
+        <property name="region" type="string">
+            <column name="region" length="50"/>
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbloanrepaymentscheme" table="TBLOANREPAYMENTSCHEME" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="schemecode" type="integer">
+            <column name="schemecode"/>
+            <generator class="identity"/>
+        </id>
+        <property name="repaymentscheme" type="string">
+            <column name="repaymentscheme" length="200"/>
+        </property>
+        <property name="intpaytype" type="string">
+            <column name="intpaytype" length="250"/>
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="300"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,106 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Lsttxfin" table="lsttxfin" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.LsttxfinId">
+            <key-property name="loanno" type="string">
+                <column name="loanno"/>
+            </key-property>
+            <key-property name="txseqno" type="integer">
+                <column name="txseqno"/>
+            </key-property>
+        </composite-id>
+        <property name="clientid" type="string">
+            <column name="clientid" length="16"/>
+        </property>
+        <property name="txamt" type="big_decimal">
+            <column name="txamt" precision="16"/>
+        </property>
+        <property name="txar1" type="big_decimal">
+            <column name="txar1" precision="16"/>
+        </property>
+        <property name="txar2" type="big_decimal">
+            <column name="txar2" precision="16"/>
+        </property>
+        <property name="txaresc1" type="string">
+            <column name="txaresc1" length="5"/>
+        </property>
+        <property name="txaresc2" type="string">
+            <column name="txaresc2" length="5"/>
+        </property>
+        <property name="txbatch" type="string">
+            <column name="txbatch" length="5"/>
+        </property>
+        <property name="txbr" type="string">
+            <column name="txbr" length="5"/>
+        </property>
+        <property name="txbrstn" type="string">
+            <column name="txbrstn" length="15"/>
+        </property>
+        <property name="txchkno" type="string">
+            <column name="txchkno" length="15"/>
+        </property>
+        <property name="txcode" type="string">
+            <column name="txcode" length="5"/>
+        </property>
+        <property name="txcurr" type="string">
+            <column name="txcurr" length="15"/>
+        </property>
+        <property name="txdate" type="timestamp">
+            <column name="txdate" length="23"/>
+        </property>
+        <property name="txexcess" type="big_decimal">
+            <column name="txexcess" precision="16"/>
+        </property>
+        <property name="txint" type="big_decimal">
+            <column name="txint" precision="16"/>
+        </property>
+        <property name="txlpcint" type="big_decimal">
+            <column name="txlpcint" precision="16"/>
+        </property>
+        <property name="txlpcprin" type="big_decimal">
+            <column name="txlpcprin" precision="16"/>
+        </property>
+        <property name="txmkr" type="string">
+            <column name="txmkr" length="10"/>
+        </property>
+        <property name="txmode" type="string">
+            <column name="txmode" length="5"/>
+        </property>
+        <property name="txoff" type="string">
+            <column name="txoff" length="10"/>
+        </property>
+        <property name="txoper" type="string">
+            <column name="txoper" length="5"/>
+        </property>
+        <property name="txor" type="string">
+            <column name="txor" length="15"/>
+        </property>
+        <property name="txpdprin" type="big_decimal">
+            <column name="txpdprin" precision="16"/>
+        </property>
+        <property name="txpdueint" type="big_decimal">
+            <column name="txpdueint" precision="16"/>
+        </property>
+        <property name="txprin" type="big_decimal">
+            <column name="txprin" precision="16"/>
+        </property>
+        <property name="txretcd" type="string">
+            <column name="txretcd" length="5"/>
+        </property>
+        <property name="txrppd" type="big_decimal">
+            <column name="txrppd" precision="16"/>
+        </property>
+        <property name="txsrce" type="string">
+            <column name="txsrce" length="5"/>
+        </property>
+        <property name="txstat" type="integer">
+            <column name="txstat"/>
+        </property>
+        <property name="txtax" type="big_decimal">
+            <column name="txtax" precision="16"/>
+        </property>
+        <property name="txvaldt" type="timestamp">
+            <column name="txvaldt" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

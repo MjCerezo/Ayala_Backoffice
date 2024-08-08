@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="VaultFacade" class="com.etel.vault.VaultFacade" CRUDService="false" type="JavaService" springFile="VaultFacade.spring.xml">
+    <operation name="createVault">
+        <parameter name="vault" typeRef="com.coopdb.data.Tbvault" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="findVaultbyCoopCodeAndBranchCode">
+        <parameter name="coopcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbvault" isList="false"/>
+    </operation>
+    <operation name="updateVault">
+        <parameter name="vault" typeRef="com.coopdb.data.Tbvault" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbcreditscoredetailedresults" table="TBCREDITSCOREDETAILEDRESULTS" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="50"/>
+        </property>
+        <property name="attributes" type="string">
+            <column name="attributes" length="50"/>
+        </property>
+        <property name="value" type="string">
+            <column name="value" length="50"/>
+        </property>
+        <property name="weights" type="big_decimal">
+            <column name="weights" precision="20"/>
+        </property>
+        <property name="score" type="big_decimal">
+            <column name="score" precision="20"/>
+        </property>
+        <property name="weightedscore" type="big_decimal">
+            <column name="weightedscore" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

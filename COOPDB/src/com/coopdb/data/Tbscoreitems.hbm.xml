@@ -1,0 +1,60 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbscoreitems" table="TBSCOREITEMS" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="modelno" type="string">
+            <column name="modelno" length="10"/>
+        </property>
+        <property name="criteriaid" type="string">
+            <column name="criteriaid" length="20"/>
+        </property>
+        <property name="subcriteriaid" type="string">
+            <column name="subcriteriaid" length="20"/>
+        </property>
+        <property name="itemseqno" type="string">
+            <column name="itemseqno" length="20"/>
+        </property>
+        <property name="scorekey" type="string">
+            <column name="scorekey" length="50"/>
+        </property>
+        <property name="dbcode" type="string">
+            <column name="dbcode" length="10"/>
+        </property>
+        <property name="tbcode" type="string">
+            <column name="tbcode" length="100"/>
+        </property>
+        <property name="fielddesc" type="string">
+            <column name="fielddesc" length="300"/>
+        </property>
+        <property name="fieldname" type="string">
+            <column name="fieldname" length="100"/>
+        </property>
+        <property name="datatype" type="string">
+            <column name="datatype" length="50"/>
+        </property>
+        <property name="weights" type="big_decimal">
+            <column name="weights" precision="16"/>
+        </property>
+        <property name="codename" type="string">
+            <column name="codename" length="50"/>
+        </property>
+        <property name="apprefno" type="string">
+            <column name="apprefno" length="50"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="100"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

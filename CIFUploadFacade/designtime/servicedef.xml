@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="CIFUploadFacade" class="com.etel.cifupload.CIFUploadFacade" CRUDService="false" type="JavaService" springFile="CIFUploadFacade.spring.xml">
+    <operation name="createCIF">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="oldcifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="fullname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="dateofbirth" typeRef="java.util.Date" isList="false"/>
+        <parameter name="address" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="createDepAcct">
+        <parameter name="dep" typeRef="com.coopdb.data.Tbdeposit" isList="false"/>
+        <parameter name="ciflist" typeRef="com.coopdb.data.Tbdepositcif" isList="true"/>
+        <parameter name="oldcifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.casa.acct.forms.AccountGenericForm" isList="false"/>
+    </operation>
+    <operation name="readXLSXFIle">
+        <parameter name="path" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="uploadCIFFile">
+        <parameter name="file" typeRef="org.springframework.web.multipart.MultipartFile" isList="false"/>
+        <return typeRef="com.wavemaker.runtime.server.FileUploadResponse" isList="false"/>
+    </operation>
+    <operation name="uploadSavingsFile">
+        <parameter name="path" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="uploadTDFile">
+        <parameter name="path" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="NonMemberFacade" class="com.etel.facade.NonMemberFacade" CRUDService="false" type="JavaService" springFile="NonMemberFacade.spring.xml">
+    <operation name="getTbEmployeeByEmployeeID">
+        <parameter name="employeeid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbemployee" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

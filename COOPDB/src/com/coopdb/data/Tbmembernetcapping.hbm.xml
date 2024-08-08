@@ -1,0 +1,21 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbmembernetcapping" table="TBMEMBERNETCAPPING" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="appno" type="string">
+            <column name="appno" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="basicsalary" type="big_decimal">
+            <column name="basicsalary" precision="20"/>
+        </property>
+        <property name="withholdingtax" type="big_decimal">
+            <column name="withholdingtax" precision="20"/>
+        </property>
+        <property name="existingamort" type="big_decimal">
+            <column name="existingamort" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

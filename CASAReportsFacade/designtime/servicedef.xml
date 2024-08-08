@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="CASAReportsFacade" class="com.etel.casareports.CASAReportsFacade" CRUDService="false" type="JavaService" springFile="CASAReportsFacade.spring.xml">
+    <operation name="generateCASA_BatchTransactionDeposit">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="batchtxrefno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_CashTransferSlip">
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="address" typeRef="java.lang.String" isList="false"/>
+        <parameter name="d" typeRef="com.etel.casareports.form.CashTransferSlip" isList="false"/>
+        <parameter name="businessDate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_InterestAccrualReport">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="groupby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="company" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_InterestCreditReport">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="groupby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="company" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_ListofForceClearTransactions">
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_OtherBankReturnCheck">
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="startdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="enddate" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_PassbookCover">
+        <parameter name="accountNo" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_TDPrintPayout">
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="d" typeRef="com.etel.casareports.form.TDPrintPayoutForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_TellersBlotter">
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="userid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateCASA_getGLEntriesForTheDay">
+        <parameter name="imgsrc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="filetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="companyname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="datefilter" typeRef="java.lang.String" isList="false"/>
+        <parameter name="businessdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tellername" typeRef="java.lang.String" isList="false"/>
+        <parameter name="bname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="tname" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getAllDepProdType">
+        <parameter name="prodcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASADataForm" isList="true"/>
+    </operation>
+    <operation name="getBranchTransactionListfortheDayFinancialSavingChecking">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASATransactionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getBranchTransactionListfortheDayFinancialTermProducts">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASATransactionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getCASAComprehensive">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASAComprehensiveListForm" isList="true"/>
+    </operation>
+    <operation name="getCashTransferMovementsfortheDay">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASATransactionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getCustomerListofDepositAccounts">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASAAllProductReportForm" isList="true"/>
+    </operation>
+    <operation name="getDepositProductAll">
+        <return typeRef="com.etel.casareports.form.CASADataForm" isList="true"/>
+    </operation>
+    <operation name="getDepositProductBySub">
+        <parameter name="prodgroup" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASADataForm" isList="true"/>
+    </operation>
+    <operation name="getDormat">
+        <parameter name="form" typeRef="com.etel.casareports.form.DormatForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.DormatData" isList="true"/>
+    </operation>
+    <operation name="getEJ">
+        <parameter name="form" typeRef="com.etel.casareports.form.ElectronicJournalForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.ElectronicJournalResponse" isList="false"/>
+    </operation>
+    <operation name="getEJData">
+        <parameter name="form" typeRef="com.etel.casareports.form.ElectronicJournalForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.ElectronicJournalData" isList="true"/>
+    </operation>
+    <operation name="getFileMaintenanceUpdateTransactionsfortheDay">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASATransactionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getGLEntriesForTheDay">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbglentries" isList="true"/>
+    </operation>
+    <operation name="getGrossDepositsandWithdrawalfortheQuarter">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASAAnalyticalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofAccountsClassifiedtoDormantfortheDay">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASAExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofAccountswith500tTransactions">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASAExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofActivatedDormantAccounts">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASAExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofAutoReneworAutoRollTermDepositPlacementsFortheDay">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASATransactionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofClosedAccountsfortheDayPeriod">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASATransactionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofClosedTerminatedPreterminatedAccountsfortheDay">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASATransactionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofErrorCorrectedTransactionsforthePeriod">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASAExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofEscheatedAccountsfortheDayPeriod">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASATransactionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofForceClearTransactions">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASAExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofIssuedCTDPASSBOOKCKBOOKfortheDay">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASATransactionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofLateCheckDepositsfortheDay">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASATransactionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofNewlyOpenedAccountsfortheDay">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASATransactionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofOverrideTransactionsforthePeriod">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASAExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofRejectedTransactionsforthePeriod">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASAExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getListofTimeoutTransactions">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASAExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getMasterListAll">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASAGetMasterListAll" isList="true"/>
+    </operation>
+    <operation name="getMasterListofAccountsDormant5And10Years">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASAAllProductReportForm" isList="true"/>
+    </operation>
+    <operation name="getMasterlistofAccountsActive">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASAAllProductReportForm" isList="true"/>
+    </operation>
+    <operation name="getMasterlistofAccountsBelowMinimumBalance">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASAAllProductReportForm" isList="true"/>
+    </operation>
+    <operation name="getOtherBankReturnCheck">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASAExceptionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getSADailyListofAccountsBelowMinimumBalance">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASASavingReportForm" isList="true"/>
+    </operation>
+    <operation name="getSADailyListofActivatedDormantAccounts">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASASavingReportForm" isList="true"/>
+    </operation>
+    <operation name="getSADailyListofClosedAccounts">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASASavingReportForm" isList="true"/>
+    </operation>
+    <operation name="getSADailyListofDormantAccounts">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASASavingReportForm" isList="true"/>
+    </operation>
+    <operation name="getSADailyListofDormantAccounts10Years">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASASavingReportForm" isList="true"/>
+    </operation>
+    <operation name="getSADailyListofDormantAccounts5Years">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASASavingReportForm" isList="true"/>
+    </operation>
+    <operation name="getSADailyListofDormantAccountsfallingBelowMinimumBalance2Months">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASASavingReportForm" isList="true"/>
+    </operation>
+    <operation name="getSADailyListofNewAccounts">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASASavingReportForm" isList="true"/>
+    </operation>
+    <operation name="getSAMasterList">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASASavingReportForm" isList="true"/>
+    </operation>
+    <operation name="getSASavingsandPremiumSavingsDeposit">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASASavingReportForm" isList="true"/>
+    </operation>
+    <operation name="getSASummaryofDailyTransactionReport">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASASavingReportForm" isList="true"/>
+    </operation>
+    <operation name="getScheduleofAccountswithNegativeBalanceTemporaryOverdraft">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASAAllProductReportForm" isList="true"/>
+    </operation>
+    <operation name="getScheduleofAccruedInterestPayable">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASAAllProductReportForm" isList="true"/>
+    </operation>
+    <operation name="getTDDailyListPretermTimeAcctsReport">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASATimeDepositReportForm" isList="true"/>
+    </operation>
+    <operation name="getTDDailyListofAccuredInterestPayable">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASATimeDepositReportForm" isList="true"/>
+    </operation>
+    <operation name="getTDDailyListofMaturedbutUnwithdrawnAccounts">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASATimeDepositReportForm" isList="true"/>
+    </operation>
+    <operation name="getTDDailyListofNewPlacements">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASATimeDepositReportForm" isList="true"/>
+    </operation>
+    <operation name="getTDDailyListofRollOvers">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASATimeDepositReportForm" isList="true"/>
+    </operation>
+    <operation name="getTDMasterList">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASATimeDepositReportForm" isList="true"/>
+    </operation>
+    <operation name="getTellerListofTransactionsfortheDay">
+        <parameter name="forms" typeRef="com.etel.casareports.form.CASAParametersForm" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASATransactionalReportForm" isList="true"/>
+    </operation>
+    <operation name="getTranType">
+        <return typeRef="com.etel.casareports.form.CASADataForm" isList="true"/>
+    </operation>
+    <operation name="listCASAInterestAccrual">
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="groupby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASAInterestForm" isList="true"/>
+    </operation>
+    <operation name="listCASAInterestCredit">
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="groupby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="com.etel.casareports.form.CASAInterestForm" isList="true"/>
+    </operation>
+    <operation name="listTellersBlotter">
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="userid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="from" typeRef="java.util.Date" isList="false"/>
+        <parameter name="to" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="com.etel.casareports.form.TellersBlotterForm" isList="true"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.casareports.form.CashTransferSlip" name="CashTransferSlip" supportsQuickData="false">
+            <element name="totalamount" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="aFifty" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="aFive" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="aFiveCents" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="aFiveHundred" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="aOne" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="aOneCent" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="aOneHundred" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="aOneThousand" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="aTen" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="aTenCents" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="aTwenty" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="aTwentyFiveCents" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="aTwoHundred" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="qFifty" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="qFive" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="qFiveCents" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="qFiveHundred" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="qOne" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="qOneCent" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="qOneHundred" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="qOneThousand" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="qTen" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="qTenCents" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="qTwenty" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="qTwentyFiveCents" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="qTwoHundred" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.casareports.form.TDPrintPayoutForm" name="TDPrintPayoutForm" supportsQuickData="false">
+            <element name="accountbalance" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="actualbalanceperaccount" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="actualinterestearned" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="actualwithholdingtax" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="addnlinterestearned" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="addnlinteresttax" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bookingdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="certno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="disposition" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dispositionint" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dispositionintacctno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="docstamps" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="docstamptax" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="intcreditrebate" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="intrate" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lesswidrawninterest" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="maturitydate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="matvalue" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="modeofrelease" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="netinterest" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="netproceeds" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ontermearned" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ontermtax" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="placementamount" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="reversal" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="term" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="terminateon" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="totalintcredited" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="totalintmaturity" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="totalintposting" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="totalnoofdays" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="totalwithholdingtaxdebited" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="totalwithholdingtaxposting" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transactiontype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="wtax" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.casareports.form.CASADataForm" name="CASADataForm" supportsQuickData="false">
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prodcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prodgroup" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prodname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prodsname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.casareports.form.CASATransactionalReportForm" name="CASATransactionalReportForm" supportsQuickData="false">
+            <element name="accountBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="accountname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctsts" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="amountEscheated" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="amoutPaid" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="bankName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bookDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="bookingdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="campaign" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="checkBrstn" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="checkamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="checkdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="checknumber" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="closeBy" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="closingBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="createdBy" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ctdNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="currentBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="daysEscheat" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="destination" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="disposition" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dispositiontype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="docIssued" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="docStampCost" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="docStapTaxCost" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="docno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="docstamps" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dtbook" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dtmat" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="effectivitydate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="expirydate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="initAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="intRate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="interestamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="issueDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="lastTransDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="lasttxdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="matDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="matValue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="newBookDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="newFaceAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="newMatDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="newTerm" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="oldAcctsts" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="overrideBy" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="overrideRequest" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="overrideby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="passbookNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="passbookPosted" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="placeAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="placementAmt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="prevBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="prodName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prodType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="reason" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="referralofficer" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="seriesFromNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="seriesToNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="solicitingofficer" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="source" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subProdName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="taxRateAmt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="term" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="terminalNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="tolalint" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalIntDue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalIntEarned" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalIntRate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalIntWithdraw" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalNoDays" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalNoOfDays" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalint" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="transCode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transStat" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="txname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txrefNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txvaldt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="wtaxamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="wtaxrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="wHoldTax" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="wTaxRate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.casareports.form.CASAParametersForm" name="CASAParametersForm" supportsQuickData="false">
+            <element name="accountName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountStatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="asOf" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="businessDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="cifDbLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateFilter" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dispositionType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="from" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="losDbLink" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="matDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="noFilter" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="prodCode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prodType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subProdSA" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subProdTD" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="tellersName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="to" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="transDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="transType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.casareports.form.CASAComprehensiveListForm" name="CASAComprehensiveListForm" supportsQuickData="false">
+            <element name="accountName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accrued" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="acctType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctsts" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ata" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="availableBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="bookBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="bookDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ctdNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="disposition" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dtbook" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dtmat" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="earmarkbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="floatAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="garnishedbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="grossint" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="interestearned" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="intrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="lasttxdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="lesswtaxamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="matValue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="outbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="passbookNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="placeholdAmt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="placementAmt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="prodName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="soadispo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subProdName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="term" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="termfreqno" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="wTaxRate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.casareports.form.CASAAllProductReportForm" name="CASAAllProductReportForm" supportsQuickData="false">
+            <element name="accountBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="accountName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accruedInterest" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="acctType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctsts" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="aipOutsBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="amount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="availbleBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="bookBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="bookDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createdBy" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ctdNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateLastTransSetup" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateString" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="earMarked" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="effectiveDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="holdAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="intRate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="interestbalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="interestearned" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="lastpostedinterest" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="lasttxdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="lastwtaxamt" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="matDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="outBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="outbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="overrideBy" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="passBookNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="penalty" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="placeholdAmt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="prodName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subProdName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="tdcno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="totalIntPosted" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalwTaxPosted" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="transStat" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="txname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="unclearAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="yearsDormat" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.casareports.form.DormatData" name="DormatData" supportsQuickData="false">
+            <element name="accountBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="accountName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountNumber" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="daysDormat" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="lastTransactionDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="monthsDormat" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="outstandingBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="previousBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="transactionAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="transactionCode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="yearsDormat" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.casareports.form.DormatForm" name="DormatForm" supportsQuickData="false">
+            <element name="branchCode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="reportCode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="userId" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.casareports.form.ElectronicJournalResponse" name="ElectronicJournalResponse" supportsQuickData="false">
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="jrnl" typeRef="com.etel.casareports.form.ElectronicJournalData" isList="true" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="terminalno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="userid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.casareports.form.ElectronicJournalForm" name="ElectronicJournalForm" supportsQuickData="false">
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="errorcorrectind" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="txstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="userid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.casareports.form.ElectronicJournalData" name="ElectronicJournalData" supportsQuickData="false">
+            <element name="accountname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="errorcorrectind" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="override" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="txname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txrefno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="userid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.casareports.form.CASAAnalyticalReportForm" name="CASAAnalyticalReportForm" supportsQuickData="false"/>
+        <dataobject javaType="com.etel.casareports.form.CASAExceptionalReportForm" name="CASAExceptionalReportForm" supportsQuickData="false">
+            <element name="accountName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctsts" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="approvedBy" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bankName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="brstn" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="businessDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="checkamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="checknumber" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="clearingdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="createdBy" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="lastTransDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="media" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="mediaNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="merchant" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="orNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="outbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="overrideBy" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="paymenType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="paymentMode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="paymentSlipNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prevTransType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prodName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="requestBy" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subProdName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transStat" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="transType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="txrefNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txvaldt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.casareports.form.CASAGetMasterListAll" name="CASAGetMasterListAll" supportsQuickData="false">
+            <element name="accountBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="accountName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accrued" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="acctType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctsts" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ata" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bookBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="bookDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ctdNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="disposition" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dtbook" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="earmarkbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="floatAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="garnishedbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="grossint" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="interestearned" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="intrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="lasttxdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="lesswtaxamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="matvalue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="outbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="passbookNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="placeholdAmt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="placementAmt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="prodName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="soadispo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subProdName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="term" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="termfreqno" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="wTAXRate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.casareports.form.CASASavingReportForm" name="CASASavingReportForm" supportsQuickData="false">
+            <element name="accountBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="accountName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accruedInterest" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="acctsts" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="amount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="availbleBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="averageDailyBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="bookBalance" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="bookDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="closingbalance" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="earMarked" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="effectiveDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="holdAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="intRate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="interestbalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="interestearned" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="interestpaid" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="lastpostedinterest" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="lasttxdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="lastwtaxamt" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="noofcredits" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="noofdebits" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="outbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="penalty" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="productcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="productdescription" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="servicecharge" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="statusdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="subProdName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subProdsName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="totalamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalamountactive" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalamountdormant" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalcount" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalcountactive" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalcountdormant" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalcredits" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totaldebits" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="txamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="txname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="unclearAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="wTaxRate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.casareports.form.CASATimeDepositReportForm" name="CASATimeDepositReportForm" supportsQuickData="false">
+            <element name="accountBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="accountName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accruedInterest" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="acctsts" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="availbleBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="bookBalance" typeRef="java.lang.Boolean" isList="false" allowNull="false"/>
+            <element name="bookingdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ctdNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="ctdNumber" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="docstamps" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="dtmat" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="earMarked" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="effectiveDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="holdAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="interestbalance" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="interestearned" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="interestpaid" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="intrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="lastintcreditdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="lastpostedinterest" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="lasttxdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="lastwtaxamt" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="maturitydate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="matvalue" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="noofdaysaccrued" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="originalPlacement" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="outbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="placeHoldAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="placeamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="placedate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="placementDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="placementamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="subProdName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="tdcno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="term" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="termindays" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="totalMatAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="txvaldt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="unclearAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="withholdingTax" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="wtaxamt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="wtaxrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.casareports.form.CASAInterestForm" name="CASAInterestForm" supportsQuickData="false">
+            <element name="accountname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="adb" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="intamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="intrate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="netamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="product" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="wtaxmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.casareports.form.TellersBlotterForm" name="TellersBlotterForm" supportsQuickData="false">
+            <element name="accountname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cashCredit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="cashDebit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="checkacctno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cociCredit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="cociDebit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="productname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txbrrefno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="txrefno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txvaldt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbpsiccodes" table="TBPSICCODES" catalog="CIFSDBUAT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="psiccode" type="string">
+            <column name="psiccode" length="10"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="level1code" type="string">
+            <column name="level1code" length="10"/>
+        </property>
+        <property name="level1desc" type="string">
+            <column name="level1desc" length="500"/>
+        </property>
+        <property name="level2code" type="string">
+            <column name="level2code" length="10"/>
+        </property>
+        <property name="level2desc" type="string">
+            <column name="level2desc" length="500"/>
+        </property>
+        <property name="psicdesc" type="string">
+            <column name="psicdesc" length="500"/>
+        </property>
+    </class>
+</hibernate-mapping>

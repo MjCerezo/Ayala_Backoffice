@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbcountry" table="TBCOUNTRY" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="code" type="string">
+            <column name="code" length="50"/>
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="50"/>
+        </property>
+        <property name="stateprovince" type="string">
+            <column name="stateprovince" length="50"/>
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="50"/>
+        </property>
+        <property name="areadesc" type="string">
+            <column name="areadesc" length="50"/>
+        </property>
+        <property name="postalcode" type="string">
+            <column name="postalcode"/>
+        </property>
+        <property name="areacode" type="string">
+            <column name="areacode" length="10"/>
+        </property>
+        <property name="countrycode" type="string">
+            <column name="countrycode" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

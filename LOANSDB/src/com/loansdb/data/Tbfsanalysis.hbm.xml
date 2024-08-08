@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbfsanalysis" table="TBFSANALYSIS" catalog="LOANSPBBDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="fsid" type="integer">
+            <column name="fsid"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="cfappno" type="string">
+            <column name="cfappno" length="20"/>
+        </property>
+        <property name="analysis" type="string">
+            <column name="analysis"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="lastupdated" type="timestamp">
+            <column name="lastupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

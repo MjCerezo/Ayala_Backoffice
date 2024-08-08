@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="AuditTrailFacade" class="com.etel.audittrail.AuditTrailFacade" CRUDService="false" type="JavaService" springFile="AuditTrailFacade.spring.xml">
+    <operation name="addAuditLog">
+        <parameter name="event" typeRef="java.lang.String" isList="false"/>
+        <parameter name="eventdesc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="module" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="auditCodetable">
+        <parameter name="moduleid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="eventid" typeRef="int" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbauditevents" isList="false"/>
+    </operation>
+    <operation name="getListAuditTrail">
+        <return typeRef="com.cifsdb.data.Tbaudittrail" isList="true"/>
+    </operation>
+    <dataobjects/>
+</service>

@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbcheckbook" table="TBCHECKBOOK" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="checkbkaccountno" type="string">
+            <column name="checkbkaccountno" length="20"/>
+        </property>
+        <property name="checkbookno" type="string">
+            <column name="checkbookno" length="20"/>
+        </property>
+        <property name="startchkno" type="integer">
+            <column name="startchkno"/>
+        </property>
+        <property name="endchkno" type="integer">
+            <column name="endchkno"/>
+        </property>
+        <property name="releasedby" type="string">
+            <column name="releasedby" length="20"/>
+        </property>
+        <property name="receivedby" type="string">
+            <column name="receivedby" length="150"/>
+        </property>
+        <property name="status" type="integer">
+            <column name="status"/>
+        </property>
+        <property name="unit" type="string">
+            <column name="unit" length="4"/>
+        </property>
+    </class>
+</hibernate-mapping>

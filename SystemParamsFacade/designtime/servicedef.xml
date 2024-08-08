@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="SystemParamsFacade" class="com.etel.systemparameter.SystemParamsFacade" CRUDService="false" type="JavaService" springFile="SystemParamsFacade.spring.xml">
+    <operation name="activateOrDeactivateCollectionArea">
+        <parameter name="d" typeRef="com.coopdb.data.Tbcollectionarea" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="activateOrDeactivateCollector">
+        <parameter name="d" typeRef="com.coopdb.data.Tbcollector" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addAccessRights">
+        <parameter name="form" typeRef="com.etel.systemparameter.forms.AccessRightsForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addRecordsCasaFeesAndCharges">
+        <parameter name="casaFees" typeRef="com.coopdb.data.Tbcasafeesandcharges" isList="false"/>
+        <parameter name="beingUpdated" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="checkPicOrPDF">
+        <parameter name="id" typeRef="int" isList="false"/>
+        <parameter name="imgtype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteAccessRights">
+        <parameter name="modulename" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteItem">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getAccessRightListperModuleName">
+        <parameter name="modulename" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbaccessrights" isList="true"/>
+    </operation>
+    <operation name="getAndListTbcoa">
+        <return typeRef="com.coopdb.data.Tbcoamaintenance" isList="true"/>
+    </operation>
+    <operation name="getAndListTbcoaByAcctnoAndDesc">
+        <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="desc" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcoa" isList="true"/>
+    </operation>
+    <operation name="getCollectorName">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="areacode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="subareacode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.systemparameter.forms.CollectionAreaForm" isList="false"/>
+    </operation>
+    <operation name="getListOfCoopcode">
+        <return typeRef="com.etel.systemparameter.forms.CoopForm" isList="true"/>
+    </operation>
+    <operation name="getProperties">
+        <return typeRef="com.coopdb.data.Tbproperties" isList="false"/>
+    </operation>
+    <operation name="getRecordsCasaFeesAndCharges">
+        <return typeRef="com.coopdb.data.Tbcasafeesandcharges" isList="true"/>
+    </operation>
+    <operation name="getRefNameByReferrorType">
+        <parameter name="reftype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.Tbreferrors" isList="true"/>
+    </operation>
+    <operation name="getTbgovernmentcontribution">
+        <parameter name="contributionType" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbgovernmentcontribution" isList="true"/>
+    </operation>
+    <operation name="listArea">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.systemparameter.forms.CollectionAreaForm" isList="true"/>
+    </operation>
+    <operation name="listAreacode">
+        <return typeRef="com.coopdb.data.Tbcollectionarea" isList="true"/>
+    </operation>
+    <operation name="listBranch">
+        <return typeRef="com.etel.systemparameter.forms.BranchSysParamsForm" isList="true"/>
+    </operation>
+    <operation name="listCollector">
+        <return typeRef="com.etel.systemparameter.forms.CollectionAreaForm" isList="true"/>
+    </operation>
+    <operation name="listCollectorForReports">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="areacode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="subareacode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.systemparameter.forms.CollectionAreaForm" isList="true"/>
+    </operation>
+    <operation name="listCollectorPerBranchcode">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.systemparameter.forms.CollectionAreaForm" isList="true"/>
+    </operation>
+    <operation name="listCollectorPerSubArea">
+        <parameter name="collectorid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.systemparameter.forms.CollectionAreaForm" isList="true"/>
+    </operation>
+    <operation name="listHoliday">
+        <parameter name="nationalorlocal" typeRef="java.lang.String" isList="false"/>
+        <parameter name="holidayname" typeRef="java.lang.String" isList="false"/>
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbholiday" isList="true"/>
+    </operation>
+    <operation name="listSubArea">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="areacode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.systemparameter.forms.CollectionAreaForm" isList="true"/>
+    </operation>
+    <operation name="listSubAreacode">
+        <parameter name="areacode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcollectionarea" isList="true"/>
+    </operation>
+    <operation name="listTbcollectionarea">
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <parameter name="areacode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcollectionarea" isList="true"/>
+    </operation>
+    <operation name="listTbcollector">
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <parameter name="areacode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="subareacode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbcollector" isList="true"/>
+    </operation>
+    <operation name="listUser">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.systemparameter.forms.UserSysParamsForm" isList="true"/>
+    </operation>
+    <operation name="saveOrDeleteGlCode">
+        <parameter name="accountno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="desc" typeRef="java.lang.String" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateArea">
+        <parameter name="d" typeRef="com.coopdb.data.Tbcolareamaintenance" isList="false"/>
+        <parameter name="isChangeOrUpdated" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateAreaSubArea">
+        <parameter name="d" typeRef="com.cifsdb.data.Tbcifmain" isList="false"/>
+        <parameter name="changetype" typeRef="java.lang.String" isList="false"/>
+        <parameter name="remarks" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateCollectionArea">
+        <parameter name="d" typeRef="com.coopdb.data.Tbcollectionarea" isList="false"/>
+        <parameter name="isChangeOrUpdated" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateCollector">
+        <parameter name="d" typeRef="com.coopdb.data.Tbcollector" isList="false"/>
+        <parameter name="isChangeOrUpdated" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateCollector2">
+        <parameter name="d" typeRef="com.coopdb.data.Tbcollectormaintenance" isList="false"/>
+        <parameter name="isChangeOrUpdated" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateCollectorPerSubArea">
+        <parameter name="d" typeRef="com.coopdb.data.Tbcollectorpersubarea" isList="false"/>
+        <parameter name="isChangeOrUpdated" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateDeleteGovernmentContribution">
+        <parameter name="d" typeRef="com.coopdb.data.Tbgovernmentcontribution" isList="false"/>
+        <parameter name="saveOrDel" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateHoliday">
+        <parameter name="d" typeRef="com.coopdb.data.Tbholiday" isList="false"/>
+        <parameter name="type" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateSubArea">
+        <parameter name="d" typeRef="com.coopdb.data.Tbcolsubareamaintenance" isList="false"/>
+        <parameter name="isChangeOrUpdated" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="savePropertiesConfig">
+        <parameter name="config" typeRef="com.coopdb.data.Tbproperties" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="viewImage">
+        <parameter name="id" typeRef="int" isList="false"/>
+        <parameter name="imgtype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.systemparameter.forms.AccessRightsForm" name="AccessRightsForm" supportsQuickData="false">
+            <element name="accessid" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accesstype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="description" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="modulename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="submodulename" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.systemparameter.forms.CollectionAreaForm" name="CollectionAreaForm" supportsQuickData="false">
+            <element name="areacode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="areaname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branchname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="collectorid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="collectoridusername" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="collectorname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="subareacode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="subareaname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.systemparameter.forms.CoopForm" name="CoopForm" supportsQuickData="false">
+            <element name="coopcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="coopname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.systemparameter.forms.BranchSysParamsForm" name="BranchSysParamsForm" supportsQuickData="false">
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="branchname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.systemparameter.forms.UserSysParamsForm" name="UserSysParamsForm" supportsQuickData="false">
+            <element name="fullname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

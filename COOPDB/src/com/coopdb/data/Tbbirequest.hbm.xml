@@ -1,0 +1,99 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbbirequest" table="TBBIREQUEST" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="birequestid" type="string">
+            <column name="birequestid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="20"/>
+        </property>
+        <property name="customername" type="string">
+            <column name="customername" length="300"/>
+        </property>
+        <property name="customertype" type="string">
+            <column name="customertype" length="2"/>
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="100"/>
+        </property>
+        <property name="middlename" type="string">
+            <column name="middlename" length="100"/>
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="100"/>
+        </property>
+        <property name="suffix" type="string">
+            <column name="suffix" length="50"/>
+        </property>
+        <property name="dateofbirth" type="timestamp">
+            <column name="dateofbirth" length="23"/>
+        </property>
+        <property name="dateofincorporation" type="timestamp">
+            <column name="dateofincorporation" length="23"/>
+        </property>
+        <property name="isbaprequired" type="boolean">
+            <column name="isbaprequired"/>
+        </property>
+        <property name="iscmaprequired" type="boolean">
+            <column name="iscmaprequired"/>
+        </property>
+        <property name="iscicrequired" type="boolean">
+            <column name="iscicrequired"/>
+        </property>
+        <property name="isblacklistrequired" type="boolean">
+            <column name="isblacklistrequired"/>
+        </property>
+        <property name="bapinstruction" type="string">
+            <column name="bapinstruction" length="2"/>
+        </property>
+        <property name="cicinstruction" type="string">
+            <column name="cicinstruction" length="2"/>
+        </property>
+        <property name="assignedbi" type="string">
+            <column name="assignedbi" length="50"/>
+        </property>
+        <property name="assigneddate" type="timestamp">
+            <column name="assigneddate" length="23"/>
+        </property>
+        <property name="assignedby" type="string">
+            <column name="assignedby" length="50"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="8000"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="2"/>
+        </property>
+        <property name="assignedbisupervisor" type="string">
+            <column name="assignedbisupervisor" length="50"/>
+        </property>
+        <property name="statusdate" type="timestamp">
+            <column name="statusdate" length="23"/>
+        </property>
+        <property name="maidenname" type="string">
+            <column name="maidenname" length="100"/>
+        </property>
+        <property name="companycode" type="string">
+            <column name="companycode" length="5"/>
+        </property>
+        <property name="daterequested" type="timestamp">
+            <column name="daterequested" length="23"/>
+        </property>
+        <property name="requestedby" type="string">
+            <column name="requestedby" length="50"/>
+        </property>
+        <property name="purposeforbi" type="string">
+            <column name="purposeforbi"/>
+        </property>
+        <property name="participationcode" type="string">
+            <column name="participationcode" length="300"/>
+        </property>
+        <property name="isamlawatchlistrequired" type="boolean">
+            <column name="isamlawatchlistrequired"/>
+        </property>
+    </class>
+</hibernate-mapping>

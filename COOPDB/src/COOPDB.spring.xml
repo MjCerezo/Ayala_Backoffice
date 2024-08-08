@@ -1,0 +1,476 @@
+<?xml version="1.0"?>
+
+<!-- Generated 08/04/2024 12:54:29
+
+Configuration for 'COOPDB' database service
+
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+
+    <bean 
+        id="COOPDB"
+        class="com.coopdb.COOPDB"
+        scope="singleton"
+        lazy-init="true">
+        <property name="dataServiceManager">
+            <ref bean="COOPDBDataService"/>
+        </property>
+        <property name="taskManager">
+            <ref bean="COOPDBTaskMgr"/>
+        </property>
+    </bean>
+
+
+    <bean 
+        class="com.wavemaker.runtime.data.spring.WMPropertyPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        <property name="locations">
+            <list>
+                <value>classpath:COOPDB.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean 
+        id="COOPDBDataSource"
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
+        lazy-init="true">
+        <property name="driverClassName" value="${COOPDB.driverClassName}"/>
+        <property name="url" value="${COOPDB.connectionUrl}"/>
+        <property name="username" value="${COOPDB.username}"/>
+        <property name="password" value="${COOPDB.password}"/>
+    </bean>
+
+
+    <bean 
+        id="COOPDBTxMgr" 
+        class="org.springframework.orm.hibernate3.HibernateTransactionManager"
+        lazy-init="true">
+        <property name="sessionFactory">
+            <ref bean="COOPDBSessionFactory"/>
+        </property>
+    </bean>
+
+
+    <bean 
+        id="COOPDBHibernateTemplate"
+        class="org.springframework.orm.hibernate3.HibernateTemplate"
+        lazy-init="true">
+        <property name="sessionFactory"> 
+            <ref bean="COOPDBSessionFactory"/>
+        </property>
+    </bean>  
+
+
+    <bean 
+        id="COOPDBSessionFactory" 
+        class="com.wavemaker.runtime.data.spring.ConfigurationAndSessionFactoryBean"
+        lazy-init="true">
+
+        <!-- A unique name for this SessionFactory's configuration -->
+        <property name="name" value="COOPDB"/>
+        <property name="dataSource" ref="COOPDBDataSource"/>
+
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${COOPDB.dialect}</prop>
+                <prop key="hibernate.transaction.factory_class">
+                    org.hibernate.transaction.JDBCTransactionFactory
+                </prop>
+                <prop key="hibernate.current_session_context_class">thread</prop>
+                
+            </props> 
+        </property>
+
+        <property name="mappingResources">
+            <list>
+
+<value>com/coopdb/data/Tbbireportmain.hbm.xml</value>
+<value>com/coopdb/data/Tbfeesandcharges.hbm.xml</value>
+<value>com/coopdb/data/Tbmemberpersonalreference.hbm.xml</value>
+<value>com/coopdb/data/Tbdocspertx.hbm.xml</value>
+<value>com/coopdb/data/Tbdeptxjrnl.hbm.xml</value>
+<value>com/coopdb/data/Tbbrfintxjrnl.hbm.xml</value>
+<value>com/coopdb/data/Tbdocdetails.hbm.xml</value>
+<value>com/coopdb/data/Tbgaaperbos.hbm.xml</value>
+<value>com/coopdb/data/Tbapprellegaldescproperty.hbm.xml</value>
+<value>com/coopdb/data/Tbdosrisubsaffiliates.hbm.xml</value>
+<value>com/coopdb/data/Tbmisctx.hbm.xml</value>
+<value>com/coopdb/data/Tbapppersonalreference.hbm.xml</value>
+<value>com/coopdb/data/Tbevents.hbm.xml</value>
+<value>com/coopdb/data/Tbratehistory.hbm.xml</value>
+<value>com/coopdb/data/Tbloancollateralgroup.hbm.xml</value>
+<value>com/coopdb/data/Tbcodetable.hbm.xml</value>
+<value>com/coopdb/data/Tbuserroles.hbm.xml</value>
+<value>com/coopdb/data/Tbcycleperloanscheme.hbm.xml</value>
+<value>com/coopdb/data/Tbbiactivity.hbm.xml</value>
+<value>com/coopdb/data/Tbtransactioncode.hbm.xml</value>
+<value>com/coopdb/data/Tbglentries.hbm.xml</value>
+<value>com/coopdb/data/Tbuser.hbm.xml</value>
+<value>com/coopdb/data/Tbmembernetcapping.hbm.xml</value>
+<value>com/coopdb/data/Tbbiblacklist.hbm.xml</value>
+<value>com/coopdb/data/Tbappbeneficiary.hbm.xml</value>
+<value>com/coopdb/data/Tbaccountingentriescasa.hbm.xml</value>
+<value>com/coopdb/data/Tbcollateralpergroup.hbm.xml</value>
+<value>com/coopdb/data/Tbloanapprovaldetails.hbm.xml</value>
+<value>com/coopdb/data/Tbamlanoncountries.hbm.xml</value>
+<value>com/coopdb/data/Tbamlarequest.hbm.xml</value>
+<value>com/coopdb/data/Tbloanproductfees.hbm.xml</value>
+<value>com/coopdb/data/Tbtradereferencelos.hbm.xml</value>
+<value>com/coopdb/data/Tbaccountinfo.hbm.xml</value>
+<value>com/coopdb/data/Tbdocspercfapp.hbm.xml</value>
+<value>com/coopdb/data/Tbapprelcompvalueland.hbm.xml</value>
+<value>com/coopdb/data/Tbcomaker.hbm.xml</value>
+<value>com/coopdb/data/Tbrole.hbm.xml</value>
+<value>com/coopdb/data/Tbapprelmarketsurvey.hbm.xml</value>
+<value>com/coopdb/data/Tbglmatrixperprodcasa.hbm.xml</value>
+<value>com/coopdb/data/Tbapprelbirzone.hbm.xml</value>
+<value>com/coopdb/data/Tbtimedeposit.hbm.xml</value>
+<value>com/coopdb/data/Tbappreltechidentification.hbm.xml</value>
+<value>com/coopdb/data/Tboverridematrix.hbm.xml</value>
+<value>com/coopdb/data/Tbappreltcpbldgimprovements.hbm.xml</value>
+<value>com/coopdb/data/Tbmemberdependents.hbm.xml</value>
+<value>com/coopdb/data/Tbpolicyoperandsperitem.hbm.xml</value>
+<value>com/coopdb/data/AyalaCompany.hbm.xml</value>
+<value>com/coopdb/data/Tbsequence.hbm.xml</value>
+<value>com/coopdb/data/Tbpolicymodel.hbm.xml</value>
+<value>com/coopdb/data/Tbapprovalmatrix.hbm.xml</value>
+<value>com/coopdb/data/Tbsigcard.hbm.xml</value>
+<value>com/coopdb/data/Tbdocspertrans.hbm.xml</value>
+<value>com/coopdb/data/Tbevalmonthlyexpense.hbm.xml</value>
+<value>com/coopdb/data/Tbloanproduct.hbm.xml</value>
+<value>com/coopdb/data/Tbdocchecklist.hbm.xml</value>
+<value>com/coopdb/data/Tblstappbusiness.hbm.xml</value>
+<value>com/coopdb/data/Tbcolareamaintenance.hbm.xml</value>
+<value>com/coopdb/data/Tbcolinvestigationinst.hbm.xml</value>
+<value>com/coopdb/data/Tbcollaterallivestock.hbm.xml</value>
+<value>com/coopdb/data/Tbappraisalmachine.hbm.xml</value>
+<value>com/coopdb/data/Tbmlacperloanapp.hbm.xml</value>
+<value>com/coopdb/data/Tbloans.hbm.xml</value>
+<value>com/coopdb/data/Tbcibvr.hbm.xml</value>
+<value>com/coopdb/data/Tbprocessingdate.hbm.xml</value>
+<value>com/coopdb/data/Tbcodenamecasa.hbm.xml</value>
+<value>com/coopdb/data/Tbroleaccess.hbm.xml</value>
+<value>com/coopdb/data/Tbpaymentsched.hbm.xml</value>
+<value>com/coopdb/data/Tblosdependents.hbm.xml</value>
+<value>com/coopdb/data/Tbloanfeesperapp.hbm.xml</value>
+<value>com/coopdb/data/Tbchecksforclearing.hbm.xml</value>
+<value>com/coopdb/data/Tbpaysched.hbm.xml</value>
+<value>com/coopdb/data/Tbscoreoperandsperitem.hbm.xml</value>
+<value>com/coopdb/data/Tblockamount.hbm.xml</value>
+<value>com/coopdb/data/Tbappautomarketsurvey.hbm.xml</value>
+<value>com/coopdb/data/Tbemailparams.hbm.xml</value>
+<value>com/coopdb/data/Tbmember.hbm.xml</value>
+<value>com/coopdb/data/Tblstapppersonalreference.hbm.xml</value>
+<value>com/coopdb/data/Tbbicmap.hbm.xml</value>
+<value>com/coopdb/data/Tbdocspercf.hbm.xml</value>
+<value>com/coopdb/data/Tbcollector.hbm.xml</value>
+<value>com/coopdb/data/Tbchangeprofilehistory.hbm.xml</value>
+<value>com/coopdb/data/Tbbirequest.hbm.xml</value>
+<value>com/coopdb/data/Tbevalloans.hbm.xml</value>
+<value>com/coopdb/data/Tbpolicyitems.hbm.xml</value>
+<value>com/coopdb/data/Tbamlaindividual.hbm.xml</value>
+<value>com/coopdb/data/Tbmemberdosrisubaffiliates.hbm.xml</value>
+<value>com/coopdb/data/Tbcheckbook.hbm.xml</value>
+<value>com/coopdb/data/Tbbillspayment.hbm.xml</value>
+<value>com/coopdb/data/Tbproductperbos.hbm.xml</value>
+<value>com/coopdb/data/Tbfieldparams.hbm.xml</value>
+<value>com/coopdb/data/Tbrates.hbm.xml</value>
+<value>com/coopdb/data/Tbdefaultusers.hbm.xml</value>
+<value>com/coopdb/data/Tbworkflowprocess.hbm.xml</value>
+<value>com/coopdb/data/Tbvault.hbm.xml</value>
+<value>com/coopdb/data/Tbappdosri.hbm.xml</value>
+<value>com/coopdb/data/Tbdeductions.hbm.xml</value>
+<value>com/coopdb/data/Tblstexistingloansother.hbm.xml</value>
+<value>com/coopdb/data/Tbscorecriteria.hbm.xml</value>
+<value>com/coopdb/data/Tbmemberemployment.hbm.xml</value>
+<value>com/coopdb/data/Tbgovernmentcontribution.hbm.xml</value>
+<value>com/coopdb/data/Tbcoa.hbm.xml</value>
+<value>com/coopdb/data/Tbblacklistmain.hbm.xml</value>
+<value>com/coopdb/data/Tbpledge.hbm.xml</value>
+<value>com/coopdb/data/Tbdepositproductinterestrate.hbm.xml</value>
+<value>com/coopdb/data/Tbappreltcpparkingslot.hbm.xml</value>
+<value>com/coopdb/data/Tbapprelsummary.hbm.xml</value>
+<value>com/coopdb/data/Tbcollateraldetailsauto.hbm.xml</value>
+<value>com/coopdb/data/Tbcodetablecasa.hbm.xml</value>
+<value>com/coopdb/data/Tbloanoffset.hbm.xml</value>
+<value>com/coopdb/data/Tbgroup.hbm.xml</value>
+<value>com/coopdb/data/Tbmembercreditcardinfo.hbm.xml</value>
+<value>com/coopdb/data/Tbhousebank.hbm.xml</value>
+<value>com/coopdb/data/Tbvehicle.hbm.xml</value>
+<value>com/coopdb/data/Tbhistory.hbm.xml</value>
+<value>com/coopdb/data/Tbinvestigationinst.hbm.xml</value>
+<value>com/coopdb/data/Tbcibankcheck.hbm.xml</value>
+<value>com/coopdb/data/Tblstappdependents.hbm.xml</value>
+<value>com/coopdb/data/Tbcollateralperprod.hbm.xml</value>
+<value>com/coopdb/data/Tbdeposit.hbm.xml</value>
+<value>com/coopdb/data/Tbpsoccodes.hbm.xml</value>
+<value>com/coopdb/data/Tbauditevents.hbm.xml</value>
+<value>com/coopdb/data/Tbtellerslimit.hbm.xml</value>
+<value>com/coopdb/data/Tblstappemployment.hbm.xml</value>
+<value>com/coopdb/data/Tbappfinancialinfo.hbm.xml</value>
+<value>com/coopdb/data/Tbcompany.hbm.xml</value>
+<value>com/coopdb/data/Tbotheraccounts.hbm.xml</value>
+<value>com/coopdb/data/Tbcooperative.hbm.xml</value>
+<value>com/coopdb/data/Tbdocuments.hbm.xml</value>
+<value>com/coopdb/data/Tbterminal.hbm.xml</value>
+<value>com/coopdb/data/Tblmslogs.hbm.xml</value>
+<value>com/coopdb/data/Tbsysparam.hbm.xml</value>
+<value>com/coopdb/data/Tbappcreditcardinfo.hbm.xml</value>
+<value>com/coopdb/data/Tbappautocomparablelisting.hbm.xml</value>
+<value>com/coopdb/data/Tbpasswordbank.hbm.xml</value>
+<value>com/coopdb/data/Tbappbusiness.hbm.xml</value>
+<value>com/coopdb/data/Tbappreltavparkingslot.hbm.xml</value>
+<value>com/coopdb/data/Tbdocpertransactiontype.hbm.xml</value>
+<value>com/coopdb/data/Tbpolicygroup.hbm.xml</value>
+<value>com/coopdb/data/Tblstsourceincome.hbm.xml</value>
+<value>com/coopdb/data/Tbcollateralgroupmain.hbm.xml</value>
+<value>com/coopdb/data/Tbcodename.hbm.xml</value>
+<value>com/coopdb/data/Tbholdamtcheck.hbm.xml</value>
+<value>com/coopdb/data/Tbbiamlawatchlist.hbm.xml</value>
+<value>com/coopdb/data/Tbcipdrnresidence.hbm.xml</value>
+<value>com/coopdb/data/Tbapprovedcf.hbm.xml</value>
+<value>com/coopdb/data/Tbcollectionarea.hbm.xml</value>
+<value>com/coopdb/data/Tbloanprodmembertype.hbm.xml</value>
+<value>com/coopdb/data/Tbbapnfis.hbm.xml</value>
+<value>com/coopdb/data/Tboverriderequest.hbm.xml</value>
+<value>com/coopdb/data/Tblntxhist.hbm.xml</value>
+<value>com/coopdb/data/Tbmemberfinancialinfo.hbm.xml</value>
+<value>com/coopdb/data/Tbglentriesperproduct.hbm.xml</value>
+<value>com/coopdb/data/Tbdatabaseparams.hbm.xml</value>
+<value>com/coopdb/data/Tbdocsperproduct.hbm.xml</value>
+<value>com/coopdb/data/Tbamountrange.hbm.xml</value>
+<value>com/coopdb/data/Tbloanfin.hbm.xml</value>
+<value>com/coopdb/data/Tbappraisalreportmain.hbm.xml</value>
+<value>com/coopdb/data/Tbholiday.hbm.xml</value>
+<value>com/coopdb/data/Tbchapter.hbm.xml</value>
+<value>com/coopdb/data/Tbappraisalatm.hbm.xml</value>
+<value>com/coopdb/data/Tbevalmonthlyincome.hbm.xml</value>
+<value>com/coopdb/data/Tbblacklistcorporate.hbm.xml</value>
+<value>com/coopdb/data/Tbcolappraisalrequest.hbm.xml</value>
+<value>com/coopdb/data/Tbdepdetail.hbm.xml</value>
+<value>com/coopdb/data/Tbevalci.hbm.xml</value>
+<value>com/coopdb/data/Penalty.hbm.xml</value>
+<value>com/coopdb/data/Tbcidependents.hbm.xml</value>
+<value>com/coopdb/data/Tbappraisalauto.hbm.xml</value>
+<value>com/coopdb/data/Tbpassbookinventory.hbm.xml</value>
+<value>com/coopdb/data/Tbloanrepaymentscheme.hbm.xml</value>
+<value>com/coopdb/data/Tbevalreport.hbm.xml</value>
+<value>com/coopdb/data/Tbcoamaintenance.hbm.xml</value>
+<value>com/coopdb/data/Tbloanbuyout.hbm.xml</value>
+<value>com/coopdb/data/Tbcashposition.hbm.xml</value>
+<value>com/coopdb/data/Tbscoreitems.hbm.xml</value>
+<value>com/coopdb/data/Tblstbankaccounts.hbm.xml</value>
+<value>com/coopdb/data/Tbapprellienencumbrance.hbm.xml</value>
+<value>com/coopdb/data/Tbpayslipadjustment.hbm.xml</value>
+<value>com/coopdb/data/Tbglmatrix.hbm.xml</value>
+<value>com/coopdb/data/Tblntxrnl.hbm.xml</value>
+<value>com/coopdb/data/Tbcireportmain.hbm.xml</value>
+<value>com/coopdb/data/Tbmctxjrnl.hbm.xml</value>
+<value>com/coopdb/data/Tblosmain.hbm.xml</value>
+<value>com/coopdb/data/Tbapprellanddata.hbm.xml</value>
+<value>com/coopdb/data/Tbgrouppayment.hbm.xml</value>
+<value>com/coopdb/data/Tbpepq3.hbm.xml</value>
+<value>com/coopdb/data/Tbcipdrn.hbm.xml</value>
+<value>com/coopdb/data/Tbevalbi.hbm.xml</value>
+<value>com/coopdb/data/Tbbatchfile.hbm.xml</value>
+<value>com/coopdb/data/Tbcitraderefcorp.hbm.xml</value>
+<value>com/coopdb/data/Breakdownfix.hbm.xml</value>
+<value>com/coopdb/data/Tbloanreleaseinst.hbm.xml</value>
+<value>com/coopdb/data/Tbmanagementlos.hbm.xml</value>
+<value>com/coopdb/data/Tbbillingcutoffperprod.hbm.xml</value>
+<value>com/coopdb/data/Tbusermember.hbm.xml</value>
+<value>com/coopdb/data/Tbinvestigationresults.hbm.xml</value>
+<value>com/coopdb/data/Tblntxjrnl.hbm.xml</value>
+<value>com/coopdb/data/Tbamlalistmain.hbm.xml</value>
+<value>com/coopdb/data/Tbmembershiptypeperbos.hbm.xml</value>
+<value>com/coopdb/data/Tbcipdrnverhighlights.hbm.xml</value>
+<value>com/coopdb/data/Tbfintxjrnl.hbm.xml</value>
+<value>com/coopdb/data/Tbbicic.hbm.xml</value>
+<value>com/coopdb/data/Tbapa.hbm.xml</value>
+<value>com/coopdb/data/Tbmultipletransaction.hbm.xml</value>
+<value>com/coopdb/data/Tbcievr.hbm.xml</value>
+<value>com/coopdb/data/Tblstappcorporate.hbm.xml</value>
+<value>com/coopdb/data/Tbapd.hbm.xml</value>
+<value>com/coopdb/data/Tbamortizedattachment.hbm.xml</value>
+<value>com/coopdb/data/Tbproductpercompany.hbm.xml</value>
+<value>com/coopdb/data/Tbcollectormaintenance.hbm.xml</value>
+<value>com/coopdb/data/Tboverageshortage.hbm.xml</value>
+<value>com/coopdb/data/Tbaccessrights.hbm.xml</value>
+<value>com/coopdb/data/Tbscoremodel.hbm.xml</value>
+<value>com/coopdb/data/Tbuseraccess.hbm.xml</value>
+<value>com/coopdb/data/Tbscorematrixpermodel.hbm.xml</value>
+<value>com/coopdb/data/Tbagents.hbm.xml</value>
+<value>com/coopdb/data/Tbglmatrixperprod.hbm.xml</value>
+<value>com/coopdb/data/Tbcirequest.hbm.xml</value>
+<value>com/coopdb/data/Tbapilogs.hbm.xml</value>
+<value>com/coopdb/data/Tbappemployment.hbm.xml</value>
+<value>com/coopdb/data/Tbaccountingentries.hbm.xml</value>
+<value>com/coopdb/data/Tbdeskciactivity.hbm.xml</value>
+<value>com/coopdb/data/Tbcollateralmain.hbm.xml</value>
+<value>com/coopdb/data/Tbriskprofile.hbm.xml</value>
+<value>com/coopdb/data/Tbglmatrixcasa.hbm.xml</value>
+<value>com/coopdb/data/Tbupdateprofilerequest.hbm.xml</value>
+<value>com/coopdb/data/Tbcollateralrel.hbm.xml</value>
+<value>com/coopdb/data/Tbevaldeposit.hbm.xml</value>
+<value>com/coopdb/data/Tbfreezeaccount.hbm.xml</value>
+<value>com/coopdb/data/Tbunit.hbm.xml</value>
+<value>com/coopdb/data/Tbappreltcpland.hbm.xml</value>
+<value>com/coopdb/data/Tbcollectorpersubarea.hbm.xml</value>
+<value>com/coopdb/data/Tbbulkfin.hbm.xml</value>
+<value>com/coopdb/data/Tbworkflow.hbm.xml</value>
+<value>com/coopdb/data/Tbmemberbeneficiary.hbm.xml</value>
+<value>com/coopdb/data/Tbfintxchecklist.hbm.xml</value>
+<value>com/coopdb/data/Loanpayments930to1001.hbm.xml</value>
+<value>com/coopdb/data/Tbmemberdosri.hbm.xml</value>
+<value>com/coopdb/data/Tbapprelcomparablelisting.hbm.xml</value>
+<value>com/coopdb/data/Tbglentriesperproductcasa.hbm.xml</value>
+<value>com/coopdb/data/Tbinterestrate.hbm.xml</value>
+<value>com/coopdb/data/Tbblacklistindividual.hbm.xml</value>
+<value>com/coopdb/data/Tbapprelcompvaluecondo.hbm.xml</value>
+<value>com/coopdb/data/Tbcustomerrelationshiplos.hbm.xml</value>
+<value>com/coopdb/data/Tbreferror.hbm.xml</value>
+<value>com/coopdb/data/Tbappraisallivestock.hbm.xml</value>
+<value>com/coopdb/data/Tbappdependents.hbm.xml</value>
+<value>com/coopdb/data/Tblstcomakers.hbm.xml</value>
+<value>com/coopdb/data/Tbloscorporate.hbm.xml</value>
+<value>com/coopdb/data/Tbresign.hbm.xml</value>
+<value>com/coopdb/data/Tbteams.hbm.xml</value>
+<value>com/coopdb/data/Tbtransaction.hbm.xml</value>
+<value>com/coopdb/data/Tbcollateralatm.hbm.xml</value>
+<value>com/coopdb/data/Tbemployee.hbm.xml</value>
+<value>com/coopdb/data/Tbpepinfo.hbm.xml</value>
+<value>com/coopdb/data/Tbmembershipapp.hbm.xml</value>
+<value>com/coopdb/data/Tbcitradecheck.hbm.xml</value>
+<value>com/coopdb/data/Tbemailformats.hbm.xml</value>
+<value>com/coopdb/data/Tbaudittrail.hbm.xml</value>
+<value>com/coopdb/data/Tblogs.hbm.xml</value>
+<value>com/coopdb/data/Tbfilehistory.hbm.xml</value>
+<value>com/coopdb/data/Tbtableparams.hbm.xml</value>
+<value>com/coopdb/data/Tbtdc.hbm.xml</value>
+<value>com/coopdb/data/Tbapprelcompvaluebldg.hbm.xml</value>
+<value>com/coopdb/data/Tblstapp.hbm.xml</value>
+<value>com/coopdb/data/Tbcolsubareamaintenance.hbm.xml</value>
+<value>com/coopdb/data/Tbmlacperproduct.hbm.xml</value>
+<value>com/coopdb/data/Tbcicreditcheck.hbm.xml</value>
+<value>com/coopdb/data/Tbglentriescasa.hbm.xml</value>
+<value>com/coopdb/data/Tbmembercompany.hbm.xml</value>
+<value>com/coopdb/data/Tbapprelopinionsurvey.hbm.xml</value>
+<value>com/coopdb/data/Tbcollateralmachineries.hbm.xml</value>
+<value>com/coopdb/data/Tbloancollateral.hbm.xml</value>
+<value>com/coopdb/data/Tbnotes.hbm.xml</value>
+<value>com/coopdb/data/Tbprodmatrix.hbm.xml</value>
+<value>com/coopdb/data/Tbproductpercoop.hbm.xml</value>
+<value>com/coopdb/data/Tbpsiccodes.hbm.xml</value>
+<value>com/coopdb/data/Tbsbl.hbm.xml</value>
+<value>com/coopdb/data/Beneficiary.hbm.xml</value>
+<value>com/coopdb/data/Tblosemployment.hbm.xml</value>
+<value>com/coopdb/data/Tbbranch.hbm.xml</value>
+<value>com/coopdb/data/Tbbanks.hbm.xml</value>
+<value>com/coopdb/data/Tbothercontactslos.hbm.xml</value>
+<value>com/coopdb/data/Tbappreltcpcondo.hbm.xml</value>
+<value>com/coopdb/data/Tbaccountofficer.hbm.xml</value>
+<value>com/coopdb/data/Tbmemberrelationship.hbm.xml</value>
+<value>com/coopdb/data/Tbmerchant.hbm.xml</value>
+<value>com/coopdb/data/Tbblacklistrequest.hbm.xml</value>
+<value>com/coopdb/data/Tbirregsched.hbm.xml</value>
+<value>com/coopdb/data/Tbevalincomereport.hbm.xml</value>
+<value>com/coopdb/data/Tbforextx.hbm.xml</value>
+<value>com/coopdb/data/Tbpdc.hbm.xml</value>
+<value>com/coopdb/data/Tbevaldetails.hbm.xml</value>
+<value>com/coopdb/data/Tbaccountingentriescasainterbranch.hbm.xml</value>
+<value>com/coopdb/data/Tbcollateraldeposits.hbm.xml</value>
+<value>com/coopdb/data/Tbdeskcidetails.hbm.xml</value>
+<value>com/coopdb/data/Tbcollateralauto.hbm.xml</value>
+<value>com/coopdb/data/Tbsmtp.hbm.xml</value>
+<value>com/coopdb/data/Tbdepositcif.hbm.xml</value>
+<value>com/coopdb/data/Tbdocsperapplication.hbm.xml</value>
+<value>com/coopdb/data/Tbcountry.hbm.xml</value>
+<value>com/coopdb/data/Tbpassbookissuance.hbm.xml</value>
+<value>com/coopdb/data/Tbmembereventschecklist.hbm.xml</value>
+<value>com/coopdb/data/Tbmiscellaneous.hbm.xml</value>
+<value>com/coopdb/data/Tbmemberbusiness.hbm.xml</value>
+<value>com/coopdb/data/Tbapaotherincomeexpense.hbm.xml</value>
+<value>com/coopdb/data/Tblosindividual.hbm.xml</value>
+<value>com/coopdb/data/Tbproperties.hbm.xml</value>
+<value>com/coopdb/data/Tbcasafeesandcharges.hbm.xml</value>
+<value>com/coopdb/data/Tbnetamt.hbm.xml</value>
+<value>com/coopdb/data/Tboutreturn.hbm.xml</value>
+<value>com/coopdb/data/Tbappraisalrel.hbm.xml</value>
+<value>com/coopdb/data/Tbloandeduction.hbm.xml</value>
+<value>com/coopdb/data/Tbtdcprint.hbm.xml</value>
+<value>com/coopdb/data/Tbcfmaintenance.hbm.xml</value>
+<value>com/coopdb/data/Tbappraisaldeposits.hbm.xml</value>
+<value>com/coopdb/data/Tbsecurityparams.hbm.xml</value>
+<value>com/coopdb/data/Tblstappindividual.hbm.xml</value>
+<value>com/coopdb/data/Tbmanagerscheck.hbm.xml</value>
+<value>com/coopdb/data/Tblstcreditcardinfo.hbm.xml</value>
+<value>com/coopdb/data/Tbcollectionmanagement.hbm.xml</value>
+<value>com/coopdb/data/Tbgeneraldocs.hbm.xml</value>
+<value>com/coopdb/data/Tbintratebyterm.hbm.xml</value>
+<value>com/coopdb/data/Tbcashpositiondenom.hbm.xml</value>
+<value>com/coopdb/data/Tbscoresubcriteria.hbm.xml</value>
+<value>com/coopdb/data/Tbloanschemeperprod.hbm.xml</value>
+
+<value>com/coopdb/data/Tbbireportmain.ql.xml</value>
+<value>com/coopdb/data/app-queries.ql.xml</value>
+
+            </list>
+        </property>
+
+    </bean>
+
+
+    <!-- the data service bean instance is injected into the service bean -->
+    <bean 
+        id="COOPDBDataService" 
+        class="com.wavemaker.runtime.data.spring.SpringDataServiceManager"
+        lazy-init="true">
+        <constructor-arg>
+            <!-- the value of the "name" property of the SessionFactory -->
+            <value>COOPDB</value>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="COOPDBHibernateTemplate"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="COOPDBTxMgr"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="COOPDBTaskMgr"/>
+        </constructor-arg>
+        <constructor-arg>
+            <map>
+                <entry key="useIndividualCRUDOperations" value="false"/>
+                <entry key="refreshEntities" value=""/> 
+            </map>
+        </constructor-arg>
+    </bean>
+
+
+    <bean 
+        id="COOPDBTaskMgr"
+        class="com.wavemaker.runtime.data.DefaultTaskManager"
+        lazy-init="true"/>
+
+    <bean class="com.wavemaker.runtime.service.events.EventWire"
+        lazy-init="false">
+        <property name="serviceWire" ref="COOPDBServiceWire"/>
+        <property name="eventListener">
+            <bean class="com.wavemaker.runtime.data.DataServiceEventListener"/>
+        </property>
+    </bean>
+
+    <bean id="COOPDBServiceWire"
+        class="com.wavemaker.runtime.service.reflect.ReflectServiceWire"
+        lazy-init="false" scope="singleton">
+        <property name="serviceId" value="COOPDB"/>
+        <property name="serviceType" ref="DataService"/>
+    </bean>
+
+</beans>

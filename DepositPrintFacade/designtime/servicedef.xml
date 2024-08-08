@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="DepositPrintFacade" class="com.etel.depositprint.DepositPrintFacade" CRUDService="false" type="JavaService" springFile="DepositPrintFacade.spring.xml">
+    <operation name="printDocSlip">
+        <parameter name="form" typeRef="com.etel.depositprint.form.ValidationSlipForm" isList="false"/>
+        <return typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.depositprint.form.ValidationSlipForm" name="ValidationSlipForm" supportsQuickData="false">
+            <element name="accountname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txamount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="txname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txrefno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

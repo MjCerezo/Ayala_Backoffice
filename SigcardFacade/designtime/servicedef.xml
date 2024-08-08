@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="SigcardFacade" class="com.etel.sigcard.SigcardFacade" CRUDService="false" type="JavaService" springFile="SigcardFacade.spring.xml">
+    <operation name="bulkAccountCreation">
+        <parameter name="filename" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbdepositcif" isList="true"/>
+    </operation>
+    <operation name="getBatchList">
+        <parameter name="batchstatus" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbbatchfile" isList="true"/>
+    </operation>
+    <operation name="print">
+        <parameter name="data" typeRef="java.lang.String" isList="false"/>
+        <parameter name="type" typeRef="java.lang.Integer" isList="false"/>
+    </operation>
+    <operation name="readBulk">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveBulkFile">
+        <parameter name="data" typeRef="com.coopdb.data.Tbbatchfile" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveDepositSigcard">
+        <parameter name="dep" typeRef="com.coopdb.data.Tbdeposit" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveSigcard">
+        <parameter name="filename" typeRef="java.lang.String" isList="false"/>
+        <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="viewSigByAcctNo">
+        <parameter name="acctNo" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="viewSigcard">
+        <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

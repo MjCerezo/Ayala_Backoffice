@@ -1,0 +1,48 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbcifmergerequest" table="TBCIFMERGEREQUEST" catalog="CIFSDBUAT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="requestid" type="string">
+            <column name="requestid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="maincifno" type="string">
+            <column name="maincifno" length="50"/>
+        </property>
+        <property name="fullname" type="string">
+            <column name="fullname" length="250"/>
+        </property>
+        <property name="customertype" type="string">
+            <column name="customertype" length="50"/>
+        </property>
+        <property name="mergedcifno" type="string">
+            <column name="mergedcifno" length="50"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="50"/>
+        </property>
+        <property name="requestdate" type="timestamp">
+            <column name="requestdate" length="23"/>
+        </property>
+        <property name="requeststatus" type="string">
+            <column name="requeststatus" length="50"/>
+        </property>
+        <property name="approvedby" type="string">
+            <column name="approvedby" length="50"/>
+        </property>
+        <property name="dateapproved" type="timestamp">
+            <column name="dateapproved" length="23"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="250"/>
+        </property>
+        <property name="approverremarks" type="string">
+            <column name="approverremarks" length="250"/>
+        </property>
+        <property name="teamcode" type="string">
+            <column name="teamcode" length="50"/>
+        </property>
+        <property name="requestedby" type="string">
+            <column name="requestedby" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

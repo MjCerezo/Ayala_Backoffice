@@ -1,0 +1,376 @@
+<?xml version="1.0"?>
+
+<!-- Generated 10/13/2020 10:21:24
+
+Configuration for 'LOANSDB' database service
+
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+
+    <bean 
+        id="LOANSDB"
+        class="com.loansdb.LOANSDB"
+        scope="singleton"
+        lazy-init="true">
+        <property name="dataServiceManager">
+            <ref bean="LOANSDBDataService"/>
+        </property>
+        <property name="taskManager">
+            <ref bean="LOANSDBTaskMgr"/>
+        </property>
+    </bean>
+
+
+    <bean 
+        class="com.wavemaker.runtime.data.spring.WMPropertyPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        <property name="locations">
+            <list>
+                <value>classpath:LOANSDB.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean 
+        id="LOANSDBDataSource"
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
+        lazy-init="true">
+        <property name="driverClassName" value="${LOANSDB.driverClassName}"/>
+        <property name="url" value="${LOANSDB.connectionUrl}"/>
+        <property name="username" value="${LOANSDB.username}"/>
+        <property name="password" value="${LOANSDB.password}"/>
+    </bean>
+
+
+    <bean 
+        id="LOANSDBTxMgr" 
+        class="org.springframework.orm.hibernate3.HibernateTransactionManager"
+        lazy-init="true">
+        <property name="sessionFactory">
+            <ref bean="LOANSDBSessionFactory"/>
+        </property>
+    </bean>
+
+
+    <bean 
+        id="LOANSDBHibernateTemplate"
+        class="org.springframework.orm.hibernate3.HibernateTemplate"
+        lazy-init="true">
+        <property name="sessionFactory"> 
+            <ref bean="LOANSDBSessionFactory"/>
+        </property>
+    </bean>  
+
+
+    <bean 
+        id="LOANSDBSessionFactory" 
+        class="com.wavemaker.runtime.data.spring.ConfigurationAndSessionFactoryBean"
+        lazy-init="true">
+
+        <!-- A unique name for this SessionFactory's configuration -->
+        <property name="name" value="LOANSDB"/>
+        <property name="dataSource" ref="LOANSDBDataSource"/>
+
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${LOANSDB.dialect}</prop>
+                <prop key="hibernate.transaction.factory_class">
+                    org.hibernate.transaction.JDBCTransactionFactory
+                </prop>
+                <prop key="hibernate.current_session_context_class">thread</prop>
+                
+            </props> 
+        </property>
+
+        <property name="mappingResources">
+            <list>
+
+<value>com/loansdb/data/Tbappreltcpland.hbm.xml</value>
+<value>com/loansdb/data/Tbcompany.hbm.xml</value>
+<value>com/loansdb/data/Tbapprelbirzone.hbm.xml</value>
+<value>com/loansdb/data/Tbglmatrix.hbm.xml</value>
+<value>com/loansdb/data/Tbauditevents.hbm.xml</value>
+<value>com/loansdb/data/Tbloanreleaseinst.hbm.xml</value>
+<value>com/loansdb/data/Tbcfcovenants.hbm.xml</value>
+<value>com/loansdb/data/Tbcollateralperprod.hbm.xml</value>
+<value>com/loansdb/data/Tbapprellegaldescproperty.hbm.xml</value>
+<value>com/loansdb/data/Tbevaldeposit.hbm.xml</value>
+<value>com/loansdb/data/Tbcipdrnverhighlights.hbm.xml</value>
+<value>com/loansdb/data/Tbcibvr.hbm.xml</value>
+<value>com/loansdb/data/Tbreceivablesmain.hbm.xml</value>
+<value>com/loansdb/data/Lsttxjrnl.hbm.xml</value>
+<value>com/loansdb/data/Tbloanproduct.hbm.xml</value>
+<value>com/loansdb/data/Tbaudittrail.hbm.xml</value>
+<value>com/loansdb/data/Tbloanoffset.hbm.xml</value>
+<value>com/loansdb/data/Tbdocsperbusinesstype.hbm.xml</value>
+<value>com/loansdb/data/Tbscoreresults.hbm.xml</value>
+<value>com/loansdb/data/Tbdocspertrans.hbm.xml</value>
+<value>com/loansdb/data/Tbapprelopinionsurvey.hbm.xml</value>
+<value>com/loansdb/data/Tbhistory.hbm.xml</value>
+<value>com/loansdb/data/Tbappreltechidentification.hbm.xml</value>
+<value>com/loansdb/data/Tbevalincomereport.hbm.xml</value>
+<value>com/loansdb/data/Tbaccreditedpartner.hbm.xml</value>
+<value>com/loansdb/data/Tbcycleperloanscheme.hbm.xml</value>
+<value>com/loansdb/data/Tbgeneraldocs.hbm.xml</value>
+<value>com/loansdb/data/Tbevalappraisal.hbm.xml</value>
+<value>com/loansdb/data/Tbappraisalrel.hbm.xml</value>
+<value>com/loansdb/data/Tbevalreport.hbm.xml</value>
+<value>com/loansdb/data/Tbcovenants.hbm.xml</value>
+<value>com/loansdb/data/Tbscorematrixpermodel.hbm.xml</value>
+<value>com/loansdb/data/Tbdocspercf.hbm.xml</value>
+<value>com/loansdb/data/Tblamcorporateprofile.hbm.xml</value>
+<value>com/loansdb/data/Tbtableparams.hbm.xml</value>
+<value>com/loansdb/data/Tbcftermconditions.hbm.xml</value>
+<value>com/loansdb/data/Tbcitradecheck.hbm.xml</value>
+<value>com/loansdb/data/Tbcireceivables.hbm.xml</value>
+<value>com/loansdb/data/Tbemailparams.hbm.xml</value>
+<value>com/loansdb/data/Tbvehicle.hbm.xml</value>
+<value>com/loansdb/data/Tbgroup.hbm.xml</value>
+<value>com/loansdb/data/Tbapprovedlamdms.hbm.xml</value>
+<value>com/loansdb/data/Tblamothertermconditions.hbm.xml</value>
+<value>com/loansdb/data/Tbbiamlawatchlist.hbm.xml</value>
+<value>com/loansdb/data/Tbfssection.hbm.xml</value>
+<value>com/loansdb/data/Tbpolicyitems.hbm.xml</value>
+<value>com/loansdb/data/Tbcreditscoredetailedresults.hbm.xml</value>
+<value>com/loansdb/data/Tbcolinvestigationinst.hbm.xml</value>
+<value>com/loansdb/data/Tbapprovedcftermconditions.hbm.xml</value>
+<value>com/loansdb/data/Tbevalmonthlyincome.hbm.xml</value>
+<value>com/loansdb/data/Tbcollateralpergroup.hbm.xml</value>
+<value>com/loansdb/data/Tbapprovedcf.hbm.xml</value>
+<value>com/loansdb/data/Tbscoredatabaseparams.hbm.xml</value>
+<value>com/loansdb/data/Tbcollateraldetailsauto.hbm.xml</value>
+<value>com/loansdb/data/Tbdocspercfapp.hbm.xml</value>
+<value>com/loansdb/data/Tbcisecdirectors.hbm.xml</value>
+<value>com/loansdb/data/Tbaccessrights.hbm.xml</value>
+<value>com/loansdb/data/Tbirregsched.hbm.xml</value>
+<value>com/loansdb/data/Tbloancollateralgroup.hbm.xml</value>
+<value>com/loansdb/data/Tbfsgroupoperand.hbm.xml</value>
+<value>com/loansdb/data/Tbpolicyerrorresults.hbm.xml</value>
+<value>com/loansdb/data/Tbcollateralgroupmain.hbm.xml</value>
+<value>com/loansdb/data/Tbfeesandcharges.hbm.xml</value>
+<value>com/loansdb/data/Tbdocprintingpercf.hbm.xml</value>
+<value>com/loansdb/data/Tbcollateralrel.hbm.xml</value>
+<value>com/loansdb/data/Tbevalbi.hbm.xml</value>
+<value>com/loansdb/data/Tbuserroles.hbm.xml</value>
+<value>com/loansdb/data/Tbfssubsection.hbm.xml</value>
+<value>com/loansdb/data/Tbcfcompany.hbm.xml</value>
+<value>com/loansdb/data/Tbbicic.hbm.xml</value>
+<value>com/loansdb/data/Tblamcovenants.hbm.xml</value>
+<value>com/loansdb/data/Tbloanprodpercf.hbm.xml</value>
+<value>com/loansdb/data/Tbworkflow.hbm.xml</value>
+<value>com/loansdb/data/Tbaccountinfo.hbm.xml</value>
+<value>com/loansdb/data/Tblamrationalerecomm.hbm.xml</value>
+<value>com/loansdb/data/Tbcollateralmain.hbm.xml</value>
+<value>com/loansdb/data/Tbgrouppayment.hbm.xml</value>
+<value>com/loansdb/data/Tbapprellienencumbrance.hbm.xml</value>
+<value>com/loansdb/data/Tbappraisalmachine.hbm.xml</value>
+<value>com/loansdb/data/Tbevalci.hbm.xml</value>
+<value>com/loansdb/data/Tbpolicyoperandsperitem.hbm.xml</value>
+<value>com/loansdb/data/Tbcirequest.hbm.xml</value>
+<value>com/loansdb/data/Tbscorecriteria.hbm.xml</value>
+<value>com/loansdb/data/Tbapprelsummary.hbm.xml</value>
+<value>com/loansdb/data/Tbdocaffiant.hbm.xml</value>
+<value>com/loansdb/data/Tbpolicygroup.hbm.xml</value>
+<value>com/loansdb/data/Tbholiday.hbm.xml</value>
+<value>com/loansdb/data/Tblamloandetails.hbm.xml</value>
+<value>com/loansdb/data/Tbglentriesperproduct.hbm.xml</value>
+<value>com/loansdb/data/Tbbiactivity.hbm.xml</value>
+<value>com/loansdb/data/Tbreceivables.hbm.xml</value>
+<value>com/loansdb/data/Tbcibankcheck.hbm.xml</value>
+<value>com/loansdb/data/Tbcountry.hbm.xml</value>
+<value>com/loansdb/data/Tbcievr.hbm.xml</value>
+<value>com/loansdb/data/Tbcfcoobligor.hbm.xml</value>
+<value>com/loansdb/data/Tblamcoobligor.hbm.xml</value>
+<value>com/loansdb/data/Tblineamendmentinst.hbm.xml</value>
+<value>com/loansdb/data/Tbapprovalmatrix.hbm.xml</value>
+<value>com/loansdb/data/Tbpolicymodel.hbm.xml</value>
+<value>com/loansdb/data/Tbcollateralsecurities.hbm.xml</value>
+<value>com/loansdb/data/Tbfieldparams.hbm.xml</value>
+<value>com/loansdb/data/Tbuseraccess.hbm.xml</value>
+<value>com/loansdb/data/Tbdocdetails.hbm.xml</value>
+<value>com/loansdb/data/Tbscoreoperandsperitem.hbm.xml</value>
+<value>com/loansdb/data/Tbcfdetails.hbm.xml</value>
+<value>com/loansdb/data/Tbfsoperation.hbm.xml</value>
+<value>com/loansdb/data/Tbdocprintingpercfapp.hbm.xml</value>
+<value>com/loansdb/data/Tbcireportmain.hbm.xml</value>
+<value>com/loansdb/data/Tbfsoperand.hbm.xml</value>
+<value>com/loansdb/data/Tbappautocomparablelisting.hbm.xml</value>
+<value>com/loansdb/data/Tbapprelcomparablelisting.hbm.xml</value>
+<value>com/loansdb/data/Tbbicmap.hbm.xml</value>
+<value>com/loansdb/data/Tbrole.hbm.xml</value>
+<value>com/loansdb/data/Tblntxrnl.hbm.xml</value>
+<value>com/loansdb/data/Tbappraisalreportmain.hbm.xml</value>
+<value>com/loansdb/data/Tbappreltcpcondo.hbm.xml</value>
+<value>com/loansdb/data/Tbproperties.hbm.xml</value>
+<value>com/loansdb/data/Tbapprellanddata.hbm.xml</value>
+<value>com/loansdb/data/Tbappraisalsecurities.hbm.xml</value>
+<value>com/loansdb/data/Tbcidependents.hbm.xml</value>
+<value>com/loansdb/data/Tbcodename.hbm.xml</value>
+<value>com/loansdb/data/Tbscoreitems.hbm.xml</value>
+<value>com/loansdb/data/Tbteams.hbm.xml</value>
+<value>com/loansdb/data/Tbnotes.hbm.xml</value>
+<value>com/loansdb/data/Tblamborrowerprofile.hbm.xml</value>
+<value>com/loansdb/data/Tbdocsperapplication.hbm.xml</value>
+<value>com/loansdb/data/Tbcolappraisalrequest.hbm.xml</value>
+<value>com/loansdb/data/Lstmainfin.hbm.xml</value>
+<value>com/loansdb/data/Tbapprovedcfcompany.hbm.xml</value>
+<value>com/loansdb/data/Tbintratebyterm.hbm.xml</value>
+<value>com/loansdb/data/Tbloans.hbm.xml</value>
+<value>com/loansdb/data/Tbcollateralauto.hbm.xml</value>
+<value>com/loansdb/data/Tblstapp.hbm.xml</value>
+<value>com/loansdb/data/Tbcollateralmachineries.hbm.xml</value>
+<value>com/loansdb/data/Tblntxjrnl.hbm.xml</value>
+<value>com/loansdb/data/Tbloanfin.hbm.xml</value>
+<value>com/loansdb/data/Tbscoresubcriteria.hbm.xml</value>
+<value>com/loansdb/data/Tbdeskcidetails.hbm.xml</value>
+<value>com/loansdb/data/Tblamsublimits.hbm.xml</value>
+<value>com/loansdb/data/Tbcfinsurancedetails.hbm.xml</value>
+<value>com/loansdb/data/Tbsecurityparams.hbm.xml</value>
+<value>com/loansdb/data/Tbsmtp.hbm.xml</value>
+<value>com/loansdb/data/Tbroleaccess.hbm.xml</value>
+<value>com/loansdb/data/Tbappraisalauto.hbm.xml</value>
+<value>com/loansdb/data/Tbloanfeesperapp.hbm.xml</value>
+<value>com/loansdb/data/Tbcoa.hbm.xml</value>
+<value>com/loansdb/data/Tblamriskprofile.hbm.xml</value>
+<value>com/loansdb/data/Tbbireportmain.hbm.xml</value>
+<value>com/loansdb/data/Tbpdc.hbm.xml</value>
+<value>com/loansdb/data/Tbevaltradecheck.hbm.xml</value>
+<value>com/loansdb/data/Tbcitraderefcorp.hbm.xml</value>
+<value>com/loansdb/data/Tbcisec.hbm.xml</value>
+<value>com/loansdb/data/Tbbapnfis.hbm.xml</value>
+<value>com/loansdb/data/Tbpaysched.hbm.xml</value>
+<value>com/loansdb/data/Tbproductpercompany.hbm.xml</value>
+<value>com/loansdb/data/Tbappreltcpparkingslot.hbm.xml</value>
+<value>com/loansdb/data/Tbcicreditcheck.hbm.xml</value>
+<value>com/loansdb/data/Tbpasswordbank.hbm.xml</value>
+<value>com/loansdb/data/Tbappreltcpbldgimprovements.hbm.xml</value>
+<value>com/loansdb/data/Tbappraisaldetails.hbm.xml</value>
+<value>com/loansdb/data/Tbapaotherincomeexpense.hbm.xml</value>
+<value>com/loansdb/data/Tbglentries.hbm.xml</value>
+<value>com/loansdb/data/Tbloanrepaymentscheme.hbm.xml</value>
+<value>com/loansdb/data/Tbsubfacility.hbm.xml</value>
+<value>com/loansdb/data/Tbcidti.hbm.xml</value>
+<value>com/loansdb/data/Tbbiblacklist.hbm.xml</value>
+<value>com/loansdb/data/Tbcreditfacility.hbm.xml</value>
+<value>com/loansdb/data/Tbcisecincorporators.hbm.xml</value>
+<value>com/loansdb/data/Tbfinancialstatements.hbm.xml</value>
+<value>com/loansdb/data/Tbcireceivablesmain.hbm.xml</value>
+<value>com/loansdb/data/Tbapprelmarketsurvey.hbm.xml</value>
+<value>com/loansdb/data/Tbemailformats.hbm.xml</value>
+<value>com/loansdb/data/Tblogs.hbm.xml</value>
+<value>com/loansdb/data/Tbinvestigationinst.hbm.xml</value>
+<value>com/loansdb/data/Tbloancollateral.hbm.xml</value>
+<value>com/loansdb/data/Tbworkflowprocess.hbm.xml</value>
+<value>com/loansdb/data/Tbfsitemtype.hbm.xml</value>
+<value>com/loansdb/data/Tblamapa.hbm.xml</value>
+<value>com/loansdb/data/Tbcipdrnresidence.hbm.xml</value>
+<value>com/loansdb/data/Tbloanapprovaldetails.hbm.xml</value>
+<value>com/loansdb/data/Tbfsitems.hbm.xml</value>
+<value>com/loansdb/data/Tbloanproductfees.hbm.xml</value>
+<value>com/loansdb/data/Tbevalloans.hbm.xml</value>
+<value>com/loansdb/data/Tblamdocumentation.hbm.xml</value>
+<value>com/loansdb/data/Tbapprelcompvaluecondo.hbm.xml</value>
+<value>com/loansdb/data/Lsttxhist.hbm.xml</value>
+<value>com/loansdb/data/Tbcodetable.hbm.xml</value>
+<value>com/loansdb/data/Tbappraisaldeposits.hbm.xml</value>
+<value>com/loansdb/data/Tbevalmonthlyexpense.hbm.xml</value>
+<value>com/loansdb/data/Tbdefaultusers.hbm.xml</value>
+<value>com/loansdb/data/Tbcfmaintenance.hbm.xml</value>
+<value>com/loansdb/data/Tbincomeexpense.hbm.xml</value>
+<value>com/loansdb/data/Tbcreditscoreresults.hbm.xml</value>
+<value>com/loansdb/data/Tbpaymentsched.hbm.xml</value>
+<value>com/loansdb/data/Tbappraisalactivity.hbm.xml</value>
+<value>com/loansdb/data/Tbapprovedcoobligor.hbm.xml</value>
+<value>com/loansdb/data/Tbappautomarketsurvey.hbm.xml</value>
+<value>com/loansdb/data/Tbcollateraldeposits.hbm.xml</value>
+<value>com/loansdb/data/Tblamcompany.hbm.xml</value>
+<value>com/loansdb/data/Tbdeskciactivity.hbm.xml</value>
+<value>com/loansdb/data/Tblstcomakers.hbm.xml</value>
+<value>com/loansdb/data/Tbapilogs.hbm.xml</value>
+<value>com/loansdb/data/Tbfsitempercifno.hbm.xml</value>
+<value>com/loansdb/data/Tbdefaultsignatories.hbm.xml</value>
+<value>com/loansdb/data/Tblntxhist.hbm.xml</value>
+<value>com/loansdb/data/Lsttxfin.hbm.xml</value>
+<value>com/loansdb/data/Tbaccountingentries.hbm.xml</value>
+<value>com/loansdb/data/Tbglmatrixperprod.hbm.xml</value>
+<value>com/loansdb/data/Tbloanapprovalmatrix.hbm.xml</value>
+<value>com/loansdb/data/Tbapprelcompvaluebldg.hbm.xml</value>
+<value>com/loansdb/data/Tbfsmain.hbm.xml</value>
+<value>com/loansdb/data/Tbbranch.hbm.xml</value>
+<value>com/loansdb/data/Tbcipdrn.hbm.xml</value>
+<value>com/loansdb/data/Tbbirequest.hbm.xml</value>
+<value>com/loansdb/data/Tbscoremodel.hbm.xml</value>
+<value>com/loansdb/data/Tbapprelcompvalueland.hbm.xml</value>
+<value>com/loansdb/data/Tblamtraderef.hbm.xml</value>
+<value>com/loansdb/data/Tbloanschemeperprod.hbm.xml</value>
+<value>com/loansdb/data/Tbuser.hbm.xml</value>
+<value>com/loansdb/data/Tbdocuments.hbm.xml</value>
+<value>com/loansdb/data/Tbapprovedcfcovenants.hbm.xml</value>
+<value>com/loansdb/data/Tbappreltavparkingslot.hbm.xml</value>
+<value>com/loansdb/data/Tbdatabaseparams.hbm.xml</value>
+<value>com/loansdb/data/Tbprocessingdate.hbm.xml</value>
+<value>com/loansdb/data/Tbdocsperproduct.hbm.xml</value>
+<value>com/loansdb/data/Tbsequence.hbm.xml</value>
+
+<value>com/loansdb/data/Tbappreltcpland.ql.xml</value>
+<value>com/loansdb/data/app-queries.ql.xml</value>
+
+            </list>
+        </property>
+
+    </bean>
+
+
+    <!-- the data service bean instance is injected into the service bean -->
+    <bean 
+        id="LOANSDBDataService" 
+        class="com.wavemaker.runtime.data.spring.SpringDataServiceManager"
+        lazy-init="true">
+        <constructor-arg>
+            <!-- the value of the "name" property of the SessionFactory -->
+            <value>LOANSDB</value>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="LOANSDBHibernateTemplate"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="LOANSDBTxMgr"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="LOANSDBTaskMgr"/>
+        </constructor-arg>
+        <constructor-arg>
+            <map>
+                <entry key="useIndividualCRUDOperations" value="false"/>
+                <entry key="refreshEntities" value=""/> 
+            </map>
+        </constructor-arg>
+    </bean>
+
+
+    <bean 
+        id="LOANSDBTaskMgr"
+        class="com.wavemaker.runtime.data.DefaultTaskManager"
+        lazy-init="true"/>
+
+    <bean class="com.wavemaker.runtime.service.events.EventWire"
+        lazy-init="false">
+        <property name="serviceWire" ref="LOANSDBServiceWire"/>
+        <property name="eventListener">
+            <bean class="com.wavemaker.runtime.data.DataServiceEventListener"/>
+        </property>
+    </bean>
+
+    <bean id="LOANSDBServiceWire"
+        class="com.wavemaker.runtime.service.reflect.ReflectServiceWire"
+        lazy-init="false" scope="singleton">
+        <property name="serviceId" value="LOANSDB"/>
+        <property name="serviceType" ref="DataService"/>
+    </bean>
+
+</beans>

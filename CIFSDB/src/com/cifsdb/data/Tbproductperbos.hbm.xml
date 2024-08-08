@@ -1,0 +1,49 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbproductperbos" table="TBPRODUCTPERBOS" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.cifsdb.data.TbproductperbosId">
+            <key-property name="boscode" type="string">
+                <column name="boscode" length="50"/>
+            </key-property>
+            <key-property name="productcode" type="string">
+                <column name="productcode" length="5"/>
+            </key-property>
+        </composite-id>
+        <property name="productname" type="string">
+            <column name="productname" length="100"/>
+        </property>
+        <property name="membershiptype" type="string">
+            <column name="membershiptype" length="50" not-null="true"/>
+        </property>
+        <property name="servicestatus" type="string">
+            <column name="servicestatus" length="50" not-null="true"/>
+        </property>
+        <property name="assignedby" type="string">
+            <column name="assignedby" length="50"/>
+        </property>
+        <property name="dateassigned" type="timestamp">
+            <column name="dateassigned" length="23"/>
+        </property>
+        <property name="isactive" type="boolean">
+            <column name="isactive"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="producttype" type="string">
+            <column name="producttype" length="5"/>
+        </property>
+        <property name="membershiptypedesc" type="string">
+            <column name="membershiptypedesc" length="250"/>
+        </property>
+        <property name="servicestatusdesc" type="string">
+            <column name="servicestatusdesc" length="250"/>
+        </property>
+        <property name="maxloanableamt" type="big_decimal">
+            <column name="maxloanableamt" precision="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

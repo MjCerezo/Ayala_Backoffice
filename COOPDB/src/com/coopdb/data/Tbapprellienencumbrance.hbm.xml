@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbapprellienencumbrance" table="TBAPPRELLIENENCUMBRANCE" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="appraisalreportid" type="string">
+            <column name="appraisalreportid" length="20"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="20"/>
+        </property>
+        <property name="collateralid" type="integer">
+            <column name="collateralid"/>
+        </property>
+        <property name="entryno" type="string">
+            <column name="entryno" length="50"/>
+        </property>
+        <property name="particulars" type="string">
+            <column name="particulars"/>
+        </property>
+        <property name="dateinscribed" type="timestamp">
+            <column name="dateinscribed" length="23"/>
+        </property>
+        <property name="tracebacktitleno" type="string">
+            <column name="tracebacktitleno" length="50"/>
+        </property>
+        <property name="registeredowner" type="string">
+            <column name="registeredowner" length="50"/>
+        </property>
+        <property name="dateofregistration" type="timestamp">
+            <column name="dateofregistration" length="23"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="1000"/>
+        </property>
+    </class>
+</hibernate-mapping>

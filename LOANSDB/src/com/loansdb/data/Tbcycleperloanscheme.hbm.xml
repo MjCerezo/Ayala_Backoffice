@@ -1,0 +1,19 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbcycleperloanscheme" table="TBCYCLEPERLOANSCHEME" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.loansdb.data.TbcycleperloanschemeId">
+            <key-property name="schemecode" type="integer">
+                <column name="schemecode"/>
+            </key-property>
+            <key-property name="cyclecode" type="string">
+                <column name="cyclecode" length="5"/>
+            </key-property>
+            <key-property name="pi" type="string">
+                <column name="PI" length="1"/>
+            </key-property>
+        </composite-id>
+        <property name="cycle" type="string">
+            <column name="cycle" length="100"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,58 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbloanoffset" table="TBLOANOFFSET" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.TbloanoffsetId">
+            <key-property name="appno" type="string">
+                <column name="appno" length="20"/>
+            </key-property>
+            <key-property name="accountno" type="string">
+                <column name="accountno" length="50"/>
+            </key-property>
+        </composite-id>
+        <property name="pnno" type="string">
+            <column name="pnno" length="50"/>
+        </property>
+        <property name="applno" type="string">
+            <column name="applno" length="50"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50"/>
+        </property>
+        <property name="prodcode" type="string">
+            <column name="prodcode" length="10"/>
+        </property>
+        <property name="productgroup" type="string">
+            <column name="productgroup" length="10"/>
+        </property>
+        <property name="prinbal" type="big_decimal">
+            <column name="prinbal" precision="20"/>
+        </property>
+        <property name="loanbal" type="big_decimal">
+            <column name="loanbal" precision="20"/>
+        </property>
+        <property name="uidbal" type="big_decimal">
+            <column name="uidbal" precision="20"/>
+        </property>
+        <property name="lpc" type="big_decimal">
+            <column name="lpc" precision="20"/>
+        </property>
+        <property name="othercharges" type="big_decimal">
+            <column name="othercharges" precision="20"/>
+        </property>
+        <property name="rebate" type="big_decimal">
+            <column name="rebate" precision="20"/>
+        </property>
+        <property name="acctsts" type="integer">
+            <column name="acctsts"/>
+        </property>
+        <property name="outstandingbal" type="big_decimal">
+            <column name="outstandingbal" precision="20"/>
+        </property>
+        <property name="appstatus" type="string">
+            <column name="appstatus" length="5"/>
+        </property>
+        <property name="txdate" type="timestamp">
+            <column name="txdate" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

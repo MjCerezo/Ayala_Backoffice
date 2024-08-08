@@ -1,0 +1,132 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbusermember" table="TBUSERMEMBER" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="username" type="string">
+            <column name="username" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="password" type="string">
+            <column name="password" length="100"/>
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="100"/>
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="100"/>
+        </property>
+        <property name="middlename" type="string">
+            <column name="middlename" length="100"/>
+        </property>
+        <property name="emailadd" type="string">
+            <column name="emailadd" length="250"/>
+        </property>
+        <property name="lastIp" type="string">
+            <column name="lastIP" length="20"/>
+        </property>
+        <property name="lastlogondate" type="timestamp">
+            <column name="lastlogondate" length="23"/>
+        </property>
+        <property name="lastpasswordchange" type="timestamp">
+            <column name="lastpasswordchange" length="23"/>
+        </property>
+        <property name="isloggedon" type="boolean">
+            <column name="isloggedon"/>
+        </property>
+        <property name="islocked" type="boolean">
+            <column name="islocked"/>
+        </property>
+        <property name="isactive" type="boolean">
+            <column name="isactive"/>
+        </property>
+        <property name="issuspended" type="boolean">
+            <column name="issuspended"/>
+        </property>
+        <property name="isactivedirectorymember" type="boolean">
+            <column name="isactivedirectorymember"/>
+        </property>
+        <property name="invalidattemptscount" type="integer">
+            <column name="invalidattemptscount"/>
+        </property>
+        <property name="pwexpirydate" type="timestamp">
+            <column name="pwexpirydate" length="23"/>
+        </property>
+        <property name="validitydateto" type="timestamp">
+            <column name="validitydateto" length="23"/>
+        </property>
+        <property name="validitydatefrom" type="timestamp">
+            <column name="validitydatefrom" length="23"/>
+        </property>
+        <property name="validitytimeto" type="string">
+            <column name="validitytimeto" length="16"/>
+        </property>
+        <property name="validitytimefrom" type="string">
+            <column name="validitytimefrom" length="16"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="ischangepwrequired" type="boolean">
+            <column name="ischangepwrequired"/>
+        </property>
+        <property name="ispwneverexpire" type="boolean">
+            <column name="ispwneverexpire"/>
+        </property>
+        <property name="isdisabled" type="boolean">
+            <column name="isdisabled"/>
+        </property>
+        <property name="invalidattempip" type="string">
+            <column name="invalidattempip" length="50"/>
+        </property>
+        <property name="lastlogoutdate" type="timestamp">
+            <column name="lastlogoutdate" length="23"/>
+        </property>
+        <property name="lastsession" type="string">
+            <column name="lastsession" length="50"/>
+        </property>
+        <property name="companycode" type="string">
+            <column name="companycode" length="50"/>
+        </property>
+        <property name="groupcode" type="string">
+            <column name="groupcode" length="50"/>
+        </property>
+        <property name="branchcode" type="string">
+            <column name="branchcode" length="50"/>
+        </property>
+        <property name="teamcode" type="string">
+            <column name="teamcode" length="50"/>
+        </property>
+        <property name="terminatedsessionip" type="string">
+            <column name="terminatedsessionip" length="50"/>
+        </property>
+        <property name="datetimelockedout" type="timestamp">
+            <column name="datetimelockedout" length="23"/>
+        </property>
+        <property name="fullname" type="string">
+            <column name="fullname" length="300"/>
+        </property>
+        <property name="position" type="string">
+            <column name="position" length="2"/>
+        </property>
+        <property name="unitbrid" type="string">
+            <column name="unitbrid" length="4"/>
+        </property>
+        <property name="userid" type="string">
+            <column name="userid" length="10"/>
+        </property>
+        <property name="coopcode" type="string">
+            <column name="coopcode" length="20"/>
+        </property>
+        <property name="memberid" type="string">
+            <column name="memberid" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

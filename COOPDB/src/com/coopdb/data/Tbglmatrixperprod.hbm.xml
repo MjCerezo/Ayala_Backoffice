@@ -1,0 +1,43 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbglmatrixperprod" table="TBGLMATRIXPERPROD" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.TbglmatrixperprodId">
+            <key-property name="gllineno" type="string">
+                <column name="gllineno" length="50"/>
+            </key-property>
+            <key-property name="productcode" type="string">
+                <column name="productcode" length="50"/>
+            </key-property>
+        </composite-id>
+        <property name="glline1" type="string">
+            <column name="glline1" length="5"/>
+        </property>
+        <property name="gllinedesc1" type="string">
+            <column name="gllinedesc1" length="200"/>
+        </property>
+        <property name="glline2" type="string">
+            <column name="glline2" length="5"/>
+        </property>
+        <property name="gllinedesc2" type="string">
+            <column name="gllinedesc2" length="200"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="glacctcode" type="string">
+            <column name="glacctcode" length="50"/>
+        </property>
+        <property name="glacctdesc" type="string">
+            <column name="glacctdesc" length="500"/>
+        </property>
+    </class>
+</hibernate-mapping>

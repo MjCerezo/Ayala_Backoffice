@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbcomaker" table="TBCOMAKER" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50"/>
+        </property>
+        <property name="personalrefname" type="string">
+            <column name="personalrefname" length="300"/>
+        </property>
+        <property name="employername" type="string">
+            <column name="employername" length="300"/>
+        </property>
+        <property name="employeraddress" type="string">
+            <column name="employeraddress" length="500"/>
+        </property>
+        <property name="contactno" type="string">
+            <column name="contactno" length="50"/>
+        </property>
+        <property name="relationship" type="string">
+            <column name="relationship" length="50"/>
+        </property>
+        <property name="appno" type="string">
+            <column name="appno" length="25"/>
+        </property>
+    </class>
+</hibernate-mapping>

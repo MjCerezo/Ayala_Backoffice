@@ -1,0 +1,76 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbpaymentsched" table="TBPAYMENTSCHED" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.TbpaymentschedId">
+            <key-property name="amortid" type="integer">
+                <column name="amortid"/>
+            </key-property>
+            <key-property name="accountno" type="string">
+                <column name="accountno" length="50"/>
+            </key-property>
+        </composite-id>
+        <property name="applno" type="string">
+            <column name="applno" length="20" not-null="true"/>
+        </property>
+        <property name="ilamt" type="big_decimal">
+            <column name="ilamt" precision="16"/>
+        </property>
+        <property name="ilduedt" type="timestamp">
+            <column name="ilduedt" length="23"/>
+        </property>
+        <property name="ilint" type="big_decimal">
+            <column name="ilint" precision="16"/>
+        </property>
+        <property name="ilintrate" type="big_decimal">
+            <column name="ilintrate" precision="16"/>
+        </property>
+        <property name="ilno" type="integer">
+            <column name="ilno"/>
+        </property>
+        <property name="ilprin" type="big_decimal">
+            <column name="ilprin" precision="18"/>
+        </property>
+        <property name="ilrppd" type="big_decimal">
+            <column name="ilrppd" precision="18"/>
+        </property>
+        <property name="iltax" type="big_decimal">
+            <column name="iltax" precision="18"/>
+        </property>
+        <property name="iltaxrate" type="big_decimal">
+            <column name="iltaxrate" precision="16"/>
+        </property>
+        <property name="isPaid" type="boolean">
+            <column name="isPaid"/>
+        </property>
+        <property name="loanbal" type="big_decimal">
+            <column name="loanbal" precision="16"/>
+        </property>
+        <property name="loanno" type="string">
+            <column name="loanno" length="50"/>
+        </property>
+        <property name="others" type="big_decimal">
+            <column name="others"/>
+        </property>
+        <property name="prinbal" type="big_decimal">
+            <column name="prinbal" precision="16"/>
+        </property>
+        <property name="txmkr" type="string">
+            <column name="txmkr" length="50"/>
+        </property>
+        <property name="txoff" type="string">
+            <column name="txoff" length="50"/>
+        </property>
+        <property name="uidbal" type="big_decimal">
+            <column name="uidbal" precision="16"/>
+        </property>
+        <property name="daysdiff" type="integer">
+            <column name="daysdiff"/>
+        </property>
+        <property name="intperiod" type="string">
+            <column name="intperiod" length="5"/>
+        </property>
+        <property name="intperioddesc" type="string">
+            <column name="intperioddesc" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

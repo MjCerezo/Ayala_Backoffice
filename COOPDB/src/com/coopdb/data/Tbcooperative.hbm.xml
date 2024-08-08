@@ -1,0 +1,64 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbcooperative" table="TBCOOPERATIVE" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.coopdb.data.TbcooperativeId">
+            <key-property name="coopcode" type="string">
+                <column name="coopcode" length="50"/>
+            </key-property>
+            <key-property name="coopname" type="string">
+                <column name="coopname" length="100"/>
+            </key-property>
+        </composite-id>
+        <property name="address" type="string">
+            <column name="address" length="100"/>
+        </property>
+        <property name="phoneno" type="string">
+            <column name="phoneno" length="50"/>
+        </property>
+        <property name="faxno" type="string">
+            <column name="faxno" length="50"/>
+        </property>
+        <property name="emailaddress" type="string">
+            <column name="emailaddress" length="100"/>
+        </property>
+        <property name="website" type="string">
+            <column name="website" length="50"/>
+        </property>
+        <property name="coopstatus" type="boolean">
+            <column name="coopstatus"/>
+        </property>
+        <property name="logobasecode" type="string">
+            <column name="logobasecode"/>
+        </property>
+        <property name="logofilename" type="string">
+            <column name="logofilename" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="100"/>
+        </property>
+        <property name="membershipfee" type="big_decimal">
+            <column name="membershipfee" precision="20"/>
+        </property>
+        <property name="sharecapitalparval" type="big_decimal">
+            <column name="sharecapitalparval" precision="20"/>
+        </property>
+        <property name="coopsize" type="string">
+            <column name="coopsize" length="20"/>
+        </property>
+        <property name="finefee" type="big_decimal">
+            <column name="finefee" precision="20"/>
+        </property>
+        <property name="expirationdate" type="integer">
+            <column name="expirationdate"/>
+        </property>
+    </class>
+</hibernate-mapping>

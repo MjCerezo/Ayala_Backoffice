@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbfilehistory" table="TBFILEHISTORY" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="accountnumber" type="string">
+            <column name="accountnumber" length="50"/>
+        </property>
+        <property name="filename" type="string">
+            <column name="filename" length="50"/>
+        </property>
+        <property name="filecode" type="string">
+            <column name="filecode"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="branchcode" type="string">
+            <column name="branchcode" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="WorkflowFacade" class="com.etel.workflow.WorkflowFacade" CRUDService="false" type="JavaService" springFile="WorkflowFacade.spring.xml">
+    <operation name="cancelApplication">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="appstatus" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="iscancelled" typeRef="java.lang.Boolean" isList="false"/>
+        <parameter name="reasonforcancellation" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getActiveWorkflowList">
+        <parameter name="viewby" typeRef="java.lang.String" isList="false"/>
+        <parameter name="company" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.workflow.forms.WorkflowDashboardForm" isList="true"/>
+    </operation>
+    <operation name="getStatusByApplicationType">
+        <parameter name="workflowid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.etel.workflow.forms.WorkflowProcessForm" isList="true"/>
+    </operation>
+    <operation name="getSubmitOption">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.workflow.forms.SubmitOptionForm" isList="false"/>
+    </operation>
+    <operation name="getWorkFlow">
+        <parameter name="workflowid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.etel.workflow.forms.WorkflowProcessForm" isList="true"/>
+    </operation>
+    <operation name="returnApplication">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="returnoption" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.ReturnForm" isList="false"/>
+    </operation>
+    <operation name="submitApplication">
+        <parameter name="flow" typeRef="java.lang.String" isList="false"/>
+        <parameter name="generatedno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="submitoption" typeRef="java.lang.String" isList="false"/>
+        <parameter name="remarks" typeRef="java.lang.String" isList="false"/>
+        <parameter name="boardresno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="boardremarks" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.ReturnForm" isList="false"/>
+    </operation>
+    <operation name="submitInvestigation">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="investigationtype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.ReturnForm" isList="false"/>
+    </operation>
+    <operation name="submitResignation">
+        <parameter name="flow" typeRef="java.lang.String" isList="false"/>
+        <parameter name="memberid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="submitoption" typeRef="java.lang.String" isList="false"/>
+        <parameter name="boardremarks" typeRef="java.lang.String" isList="false"/>
+        <parameter name="boardno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.ReturnForm" isList="false"/>
+    </operation>
+    <operation name="updateAppStatus">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="applicationstatus" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="validate">
+        <parameter name="membershipappid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.forms.ReturnForm" isList="false"/>
+    </operation>
+    <operation name="validateInstructionForm">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.Boolean" isList="false"/>
+    </operation>
+    <operation name="workflow">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <parameter name="remarks" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="workflowRB">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <parameter name="remarks" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.etel.workflow.forms.WorkflowDashboardForm" name="WorkflowDashboardForm" supportsQuickData="false">
+            <element name="bucket1" typeRef="int" isList="false" allowNull="false"/>
+            <element name="bucket2" typeRef="int" isList="false" allowNull="false"/>
+            <element name="bucket3" typeRef="int" isList="false" allowNull="false"/>
+            <element name="bucket4" typeRef="int" isList="false" allowNull="false"/>
+            <element name="bucket5" typeRef="int" isList="false" allowNull="false"/>
+            <element name="buckettotal" typeRef="int" isList="false" allowNull="false"/>
+            <element name="processname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sequenceno" typeRef="int" isList="false" allowNull="false"/>
+            <element name="workflowid" typeRef="int" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.workflow.forms.SubmitOptionForm" name="SubmitOptionForm" supportsQuickData="false">
+            <element name="returnAppStatusDesc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="returnOptionDataSet" typeRef="com.etel.workflow.forms.WorkflowProcessForm" isList="true" allowNull="false"/>
+            <element name="submitAppStatusDesc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="submitOptionDataSet" typeRef="com.etel.workflow.forms.WorkflowProcessForm" isList="true" allowNull="false"/>
+            <element name="btnReturn" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="btnSubmit" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="isbookprocess" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="iscancelprocess" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="isrejectprocess" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="slcReturnOption" typeRef="boolean" isList="false" allowNull="false"/>
+            <element name="slcSubmitOption" typeRef="boolean" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.forms.ReturnForm" name="ReturnForm" supportsQuickData="false">
+            <element name="flag" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="message" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Tbaccountingentriescasa" table="TBACCOUNTINGENTRIESCASA" catalog="ACACIADBNP" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txcode" type="string">
+            <column name="txcode" length="10" not-null="true"/>
+        </property>
+        <property name="gllineno" type="string">
+            <column name="gllineno" length="50" not-null="true"/>
+        </property>
+        <property name="txtype" type="string">
+            <column name="txtype" length="50"/>
+        </property>
+        <property name="gllinedesc" type="string">
+            <column name="gllinedesc" length="200"/>
+        </property>
+        <property name="txoper" type="string">
+            <column name="txoper" length="1" not-null="true"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="200"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="50"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="50"/>
+        </property>
+        <property name="glcode" type="string">
+            <column name="glcode" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

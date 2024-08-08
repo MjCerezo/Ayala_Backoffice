@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.loansdb.data.Tbscoresubcriteria" table="TBSCORESUBCRITERIA" catalog="LOANSDBSIT" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="subcriteriaid" type="string">
+            <column name="subcriteriaid" length="20"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="modelno" type="string">
+            <column name="modelno" length="10"/>
+        </property>
+        <property name="criteriaid" type="string">
+            <column name="criteriaid" length="20"/>
+        </property>
+        <property name="subcriteriaseqno" type="string">
+            <column name="subcriteriaseqno" length="20"/>
+        </property>
+        <property name="subcriterianame" type="string">
+            <column name="subcriterianame" length="3000"/>
+        </property>
+        <property name="highestscore" type="integer">
+            <column name="highestscore"/>
+        </property>
+        <property name="lastitemseqno" type="integer">
+            <column name="lastitemseqno"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="100"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

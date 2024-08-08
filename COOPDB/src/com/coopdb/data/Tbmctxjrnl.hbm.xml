@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbmctxjrnl" table="TBMCTXJRNL" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="accountno" type="string">
+            <column name="accountno" length="20"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="16"/>
+        </property>
+        <property name="issuingbr" type="string">
+            <column name="issuingbr" length="10"/>
+        </property>
+        <property name="txbr" type="string">
+            <column name="txbr" length="10"/>
+        </property>
+        <property name="mccheckno" type="string">
+            <column name="mccheckno" length="20"/>
+        </property>
+        <property name="txby" type="string">
+            <column name="txby" length="20"/>
+        </property>
+        <property name="txdate" type="timestamp">
+            <column name="txdate" length="23"/>
+        </property>
+        <property name="txstatus" type="string">
+            <column name="txstatus" length="3"/>
+        </property>
+        <property name="paymode" type="string">
+            <column name="paymode" length="3"/>
+        </property>
+        <property name="txor" type="string">
+            <column name="txor" length="50"/>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="500"/>
+        </property>
+    </class>
+</hibernate-mapping>
