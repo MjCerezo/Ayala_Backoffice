@@ -3,8 +3,12 @@ package com.etel.loan;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.coopdb.data.Tbloanevaluationtable;
 import com.etel.loanform.LoanAppInquiryForApprovalForm;
 import com.etel.loanform.LoanAppInquiryForReleaseForm;
+import com.etel.loanform.LoanEvaluationResultForm;
+import com.etel.loanform.LoanRuleForm;
+import com.etel.loanform.MemberLoanEvaluationForm;
 import com.wavemaker.runtime.javaservice.JavaServiceSuperClass;
 import com.wavemaker.runtime.service.annotations.ExposeToClient;
 
@@ -89,4 +93,65 @@ public class LoanApplicationFacade extends JavaServiceSuperClass {
     	}
 		return appList;
     }      
+    
+    public String saveOrUpdateEvaluationTable(Tbloanevaluationtable d) {
+		return srvc.saveOrUpdateEvaluationTable(d);
+    }       
+    
+    public LoanRuleForm getLoanRule(String appno) {
+    	LoanRuleForm form = new LoanRuleForm();
+    	LoanApplicationService loanappsrvc = new LoanApplicationServiceImpl();
+    	try {
+    		log(INFO, "Get Loan Rule " + appno);
+    		form = loanappsrvc.getLoanRule(appno);
+    		log(INFO, "Returning Loan Rule >>> Rank... " + form.getRank());
+    	} catch (Exception e) {
+    		log(ERROR, "The getLoanRule java service operation has failed", e);
+    	}
+    	return form;
+    }   
+    
+    public MemberLoanEvaluationForm getMemberEvalForm(String appno, String cifno) {
+    	MemberLoanEvaluationForm form = new MemberLoanEvaluationForm();
+    	LoanApplicationService loanappsrvc = new LoanApplicationServiceImpl();
+    	
+    	try {
+    		log(INFO, "Get Member Evaluation Data " + appno);
+    		form = loanappsrvc.getMemberEvalForm(appno, cifno);
+    		log(INFO, "Returning Member Evaluation >>> Rank... " + form.getRank());
+    	} catch (Exception e) {
+    		log(ERROR, "The getMemberEvalForm java service operation has failed", e);
+    	}
+		return form;
+    }   
+    
+    public LoanEvaluationResultForm getLoanEvaluationResult(String appno, String cifno, LoanRuleForm ruleForm, MemberLoanEvaluationForm memberForm) {
+    	LoanEvaluationResultForm form = new LoanEvaluationResultForm();
+    	LoanApplicationService loanappsrvc = new LoanApplicationServiceImpl();
+    	try {
+    		log(INFO, "Get Results Evaluation Data " + appno);
+    		form = loanappsrvc.getLoanEvaluationResult(appno, cifno, ruleForm, memberForm);
+    		log(INFO, "Returning Results Evaluation >>> Rank... " + form.getRank());
+    	} catch (Exception e) {
+    		log(ERROR, "The getLoanEvaluationResults java service operation has failed", e);
+    	}
+		return form;
+    }   
+    
+    public List<Tbloanevaluationtable> listEvaluationTable(String template) {
+		return srvc.listEvaluationTable(template);
+    }    
+    
+    public String saveOrUpdateLoanEvaluationResult(String appno, String cifno) {
+    	String flag = "failed";
+    	LoanApplicationService loanappsrvc = new LoanApplicationServiceImpl();
+    	try {
+    		log(INFO, "SaveOrUpdate Results Evaluation Data " + appno);
+    		flag = loanappsrvc.saveOrUpdateLoanEvaluationResult(appno, cifno);
+    		log(INFO, "Returning SaveOrUpdate Results Evaluation >>> Appno... " + appno);
+    	} catch (Exception e) {
+    		log(ERROR, "The saveOrUpdateLoanEvaluationResults java service operation has failed", e);
+    	}
+		return flag;
+    }     
 }

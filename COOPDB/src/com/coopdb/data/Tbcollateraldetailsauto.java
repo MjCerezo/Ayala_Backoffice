@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 /**
  *  COOPDB.Tbcollateraldetailsauto
- *  08/04/2024 12:54:44
+ *  08/10/2024 21:24:57
  * 
  */
 public class Tbcollateraldetailsauto {

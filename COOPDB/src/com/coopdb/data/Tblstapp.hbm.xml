@@ -275,5 +275,8 @@
         <property name="isexisting" type="boolean">
             <column name="isexisting"/>
         </property>
+        <property name="deviationflag" type="boolean">
+            <column name="deviationflag"/>
+        </property>
     </class>
 </hibernate-mapping>

@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  *  COOPDB.Tbloanproduct
- *  08/04/2024 12:54:42
+ *  08/10/2024 21:24:57
  * 
  */
 public class Tbloanproduct {
@@ -107,6 +107,8 @@ public class Tbloanproduct {
     private String roundingscheme;
     private String accrtype;
     private String ddlqtype;
+    private String qualifiedmember;
+    private String isexempted;
 
     public String getProductcode() {
         return productcode;
@@ -866,6 +868,22 @@ public class Tbloanproduct {
 
     public void setDdlqtype(String ddlqtype) {
         this.ddlqtype = ddlqtype;
+    }
+
+    public String getQualifiedmember() {
+        return qualifiedmember;
+    }
+
+    public void setQualifiedmember(String qualifiedmember) {
+        this.qualifiedmember = qualifiedmember;
+    }
+
+    public String getIsexempted() {
+        return isexempted;
+    }
+
+    public void setIsexempted(String isexempted) {
+        this.isexempted = isexempted;
     }
 
 }

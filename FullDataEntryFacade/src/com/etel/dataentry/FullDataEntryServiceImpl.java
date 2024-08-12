@@ -6236,8 +6236,12 @@ public class FullDataEntryServiceImpl implements FullDataEntryService {
 					cifMain.setCifapprovedby(username);
 					cifMain.setCifapproveddate(new Date());
 					
+					//Generate MemberId 
+					String companyCode = noGenerator.generateCompanyCode(cifMain.getFullname());
+					cifMain.setCompanyCode(companyCode);
+					
 					//Crete User
-					adInquiry.saveMemberCredentials(cifno, "MemberRoles");	
+					//adInquiry.saveMemberCredentials(cifno, "MemberRoles");	
 				
 				}
 				//Cancel

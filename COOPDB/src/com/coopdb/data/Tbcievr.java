@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  *  COOPDB.Tbcievr
- *  08/04/2024 12:54:41
+ *  08/10/2024 21:24:57
  * 
  */
 public class Tbcievr {

@@ -58,6 +58,13 @@
         <parameter name="applicationtype" typeRef="java.lang.Integer" isList="false"/>
         <return typeRef="int" isList="false"/>
     </operation>
+    <operation name="companyInquiry">
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <parameter name="applicationStatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="dateEncode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.inquiry.forms.CompanyListPerStagesForm" isList="true"/>
+    </operation>
     <operation name="companyListPerStages">
         <parameter name="branch" typeRef="java.lang.String" isList="false"/>
         <parameter name="search" typeRef="java.lang.String" isList="false"/>
@@ -139,6 +146,13 @@
     <operation name="listNonMember">
         <parameter name="name" typeRef="java.lang.String" isList="false"/>
         <return typeRef="com.etel.inquiry.forms.NonMemberInquiryForm" isList="true"/>
+    </operation>
+    <operation name="membershipInquiry">
+        <parameter name="branch" typeRef="java.lang.String" isList="false"/>
+        <parameter name="search" typeRef="java.lang.String" isList="false"/>
+        <parameter name="applicationStatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="dateEncode" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.inquiry.forms.MembershipListPerStagesForm" isList="true"/>
     </operation>
     <operation name="membershipListPerStages">
         <parameter name="branch" typeRef="java.lang.String" isList="false"/>
@@ -245,9 +259,10 @@
             <element name="applicationStatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
             <element name="branch" typeRef="java.lang.String" isList="false" allowNull="false"/>
             <element name="companyAddress" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="companyCode" typeRef="java.lang.String" isList="false" allowNull="false"/>
             <element name="companyName" typeRef="java.lang.String" isList="false" allowNull="false"/>
-            <element name="companyNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
-            <element name="dateEncoded" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="dateCreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="trn" typeRef="java.lang.String" isList="false" allowNull="false"/>
         </dataobject>
         <dataobject javaType="com.etel.inquiry.forms.DedupeCIFForm" name="DedupeCIFForm" supportsQuickData="false">
             <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>

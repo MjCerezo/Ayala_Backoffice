@@ -83,8 +83,12 @@ public interface InquiryService {
 			String customertype,String isExisting);
 	int applicationInquiry2Count (String appno, String cifno, String loanproduct, String fname, String lname, 
 			String corporatename, String customertype, String isExisting);
+
+	List<CompanyListPerStagesForm> companyInquiry(String branch, String search, String applicationStatus, String dateEncode);
 	
 	List<CompanyListPerStagesForm> companyListPerStages(String branch, String search, String applicationStatus, String daysCount);
+
+	List<MembershipListPerStagesForm> membershipInquiry(String branch, String search, String applicationStatus, String dateEncode);
 	
 	List<MembershipListPerStagesForm> membershipListPerStages(String branch, String search, String applicationStatus, String daysCount);
 

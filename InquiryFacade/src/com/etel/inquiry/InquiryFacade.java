@@ -164,8 +164,16 @@ public class InquiryFacade extends JavaServiceSuperClass {
     }
     
     //
+	public List<CompanyListPerStagesForm> companyInquiry(String branch, String search, String applicationStatus, String dateEncode) {
+		return service.companyInquiry(branch, search, applicationStatus, dateEncode);
+	}
+	
 	public List<CompanyListPerStagesForm> companyListPerStages(String branch, String search, String applicationStatus, String daysCount) {
 		return service.companyListPerStages(branch, search, applicationStatus, daysCount);
+	}
+	
+	public List<MembershipListPerStagesForm> membershipInquiry(String branch, String search, String applicationStatus, String dateEncode) {
+		return service.membershipInquiry(branch, search, applicationStatus, dateEncode);
 	}
 	
 	public List<MembershipListPerStagesForm> membershipListPerStages(String branch, String search, String applicationStatus, String daysCount) {

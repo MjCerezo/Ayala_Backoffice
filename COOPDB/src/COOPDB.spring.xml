@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- Generated 08/04/2024 12:54:29
+<!-- Generated 08/10/2024 21:24:46
 
 Configuration for 'COOPDB' database service
 
@@ -322,6 +322,7 @@ Configuration for 'COOPDB' database service
 <value>com/coopdb/data/Tbunit.hbm.xml</value>
 <value>com/coopdb/data/Tbappreltcpland.hbm.xml</value>
 <value>com/coopdb/data/Tbcollectorpersubarea.hbm.xml</value>
+<value>com/coopdb/data/Tbloanevaluationtable.hbm.xml</value>
 <value>com/coopdb/data/Tbbulkfin.hbm.xml</value>
 <value>com/coopdb/data/Tbworkflow.hbm.xml</value>
 <value>com/coopdb/data/Tbmemberbeneficiary.hbm.xml</value>
