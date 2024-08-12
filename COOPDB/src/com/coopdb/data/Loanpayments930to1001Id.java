@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 /**
  *  COOPDB.Loanpayments930to1001Id
- *  08/04/2024 12:54:42
+ *  08/10/2024 21:24:57
  * 
  */
 public class Loanpayments930to1001Id

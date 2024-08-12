@@ -1489,6 +1489,46 @@ public class InquiryServiceImpl implements InquiryService {
 		}
 		return list;
 	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<CompanyListPerStagesForm> companyInquiry(String branch, String search, String applicationStatus,
+			String dateEncode) {
+		List<CompanyListPerStagesForm> list = new ArrayList<CompanyListPerStagesForm>();
+		Map<String, Object> params = HQLUtil.getMap();
+		try {
+			params.put("branch", branch);
+			params.put("search", search);
+			params.put("applicationStatus", applicationStatus);
+			params.put("dateEncode", dateEncode);
+			list = (List<CompanyListPerStagesForm>) dbServiceCIF.execStoredProc(
+					"EXEC sp_Dashboard_Company_Inquiry :branch, :search, :applicationStatus, :dateEncode", params,
+					CompanyListPerStagesForm.class, 1, null);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<MembershipListPerStagesForm> membershipInquiry(String branch, String search, String applicationStatus,
+			String dateEncode) {
+		List<MembershipListPerStagesForm> list = new ArrayList<MembershipListPerStagesForm>();
+		Map<String, Object> params = HQLUtil.getMap();
+		try {
+			params.put("branch", branch);
+			params.put("search", search);
+			params.put("applicationStatus", applicationStatus);
+			params.put("dateEncode", dateEncode);
+			list = (List<MembershipListPerStagesForm>) dbServiceCIF.execStoredProc(
+					"EXEC sp_Dashboard_Membership_Inquiry :branch, :search, :applicationStatus, :dateEncode", params,
+					MembershipListPerStagesForm.class, 1, null);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 	
 	
 

@@ -287,5 +287,11 @@
         <property name="ddlqtype" type="string">
             <column name="ddlqtype" length="5"/>
         </property>
+        <property name="qualifiedmember" type="string">
+            <column name="qualifiedmember" length="10"/>
+        </property>
+        <property name="isexempted" type="string">
+            <column name="isexempted" length="10"/>
+        </property>
     </class>
 </hibernate-mapping>

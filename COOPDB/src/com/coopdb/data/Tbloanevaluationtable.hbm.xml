@@ -1,0 +1,60 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.coopdb.data.Tbloanevaluationtable" table="TBLOANEVALUATIONTABLE" catalog="AcaciaAyalaCoreDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="template" type="string">
+            <column name="template" length="10"/>
+        </property>
+        <property name="mintenure" type="integer">
+            <column name="mintenure"/>
+        </property>
+        <property name="maxtenure" type="integer">
+            <column name="maxtenure"/>
+        </property>
+        <property name="minrankcode" type="integer">
+            <column name="minrankcode"/>
+        </property>
+        <property name="minrankname" type="string">
+            <column name="minrankname" length="50"/>
+        </property>
+        <property name="maxrankcode" type="integer">
+            <column name="maxrankcode"/>
+        </property>
+        <property name="maxrankname" type="string">
+            <column name="maxrankname" length="50"/>
+        </property>
+        <property name="minsharecap" type="string">
+            <column name="minsharecap" length="10"/>
+        </property>
+        <property name="maxsharecapmultiplier" type="string">
+            <column name="maxsharecapmultiplier" length="10"/>
+        </property>
+        <property name="maxsharecapamount" type="big_decimal">
+            <column name="maxsharecapamount" precision="16"/>
+        </property>
+        <property name="nthp" type="big_decimal">
+            <column name="nthp" precision="16"/>
+        </property>
+        <property name="maxcounter" type="string">
+            <column name="maxcounter" length="10"/>
+        </property>
+        <property name="maxloanable" type="big_decimal">
+            <column name="maxloanable" precision="16"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="20"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="20"/>
+        </property>
+        <property name="dateupdated" type="timestamp">
+            <column name="dateupdated" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

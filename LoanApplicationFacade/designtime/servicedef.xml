@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="LoanApplicationFacade" class="com.etel.loan.LoanApplicationFacade" CRUDService="false" type="JavaService" springFile="LoanApplicationFacade.spring.xml">
+    <operation name="getLoanEvaluationResult">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="ruleForm" typeRef="com.etel.loanform.LoanRuleForm" isList="false"/>
+        <parameter name="memberForm" typeRef="com.etel.loanform.MemberLoanEvaluationForm" isList="false"/>
+        <return typeRef="com.etel.loanform.LoanEvaluationResultForm" isList="false"/>
+    </operation>
+    <operation name="getLoanRule">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.loanform.LoanRuleForm" isList="false"/>
+    </operation>
+    <operation name="getMemberEvalForm">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.loanform.MemberLoanEvaluationForm" isList="false"/>
+    </operation>
+    <operation name="listEvaluationTable">
+        <parameter name="template" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.coopdb.data.Tbloanevaluationtable" isList="true"/>
+    </operation>
+    <operation name="saveOrUpdateEvaluationTable">
+        <parameter name="d" typeRef="com.coopdb.data.Tbloanevaluationtable" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveOrUpdateLoanEvaluationResult">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
     <operation name="searchLoanApplication">
         <parameter name="tat" typeRef="java.lang.String" isList="false"/>
         <parameter name="emp" typeRef="java.lang.String" isList="false"/>
@@ -22,6 +51,32 @@
         <return typeRef="com.etel.loanform.LoanAppInquiryForReleaseForm" isList="true"/>
     </operation>
     <dataobjects>
+        <dataobject javaType="com.etel.loanform.LoanEvaluationResultForm" name="LoanEvaluationResultForm" supportsQuickData="false">
+            <element name="maxLoanAmount" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="maxNoLoan" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="nthp" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="position" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="rank" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="tenure" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.loanform.LoanRuleForm" name="LoanRuleForm" supportsQuickData="false">
+            <element name="maxLoanAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="maxNoLoan" typeRef="int" isList="false" allowNull="false"/>
+            <element name="nthp" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="position" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="rank" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="tenure" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.loanform.MemberLoanEvaluationForm" name="MemberLoanEvaluationForm" supportsQuickData="false">
+            <element name="maxLoanAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="maxNoLoan" typeRef="int" isList="false" allowNull="false"/>
+            <element name="nthp" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="position" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="rank" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="tenure" typeRef="int" isList="false" allowNull="false"/>
+            <element name="totalLoanAvailed" typeRef="int" isList="false" allowNull="false"/>
+            <element name="totalLoanExempted" typeRef="int" isList="false" allowNull="false"/>
+        </dataobject>
         <dataobject javaType="com.etel.loanform.LoanAppInquiryForApprovalForm" name="LoanAppInquiryForApprovalForm" supportsQuickData="false">
             <element name="cluster" typeRef="java.lang.String" isList="false" allowNull="false"/>
             <element name="companyName" typeRef="java.lang.String" isList="false" allowNull="false"/>
