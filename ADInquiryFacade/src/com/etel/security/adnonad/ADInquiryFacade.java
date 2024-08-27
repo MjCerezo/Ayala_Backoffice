@@ -71,5 +71,10 @@ public class ADInquiryFacade extends JavaServiceSuperClass {
 		ADInquiryService adInq = new ADInquiryServiceImpl();
 		return adInq.saveMemberCredentials(cifNo, role);
 	}
+	
+	public CreateUserForm createCompanyCredentials(String cifNo, String role) {
+		ADInquiryService adInq = new ADInquiryServiceImpl();
+		return adInq.createCompanyCredentials(cifNo, role);
+	}
 
 }

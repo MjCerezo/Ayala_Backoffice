@@ -41,6 +41,7 @@ import com.etel.utils.PasswordGeneratorUtil;
 import com.etel.utils.SystemUtil;
 import com.etel.utils.UserUtil;
 import com.cifsdb.data.Tbcifbusiness;
+import com.cifsdb.data.Tbcifcorporate;
 import com.cifsdb.data.Tbcifindividual;
 import com.cifsdb.data.Tbcifmain;
 import com.coopdb.data.Tbemailparams;
@@ -781,14 +782,12 @@ public class ADInquiryServiceImpl implements ADInquiryService {
 		NoGenerator generator = new NoGenerator();
 		params.put("cifNo", cifNo);
 		
-		System.out.println("IM IN ");
 		try {
 			cifMain = (Tbcifmain) dbServiceCIF.executeUniqueHQLQuery("FROM Tbcifmain WHERE cifno=:cifNo", params);
 			indiv = (Tbcifindividual) dbServiceCIF.executeUniqueHQLQuery("FROM Tbcifindividual WHERE cifno=:cifNo", params);
 			String fullname = indiv.getFirstname() + " " + indiv.getMiddlename() + " " + indiv.getLastname();
 			
 			String userName = generator.generateMemberUserName(cifNo);
-			System.out.println("userName : " + userName);
 			
 			String randomPassword = PasswordGeneratorUtil.generatePassword();
 			Tbuser user = new Tbuser();
@@ -862,6 +861,152 @@ public class ADInquiryServiceImpl implements ADInquiryService {
 			try {
 				EmailFacade email = new EmailFacade();
 				String flag = email.sendEmailForMemberAndCompanyApplication(EmailCode.MEMBERSHIP_APPLICATION, cifNo, userName, randomPassword);
+				if (flag != null && flag.equals("success")) {
+					res.setSmtpFlag("success");
+				} else {
+					emailFlag = "failed";
+				}
+			} catch (Exception e) {
+				emailFlag = "failed";
+			}
+
+			/*--------Error Handling------*/
+//			if (emailFlag.equals("failed")) {
+//				String dir = RuntimeAccess.getInstance().getSession().getServletContext()
+//						.getRealPath("/resources/properties");
+//				File request = new File(dir + "/EmailSecurityErrorLogs.txt");
+//				request.getParentFile().mkdirs();
+//				try {
+//					if (!request.exists()) {
+//						request.getParentFile().mkdirs();
+//					}
+//					// Get length of file in bytes
+//					long fileSizeInBytes = request.length();
+//					// Convert the bytes to Kilobytes (1 KB = 1024 Bytes)
+//					long fileSizeInKB = fileSizeInBytes / 1024;
+//					// Convert the KB to MegaBytes (1 MB = 1024 KBytes)
+//					long fileSizeInMB = fileSizeInKB / 1024;
+//					FileWriter fw = new FileWriter(request, true);
+//
+//					if (fileSizeInMB < 5) {
+//						fw.write(">>>>Email Sending Failed: "
+//								+ new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S").format(new Date()));
+//						fw.write(System.getProperty("line.separator"));
+//						fw.write("  User Account Creation -->  " + "Username: " + user.getUsername()
+//								+ " , Temporary Password: " + randomPassword);
+//						fw.write(System.getProperty("line.separator"));
+//						fw.write(System.getProperty("line.separator"));
+//						fw.write(System.getProperty("line.separator"));
+//						fw.close();
+//					} else {
+//						PrintWriter writer = new PrintWriter(request);
+//						writer.print("");
+//						writer.close();
+//					}
+//					fw.close();
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+			return res;
+		}
+	} catch (Exception e) {
+		LoggerUtil.exceptionError(e, ADInquiryServiceImpl.class);
+		e.printStackTrace();
+	}
+	return res;
+	}
+
+	@Override
+	public CreateUserForm createCompanyCredentials(String cifNo, String role) {
+		CreateUserForm res = new CreateUserForm();
+		DBService dbService = new DBServiceImpl();
+		DBService dbServiceCIF = new DBServiceImplCIF();
+		Map<String, Object> params = HQLUtil.getMap();
+		Tbcifcorporate corporate = new Tbcifcorporate();
+		Tbcifmain cifMain = new Tbcifmain();
+		NoGenerator generator = new NoGenerator();
+		params.put("cifNo", cifNo);
+		
+		try {
+			cifMain = (Tbcifmain) dbServiceCIF.executeUniqueHQLQuery("FROM Tbcifmain WHERE cifno=:cifNo", params);
+			corporate = (Tbcifcorporate) dbServiceCIF.executeUniqueHQLQuery("FROM Tbcifcorporate WHERE cifno=:cifNo", params);
+			String fullname = corporate.getMainContactFirstName() + " " + corporate.getMainContactMiddleName() + " " + corporate.getMainContactLastName();
+			
+			String userName = generator.generateCompanyUserName(cifNo);
+			
+			String randomPassword = PasswordGeneratorUtil.generatePassword();
+			Tbuser user = new Tbuser();
+			user.setUsername(userName);
+			user.setEmailadd(corporate.getEmailaddress());
+			//user.setCompanycode(cifMain.getCompanyCode());
+			user.setUpdatedby(service.getUserName());
+			user.setIsactive(true);
+			user.setIschangepwrequired(true);
+			user.setIslocked(false);
+			user.setIsloggedon(false);
+			user.setIsdisabled(false);
+			user.setIssuspended(false);
+			user.setDatecreated(new Date());
+			user.setDateupdated(new Date());
+			user.setPassword(UserUtil.sha1(randomPassword));// random password
+			user.setIspwneverexpire(true);
+			user.setFullname(fullname);
+			user.setFirstname(corporate.getMainContactFirstName());
+			user.setMiddlename(corporate.getMainContactMiddleName());
+			user.setLastname(corporate.getMainContactLastName());
+			user.setUserType("2");// Company //USERTYPE
+			user.setIsactivedirectorymember(false);
+			if (dbService.saveOrUpdate(user)) {
+			// Save User's Password in Password Bank
+			Tbpasswordbank pbank = new Tbpasswordbank();
+			pbank.setUsername(user.getUsername());
+			pbank.setPassword(user.getPassword());
+			pbank.setDatecreated(new Date());
+			dbService.saveOrUpdate(pbank);
+
+//			List<TBRoleForm> roles = mUserForm.getRoles();
+//			for (TBRoleForm r : roles) {
+//				Tbuserroles ur = new Tbuserroles();
+//				TbuserrolesId id = new TbuserrolesId();
+//				if (r.getRoleid() != null && r.getRolename() != null) {
+//					id.setRoleid(r.getRoleid());
+//					id.setUsername(user.getUsername());
+//					ur.setId(id);
+//					ur.setRolename(r.getRolename());
+//					ur.setAssignedby(service.getUserName());
+//					ur.setAssigneddate(new Date());
+//					if (dbService.save(ur)) {
+//						System.out.println("Saved ROLES for " + user.getUsername() + " " + r.getRoleid());
+//					}
+//
+//					// Added Routine - Insert User Access - Kevin - June 11, 2017
+//					params.put("roleid", r.getRoleid());
+//					@SuppressWarnings("unchecked")
+//					List<Tbroleaccess> roleAccess = (List<Tbroleaccess>) dbService
+//							.executeListHQLQuery("FROM Tbroleaccess a WHERE a.id.roleid=:roleid", params);
+//					if (roleAccess != null) {
+//						for (Tbroleaccess roleAcc : roleAccess) {
+//							Tbuseraccess userAccess = new Tbuseraccess();
+//							TbuseraccessId userAccessId = new TbuseraccessId();
+//							userAccessId.setUsername(user.getUsername());
+//							userAccessId.setRoleid(roleAcc.getId().getRoleid());
+//							userAccessId.setAccessname(roleAcc.getId().getAccessname());
+//							userAccess.setId(userAccessId);
+//							userAccess.setModulename(roleAcc.getModulename());
+//							userAccess.setAssigneddate(new Date());
+//							dbService.save(userAccess);
+//						}
+//					}
+//				}
+//			}
+			
+			res.setFlag("success");
+			res.setReturnMessage(randomPassword);
+			String emailFlag = "success";
+			try {
+				EmailFacade email = new EmailFacade();
+				String flag = email.sendEmailForMemberAndCompanyApplication(EmailCode.COMPANY_APPLICATION, cifNo, userName, randomPassword);
 				if (flag != null && flag.equals("success")) {
 					res.setSmtpFlag("success");
 				} else {

@@ -17,5 +17,8 @@
         <property name="existingamort" type="big_decimal">
             <column name="existingamort" precision="20"/>
         </property>
+        <property name="nthp" type="big_decimal">
+            <column name="nthp" precision="16"/>
+        </property>
     </class>
 </hibernate-mapping>

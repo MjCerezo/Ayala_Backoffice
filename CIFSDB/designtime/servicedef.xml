@@ -1,10 +1,86 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="CIFSDB" class="com.cifsdb.CIFSDB" CRUDService="true" type="DataService" springFile="CIFSDB.spring.xml">
-    <operation operationType="hqlquery" name="getTbblacklistmainById">
-        <parameter name="id" typeRef="java.lang.String" isList="false"/>
-        <return typeRef="com.cifsdb.data.Tbblacklistmain" isList="false"/>
-    </operation>
     <dataobjects>
+        <dataobject javaType="com.cifsdb.data.AuditTrail" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="transactionNumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="memberId" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateCreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdBy" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="eventType" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="eventName" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="eventDescription" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="ipaddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.CapitalPledge" supportsQuickData="true">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="isFixed" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="fixedAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="isEntered" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="enteredAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.ChangeMemberStatus" supportsQuickData="true">
+            <element name="transactionNumber" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="memberId" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="applicationStatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="currentStatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subCurrentStatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="newStatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subNewStatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateCreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdBy" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateApproved" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="approvedBy" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.ChangeMemberType" supportsQuickData="true">
+            <element name="transactionNumber" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="memberId" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="applicationStatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="currentMemberType" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="currentSubMemberType" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="newMemberType" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="newSubMemberType" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateCreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdBy" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateApproved" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="approvedBy" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
         <dataobject javaType="com.cifsdb.data.Cifmembershiptype" supportsQuickData="true">
             <element name="id" typeRef="com.cifsdb.data.CifmembershiptypeId" isList="false" allowNull="false">
                 <require>delete</require>
@@ -48,6 +124,24 @@
                 <noChange>read</noChange>
                 <noChange>update</noChange>
             </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.Otp" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="otp" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateTimeCreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="dateTimeExpired" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="isValidated" typeRef="java.lang.Byte" isList="false" allowNull="true"/>
+            <element name="isExpired" typeRef="java.lang.Byte" isList="false" allowNull="true"/>
+            <element name="mobileNumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.cifsdb.data.Tbaccessrights" supportsQuickData="true">
             <element name="id" typeRef="com.cifsdb.data.TbaccessrightsId" isList="false" allowNull="false">
@@ -605,6 +699,9 @@
             <element name="expirydate1" typeRef="java.util.Date" isList="false" allowNull="true"/>
             <element name="expirydate2" typeRef="java.util.Date" isList="false" allowNull="true"/>
             <element name="appno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mainContactFirstName" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mainContactMiddleName" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mainContactLastName" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.cifsdb.data.Tbcifdependents" supportsQuickData="true">
             <element name="dependentid" typeRef="java.lang.Integer" isList="false" allowNull="false">
@@ -1042,6 +1139,8 @@
             <element name="memberId" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="memberStatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="shareCapitalAccountNumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="memberStatusSub" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cluster" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.cifsdb.data.Tbcifmergerequest" supportsQuickData="true">
             <element name="requestid" typeRef="java.lang.String" isList="false" allowNull="false">
@@ -2124,6 +2223,35 @@
             <element name="assigneddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
             <element name="assignedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
+        <dataobject javaType="com.cifsdb.data.TbemailparamsId" name="id" supportsQuickData="false">
+            <element name="emailtype" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="emailcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
         <dataobject javaType="com.cifsdb.data.TbcompanyId" name="id" supportsQuickData="false">
             <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
@@ -2135,75 +2263,6 @@
                 <noChange>update</noChange>
             </element>
             <element name="companyname" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.cifsdb.data.TbuserrolesId" name="id" supportsQuickData="false">
-            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.cifsdb.data.TbaccessrightsId" name="id" supportsQuickData="false">
-            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="modulename" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.cifsdb.data.CifmembershiptypeId" name="id" supportsQuickData="false">
-            <element name="originatingBranch" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="cifNo" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="membershipType" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -2242,6 +2301,133 @@
                 <noChange>update</noChange>
             </element>
         </dataobject>
+        <dataobject javaType="com.cifsdb.data.TbdepedcodesId" name="id" supportsQuickData="false">
+            <element name="regioncode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="divisioncode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="stationcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.TbaccessrightsId" name="id" supportsQuickData="false">
+            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="modulename" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.CiftinId" name="id" supportsQuickData="false">
+            <element name="originatingBranch" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifNo" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="tin" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.CifmembershiptypeId" name="id" supportsQuickData="false">
+            <element name="originatingBranch" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifNo" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="membershipType" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.TbroleId" name="id" supportsQuickData="false">
+            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="rolename" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
         <dataobject javaType="com.cifsdb.data.TbcodetableId" name="id" supportsQuickData="false">
             <element name="codename" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
@@ -2253,6 +2439,55 @@
                 <noChange>update</noChange>
             </element>
             <element name="codevalue" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.TbbranchId" name="id" supportsQuickData="false">
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="branchname" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.cifsdb.data.TbuseraccessId" name="id" supportsQuickData="false">
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -2309,26 +2544,6 @@
                 <noChange>update</noChange>
             </element>
         </dataobject>
-        <dataobject javaType="com.cifsdb.data.TbroleId" name="id" supportsQuickData="false">
-            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="rolename" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
         <dataobject javaType="com.cifsdb.data.TbroleaccessId" name="id" supportsQuickData="false">
             <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
@@ -2340,84 +2555,6 @@
                 <noChange>update</noChange>
             </element>
             <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.cifsdb.data.TbemailparamsId" name="id" supportsQuickData="false">
-            <element name="emailtype" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="emailcode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.cifsdb.data.TbdepedcodesId" name="id" supportsQuickData="false">
-            <element name="regioncode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="divisioncode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="stationcode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.cifsdb.data.TbbranchId" name="id" supportsQuickData="false">
-            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="branchname" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -2447,7 +2584,7 @@
                 <noChange>update</noChange>
             </element>
         </dataobject>
-        <dataobject javaType="com.cifsdb.data.TbuseraccessId" name="id" supportsQuickData="false">
+        <dataobject javaType="com.cifsdb.data.TbuserrolesId" name="id" supportsQuickData="false">
             <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
@@ -2458,44 +2595,6 @@
                 <noChange>update</noChange>
             </element>
             <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.cifsdb.data.CiftinId" name="id" supportsQuickData="false">
-            <element name="originatingBranch" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="cifNo" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="tin" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>

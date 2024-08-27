@@ -4,6 +4,11 @@
         <parameter name="adUser" typeRef="com.etel.forms.ADUser" isList="false"/>
         <return typeRef="boolean" isList="false"/>
     </operation>
+    <operation name="createCompanyCredentials">
+        <parameter name="cifNo" typeRef="java.lang.String" isList="false"/>
+        <parameter name="role" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.security.adnonad.forms.CreateUserForm" isList="false"/>
+    </operation>
     <operation name="deactivateUser">
         <parameter name="username" typeRef="java.lang.String" isList="false"/>
         <return typeRef="boolean" isList="false"/>

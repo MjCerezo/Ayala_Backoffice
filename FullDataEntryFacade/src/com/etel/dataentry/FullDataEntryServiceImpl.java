@@ -18,6 +18,8 @@ import com.casa.acct.AccountServiceImpl;
 import com.casa.acct.forms.AccountGenericForm;
 import com.casa.util.UtilService;
 import com.casa.util.UtilServiceImpl;
+import com.cifsdb.data.AuditTrail;
+import com.cifsdb.data.CapitalPledge;
 import com.cifsdb.data.Tbcifbusiness;
 import com.cifsdb.data.Tbcifcorporate;
 import com.cifsdb.data.Tbcifdependents;
@@ -26,6 +28,7 @@ import com.cifsdb.data.Tbcifindividual;
 import com.cifsdb.data.Tbcifmain;
 import com.cifsdb.data.Tbmanagement;
 import com.cifsdb.data.Tbothercontacts;
+import com.cifsdb.data.Tbpersonalreference;
 import com.cifsdb.data.Tbtradereference;
 import com.coopdb.data.Tbaccountinfo;
 import com.coopdb.data.Tbaccountofficer;
@@ -74,6 +77,7 @@ import com.coopdb.data.Tbusermember;
 import com.coopdb.data.Tbworkflowprocess;
 import com.etel.CustomerRelationship.CustomerRelationshipService;
 import com.etel.CustomerRelationship.CustomerRelationshipServiceImpl;
+import com.etel.audittrail.AuditTrailFacade;
 import com.etel.common.service.DBService;
 import com.etel.common.service.DBServiceImpl;
 import com.etel.common.service.DBServiceImplCIF;
@@ -2926,22 +2930,29 @@ public class FullDataEntryServiceImpl implements FullDataEntryService {
 	@Override
 	public List<Tbcifdependents> getListDependents(String cifno) {
 		// TODO Auto-generated method stub
-		DBService dbService = new DBServiceImplCIF();
-		DBService dbServiceCOOP = new DBServiceImpl();
+		DBService dbServiceCIF = new DBServiceImplCIF();
 		Map<String, Object> param = HQLUtil.getMap();
 		List<Tbcifdependents> list = new ArrayList<Tbcifdependents>();
 		try {
 			if (cifno != null) {
 				param.put("cifno", cifno);
-				list = (List<Tbcifdependents>) dbService.executeListHQLQuery("FROM Tbcifdependents WHERE cifno=:cifno",
-						param);
-				if (list != null && list.size() > 0) {
-					return list;
-				} else {
-					list = (List<Tbcifdependents>) dbServiceCOOP.execStoredProc(
-							"SELECT * FROM Tblstappdependents WHERE appno=:cifno", param, Tbcifdependents.class, 1,
-							null);
-				}
+//				list = (List<Tbcifdependents>) dbService.executeListHQLQuery("FROM Tbcifdependents WHERE cifno=:cifno",
+//						param);
+//				if (list != null && list.size() > 0) {
+//					return list;
+//				} else {
+//					list = (List<Tbcifdependents>) dbServiceCOOP.execStoredProc(
+//							"SELECT * FROM Tblstappdependents WHERE appno=:cifno", param, Tbcifdependents.class, 1,
+//							null);
+//				}
+				
+				list = (List<Tbcifdependents>) dbServiceCIF.execStoredProc(
+						"SELECT fullname, dateofbirth, age, address,"
+						+ " (SELECT desc1 FROM TBCODETABLE WHERE codename = 'RELATIONSHIP' AND relationship = codevalue) as relationship,"
+						+ " (SELECT desc1 FROM TBCODETABLE WHERE codename = 'GENDER' AND gender = codevalue) as gender,"
+						+ " ContactNumber AS contactNumber"
+						+ " FROM Tbcifdependents WHERE cifno=:cifno", param, Tbcifdependents.class, 1,
+						null);
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -3653,7 +3664,9 @@ public class FullDataEntryServiceImpl implements FullDataEntryService {
 		// TODO Auto-generated method stub
 		String flag = null;
 		DBService dbservice = new DBServiceImplCIF();
-		DBService dbServiceCOOP = new DBServiceImpl();
+		CapitalPledge capPledge = new CapitalPledge();
+		AuditTrailFacade auditTrailFacade = new AuditTrailFacade();
+		AuditTrail auditTrail = new AuditTrail();
 		Map<String, Object> param = HQLUtil.getMap();
 		try {
 			param.put("cifno", indiv.getCifno());
@@ -3802,7 +3815,7 @@ public class FullDataEntryServiceImpl implements FullDataEntryService {
 				i.setReferredbycifno(indiv.getReferredbycifno());
 				i.setReferredbycifname(indiv.getReferredbycifname());
 				i.setRemarks(indiv.getRemarks());
-
+				
 			}
 			if (dbservice.saveOrUpdate(i)) {
 				Tbcifmain m = (Tbcifmain) dbservice.executeUniqueHQLQuery("FROM Tbcifmain WHERE cifno=:cifno", param);
@@ -3835,6 +3848,14 @@ public class FullDataEntryServiceImpl implements FullDataEntryService {
 
 				dbservice.saveOrUpdate(m);
 
+				//Audit Trail TBCODETABLE CODE = AuditTrail
+				auditTrail.setTransactionNumber(indiv.getCifno());
+				auditTrail.setEventType("3");
+				auditTrail.setEventName("9");
+				auditTrail.setEventDescription(m.getFullname()+" Save as draft.");
+				auditTrail.setIpaddress(UserUtil.getUserIp());
+				auditTrailFacade.saveAudit(auditTrail);
+				
 //				// 01.30.2023
 //				String fullname = m.getFullname();
 //				// UPDATE DEPOSIT ACCOUNTS NAME
@@ -4154,11 +4175,14 @@ public class FullDataEntryServiceImpl implements FullDataEntryService {
 				// Address details
 
 				if (/* info.getAddresstype1() == null || */
-				info.getStreetno1() == null || info.getStreetno1().equals("") || info.getCountry1() == null
-						|| info.getCountry1().equals("") || info.getHomeownership1() == null ||
-						/* info.getAddresstype2() == null|| */
-						info.getStreetno2() == null || info.getStreetno2().equals("") || info.getCountry2() == null
-						|| info.getCountry2().equals("") || info.getHomeownership2() == null || address) {
+				info.getStreetno1() == null || info.getStreetno1().equals("") 
+				|| info.getCountry1() == null || info.getCountry1().equals("") 
+				//|| info.getHomeownership1() == null 
+				||/* info.getAddresstype2() == null|| */
+				info.getStreetno2() == null || info.getStreetno2().equals("") 
+				|| info.getCountry2() == null || info.getCountry2().equals("") 
+				//|| info.getHomeownership2() == null 
+				|| address) {
 					errorMessage.append("<br/>");
 					errorMessage.append("<b>Missing required field(s):</b> Address Details tab");
 					isNull = true;
@@ -4275,11 +4299,27 @@ public class FullDataEntryServiceImpl implements FullDataEntryService {
 							isNull = true;
 						}
 					}
+					
+					if (c.getMainContactFirstName() == null || c.getMainContactFirstName().equals("")) {
+						errorMessage.append("<br/>");
+						errorMessage.append("<b>Missing required field(s):</b> Contact Details tab");
+						isNull = true;
+					}
+					
+					if (c.getMainContactLastName() == null || c.getMainContactLastName().equals("")) {
+						errorMessage.append("<br/>");
+						errorMessage.append("<b>Missing required field(s):</b> Contact Details tab");
+						isNull = true;
+					}
+					
 					// Address details
-					if (c.getAddresstype1() == null || c.getStreetno1() == null || c.getStreetno1().equals("")
-							|| c.getCountry1() == null || c.getCountry1().equals("") || c.getProvince1() == null
-							|| c.getProvince1().equals("") || c.getCity1() == null || c.getCity1().equals("")
-							|| c.getHomeownership1() == null)
+					if (c.getAddresstype1() == null 
+							|| c.getStreetno1() == null || c.getStreetno1().equals("")
+							|| c.getCountry1() == null || c.getCountry1().equals("") 
+							|| c.getProvince1() == null || c.getProvince1().equals("") 
+							|| c.getCity1() == null || c.getCity1().equals("")
+							//|| c.getHomeownership1() == null
+							)
 
 					// 07-08-2021 MAR
 					// || c.getAddresstype2() == null || c.getStreetno2() == null
@@ -4484,6 +4524,7 @@ public class FullDataEntryServiceImpl implements FullDataEntryService {
 				m.setRiskrating(main.getRiskrating());
 				m.setCollectorareacode(main.getCollectorareacode());
 				m.setCollectorsubareacode(main.getCollectorsubareacode());
+				m.setCluster(main.getCluster());
 
 				System.out.println(filepath);
 				if (filepath != null) {
@@ -4631,8 +4672,11 @@ public class FullDataEntryServiceImpl implements FullDataEntryService {
 
 	@Override
 	public String updateCorporateCIF(Tbcifcorporate corp) {
+		AuditTrailFacade auditTrailFacade = new AuditTrailFacade();
+		AuditTrail auditTrail = new AuditTrail();
 		DBService dbservice = new DBServiceImplCIF();
 		Map<String, Object> param = HQLUtil.getMap();
+		
 		String flag = null;
 		try {
 			System.out.println("start..");
@@ -4710,6 +4754,9 @@ public class FullDataEntryServiceImpl implements FullDataEntryService {
 				c.setAreacodefax(corp.getAreacodefax());
 				c.setFaxnumber(corp.getFaxnumber());
 				c.setEmailaddress(corp.getEmailaddress());
+				c.setMainContactFirstName(corp.getMainContactFirstName());
+				c.setMainContactMiddleName(corp.getMainContactMiddleName());
+				c.setMainContactLastName(corp.getMainContactLastName());
 				c.setContacttype1(corp.getContacttype1());
 				c.setContactvalue1(corp.getContactvalue1());
 				c.setContacttype2(corp.getContacttype2());
@@ -4749,8 +4796,15 @@ public class FullDataEntryServiceImpl implements FullDataEntryService {
 					m.setFulladdress2(c.getFulladdress2());
 				}
 				dbservice.saveOrUpdate(m);
-				HistoryService h = new HistoryServiceImpl();
-				h.addHistory(c.getCifno(), "Saved as Draft.", null);
+
+				//Audit Trail TBCODETABLE CODE = AuditTrail
+				auditTrail.setTransactionNumber(corp.getCifno());
+				auditTrail.setEventType("2");
+				auditTrail.setEventName("8");
+				auditTrail.setEventDescription(m.getFullname()+" Save as draft.");
+				auditTrail.setIpaddress(UserUtil.getUserIp());
+				auditTrailFacade.saveAudit(auditTrail);
+				
 			} else {
 				flag = "failed";
 			}
@@ -6210,6 +6264,10 @@ public class FullDataEntryServiceImpl implements FullDataEntryService {
 		Map<String, Object> param = HQLUtil.getMap();
 		ADInquiryFacade adInquiry = new ADInquiryFacade();
 		NoGenerator noGenerator = new NoGenerator();
+		AuditTrailFacade auditTrailFacade = new AuditTrailFacade();
+		AuditTrail auditTrail = new AuditTrail();
+		String companyCode = null;
+		String memberId = null;
 		try {
 			param.put("cifno", cifno);
 			Tbcifmain cifMain = (Tbcifmain) dbservice.executeUniqueHQLQuery("FROM Tbcifmain WHERE cifno=:cifno",
@@ -6222,47 +6280,78 @@ public class FullDataEntryServiceImpl implements FullDataEntryService {
 				cifMain.setCifoldStatus(cifOldStatus);
 				cifMain.setCifoldStatusDate(new Date());
 			
-				//For Encoding
+				//Return to encoding
 				if(status.equals("1")) {
-					cifMain.setCifstatus("1");
 					cifMain.setReturnRemarks(remarks);
 					cifMain.setCifreturnedby(username);
 					cifMain.setCifreturnedbydate(new Date());
 				
 				//Approved
 				}else if(status.equals("4")) {
-					cifMain.setCifstatus("4");
 					cifMain.setApprovedRemarks(remarks);
 					cifMain.setCifapprovedby(username);
 					cifMain.setCifapproveddate(new Date());
 					
 					//Generate MemberId 
-					String companyCode = noGenerator.generateCompanyCode(cifMain.getFullname());
+					companyCode = noGenerator.generateCompanyCode(cifMain.getFullname());
 					cifMain.setCompanyCode(companyCode);
 					
-					//Crete User
-					//adInquiry.saveMemberCredentials(cifno, "MemberRoles");	
+					//Send Email
+					adInquiry.createCompanyCredentials(cifno, "CompanyRoles");	
 				
 				}
 				//Cancel
 				else if(status.equals("5")) {
-					cifMain.setCifstatus("5");
 					cifMain.setCancelRemarks(remarks);
 					cifMain.setCancelledby(username);
 					cifMain.setDatecancelled(new Date());
 					
 				//Declined
 				}else if(status.equals("6")) {
-					cifMain.setCifstatus("6");
 					cifMain.setDeclinedRemarks(remarks);
 					cifMain.setCifdeclinedBy(username);
 					cifMain.setCifdeclinedDate(new Date());
 					
 				}
 				
+				cifMain.setCifstatus(status);
 				cifMain.setDateupdated(new Date());
 				if (dbservice.saveOrUpdate(cifMain)) {
 					flag = "success";
+					
+					auditTrail.setTransactionNumber(cifno);
+					auditTrail.setEventType("2");
+					auditTrail.setIpaddress(UserUtil.getUserIp());
+					//Return to encoding
+					if(status.equals("1")) {
+						//Audit Trail TBCODETABLE CODE = AuditTrail
+						auditTrail.setEventName("7");
+						auditTrail.setEventDescription(cifMain.getFullname()+" Submitted to Status: Return to Encoding");
+						auditTrailFacade.saveAudit(auditTrail);
+					
+					//Approved	
+					}else if(status.equals("4")) {
+						//Audit Trail TBCODETABLE CODE = AuditTrail
+						auditTrail.setMemberId(companyCode);
+						auditTrail.setEventName("4");
+						auditTrail.setEventDescription(cifMain.getFullname()+" Submitted to Status: Approved");
+						auditTrailFacade.saveAudit(auditTrail);
+					
+					//Cancel
+					}else if(status.equals("5")) {
+						//Audit Trail TBCODETABLE CODE = AuditTrail
+						auditTrail.setEventName("5");
+						auditTrail.setEventDescription(cifMain.getFullname()+" Submitted to Status: Cancel");
+						auditTrailFacade.saveAudit(auditTrail);
+						
+					//Declined	
+					}else if(status.equals("6")) {
+						//Audit Trail TBCODETABLE CODE = AuditTrail
+						auditTrail.setEventName("6");
+						auditTrail.setEventDescription(cifMain.getFullname()+" Submitted to Status: Declined");
+						auditTrailFacade.saveAudit(auditTrail);
+					}
+					
 				} else {
 					flag = "failed";
 				}
@@ -6277,18 +6366,16 @@ public class FullDataEntryServiceImpl implements FullDataEntryService {
 			
 				//For Encoding
 				if(status.equals("1")) {
-					cifMain.setCifstatus("1");
 					cifMain.setCifreturnedby(username);
 					cifMain.setCifreturnedbydate(new Date());
 				
 				//Approved
 				}else if(status.equals("5")) {
-					cifMain.setCifstatus("5");
 					cifMain.setCifapprovedby(username);
 					cifMain.setCifapproveddate(new Date());
 					
 					//Generate MemberId 
-					String memberId = noGenerator.generateMemberId("Membership");
+					memberId = noGenerator.generateMemberId("Membership");
 					cifMain.setMemberId(memberId);
 					
 					//TBCODETABLE MEMBERSTATUS 
@@ -6303,21 +6390,54 @@ public class FullDataEntryServiceImpl implements FullDataEntryService {
 				}
 				//Cancel
 				else if(status.equals("6")) {
-					cifMain.setCifstatus("6");
 					cifMain.setCancelledby(username);
 					cifMain.setDatecancelled(new Date());
 					
 				//Declined
 				}else if(status.equals("7")) {
-					cifMain.setCifstatus("7");
 					cifMain.setCifdeclinedBy(username);
 					cifMain.setCifdeclinedDate(new Date());
 					
 				}
 				
+				cifMain.setCifstatus(status);
 				cifMain.setDateupdated(new Date());
 				if (dbservice.saveOrUpdate(cifMain)) {
 					flag = "success";
+					
+					auditTrail.setTransactionNumber(cifno);
+					auditTrail.setEventType("3");
+					auditTrail.setIpaddress(UserUtil.getUserIp());
+					
+					//Return to encoding
+					if(status.equals("1")) {
+						//Audit Trail TBCODETABLE CODE = AuditTrail
+						auditTrail.setEventName("8");
+						auditTrail.setEventDescription(cifMain.getFullname()+" Submitted to Status: Return to Encoding");
+						auditTrailFacade.saveAudit(auditTrail);
+					
+					//Approved	
+					}else if(status.equals("5")) {
+						//Audit Trail TBCODETABLE CODE = AuditTrail
+						auditTrail.setMemberId(memberId);
+						auditTrail.setEventName("5");
+						auditTrail.setEventDescription(cifMain.getFullname()+" Submitted to Status: Approved");
+						auditTrailFacade.saveAudit(auditTrail);
+					
+					//Cancel
+					}else if(status.equals("6")) {
+						//Audit Trail TBCODETABLE CODE = AuditTrail
+						auditTrail.setEventName("6");
+						auditTrail.setEventDescription(cifMain.getFullname()+" Submitted to Status: Cancel");
+						auditTrailFacade.saveAudit(auditTrail);
+						
+					//Declined	
+					}else if(status.equals("7")) {
+						//Audit Trail TBCODETABLE CODE = AuditTrail
+						auditTrail.setEventName("7");
+						auditTrail.setEventDescription(cifMain.getFullname()+" Submitted to Status: Declined");
+						auditTrailFacade.saveAudit(auditTrail);
+					}
 				} else {
 					flag = "failed";
 				}
@@ -6463,6 +6583,7 @@ public class FullDataEntryServiceImpl implements FullDataEntryService {
 					row.setBasicsalary(d.getBasicsalary());
 					row.setWithholdingtax(d.getWithholdingtax());
 					row.setExistingamort(d.getExistingamort());
+					row.setNthp(d.getNthp());
 					if(dbServiceCoop.saveOrUpdate(row)) {
 						flag = "success";
 					}
@@ -6473,6 +6594,7 @@ public class FullDataEntryServiceImpl implements FullDataEntryService {
 					n.setBasicsalary(d.getBasicsalary());
 					n.setWithholdingtax(d.getWithholdingtax());
 					n.setExistingamort(d.getExistingamort());
+					n.setNthp(d.getNthp());
 					if(dbServiceCoop.save(n)) {
 						flag = "success";
 					}
@@ -6620,5 +6742,44 @@ public class FullDataEntryServiceImpl implements FullDataEntryService {
 			e.printStackTrace();
 		}
 		return flag;
+	}
+
+	@Override
+	public String saveUpdateCapitalPledge(CapitalPledge form) {
+		CapitalPledge capitalPledge = new CapitalPledge();
+		HashMap<String, Object> params = new HashMap<String, Object>();
+		params.put("CIFNo", form.getCifno());
+		capitalPledge = (CapitalPledge) dbServiceCIF.executeUniqueHQLQuery("FROM CapitalPledge WHERE CIFNo=:CIFNo", params);
+		if (capitalPledge != null) {
+			
+			capitalPledge.setCifno(form.getCifno());
+			capitalPledge.setIsFixed(form.getIsFixed());
+			capitalPledge.setFixedAmount(form.getFixedAmount());
+			capitalPledge.setIsEntered(form.getIsEntered());
+			capitalPledge.setEnteredAmount(form.getEnteredAmount());
+			if (dbServiceCIF.saveOrUpdate(capitalPledge)) {
+				System.out.println("UPDATE");
+				return "update";
+			}
+		} else {
+			if (dbServiceCIF.saveOrUpdate(form)) {
+				System.out.println("SAVE");
+				return "success";
+			}
+		}
+		return "failed";
+	}
+
+	@Override
+	public CapitalPledge getCapitalPledge(String cifno) {		
+		CapitalPledge capitalPledge = new CapitalPledge();
+		try {
+			param.put("CIFNo", cifno);
+			capitalPledge = (CapitalPledge) dbServiceCIF.executeUniqueHQLQuery("FROM CapitalPledge WHERE CIFNo=:CIFNo",
+					param);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return capitalPledge;
 	}
 }

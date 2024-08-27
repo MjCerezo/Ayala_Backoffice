@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- Generated 08/06/2024 19:26:31
+<!-- Generated 08/27/2024 14:21:55
 
 Configuration for 'CIFSDB' database service
 
@@ -91,14 +91,17 @@ Configuration for 'CIFSDB' database service
             <list>
 
 <value>com/cifsdb/data/Ciftin.hbm.xml</value>
+<value>com/cifsdb/data/ChangeMemberType.hbm.xml</value>
+<value>com/cifsdb/data/Otp.hbm.xml</value>
 <value>com/cifsdb/data/Tbblacklistmain.hbm.xml</value>
 <value>com/cifsdb/data/Tbothercontacts.hbm.xml</value>
 <value>com/cifsdb/data/Cifmembershiptype.hbm.xml</value>
+<value>com/cifsdb/data/AuditTrail.hbm.xml</value>
 <value>com/cifsdb/data/Tbqibinfo.hbm.xml</value>
 <value>com/cifsdb/data/Tbexistingloansother.hbm.xml</value>
 <value>com/cifsdb/data/Tbpsoccodes.hbm.xml</value>
-<value>com/cifsdb/data/Tbamlarequest.hbm.xml</value>
 <value>com/cifsdb/data/Tbmanagement.hbm.xml</value>
+<value>com/cifsdb/data/Tbamlarequest.hbm.xml</value>
 <value>com/cifsdb/data/Tbuseraccess.hbm.xml</value>
 <value>com/cifsdb/data/Tbnotes.hbm.xml</value>
 <value>com/cifsdb/data/Tbbankaccounts.hbm.xml</value>
@@ -106,6 +109,7 @@ Configuration for 'CIFSDB' database service
 <value>com/cifsdb/data/Tbotheraccounts.hbm.xml</value>
 <value>com/cifsdb/data/Tbuserroles.hbm.xml</value>
 <value>com/cifsdb/data/Tbcifmain.hbm.xml</value>
+<value>com/cifsdb/data/ChangeMemberStatus.hbm.xml</value>
 <value>com/cifsdb/data/Tbauditevents.hbm.xml</value>
 <value>com/cifsdb/data/Tbcustomerrelationship.hbm.xml</value>
 <value>com/cifsdb/data/Tbrole.hbm.xml</value>
@@ -122,6 +126,7 @@ Configuration for 'CIFSDB' database service
 <value>com/cifsdb/data/Tbsmtp.hbm.xml</value>
 <value>com/cifsdb/data/Tbcifpepinfo.hbm.xml</value>
 <value>com/cifsdb/data/Tbothercontactrequest.hbm.xml</value>
+<value>com/cifsdb/data/CapitalPledge.hbm.xml</value>
 <value>com/cifsdb/data/Tbsequence.hbm.xml</value>
 <value>com/cifsdb/data/Tbpasswordbank.hbm.xml</value>
 <value>com/cifsdb/data/Tbaccessrights.hbm.xml</value>
@@ -140,15 +145,15 @@ Configuration for 'CIFSDB' database service
 <value>com/cifsdb/data/Tbfatca.hbm.xml</value>
 <value>com/cifsdb/data/Tbtradereference.hbm.xml</value>
 <value>com/cifsdb/data/Tbcifgroup.hbm.xml</value>
-<value>com/cifsdb/data/Tbemailparams.hbm.xml</value>
 <value>com/cifsdb/data/Tbhistory.hbm.xml</value>
+<value>com/cifsdb/data/Tbemailparams.hbm.xml</value>
 <value>com/cifsdb/data/CityOfBirth.hbm.xml</value>
 <value>com/cifsdb/data/Tbqibhistory.hbm.xml</value>
 <value>com/cifsdb/data/Tbbranch.hbm.xml</value>
 <value>com/cifsdb/data/Tbdepedcodes.hbm.xml</value>
 <value>com/cifsdb/data/Tbcompany.hbm.xml</value>
-<value>com/cifsdb/data/Ciftitle.hbm.xml</value>
 <value>com/cifsdb/data/Tbaudittrail.hbm.xml</value>
+<value>com/cifsdb/data/Ciftitle.hbm.xml</value>
 <value>com/cifsdb/data/Tbcifdependents.hbm.xml</value>
 <value>com/cifsdb/data/Tbcreditcardinfo.hbm.xml</value>
 <value>com/cifsdb/data/Tbpsiccodes.hbm.xml</value>
@@ -164,7 +169,7 @@ Configuration for 'CIFSDB' database service
 <value>com/cifsdb/data/Tbcifcancellationrequest.hbm.xml</value>
 <value>com/cifsdb/data/Tbcodename.hbm.xml</value>
 
-<value>com/cifsdb/data/Tbblacklistmain.ql.xml</value>
+<value>com/cifsdb/data/ChangeMemberType.ql.xml</value>
 <value>com/cifsdb/data/app-queries.ql.xml</value>
 
             </list>

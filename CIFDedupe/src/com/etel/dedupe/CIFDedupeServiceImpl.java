@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.cifsdb.data.AuditTrail;
 import com.cifsdb.data.Tbamlacorporate;
 import com.cifsdb.data.Tbamlaindividual;
 import com.cifsdb.data.Tbamlalistmain;
@@ -17,6 +18,7 @@ import com.cifsdb.data.Tbcifcorporate;
 import com.cifsdb.data.Tbcifindividual;
 import com.cifsdb.data.Tbcifmain;
 import com.cifsdb.data.Tbcodetable;
+import com.etel.audittrail.AuditTrailFacade;
 import com.etel.cifreport.form.CIFTransactionalReportForm;
 import com.etel.common.service.DBService;
 import com.etel.common.service.DBServiceImplCIF;
@@ -26,10 +28,14 @@ import com.etel.dedupeforms.amladedupeform;
 import com.etel.dedupeforms.blacklistdedupeform;
 import com.etel.dedupeforms.cifdedupeform;
 import com.etel.dedupeforms.dedupeform;
+import com.etel.utils.UserUtil;
+import com.wavemaker.runtime.RuntimeAccess;
+import com.wavemaker.runtime.security.SecurityService;
 
 public class CIFDedupeServiceImpl implements CIFDedupeService {
 
-	
+	public static SecurityService securityService = (SecurityService) RuntimeAccess.getInstance()
+			.getServiceBean("securityService");
 	/** DEDUPE INDIVIDUAL **/	
 	@SuppressWarnings({ "unchecked" })
 	@Override
@@ -200,6 +206,8 @@ public class CIFDedupeServiceImpl implements CIFDedupeService {
 	public dedupeform dedupeIndividual(String lname, String fname, Date dob, String tin, String sss, String streetno,
 			String subdivision, String country, String province, String city, String barangay, String postalCode, String losLink) {
 		
+		AuditTrailFacade auditTrailFacade = new AuditTrailFacade();
+		AuditTrail auditTrail = new AuditTrail();
 		dedupeform form = new dedupeform();
 		DBService dbService = new DBServiceImplCIF();
 		Map<String, Object> param = new HashMap<String, Object>();
@@ -320,7 +328,13 @@ public class CIFDedupeServiceImpl implements CIFDedupeService {
 				if(membership!=null){
 					form.setMembershipDedupe(membership);
 				}
-				//System.out.println("member - " + member);
+				
+				//Audit Trail TBCODETABLE CODE = AuditTrail Value = 1 Dedupe - Company
+				auditTrail.setEventType("3");
+				auditTrail.setEventName("0");
+				auditTrail.setEventDescription(fname.toUpperCase() + " " + lname.toUpperCase());
+				auditTrail.setIpaddress(UserUtil.getUserIp());
+				auditTrailFacade.saveAudit(auditTrail);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -333,6 +347,8 @@ public class CIFDedupeServiceImpl implements CIFDedupeService {
 	public dedupeform dedupeCorporate(String businessname, Date incorporationdate, String tin, String sss, String streetno,
 			String subdivision, String country, String province, String city, String barangay, String postalCode, String corpOrSoleProp, String losLink) {
 
+		AuditTrailFacade auditTrailFacade = new AuditTrailFacade();
+		AuditTrail auditTrail = new AuditTrail();
 		dedupeform form = new dedupeform();
 		DBService dbService = new DBServiceImplCIF();
 		Map<String, Object> param = new HashMap<String, Object>();
@@ -437,6 +453,13 @@ public class CIFDedupeServiceImpl implements CIFDedupeService {
 					form.setBlacklist(blkmain);
 				}
 			}
+			
+			//Audit Trail TBCODETABLE CODE = AuditTrail Value = 1 Dedupe - Company
+			auditTrail.setEventType("2");
+			auditTrail.setEventName("0");
+			auditTrail.setEventDescription(businessname.toUpperCase());
+			auditTrail.setIpaddress(UserUtil.getUserIp());
+			auditTrailFacade.saveAudit(auditTrail);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

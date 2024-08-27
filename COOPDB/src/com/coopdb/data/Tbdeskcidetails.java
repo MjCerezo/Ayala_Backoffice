@@ -5,7 +5,7 @@ package com.coopdb.data;
 
 /**
  *  COOPDB.Tbdeskcidetails
- *  08/10/2024 21:24:56
+ *  08/27/2024 14:22:56
  * 
  */
 public class Tbdeskcidetails {

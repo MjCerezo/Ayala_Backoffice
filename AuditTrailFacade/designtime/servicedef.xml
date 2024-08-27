@@ -14,5 +14,30 @@
     <operation name="getListAuditTrail">
         <return typeRef="com.cifsdb.data.Tbaudittrail" isList="true"/>
     </operation>
+    <operation name="getListAuditTrailCompany">
+        <parameter name="createdBy" typeRef="java.lang.String" isList="false"/>
+        <parameter name="applicationStatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="dateCreated" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="com.cifsdb.data.AuditTrail" isList="true"/>
+    </operation>
+    <operation name="getListAuditTrailMember">
+        <parameter name="createdBy" typeRef="java.lang.String" isList="false"/>
+        <parameter name="applicationStatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="dateCreated" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="com.cifsdb.data.AuditTrail" isList="true"/>
+    </operation>
+    <operation name="getListAuditTrailUserActivities">
+        <parameter name="createdBy" typeRef="java.lang.String" isList="false"/>
+        <parameter name="applicationStatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="dateCreated" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="com.cifsdb.data.AuditTrail" isList="true"/>
+    </operation>
+    <operation name="getListUsers">
+        <return typeRef="com.coopdb.data.Tbuser" isList="true"/>
+    </operation>
+    <operation name="saveAudit">
+        <parameter name="form" typeRef="com.cifsdb.data.AuditTrail" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
     <dataobjects/>
 </service>

@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  *  COOPDB.Tblstapp
- *  08/10/2024 21:24:57
+ *  08/27/2024 14:22:58
  * 
  */
 public class Tblstapp {
@@ -104,6 +104,7 @@ public class Tblstapp {
     private String approvaldecision;
     private Boolean isexisting;
     private Boolean deviationflag;
+    private String companycodemember;
 
     public String getAppno() {
         return appno;
@@ -839,6 +840,14 @@ public class Tblstapp {
 
     public void setDeviationflag(Boolean deviationflag) {
         this.deviationflag = deviationflag;
+    }
+
+    public String getCompanycodemember() {
+        return companycodemember;
+    }
+
+    public void setCompanycodemember(String companycodemember) {
+        this.companycodemember = companycodemember;
     }
 
 }

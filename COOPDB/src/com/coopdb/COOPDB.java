@@ -14,7 +14,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "COOPDB"
- *  08/10/2024 22:15:51
+ *  08/27/2024 14:24:29
  * 
  */
 @SuppressWarnings("unchecked")

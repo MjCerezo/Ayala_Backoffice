@@ -5,7 +5,7 @@ package com.cifsdb.data;
 
 /**
  *  CIFSDB.Cifmembershiptype
- *  08/06/2024 19:26:36
+ *  08/27/2024 14:22:04
  * 
  */
 public class Cifmembershiptype {

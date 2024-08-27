@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.Otp" table="OTP" catalog="AcaciaAyalaMembershipDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="Id"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="CIFNo" length="50" not-null="true"/>
+        </property>
+        <property name="otp" type="string">
+            <column name="OTP" length="6"/>
+        </property>
+        <property name="dateTimeCreated" type="timestamp">
+            <column name="DateTimeCreated" length="23"/>
+        </property>
+        <property name="dateTimeExpired" type="timestamp">
+            <column name="DateTimeExpired" length="23"/>
+        </property>
+        <property name="isValidated" type="byte">
+            <column name="IsValidated"/>
+        </property>
+        <property name="isExpired" type="byte">
+            <column name="IsExpired"/>
+        </property>
+        <property name="mobileNumber" type="string">
+            <column name="MobileNumber" length="11"/>
+        </property>
+    </class>
+</hibernate-mapping>

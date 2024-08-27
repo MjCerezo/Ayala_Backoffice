@@ -5,9 +5,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import com.cifsdb.data.AuditTrail;
 import com.cifsdb.data.Tbcifmain;
 import com.cifsdb.data.Tbcodetable;
 import com.coopdb.data.Tblosmain;
+import com.etel.audittrail.AuditTrailFacade;
 import com.etel.common.service.DBService;
 import com.etel.common.service.DBServiceImpl;
 import com.etel.common.service.DBServiceImplCIF;
@@ -54,6 +56,8 @@ public class WorkflowFacade extends JavaServiceSuperClass {
     	Map<String, Object> params = HQLUtil.getMap();
     	DBService dbservice = new DBServiceImpl();
     	DBService dbserviceCIF = new DBServiceImplCIF();
+    	AuditTrailFacade auditTrailFacade = new AuditTrailFacade();
+		AuditTrail auditTrail = new AuditTrail();
     	params.put("cifno", cifno);
     	String username = UserUtil.securityService.getUserName();
     	try {
@@ -78,19 +82,13 @@ public class WorkflowFacade extends JavaServiceSuperClass {
 							
 							//For Encoding
 							if (status.equals("1")){
-								main.setIsencoding(true);
+								main.setCifstatus("2");
 							}
 							//For Approval of Cluster Head
 							if(status.equals("2")) {
-								main.setIsencoding(false);
-							}
-							//For Approval
-							if (status.equals("3")){
-								main.setIsencoding(false);
+								main.setCifstatus("3");
 							}
 						}
-						main.setCifstatus(status);
-						main.setDateupdated(new Date());
 						
 					}else if(main.getCustomertype().equals("2")) {
 						
@@ -105,75 +103,78 @@ public class WorkflowFacade extends JavaServiceSuperClass {
 							
 							//For Encoding
 							if (status.equals("1")){
-								
 								if(docsSubmitted >= totalDocsRequired) {
 									main.setCifstatus("3");
-									main.setDateupdated(new Date());
-									main.setIsencoding(true);
 								}else {
 									main.setCifstatus("2");
-									main.setDateupdated(new Date());
-									main.setIsencoding(true);
 								}
-								
 							}
 							//For Document Submission
 							if(status.equals("2")) {
 								main.setCifstatus("3");
-								main.setDateupdated(new Date());
-								main.setIsencoding(true);
 							}
 							//For HR Review
 							if (status.equals("3")){
 								main.setCifstatus("4");
-								main.setDateupdated(new Date());
-								main.setIsencoding(false);
-							}
-							//For Approval
-							if (status.equals("4")){
-								main.setCifstatus("5");
-								main.setDateupdated(new Date());
-								main.setIsencoding(false);
 							}
 						}
 						
 					}
 					
-					//main.setCifstatus(status);
-					//main.setDateupdated(new Date());
+					main.setDateupdated(new Date());
 					if(dbserviceCIF.saveOrUpdate(main)){
 						flag = "success";
-						EmailFacade email = new EmailFacade();
-						//FOR APPROVAL
-//						if(main.getCifstatus().equals("2")){
-//							//Save Email to TBSMTP
-//							email.sendEmailForMemberAndCompanyApplication(EmailCode.MEMBERSHIP_APPLICATION, cifno);
-//						}
-						
+
 						if (main.getCustomertype().equals("1")) {
-							//Company
-							//History
-							params.put("codevalue", main.getCifstatus());
-							Tbcodetable stat = (Tbcodetable)dbserviceCIF.executeUniqueHQLQuery("FROM Tbcodetable WHERE id.codename='COMPANYAPPLICATIONSTATUS' AND id.codevalue=:codevalue", params);
-							HistoryService h = new HistoryServiceImpl();
-							if(remarks == null){
-								h.addHistory(cifno, "Company Submitted to Status: " + "<b>" + stat.getDesc1(), null);
-							}else{
-								h.addHistory(cifno, "Company Submitted to Status: " + "<b>" + stat.getDesc1(), remarks);						
+							
+							auditTrail.setTransactionNumber(cifno);
+							auditTrail.setEventType("2");
+							auditTrail.setIpaddress(UserUtil.getUserIp());
+							
+							if (status.equals("1")){
+								//Audit Trail TBCODETABLE CODE = AuditTrail
+								auditTrail.setEventName("2");
+								auditTrail.setEventDescription(main.getFullname()+" Submitted to Status: For Approval of Cluster Head");
+								auditTrailFacade.saveAudit(auditTrail);
+							}
+							if (status.equals("2")){
+								//Audit Trail TBCODETABLE CODE = AuditTrail
+								auditTrail.setEventName("3");
+								auditTrail.setEventDescription(main.getFullname()+" Submitted to Status: For Approval");
+								auditTrailFacade.saveAudit(auditTrail);
 							}
 							
 						}else if(main.getCustomertype().equals("2")) {
-							//Membership
-							//History
-							params.put("codevalue", main.getCifstatus());
-							Tbcodetable stat = (Tbcodetable)dbserviceCIF.executeUniqueHQLQuery("FROM Tbcodetable WHERE id.codename='MEMBERSHIPAPPLICATIONSTATUS' AND id.codevalue=:codevalue", params);
-							HistoryService h = new HistoryServiceImpl();
-							if(remarks == null){
-								h.addHistory(cifno, "Member Submitted to Status: " + "<b>" + stat.getDesc1(), null);
-							}else{
-								h.addHistory(cifno, "Member Submitted to Status: " + "<b>" + stat.getDesc1(), remarks);						
-							}
 							
+							auditTrail.setTransactionNumber(cifno);
+							auditTrail.setEventType("3");
+							auditTrail.setIpaddress(UserUtil.getUserIp());
+							
+							if (status.equals("1")){
+								//Audit Trail TBCODETABLE CODE = AuditTrail
+								auditTrail.setEventName("2");
+								auditTrail.setEventDescription(main.getFullname()+" Submitted to Status: For Document Submission");
+								auditTrailFacade.saveAudit(auditTrail);
+							}
+							if (status.equals("2")){
+								if(docsSubmitted >= totalDocsRequired) {
+									//Audit Trail TBCODETABLE CODE = AuditTrail
+									auditTrail.setEventName("4");
+									auditTrail.setEventDescription(main.getFullname()+" Submitted to Status: For HR Review");
+									auditTrailFacade.saveAudit(auditTrail);
+								}else {
+									//Audit Trail TBCODETABLE CODE = AuditTrail
+									auditTrail.setEventName("3");
+									auditTrail.setEventDescription(main.getFullname()+" Submitted to Status: For Document Submission");
+									auditTrailFacade.saveAudit(auditTrail);
+								}
+							}
+							if (status.equals("3")){
+								//Audit Trail TBCODETABLE CODE = AuditTrail
+								auditTrail.setEventName("4");
+								auditTrail.setEventDescription(main.getFullname()+" Submitted to Status: For Approval");
+								auditTrailFacade.saveAudit(auditTrail);
+							}						
 						}
 						
 

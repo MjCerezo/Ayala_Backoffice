@@ -131,6 +131,10 @@
         <parameter name="memid" typeRef="java.lang.String" isList="false"/>
         <return typeRef="com.coopdb.data.Tbpledge" isList="false"/>
     </operation>
+    <operation name="getCapitalPledge">
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.cifsdb.data.CapitalPledge" isList="false"/>
+    </operation>
     <operation name="getComakerInfo">
         <parameter name="memid" typeRef="java.lang.String" isList="false"/>
         <return typeRef="com.coopdb.data.Tbmemberemployment" isList="false"/>
@@ -495,6 +499,10 @@
     </operation>
     <operation name="saveSourceIncome">
         <parameter name="source" typeRef="com.coopdb.data.Tblstsourceincome" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="saveUpdateCapitalPledge">
+        <parameter name="form" typeRef="com.cifsdb.data.CapitalPledge" isList="false"/>
         <return typeRef="java.lang.String" isList="false"/>
     </operation>
     <operation name="totalDebitCredit">

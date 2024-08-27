@@ -293,5 +293,8 @@
         <property name="isexempted" type="string">
             <column name="isexempted" length="10"/>
         </property>
+        <property name="cbu" type="big_decimal">
+            <column name="cbu" precision="20"/>
+        </property>
     </class>
 </hibernate-mapping>

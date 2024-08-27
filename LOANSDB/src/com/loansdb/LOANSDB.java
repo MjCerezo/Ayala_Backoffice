@@ -14,7 +14,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "LOANSDB"
- *  08/10/2024 22:15:52
+ *  08/27/2024 14:13:54
  * 
  */
 @SuppressWarnings("unchecked")

@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 /**
  *  COOPDB.Tbmembernetcapping
- *  08/10/2024 21:24:57
+ *  08/27/2024 14:22:57
  * 
  */
 public class Tbmembernetcapping {
@@ -16,6 +16,7 @@ public class Tbmembernetcapping {
     private BigDecimal basicsalary;
     private BigDecimal withholdingtax;
     private BigDecimal existingamort;
+    private BigDecimal nthp;
 
     public String getAppno() {
         return appno;
@@ -55,6 +56,14 @@ public class Tbmembernetcapping {
 
     public void setExistingamort(BigDecimal existingamort) {
         this.existingamort = existingamort;
+    }
+
+    public BigDecimal getNthp() {
+        return nthp;
+    }
+
+    public void setNthp(BigDecimal nthp) {
+        this.nthp = nthp;
     }
 
 }

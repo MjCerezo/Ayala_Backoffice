@@ -2,6 +2,7 @@
 package com.cifsdb;
 
 import java.util.List;
+import com.cifsdb.data.ChangeMemberType;
 import com.wavemaker.json.type.TypeDefinition;
 import com.wavemaker.runtime.data.DataServiceManager;
 import com.wavemaker.runtime.data.DataServiceManagerAccess;
@@ -14,7 +15,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "CIFSDB"
- *  08/10/2024 22:15:51
+ *  08/27/2024 14:21:56
  * 
  */
 @SuppressWarnings("unchecked")
@@ -25,8 +26,8 @@ public class CIFSDB
     private DataServiceManager dsMgr;
     private TaskManager taskMgr;
 
-    public com.cifsdb.data.Tbblacklistmain getTbblacklistmainById(String id, PagingOptions pagingOptions) {
-        List<com.cifsdb.data.Tbblacklistmain> rtn = ((List<com.cifsdb.data.Tbblacklistmain> ) dsMgr.invoke(taskMgr.getQueryTask(), (CIFSDBConstants.getTbblacklistmainByIdQueryName), id, pagingOptions));
+    public ChangeMemberType getChangeMemberTypeById(String id) {
+        List<ChangeMemberType> rtn = ((List<ChangeMemberType> ) dsMgr.invoke(taskMgr.getQueryTask(), (CIFSDBConstants.getChangeMemberTypeByIdQueryName), id));
         if (rtn.isEmpty()) {
             return null;
         } else {

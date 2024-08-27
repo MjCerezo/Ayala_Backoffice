@@ -48,9 +48,18 @@ public class QDEParameterForm {
 	private String postalcode;
 	private String custType;
 	
+	private List<Tbcifmain> cif;
+	private String customertype;
+	private String company;
+	private String typefacility;
+	private List<Tbmember> member;
+	private List<Tbemployee> employee;
+	private String lastnameNotExisting;
+	private String firstnameNotExisting;
+	private String businessnameNotExisting;
+	
 	private String bankName;
 	private String bankAccountNumber;
-	
 	
 	public String getBankName() {
 		return bankName;
@@ -68,9 +77,7 @@ public class QDEParameterForm {
 		this.bankAccountNumber = bankAccountNumber;
 	}
 
-	// MAR 10-13-2020
-	private List<Tbcifmain> cif;
-	private String customertype;
+
 	public String getCustomertype() {
 		return customertype;
 	}
@@ -99,8 +106,6 @@ public class QDEParameterForm {
 		return cif;
 	}
 
-	private String company;
-	private String typefacility;
 
 	//END
 	
@@ -199,9 +204,7 @@ public class QDEParameterForm {
 		this.applicationtype = applicationtype;
 	}
 
-	private List<Tbmember> member;
 	
-	private List<Tbemployee> employee;
 	
 	public List<Tbmember> getMember() {
 		return member;
@@ -380,9 +383,7 @@ public class QDEParameterForm {
 	
 	
 	//MAR 10-25-2020
-		private String lastnameNotExisting;
-		private String firstnameNotExisting;
-		private String businessnameNotExisting;
+
 		
 		public String getLastnameNotExisting() {
 			return lastnameNotExisting;

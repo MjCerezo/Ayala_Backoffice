@@ -90,10 +90,22 @@ public class NoGenerator extends JavaServiceSuperClass {
 	   return no;
 	}
 	
-	//Generate Member UserName 
+	//Generate Member UserName
 	public String generateMemberUserName(String cifNo){
 	   String username = CIFNoGenerator.generateMemberUserName(cifNo);
 	   return username;
 	}
+	
+	//Generate Company UserName
+	public String generateCompanyUserName(String cifNo){
+		  String username = CIFNoGenerator.generateCompanyUserName(cifNo);
+		  return username;
+	}
+	
+    //Generate Transaction
+    public String generateTRN(){
+ 	   String no = CIFNoGenerator.generateTRN("TRANSACTIONS");
+ 	   return no;
+   }
 
 }

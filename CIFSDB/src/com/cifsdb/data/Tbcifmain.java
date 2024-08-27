@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  CIFSDB.Tbcifmain
- *  08/06/2024 19:26:35
+ *  08/27/2024 14:22:04
  * 
  */
 public class Tbcifmain {
@@ -74,6 +74,8 @@ public class Tbcifmain {
     private String memberId;
     private String memberStatus;
     private String shareCapitalAccountNumber;
+    private String memberStatusSub;
+    private String cluster;
 
     public String getCifno() {
         return cifno;
@@ -577,6 +579,22 @@ public class Tbcifmain {
 
     public void setShareCapitalAccountNumber(String shareCapitalAccountNumber) {
         this.shareCapitalAccountNumber = shareCapitalAccountNumber;
+    }
+
+    public String getMemberStatusSub() {
+        return memberStatusSub;
+    }
+
+    public void setMemberStatusSub(String memberStatusSub) {
+        this.memberStatusSub = memberStatusSub;
+    }
+
+    public String getCluster() {
+        return cluster;
+    }
+
+    public void setCluster(String cluster) {
+        this.cluster = cluster;
     }
 
 }

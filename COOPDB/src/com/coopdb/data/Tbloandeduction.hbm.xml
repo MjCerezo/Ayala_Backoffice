@@ -23,5 +23,8 @@
         <property name="datecreated" type="timestamp">
             <column name="datecreated" length="23"/>
         </property>
+        <property name="iscbu" type="boolean">
+            <column name="iscbu"/>
+        </property>
     </class>
 </hibernate-mapping>

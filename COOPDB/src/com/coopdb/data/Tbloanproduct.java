@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  *  COOPDB.Tbloanproduct
- *  08/10/2024 21:24:57
+ *  08/27/2024 14:22:58
  * 
  */
 public class Tbloanproduct {
@@ -109,6 +109,7 @@ public class Tbloanproduct {
     private String ddlqtype;
     private String qualifiedmember;
     private String isexempted;
+    private BigDecimal cbu;
 
     public String getProductcode() {
         return productcode;
@@ -884,6 +885,14 @@ public class Tbloanproduct {
 
     public void setIsexempted(String isexempted) {
         this.isexempted = isexempted;
+    }
+
+    public BigDecimal getCbu() {
+        return cbu;
+    }
+
+    public void setCbu(BigDecimal cbu) {
+        this.cbu = cbu;
     }
 
 }

@@ -1,0 +1,21 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.CapitalPledge" table="CapitalPledge" catalog="AcaciaAyalaMembershipDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="cifno" type="string">
+            <column name="CIFNo" length="50"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="isFixed" type="boolean">
+            <column name="isFixed"/>
+        </property>
+        <property name="fixedAmount" type="big_decimal">
+            <column name="FixedAmount" precision="16"/>
+        </property>
+        <property name="isEntered" type="boolean">
+            <column name="isEntered"/>
+        </property>
+        <property name="enteredAmount" type="big_decimal">
+            <column name="EnteredAmount" precision="16"/>
+        </property>
+    </class>
+</hibernate-mapping>
