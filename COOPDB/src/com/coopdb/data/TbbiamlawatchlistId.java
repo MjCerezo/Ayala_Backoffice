@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 /**
  *  COOPDB.TbbiamlawatchlistId
- *  08/10/2024 21:24:56
+ *  08/27/2024 14:22:57
  * 
  */
 public class TbbiamlawatchlistId

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Generated 08/18/2024 16:53:01
+
+Queries for entity: Otp.
+
+@design.generated: Marks a generated query.
+
+-->
+
+<hibernate-mapping>
+
+    <query 
+        name="getOtpById"
+        comment="Example HQL Query
+                 @design.generated">
+                 
+        <query-param name="id" type="java.lang.Integer"/>
+
+            from Otp _a where _a.id=:id 
+
+    </query>
+
+</hibernate-mapping>

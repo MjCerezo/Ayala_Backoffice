@@ -6,8 +6,10 @@ import com.coopdb.data.Tbloanevaluationtable;
 import com.etel.loanform.LoanAppInquiryForApprovalForm;
 import com.etel.loanform.LoanAppInquiryForReleaseForm;
 import com.etel.loanform.LoanEvaluationResultForm;
+import com.etel.loanform.LoanObligationForm;
 import com.etel.loanform.LoanRuleForm;
 import com.etel.loanform.MemberLoanEvaluationForm;
+import com.etel.loanform.MemberNetCappingForm;
 
 public interface LoanApplicationService {
 
@@ -31,5 +33,9 @@ public interface LoanApplicationService {
 	String saveOrUpdateEvaluationTable(Tbloanevaluationtable d);
 
 	String saveOrUpdateLoanEvaluationResult(String appno, String cifno);
+
+	MemberNetCappingForm getMemberNetCappingParameters(String appno, String cifno, MemberNetCappingForm f);
+
+	List<LoanObligationForm> listLoanObligation(String appno);
 
 }

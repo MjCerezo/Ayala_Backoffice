@@ -5,11 +5,11 @@ package com.cifsdb;
 
 /**
  *  Query names for service "CIFSDB"
- *  08/10/2024 22:15:51
+ *  08/27/2024 14:21:56
  * 
  */
 public class CIFSDBConstants {
 
-    public final static String getTbblacklistmainByIdQueryName = "getTbblacklistmainById";
+    public final static String getChangeMemberTypeByIdQueryName = "getChangeMemberTypeById";
 
 }

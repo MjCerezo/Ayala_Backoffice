@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.AuditTrail" table="AuditTrail" catalog="AcaciaAyalaMembershipDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="Id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="transactionNumber" type="string">
+            <column name="transactionNumber" length="100"/>
+        </property>
+        <property name="memberId" type="string">
+            <column name="MemberId" length="100"/>
+        </property>
+        <property name="dateCreated" type="timestamp">
+            <column name="DateCreated" length="23"/>
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CreatedBy" length="50"/>
+        </property>
+        <property name="eventType" type="string">
+            <column name="EventType" length="50"/>
+        </property>
+        <property name="eventName" type="string">
+            <column name="EventName" length="50"/>
+        </property>
+        <property name="eventDescription" type="string">
+            <column name="EventDescription" length="250"/>
+        </property>
+        <property name="ipaddress" type="string">
+            <column name="IPAddress" length="250"/>
+        </property>
+    </class>
+</hibernate-mapping>

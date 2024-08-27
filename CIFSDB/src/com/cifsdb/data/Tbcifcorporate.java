@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  *  CIFSDB.Tbcifcorporate
- *  08/06/2024 19:26:36
+ *  08/27/2024 14:22:04
  * 
  */
 public class Tbcifcorporate {
@@ -99,6 +99,9 @@ public class Tbcifcorporate {
     private Date expirydate1;
     private Date expirydate2;
     private String appno;
+    private String mainContactFirstName;
+    private String mainContactMiddleName;
+    private String mainContactLastName;
 
     public String getCifno() {
         return cifno;
@@ -794,6 +797,30 @@ public class Tbcifcorporate {
 
     public void setAppno(String appno) {
         this.appno = appno;
+    }
+
+    public String getMainContactFirstName() {
+        return mainContactFirstName;
+    }
+
+    public void setMainContactFirstName(String mainContactFirstName) {
+        this.mainContactFirstName = mainContactFirstName;
+    }
+
+    public String getMainContactMiddleName() {
+        return mainContactMiddleName;
+    }
+
+    public void setMainContactMiddleName(String mainContactMiddleName) {
+        this.mainContactMiddleName = mainContactMiddleName;
+    }
+
+    public String getMainContactLastName() {
+        return mainContactLastName;
+    }
+
+    public void setMainContactLastName(String mainContactLastName) {
+        this.mainContactLastName = mainContactLastName;
     }
 
 }

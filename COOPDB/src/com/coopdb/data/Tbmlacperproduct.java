@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  COOPDB.Tbmlacperproduct
- *  08/10/2024 21:24:56
+ *  08/27/2024 14:22:58
  * 
  */
 public class Tbmlacperproduct {

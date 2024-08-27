@@ -22,6 +22,10 @@
         <parameter name="companyName" typeRef="java.lang.String" isList="false"/>
         <return typeRef="java.lang.String" isList="false"/>
     </operation>
+    <operation name="generateCompanyUserName">
+        <parameter name="cifNo" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
     <operation name="generateEmpID">
         <return typeRef="java.lang.String" isList="false"/>
     </operation>
@@ -34,6 +38,9 @@
         <return typeRef="java.lang.String" isList="false"/>
     </operation>
     <operation name="generateMngID">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="generateTRN">
         <return typeRef="java.lang.String" isList="false"/>
     </operation>
     <dataobjects/>

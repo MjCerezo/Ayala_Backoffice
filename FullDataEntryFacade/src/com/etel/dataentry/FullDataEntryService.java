@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.cifsdb.data.CapitalPledge;
 import com.cifsdb.data.Tbcifbusiness;
 import com.cifsdb.data.Tbcifcorporate;
 import com.cifsdb.data.Tbcifdependents;
@@ -335,4 +336,7 @@ public interface FullDataEntryService {
 	
 	String changeCompanyOrMemberBatchUpdateStatus(List<MembershipListPerStagesForm> memberList, String status);
 
+	String saveUpdateCapitalPledge(CapitalPledge form);
+	
+	CapitalPledge getCapitalPledge(String cifno);
 }

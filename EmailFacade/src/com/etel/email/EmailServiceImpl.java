@@ -1107,10 +1107,11 @@ public class EmailServiceImpl implements EmailService {
 	public String sendEmailForMemberAndCompanyApplication(String emailCode, String cifno, String userName, String password) {
 		Map<String, Object> params = HQLUtil.getMap();
 		Tbemailformats emailFormat = new Tbemailformats();
-		Tbcompany company = new Tbcompany();
 		Tbcifmain cifMain = new Tbcifmain();
 		Tbcifindividual individual = new Tbcifindividual();
 		Tbcifcorporate corporate = new Tbcifcorporate();
+		String emailAddress = null;
+		
 		params.put("emailCode", emailCode);
 		params.put("cifno", cifno);
 		emailFormat = (Tbemailformats) dbService.executeUniqueHQLQuery("FROM Tbemailformats WHERE emailcode=:emailCode", params);
@@ -1122,9 +1123,23 @@ public class EmailServiceImpl implements EmailService {
 		switch (Integer.valueOf(emailcode)) {
 		case COMPANY_APPLICATION:
 			if(cifMain.getCustomertype().equals("1")) {
-				
 				corporate = (Tbcifcorporate) dbServiceCIF.executeUniqueHQLQuery("FROM Tbcifcorporate WHERE cifno=:cifno", params);
-				if(corporate.getEmailaddress() != null ) {
+				
+				if(corporate.getContacttype1().equals("5")) {
+					emailAddress = corporate.getContactvalue1();
+				}
+				
+				if(corporate.getContacttype2().equals("5")) {
+					emailAddress = corporate.getContactvalue2();
+				}
+				
+				System.out.print("getContacttype1 : " + corporate.getContacttype1());
+				System.out.print("getContactvalue1 : " + corporate.getContactvalue1());
+				System.out.print("getContacttype2 : " + corporate.getContacttype2());
+				System.out.print("getContactvalue2 : " + corporate.getContactvalue2());
+				System.out.print("emailAddress : " + emailAddress);
+				
+				if(emailAddress != null ) {
 					//----SUBJECT----
 					String subject = emailFormat.getSubject() == null ? "" : emailFormat.getSubject();
 					
@@ -1144,9 +1159,9 @@ public class EmailServiceImpl implements EmailService {
 			    	}
 					
 					if(bodyMessage.contains("P[password]")){
-						bodyMessage = bodyMessage.replace("P[password]", "Test Password");
+						bodyMessage = bodyMessage.replace("P[password]", password);
 			    	}
-					result = EmailUtil.sendEmail(corporate.getEmailaddress(), null, null, subject, bodyMessage).getFlag();	
+					result = EmailUtil.sendEmail(emailAddress, null, null, subject, bodyMessage).getFlag();	
 			    	if (result.equals("success")) {
 			    		return "success";
 			    	}else {

@@ -7,8 +7,10 @@ import com.coopdb.data.Tbloanevaluationtable;
 import com.etel.loanform.LoanAppInquiryForApprovalForm;
 import com.etel.loanform.LoanAppInquiryForReleaseForm;
 import com.etel.loanform.LoanEvaluationResultForm;
+import com.etel.loanform.LoanObligationForm;
 import com.etel.loanform.LoanRuleForm;
 import com.etel.loanform.MemberLoanEvaluationForm;
+import com.etel.loanform.MemberNetCappingForm;
 import com.wavemaker.runtime.javaservice.JavaServiceSuperClass;
 import com.wavemaker.runtime.service.annotations.ExposeToClient;
 
@@ -154,4 +156,24 @@ public class LoanApplicationFacade extends JavaServiceSuperClass {
     	}
 		return flag;
     }     
+    
+    public MemberNetCappingForm getMemberNetCappingParameters(String appno, String cifno, MemberNetCappingForm f) {
+    	MemberNetCappingForm form = new MemberNetCappingForm();
+    	LoanApplicationService loanappsrvc = new LoanApplicationServiceImpl();
+    	
+    	try {
+    		log(INFO, "Get Member Net Capping Data " + appno);
+    		form = loanappsrvc.getMemberNetCappingParameters(appno, cifno, f);
+    		log(INFO, "Returning Member Net Capping >>> Appno... " + appno);
+    	} catch (Exception e) {
+    		log(ERROR, "The getMemberNetCappingForm java service operation has failed", e);
+    	}
+		return form;
+    }     
+    
+    public List<LoanObligationForm> listLoanObligation(String appno) {
+		return srvc.listLoanObligation(appno);
+    }    
+       
+    
 }

@@ -23,4 +23,6 @@ public interface ADInquiryService {
 	
 	public CreateUserForm saveMemberCredentials(String cifNo, String role);
 	
+	public CreateUserForm createCompanyCredentials(String cifNo, String role);
+	
 }

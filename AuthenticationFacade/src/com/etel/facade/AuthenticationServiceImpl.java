@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import org.joda.time.Days;
 import org.joda.time.LocalDate;
 
+import com.etel.audittrail.AuditTrailFacade;
 import com.etel.common.service.DBService;
 import com.etel.common.service.DBServiceImpl;
 import com.etel.email.EmailCode;
@@ -23,6 +24,7 @@ import com.etel.utils.HQLUtil;
 import com.etel.utils.LoggerUtil;
 import com.etel.utils.PasswordGeneratorUtil;
 import com.etel.utils.UserUtil;
+import com.cifsdb.data.AuditTrail;
 import com.coopdb.data.Tbpasswordbank;
 import com.coopdb.data.Tbsecurityparams;
 import com.coopdb.data.Tbuser;
@@ -112,6 +114,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 	@Override
 	public String removeADLoginToken(String username, String password, String tag) {
 		System.out.println(">>>>>>>>>>>>>>>>>>>>> Username: " + username);
+		AuditTrailFacade auditTrailFacade = new AuditTrailFacade();
+		AuditTrail auditTrail = new AuditTrail();
 		DBService dbService = new DBServiceImpl();
 		Map<String, Object> params = HQLUtil.getMap();
 		params.put("user", username);
@@ -119,9 +123,14 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 		Tbuser user = (Tbuser) dbService.executeUniqueHQLQuery("FROM Tbuser WHERE username=:user", params);
 		if (user != null) {
 
-			AuditLog.addAuditLog(AuditLogEvents.getAuditLogEvents(AuditLogEvents.USER_LOGOUT),
-					"User " + user.getUsername() + " Logout.", user.getUsername(), new Date(),
-					AuditLogEvents.getEventModule(AuditLogEvents.USER_LOGOUT));
+			//Audit Trail TBCODETABLE CODE = AUDITTRAILUSERACTIVITIES
+			auditTrail.setCreatedBy(user.getUsername());
+			auditTrail.setEventType("1");
+			auditTrail.setEventName("8");
+			auditTrail.setIpaddress(UserUtil.getUserIp());
+			auditTrail.setEventDescription(user.getUsername().toUpperCase() + " successfully logged out.");
+			auditTrailFacade.saveAudit(auditTrail);
+			
 			user.setIsloggedon(false);
 			user.setLastlogoutdate(new Date());
 			dbService.saveOrUpdate(user);
@@ -182,6 +191,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 		params.put("user", username);
 		Integer cnt = null;
 		Tbuser user = new Tbuser();
+		AuditTrailFacade auditTrailFacade = new AuditTrailFacade();
+		AuditTrail auditTrail = new AuditTrail();
 		try {
 			user = (Tbuser) dbService.executeUniqueHQLQuery("FROM Tbuser WHERE username=:user", params);
 			Tbsecurityparams param = (Tbsecurityparams) dbService
@@ -214,10 +225,18 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 					}
 				}
 				cnt = user.getInvalidattemptscount();
-				System.out.println("Invalid attempt count " + cnt);
-				AuditLog.addAuditLog(AuditLogEvents.getAuditLogEvents(AuditLogEvents.FAILED_LOGIN),
-						"Failed logged in by " + user.getUsername() + ".", user.getUsername(), new Date(),
-						AuditLogEvents.getEventModule(AuditLogEvents.FAILED_LOGIN));
+//				System.out.println("Invalid attempt count " + cnt);
+//				AuditLog.addAuditLog(AuditLogEvents.getAuditLogEvents(AuditLogEvents.FAILED_LOGIN),
+//						"Failed logged in by " + user.getUsername() + ".", user.getUsername(), new Date(),
+//						AuditLogEvents.getEventModule(AuditLogEvents.FAILED_LOGIN));
+//				
+				//Audit Trail TBCODETABLE CODE = AUDITTRAILUSERACTIVITIES
+				auditTrail.setCreatedBy(user.getUsername());
+				auditTrail.setEventType("1");
+				auditTrail.setEventName("1");
+				auditTrail.setIpaddress(UserUtil.getUserIp());
+				auditTrail.setEventDescription("Failed logged in by " + user.getUsername().toUpperCase() + " "+ cnt + " Invalid attempt.");
+				auditTrailFacade.saveAudit(auditTrail);
 			}
 		} catch (Exception e) {
 			LoggerUtil.exceptionError(e, AuthenticationServiceImpl.class);
@@ -397,12 +416,13 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 	 */
 	@Override
 	public FormValidation checkUserStatus(String username, String password) {
-//		System.out.println(">>>>>>>>>> Checking User Status : "+ username);
 		FormValidation form = new FormValidation();
 		DBService dbService = new DBServiceImpl();
 		Map<String, Object> params = HQLUtil.getMap();
 		params.put("user", username);
 		Tbuser user = new Tbuser();
+		AuditTrailFacade auditTrailFacade = new AuditTrailFacade();
+		AuditTrail auditTrail = new AuditTrail();
 		int pExpiryDate = 0;
 		int validityDateTo = 0;
 		try {
@@ -441,6 +461,15 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 							form.setFlag("invalid");
 							form.setErrorMessage(
 									"User account is disabled. Please contact the Security Administrator.");
+							
+							//Audit Trail TBCODETABLE CODE = AUDITTRAILUSERACTIVITIES
+							auditTrail.setCreatedBy(user.getUsername());
+							auditTrail.setEventType("1");
+							auditTrail.setEventName("2");
+							auditTrail.setIpaddress(UserUtil.getUserIp());
+							auditTrail.setEventDescription("Failed logged in by " + user.getUsername().toUpperCase() + " user account is disabled and attempting to login.");
+							auditTrailFacade.saveAudit(auditTrail);
+							
 							return form;
 						}
 
@@ -449,6 +478,15 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 							form.setFlag("invalid");
 							form.setErrorMessage(
 									"User account is currently deactivated. Please contact the Security Administrator.");
+							
+							//Audit Trail TBCODETABLE CODE = AUDITTRAILUSERACTIVITIES
+							auditTrail.setCreatedBy(user.getUsername());
+							auditTrail.setEventType("1");
+							auditTrail.setEventName("3");
+							auditTrail.setIpaddress(UserUtil.getUserIp());
+							auditTrail.setEventDescription("Failed logged in by " + user.getUsername().toUpperCase() + " user account is deactivated and attempting to login.");
+							auditTrailFacade.saveAudit(auditTrail);
+							
 							return form;
 						}
 						// if islocked
@@ -458,6 +496,15 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 								form.setFlag("invalid");
 								form.setErrorMessage(
 										"User account is locked out. Please try to login again after 5 minutes.");
+								
+								//Audit Trail TBCODETABLE CODE = AUDITTRAILUSERACTIVITIES
+								auditTrail.setCreatedBy(user.getUsername());
+								auditTrail.setEventType("1");
+								auditTrail.setEventName("4");
+								auditTrail.setIpaddress(UserUtil.getUserIp());
+								auditTrail.setEventDescription("Failed logged in by " + user.getUsername().toUpperCase() + " user account is locked out.");
+								auditTrailFacade.saveAudit(auditTrail);
+								
 								return form;
 							}
 						}
@@ -480,6 +527,15 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 							form.setFlag("invalid");
 							form.setErrorMessage(
 									"User account is currently suspended. Please contact the Security Administrator.");
+							
+							//Audit Trail TBCODETABLE CODE = AUDITTRAILUSERACTIVITIES
+							auditTrail.setCreatedBy(user.getUsername());
+							auditTrail.setEventType("1");
+							auditTrail.setEventName("5");
+							auditTrail.setIpaddress(UserUtil.getUserIp());
+							auditTrail.setEventDescription("Failed logged in by " + user.getUsername().toUpperCase() + " user account is suspended and attempting to login.");
+							auditTrailFacade.saveAudit(auditTrail);
+							
 							return form;
 						}
 						// if isloggedon
@@ -487,9 +543,27 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 							form.setFlag("existingSession");
 							form.setErrorMessage(
 									"Existing session detected. Do you want to terminate the other session?");
+							
+							//Audit Trail TBCODETABLE CODE = AUDITTRAILUSERACTIVITIES
+							auditTrail.setCreatedBy(user.getUsername());
+							auditTrail.setEventType("1");
+							auditTrail.setEventName("6");
+							auditTrail.setIpaddress(UserUtil.getUserIp());
+							auditTrail.setEventDescription(user.getUsername().toUpperCase() + " successfully logged in with existing session detected.");
+							auditTrailFacade.saveAudit(auditTrail);
+							
 							return form;
 						}
 						form.setFlag("valid");
+						
+						//Audit Trail TBCODETABLE CODE = AUDITTRAILUSERACTIVITIES
+						auditTrail.setCreatedBy(user.getUsername());
+						auditTrail.setEventType("1");
+						auditTrail.setEventName("7");
+						auditTrail.setIpaddress(UserUtil.getUserIp());
+						auditTrail.setEventDescription(user.getUsername().toUpperCase() + " successfully logged in.");
+						auditTrailFacade.saveAudit(auditTrail);
+						
 						return form;
 					} else {
 						// Invalid Attempt
@@ -528,6 +602,15 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 							form.setFlag("invalid");
 							form.setErrorMessage(
 									"User account is disabled. Please contact the Security Administrator.");
+							
+							//Audit Trail TBCODETABLE CODE = AUDITTRAILUSERACTIVITIES
+							auditTrail.setCreatedBy(user.getUsername());
+							auditTrail.setEventType("1");
+							auditTrail.setEventName("2");
+							auditTrail.setIpaddress(UserUtil.getUserIp());
+							auditTrail.setEventDescription("Failed logged in by " + user.getUsername().toUpperCase() + " user account is disabled and attempting to login.");
+							auditTrailFacade.saveAudit(auditTrail);
+							
 							return form;
 						}
 
@@ -536,6 +619,15 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 							form.setFlag("invalid");
 							form.setErrorMessage(
 									"User account is currently deactivated. Please contact the Security Administrator.");
+							
+							//Audit Trail TBCODETABLE CODE = AUDITTRAILUSERACTIVITIES
+							auditTrail.setCreatedBy(user.getUsername());
+							auditTrail.setEventType("1");
+							auditTrail.setEventName("3");
+							auditTrail.setIpaddress(UserUtil.getUserIp());
+							auditTrail.setEventDescription("Failed logged in by " + user.getUsername().toUpperCase() + " user account is deactivated and attempting to login.");
+							auditTrailFacade.saveAudit(auditTrail);
+							
 							return form;
 						}
 						// if Change Password required on first login
@@ -552,6 +644,15 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 								form.setFlag("invalid");
 								form.setErrorMessage(
 										"User account is locked out. Please try to login again after 5 minutes.");
+								
+								//Audit Trail TBCODETABLE CODE = AUDITTRAILUSERACTIVITIES
+								auditTrail.setCreatedBy(user.getUsername());
+								auditTrail.setEventType("1");
+								auditTrail.setEventName("4");
+								auditTrail.setIpaddress(UserUtil.getUserIp());
+								auditTrail.setEventDescription("Failed logged in by " + user.getUsername().toUpperCase() + " user account is locked out.");
+								auditTrailFacade.saveAudit(auditTrail);
+								
 								return form;
 							}
 						}
@@ -574,6 +675,15 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 							form.setFlag("invalid");
 							form.setErrorMessage(
 									"User account is currently suspended. Please contact the Security Administrator.");
+							
+							//Audit Trail TBCODETABLE CODE = AUDITTRAILUSERACTIVITIES
+							auditTrail.setCreatedBy(user.getUsername());
+							auditTrail.setEventType("1");
+							auditTrail.setEventName("5");
+							auditTrail.setIpaddress(UserUtil.getUserIp());
+							auditTrail.setEventDescription("Failed logged in by " + user.getUsername().toUpperCase() + " user account is suspended and attempting to login.");
+							auditTrailFacade.saveAudit(auditTrail);
+							
 							return form;
 						}
 						if (user.getIspwneverexpire() == null
@@ -582,10 +692,6 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 							if (pExpiryDate < 0) {
 								user.setIssuspended(true);
 								dbService.saveOrUpdate(user);
-								AuditLog.addAuditLog(AuditLogEvents.getAuditLogEvents(AuditLogEvents.SUSPEND_USER),
-										"User " + user.getUsername() + " is suspended because password is expired.",
-										user.getUsername(), new Date(),
-										AuditLogEvents.getEventModule(AuditLogEvents.SUSPEND_USER));
 								form.setFlag("invalid");
 								form.setErrorMessage(
 										"User account is currently suspended. Please contact the Security Administrator.");
@@ -608,9 +714,27 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 							form.setFlag("existingSession");
 							form.setErrorMessage(
 									"Existing session detected. Do you want to terminate the other session?");
+							
+							//Audit Trail TBCODETABLE CODE = AUDITTRAILUSERACTIVITIES
+							auditTrail.setCreatedBy(user.getUsername());
+							auditTrail.setEventType("1");
+							auditTrail.setEventName("6");
+							auditTrail.setIpaddress(UserUtil.getUserIp());
+							auditTrail.setEventDescription(user.getUsername().toUpperCase() + " successfully logged in with existing session detected.");
+							auditTrailFacade.saveAudit(auditTrail);
+							
 							return form;
 						}
 						form.setFlag("valid");
+						
+						//Audit Trail TBCODETABLE CODE = AUDITTRAILUSERACTIVITIES
+						auditTrail.setCreatedBy(user.getUsername());
+						auditTrail.setEventType("1");
+						auditTrail.setEventName("7");
+						auditTrail.setIpaddress(UserUtil.getUserIp());
+						auditTrail.setEventDescription(user.getUsername().toUpperCase() + " successfully logged in.");
+						auditTrailFacade.saveAudit(auditTrail);
+						
 						return form;
 					} else {
 						// Invalid Attempt

@@ -191,5 +191,11 @@
         <property name="shareCapitalAccountNumber" type="string">
             <column name="ShareCapitalAccountNumber" length="50"/>
         </property>
+        <property name="memberStatusSub" type="string">
+            <column name="MemberStatusSub" length="50"/>
+        </property>
+        <property name="cluster" type="string">
+            <column name="Cluster" length="50"/>
+        </property>
     </class>
 </hibernate-mapping>

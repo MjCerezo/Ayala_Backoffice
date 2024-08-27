@@ -5,7 +5,7 @@ package com.cifsdb.data;
 
 /**
  *  CIFSDB.Tbcifpepinfo
- *  08/06/2024 19:26:35
+ *  08/27/2024 14:22:04
  * 
  */
 public class Tbcifpepinfo {

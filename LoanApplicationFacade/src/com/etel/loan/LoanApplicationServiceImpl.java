@@ -1,5 +1,6 @@
 package com.etel.loan;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -9,6 +10,7 @@ import com.cifsdb.data.Tbcifemployment;
 import com.cifsdb.data.Tbcifindividual;
 import com.cifsdb.data.Tbcodetable;
 import com.coopdb.data.Tbaccountinfo;
+import com.coopdb.data.Tbgovernmentcontribution;
 import com.coopdb.data.Tbloanevaluationtable;
 import com.coopdb.data.Tblstapp;
 import com.coopdb.data.Tbmembernetcapping;
@@ -18,8 +20,10 @@ import com.etel.common.service.DBServiceImplCIF;
 import com.etel.loanform.LoanAppInquiryForApprovalForm;
 import com.etel.loanform.LoanAppInquiryForReleaseForm;
 import com.etel.loanform.LoanEvaluationResultForm;
+import com.etel.loanform.LoanObligationForm;
 import com.etel.loanform.LoanRuleForm;
 import com.etel.loanform.MemberLoanEvaluationForm;
+import com.etel.loanform.MemberNetCappingForm;
 import com.etel.util.DateTimeUtil;
 import com.etel.utils.UserUtil;
 
@@ -334,7 +338,7 @@ public class LoanApplicationServiceImpl implements LoanApplicationService {
 				Tbcifemployment emp = (Tbcifemployment) dbServiceCIF.executeUniqueHQLQuery
 						("FROM Tbcifemployment WHERE cifno=:cifno", params);
 				if(emp.getDatehiredfrom()!=null && emp.getDatehiredto()!=null) {
-					params.put("positionCode", emp.getPosition());
+					params.put("positionCode", emp.getPositioncategory());
 					params.put("tenureMember", DateTimeUtil.yearsDiff(emp.getDatehiredfrom(), emp.getDatehiredto()));
 					
 					Integer evalTableId = (Integer) dbServiceCore.executeUniqueSQLQuery
@@ -356,7 +360,7 @@ public class LoanApplicationServiceImpl implements LoanApplicationService {
 					form.setMaxLoanAmount(loanEval.getMaxloanable());
 					
 					// Net Take Home Pay
-					//
+					form.setNthp(loanEval.getNthp());
 			
 					// Max No. Loan
 					form.setMaxNoLoan(Integer.valueOf(loanEval.getMaxcounter()));
@@ -405,15 +409,18 @@ public class LoanApplicationServiceImpl implements LoanApplicationService {
 				}
 				// Position
 				if(emp.getPosition()!=null) {
-					params.put("position", emp.getPosition());
+					params.put("position", emp.getPositioncategory());
 					String positionDesc1 = (String) dbServiceCore.executeUniqueSQLQuery
-							("SELECT desc1 FROM Tbcodetable WHERE codevalue=:position AND codename='POSITION'", params);
+							("SELECT desc1 FROM Tbcodetable WHERE codevalue=:position AND codename='POSITIONCATEGORY'", params);
 					form.setPosition(positionDesc1);
 				}
 				// Loan Amount
 				form.setMaxLoanAmount(info.getFaceamt());
+				
 				// Net Take Home Pay
-				// 
+				BigDecimal nthp = (BigDecimal) dbServiceCore.executeUniqueSQLQuery
+						("SELECT nthp FROM Tbmembernetcapping WHERE appno=:appno", params);
+				form.setNthp(nthp);
 				
 				// Total No. of Loans
 				Integer totalLoan = (Integer) dbServiceCore.executeUniqueSQLQuery(
@@ -483,7 +490,7 @@ public class LoanApplicationServiceImpl implements LoanApplicationService {
 			Tbcifemployment emp = (Tbcifemployment) dbServiceCIF.executeUniqueHQLQuery
 					("FROM Tbcifemployment WHERE cifno=:cifno", params);
 			if(emp.getDatehiredfrom()!=null && emp.getDatehiredto()!=null) {
-				params.put("positionCode", emp.getPosition());
+				params.put("positionCode", emp.getPositioncategory());
 				params.put("tenureMember", DateTimeUtil.yearsDiff(emp.getDatehiredfrom(), emp.getDatehiredto()));
 				
 				Integer evalTableId = (Integer) dbServiceCore.executeUniqueSQLQuery
@@ -526,33 +533,19 @@ public class LoanApplicationServiceImpl implements LoanApplicationService {
 					}
 					
 					// NTHP
-					form.setNthp("Passed");
-					//n.setNthp(false);
+					BigDecimal nthp = (BigDecimal) dbServiceCore.executeUniqueSQLQuery
+							("SELECT nthp FROM Tbmembernetcapping WHERE appno=:appno", params);
+					if(nthp.compareTo(loanEval.getNthp()) >0) { // greater than
+						form.setNthp("Failed");
+					}else {
+						form.setNthp("Passed");
+					}
 					
 					// Total Loan
 					form.setMaxNoLoan("Passed");
 					//n.setMaxnoloan(true);
 
 				}	
-				// Save Loan Eval Result
-			 	/*Tbloanevaluationresult n2 = (Tbloanevaluationresult) dbServiceCore.executeUniqueHQLQuery
-						("FROM Tbloanevaluationresult WHERE appno=:appno", params);
-				if(n2!=null) {
-				 	n2.setRank(n.getRank());
-				 	n2.setTenure(n.getTenure());
-				 	n2.setPosition(n.getPosition());
-				 	n2.setMaxloanamount(n.getMaxloanamount());
-				 	n2.setNthp(n.getNthp());
-				 	n2.setMaxnoloan(n.getMaxnoloan());
-				 	n2.setUpdatedby(UserUtil.securityService.getUserName());
-				 	n2.setDateupdated(new Date());
-					dbServiceCore.saveOrUpdate(n2);
-				}else {
-					n.setAppno(appno);
-					n.setCreatedby(UserUtil.securityService.getUserName());
-					n.setDatecreated(new Date());
-					dbServiceCore.save(n);
-				}*/
 				// Save Deviation Flag
 				if(form.getRank().equals("Failed") 
 						|| form.getTenure().equals("Failed")
@@ -663,7 +656,7 @@ public class LoanApplicationServiceImpl implements LoanApplicationService {
 			Tbcifemployment emp = (Tbcifemployment) dbServiceCIF.executeUniqueHQLQuery
 					("FROM Tbcifemployment WHERE cifno=:cifno", params);
 			if(emp.getDatehiredfrom()!=null && emp.getDatehiredto()!=null) {
-				params.put("positionCode", emp.getPosition());
+				params.put("positionCode", emp.getPositioncategory());
 				params.put("tenureMember", DateTimeUtil.yearsDiff(emp.getDatehiredfrom(), emp.getDatehiredto()));
 				
 				Integer evalTableId = (Integer) dbServiceCore.executeUniqueSQLQuery
@@ -683,7 +676,7 @@ public class LoanApplicationServiceImpl implements LoanApplicationService {
 						form.setTenure("Failed");
 					}
 					// Position
-					if(Integer.valueOf(emp.getPosition()) >= loanEval.getMinrankcode()  && Integer.valueOf(emp.getPosition()) <= loanEval.getMaxrankcode()) {
+					if(Integer.valueOf(emp.getPositioncategory()) >= loanEval.getMinrankcode()  && Integer.valueOf(emp.getPositioncategory()) <= loanEval.getMaxrankcode()) {
 						form.setPosition("Passed");
 					}else {
 						form.setPosition("Failed");
@@ -724,6 +717,102 @@ public class LoanApplicationServiceImpl implements LoanApplicationService {
 			e.printStackTrace();
 		}
 		return flag;
+	}
+
+	@Override
+	public MemberNetCappingForm getMemberNetCappingParameters(String appno, String cifno, MemberNetCappingForm f) {
+		MemberNetCappingForm form = new MemberNetCappingForm();
+		DBService dbServiceCIF = new DBServiceImplCIF();
+		DBService dbServiceCore = new DBServiceImpl();
+		HashMap<String, Object> params = new HashMap<String, Object>();
+		try {
+			if(appno!=null && cifno!=null) {
+				params.put("appno", appno);
+				params.put("cifno", cifno);
+				
+				if(f.getBasicSalary()!=null ) {
+					params.put("basicSalary", f.getBasicSalary());
+					
+					// SSS
+					BigDecimal sss = (BigDecimal) dbServiceCore.executeUniqueSQLQuery
+							("SELECT amountcontribution FROM TBGOVERNMENTCONTRIBUTION "
+									+ "WHERE contributiontype = 'SSS' "
+									+ "AND :basicSalary BETWEEN salaryrangefrom AND salaryrangeto", params);
+					form.setSss(sss);
+					
+					// PAGIBIG
+					Tbgovernmentcontribution pagibig = (Tbgovernmentcontribution) dbServiceCore.executeUniqueHQLQuery
+							("FROM Tbgovernmentcontribution "
+									+ "WHERE contributiontype = 'PAGIBIG' "
+									+ "AND :basicSalary BETWEEN salaryrangefrom AND salaryrangeto", params);
+					if(pagibig!=null && pagibig.getSharetype()!=null) {
+						if(pagibig.getSharetype().equals("Fixed")) {
+							form.setPagibig(pagibig.getAmountcontribution());
+						}else if(pagibig.getSharetype().equals("Percentage")) {
+							form.setPagibig(f.getBasicSalary().multiply(pagibig.getSharepercentage().divide(BigDecimal.valueOf(100))));
+						}
+					}
+					
+					// PHILHEALTH
+					Tbgovernmentcontribution philhealth = (Tbgovernmentcontribution) dbServiceCore.executeUniqueHQLQuery
+							("FROM Tbgovernmentcontribution "
+									+ "WHERE contributiontype = 'PHILHEALTH' "
+									+ "AND :basicSalary BETWEEN salaryrangefrom AND salaryrangeto", params);
+					if(philhealth!=null && philhealth.getSharetype()!=null) {
+						if(philhealth.getSharetype().equals("Fixed")) {
+							form.setPhilhealth(philhealth.getAmountcontribution());
+						}else if(philhealth.getSharetype().equals("Percentage")) {
+							form.setPhilhealth(f.getBasicSalary().multiply(philhealth.getSharepercentage().divide(BigDecimal.valueOf(100))));
+						}
+					}
+					
+					// Share Cap Pledge
+					BigDecimal shareCapPledge = (BigDecimal) dbServiceCIF.executeUniqueSQLQuery
+							("SELECT ISNULL(SUM(ISNULL(fixedAmount,0)),0) FROM CapitalPledge WHERE cifno=:cifno", params);
+					form.setShareCapPledge(shareCapPledge);
+					
+					// Existing Coop Loan (Monthly Amort)
+					
+					// Deduct Loan For Offset
+					
+					// Current Loan (Monthly Amort)
+					BigDecimal currentAmort = (BigDecimal) dbServiceCore.executeUniqueSQLQuery
+							("SELECT amortfee FROM TBACCOUNTINFO WHERE applno=:appno", params);
+					form.setCurrentLoanAmortization(currentAmort);
+					
+					// Aggregate
+					BigDecimal aggregate = (BigDecimal) dbServiceCore.executeUniqueSQLQuery
+							("SELECT ISNULL(SUM(ISNULL(i.amortfee,0)),0)"
+									+ " FROM TBACCOUNTINFO i"
+									+ " LEFT JOIN TBLSTAPP a ON a.appno=i.applno "
+									+ " WHERE i.clientid = :cifno"
+									+ " AND i.applno NOT IN (:appno)"
+									+ " AND a.applicationstatus IN ('1', '2', '3', '4', '5', '6')", params);
+					form.setAggregateAmortization(aggregate);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return form;
+	}
+
+	@Override
+	public List<LoanObligationForm> listLoanObligation(String appno) {
+		List<LoanObligationForm> form = new ArrayList<LoanObligationForm>();
+		DBService dbServiceCIF = new DBServiceImplCIF();
+		DBService dbServiceCore = new DBServiceImpl();
+		HashMap<String, Object> params = new HashMap<String, Object>();
+		try {
+			if(appno!=null) {
+				params.put("appno", appno);
+				
+				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return form;
 	}
 
 }

@@ -263,5 +263,14 @@
         <property name="appno" type="string">
             <column name="appno" length="25"/>
         </property>
+        <property name="mainContactFirstName" type="string">
+            <column name="MainContactFirstName" length="20"/>
+        </property>
+        <property name="mainContactMiddleName" type="string">
+            <column name="MainContactMiddleName" length="20"/>
+        </property>
+        <property name="mainContactLastName" type="string">
+            <column name="MainContactLastName" length="20"/>
+        </property>
     </class>
 </hibernate-mapping>

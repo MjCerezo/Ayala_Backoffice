@@ -6349,6 +6349,7 @@
             <element name="deductionamount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
             <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="iscbu" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.coopdb.data.Tbloanevaluationtable" supportsQuickData="true">
             <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
@@ -6619,6 +6620,7 @@
             <element name="ddlqtype" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="qualifiedmember" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="isexempted" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cbu" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.coopdb.data.Tbloanproductfees" supportsQuickData="true">
             <element name="id" typeRef="com.coopdb.data.TbloanproductfeesId" isList="false" allowNull="false">
@@ -7425,6 +7427,7 @@
             <element name="approvaldecision" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="isexisting" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
             <element name="deviationflag" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="companycodemember" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.coopdb.data.Tblstappbusiness" supportsQuickData="true">
             <element name="businessid" typeRef="java.lang.Integer" isList="false" allowNull="false">
@@ -8575,6 +8578,7 @@
             <element name="basicsalary" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
             <element name="withholdingtax" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
             <element name="existingamort" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="nthp" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.coopdb.data.Tbmemberpersonalreference" supportsQuickData="true">
             <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
@@ -10649,6 +10653,371 @@
             <element name="tabnotes" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
             <element name="tabhistory" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
         </dataobject>
+        <dataobject javaType="com.coopdb.data.TbevalciId" name="id" supportsQuickData="false">
+            <element name="evalreportid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbpayschedId" name="id" supportsQuickData="false">
+            <element name="amortid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="applno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbinvestigationinstId" name="id" supportsQuickData="false">
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="investigationtype" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbglmatrixperprodId" name="id" supportsQuickData="false">
+            <element name="gllineno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="productcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbuseraccessId" name="id" supportsQuickData="false">
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbcodetableId" name="id" supportsQuickData="false">
+            <element name="codename" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="codevalue" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbevalbiId" name="id" supportsQuickData="false">
+            <element name="evalreportid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbloanschemeperprodId" name="id" supportsQuickData="false">
+            <element name="prodcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="schemecode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbloanproductfeesId" name="id" supportsQuickData="false">
+            <element name="prodcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="loanfeecode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbdocspercfId" name="id" supportsQuickData="false">
+            <element name="facilitycode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="documentcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="doccategory" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbcompanyId" name="id" supportsQuickData="false">
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="companyname" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbmlacperloanappId" name="id" supportsQuickData="false">
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="conditioncode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="particulars" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbchapterId" name="id" supportsQuickData="false">
+            <element name="chaptercode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbbiamlawatchlistId" name="id" supportsQuickData="false">
+            <element name="bireportid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="amlaid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbtradereferencelosId" name="id" supportsQuickData="false">
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="tradecifno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="tradetype" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbproductpercoopId" name="id" supportsQuickData="false">
+            <element name="coopcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="productcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
         <dataobject javaType="com.coopdb.data.BeneficiaryId" name="id" supportsQuickData="false">
             <element name="cifNo" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
@@ -10786,360 +11155,6 @@
                 <noChange>update</noChange>
             </element>
         </dataobject>
-        <dataobject javaType="com.coopdb.data.TbworkflowprocessId" name="id" supportsQuickData="false">
-            <element name="processid" typeRef="java.lang.Integer" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="workflowid" typeRef="java.lang.Integer" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="sequenceno" typeRef="java.lang.Integer" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbcycleperloanschemeId" name="id" supportsQuickData="false">
-            <element name="schemecode" typeRef="java.lang.Integer" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="cyclecode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="pi" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbevalciId" name="id" supportsQuickData="false">
-            <element name="evalreportid" typeRef="java.lang.Integer" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbintratebytermId" name="id" supportsQuickData="false">
-            <element name="productcode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="loanterm" typeRef="java.lang.Integer" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbmembershiptypeperbosId" name="id" supportsQuickData="false">
-            <element name="boscode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="membertypecode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbloanprodmembertypeId" name="id" supportsQuickData="false">
-            <element name="loanproduct" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="membertype" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbroleaccessId" name="id" supportsQuickData="false">
-            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbaccountofficerId" name="id" supportsQuickData="false">
-            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="aocode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbloanapprovaldetailsId" name="id" supportsQuickData="false">
-            <element name="evalreportid" typeRef="java.lang.Integer" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="approvallevel" typeRef="java.lang.Integer" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbeventsId" name="id" supportsQuickData="false">
-            <element name="eventcode" typeRef="java.lang.Integer" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="coopcode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbpayslipadjustmentId" name="id" supportsQuickData="false">
-            <element name="memberid" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="paysliperiod" typeRef="java.util.Date" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="adjustmentno" typeRef="java.lang.Integer" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TblstcomakersId" name="id" supportsQuickData="false">
-            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="membershipid" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbtradereferencelosId" name="id" supportsQuickData="false">
-            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="tradecifno" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="tradetype" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbloanfeesperappId" name="id" supportsQuickData="false">
-            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="loanfeecode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbuserrolesId" name="id" supportsQuickData="false">
-            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
         <dataobject javaType="com.coopdb.data.TbgroupId" name="id" supportsQuickData="false">
             <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
@@ -11207,8 +11222,8 @@
                 <noChange>update</noChange>
             </element>
         </dataobject>
-        <dataobject javaType="com.coopdb.data.Loanpayments930to1001Id" name="id" supportsQuickData="false">
-            <element name="txnDate" typeRef="java.lang.String" isList="false" allowNull="false">
+        <dataobject javaType="com.coopdb.data.TbgeneraldocsId" name="id" supportsQuickData="false">
+            <element name="doccategory" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -11217,79 +11232,7 @@
                 <noChange>read</noChange>
                 <noChange>update</noChange>
             </element>
-            <element name="memberId" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="memberName" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="dxbankAcctNo" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="loanAcctNo" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="refNo" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="loanProduct" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="principalPaid" typeRef="java.math.BigDecimal" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="interestPaid" typeRef="java.math.BigDecimal" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="penaltyPaid" typeRef="java.math.BigDecimal" isList="false" allowNull="false">
+            <element name="doctype" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -11299,56 +11242,7 @@
                 <noChange>update</noChange>
             </element>
         </dataobject>
-        <dataobject javaType="com.coopdb.data.TbevalloansId" name="id" supportsQuickData="false">
-            <element name="evalreportid" typeRef="java.lang.Integer" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="recordid" typeRef="java.lang.Integer" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbmembercompanyId" name="id" supportsQuickData="false">
-            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="companyname" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbproductperbosId" name="id" supportsQuickData="false">
-            <element name="boscode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
+        <dataobject javaType="com.coopdb.data.TbintratebytermId" name="id" supportsQuickData="false">
             <element name="productcode" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
@@ -11358,18 +11252,7 @@
                 <noChange>read</noChange>
                 <noChange>update</noChange>
             </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbloanproductfeesId" name="id" supportsQuickData="false">
-            <element name="prodcode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="loanfeecode" typeRef="java.lang.String" isList="false" allowNull="false">
+            <element name="loanterm" typeRef="java.lang.Integer" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -11379,8 +11262,8 @@
                 <noChange>update</noChange>
             </element>
         </dataobject>
-        <dataobject javaType="com.coopdb.data.TbcollateralperprodId" name="id" supportsQuickData="false">
-            <element name="prodcode" typeRef="java.lang.String" isList="false" allowNull="false">
+        <dataobject javaType="com.coopdb.data.TbapprovedcfId" name="id" supportsQuickData="false">
+            <element name="cfrefno" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -11389,7 +11272,25 @@
                 <noChange>read</noChange>
                 <noChange>update</noChange>
             </element>
-            <element name="collateraltype" typeRef="java.lang.String" isList="false" allowNull="false">
+            <element name="cflevel" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cfseqno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cfsubseqno" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -11399,8 +11300,8 @@
                 <noChange>update</noChange>
             </element>
         </dataobject>
-        <dataobject javaType="com.coopdb.data.PenaltyId" name="id" supportsQuickData="false">
-            <element name="acctno" typeRef="java.lang.String" isList="false" allowNull="false">
+        <dataobject javaType="com.coopdb.data.TbuserrolesId" name="id" supportsQuickData="false">
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -11409,7 +11310,7 @@
                 <noChange>read</noChange>
                 <noChange>update</noChange>
             </element>
-            <element name="penalty" typeRef="java.math.BigDecimal" isList="false" allowNull="false">
+            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -11419,177 +11320,17 @@
                 <noChange>update</noChange>
             </element>
         </dataobject>
-        <dataobject javaType="com.coopdb.data.TbproductpercoopId" name="id" supportsQuickData="false">
+        <dataobject javaType="com.coopdb.data.TbeventsId" name="id" supportsQuickData="false">
+            <element name="eventcode" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
             <element name="coopcode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="productcode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbteamsId" name="id" supportsQuickData="false">
-            <element name="teamcode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="teamname" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbproductpercompanyId" name="id" supportsQuickData="false">
-            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="productcode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbpaymentschedId" name="id" supportsQuickData="false">
-            <element name="amortid" typeRef="java.lang.Integer" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbloanschemeperprodId" name="id" supportsQuickData="false">
-            <element name="prodcode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="schemecode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbcodetableId" name="id" supportsQuickData="false">
-            <element name="codename" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="codevalue" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbbiactivityId" name="id" supportsQuickData="false">
-            <element name="bireportid" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="biactivity" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbevaldepositId" name="id" supportsQuickData="false">
-            <element name="evalreportid" typeRef="java.lang.Integer" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="recordid" typeRef="java.lang.Integer" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbglmatrixperprodcasaId" name="id" supportsQuickData="false">
-            <element name="gllineno" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="productcode" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -11700,8 +11441,8 @@
                 <noChange>update</noChange>
             </element>
         </dataobject>
-        <dataobject javaType="com.coopdb.data.TbglmatrixperprodId" name="id" supportsQuickData="false">
-            <element name="gllineno" typeRef="java.lang.String" isList="false" allowNull="false">
+        <dataobject javaType="com.coopdb.data.TbloanprodmembertypeId" name="id" supportsQuickData="false">
+            <element name="loanproduct" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -11710,154 +11451,7 @@
                 <noChange>read</noChange>
                 <noChange>update</noChange>
             </element>
-            <element name="productcode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbgeneraldocsId" name="id" supportsQuickData="false">
-            <element name="doccategory" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="doctype" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbemailparamsId" name="id" supportsQuickData="false">
-            <element name="emailtype" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="emailcode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbapprovedcfId" name="id" supportsQuickData="false">
-            <element name="cfrefno" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="cflevel" typeRef="java.lang.Integer" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="cfseqno" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="cfsubseqno" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbroleId" name="id" supportsQuickData="false">
-            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="rolename" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbbiblacklistId" name="id" supportsQuickData="false">
-            <element name="bireportid" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="blacklistid" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbagentsId" name="id" supportsQuickData="false">
-            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="agentcode" typeRef="java.lang.String" isList="false" allowNull="false">
+            <element name="membertype" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -11896,56 +11490,7 @@
                 <noChange>update</noChange>
             </element>
         </dataobject>
-        <dataobject javaType="com.coopdb.data.TbuseraccessId" name="id" supportsQuickData="false">
-            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbaccessrightsId" name="id" supportsQuickData="false">
-            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="modulename" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbinvestigationinstId" name="id" supportsQuickData="false">
+        <dataobject javaType="com.coopdb.data.TbloanfeesperappId" name="id" supportsQuickData="false">
             <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
@@ -11955,16 +11500,7 @@
                 <noChange>read</noChange>
                 <noChange>update</noChange>
             </element>
-            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="investigationtype" typeRef="java.lang.String" isList="false" allowNull="false">
+            <element name="loanfeecode" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -11974,8 +11510,8 @@
                 <noChange>update</noChange>
             </element>
         </dataobject>
-        <dataobject javaType="com.coopdb.data.TbpayschedId" name="id" supportsQuickData="false">
-            <element name="amortid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+        <dataobject javaType="com.coopdb.data.TbagentsId" name="id" supportsQuickData="false">
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -11984,7 +11520,7 @@
                 <noChange>read</noChange>
                 <noChange>update</noChange>
             </element>
-            <element name="applno" typeRef="java.lang.String" isList="false" allowNull="false">
+            <element name="agentcode" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -11994,8 +11530,8 @@
                 <noChange>update</noChange>
             </element>
         </dataobject>
-        <dataobject javaType="com.coopdb.data.TbevalbiId" name="id" supportsQuickData="false">
-            <element name="evalreportid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+        <dataobject javaType="com.coopdb.data.TbpayslipadjustmentId" name="id" supportsQuickData="false">
+            <element name="memberid" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -12004,7 +11540,36 @@
                 <noChange>read</noChange>
                 <noChange>update</noChange>
             </element>
-            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false">
+            <element name="paysliperiod" typeRef="java.util.Date" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="adjustmentno" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbproductperbosId" name="id" supportsQuickData="false">
+            <element name="boscode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="productcode" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -12034,7 +11599,65 @@
                 <noChange>update</noChange>
             </element>
         </dataobject>
-        <dataobject javaType="com.coopdb.data.TbmlacperloanappId" name="id" supportsQuickData="false">
+        <dataobject javaType="com.coopdb.data.TbcycleperloanschemeId" name="id" supportsQuickData="false">
+            <element name="schemecode" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="cyclecode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="pi" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbroleaccessId" name="id" supportsQuickData="false">
+            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbloanapprovaldetailsId" name="id" supportsQuickData="false">
+            <element name="evalreportid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
             <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
@@ -12044,7 +11667,7 @@
                 <noChange>read</noChange>
                 <noChange>update</noChange>
             </element>
-            <element name="conditioncode" typeRef="java.lang.String" isList="false" allowNull="false">
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -12053,27 +11676,7 @@
                 <noChange>read</noChange>
                 <noChange>update</noChange>
             </element>
-            <element name="particulars" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
-        <dataobject javaType="com.coopdb.data.TbchapterId" name="id" supportsQuickData="false">
-            <element name="chaptercode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="branchcode" typeRef="java.lang.String" isList="false" allowNull="false">
+            <element name="approvallevel" typeRef="java.lang.Integer" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -12083,8 +11686,8 @@
                 <noChange>update</noChange>
             </element>
         </dataobject>
-        <dataobject javaType="com.coopdb.data.TbcompanyId" name="id" supportsQuickData="false">
-            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false">
+        <dataobject javaType="com.coopdb.data.Loanpayments930to1001Id" name="id" supportsQuickData="false">
+            <element name="txnDate" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -12093,7 +11696,79 @@
                 <noChange>read</noChange>
                 <noChange>update</noChange>
             </element>
-            <element name="companyname" typeRef="java.lang.String" isList="false" allowNull="false">
+            <element name="memberId" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="memberName" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="dxbankAcctNo" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="loanAcctNo" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="refNo" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="loanProduct" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="principalPaid" typeRef="java.math.BigDecimal" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="interestPaid" typeRef="java.math.BigDecimal" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="penaltyPaid" typeRef="java.math.BigDecimal" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -12103,8 +11778,8 @@
                 <noChange>update</noChange>
             </element>
         </dataobject>
-        <dataobject javaType="com.coopdb.data.TbcooperativeId" name="id" supportsQuickData="false">
-            <element name="coopcode" typeRef="java.lang.String" isList="false" allowNull="false">
+        <dataobject javaType="com.coopdb.data.TbworkflowprocessId" name="id" supportsQuickData="false">
+            <element name="processid" typeRef="java.lang.Integer" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -12113,7 +11788,16 @@
                 <noChange>read</noChange>
                 <noChange>update</noChange>
             </element>
-            <element name="coopname" typeRef="java.lang.String" isList="false" allowNull="false">
+            <element name="workflowid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="sequenceno" typeRef="java.lang.Integer" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -12143,8 +11827,8 @@
                 <noChange>update</noChange>
             </element>
         </dataobject>
-        <dataobject javaType="com.coopdb.data.TbbiamlawatchlistId" name="id" supportsQuickData="false">
-            <element name="bireportid" typeRef="java.lang.String" isList="false" allowNull="false">
+        <dataobject javaType="com.coopdb.data.TbmembershiptypeperbosId" name="id" supportsQuickData="false">
+            <element name="boscode" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -12153,7 +11837,7 @@
                 <noChange>read</noChange>
                 <noChange>update</noChange>
             </element>
-            <element name="amlaid" typeRef="java.lang.String" isList="false" allowNull="false">
+            <element name="membertypecode" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -12163,8 +11847,8 @@
                 <noChange>update</noChange>
             </element>
         </dataobject>
-        <dataobject javaType="com.coopdb.data.TbdocspercfId" name="id" supportsQuickData="false">
-            <element name="facilitycode" typeRef="java.lang.String" isList="false" allowNull="false">
+        <dataobject javaType="com.coopdb.data.PenaltyId" name="id" supportsQuickData="false">
+            <element name="acctno" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -12173,7 +11857,7 @@
                 <noChange>read</noChange>
                 <noChange>update</noChange>
             </element>
-            <element name="documentcode" typeRef="java.lang.String" isList="false" allowNull="false">
+            <element name="penalty" typeRef="java.math.BigDecimal" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -12182,7 +11866,18 @@
                 <noChange>read</noChange>
                 <noChange>update</noChange>
             </element>
-            <element name="doccategory" typeRef="java.lang.String" isList="false" allowNull="false">
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbaccessrightsId" name="id" supportsQuickData="false">
+            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="modulename" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -12221,6 +11916,315 @@
                 <noChange>update</noChange>
             </element>
             <element name="glline" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbaccountofficerId" name="id" supportsQuickData="false">
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="aocode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbproductpercompanyId" name="id" supportsQuickData="false">
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="productcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbemailparamsId" name="id" supportsQuickData="false">
+            <element name="emailtype" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="emailcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbteamsId" name="id" supportsQuickData="false">
+            <element name="teamcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="teamname" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbevalloansId" name="id" supportsQuickData="false">
+            <element name="evalreportid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="recordid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbroleId" name="id" supportsQuickData="false">
+            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="rolename" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbbiactivityId" name="id" supportsQuickData="false">
+            <element name="bireportid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="biactivity" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbpaymentschedId" name="id" supportsQuickData="false">
+            <element name="amortid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbevaldepositId" name="id" supportsQuickData="false">
+            <element name="evalreportid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="recordid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbcooperativeId" name="id" supportsQuickData="false">
+            <element name="coopcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="coopname" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TblstcomakersId" name="id" supportsQuickData="false">
+            <element name="appno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="membershipid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbcollateralperprodId" name="id" supportsQuickData="false">
+            <element name="prodcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="collateraltype" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbglmatrixperprodcasaId" name="id" supportsQuickData="false">
+            <element name="gllineno" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="productcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbbiblacklistId" name="id" supportsQuickData="false">
+            <element name="bireportid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="blacklistid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.coopdb.data.TbmembercompanyId" name="id" supportsQuickData="false">
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="companyname" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>

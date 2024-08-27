@@ -278,5 +278,8 @@
         <property name="deviationflag" type="boolean">
             <column name="deviationflag"/>
         </property>
+        <property name="companycodemember" type="string">
+            <column name="companycodemember" length="50"/>
+        </property>
     </class>
 </hibernate-mapping>

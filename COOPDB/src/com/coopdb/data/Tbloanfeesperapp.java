@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  *  COOPDB.Tbloanfeesperapp
- *  08/10/2024 21:24:57
+ *  08/27/2024 14:22:55
  * 
  */
 public class Tbloanfeesperapp {

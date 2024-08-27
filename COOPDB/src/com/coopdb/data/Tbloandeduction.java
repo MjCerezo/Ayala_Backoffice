@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  *  COOPDB.Tbloandeduction
- *  08/10/2024 21:24:57
+ *  08/27/2024 14:22:58
  * 
  */
 public class Tbloandeduction {
@@ -19,6 +19,7 @@ public class Tbloandeduction {
     private BigDecimal deductionamount;
     private String createdby;
     private Date datecreated;
+    private Boolean iscbu;
 
     public Integer getId() {
         return id;
@@ -74,6 +75,14 @@ public class Tbloandeduction {
 
     public void setDatecreated(Date datecreated) {
         this.datecreated = datecreated;
+    }
+
+    public Boolean getIscbu() {
+        return iscbu;
+    }
+
+    public void setIscbu(Boolean iscbu) {
+        this.iscbu = iscbu;
     }
 
 }

@@ -16,9 +16,19 @@
         <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
         <return typeRef="com.etel.loanform.MemberLoanEvaluationForm" isList="false"/>
     </operation>
+    <operation name="getMemberNetCappingParameters">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="cifno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="f" typeRef="com.etel.loanform.MemberNetCappingForm" isList="false"/>
+        <return typeRef="com.etel.loanform.MemberNetCappingForm" isList="false"/>
+    </operation>
     <operation name="listEvaluationTable">
         <parameter name="template" typeRef="java.lang.String" isList="false"/>
         <return typeRef="com.coopdb.data.Tbloanevaluationtable" isList="true"/>
+    </operation>
+    <operation name="listLoanObligation">
+        <parameter name="appno" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.loanform.LoanObligationForm" isList="true"/>
     </operation>
     <operation name="saveOrUpdateEvaluationTable">
         <parameter name="d" typeRef="com.coopdb.data.Tbloanevaluationtable" isList="false"/>
@@ -76,6 +86,29 @@
             <element name="tenure" typeRef="int" isList="false" allowNull="false"/>
             <element name="totalLoanAvailed" typeRef="int" isList="false" allowNull="false"/>
             <element name="totalLoanExempted" typeRef="int" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.loanform.MemberNetCappingForm" name="MemberNetCappingForm" supportsQuickData="false">
+            <element name="aggregateAmortization" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="basicSalary" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="currentLoanAmortization" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="deductLoanOffset" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="existingAmortization" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="existingLoanAmortization" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="pagibig" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="philhealth" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="shareCapPledge" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="sss" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totalContribution" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="withholdingTax" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.loanform.LoanObligationForm" name="LoanObligationForm" supportsQuickData="false">
+            <element name="dateGranted" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="interestRate" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="loanProduct" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="maturityDate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="monthlyAmort" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="outstandingBal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
         </dataobject>
         <dataobject javaType="com.etel.loanform.LoanAppInquiryForApprovalForm" name="LoanAppInquiryForApprovalForm" supportsQuickData="false">
             <element name="cluster" typeRef="java.lang.String" isList="false" allowNull="false"/>

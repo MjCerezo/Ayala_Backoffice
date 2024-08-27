@@ -12,6 +12,7 @@ import java.util.Map;
 import org.cloudfoundry.org.codehaus.jackson.map.DeserializationConfig;
 import org.cloudfoundry.org.codehaus.jackson.map.ObjectMapper;
 
+import com.cifsdb.data.AuditTrail;
 import com.cifsdb.data.Tbcifcorporate;
 import com.cifsdb.data.Tbcifindividual;
 import com.cifsdb.data.Tbcifmain;
@@ -48,10 +49,10 @@ import com.coopdb.data.Tbmembershipapp;
 import com.coopdb.data.Tbreferror;
 import com.coopdb.data.Tbuser;
 import com.coopdb.data.Tbworkflowprocess;
+import com.etel.audittrail.AuditTrailFacade;
 import com.etel.common.service.DBService;
 import com.etel.common.service.DBServiceImpl;
 import com.etel.common.service.DBServiceImplCIF;
-import com.etel.common.service.DBServiceImplLOS;
 import com.etel.company.CompanyService;
 import com.etel.company.CompanyServiceImpl;
 import com.etel.dataentry.FullDataEntryServiceImpl;
@@ -991,7 +992,8 @@ public class QDEServiceImpl implements QDEService {
 	@Override
 	public String setupNewCIF(QDEParameterForm form, String ciftype) {
 		// TODO Auto-generated method stub
-
+		AuditTrailFacade auditTrailFacade = new AuditTrailFacade();
+		AuditTrail auditTrail = new AuditTrail();
 		String flag = "failed";
 		DBService dbService = new DBServiceImplCIF();
 		DBService dbServiceCOOP = new DBServiceImpl();
@@ -1010,7 +1012,9 @@ public class QDEServiceImpl implements QDEService {
 				String fname = form.getFname().toUpperCase();
 				String mname = form.getMname() == null ? "" : form.getMname().toUpperCase();
 				String suf = form.getSuffix() == null ? "" : form.getSuffix().toUpperCase();
-				main.setFullname(lname + ", " + fname + " " + suf + " " + mname);
+				String fullName = lname + ", " + fname + " " + suf + " " + mname;
+				
+				main.setFullname(fullName);
 				
 				// 02.02.2023
 				main.setFullname(main.getFullname().trim().replaceAll(" +", " "));
@@ -1028,7 +1032,7 @@ public class QDEServiceImpl implements QDEService {
 				}
 
 				if (dedupe != null) {
-
+;
 					main.setCifno(form.getCifno());
 					main.setEncodedby(secservice.getUserName());
 					main.setAssignedto(secservice.getUserName());
@@ -1097,15 +1101,19 @@ public class QDEServiceImpl implements QDEService {
 
 					if (dbService.saveOrUpdate(main)) {
 						dbService.saveOrUpdate(indiv);
-						// 08-08-17 PONGYU
 						flag = "success";
-						HistoryService h = new HistoryServiceImpl();
-						h.addHistory(indiv.getCifno(), "Encoded new CIF record.", null);
+						//Audit Trail TBCODETABLE CODE = AuditTrail
+						auditTrail.setTransactionNumber(form.getCifno());
+						auditTrail.setEventType("3");
+						auditTrail.setEventName("1");
+						auditTrail.setEventDescription(fullName+" Submitted to Status: For Encoding");
+						auditTrail.setIpaddress(UserUtil.getUserIp());
+						auditTrailFacade.saveAudit(auditTrail);
 					} else {
 						flag = "failed";
 					}
 				} else {
-					flag = "CIF Record is Existing!";
+					flag = "Member Record is Existing!";
 				}
 
 			} else if (form.getCustType().equals("C")) {
@@ -1158,9 +1166,13 @@ public class QDEServiceImpl implements QDEService {
 				if (dbService.saveOrUpdate(main)) {
 					dbService.saveOrUpdate(corp);
 					flag = "success";
-					// 08-08-17 PONGYU
-					HistoryService h = new HistoryServiceImpl();
-					h.addHistory(indiv.getCifno(), "Encoded new CIF record.", null);
+					//Audit Trail TBCODETABLE CODE = AuditTrail
+					auditTrail.setTransactionNumber(form.getCifno());
+					auditTrail.setEventType("2");
+					auditTrail.setEventName("1");
+					auditTrail.setEventDescription(form.getBusinessname().toUpperCase()+" Submitted to Status: For Encoding");
+					auditTrail.setIpaddress(UserUtil.getUserIp());
+					auditTrailFacade.saveAudit(auditTrail);
 
 				} else {
 					flag = "failed";
@@ -1230,6 +1242,7 @@ public class QDEServiceImpl implements QDEService {
 		}
 		return flag;
 	}
+
 
 	// MAR 10-13-2020
 	@SuppressWarnings("unchecked")
@@ -1431,149 +1444,150 @@ public class QDEServiceImpl implements QDEService {
 	@Override
 	public FormValidation setupNewApplicationLOS(QDEParameterForm form) {
 		FormValidation f = new FormValidation();
-//			DBService dbServiceLOS = new DBServiceImplLOS();
-		DBService dbServiceCIF = new DBServiceImplCIF();
-		Map<String, Object> param = HQLUtil.getMap();
-		CompanyService cmpySrvc = new CompanyServiceImpl();
-		Tblstapp a = new Tblstapp();
-		try {
-			a.setCoopcode(cmpySrvc.getListOfCompany("TBCOOPERATIVE").get(0).getCoopcode());// Added by Ced 6-21-2021
-			// If cif is existing
-			if (form.getCifno() != null) {
-				a.setIsexisting(true);
-				a.setCifno(form.getCifno());
+//		DBService dbServiceLOS = new DBServiceImplLOS();
+	DBService dbServiceCIF = new DBServiceImplCIF();
+	Map<String, Object> param = HQLUtil.getMap();
+	CompanyService cmpySrvc = new CompanyServiceImpl();
+	Tblstapp a = new Tblstapp();
+	try {
+		a.setCoopcode(cmpySrvc.getListOfCompany("TBCOOPERATIVE").get(0).getCoopcode());// Added by Ced 6-21-2021
+		// If cif is existing
+		if (form.getCifno() != null) {
+			a.setIsexisting(true);
+			a.setCifno(form.getCifno());
 
-				a.setCustomertype(form.getCustomertype()); // Individual or
-															// Corporate
-				a.setCifname(form.getCifname());
-				a.setApplicationtype(form.getApplicationtype()); // Loan
-																	// Application(LO),
-																	// Line
-																	// Application(LI),
-																	// Line
-																	// Renewal(RE),
-																	// Line
-																	// Amendment(AM),
-																	// Line
-																	// Availment(AV),
-																	// Loan Roll
-																	// Over(RO)
-				a.setApplicationdate(new Date());
-				a.setDatecreated(new Date());
-				a.setCreatedby(secservice.getUserName());
-				a.setApplicationstatus(1); // For Encoding
-				a.setCreateevalreportflag(0);// Initial Eval Report Flag
-				a.setStatusdatetime(new Date());
-				param.put("user", secservice.getUserName());
-				// MAR
-				Tbuser user1 = (Tbuser) dbService.executeUniqueHQLQuery("FROM Tbuser WHERE username=:user", param);
-				param.put("name", user1.getUsername());
-				param.put("code", user1.getTeamcode());
+			a.setCustomertype(form.getCustomertype()); // Individual or
+														// Corporate
+			a.setCifname(form.getCifname());
+			a.setApplicationtype(form.getApplicationtype()); // Loan
+																// Application(LO),
+																// Line
+																// Application(LI),
+																// Line
+																// Renewal(RE),
+																// Line
+																// Amendment(AM),
+																// Line
+																// Availment(AV),
+																// Loan Roll
+																// Over(RO)
+			a.setApplicationdate(new Date());
+			a.setDatecreated(new Date());
+			a.setCreatedby(secservice.getUserName());
+			a.setApplicationstatus(1); // For Encoding
+			a.setCreateevalreportflag(0);// Initial Eval Report Flag
+			a.setStatusdatetime(new Date());
+			param.put("user", secservice.getUserName());
+			// MAR
+			Tbuser user1 = (Tbuser) dbService.executeUniqueHQLQuery("FROM Tbuser WHERE username=:user", param);
+			param.put("name", user1.getUsername());
+			param.put("code", user1.getTeamcode());
 
-				// MAR
-				// com.loansdb.data.Tbteams team = (com.loansdb.data.Tbteams) dbServiceLOS
-				// .executeUniqueHQLQuery("FROM Tbteams WHERE teamcode=:code", param);
+			// MAR
+			// com.loansdb.data.Tbteams team = (com.loansdb.data.Tbteams) dbServiceLOS
+			// .executeUniqueHQLQuery("FROM Tbteams WHERE teamcode=:code", param);
 
-				// MAR
-				/*
-				 * if(team.getIsofficeravailable()==null){
-				 * f.setFlag("Officer Available is NULL"); return f; }else{
-				 * if(team.getIsofficeravailable()){ if (team.getIsofficeravailable()) {
-				 * a.setAccountofficer(team.getOfficer()); } else {
-				 * a.setAccountofficer(team.getBackupofficer()); } }else{
-				 * a.setAccountofficer(team.getBackupofficer()); } }
-				 */
-				param.put("cif", form.getCifno());
-				Tbcifmain m = (Tbcifmain) dbServiceCIF
-						.executeUniqueHQLQueryMaxResultOne("FROM Tbcifmain WHERE cifno=:cif", param);
-				if (m != null) {
-					a.setCiforiginatingteam(m.getOriginatingteam());
+			// MAR
+			/*
+			 * if(team.getIsofficeravailable()==null){
+			 * f.setFlag("Officer Available is NULL"); return f; }else{
+			 * if(team.getIsofficeravailable()){ if (team.getIsofficeravailable()) {
+			 * a.setAccountofficer(team.getOfficer()); } else {
+			 * a.setAccountofficer(team.getBackupofficer()); } }else{
+			 * a.setAccountofficer(team.getBackupofficer()); } }
+			 */
+			param.put("cif", form.getCifno());
+			Tbcifmain m = (Tbcifmain) dbServiceCIF
+					.executeUniqueHQLQueryMaxResultOne("FROM Tbcifmain WHERE cifno=:cif", param);
+			if (m != null) {
+				a.setCiforiginatingteam(m.getOriginatingteam());
 
-					// 11.28.18
-					a.setReferraltype(m.getReferraltype());
-					a.setReferrorname(m.getReferrorname());
+				// 11.28.18
+				a.setReferraltype(m.getReferraltype());
+				a.setReferrorname(m.getReferrorname());
+			}
+			// a.setCompanycode(form.getCompany());
+			a.setLoanproduct(form.getLoanproduct());
+			a.setTypefacility(form.getTypefacility());
+
+			Tbcifindividual i = (Tbcifindividual) dbServiceCIF
+					.executeUniqueHQLQueryMaxResultOne("FROM Tbcifindividual WHERE cifno=:cif", param);
+			if (form.getCustomertype().equals("2")) {
+				if (i != null) {
+					a.setCiftin(i.getTin());
+					a.setLastname(i.getLastname());
+					a.setFirstname(i.getFirstname());
+
 				}
-				// a.setCompanycode(form.getCompany());
-				a.setLoanproduct(form.getLoanproduct());
-				a.setTypefacility(form.getTypefacility());
+			} 
+			param.put("user", secservice.getUserName());
+			Tbuser user = (Tbuser) dbService.executeUniqueHQLQueryMaxResultOne("FROM Tbuser WHERE username=:user",
+					param);
+			a.setLosoriginatingteam(user.getTeamcode());
+			a.setIsdoneencoding(false);
+			a.setBranchcode(user.getBranchcode());
 
-				Tbcifindividual i = (Tbcifindividual) dbServiceCIF
-						.executeUniqueHQLQueryMaxResultOne("FROM Tbcifindividual WHERE cifno=:cif", param);
-				if (form.getCustomertype().equals("2")) {
-					if (i != null) {
-						a.setCiftin(i.getTin());
-						a.setLastname(i.getLastname());
-						a.setFirstname(i.getFirstname());
+			a.setCompanycode(user.getCompanycode());
+			a.setCompanycodemember(m.getCompanyCode());
 
-					}
-				} 
-				param.put("user", secservice.getUserName());
-				Tbuser user = (Tbuser) dbService.executeUniqueHQLQueryMaxResultOne("FROM Tbuser WHERE username=:user",
-						param);
-				a.setLosoriginatingteam(user.getTeamcode());
-				a.setIsdoneencoding(false);
-				a.setBranchcode(user.getBranchcode());
-
-				a.setCompanycode(user.getCompanycode());
-
-				String no = "";
-				// Jan 31. 2019
-				// System.out.println("--------- form.getApplicationtype() : " +
-				// form.getApplicationtype());
-				if (form.getApplicationtype() != null) {
-					if (form.getApplicationtype().equals("1") || form.getApplicationtype() == (1)) {
-						no = ApplicationNoGenerator.generateApplicationNo("LO");
-					} else if (form.getApplicationtype().equals("2") || form.getApplicationtype() == (2)) {
-						no = ApplicationNoGenerator.generateApplicationNo("LI");
-					} else if (form.getApplicationtype().equals("3") || form.getApplicationtype() == (3)) {
-						no = ApplicationNoGenerator.generateApplicationNo("RE");
-					} else if (form.getApplicationtype().equals("4") || form.getApplicationtype() == (4)) {
-						no = ApplicationNoGenerator.generateApplicationNo("AM");
-					} else if (form.getApplicationtype().equals("5") || form.getApplicationtype() == (5)) {
-						no = ApplicationNoGenerator.generateApplicationNo("AV");
-					} else if (form.getApplicationtype().equals("6") || form.getApplicationtype() == (6)) {
-						no = ApplicationNoGenerator.generateApplicationNo("RO");
-					}
-				}
-				a.setAppno(no);
-				// MAR
-
-				if (dbService.save(a)) {
-					f.setFlag("success");
-					f.setErrorMessage(no);
-					System.out.println(">>>>> SUCCESS CREATING APPLICATION FOR " + a.getAppno() + ", " + a.getCifno()
-							+ " - " + a.getCifname());
-
-					// AS-PER-NOREEN...FOR-EVERY-LOANAPP-CREATED,-SHOULD-GENERATE-DOCUMENTS-BASED-ON-LOAN-PRODUCT
-					DocumentationServiceImpl.createDocumentsPerApplication(a.getAppno());// DocumentServiceImpl-Line-178-DANIEL-09.01.2018
-
-					// Generate Loan Fees per App - Kevin 09.16.2018
-					if (a.getLoanproduct() != null && !a.getLoanproduct().equals("")) {
-						LoanFeeInputForm feeform = new LoanFeeInputForm();
-						feeform.setAppno(a.getAppno());
-						LoanProductService prodsrvc = new LoanProductServiceImpl();
-						prodsrvc.generateLoanFeesPerApp(feeform);
-					}
-
-					// Email Submit Application (Kevin 10.12.2018)
-					param.put("appno", a.getAppno());
-					param.put("username", UserUtil.securityService.getUserName());
-					// MAR
-					dbService.execSQLQueryTransformer(
-							"EXEC sp_InsertEmailSMTP @appno=:appno, @username=:username, @emailcode = 'EM6', @body =NULL",
-							param, null, 0);
-
-					// HISTORY (Kevin 10.22.2019)
-					HistoryService h = new HistoryServiceImpl();
-					h.saveHistory(a.getAppno(), AuditLogEvents.CREATE_APPLICATION,
-							"Created new application - <font size=\"2\"><b>\"FOR ENCODING\"</b>.");
-
+			String no = "";
+			// Jan 31. 2019
+			// System.out.println("--------- form.getApplicationtype() : " +
+			// form.getApplicationtype());
+			if (form.getApplicationtype() != null) {
+				if (form.getApplicationtype().equals("1") || form.getApplicationtype() == (1)) {
+					no = ApplicationNoGenerator.generateApplicationNo("LO");
+				} else if (form.getApplicationtype().equals("2") || form.getApplicationtype() == (2)) {
+					no = ApplicationNoGenerator.generateApplicationNo("LI");
+				} else if (form.getApplicationtype().equals("3") || form.getApplicationtype() == (3)) {
+					no = ApplicationNoGenerator.generateApplicationNo("RE");
+				} else if (form.getApplicationtype().equals("4") || form.getApplicationtype() == (4)) {
+					no = ApplicationNoGenerator.generateApplicationNo("AM");
+				} else if (form.getApplicationtype().equals("5") || form.getApplicationtype() == (5)) {
+					no = ApplicationNoGenerator.generateApplicationNo("AV");
+				} else if (form.getApplicationtype().equals("6") || form.getApplicationtype() == (6)) {
+					no = ApplicationNoGenerator.generateApplicationNo("RO");
 				}
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
+			a.setAppno(no);
+			// MAR
+
+			if (dbService.save(a)) {
+				f.setFlag("success");
+				f.setErrorMessage(no);
+				System.out.println(">>>>> SUCCESS CREATING APPLICATION FOR " + a.getAppno() + ", " + a.getCifno()
+						+ " - " + a.getCifname());
+
+				// AS-PER-NOREEN...FOR-EVERY-LOANAPP-CREATED,-SHOULD-GENERATE-DOCUMENTS-BASED-ON-LOAN-PRODUCT
+				DocumentationServiceImpl.createDocumentsPerApplication(a.getAppno());// DocumentServiceImpl-Line-178-DANIEL-09.01.2018
+
+				// Generate Loan Fees per App - Kevin 09.16.2018
+				if (a.getLoanproduct() != null && !a.getLoanproduct().equals("")) {
+					LoanFeeInputForm feeform = new LoanFeeInputForm();
+					feeform.setAppno(a.getAppno());
+					LoanProductService prodsrvc = new LoanProductServiceImpl();
+					prodsrvc.generateLoanFeesPerApp(feeform);
+				}
+
+				// Email Submit Application (Kevin 10.12.2018)
+				param.put("appno", a.getAppno());
+				param.put("username", UserUtil.securityService.getUserName());
+				// MAR
+				dbService.execSQLQueryTransformer(
+						"EXEC sp_InsertEmailSMTP @appno=:appno, @username=:username, @emailcode = 'EM6', @body =NULL",
+						param, null, 0);
+
+				// HISTORY (Kevin 10.22.2019)
+				HistoryService h = new HistoryServiceImpl();
+				h.saveHistory(a.getAppno(), AuditLogEvents.CREATE_APPLICATION,
+						"Created new application - <font size=\"2\"><b>\"FOR ENCODING\"</b>.");
+
+			}
 		}
-		return f;
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	return f;
 	}
 
 	@Override

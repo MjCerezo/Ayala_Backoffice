@@ -1,0 +1,45 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cifsdb.data.ChangeMemberStatus" table="ChangeMemberStatus" catalog="AcaciaAyalaMembershipDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="transactionNumber" type="string">
+            <column name="TransactionNumber" length="50"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="cifno" type="string">
+            <column name="CIFNo" length="50"/>
+        </property>
+        <property name="memberId" type="string">
+            <column name="MemberId" length="50"/>
+        </property>
+        <property name="applicationStatus" type="string">
+            <column name="ApplicationStatus" length="50"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="150"/>
+        </property>
+        <property name="currentStatus" type="string">
+            <column name="CurrentStatus" length="50"/>
+        </property>
+        <property name="subCurrentStatus" type="string">
+            <column name="SubCurrentStatus" length="50"/>
+        </property>
+        <property name="newStatus" type="string">
+            <column name="NewStatus" length="50"/>
+        </property>
+        <property name="subNewStatus" type="string">
+            <column name="SubNewStatus" length="50"/>
+        </property>
+        <property name="dateCreated" type="timestamp">
+            <column name="DateCreated" length="23"/>
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CreatedBy" length="50"/>
+        </property>
+        <property name="dateApproved" type="timestamp">
+            <column name="DateApproved" length="23"/>
+        </property>
+        <property name="approvedBy" type="string">
+            <column name="ApprovedBy" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

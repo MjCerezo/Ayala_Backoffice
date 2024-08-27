@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.cifsdb.data.CapitalPledge;
 import com.cifsdb.data.Tbcifbusiness;
 import com.cifsdb.data.Tbcifcorporate;
 import com.cifsdb.data.Tbcifdependents;
@@ -693,5 +694,15 @@ public class FullDataEntryFacade extends JavaServiceSuperClass {
 	public String changeCompanyOrMemberBatchUpdateStatus(List<MembershipListPerStagesForm> memberList,String status) {
 		FullDataEntryService service = new FullDataEntryServiceImpl();
 		return service.changeCompanyOrMemberBatchUpdateStatus(memberList, status);
+	}
+	
+	public String saveUpdateCapitalPledge(CapitalPledge form) {
+		FullDataEntryService service = new FullDataEntryServiceImpl();
+		return service.saveUpdateCapitalPledge(form);
+	}
+	
+	public CapitalPledge getCapitalPledge(String cifno) {
+		FullDataEntryService service = new FullDataEntryServiceImpl();
+		return service.getCapitalPledge(cifno);
 	}
 }
